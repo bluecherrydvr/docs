@@ -1,0 +1,1097 @@
+---------------------------------------------------------------------
+	Release Notes for Stretch PCIe DVR Development Kit
+---------------------------------------------------------------------
+
+
+Changes in Release 5.0.0
+-------------------------
+
+This release adds the following new features:
+
+- Support for PowerPC platforms. Only the FreeScale MPC8315 and MPC8377
+processors have been tested. For other PowerPC platform support, please
+contact your Stretch support person. NOTE: The dvrcp demo application is
+not supported on PowerPC platforms.
+
+- Windows Vista is fully supported in this release.
+
+- The Stretch VCC6416 16-channel capture card is now supported as a beta
+release.
+
+- Stretch host-based H.264 decoder/player.
+  - Host side H.264 decoder library based on ffmpeg.
+  - Windows-based player to play back H.264 video and audio from a
+    recorded file.
+
+- Cascaded SMO: This feature is only supported for boards that have the
+capability to support analog SMO output and also have cascade capability.
+This feature provides the ability to reroute SMO output from one DVR board
+to be displayed on the SMO output of another DVR board.
+
+- The MPEG4 encoder has been improved in quality and reliability.
+
+A. Firmware
+-----------
+
+Several bugs have been fixed.
+
+B. Demo Application
+-------------------
+
+No feature changes.
+
+NOTE: The raw video display quality on HMO may not look sharp when using 
+      VCC6416 card. The reason is that the default values used in DVRCP 
+      for Hue, Saturation, Brightness, and Contrast are so that the picture 
+      frame quality is sharp on VRC6016 or VRC6016C cards. You can correct
+      this problem by changing these parameters from the video-in tab in 
+      the "Camera Properties" dialog box within DVRCP. Refer to the Stretch
+      technical notes for best values to be used in these fields.
+
+C. SDK
+------
+
+No feature changes.
+
+
+Changes in Release 4.1.0
+------------------------
+
+This release adds the following new features:
+
+- Support for new video resolutions:
+
+  + "classic" 4CIF (640x480)
+  + "classic" 2CIF (640x240)
+  + "classic" CIF  (320x240)
+
+These resolutions are supported for HMO display (raw video) only.
+They are not supported for encoding and SMO output.
+
+- Support for enabling and disabling video deinterlacing.
+
+- Support for enabling and disabling video noise reduction filtering.
+  (Stretch-lateral).
+
+- Support for adjusting gain on any camera input (if supported by
+  the board hardware).
+
+- Support for setting camera termination impedance.
+  (if supported by the board hardware).
+
+- New Spot Monitor Out (SMO) features: (if supported by the board)
+
+  + Two lines of OSD text are supported on each SMO display.
+
+  + Video frames supplied by the host can be displayed on the SMO
+    output, if the SMO port supports video output.
+
+- API calls to turn various LEDs on and off on the boards. The specific
+  LED types are board-dependent.
+  
+- API calls to read/write any register on the video input devices.
+
+- Support of MJPEG recording in .mov format by the low-level AVMUX APIs.
+
+- Extended watchdog timer functionality to specify the timeout value.
+
+
+A. Firmware
+-----------
+
+- The firmware now provides IOCTL calls to read or write any register on
+  the video input devices. All Techwell/Nextchip registers can be accessed
+  in this way.
+  
+- The raw video output format from the firmware has changed. The video is
+  now delivered in planar YUV or YVU format, with the planes contiguous in
+  memory, and a single data header instead of one per plane. A new IOCTL
+  command allows selecting the output format.
+  
+- Privacy blocking now works for all video resolutions.
+
+- The 2CIF resolutions do not support OSD fully. It is recommended that
+  OSD not be used when 2CIF video is enabled.
+  
+- Privacy blocking cannot be disabled. To remove privacy blocking, the
+  privacy region must be cleared.
+  
+- The various encoders currently do not support a GOP size of 1. This
+  will be supported in a later release.
+
+
+B. Demo application
+-------------------
+
+- Support of the new Classic video resolutions to create new video panel.
+
+- Support to turn on/of deinterlacing and video noise reduction, as well
+  as setting the camera termination impedance value and adjusting gain on 
+  camera input for each camera properties.
+
+- Support to calculate and display raw video frame rate per camera.
+
+- Support to record MJPEG either in .avi or .mov file container.
+
+- If supported by the firmware:
+
+  + Support to specify OSD Text specific to a SMO.
+
+  + Support to send raw video frame to a SMO capable of video-out.
+
+- GUI to control Techwell/Nextchip register settings.
+
+- GUI to specify the watchdog timeout value per system.
+
+C. SDK
+------
+
+- Enhanced sdvr_stream_raw_video() to accept the three new classic resolution  
+  CIF, 2CIF and 4CIF.
+
+- New function sdvr_set_watchdog_state_ex() to specify watchdog timeout value.
+
+- New function sdvr_get_smo_attributes() to get the capabilities, screen size,  
+  supported video format associated to the request SMO port.
+
+- New functions to send raw video frames from the Host DVR Application to be
+  displayed on any SMO port with video out capability:
+
+  + sdvr_start_video_output() - Open a video output channel. The channel handle
+    that is returned will be used for any subsequent call to send raw video
+    frames.
+
+  + sdvr_get_video_output_buffer() - Request a free frame buffer to be used to
+    send raw video frames. 
+
+  + sdvr_send_video_output() - Send the raw video frame to be displayed
+    on the specified SMO port.  
+
+  + sdvr_stop_video_output() - Terminate the PCI channel of communication 
+    which was opened to send raw video frame to the firmware.
+
+  + sdvr_set_confirmation_callback() - Notification request as each raw video
+    frame is sent to the DVR board and processed by registering a  
+    confirmation callback.
+
+- Following new functions allow you to set/get smo grid attributes per SMO port.
+
+  + sdvr_set_smo_grid_ex()
+
+  + sdvr_get_smo_grid_ex()
+
+  + sdvr_get_smo_attributes()
+
+- New function sdvr_get_sensors() to get the current state of the sensors.
+
+- New function sdvr_get_relays() to get the current state of the relays.
+
+- New function sdvr_set_led() to turn on/off LEDs on the board. (Only valid
+  if supported by the DVR board.)
+
+- New functions to control Techwell/Nextchip register settings:
+
+  + sdvr_write_ioctl()
+
+  + sdvr_read_ioctl()
+
+- New Fucnction sdvr_get_buffer_yuv_format() to return the yuv format of the
+  given YUV frame buffer.
+
+- New sdvr_set_yuv_format() - you can specify the format by which the raw video
+  frames should be constructed. This is a system wide settings that affects
+  raw video streaming for both the decoded and live video frames.
+
+- Following new functions allow to turn on/of deinterlacing and video noise   
+  reduction, as well as setting the camera termination impedance value and   
+  adjusting gain on camera input for each camera properties:
+
+  + sdvr_err_e sdvr_enable_deinterlacing()
+
+  + sdvr_enable_noise_reduction()
+
+  + sdvr_set_gain_mode()
+
+  + sdvr_set_camera_termination()
+
+- Changed/Enhanced Data Structures:
+
+  + sdvr_board_attrib_t - The following field is added to the end of the data
+     structure:  
+   
+     board_sub_rev - A character in the range of A-Z representing the board 
+                     sub revision. 
+
+  + sdvr_board_config_t - The following two fields are added to the end of
+    the data structure:
+   
+       num_smos - The number of spot mointor output on the DVR board
+   
+       num_encoders_supported - The number of encoder channel supported
+       by the board. This value is zero if the board does not support encoding.
+   
+  + sdvr_chan_def_t - The vpp_mode field is not used any more and will be
+    removed in the future.
+
+- New Data Structures:
+
+  + sdvr_smo_attribute_t - This data structure holds attributes for a 
+    specified SMO.
+   
+- Changed/Added diagnostic error codes:
+
+  + New codes:
+
+    SDVR_DIAG_TWI_EEPROM_TEST_WP_COMPARE - TWI EEPROM write-protect error.       
+    SDVR_DIAG_DECODER_UNIQUE_VIDEO_TEST  - Video inputs are not unique.
+    SDVR_DIAG_NVP1114_REG_TEST           - Nextchip register test error.
+    SDVR_DIAG_DECODER_AUDIO_TEST_TIMEOUT - Decoder audio test timeout error.
+    SDVR_DIAG_TW2864_REG_TEST            - Techwell register test error.
+
+ + Changed codes (From - To):
+
+  SDVR_DIAG_TW2815_AUDIO_TEST_INIT     - SDVR_DIAG_DECODER_AUDIO_TEST_INIT  
+  SDVR_DIAG_TW2815_AUDIO_TEST_NO_AUDIO - SDVR_DIAG_DECODER_AUDIO_TEST_NO_AUDIO
+  SDVR_DIAG_TW2815_VIDEO_TEST_INIT     - SDVR_DIAG_DECODER_VIDEO_TEST_INIT  
+  SDVR_DIAG_TW2815_VIDEO_TEST_NO_VIDEO - SDVR_DIAG_DECODER_VIDEO_TEST_NO_VIDEO
+  SDVR_DIAG_TW28XX_VIDEO_TEST_TIMEOUT  - SDVR_DIAG_DECODER_VIDEO_TEST_TIMEOUT
+
+  SDVR_DIAG_TW28XX_VIDDET_TEST_INIT_ERR     - SDVR_DIAG_DECODER_VIDDET_TEST_INIT_ERR
+  SDVR_DIAG_TW28XX_VIDDET_TEST_UNKNOWN_CHIP - SDVR_DIAG_DECODER_VIDDET_TEST_UNKNOWN_CHIP
+  SDVR_DIAG_TW28XX_VIDDET_TEST_NO_INPUT_ERR - SDVR_DIAG_DECODER_VIDDET_TEST_NO_INPUT_ERR
+  SDVR_DIAG_TW28XX_VIDDET_TEST_CONFLICT_ERR - SDVR_DIAG_DECODER_VIDDET_TEST_CONFLICT_ERR
+  SDVR_DIAG_TW28XX_VIDDET_TEST_NO_SYNC_ERR  - SDVR_DIAG_DECODER_VIDDET_TEST_NO_SYNC_ERR
+  SDVR_DIAG_TW28XX_AUDDET_TEST_NO_SYNC_ERR  - SDVR_DIAG_DECODER_AUDDET_TEST_NO_SYNC_ERR
+
+   
+
+Changes in Release 4.0.0
+------------------------
+
+
+This release adds the following new features:
+
+- Macro Block (MB)-based Regions of interest support for motion,
+  blind, and night detection as well as privacy blocking.
+
+  + Support for unlimited regions of any shape based on 16x16 MBs
+    within a full size video frame.
+  + Arbitrary shapes can be specified based on 16x16 MBs.
+  + GUI-based region selection available in Demo application.
+  + 4 overlay planes are available for motion detection. Each plane
+    supports arbitrary regions and independent alarm thresholds.
+
+- Motion value buffer per video frame for video analytics.
+
+  + The raw motion values are available to the application.
+    An analysis function is also provided in the SDK to compute
+    the overall motion value.
+  + Frequency of motion value buffers can be set per channel.
+  + May have impact on frame rate when enabled.
+
+- Support for new video resolutions.
+
+  + 2CIF      704x240 (NTSC) 704x288 (PAL)
+  + Half-D1   720x240 (NTSC) 720x288 (PAL)
+  + DCIF      528x320 (NTSC) 528x384 (PAL)
+  + 2CIF and Half-D1 are not supported for SMO display.
+  + DCIF resolution is only supported for encoding.
+
+- Support for decoder output scaling.
+
+  + Output picture can now be scaled up or down to any of the
+    supported HMO or SMO resolutions.
+  + Scaling may have impact on performance.
+
+- 2CIF HMO support 
+
+  + One frame of interlaced input picture, meant primarily for
+    analytics applications.
+  + No deinterlacing performed.
+  + OSD is available.
+  + Privacy blocking is not available.
+  + May have an impact on frame rate when enabled.
+
+- Video Input Parameter Control API.
+
+  + Ability to change/set Brightness, Contrast, Hue, Saturation,
+    Sharpness per camera.
+  + Demo application supports GUI-based control with live update.
+
+- Authentication of recorded video frames.
+
+ + Supports encoding authentication data into the encoded video stream
+   to verify that the video frame has not been changed since recording,
+   including adding, removing, reordering, or modifying video frames, 
+   changing the camera ID, or changing the timestamp.
+ + Authentication relies on a key that must be kept secret.
+ + Utilities to set the key and verify the authenticity of a bitstream
+   are available from Stretch technical support. 
+
+- Ability to change encoding resolution without having to stop the
+  encoder.
+  **NOTE**: Although changing the encode resolution on the fly is now
+  supported, the resulting file may not play back correctly in many
+  host-based players. The demo application currently does not support
+  playback of files recorded in varying resolution.
+
+- H.264 Encoder enhancements.
+
+ + Deblocking support
+ + Scene change detection support, both automatic and forced, added to
+   H.264 Intelligent Encoder. Available for customers instantiating the
+   codec in their own firmware. 
+
+- Windows Vista support (beta)
+  
+  + This release includes beta support for Windows Vista Business.
+
+A. Firmware
+-----------
+
+- The firmware now includes a simple resource control manager. This
+will reject attempts to create more than the supported number of
+encoders or decoders per chip.
+
+- The firmware now provides frame sequence numbers for raw video and
+encoded frames. The PCI header structure has changed to accomodate
+this and other changes.
+
+- 2CIF HMO display does not support privacy blocking. The SMO display
+and the encoded video will honor the privacy blocking settings.
+
+
+B. Demo application
+-------------------
+
+- GUI-based support for setting/changing all video-in image properties: 
+  Brightness, Contrast, Hue, Saturation, and Sharpness.
+
+- Added capabilities to clear or restrict updating of the log window.
+
+- Added support to graphically specify the Regions of Interest (ROI)
+  For different alarm detections and privacy blocking.
+
+- Support of 2CIF for HMO display.
+ 
+- HMO panel displays in 4:3 aspect ratio.
+
+- Support to record to a new file every time instead of
+  overwriting the same file.
+
+
+C. SDK
+------
+
+- Support to allow changing of video frame decimation while
+  the encoder is enabled. 
+
+- Data Structures updated/removed/added
+  + sdvr_board_e		Removed.
+  + sdvr_board_attrib_t		Updated.
+
+Now the board type 32-bit integer the hi-16 bits is subsystem
+vendor and low-16 bits is device ID.
+
+  + sdvr_chan_def_t		Updated.
+
+The field video_size is removed. You no longer need to specify
+a video size when creating a decoder channel. Instead you can
+call sdvr_set_decoder_size() prior enabling the decoder
+to set the size of recorded frame to be decoded.
+
+  + sdvr_image_ctrl_t		New.
+
+  + sdvr_video_enc_chan_params_t  Some field ranges are changed.
+
+GOP size of zero currently not supported.
+H.264 & MPEG4 quality field range is changed from 0-100 to 1-100.
+MJPEG quality field range is changed from 10-300 to 1-99.
+
+  + sdvr_mb_region_t		New
+
+  + sdvr_av_buffer_t		Updated - New fields added.
+  + sdvr_yuv_buffer_t		Updated - New fields added.
+
+Various informational field are added to these two data 
+Structures (i.e., the width and lines of a video frame).
+Also starting this version it is strongly recommended not
+to access these fields directly instead use the new frame
+buffer field access APIs.
+
+- Functions updated
+
+  + sdvr_get_driver_version()	Added a new parameters.
+
+This function is fixed to return correctly the PCI driver
+version for the requested DVR board number.
+
+  + sdvr_set_video_encoder_channel_params().
+
+Allow changing of the encoder decimation while the encoder
+is enabled.
+
+- Functions Removed
+
+  + sdvr_get_firmware_version()	Use sdvr_get_firmware_version_ex().
+  + sdvr_set_osd_text()		Use sdvr_osd_text_config_ex()
+  + sdvr_get_osd_text()		Use sdvr_osd_text_config_ex()
+  + sdvr_enable_osd_text()	Use sdvr_osd_text_show()
+
+- Functions Added
+
+  + sdvr_set_regions_map()
+  + sdvr_set_regions()
+  + sdvr_motion_value_analyzer()
+  + sdvr_set_motion_value_frequency()
+  + sdvr_get_alarm_motion_value()
+  + sdvr_enable_motion_detection_ex()
+
+  + sdvr_set_decoder_size()
+
+  + sdvr_get_buffer_timestamp()
+  + sdvr_get_buffer_frame_type()
+  + sdvr_get_buffer_sub_encoder()
+  + sdvr_get_buffer_alarm_value()
+  + sdvr_av_buf_video_dimensions()
+  + sdvr_av_buf_sequence()
+  + sdvr_av_buf_payload()
+  + sdvr_av_buf_yuv_payload()
+
+  + sdvr_get_video_in_params()
+  + sdvr_set_video_in_params() 
+
+Using these two function you can get or set following video in 
+Image properties: 
+   
+   Brightness, Contrast, Hue, Saturation, and Sharpness.
+
+  + sdvr_enable_auth_key()
+
+If you set an authentication key on the DVR board, you can enable
+this feature to record authentication information with the encoded
+video stream. The video file can be authenticated using the
+authentication verifier. Contact your Technical Support engineer
+for details of how to set the key and use the verifier tools.
+
+
+E. UI SDK
+---------
+
+- New API sdvr_ui_set_preview_callback() to allow drawing
+over live video.
+   
+
+F. Limitations for this release
+-------------------------------
+
+- A video file recorded with multiple resolutions can not be played 
+  back by the Demo Application.
+  
+- .MOV files recorded with authentication enabled cannot be played
+back correctly by Quicktime versions later than 7.4.5. This is a
+problem with Quicktime.
+
+- Disconnecting and reconnecting a camera in the Demo application
+can cause the audio to become disabled. If this happens then the
+audio will have to be re-enabled manually.
+
+- Unchecking the "Live Update" option in the Video Input Settings
+dialog box can cause changed settings to not get applied properly.
+It is recommended that the option be kept enabled.
+
+- Currently privacy blocking cannot be disabled in the firmware.
+To remove privacy blocking, the regions must be cleared. This will be
+fixed in a later release.
+
+- In the demo application, if you create a new empty configuration for
+PAL mode, then create cameras, the default HMO frame rate gets set to
+30. This frame rate is rejected by the firmware if you attempt to 
+connect the camera to an input port. The workaround is to manually
+verify that the HMO (raw video) frame rate is set appropriately.
+
+---------------------------------------------------------------------
+	Release Notes for Stretch PCIe DVR Development Kit
+---------------------------------------------------------------------
+
+
+Changes in Release 3.4.0
+------------------------
+
+
+This release adds the following new features:
+
+- Support for the VRC6008 8 Channel PCIe DVR board.
+
+The source code base is shared between the boards. The output
+.exe and .rom files for the boards are distinguished by their
+prefixes vrc6016_ and vrc6008_.
+
+Demo application
+----------------
+
+- The DVRCP demo application now supports split file recording,
+  i.e. continuous recording into a sequence of fixed-size files.
+  Refer to the DVRCP user manual for usage details.
+
+- The demo application now supports changing the A/V encoders
+  when connecting a camera to a video input.
+
+- NOTE: In the demo application, changing the file recording
+settings while recording is in progress can cause problems in
+the files or even hang the demo. Change the settings only when
+no recording is in progress.
+
+Sample diagnostics application
+-------------------------------
+
+- The sample diagnostic application now supports the VRC6016
+  and VRC6008 boards.
+  
+SDK
+---
+
+- Fixed a major bug in UI SDK that was causing video frames
+  not to be displayed after 128 or more start and stop display.
+  
+- Fixed a major bug that sometimes sdvr_upgrade_firmware()
+  kept failing.
+
+- There is a change in the SDK parameters defined by the data
+  structure "sdvr_sdk_params_t". The number of buffers to be
+  allocated for each encoder channel "enc_buf_num" now has an
+  upper limit of 25.
+
+Driver
+------
+
+- The driver has been modified so that it can now easily support
+  different board types based on PCI subsystem vendor ID and PCI
+  device ID. See the source code for details.
+
+- Fixed a bug that prevented the boards from working properly
+  while sharing IRQs. 
+
+Release Notes for Stretch PCIe DVR Development
+Changes in Release 3.3.0.0
+--------------------------
+
+This release adds the following new features:
+
+- Both raw and encoded audio frames can be steamed per encoded channel.
+
+- Enhanced PCIe attribute information API.
+
+- New DLL version of SDK in MS Windows enviornment.
+
+- New display API SDK library. (A DLL version in MS
+  Windows enviornment.)
+  
+- Sample font files (ASCII-only, ASCII+Chinese).
+
+Demo application
+----------------
+
+- Removed OpenGL requirement for building and
+  displaying of the DVRCP.exe for Windows.
+  
+- DVRCP.exe for Windows requires directX 9.0 to build.
+
+- DVRCP.exe for Windows requires video cards that
+  support directX.
+  
+- Displays PCIe board information and serial number
+  per installed DVR board.
+ 
+Sample diagnostics application
+-------------------------------
+
+- sdvr_diag.exe was enhance to display PCIe board
+  information and serial number for a give DVR board.
+  
+- Enhancement to display PCIe board  and diagnostics
+  information for one or all the DVR boards.
+  
+SDK
+---
+
+- sdvr_board_attrib_t data structure now includes a new
+  field indicating the board revision.
+  
+- The board_type field in sdvr_board_attrib_t data structure
+  was changed from sdvr_board_e to sx_uint32. The board type 
+  is combination of device_id and the subsystem_vendor.
+  
+- A new data structure sdvr_pci_attrib_t is added. This data
+  structure include the PCIe device related information as 
+  well as the serial number on the DVR board. These information
+  can be retrieved by calling sdvr_get_pci_attrib() at any time,
+  even before any coded is loaded onto the DVR board.
+  
+- The maximum value of enc_buf_num field in sdvr_sdk_params_t is
+  limited to 40.
+  
+- The maximum value of raw_buf_num field in sdvr_sdk_params_t is
+  limited to 5.  
+  
+- The threshold value in sdvr_motion_detection_t and sdvr_blind_detection_t
+  is limited to range of 0 to 99.
+  
+- A new function sdvr_get_supported_vstd() is added to get all the supported
+  video standards by the DVR board. Note: This information still 
+  can be retrieved by calling sdvr_get_board_attributes().
+
+- A hi-level recording support is added to the SDK by calling
+  sdvr_start_recording() to start recording to a file and
+  sdvr_stop_recording(). 
+  NOTE: These functions are in alpha phase and maybe changed
+  or removed in the future release of the SDK.
+  
+- For the MS Windows enviornment you can choose to link with the
+  SDVR SDK dynamically or statically. For dynamic linking of the
+  SDK, you link your application with sdvr_sdk_dll.lib and 
+  include sdvr_sdk_dll.dll in the same directory as your DVR Application. 
+  Or, use sdvr_sdk.lib to link statically. 
+
+Changes in Release 3.2.0.0
+--------------------------
+
+This release adds the following new features:
+
+- SMO is re-enabled. Supports both digital and
+  analog switch SMO.
+ 
+- Enhanced OSD capabilities.
+  + User defined font table in the .bdf format.
+  + Unicode font.
+  + Two OSD text of up to 100 characters.
+  + Text color for user defined font table.
+  + Transparent OSD text.
+ 
+- Enhanced standalone manufacturing diagnostics.
+
+- Enhanced version information reporting for hardware
+  and software components. This includes the board type,
+  boot loader, BSP, driver, firmware, and SDK versions.
+
+- Encoder quality improvements.
+
+- Supports for RS485 communication.
+
+- Supports for watchdog timer.
+
+- Supports for A/V synchronization.
+ 
+Demo application
+----------------
+
+- Supports for extended version information in Help\About box.
+ 
+- Enhancements to OSD text.
+  + Supports to specify a new .pdf font table and allowing
+    to switch between the default system font or the
+    new font.
+  + Supports to specify up to two different OSD texts for each
+    encoding of each camera. Each OSD text can be up to 100 
+    Unicode characters or maximum of one video width long.
+  + Supports to specify the intensity of translucent
+    when overlay OSD text is on the active video.
+ 
+- Supports to specify the vpp mode for each camera
+  when connecting to a video input port.
+
+- Enhancements to playback of recorded file.
+  + Supports to allow playback of an encoded file
+    while it is being recorded.
+  + Supports to recover a .mov file which was not
+    closed properly due to power failure or application
+    crash.
+  + Supports to extended testing of decoder by
+    changing the continuous playback of an encoded file
+    to only reset the file while the decoder never
+    gets disabled.
+
+- Supports for watchdog timer. By enabling the watchdog
+  timer from the system dialogbox, dvrcp.exe sends a
+  heart beat message every 5 seconds to the firmware .
+  From the "Tools" menu, you can force the watchdog timer 
+  to expire by disabling the sending of the heart beat messages.
+
+SDK
+---
+
+- Enhancements to OSD text.
+  + Font selection. You can either down load .bdf file
+    or use the default system English font to be used
+    for OSD text. A new function sdvr_osd_set_font_table()
+    allows you to download a .bdf file to the firmware.
+    After you downloaded a custom font you can switch
+    between the system font or the custom font by calling
+    sdvr_osd_use_font_table().
+  + Maximum of two OSD text of up to 100 unsigned Unicode
+    characters can be assigned to each encoder of a camera.
+    A new function sdvr_osd_text_config_ex() is added to
+    allow specifying of Unicode OSD text. The display status
+    for each OSD text is controlled by the new function
+    sdvr_osd_text_show().
+    The old OSD calls sdvr_set_osd_text(),sdvr_get_osd_text, and
+    sdvr_enable_osd_text() should be used when communicating with
+    firmware version prior to 3.2.0.0.
+ 
+    Note: The old and new OSD functions can not be mixed together.
+ 
+- Support for user defined data per each channel. You can add
+  and retrieve any 64 bit data to any channel handle using two
+  new functions sdvr_set_chan_user_data() and sdvr_get_chan_user_data().
+ 
+- Support for firmware error message signals. The firmware now
+  sends asynchronous signals messages as it detects errors.
+  These messages can be accessed by registering a signal callback
+  function using sdvr_set_signals_callback(). Currently the
+  only two supported messages are firmware error detections
+  (SDVR_SIGNAL_RUNTIME_ERROR and SDVR_SIGNAL_FATAL_ERROR).
+ 
+- Support for extended version reporting. Starting with version 3.2.0.0
+  Stretch supports four part version scheme for all of its version
+  reporting APIs. This change affects existing sdvr_get_sdk_version(),
+  sdvr_get_drvier_version(), sdvr_get_firmware_version() functions
+  which either only supported one part or 3 part version scheme.
+  Additionally, a new function sdvr_get_firmware_version_ex() function
+  is added which in addition to the firmware version, it reports
+  the firmware build date, bootloader and BSP versions.
+ 
+- Support for reporting DVR board type and chip revision –
+  sdvr_get_board_attributes() is extended to report the current
+  board type and chip revision.
+ 
+- Support for 64 bit timestamps on A/V buffers. sdvr_av_buffer_t supports 64 bit
+  timestamps when connected to firmware version 3.2.0.0 or higher.
+
+- Changing any of the SMO properties will not affect
+  recording on the same camera any more. Although it
+  will stop and restart the SMO streaming.
+
+- NTSC QCIF frame size is changed from 176x120 to 176x112.
+ 
+- Supports for RS485 communication. Three APIs sdvr_init_uart(),
+  sdvr_write_uart, and sdvr_read_uart() are added to initialize,
+  send character bytes, and read character bytes on RS485 port.
+
+- Supports for watchdog timer. The DVR Application should call
+  sdvr_set_watchdog_state() every 5 seconds to prevent the watchdog
+  timer from expiring while the watchdog timer is enabled. The
+  current state of watchdog timer can be retrieved by calling
+  sdvr_get_watchdog_state().
+
+- Changing of any of the encoder properties while encoder is
+  enabled will not cause any frame drops due to stopping and
+  restarting of the encoder.
+
+- Changing of the video resolution parameter while encoder is
+  enabled is not allowed.
+
+- The function sdvr_board_connect() has a new parameter which 
+  controls the h.264 start code emulation processing.
+
+Limitations for this release
+----------------------------
+
+- Analog switch SMO only allows displaying of one camera at a time.
+
+- Digital SMO provides multiple tiles for different camera output
+  but limits to 15 input cameras. Additionally, there can not be
+  any duplicate of camera output in any SMO tiles.
+
+- No detailed error message is provided if mixed video standard
+  cameras are connected to a DVR board.
+ 
+- Number of OSD text per camera encoding is limited to two.
+
+- No MJPEG A/V frame support for recording into mp4 file format.
+
+- DVRCP can not save none-ASCII characters into the configuration
+  file.
+
+Changes in Release 3.1.0
+------------------------
+
+This release fixes a bug that could cause corruption of
+the encoded video bitstream.
+
+Changes in Release 3.0
+----------------------
+
+This release adds the following new features:
+
+- Dual stream recording. Each camera can now support two
+  recorded streams, each one of which can be in any of the
+  supported formats. Properties for each stream can be set
+  independently.
+
+- Audio recording is now supported.
+
+- The H.264 decoder is now fully functional. It also supports
+  post-processing functions such as motion detection on the
+  decoded picture.
+
+- MPEG4 encoding is supported. IMPORTANT: The MPEG4 encoder is
+  an alpha release and is not production quality.
+
+- The demo application has added several new features to make
+  it easier to use.
+
+- Many bugs have been fixed in the firmware, PCI driver, and SDK.
+
+Demo application
+----------------
+
+- When creating a new system, you can choose to either start with
+  a "Blank configuration" or an "Encoder configuration" which 
+  contains 16 H.264 cameras with audio enabled.
+
+- You can limit the size of mp4 recoding from the system dialog box
+  in the settings tab. Once the maximum number of frames allowed is
+  reached the recording will automatically stop and restart again.
+
+- An audio tab is added to the property page of any camera with 
+  Audio encoder enabled. Currently no information in this tab can
+  be changed. This tab is grayed out if the audio encoding is 
+  disabled for this camera.
+
+- At the time of creating a new camera, you have the option of
+  selecting a secondary video encoding for that camera. As well
+  as adding audio encoding.
+
+- New MPEG4 video encoder support is added.
+
+- New menu items are added to start/stop either or both primary
+  and secondary recording for every camera.
+
+SDK
+---
+
+- The APIs for handling of regions is completely changed. The new
+  APIs allow handling of unlimited regions even though currently
+  we only support 4 regions. All the APIs associated to motion 
+  detection blind and privacy is changed. Three new APIs 
+  sdvr_add_region(), sdvr_change_region(), sdvr_remove_region() are
+  added. Three API sdvr_set_motion_detection(), 
+  sdvr_set_blind_detection(), sdvr_set_privacy_regions() are removed.
+
+- Structure sdvr_chan_def_t is changed to support secondary video 
+  encoder, audio encoding, and vpp_mode when creating a new encoder 
+  channel.
+- sdvr_enable_encoder(), sdvr_set_video_encoder_channel_params(), 
+  sdvr_get_video_encoder_channel_params(), 
+  sdvr_set_alarm_video_encoder_params(), 
+  sdvr_get_alarm_video_encoder_params() take a new parameter to 
+  specify the primary or secondary encoder.
+
+- Multiple DVR board support.
+
+- Sturcture sdvr_video_enc_chan_params_t was changed to support 
+  MPEG4 video encoder.
+
+- Two new video standard SDVR_VIDEO_STD_QCIF_PAL and 
+  SDVR_VIDEO_STD_QCIF_NTSC support is added.
+
+- Two new video size SDVR_VIDEO_SIZE_176x144 and 
+  SDVR_VIDEO_SIZE_176x120 support is added.
+
+- New frame type support for MPEG4 was added. SDVR_FRAME_MPEG4_I,
+  SDVR_FRAME_MPEG4_P, SDVR_FRAME_MPEG4_B, and SDVR_FRAME_MPEG4_VOL.
+  Note: When calculating the frame rate, you should not count 
+  SDVR_FRAME_MPEG4_VOL frames.
+
+- Frame type SDVR_FRAME_VIDEO_ENCODED is changed to 
+  SDVR_FRAME_VIDEO_ENCODED_PRIMARY and a new frame type 
+  SDVR_FRAME_VIDEO_ENCODED_SECONDARY are added.
+  This change affects your A/V callback routine. See
+  documentation of sdvr_set_av_frame_callback() for a usage
+  example.
+
+Limitations for this release
+----------------------------
+
+- Audio playback is not supported. The recorded .MOV files can be
+  played back in Quicktime or any other standard player for audio
+  playback.
+
+- Audio output is not supported.
+
+- sdvr_stream_raw_audio() is not functional in this release. This
+  API function must not be called.
+
+- G711 ULAW is the only audio encoder that is currently supported.
+
+- Up to four regions are now supported for motion detection, privacy
+  blocking etc. The demo application however does not provide a way
+  to create these regions. The SDK API is fully functional.
+
+- The video preprocessor (VPP) now has two modes, prefiltering and
+  analytics. In prefilter mode all the analytics are disabled. The
+  demo application always sets the mode to prefiltering. Both modes
+  are available through the SDK API.
+
+- Up to eight encoder or decoder instances can be created on any one
+  processor. However performance will depend on the resolution and
+  frame rate selected.
+
+- sdvr_set_channel_default() is not supported in this release due to
+  firmware limitations. This function must not be called. Calling it
+  can cause the firmware to corrupt the encoder parameters.
+
+Changes in release 2.1
+----------------------
+
+This release implements pre-filtering for video encoding.
+This improves the quality of the encoding and reduces the
+bit rates compared to the previous release. Pre-filtering
+is enabled by default when motion detection is disabled.
+When motion detection is enabled, pre-filtering is turned
+off.
+
+The recommended encoder settings for 16 channel operation
+are : constant quality mode, quality level 100, gop 30,
+max bit rate 2200 Kbps.
+
+
+Release 2.0 Notes
+-----------------
+
+Changes from previous release
+-----------------------------
+
+A. Firmware
+-----------
+
+1.  H.264 decoding is now supported.
+
+2.  Camera type autodetection is supported.
+
+3.  Camera connection detection and video loss detection is supported.
+
+4.  External sensors and relay outputs (via the I/O board) are supported.
+
+5.  Board diagnostics are available.
+
+B. PCI Driver
+-------------
+
+1.  Several bugs have been fixed.
+
+2.  Firmware loading over PCI is supported.
+
+C. Demo application
+-------------------
+
+1.  Host monitor display for decoding is supported.
+
+2.  MP4 file playback is supported.
+
+3.  Generation of MP4 files for H.264 recording is supported.
+
+4.  Removed support for elementary stream recording for H.264.
+
+5.  Loading of firmware over PCI is supported.
+
+6.  Enabling and triggering of the relays is supported.
+
+7.  Enabling and receiving sensors signal is supported.
+
+8.  An alarm is added to show when a camera is connected.
+
+D. Sample diagnostics application
+---------------------------------
+1.  sdvr_diags.exe is a new comand line application which runs
+    diagnostic tests on each one of 4 S6 chips on the DVR board.
+
+    The source code for this application is located in:
+          host\apps\sdvr_diag
+
+    The binary is located in:
+          host\bin\windows\Release\sdvr_diag.exe
+
+   Usage:
+
+       sdvr_diag <board_index> <diag_fw>
+
+   Where:
+       board_index: The nth PCIe DVR board installed on your PC. Currently
+                    this value is always 1. The valid range is 1 - 4;
+
+       diag_fw:     The path to the romable diagnostics firmware.  
+
+
+E. SDK
+------
+
+1.  The function sdvr_create_chan() was changed to accept only to 
+    parameters. A pointer to structure which contains all the old 
+    parameters as an input parameter. A pointer to sdvr_chan_handle_t 
+    type to contain the channel handle as ouput parameter.
+   
+2.  The function sdvr_upgrade_firmware() is functional.
+
+3.  The function sdvr_run_diagnostics() is functional.
+
+4.  The structure sdvr_board_config_t contains a new field 
+    num_decoders_supported indicating the number of supported decoders.
+   
+5.  The function sdvr_stream_raw_video() takes a new parameter to 
+    set the raw video frame rate for the current channel.
+
+6.  All the Sensors and Relays APIs are implemented.
+
+7.  H.264 decoder functionality is supported.
+
+8.  A new SDVR_VIDEO_ALARM_DETECTED alarm is added.
+
+Known issues for this release
+-----------------------------
+
+1.  SMO output is not supported.
+
+2.  64-bit Windows is not supported.
+
+3.  Linux is not supported.
+
+4.  Alarms are not supported for MJPEG encoding.
+
+5.  Double-byte characters and Unicode are not supported for OSD display
+    and for SDK error messages.
+
+6.  No video post-processing features are available for decoded video.
+
+7.  Audio is not supported.
+
+Errata for H.264 decoder
+------------------------
+
+1. In the player properties, the video resolution must be set to
+   match the camera's recording resolution. i.e. if the file was
+   recorded using 4CIF_NTSC, then the player must also be set to be
+   4CIF_NTSC. This will be handled automatically in the next release.
+
+2. A camera and a player must not be connected to the same "port"
+   on the board. i.e. if camera 1 is connected to input 1, then no
+   player should be connected to #1 on the board. This restriction
+   will be removed in a later release.
+
+3. If you disconnect a player and reconnect it to a different port,
+   the demo app should be shut down and restarted before attempting
+   to use the player.
+
+4. The H.264 decoder does not run at full speed. If you attempt to run
+   three or more decoders on one S6, they will not be able to run at full
+   frame rate. Two encoders and two decoders on one S6 will also not run
+   at full frame rate.
+
+5. If the decoded output is scaled down for viewing, the decoder will
+   slow down further.
+
+--End--
+
+
+
+

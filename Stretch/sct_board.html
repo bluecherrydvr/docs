@@ -1,0 +1,2105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<TITLE>Communication Toolkit (SCT) for S6D1X16 (Stretch)</title>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+function get_cookie(name) 
+{
+    var start = document.cookie.indexOf(name + "=");
+    var len = start+name.length + 1;
+    if (! start && name != document.cookie.substring(0,name.length)) {
+	return null;
+    }
+    if (start == -1) {
+	return null;
+    }
+    var end = document.cookie.indexOf(";", len);
+    if (end == -1) {
+	end = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(len, end));
+}
+
+function set_cookie(name, value, expires, path, domain, secure) 
+{
+    document.cookie = name + "=" + escape(value) +
+	( expires ? ";expires=" + expires.toGMTString() : "") +
+	( path ? ";path=" + path : "") + 
+	( domain ? ";domain=" + domain : "") +
+	( secure ? ";secure" : "");
+}
+
+function put_style(style) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000);
+    set_cookie('cdoc_style', style, expires);
+}
+
+function get_style() {
+    var style = get_cookie('cdoc_style');
+    if (style == null) {
+	style = 'relative';
+	put_style(style);
+    }
+    return style;
+}
+
+function click_put_style(style) {
+    put_style(style);
+    location.reload();
+}
+
+document.writeln('<STYLE TYPE="text/css">');
+document.writeln('<!--');
+var style = get_style();
+if (style == 'fixed-10pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 20pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 5pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else if (style == 'fixed-12pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 24pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 6pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 1.8em;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 1.2em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 2em;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 0.5em;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+}
+document.writeln('-->');
+document.writeln('</STYLE>');
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>Communication Toolkit (SCT) for S6D1X16 &nbsp; (Stretch)</H1>
+
+<CENTER>Last modified on Mar 18, 2009 at 07:17 UTC</CENTER>
+<!-- CDOC-CHOOSE-STYLE --><CENTER>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('relative');">normal, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-10pt');">10pt, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-12pt');">12pt</A>
+<!-- CDOC-CHOOSE-STYLE --></CENTER>
+
+<!-- last_modified : Mar 18, 2009 at 07:17 UTC -->
+
+<!-- package : Stretch -->
+
+<!-- short-description : Communication Toolkit (SCT) for S6D1X16 -->
+
+<!-- contact_name :  -->
+
+<!-- contact_email :  -->
+
+<!-- copyright :  -->
+
+<!-- cdoc-version : 2.4.5 -->
+<!-- ANCHOR_TABLE
+"Package"	"Stretch"	"sct_board.html"
+"Section"	"Usage"	"Top__Usage"
+"Section"	"Introduction"	"Top__Introduction"
+"Section"	"Assumptions"	"Top__Assumptions"
+"Section"	"Channels"	"Top__Channels"
+"Section"	"Channel Example"	"Top__Channel___Example"
+"Section"	"Windows Buffer Usage"	"Top__Windows___Buffer___Usage"
+"Section"	"Messages"	"Top__Messages"
+"Section"	"Message Example"	"Top__Message___Example"
+"Section"	"Types"	"Top__Types"
+"Typedef"	"SCT_ERROR_CODE"	"Types__SCT_ERROR_CODE"
+"Typedef"	"SCT_NO_ERROR"	"Types__SCT_NO_ERROR"
+"Typedef"	"SCT_ERR_INVALID_PARAMETER"	"Types__SCT_ERR_INVALID_PARAMETER"
+"Typedef"	"SCT_ERR_CHANNEL_IN_USE"	"Types__SCT_ERR_CHANNEL_IN_USE"
+"Typedef"	"SCT_ERR_CHANNEL_ALLOC"	"Types__SCT_ERR_CHANNEL_ALLOC"
+"Typedef"	"SCT_ERR_CHANNEL_STATE"	"Types__SCT_ERR_CHANNEL_STATE"
+"Typedef"	"SCT_ERR_CHANNEL_CONNECT"	"Types__SCT_ERR_CHANNEL_CONNECT"
+"Typedef"	"SCT_ERR_CHANNEL_CLOSE"	"Types__SCT_ERR_CHANNEL_CLOSE"
+"Typedef"	"SCT_ERR_CHANNEL_NOT_ACTIVE"	"Types__SCT_ERR_CHANNEL_NOT_ACTIVE"
+"Typedef"	"SCT_ERR_BUFFERS_IN_USE"	"Types__SCT_ERR_BUFFERS_IN_USE"
+"Typedef"	"SCT_ERR_FSM_INIT"	"Types__SCT_ERR_FSM_INIT"
+"Typedef"	"sct_board_t"	"Types__sct_board_t"
+"Typedef"	"sct_channel_t"	"Types__sct_channel_t"
+"Section"	"Defines"	"Top__Defines"
+"Define"	"SCT_MAX_BOARDS"	"Defines__SCT_MAX_BOARDS"
+"Define"	"SCT_MAX_PORT_NUMBER"	"Defines__SCT_MAX_PORT_NUMBER"
+"Define"	"SCT_MAX_CHANNEL"	"Defines__SCT_MAX_CHANNEL"
+"Define"	"SCT_MAX_BUFFER_SIZE"	"Defines__SCT_MAX_BUFFER_SIZE"
+"Define"	"SCT_MSG_CLASS_COUNT"	"Defines__SCT_MSG_CLASS_COUNT"
+"Define"	"SCT_MSG_CLASS_MIN"	"Defines__SCT_MSG_CLASS_MIN"
+"Define"	"SCT_MSG_CLASS_MAX"	"Defines__SCT_MSG_CLASS_MAX"
+"Define"	"SCT_MSG_CLASS_ANY"	"Defines__SCT_MSG_CLASS_ANY"
+"Define"	"SCT_MAX_MESSAGE_LEN"	"Defines__SCT_MAX_MESSAGE_LEN"
+"Define"	"SCT_PORTNUM_ANY"	"Defines__SCT_PORTNUM_ANY"
+"Define"	"SCT_MAX_APP_OWNED_BUFFERS"	"Defines__SCT_MAX_APP_OWNED_BUFFERS"
+"Define"	"SCT_MAX_RECV_BUFFERS"	"Defines__SCT_MAX_RECV_BUFFERS"
+"Section"	"Routines"	"Top__Routines"
+"Section"	"API version query."	"Routines__API___version___query___"
+"Routine"	"sct_get_version"	"Routines__sct_get_version"
+"Section"	"API access functions."	"Routines__API___access___functions___"
+"Routine"	"sct_init"	"Routines__sct_init"
+"Routine"	"sct_chan_connect"	"Routines__sct_chan_connect"
+"Routine"	"sct_chan_accept"	"Routines__sct_chan_accept"
+"Routine"	"sct_chan_close"	"Routines__sct_chan_close"
+"Routine"	"sct_chan_tx_getbuf"	"Routines__sct_chan_tx_getbuf"
+"Routine"	"sct_chan_tx_putbuf"	"Routines__sct_chan_tx_putbuf"
+"Routine"	"sct_chan_tx_send"	"Routines__sct_chan_tx_send"
+"Routine"	"sct_chan_rx_recv"	"Routines__sct_chan_rx_recv"
+"Routine"	"sct_chan_rx_poll"	"Routines__sct_chan_rx_poll"
+"Routine"	"sct_chan_rx_putbuf"	"Routines__sct_chan_rx_putbuf"
+"Routine"	"sct_message_send"	"Routines__sct_message_send"
+"Routine"	"sct_message_recv"	"Routines__sct_message_recv"
+"Routine"	"sct_message_recv_poll"	"Routines__sct_message_recv_poll"
+"Routine"	"sct_get_hostbuf_count"	"Routines__sct_get_hostbuf_count"
+-->
+
+<P>
+Contents: <A href="#Top__Table___of___Contents">Table of Contents</A>, 
+<A href="#Top__Usage">Usage</A>, 
+<A href="#Top__Introduction">Introduction</A>, 
+<A href="#Top__Assumptions">Assumptions</A>, 
+<A href="#Top__Channels">Channels</A>, 
+<A href="#Top__Channel___Example">Channel Example</A>, 
+<A href="#Top__Windows___Buffer___Usage">Windows Buffer Usage</A>, 
+<A href="#Top__Messages">Messages</A>, 
+<A href="#Top__Message___Example">Message Example</A>, 
+<A href="#Top__Types">Types</A>, 
+<A href="#Top__Defines">Defines</A>, 
+<A href="#Top__Routines">Routines</A>, 
+<A href="#Top__Index">Index</A>, 
+<!-- MASTER_INDEX -->
+</P>
+
+
+<!-- SEC_DESCRIPTION_START -->
+
+<a name="Top__Usage"></a>
+<H2>1 &nbsp; Usage</H2>
+<PRE class="ccode">
+#include "sct-board.h" 
+</PRE>
+
+<a name="Top__Introduction"></a>
+<H2>2 &nbsp; Introduction</H2>
+<P>
+The Stretch Communication Toolkit (SCT) for S6D1X16 supports the exchange 
+of bulk data and control information between Windows applications and 
+application running on Stretch S6D1X16 PCIe boards.  The block transfer 
+of data uses the concept of <EM>channels</EM> while control information exchange 
+is supported via <EM>messages</EM>. 
+</P>
+<P>
+The SCT for S6D1X16 must be run in conjunction with the SCT for Windows 
+module on the Windows host machine.  SCT is implemented as a library for 
+both S6D1X16 and Windows, but the Windows side also requires a custom 
+Windows driver to complete the SCT module. 
+</P>
+<P>
+The S6D1X16 board contains 4 Stretch processors (or Processor Entity, PE) 
+configured in a 2x2 array.  PE0 is the master PE and is the only PE with a 
+PCIe interface connected to the Windows host system, thus all SCT channel 
+and message data must pass through PE0. 
+</P>
+<P>
+Only application tasks on PE0 can actually use the SCT API.  Application 
+tasks on remote PEs must use the SCPA API to interface with the SCT API, 
+to communicate with the Windows applications over the PCIe interface.  To 
+reduce complexity, application tasks on PE0 should also use the SCPA API to 
+interface to the SCT API, with only certain dedicated PE0 task or tasks 
+using the SCT API directly. 
+</P>
+<P>
+Multiple S6D1X16 boards can be plugged into a Window host machine.  A 
+single Windows application can control more than one board concurrently. 
+However, multiple Windows applications cannot share the same board.  In 
+other words, each board can only interact with a single Windows application. 
+</P>
+<P>
+The SCT API for S6D1X16 and Windows support the same functions, but are 
+not completely symmetric with each other.  To allow a Windows application 
+to access multiple boards, the Windows-side API uses a <EM>board handle</EM> to 
+identify a particular board and needs extra board-specific control routines. 
+Other implementation requirements have also resulted in some differences 
+between the APIs. 
+</P>
+
+<a name="Top__Assumptions"></a>
+<H2>3 &nbsp; Assumptions</H2>
+<P>
+This implementation assumes that the PCI Aperture Space will be mapped to 
+a range of PCI addresses that is sufficient to cover all possible Windows 
+buffers so that remapping will not be required. 
+</P>
+<P>
+This implementation also assumes that Windows-side buffers will be 
+contiguous so that only one DMA will be required per buffer. 
+</P>
+
+<a name="Top__Channels"></a>
+<H2>4 &nbsp; Channels</H2>
+<P>
+The board and Windows SCT applications must each call the <NOBR><a href="#Routines__sct_init">sct_init</a>()</NOBR> 
+function to allocate resources and sync up with each other before the rest 
+of the SCT channel and message API can be used. 
+</P>
+<P>
+An SCT channel is used to transfer bulk data.  Each channel is 
+uni-directional, allowing only one side to send.  A channel is created when 
+a sender connects and the receiver accepts.  To terminate a channel 
+connection, the sender closes the channel first.  The receiver can only 
+close the channel after checking that the channel has been closed by the 
+sender.  There are a limited number of connections per board. The current 
+limit is 64. 
+</P>
+<P>
+SCT supports management of data buffers but does not actually allocate or 
+free any internally.  Data buffers on the board side are allocated by the 
+board application tasks, which may be running on any PE.  Data buffers on 
+the Host side are accessed by the board using pointers sent by the Host to 
+the board.  The SCT handler for windows interrupts translates the pointers 
+from PCI addresses into PCI Aperture Space addresses and either stores them 
+in a free list or passes them to specific SCT channels, depending on whether 
+the buffers are for send or receive.  For send channels, all channels pull 
+from the same free list of pointers to empty Host buffers.  For receive 
+channels, the buffers already contain data destined for a specific channel, 
+so are passed on to the channel. 
+</P>
+<P>
+SCT supports the protocol for data transfer with the Windows driver, but 
+does not actually perform the data transfers between the board and Windows. 
+The data transfers are left up to the application tasks, which will use 
+the SCPA API to initiate the tranfers.  For more details on how to use the 
+SCPA API, please see the SCPA API documentation. 
+</P>
+<P>
+<STRONG>NOTE</STRONG>:  SCPA running on PE0 will transfer data to/from PCIe using 
+dedicated PCIe DMA channels.  SPCA running on remote PEs will transfer 
+data using NI DMA channels, which will go through the NB interface.  These 
+transfers are no longer DMAs at the PCIe interface.  This results in a 
+performance hit for buffer transfers from remote PEs. 
+</P>
+<P>
+Writing (sending) side API's: 
+<PRE class="ccode">
+    err = sct_chan_connect(port, buf_size, &amp;channel); 
+    p   = sct_chan_tx_getbuf(channel); 
+    SCPA API calls transfer data; 
+    sct_chan_tx_send(channel, p, size); 
+    sct_chan_close(channel); 
+</PRE>
+Note that <NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> is only <EM>send</EM> and not <EM>send and putbuf</EM>.  The 
+buffer cannot automatically be returned to the free list.  It is up to the 
+Host to give free buffers to back to the board. 
+</P>
+<P>
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> blocks if no Windows buffers are available for sending. 
+</P>
+<P>
+Reading (receiving) side API's: 
+<PRE class="ccode">
+    channel = sct_chan_accept(port); 
+    channel = sct_chan_rx_poll(channels);   // call is optional here 
+    p = sct_chan_rx_recv(channel, &amp;size); 
+    SCPA API calls to transfer data; 
+    sct_chan_rx_putbuf(channel); 
+</PRE>
+Note that <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> is really <EM>getbuf and recv</EM>. 
+</P>
+<P>
+<NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> blocks until a Windows buffer for the given channel is 
+available.  <NOBR><a href="#Routines__sct_chan_rx_poll">sct_chan_rx_poll</a>()</NOBR> polls the channels in an array and returns 
+the first channel which has data available.  <NOBR><a href="#Routines__sct_chan_rx_poll">sct_chan_rx_poll</a>()</NOBR> never 
+blocks, instead returning an indication that no channel has data available. 
+</P>
+
+<a name="Top__Channel___Example"></a>
+<H2>5 &nbsp; Channel Example</H2>
+TODO 
+
+<a name="Top__Windows___Buffer___Usage"></a>
+<H2>6 &nbsp; Windows Buffer Usage</H2>
+<P>
+When the Windows driver starts, it allocates DMA buffers in kernel memory. 
+For buffer sends from board to Windows, the Windows driver sends all the 
+buffer pointers during SCT initialization, before any channels are created. 
+The board firmware translates these addresses from PCI bus addresses to 
+addresses in the S6 PCI Aperture Space, and stores them in a free list. 
+If SCT supports two different buffer sizes, two different free lists are 
+needed.  The board firmware pulls from a free list for each 
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> call by the board-side application.  After the buffer 
+is sent by the application, it calls <NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> and the buffer 
+pointer is returned to Windows.  The Windows driver can recycle or send new 
+buffer pointers to the board at any time, and the board firmware will 
+replenish its free list. 
+</P>
+<P>
+For buffer receive, the Windows driver sends a pointer to the Windows-side 
+buffer.  The board firmware translates the address to a PCI aperture 
+address, then stores in in a per-channel recv list.  When the board-side 
+application calls <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> for a channel, the first buffer in the 
+channel's recv list is returned.  When the application is done with the 
+buffer, it calls <NOBR><a href="#Routines__sct_chan_rx_putbuf">sct_chan_rx_putbuf</a>()</NOBR>, and the board returns the pointer 
+to Windows. 
+</P>
+<P>
+Each SCT channel keeps track of the buffer pointers it has returned to the 
+board firmware when <NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> or <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> is called. 
+Each channel can only store SCT_MAX_APP_OWNED_BUFFERS pointers, so whenever 
+the board firmware is still holding this many buffers, <NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> 
+or <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> will return NULL.  Calling <NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> or 
+<NOBR><a href="#Routines__sct_chan_tx_putbuf">sct_chan_tx_putbuf</a>()</NOBR> will release tx buffers to the SCT channel and calling 
+<NOBR><a href="#Routines__sct_chan_rx_putbuf">sct_chan_rx_putbuf</a>()</NOBR> will release rx buffers to the SCT channel. 
+</P>
+<P>
+Each SCT receive channel can receive and store up to SCT_MAX_RECV_BUFFERS 
+from the Host, which are then passed to the board firmware when it calls 
+<NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR>.  If the application does not call <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> 
+with enough frequency, the receive channel can back up.  At that point, 
+the channel will stop receiving new buffers and will return any incoming 
+buffers to the Host with an error code. 
+</P>
+
+<a name="Top__Messages"></a>
+<H2>7 &nbsp; Messages</H2>
+<P>
+Messages are single point-to-point packets from the Windows application to 
+the board and vice versa.  Broadcast or multicast messages are not 
+supported.  Messages are intended to be the <EM>control</EM> channel for 
+Windows application-board application communication (in contrast to 
+channels which are the <EM>data</EM> paths). They are expected to be sent and 
+received relatively infrequently and to be used for small blocks of data. 
+A typical example might be passing a command from the Windows application    
+to the board to set the board into a new mode. 
+</P>
+<P>
+A message is a 16-byte block of data.  There is no support for longer 
+messages or variable length messages.  It is assumed that the sender 
+and receiver agree on the data format of the message. 
+</P>
+<P>
+The message is delivered reliably and in-order.  However, note that if 
+the receiver is not actively reading and responding to received messages, 
+that the network can <EM>back-up</EM> with messages. 
+</P>
+<P>
+Each message has a specified class, which is an integer between 0 and 127. 
+The purpose of the message class is to allow the receiver of a message to 
+infer type information on the message based on the message class or to 
+organize the messages by message class. 
+</P>
+<P>
+A message is sent using <NOBR><a href="#Routines__sct_message_send">sct_message_send</a>()</NOBR>, which specifies the 
+destination, the message class, a buffer containing the message, and the 
+size of the buffer. 
+</P>
+<P>
+A message is received by the application using <NOBR><a href="#Routines__sct_message_recv">sct_message_recv</a>()</NOBR>. 
+<NOBR><a href="#Routines__sct_message_recv">sct_message_recv</a>()</NOBR> has blocking semantics.  There is also a nonblocking 
+version, <NOBR><a href="#Routines__sct_message_recv_poll">sct_message_recv_poll</a>()</NOBR>.  <NOBR><a href="#Routines__sct_message_recv">sct_message_recv</a>()</NOBR> allows filtering 
+of the messages based on the <EM>class</EM> field, if an application is trying 
+in receive messages of a specific class. 
+</P>
+
+<a name="Top__Message___Example"></a>
+<H2>8 &nbsp; Message Example</H2>
+<P>
+<PRE class="ccode">
+    sx_uint8 msg_buffer[SCT_MAX_MESSAGE_LEN]; 
+    sx_uint8 msg_class; 
+ 
+    // receive message, any class 
+    sct_message_recv(-1, &amp;msg_buffer, NULL, &amp;msg_class ); 
+ 
+    // handle message based on class 
+    switch(msg_class) { 
+    case 0: 
+        pmessage0 = (void *) buffer; 
+        . 
+        . 
+        . 
+        break; 
+ 
+    case 1: 
+        pmessage1 = (void *) buffer; 
+        . 
+        . 
+        . 
+        break; 
+ 
+    default: 
+        break; 
+    } 
+</PRE>
+</P>
+
+<!-- SEC_DESCRIPTION_CLOSE -->
+
+<!-- SEC_TYPES_START -->
+
+<a name="Top__Types"></a>
+<H2>9 &nbsp; Types</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__SCT_ERROR_CODE"></a>
+<PRE class="cdef">
+typedef enum _SCT_ERROR_CODE {
+    <A name="Types__SCT_NO_ERROR">SCT_NO_ERROR</A>,
+    <A name="Types__SCT_ERR_INVALID_PARAMETER">SCT_ERR_INVALID_PARAMETER</A>,
+    <A name="Types__SCT_ERR_CHANNEL_IN_USE">SCT_ERR_CHANNEL_IN_USE</A>,
+    <A name="Types__SCT_ERR_CHANNEL_ALLOC">SCT_ERR_CHANNEL_ALLOC</A>,
+    <A name="Types__SCT_ERR_CHANNEL_STATE">SCT_ERR_CHANNEL_STATE</A>,
+    <A name="Types__SCT_ERR_CHANNEL_CONNECT">SCT_ERR_CHANNEL_CONNECT</A>,
+    <A name="Types__SCT_ERR_CHANNEL_CLOSE">SCT_ERR_CHANNEL_CLOSE</A>,
+    <A name="Types__SCT_ERR_CHANNEL_NOT_ACTIVE">SCT_ERR_CHANNEL_NOT_ACTIVE</A>,
+    <A name="Types__SCT_ERR_BUFFERS_IN_USE">SCT_ERR_BUFFERS_IN_USE</A>,
+    <A name="Types__SCT_ERR_FSM_INIT">SCT_ERR_FSM_INIT</A>
+} SCT_ERROR_CODE; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+Error Codes. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__sct_board_t"></a>
+<PRE class="cdef">
+typedef int sct_board_t; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+A board handle. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__sct_channel_t"></a>
+<PRE class="cdef">
+typedef void *sct_channel_t; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+A channel handle. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_TYPES_CLOSE -->
+
+<!-- SEC_DEFINES_START -->
+
+<a name="Top__Defines"></a>
+<H2>10 &nbsp; Defines</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_BOARDS"></a>
+<PRE class="cdef">
+#define SCT_MAX_BOARDS
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum number of boards in a system. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_PORT_NUMBER"></a>
+<PRE class="cdef">
+#define SCT_MAX_PORT_NUMBER
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum port number. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_CHANNEL"></a>
+<PRE class="cdef">
+#define SCT_MAX_CHANNEL
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum number of SCT channels. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_BUFFER_SIZE"></a>
+<PRE class="cdef">
+#define SCT_MAX_BUFFER_SIZE
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum buffer size. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MSG_CLASS_COUNT"></a>
+<PRE class="cdef">
+#define SCT_MSG_CLASS_COUNT
+</PRE>
+<DIV CLASS="descr">
+<P>
+The number of message classes. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MSG_CLASS_MIN"></a>
+<PRE class="cdef">
+#define SCT_MSG_CLASS_MIN
+</PRE>
+<DIV CLASS="descr">
+<P>
+The minimum value for message class. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MSG_CLASS_MAX"></a>
+<PRE class="cdef">
+#define SCT_MSG_CLASS_MAX
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum value for message class. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MSG_CLASS_ANY"></a>
+<PRE class="cdef">
+#define SCT_MSG_CLASS_ANY
+</PRE>
+<DIV CLASS="descr">
+<P>
+Message class wildcard. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_MESSAGE_LEN"></a>
+<PRE class="cdef">
+#define SCT_MAX_MESSAGE_LEN
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum message size. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_PORTNUM_ANY"></a>
+<PRE class="cdef">
+#define SCT_PORTNUM_ANY
+</PRE>
+<DIV CLASS="descr">
+<P>
+Port number wildcard. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_APP_OWNED_BUFFERS"></a>
+<PRE class="cdef">
+#define SCT_MAX_APP_OWNED_BUFFERS
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum number of outstanding buffers (returned by <NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR>  
+or <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR>) an application can hold per channel.  An application 
+must return buffers to the SCT channel before it can request again. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SCT_MAX_RECV_BUFFERS"></a>
+<PRE class="cdef">
+#define SCT_MAX_RECV_BUFFERS
+</PRE>
+<DIV CLASS="descr">
+<P>
+The maximum number of receive buffers that can be received from the Host 
+by each SCT channel.  These buffers are stored internally in the SCT channel 
+and are passed to an application when it calls <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR>. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_DEFINES_CLOSE -->
+
+<!-- SEC_ROUTINES_START -->
+
+<a name="Top__Routines"></a>
+<H2>11 &nbsp; Routines</H2>
+
+<a name="Routines__API___version___query___"></a>
+<H3>11.1 &nbsp; API version query.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_get_version"></a>
+<PRE class="cdef">
+sx_uint32 sct_get_version ();
+</PRE>
+<DIV CLASS="descr">
+<P>
+Returns the version number of the SCT API. The version is a single number. 
+There are no major/minor version numbers. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+The version number. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+
+<a name="Routines__API___access___functions___"></a>
+<H3>11.2 &nbsp; API access functions.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_init"></a>
+<PRE class="cdef">
+void sct_init (void);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function initializes the SCT library for VRC60XX-series boards.  It  
+sets up the shared memory for inter-processor communication between the  
+Window host machine and the VRC60XX-series board and syncs up with the SCT  
+application running on Windows. 
+</P>
+<P>
+This function must be called before any other SCT API function, except 
+<NOBR><a href="#Routines__sct_get_version">sct_get_version</a>()</NOBR>. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Nothing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_connect"></a>
+<PRE class="cdef">
+sx_uint32 sct_chan_connect (sx_int32        port,
+                            sx_uint32       max_size,
+                            sct_channel_t * chan_return);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function opens a send connection to the Windows application and 
+allocates resources for the channel. 
+</P>
+<P>
+The <EM>port</EM> parameter is a unique identifier for the channel. 
+</P>
+<P>
+This function blocks until a response is received from the Host, and then 
+returns the channel handle. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>port</EM> - Port number to connect to. 
+</LI>
+<LI>
+<EM>max_size</EM> - The maximum size in bytes allowed for each buffer. 
+</LI>
+<LI>
+<EM>chan_return</EM> - Pointer to storage for the channel handle. This is 
+filled in if the function succeeds. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SCT_NO_ERROR - Success. 
+</LI>
+<LI>
+SCT_ERR_INVALID_PARAMETER - One of the paremeters is invalid. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_ALLOC - Failed to allocate an SCT channel 
+</LI>
+<LI>
+SCT_ERR_FSM_INIT - Failed to initialize the SCT state machine 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_CONNECT - Error occurred connecting the channel, 
+or the Host rejected the connection. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_STATE - Channel is not initialized to IDLE state. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_accept"></a>
+<PRE class="cdef">
+sct_channel_t sct_chan_accept (sx_int32 port, sx_uint32 *max_size);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function accepts a receive connection from a Windows application and 
+allocate resources for the channel. 
+</P>
+<P>
+The <EM>port</EM> parameter is a unique identifier for the channel.  If <EM>port</EM> 
+is SCT_PORTNUM_ANY, then it is treated as a wildcard, i.e. any connection 
+from the Windows application is accepted. 
+</P>
+<P>
+This function blocks until the connection is established, and then returns 
+the channel handle. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>port</EM> - Port number to accept on. 
+</LI>
+<LI>
+<EM>max_size</EM> - If this pointer is non-NULL, then the maximum buffer 
+size for this channel will be returned in this location. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Handle to the opened channel or NULL if there was an error. 
+There is no error code return. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_close"></a>
+<PRE class="cdef">
+sx_uint32 sct_chan_close (sct_channel_t channel);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function closes a channel. The sender may close a channel at any time, 
+but the receiver can close a channel only after the sender has closed it. 
+</P>
+<P>
+For a send channel, <NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> and <NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> may not be 
+called after <NOBR><a href="#Routines__sct_chan_close">sct_chan_close</a>()</NOBR> has been called.  If an application is still 
+holding buffers returned by <NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> -- i.e., has not called 
+<NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> or <NOBR><a href="#Routines__sct_chan_tx_putbuf">sct_chan_tx_putbuf</a>()</NOBR> on those buffers -- SCT 
+automatically reclaims those buffers.  This function blocks until the 
+Host acknowledges it has closed the channel on its side. 
+</P>
+<P>
+For a receive channel, <NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> should return NULL before the 
+receiver tries to close the channel.  The receiver also should not try to 
+close the channel until it has returned all its receive buffers to the 
+channel by calling <NOBR><a href="#Routines__sct_chan_rx_putbuf">sct_chan_rx_putbuf</a>()</NOBR>.  If the sender has not yet closed 
+the channel or the receiver has not returned all buffers, <NOBR><a href="#Routines__sct_chan_close">sct_chan_close</a>()</NOBR> 
+will return SCT_ERR_CHANNEL_IN_USE.  This function should be called until 
+it returns SCT_NO_ERROR, to indicate the channel closed sucessfully. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SCT_NO_ERROR - Success. 
+</LI>
+<LI>
+SCT_ERR_INVALID_PARAMETER - One of the paremeters is invalid. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_IN_USE - A receive channel has not been closed 
+yet by the sender or waiting for sender to finish all transfers. 
+</LI>
+<LI>
+SCT_ERR_BUFFERS_IN_USE - A receive channel still has buffers in 
+use (not returned by <NOBR><a href="#Routines__sct_chan_rx_putbuf">sct_chan_rx_putbuf</a>()</NOBR>) 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_tx_getbuf"></a>
+<PRE class="cdef">
+void * sct_chan_tx_getbuf (sct_channel_t channel);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function gets a Host-side receive buffer for the specified channel. 
+The buffer size is that specified at channel connection time. 
+This function does not block. 
+</P>
+<P>
+NOTE:  All available Host-side receive buffers are stored in one pool to 
+be shared among all channels. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel.  Must be a send channel. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+A pointer to the Host-side buffer, if available. 
+</LI>
+<LI>
+NULL if the argument is invalid, or the channel is not a send channel. 
+</LI>
+<LI>
+NULL if the channel is not connected or is closing. 
+</LI>
+<LI>
+NULL if the channel has already requested SCT_MAX_APP_OWNED_BUFFERS 
+number of buffers but has not returned any of them to SCT using 
+<NOBR><a href="#Routines__sct_chan_tx_send">sct_chan_tx_send</a>()</NOBR> or <NOBR><a href="#Routines__sct_chan_tx_putbuf">sct_chan_tx_putbuf</a>()</NOBR>. 
+SCT limits the number of outstanding buffers per channel. 
+</LI>
+<LI>
+NULL if no buffers are available. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_tx_putbuf"></a>
+<PRE class="cdef">
+sx_uint32 sct_chan_tx_putbuf (sct_channel_t channel, void *buffer);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function returns a Host-side receive buffer back to the SCT module. 
+The buffer is treated as unused by the application and is simply returned 
+to the list of free Host-side receive buffers. 
+</P>
+<P>
+NOTE:  The caller can only return buffers which were obtained by calling 
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> for this channel.  Returning buffers to the 
+wrong channel or returning buffers not obtained by calling 
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> can corrupt the internal SCT structures. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to data buffer. The buffer must belong to 
+the channel, i.e. it must have been returned by a previous call to 
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> for this channel. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SCT_NO_ERROR - Success. 
+</LI>
+<LI>
+SCT_ERR_INVALID_PARAMETER - The buffer does not belong to the channel, 
+or the channel is not a send channel. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_NOT_ACTIVE - Channel is not connected or is closing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_tx_send"></a>
+<PRE class="cdef">
+sx_uint32 sct_chan_tx_send (sct_channel_t   channel,
+                            void          * buffer,
+                            sx_uint32       size);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function notifies the SCT that the buffer send is done for this channel 
+buffer.  SCT can then notify the Host that this Host-side receive buffer has 
+data ready. 
+</P>
+<P>
+This function blocks if no internal messages are available for SCT to 
+notify the Host.  This should rarely, if ever, happen. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to data buffer. The buffer must belong to 
+the channel, i.e. it must have been returned by a previous call to 
+<NOBR><a href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf</a>()</NOBR> for this channel. 
+</LI>
+<LI>
+<EM>size</EM> - Number of bytes to send. Must be less than or equal to 
+the buffer size specified at channel connection time. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SCT_NO_ERROR - Success. 
+</LI>
+<LI>
+SCT_ERR_INVALID_PARAMETER - The buffer does not belong to the channel, 
+the send size is too large or the channel is not a send channel. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_NOT_ACTIVE - Channel is not connected or is closing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_rx_recv"></a>
+<PRE class="cdef">
+void * sct_chan_rx_recv (sct_channel_t channel, sx_int32 *psize);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function returns the next available Host-side send buffer on the 
+specified channel.  It blocks until a buffer is available.  Buffers are 
+returned in the order that they are received from the Host. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel. 
+</LI>
+<LI>
+<EM>psize</EM> - Pointer to storage for the buffer size, i.e. 
+the number of bytes the Host wants to send in this buffer. 
+This cannot be NULL. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+A pointer to the Host-side buffer. 
+</LI>
+<LI>
+NULL if the arguments are invalid, or the channel is not connected, or 
+the channel is not a receive channel. 
+</LI>
+<LI>
+NULL if the channel is closed and there are no pending buffers. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_rx_poll"></a>
+<PRE class="cdef">
+sct_channel_t sct_chan_rx_poll (sct_channel_t *channels, int n);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function polls all the specified channels to see if any have Host-side 
+send buffers available.  The first channel that has Host-side send buffers 
+available is returned. This function does not block. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channels</EM> - Pointer to array of channel handles. 
+</LI>
+<LI>
+<EM>n</EM> - Number of valid handles in <EM>channels</EM>. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Handle to the first channel found that has Host-side send buffers 
+available. 
+</LI>
+<LI>
+NULL if the arguments are invalid. 
+</LI>
+<LI>
+NULL if no channel has data available. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_chan_rx_putbuf"></a>
+<PRE class="cdef">
+sx_uint32 sct_chan_rx_putbuf (sct_channel_t   channel,
+                              void          * buffer,
+                              sx_uint32       failed);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function notifies the SCT that the buffer receive is done for this 
+channel buffer.  SCT can then notify the Host that the Board is done reading 
+the data in this Host-side send buffer. 
+</P>
+<P>
+If the buffer was not successfully used to receive data, i.e, DMA failed, 
+set failed = 1.  This lets SCT notify the Host that the buffer receive 
+failed. 
+</P>
+<P>
+This function blocks if no internal messages are available for SCT to 
+notify the Host.  This should rarely, if ever, happen. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>channel</EM> - Handle to channel. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to data buffer. The buffer must belong to 
+the channel, i.e. it must have been returned by a previous call to 
+<NOBR><a href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv</a>()</NOBR> for this channel. 
+</LI>
+<LI>
+<EM>failed</EM> - Used to indicate to SCT that no successful data 
+transfer (DMA) was completed on this buffer. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SCT_NO_ERROR - Success. 
+</LI>
+<LI>
+SCT_ERR_INVALID_PARAMETER - The buffer does not belong to the channel, 
+or the channel is not a send channel. 
+</LI>
+<LI>
+SCT_ERR_CHANNEL_NOT_ACTIVE - Channel is not connected or is closing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_message_send"></a>
+<PRE class="cdef">
+void sct_message_send (sx_uint8 msg_class, void *buffer, sx_int32 size);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sends a message of the specified class to a Windows 
+application. 
+</P>
+<P>
+The function will always send SCT_MAX_MESSAGE_LEN bytes, padding the 
+message with zeros if required. 
+</P>
+<P>
+The message will be of type <EM>msg_class</EM>. The use of the message class is 
+completely up to the applications. The API will check for valid message 
+classes but does not interpret the class in any way. 
+</P>
+<P>
+This function blocks if no messages are available. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>msg_class</EM> - The class of the message. The class can be used by 
+the receiver to filter messages. Must be between 
+SCT_MSG_CLASS_MIN and SCT_MSG_CLASS_MAX, inclusive. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to message data. 
+</LI>
+<LI>
+<EM>size</EM> - Size of message data in bytes. Must not be more 
+than SCT_MAX_MESSAGE_LEN bytes. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Nothing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_message_recv"></a>
+<PRE class="cdef">
+void sct_message_recv (sx_uint8 msg_class, void *buffer, sx_uint8 *pclass);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function receives the next message of the specified class or any class 
+from a Windows application.  It blocks until a message is available. 
+</P>
+<P>
+The received message will always be SCT_MAX_MESSAGE_LEN bytes long, 
+possibly padded with zeros. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>msg_class</EM> - The class of message to receive. If set to 
+SCT_MSG_CLASS_ANY, then it is treated as a wildcard, 
+i.e. the next message of any class will be returned. 
+Else, it must be between SCT_MSG_CLASS_MIN and SCT_MSG_CLASS_MAX, 
+inclusive. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to receive buffer where message contents 
+will be placed. Must be at least SCT_MAX_MESSAGE_LEN bytes long. 
+</LI>
+<LI>
+<EM>pmsg_class</EM> - Pointer to storage for message class. The function 
+fills this in with the class of the received message when <EM>msg_class</EM> 
+is a wildcard. Can be NULL. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Nothing. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_message_recv_poll"></a>
+<PRE class="cdef">
+sx_bool sct_message_recv_poll (sx_uint8   msg_class,
+                               void     * buffer,
+                               sx_uint8 * pclass);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function receives the next message of the specified class or any class 
+from a Windows application.  Unlike <NOBR><a href="#Routines__sct_message_recv">sct_message_recv</a>()</NOBR>, this function never 
+blocks.  It will return if no messages are available. 
+</P>
+<P>
+The received message will always be SCT_MAX_MESSAGE_LEN bytes long, 
+possibly padded with zeros. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>msg_class</EM> - The class of message to receive. If set to 
+SCT_MSG_CLASS_ANY, then it is treated as a wildcard, 
+i.e. the next message of any class will be returned. 
+Else, it must be between SCT_MSG_CLASS_MIN and SCT_MSG_CLASS_MAX, 
+inclusive. 
+</LI>
+<LI>
+<EM>buffer</EM> - Pointer to receive buffer where message contents 
+will be placed. Must be at least SCT_MAX_MESSAGE_LEN bytes long. 
+</LI>
+<LI>
+<EM>pmsg_class</EM> - Pointer to storage for message class. The function 
+fills this in with the class of the received message when <EM>msg_class</EM> 
+is a wildcard. Can be NULL. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+Non-zero (TRUE) if a message was found, else zero (FALSE). 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__sct_get_hostbuf_count"></a>
+<PRE class="cdef">
+SX_EXTERN int sct_get_hostbuf_count ();
+</PRE>
+<DIV CLASS="descr">
+<P>
+Returns the count of free host buffers. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_ROUTINES_CLOSE -->
+
+<!-- SEC_FULL_TOC_START -->
+
+<a name="Top__Table___of___Contents"></a>
+<H2>12 &nbsp; Table of Contents</H2>
+<P align="left">
+<A href="#Top__Usage">1 &nbsp; Usage</A>
+<BR>
+<A href="#Top__Introduction">2 &nbsp; Introduction</A>
+<BR>
+<A href="#Top__Assumptions">3 &nbsp; Assumptions</A>
+<BR>
+<A href="#Top__Channels">4 &nbsp; Channels</A>
+<BR>
+<A href="#Top__Channel___Example">5 &nbsp; Channel Example</A>
+<BR>
+<A href="#Top__Windows___Buffer___Usage">6 &nbsp; Windows Buffer Usage</A>
+<BR>
+<A href="#Top__Messages">7 &nbsp; Messages</A>
+<BR>
+<A href="#Top__Message___Example">8 &nbsp; Message Example</A>
+<BR>
+<A href="#Top__Types">9 &nbsp; Types</A>
+<BR>
+<A href="#Top__Defines">10 &nbsp; Defines</A>
+<BR>
+<A href="#Top__Routines">11 &nbsp; Routines</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__API___version___query___">11.1 &nbsp; API version query.</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__API___access___functions___">11.2 &nbsp; API access functions.</A>
+<BR>
+<A href="#Top__Table___of___Contents">12 &nbsp; Table of Contents</A>
+<BR>
+<A href="#Top__Index">13 &nbsp; Index</A>
+</P>
+
+
+<!-- SEC_FULL_TOC_CLOSE -->
+
+<!-- GLOBAL_INDEX -->
+
+<!-- SEC_INDEX_START -->
+
+<a name="Top__Index"></a>
+<H2>13 &nbsp; Index</H2>
+<P>
+This index contains the following elements: 
+defines, routines, types, enum type elements (EnumElt),
+shell commands (ShCom), shell parameters (ShParam), and grammars.
+</P>
+<P>
+<TABLE class="index" COLS=7 BORDER=0 WIDTH="100%">
+<TR>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+<TD width=10></TD>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__sct_board_t">sct_board_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERROR_CODE">SCT_ERROR_CODE</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_accept">sct_chan_accept()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_get_hostbuf_count">sct_get_hostbuf_count()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_close">sct_chan_close()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_get_version">sct_get_version()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___version___query___">11.1</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_connect">sct_chan_connect()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_init">sct_init()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_rx_poll">sct_chan_rx_poll()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_APP_OWNED_BUFFERS">SCT_MAX_APP_OWNED_BUFFERS</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_rx_putbuf">sct_chan_rx_putbuf()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_BOARDS">SCT_MAX_BOARDS</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_rx_recv">sct_chan_rx_recv()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_BUFFER_SIZE">SCT_MAX_BUFFER_SIZE</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_tx_getbuf">sct_chan_tx_getbuf()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_CHANNEL">SCT_MAX_CHANNEL</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_tx_putbuf">sct_chan_tx_putbuf()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_MESSAGE_LEN">SCT_MAX_MESSAGE_LEN</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_chan_tx_send">sct_chan_tx_send()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_PORT_NUMBER">SCT_MAX_PORT_NUMBER</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__sct_channel_t">sct_channel_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MAX_RECV_BUFFERS">SCT_MAX_RECV_BUFFERS</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_BUFFERS_IN_USE">SCT_ERR_BUFFERS_IN_USE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_message_recv">sct_message_recv()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_ALLOC">SCT_ERR_CHANNEL_ALLOC</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_message_recv_poll">sct_message_recv_poll()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_CLOSE">SCT_ERR_CHANNEL_CLOSE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__sct_message_send">sct_message_send()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__API___access___functions___">11.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_CONNECT">SCT_ERR_CHANNEL_CONNECT</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MSG_CLASS_ANY">SCT_MSG_CLASS_ANY</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_IN_USE">SCT_ERR_CHANNEL_IN_USE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MSG_CLASS_COUNT">SCT_MSG_CLASS_COUNT</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_NOT_ACTIVE">SCT_ERR_CHANNEL_NOT_ACTIVE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MSG_CLASS_MAX">SCT_MSG_CLASS_MAX</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_CHANNEL_STATE">SCT_ERR_CHANNEL_STATE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_MSG_CLASS_MIN">SCT_MSG_CLASS_MIN</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_FSM_INIT">SCT_ERR_FSM_INIT</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_NO_ERROR">SCT_NO_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SCT_ERR_INVALID_PARAMETER">SCT_ERR_INVALID_PARAMETER</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">9</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Defines__SCT_PORTNUM_ANY">SCT_PORTNUM_ANY</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">10</A>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+
+<!-- SEC_INDEX_CLOSE -->
+<P>
+<HR>
+</P>
+<P align="left">
+Package last modified on: Mar 18, 2009 at 07:17 UTC.<BR>
+</P>
+
+</BODY>
+</HTML>

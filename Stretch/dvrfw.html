@@ -1,0 +1,1079 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<TITLE>Common Header File Internal to the DVR Firmware (dvrfw)</title>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+function get_cookie(name) 
+{
+    var start = document.cookie.indexOf(name + "=");
+    var len = start+name.length + 1;
+    if (! start && name != document.cookie.substring(0,name.length)) {
+	return null;
+    }
+    if (start == -1) {
+	return null;
+    }
+    var end = document.cookie.indexOf(";", len);
+    if (end == -1) {
+	end = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(len, end));
+}
+
+function set_cookie(name, value, expires, path, domain, secure) 
+{
+    document.cookie = name + "=" + escape(value) +
+	( expires ? ";expires=" + expires.toGMTString() : "") +
+	( path ? ";path=" + path : "") + 
+	( domain ? ";domain=" + domain : "") +
+	( secure ? ";secure" : "");
+}
+
+function put_style(style) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000);
+    set_cookie('cdoc_style', style, expires);
+}
+
+function get_style() {
+    var style = get_cookie('cdoc_style');
+    if (style == null) {
+	style = 'relative';
+	put_style(style);
+    }
+    return style;
+}
+
+function click_put_style(style) {
+    put_style(style);
+    location.reload();
+}
+
+document.writeln('<STYLE TYPE="text/css">');
+document.writeln('<!--');
+var style = get_style();
+if (style == 'fixed-10pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 20pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 5pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else if (style == 'fixed-12pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 24pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 6pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 1.8em;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 1.2em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 2em;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 0.5em;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+}
+document.writeln('-->');
+document.writeln('</STYLE>');
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>Common Header File Internal to the DVR Firmware &nbsp; (dvrfw)</H1>
+
+<CENTER>Last modified on Mar 18, 2009 at 07:17 UTC</CENTER>
+<!-- CDOC-CHOOSE-STYLE --><CENTER>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('relative');">normal, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-10pt');">10pt, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-12pt');">12pt</A>
+<!-- CDOC-CHOOSE-STYLE --></CENTER>
+
+<!-- last_modified : Mar 18, 2009 at 07:17 UTC -->
+
+<!-- package : dvrfw -->
+
+<!-- short-description : Common Header File Internal to the DVR Firmware -->
+
+<!-- contact_name :  -->
+
+<!-- contact_email :  -->
+
+<!-- copyright :  -->
+
+<!-- cdoc-version : 2.4.5 -->
+<!-- ANCHOR_TABLE
+"Package"	"dvrfw"	"dvrfw.html"
+"Section"	"Include"	"Top__Include"
+"Section"	"Introduction"	"Top__Introduction"
+"Section"	"Responsibility of the dvrfw_host_msg_proxy() Task"	"Top__Responsibility___of___the___dvrfw_host_msg_proxy_________Task"
+"Section"	"Responsibility of the dvrfw_host_data_proxy() Task"	"Top__Responsibility___of___the___dvrfw_host_data_proxy_________Task"
+"Section"	"Responsibility of the dvrfw_camera_encode() Task"	"Top__Responsibility___of___the___dvrfw_camera_encode_________Task"
+"Section"	"Responsibility of the dvrfw_host_decode() Task"	"Top__Responsibility___of___the___dvrfw_host_decode_________Task"
+"Section"	"Responsibility of the dvrfw_host_encode() Task"	"Top__Responsibility___of___the___dvrfw_host_encode_________Task"
+"Section"	"Details of the dvrfw_smo_manager() task"	"Top__Details___of___the___dvrfw_smo_manager_________task"
+"Section"	"Details of the dvrfw_stdout_manager() Task"	"Top__Details___of___the___dvrfw_stdout_manager_________Task"
+"Section"	"Types"	"Top__Types"
+"Typedef"	"bootloader_versions"	"Types__bootloader_versions"
+"Section"	"Defines"	"Top__Defines"
+"Define"	"DVRFW_VER_MAJOR"	"Defines__DVRFW_VER_MAJOR"
+"Define"	"DVRFW_VER_MINOR"	"Defines__DVRFW_VER_MINOR"
+"Define"	"DVRFW_VER_BUG"	"Defines__DVRFW_VER_BUG"
+"Define"	"DVRFW_VER_BUILD"	"Defines__DVRFW_VER_BUILD"
+"Section"	"Routines"	"Top__Routines"
+"Section"	"Miscellaneous"	"Routines__Miscellaneous"
+"Routine"	"dvrfw_host_msg_proxy"	"Routines__dvrfw_host_msg_proxy"
+"Routine"	"dvrfw_host_data_proxy"	"Routines__dvrfw_host_data_proxy"
+"Routine"	"dvrfw_host_encode"	"Routines__dvrfw_host_encode"
+"Routine"	"dvrfw_host_decode"	"Routines__dvrfw_host_decode"
+"Routine"	"dvrfw_camera_encode"	"Routines__dvrfw_camera_encode"
+"Routine"	"dvrfw_smo_manager"	"Routines__dvrfw_smo_manager"
+"Routine"	"dvrfw_vout_manager"	"Routines__dvrfw_vout_manager"
+"Routine"	"dvrfw_io_manager"	"Routines__dvrfw_io_manager"
+"Routine"	"dvrfw_stdout_manager"	"Routines__dvrfw_stdout_manager"
+-->
+
+<P>
+Contents: <A href="#Top__Table___of___Contents">Table of Contents</A>, 
+<A href="#Top__Include">Include</A>, 
+<A href="#Top__Introduction">Introduction</A>, 
+<A href="#Top__Types">Types</A>, 
+<A href="#Top__Defines">Defines</A>, 
+<A href="#Top__Routines">Routines</A>, 
+<A href="#Top__Index">Index</A>, 
+<!-- MASTER_INDEX --> <A HREF="index.html">Package List</A>
+</P>
+
+
+<!-- SEC_DESCRIPTION_START -->
+
+<a name="Top__Include"></a>
+<H2>1 &nbsp; Include</H2>
+<PRE class="ccode">
+#include "dvrfw.h" 
+</PRE>
+
+<a name="Top__Introduction"></a>
+<H2>2 &nbsp; Introduction</H2>
+<P>
+<A HREF="dvrfw.html#">dvrfw</A> documents the DVR firmware architecture.  The DVR firmware 
+is a distributed multi-tasking application.  It uses Stretch SCPA 
+as the underlying OS for communication between the tasks.  It uses 
+<STRONG>sct</STRONG> for communication to and from the DVR SDK running on the host PC. 
+</P>
+<P>
+The entire firmware consists of multiple tasks.  The root task 
+runs on the boot master and is responsible for all communication 
+with the host.  There are several types of jobs the firmware 
+needs to do: 
+</P>
+<UL>
+<LI>
+Encode images captured from camera. 
+</LI>
+<LI>
+Encode images supplied by the host. 
+</LI>
+<LI>
+Decode bit streams supplied by the host. 
+</LI>
+<LI>
+Manage spot monitor. 
+</LI>
+</UL>
+<P>
+On each chip, there is one task for each of the above job types. 
+The list of distinct tasks are: 
+</P>
+<UL>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A>()</NOBR> - The root task on PE0 as a message 
+gateway to the host.  There is only one instance of this  
+task in the entire system. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A>()</NOBR> - The root task on PE0 as a data 
+gateway to the host.  There is only one instance of this  
+task in the entire system. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A>()</NOBR> - Task to encoder images from the 
+S6 data ports.  There is one instance of this task per PE. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A>()</NOBR> - Task to encode images the host. 
+There is one instance of this task per PE. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A>()</NOBR> - Task to decode bit stream from the host. 
+There is one instance of this task per PE. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>()</NOBR> - Task to manage SMO display arrangement. 
+There is one instance of this task in the entire system, 
+on the PE driving the SMO. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_vout_manager">dvrfw_vout_manager</A>()</NOBR> - Task to manage video output display. 
+There is one instance of this task in the entire system, 
+on the PE driving the video output. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_io_manager">dvrfw_io_manager</A>()</NOBR> - Task to manage I/O requests. 
+There is one instance of this task in the entire system, 
+on the PE attached to the I/O circuitry. 
+</LI>
+<LI>
+<NOBR><A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A>()</NOBR> - Task to send stdout strings to the host. 
+There is one instance of this task in the entire system, 
+typically on PE0. This task is currently unimplemented. 
+</LI>
+</UL>
+
+<a name="Top__Responsibility___of___the___dvrfw_host_msg_proxy_________Task"></a>
+<H3>2.1 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A>() Task</H3>
+<UL>
+<LI>
+Periodically pull messages from the host and dispatch them 
+to the appropriate jobs (tasks). 
+</LI>
+<LI>
+Logging all the communication between firmware and the host 
+for debugging.  All the logging information is sent to 
+the host, over the debug channel, for storing and replaying. 
+</LI>
+<LI>
+Allocating jobs to the chips.  It is responsible for making 
+sure the chip can meet the real-time requirement. 
+</LI>
+<LI>
+Creating and destroying a job on a specific chip. 
+</LI>
+</UL>
+
+<a name="Top__Responsibility___of___the___dvrfw_host_data_proxy_________Task"></a>
+<H3>2.2 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A>() Task</H3>
+<UL>
+<LI>
+Periodically check for data from all jobs and forward 
+them over the PCIe bus to the host. 
+</LI>
+</UL>
+
+<a name="Top__Responsibility___of___the___dvrfw_camera_encode_________Task"></a>
+<H3>2.3 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A>() Task</H3>
+<P>
+There is one task of this type per chip.  It performs 
+the following functions for each enabled input camera 
+channel: 
+</P>
+<UL>
+<LI>
+Pre-process, resize, and sub-sample incoming images. 
+</LI>
+<LI>
+Encode incoming images. 
+</LI>
+<LI>
+Send bit stream. 
+</LI>
+<LI>
+Send resized images to <NOBR><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>()</NOBR>. 
+</LI>
+</UL>
+
+<a name="Top__Responsibility___of___the___dvrfw_host_decode_________Task"></a>
+<H3>2.4 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A>() Task</H3>
+<P>
+There is one task of this type per chip.  It performs 
+the following functions for each decoding bit stream 
+sent by the host: 
+</P>
+<UL>
+<LI>
+Decode incoming bit stream. 
+</LI>
+<LI>
+Pre-process and resize decoded images. 
+</LI>
+<LI>
+Send decoded images to host. 
+</LI>
+<LI>
+Send resized images to <NOBR><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>()</NOBR>. 
+</LI>
+</UL>
+
+<a name="Top__Responsibility___of___the___dvrfw_host_encode_________Task"></a>
+<H3>2.5 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A>() Task</H3>
+<P>
+There is one task of this type per chip.  It performs 
+the following functions for each encoding channel 
+sent by the host: 
+</P>
+<UL>
+<LI>
+Pre-process, resize and sub-sample incoming images. 
+</LI>
+<LI>
+Encode incoming images. 
+</LI>
+<LI>
+Send bit stream. 
+</LI>
+<LI>
+Send resized images to <NOBR><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>()</NOBR>. 
+</LI>
+</UL>
+
+<a name="Top__Details___of___the___dvrfw_smo_manager_________task"></a>
+<H3>2.6 &nbsp; Details of the <A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>() task</H3>
+<UL>
+<LI>
+DMA incoming images to to specific regions in the SMO buffer. 
+</LI>
+<LI>
+Send SMO buffer to the device. 
+</LI>
+</UL>
+
+<a name="Top__Details___of___the___dvrfw_stdout_manager_________Task"></a>
+<H3>2.7 &nbsp; Details of the <A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A>() Task</H3>
+<UL>
+<LI>
+This task runs on PE0 and redirects writes from each chip to 
+the host for displaying on the console. On each chip, there 
+is a special <EM>write</EM> to replace the standard system <EM>write</EM>. 
+The special write sends the output to the stdout manager task. 
+This mechanism is currently unimplemented. 
+</LI>
+</UL>
+
+<!-- SEC_DESCRIPTION_CLOSE -->
+
+<!-- SEC_TYPES_START -->
+
+<a name="Top__Types"></a>
+<H2>3 &nbsp; Types</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__bootloader_versions"></a>
+<PRE class="cdef">
+typedef struct _bootloader_versions { ... } <A HREF="dvrfw.html#Types__bootloader_versions">bootloader_versions</A>;
+</PRE>
+<DIV CLASS="descr">
+<P>
+Boot-Loader and BSP version definition structure. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_TYPES_CLOSE -->
+
+<!-- SEC_DEFINES_START -->
+
+<a name="Top__Defines"></a>
+<H2>4 &nbsp; Defines</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__DVRFW_VER_MAJOR"></a>
+<a name="Defines__DVRFW_VER_MINOR"></a>
+<a name="Defines__DVRFW_VER_BUG"></a>
+<a name="Defines__DVRFW_VER_BUILD"></a>
+<PRE class="cdef">
+#define <A HREF="dvrfw.html#Defines__DVRFW_VER_MAJOR">DVRFW_VER_MAJOR</A>
+#define <A HREF="dvrfw.html#Defines__DVRFW_VER_MINOR">DVRFW_VER_MINOR</A>
+#define <A HREF="dvrfw.html#Defines__DVRFW_VER_BUG">DVRFW_VER_BUG</A>
+#define <A HREF="dvrfw.html#Defines__DVRFW_VER_BUILD">DVRFW_VER_BUILD</A>
+</PRE>
+<DIV CLASS="descr">
+<P>
+Current DVR Firmware version number. 
+<A HREF="dvrfw.html#Defines__DVRFW_VER_MAJOR">DVRFW_VER_MAJOR</A>, <A HREF="dvrfw.html#Defines__DVRFW_VER_MINOR">DVRFW_VER_MINOR</A>, <A HREF="dvrfw.html#Defines__DVRFW_VER_BUG">DVRFW_VER_BUG</A>, <A HREF="dvrfw.html#Defines__DVRFW_VER_BUILD">DVRFW_VER_BUILD</A>. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_DEFINES_CLOSE -->
+
+<!-- SEC_ROUTINES_START -->
+
+<a name="Top__Routines"></a>
+<H2>5 &nbsp; Routines</H2>
+
+<a name="Routines__Miscellaneous"></a>
+<H3>5.1 &nbsp; Miscellaneous</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_host_msg_proxy"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Task responsible for communicating with the host.  This is the 
+gateway for all DVR firmware tasks. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_host_data_proxy"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This task acts as a proxy for all data sent between tasks on 
+the PCIe boards and the host PC.  All data sent from an S6 task to 
+the PC must be sent to this task, which in turn sends it to the host 
+via the PCIe bus. 
+</P>
+<P>
+<STRONG>NOTE</STRONG>: Much of this code is board-specific, i.e. tied to the way 
+jobs are set up on the Stretch board. If your board architecture 
+is different, then this code will have to be changed to match. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_host_encode"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Encoding task 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_host_decode"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Host decode task. This task controls decoding on every PE that it 
+runs on. In this implementation it runs on every PE, and creates 
+the same number of decode jobs on every PE. If your system supports 
+a different organization of decode jobs, then you need to modify 
+this code to control the decode job setup. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_camera_encode"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Encoding task main function. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_smo_manager"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+SMO task 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_vout_manager"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_vout_manager">dvrfw_vout_manager</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Video output task 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_io_manager"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_io_manager">dvrfw_io_manager</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Input/output task 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__dvrfw_stdout_manager"></a>
+<PRE class="cdef">
+<A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A> <A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A> (void *arg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+Encoding task 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_ROUTINES_CLOSE -->
+
+<!-- SEC_FULL_TOC_START -->
+
+<a name="Top__Table___of___Contents"></a>
+<H2>6 &nbsp; Table of Contents</H2>
+<P align="left">
+<A href="#Top__Include">1 &nbsp; Include</A>
+<BR>
+<A href="#Top__Introduction">2 &nbsp; Introduction</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Responsibility___of___the___dvrfw_host_msg_proxy_________Task">2.1 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A>() Task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Responsibility___of___the___dvrfw_host_data_proxy_________Task">2.2 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A>() Task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Responsibility___of___the___dvrfw_camera_encode_________Task">2.3 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A>() Task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Responsibility___of___the___dvrfw_host_decode_________Task">2.4 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A>() Task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Responsibility___of___the___dvrfw_host_encode_________Task">2.5 &nbsp; Responsibility of the <A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A>() Task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Details___of___the___dvrfw_smo_manager_________task">2.6 &nbsp; Details of the <A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>() task</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Details___of___the___dvrfw_stdout_manager_________Task">2.7 &nbsp; Details of the <A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A>() Task</A>
+<BR>
+<A href="#Top__Types">3 &nbsp; Types</A>
+<BR>
+<A href="#Top__Defines">4 &nbsp; Defines</A>
+<BR>
+<A href="#Top__Routines">5 &nbsp; Routines</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__Miscellaneous">5.1 &nbsp; Miscellaneous</A>
+<BR>
+<A href="#Top__Table___of___Contents">6 &nbsp; Table of Contents</A>
+<BR>
+<A href="#Top__Index">7 &nbsp; Index</A>
+</P>
+
+
+<!-- SEC_FULL_TOC_CLOSE -->
+
+<!-- GLOBAL_INDEX -->
+
+<!-- SEC_INDEX_START -->
+
+<a name="Top__Index"></a>
+<H2>7 &nbsp; Index</H2>
+<P>
+This index contains the following elements: 
+defines, routines, types, enum type elements (EnumElt),
+shell commands (ShCom), shell parameters (ShParam), and grammars.
+</P>
+<P>
+<TABLE class="index" COLS=7 BORDER=0 WIDTH="100%">
+<TR>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+<TD width=10></TD>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A HREF="dvrfw.html#Types__bootloader_versions">bootloader_versions</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_smo_manager"><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_camera_encode"><A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_stdout_manager"><A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_host_data_proxy"><A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_BUG">DVRFW_VER_BUG</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_host_decode"><A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_BUILD">DVRFW_VER_BUILD</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_host_encode"><A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_MAJOR">DVRFW_VER_MAJOR</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_host_msg_proxy"><A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_MINOR">DVRFW_VER_MINOR</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_io_manager"><A HREF="dvrfw.html#Routines__dvrfw_io_manager">dvrfw_io_manager</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__dvrfw_vout_manager"><A HREF="dvrfw.html#Routines__dvrfw_vout_manager">dvrfw_vout_manager</A>()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Miscellaneous">5.1</A>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+
+<!-- SEC_INDEX_CLOSE -->
+<P>
+<HR>
+</P>
+<P align="left">
+Package last modified on: Mar 18, 2009 at 07:17 UTC.<BR>
+</P>
+
+</BODY>
+</HTML>

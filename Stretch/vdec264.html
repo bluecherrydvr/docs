@@ -1,0 +1,908 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<TITLE>H.264 / AVC / MPEG4-10 decoder (vdec264)</title>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+function get_cookie(name) 
+{
+    var start = document.cookie.indexOf(name + "=");
+    var len = start+name.length + 1;
+    if (! start && name != document.cookie.substring(0,name.length)) {
+	return null;
+    }
+    if (start == -1) {
+	return null;
+    }
+    var end = document.cookie.indexOf(";", len);
+    if (end == -1) {
+	end = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(len, end));
+}
+
+function set_cookie(name, value, expires, path, domain, secure) 
+{
+    document.cookie = name + "=" + escape(value) +
+	( expires ? ";expires=" + expires.toGMTString() : "") +
+	( path ? ";path=" + path : "") + 
+	( domain ? ";domain=" + domain : "") +
+	( secure ? ";secure" : "");
+}
+
+function put_style(style) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000);
+    set_cookie('cdoc_style', style, expires);
+}
+
+function get_style() {
+    var style = get_cookie('cdoc_style');
+    if (style == null) {
+	style = 'relative';
+	put_style(style);
+    }
+    return style;
+}
+
+function click_put_style(style) {
+    put_style(style);
+    location.reload();
+}
+
+document.writeln('<STYLE TYPE="text/css">');
+document.writeln('<!--');
+var style = get_style();
+if (style == 'fixed-10pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 20pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 5pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else if (style == 'fixed-12pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 24pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 6pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 1.8em;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 1.2em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 2em;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 0.5em;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+}
+document.writeln('-->');
+document.writeln('</STYLE>');
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>H.264 / AVC / MPEG4-10 decoder &nbsp; (vdec264)</H1>
+
+<CENTER>Last modified on Mar 18, 2009 at 07:18 UTC</CENTER>
+<!-- CDOC-CHOOSE-STYLE --><CENTER>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('relative');">normal, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-10pt');">10pt, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-12pt');">12pt</A>
+<!-- CDOC-CHOOSE-STYLE --></CENTER>
+
+<!-- last_modified : Mar 18, 2009 at 07:18 UTC -->
+
+<!-- package : vdec264 -->
+
+<!-- short-description : H.264 / AVC / MPEG4-10 decoder -->
+
+<!-- contact_name :  -->
+
+<!-- contact_email :  -->
+
+<!-- copyright :  -->
+
+<!-- cdoc-version : 2.4.5 -->
+<!-- ANCHOR_TABLE
+"Package"	"vdec264"	"vdec264.html"
+"Section"	"Include"	"Top__Include"
+"Section"	"Usage model"	"Top__Usage___model"
+"Section"	"Creating an decoder instance"	"Top__Creating___an___decoder___instance"
+"Section"	"Decoding video stream"	"Top__Decoding___video___stream"
+"Section"	"Receiving decoded pictures"	"Top__Receiving___decoded___pictures"
+"Section"	"Pseudo code"	"Top__Pseudo___code"
+"Section"	"Types"	"Top__Types"
+"Typedef"	"vdec264_pic_type_e"	"Types__vdec264_pic_type_e"
+"Typedef"	"H264_I_TYPE"	"Types__H264_I_TYPE"
+"Typedef"	"H264_P_TYPE"	"Types__H264_P_TYPE"
+"Typedef"	"H264_B_TYPE"	"Types__H264_B_TYPE"
+"Typedef"	"H264_SI_TYPE"	"Types__H264_SI_TYPE"
+"Typedef"	"H264_SP_TYPE"	"Types__H264_SP_TYPE"
+"Typedef"	"vdec264_err_e"	"Types__vdec264_err_e"
+"Typedef"	"VDEC264_OK"	"Types__VDEC264_OK"
+"Typedef"	"VDEC264_NULL_POINTER"	"Types__VDEC264_NULL_POINTER"
+"Typedef"	"VDEC264_INSUFFICIENT_MEMORY"	"Types__VDEC264_INSUFFICIENT_MEMORY"
+"Typedef"	"VDEC264_INVALID_PARAM"	"Types__VDEC264_INVALID_PARAM"
+"Typedef"	"VDEC264_NOT_OPEN"	"Types__VDEC264_NOT_OPEN"
+"Typedef"	"VDEC264_FAIL"	"Types__VDEC264_FAIL"
+"Typedef"	"vdec264_picture_t"	"Types__vdec264_picture_t"
+"Typedef"	"vdec264_t"	"Types__vdec264_t"
+"Section"	"Defines"	"Top__Defines"
+"Define"	"EXTERN_VDEC264"	"Defines__EXTERN_VDEC264"
+-->
+
+<P>
+Contents: <A href="#Top__Table___of___Contents">Table of Contents</A>, 
+<A href="#Top__Include">Include</A>, 
+<A href="#Top__Usage___model">Usage model</A>, 
+<A href="#Top__Types">Types</A>, 
+<A href="#Top__Defines">Defines</A>, 
+<A href="#Top__Index">Index</A>, 
+<!-- MASTER_INDEX -->
+</P>
+
+
+<!-- SEC_DESCRIPTION_START -->
+
+<a name="Top__Include"></a>
+<H2>1 &nbsp; Include</H2>
+<PRE class="ccode">
+#include "vdec264.h" 
+</PRE>
+
+<a name="Top__Usage___model"></a>
+<H2>2 &nbsp; Usage model</H2>
+
+<a name="Top__Creating___an___decoder___instance"></a>
+<H3>2.1 &nbsp; Creating an decoder instance</H3>
+<P>
+An decoder instance must first be created before it can be used to decoder  
+H264 video stream.  <NOBR><STRONG>vdec264_open</STRONG>()</NOBR> is used to create a decoder instance.   
+When the decoder instance is no longer needed, it needs to be freed with <NOBR><STRONG>vdec264_close</STRONG>()</NOBR>. 
+</P>
+
+<a name="Top__Decoding___video___stream"></a>
+<H3>2.2 &nbsp; Decoding video stream</H3>
+<P>
+A decoder instance can be used to decoder video stream by calling <NOBR><STRONG>vdec264_decode</STRONG>()</NOBR>.  
+The inputs to this function include a pointer to a H264 bitstream buffer and another parameter 
+to specify the buffer size. Since the input buffer may contain bitstream data for multiple frames or 
+only part of a frame, the user needs to keep track of the amount of data has been consumed by the decoder. 
+Please see the sample code below for more information. 
+</P>
+
+<a name="Top__Receiving___decoded___pictures"></a>
+<H3>2.3 &nbsp; Receiving decoded pictures</H3>
+<P>
+The decoded picture is stored in <STRONG>vdec264_picture_t</STRONG>. 
+Each call to <NOBR><STRONG>vdec264_get_picture_full</STRONG>()</NOBR> returns a decoded picture in display order if there is one available. 
+Once the decoded picture is written to a file or displayed, the picture buffer must be given back 
+to the decoder instance for reuse, by calling <NOBR><STRONG>vdec264_put_picture_empty</STRONG>()</NOBR>. 
+</P>
+
+<a name="Top__Pseudo___code"></a>
+<H3>2.4 &nbsp; Pseudo code</H3>
+<PRE class="ccode">
+    #include "vdec264.h" 
+ 
+    vdec264_t handle; 
+    vdec264_picture_t *picture; 
+    sx_uint8 inbuf[INBUF_SIZE], *inbuf_ptr; 
+    sx_int32 size, consumed; 
+    vdec264_err_e err; 
+ 
+    // create an decoder instance 
+    vdec264_open(&amp;handle); 
+ 
+    while(...) { 
+        // fill input bitstream buffer 
+        size = fill_buffer(inbuf, ...); 
+ 
+        inbuf_ptr = inbuf; 
+ 
+         while (size &gt; 0) { 
+            err = vdec264_decode(handle, inbuf_ptr, size, &amp;consumed); 
+            assert(err == VDEC264_OK); 
+ 
+            err = vdec264_get_picture_full(handle, &amp;picture); 
+            assert(err == VDEC264_OK); 
+ 
+            if(picture) { 
+                // we have one decoded picture, do something with it 
+                process_picture(picture, ...); 
+ 
+                err = vdec264_put_picture_empty(handle, picture); 
+            } 
+ 
+            size -= consumed; 
+            inbuf_ptr += consumed; 
+        }  
+    } 
+ 
+    vdec264_close(handle); 
+</PRE>
+
+<!-- SEC_DESCRIPTION_CLOSE -->
+
+<!-- SEC_TYPES_START -->
+
+<a name="Top__Types"></a>
+<H2>3 &nbsp; Types</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__vdec264_pic_type_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__H264_I_TYPE">H264_I_TYPE</A>,
+    <A name="Types__H264_P_TYPE">H264_P_TYPE</A>,
+    <A name="Types__H264_B_TYPE">H264_B_TYPE</A>,
+    <A name="Types__H264_SI_TYPE">H264_SI_TYPE</A>,
+    <A name="Types__H264_SP_TYPE">H264_SP_TYPE</A>
+} vdec264_pic_type_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+H264 picture type. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__vdec264_err_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__VDEC264_OK">VDEC264_OK</A>,
+    <A name="Types__VDEC264_NULL_POINTER">VDEC264_NULL_POINTER</A>,
+    <A name="Types__VDEC264_INSUFFICIENT_MEMORY">VDEC264_INSUFFICIENT_MEMORY</A>,
+    <A name="Types__VDEC264_INVALID_PARAM">VDEC264_INVALID_PARAM</A>,
+    <A name="Types__VDEC264_NOT_OPEN">VDEC264_NOT_OPEN</A>,
+    <A name="Types__VDEC264_FAIL">VDEC264_FAIL</A>
+} vdec264_err_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+Common return status for <STRONG>vdec264_sc</STRONG> routines. 
+</P>
+<P>
+<STRONG>VDEC264_OK</STRONG> - no error, operation succeeded. 
+</P>
+<P>
+<STRONG>VDEC264_NULL_POINTER</STRONG> - null pointer. 
+</P>
+<P>
+<STRONG>VDEC264_INSUFFICIENT_MEMORY</STRONG> - failed to allocate memory. 
+</P>
+<P>
+<STRONG>VDEC264_INVALID_PARAM</STRONG> - invalid parameter. 
+</P>
+<P>
+<STRONG>VDEC264_NOT_OPEN</STRONG> - decoder is not open. 
+</P>
+<P>
+<STRONG>VDEC264_FAIL</STRONG> - other decoder error. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__vdec264_picture_t"></a>
+<PRE class="cdef">
+typedef struct { ... } vdec264_picture_t;
+</PRE>
+<DIV CLASS="descr">
+<P>
+data structure to hold decoded picture. 
+</P>
+<P>
+<STRONG>plane</STRONG> - pointer to the picture Y, U, V planes. 
+</P>
+<P>
+<STRONG>padded_width</STRONG> - padded width of picture plane. 
+</P>
+<P>
+<STRONG>width</STRONG> - picture width. 
+</P>
+<P>
+<STRONG>height</STRONG> - picture height. 
+</P>
+<P>
+<STRONG>pic_num</STRONG> - coded picture number. 
+</P>
+<P>
+<STRONG>pic_type</STRONG> - picture type, see <STRONG>vdec264_pic_type_e</STRONG> for details. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__vdec264_t"></a>
+<PRE class="cdef">
+typedef struct vdec264_handle*vdec264_t; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+A H264 video decoder handle.  This handle is allocated and 
+initialized by <NOBR><STRONG>vdec264_open</STRONG>()</NOBR>.  It can be freed by <NOBR><STRONG>vdec264_close</STRONG>()</NOBR>. 
+Once created, the handle serves as an decoder instance.  Multiple 
+decoder instances can exist at the same time. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_TYPES_CLOSE -->
+
+<!-- SEC_DEFINES_START -->
+
+<a name="Top__Defines"></a>
+<H2>4 &nbsp; Defines</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__EXTERN_VDEC264"></a>
+<PRE class="cdef">
+#define EXTERN_VDEC264
+</PRE>
+<DIV CLASS="descr">
+<P>
+Definitions 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_DEFINES_CLOSE -->
+
+<!-- SEC_FULL_TOC_START -->
+
+<a name="Top__Table___of___Contents"></a>
+<H2>5 &nbsp; Table of Contents</H2>
+<P align="left">
+<A href="#Top__Include">1 &nbsp; Include</A>
+<BR>
+<A href="#Top__Usage___model">2 &nbsp; Usage model</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Creating___an___decoder___instance">2.1 &nbsp; Creating an decoder instance</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Decoding___video___stream">2.2 &nbsp; Decoding video stream</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Receiving___decoded___pictures">2.3 &nbsp; Receiving decoded pictures</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Pseudo___code">2.4 &nbsp; Pseudo code</A>
+<BR>
+<A href="#Top__Types">3 &nbsp; Types</A>
+<BR>
+<A href="#Top__Defines">4 &nbsp; Defines</A>
+<BR>
+<A href="#Top__Table___of___Contents">5 &nbsp; Table of Contents</A>
+<BR>
+<A href="#Top__Index">6 &nbsp; Index</A>
+</P>
+
+
+<!-- SEC_FULL_TOC_CLOSE -->
+
+<!-- GLOBAL_INDEX -->
+
+<!-- SEC_INDEX_START -->
+
+<a name="Top__Index"></a>
+<H2>6 &nbsp; Index</H2>
+<P>
+This index contains the following elements: 
+defines, routines, types, enum type elements (EnumElt),
+shell commands (ShCom), shell parameters (ShParam), and grammars.
+</P>
+<P>
+<TABLE class="index" COLS=7 BORDER=0 WIDTH="100%">
+<TR>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+<TD width=10></TD>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Defines__EXTERN_VDEC264">EXTERN_VDEC264</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_INSUFFICIENT_MEMORY">VDEC264_INSUFFICIENT_MEMORY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__H264_B_TYPE">H264_B_TYPE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_INVALID_PARAM">VDEC264_INVALID_PARAM</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__H264_I_TYPE">H264_I_TYPE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_NOT_OPEN">VDEC264_NOT_OPEN</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__H264_P_TYPE">H264_P_TYPE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_NULL_POINTER">VDEC264_NULL_POINTER</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__H264_SI_TYPE">H264_SI_TYPE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_OK">VDEC264_OK</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__H264_SP_TYPE">H264_SP_TYPE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__vdec264_pic_type_e">vdec264_pic_type_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__vdec264_err_e">vdec264_err_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__vdec264_picture_t">vdec264_picture_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__VDEC264_FAIL">VDEC264_FAIL</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__vdec264_t">vdec264_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">3</A>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+
+<!-- SEC_INDEX_CLOSE -->
+<P>
+<HR>
+</P>
+<P align="left">
+Package last modified on: Mar 18, 2009 at 07:18 UTC.<BR>
+</P>
+
+</BODY>
+</HTML>
