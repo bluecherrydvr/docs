@@ -1,0 +1,49 @@
+
+<configuration>
+  <controller id='Controller0' module='catapult' speed='8000000' ipaddr='192.168.6.161'/>
+  <driver id='XtensaDriver0' module='xtensa' step-intr='mask,stepover' />
+  <chain controller='Controller0'>
+    <tap id='TAP-PE0Mbist' irwidth='19' bypass='0x7ffff' />
+    <tap id='TAP-PE0PCIe' irwidth='8' bypass='0xff' />
+    <tap id='TAP-PE0Xt0' irwidth='5' />
+    <tap id='TAP-PE0Xt1' irwidth='5' />
+    <tap id='TAP-PE1Mbist' irwidth='19' bypass='0x7ffff' />
+    <tap id='TAP-PE1Xt0' irwidth='5' />
+    <tap id='TAP-PE1Xt1' irwidth='5' />
+    <tap id='TAP-PE2Mbist' irwidth='19' bypass='0x7ffff' />
+    <tap id='TAP-PE2Xt0' irwidth='5' />
+    <tap id='TAP-PE2Xt1' irwidth='5' />
+    <tap id='TAP-PE3Mbist' irwidth='19' bypass='0x7ffff' />
+    <tap id='TAP-PE3Xt0' irwidth='5' />
+    <tap id='TAP-PE3Xt1' irwidth='5' />
+  </chain>
+  <system module='jtag'>
+    <component id='Component-PE0Xt0' tap='TAP-PE0Xt0' config='tensilica' />
+    <component id='Component-PE0Xt1' tap='TAP-PE0Xt1' config='tensilica' />
+    <component id='Component-PE1Xt0' tap='TAP-PE1Xt0' config='tensilica' />
+    <component id='Component-PE1Xt1' tap='TAP-PE1Xt1' config='tensilica' />
+    <component id='Component-PE2Xt0' tap='TAP-PE2Xt0' config='tensilica' />
+    <component id='Component-PE2Xt1' tap='TAP-PE2Xt1' config='tensilica' />
+    <component id='Component-PE3Xt0' tap='TAP-PE3Xt0' config='tensilica' />
+    <component id='Component-PE3Xt1' tap='TAP-PE3Xt1' config='tensilica' />
+  </system>
+  <device id='PE0Xt0' component='Component-PE0Xt0' driver='XtensaDriver0' />
+  <device id='PE0Xt1' component='Component-PE0Xt1' driver='XtensaDriver0' />
+  <device id='PE1Xt0' component='Component-PE1Xt0' driver='XtensaDriver0' />
+  <device id='PE1Xt1' component='Component-PE1Xt1' driver='XtensaDriver0' />
+  <device id='PE2Xt0' component='Component-PE2Xt0' driver='XtensaDriver0' />
+  <device id='PE2Xt1' component='Component-PE2Xt1' driver='XtensaDriver0' />
+  <device id='PE3Xt0' component='Component-PE3Xt0' driver='XtensaDriver0' />
+  <device id='PE3Xt1' component='Component-PE3Xt1' driver='XtensaDriver0' />
+  <application id='GDBStub' module='gdbstub' port='20000'>
+    <target device='PE0Xt0' />
+    <target device='PE1Xt0' />
+    <target device='PE2Xt0' />
+    <target device='PE3Xt0' />
+    <target device='PE0Xt1' />
+    <target device='PE1Xt1' />
+    <target device='PE2Xt1' />
+    <target device='PE3Xt1' />
+  </application>
+</configuration>
+

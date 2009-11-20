@@ -1,0 +1,1556 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="dvrcp"
+	ProjectGUID="{1E63D09C-13DB-3980-9E5E-F0585C15042A}"
+	Keyword="Qt4VSv1.0">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="."
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="1"
+			IntermediateDirectory="release\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;L:/tools/windows/Qt/4.2.2/include/QtCore&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtCore&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtGui&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtGui&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtXml&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtXml&quot;,&quot;L:/tools/windows/Qt/4.2.2/include&quot;,&quot;..\..\include&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/ActiveQt&quot;,&quot;release&quot;,&quot;.&quot;,l:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005"
+				AdditionalOptions="-Zm200 -EHsc -w34100 -w34189 -Zm200 -EHsc -w34100 -w34189 -w34100 -w34189"
+				AssemblerListingLocation="release\"
+				BufferSecurityCheck="false"
+				DebugInformationFormat="0"
+				ExceptionHandling="true"
+				GeneratePreprocessedFile="0"
+				ObjectFile="release\"
+				Optimization ="2"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_XML_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT,NDEBUG"
+				ProgramDataBaseFileName=".\"
+				RuntimeLibrary="2"
+				RuntimeTypeInfo="true"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="false"
+				WarningLevel="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="l:\tools\windows\Qt\4.2.2\lib\qtmain.lib ddraw.lib dxguid.lib msimg32.lib l:\tools\windows\Qt\4.2.2\lib\QtXml4.lib l:\tools\windows\Qt\4.2.2\lib\QtGui4.lib l:\tools\windows\Qt\4.2.2\lib\QtCore4.lib"
+				AdditionalLibraryDirectories="l:\tools\windows\Qt\4.2.2\lib"
+				GenerateDebugInformation="true"
+				IgnoreImportLibrary="true"
+				LinkIncremental="2"
+				OutputFile="..\..\bin\windows\release\dvrcp.exe"
+				ProgramDatabaseFile="$(TargetDir)dvrcp.pdb"
+				SubSystem="2"
+				SuppressStartupBanner="true"/>
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_XML_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="."
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="1"
+			IntermediateDirectory="debug\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;L:/tools/windows/Qt/4.2.2/include/QtCore&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtCore&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtGui&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtGui&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtXml&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/QtXml&quot;,&quot;L:/tools/windows/Qt/4.2.2/include&quot;,&quot;..\..\include&quot;,&quot;L:/tools/windows/Qt/4.2.2/include/ActiveQt&quot;,&quot;debug&quot;,&quot;.&quot;,l:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005"
+				AdditionalOptions="-Zm200 -EHsc -w34100 -w34189 -Zm200 -EHsc -w34100 -w34189 -w34100 -w34189"
+				AssemblerListingLocation="debug\"
+				BufferSecurityCheck="false"
+				DebugInformationFormat="3"
+				ExceptionHandling="true"
+				GeneratePreprocessedFile="0"
+				ObjectFile="debug\"
+				Optimization ="4"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_XML_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"
+				ProgramDataBaseFileName=".\"
+				RuntimeLibrary="3"
+				RuntimeTypeInfo="true"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="false"
+				WarningLevel="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="l:\tools\windows\Qt\4.2.2\lib\qtmaind.lib ddraw.lib dxguid.lib msimg32.lib l:\tools\windows\Qt\4.2.2\lib\QtXmld4.lib l:\tools\windows\Qt\4.2.2\lib\QtGuid4.lib l:\tools\windows\Qt\4.2.2\lib\QtCored4.lib"
+				AdditionalLibraryDirectories="l:\tools\windows\Qt\4.2.2\lib"
+				GenerateDebugInformation="true"
+				IgnoreImportLibrary="true"
+				OutputFile="..\..\bin\windows\debug\dvrcp.exe"
+				ProgramDatabaseFile="$(TargetDir)dvrcp.pdb"
+				SubSystem="2"
+				SuppressStartupBanner="true"/>
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_XML_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath="aboutdialog.cpp"/>
+			<File
+				RelativePath="alarmhandler.cpp"/>
+			<File
+				RelativePath="avi_api.cpp"/>
+			<File
+				RelativePath="boarddialog.cpp"/>
+			<File
+				RelativePath="camera.cpp"/>
+			<File
+				RelativePath="cameradialog.cpp"/>
+			<File
+				RelativePath="connectdialog.cpp"/>
+			<File
+				RelativePath="decoder.cpp"/>
+			<File
+				RelativePath="decoderdialog.cpp"/>
+			<File
+				RelativePath="decoderview.cpp"/>
+			<File
+				RelativePath="dvrboard.cpp"/>
+			<File
+				RelativePath="dvrsystem.cpp"/>
+			<File
+				RelativePath="dvrsystemtree.cpp"/>
+			<File
+				RelativePath="ioctldialog.cpp"/>
+			<File
+				RelativePath="log.cpp"/>
+			<File
+				RelativePath="main.cpp"/>
+			<File
+				RelativePath="mainwindow.cpp"/>
+			<File
+				RelativePath="monitordialog.cpp"/>
+			<File
+				RelativePath="player.cpp"/>
+			<File
+				RelativePath="recorder.cpp"/>
+			<File
+				RelativePath="recview.cpp"/>
+			<File
+				RelativePath="regiondialog.cpp"/>
+			<File
+				RelativePath="relaysdialog.cpp"/>
+			<File
+				RelativePath="sdvr.cpp"/>
+			<File
+				RelativePath="sensorsdialog.cpp"/>
+			<File
+				RelativePath="sensorshandler.cpp"/>
+			<File
+				RelativePath="smodialog.cpp"/>
+			<File
+				RelativePath="smoyuvplayer.cpp"/>
+			<File
+				RelativePath="spotmonitor.cpp"/>
+			<File
+				RelativePath="statviewdialog.cpp"/>
+			<File
+				RelativePath="systemdialog.cpp"/>
+			<File
+				RelativePath="videopanel.cpp"/>
+			<File
+				RelativePath="viewsettings.cpp"/>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="aboutdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 aboutdialog.h -o release\moc_aboutdialog.cpp"
+						Description="MOC aboutdialog.h"
+						Outputs="release\moc_aboutdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 aboutdialog.h -o debug\moc_aboutdialog.cpp"
+						Description="MOC aboutdialog.h"
+						Outputs="debug\moc_aboutdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="alarmhandler.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 alarmhandler.h -o release\moc_alarmhandler.cpp"
+						Description="MOC alarmhandler.h"
+						Outputs="release\moc_alarmhandler.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 alarmhandler.h -o debug\moc_alarmhandler.cpp"
+						Description="MOC alarmhandler.h"
+						Outputs="debug\moc_alarmhandler.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="avi_api.h"/>
+			<File
+				RelativePath="boarddialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 boarddialog.h -o release\moc_boarddialog.cpp"
+						Description="MOC boarddialog.h"
+						Outputs="release\moc_boarddialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 boarddialog.h -o debug\moc_boarddialog.cpp"
+						Description="MOC boarddialog.h"
+						Outputs="debug\moc_boarddialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="camera.h"/>
+			<File
+				RelativePath="cameradialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 cameradialog.h -o release\moc_cameradialog.cpp"
+						Description="MOC cameradialog.h"
+						Outputs="release\moc_cameradialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 cameradialog.h -o debug\moc_cameradialog.cpp"
+						Description="MOC cameradialog.h"
+						Outputs="debug\moc_cameradialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="connectdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 connectdialog.h -o release\moc_connectdialog.cpp"
+						Description="MOC connectdialog.h"
+						Outputs="release\moc_connectdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 connectdialog.h -o debug\moc_connectdialog.cpp"
+						Description="MOC connectdialog.h"
+						Outputs="debug\moc_connectdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="decoder.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoder.h -o release\moc_decoder.cpp"
+						Description="MOC decoder.h"
+						Outputs="release\moc_decoder.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoder.h -o debug\moc_decoder.cpp"
+						Description="MOC decoder.h"
+						Outputs="debug\moc_decoder.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="decoderdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoderdialog.h -o release\moc_decoderdialog.cpp"
+						Description="MOC decoderdialog.h"
+						Outputs="release\moc_decoderdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoderdialog.h -o debug\moc_decoderdialog.cpp"
+						Description="MOC decoderdialog.h"
+						Outputs="debug\moc_decoderdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="decoderview.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoderview.h -o release\moc_decoderview.cpp"
+						Description="MOC decoderview.h"
+						Outputs="release\moc_decoderview.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 decoderview.h -o debug\moc_decoderview.cpp"
+						Description="MOC decoderview.h"
+						Outputs="debug\moc_decoderview.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="dvrboard.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 dvrboard.h -o release\moc_dvrboard.cpp"
+						Description="MOC dvrboard.h"
+						Outputs="release\moc_dvrboard.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 dvrboard.h -o debug\moc_dvrboard.cpp"
+						Description="MOC dvrboard.h"
+						Outputs="debug\moc_dvrboard.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="dvrsystem.h"/>
+			<File
+				RelativePath="dvrsystemtree.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 dvrsystemtree.h -o release\moc_dvrsystemtree.cpp"
+						Description="MOC dvrsystemtree.h"
+						Outputs="release\moc_dvrsystemtree.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 dvrsystemtree.h -o debug\moc_dvrsystemtree.cpp"
+						Description="MOC dvrsystemtree.h"
+						Outputs="debug\moc_dvrsystemtree.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ioctldialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 ioctldialog.h -o release\moc_ioctldialog.cpp"
+						Description="MOC ioctldialog.h"
+						Outputs="release\moc_ioctldialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 ioctldialog.h -o debug\moc_ioctldialog.cpp"
+						Description="MOC ioctldialog.h"
+						Outputs="debug\moc_ioctldialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="log.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 log.h -o release\moc_log.cpp"
+						Description="MOC log.h"
+						Outputs="release\moc_log.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 log.h -o debug\moc_log.cpp"
+						Description="MOC log.h"
+						Outputs="debug\moc_log.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="mainwindow.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 mainwindow.h -o release\moc_mainwindow.cpp"
+						Description="MOC mainwindow.h"
+						Outputs="release\moc_mainwindow.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 mainwindow.h -o debug\moc_mainwindow.cpp"
+						Description="MOC mainwindow.h"
+						Outputs="debug\moc_mainwindow.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="monitordialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 monitordialog.h -o release\moc_monitordialog.cpp"
+						Description="MOC monitordialog.h"
+						Outputs="release\moc_monitordialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 monitordialog.h -o debug\moc_monitordialog.cpp"
+						Description="MOC monitordialog.h"
+						Outputs="debug\moc_monitordialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="player.h"/>
+			<File
+				RelativePath="recorder.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 recorder.h -o release\moc_recorder.cpp"
+						Description="MOC recorder.h"
+						Outputs="release\moc_recorder.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 recorder.h -o debug\moc_recorder.cpp"
+						Description="MOC recorder.h"
+						Outputs="debug\moc_recorder.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="recview.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 recview.h -o release\moc_recview.cpp"
+						Description="MOC recview.h"
+						Outputs="release\moc_recview.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 recview.h -o debug\moc_recview.cpp"
+						Description="MOC recview.h"
+						Outputs="debug\moc_recview.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="regiondialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 regiondialog.h -o release\moc_regiondialog.cpp"
+						Description="MOC regiondialog.h"
+						Outputs="release\moc_regiondialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 regiondialog.h -o debug\moc_regiondialog.cpp"
+						Description="MOC regiondialog.h"
+						Outputs="debug\moc_regiondialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="relaysdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 relaysdialog.h -o release\moc_relaysdialog.cpp"
+						Description="MOC relaysdialog.h"
+						Outputs="release\moc_relaysdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 relaysdialog.h -o debug\moc_relaysdialog.cpp"
+						Description="MOC relaysdialog.h"
+						Outputs="debug\moc_relaysdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="sdvr.h"/>
+			<File
+				RelativePath="sensorsdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 sensorsdialog.h -o release\moc_sensorsdialog.cpp"
+						Description="MOC sensorsdialog.h"
+						Outputs="release\moc_sensorsdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 sensorsdialog.h -o debug\moc_sensorsdialog.cpp"
+						Description="MOC sensorsdialog.h"
+						Outputs="debug\moc_sensorsdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="sensorshandler.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 sensorshandler.h -o release\moc_sensorshandler.cpp"
+						Description="MOC sensorshandler.h"
+						Outputs="release\moc_sensorshandler.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 sensorshandler.h -o debug\moc_sensorshandler.cpp"
+						Description="MOC sensorshandler.h"
+						Outputs="debug\moc_sensorshandler.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="smodialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 smodialog.h -o release\moc_smodialog.cpp"
+						Description="MOC smodialog.h"
+						Outputs="release\moc_smodialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 smodialog.h -o debug\moc_smodialog.cpp"
+						Description="MOC smodialog.h"
+						Outputs="debug\moc_smodialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="smoyuvplayer.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 smoyuvplayer.h -o release\moc_smoyuvplayer.cpp"
+						Description="MOC smoyuvplayer.h"
+						Outputs="release\moc_smoyuvplayer.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 smoyuvplayer.h -o debug\moc_smoyuvplayer.cpp"
+						Description="MOC smoyuvplayer.h"
+						Outputs="debug\moc_smoyuvplayer.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="spotmonitor.h"/>
+			<File
+				RelativePath="statviewdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 statviewdialog.h -o release\moc_statviewdialog.cpp"
+						Description="MOC statviewdialog.h"
+						Outputs="release\moc_statviewdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 statviewdialog.h -o debug\moc_statviewdialog.cpp"
+						Description="MOC statviewdialog.h"
+						Outputs="debug\moc_statviewdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="systemdialog.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 systemdialog.h -o release\moc_systemdialog.cpp"
+						Description="MOC systemdialog.h"
+						Outputs="release\moc_systemdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 systemdialog.h -o debug\moc_systemdialog.cpp"
+						Description="MOC systemdialog.h"
+						Outputs="debug\moc_systemdialog.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="videopanel.h">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;release&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 videopanel.h -o release\moc_videopanel.cpp"
+						Description="MOC videopanel.h"
+						Outputs="release\moc_videopanel.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\moc.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtCore&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtGui&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\QtXml&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include&quot; -I&quot;..\..\include&quot; -I&quot;L:\tools\windows\Qt\4.2.2\include\ActiveQt&quot; -I&quot;debug&quot; -I&quot;.&quot; -Il:\tools\windows\Qt\4.2.2\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 videopanel.h -o debug\moc_videopanel.cpp"
+						Description="MOC videopanel.h"
+						Outputs="debug\moc_videopanel.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="viewsettings.h"/>
+		</Filter>
+		<Filter
+			Name="Generated Files"
+			Filter="cpp;c;cxx;moc;h;def;odl;idl;res;"
+			UniqueIdentifier="{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}">
+			<File
+				RelativePath="debug\moc_aboutdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_aboutdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_alarmhandler.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_alarmhandler.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_boarddialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_boarddialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_cameradialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_cameradialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_connectdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_connectdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_decoder.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_decoder.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_decoderdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_decoderdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_decoderview.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_decoderview.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_dvrboard.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_dvrboard.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_dvrsystemtree.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_dvrsystemtree.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_ioctldialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_ioctldialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_log.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_log.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_mainwindow.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_mainwindow.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_monitordialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_monitordialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_recorder.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_recorder.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_recview.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_recview.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_regiondialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_regiondialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_relaysdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_relaysdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_sensorsdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_sensorsdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_sensorshandler.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_sensorshandler.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_smodialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_smodialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_smoyuvplayer.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_smoyuvplayer.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_statviewdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_statviewdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_systemdialog.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_systemdialog.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\moc_videopanel.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\moc_videopanel.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="debug\qrc_dvrcp.cpp">
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="release\qrc_dvrcp.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"/>
+			</File>
+			<File
+				RelativePath="ui_aboutdialog.h"/>
+			<File
+				RelativePath="ui_boarddialog.h"/>
+			<File
+				RelativePath="ui_cameradialog.h"/>
+			<File
+				RelativePath="ui_camerasetupdialog.h"/>
+			<File
+				RelativePath="ui_connectdialog.h"/>
+			<File
+				RelativePath="ui_decoderdialog.h"/>
+			<File
+				RelativePath="ui_ioctldialog.h"/>
+			<File
+				RelativePath="ui_monitordialog.h"/>
+			<File
+				RelativePath="ui_regionsdialog.h"/>
+			<File
+				RelativePath="ui_relaysdialog.h"/>
+			<File
+				RelativePath="ui_sensorsdialog.h"/>
+			<File
+				RelativePath="ui_smodialog.h"/>
+			<File
+				RelativePath="ui_smoyuvplayer.h"/>
+			<File
+				RelativePath="ui_startupdialog.h"/>
+			<File
+				RelativePath="ui_statviewdialog.h"/>
+			<File
+				RelativePath="ui_systemdialog.h"/>
+		</Filter>
+		<Filter
+			Name="Form Files"
+			Filter="ui"
+			UniqueIdentifier="{99349809-55BA-4b9d-BF79-8FDBB0286EB3}"
+			ParseFiles="false">
+			<File
+				RelativePath="aboutdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe aboutdialog.ui -o ui_aboutdialog.h"
+						Description="UIC aboutdialog.ui"
+						Outputs="ui_aboutdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe aboutdialog.ui -o ui_aboutdialog.h"
+						Description="UIC aboutdialog.ui"
+						Outputs="ui_aboutdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="boarddialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe boarddialog.ui -o ui_boarddialog.h"
+						Description="UIC boarddialog.ui"
+						Outputs="ui_boarddialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe boarddialog.ui -o ui_boarddialog.h"
+						Description="UIC boarddialog.ui"
+						Outputs="ui_boarddialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="cameradialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe cameradialog.ui -o ui_cameradialog.h"
+						Description="UIC cameradialog.ui"
+						Outputs="ui_cameradialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe cameradialog.ui -o ui_cameradialog.h"
+						Description="UIC cameradialog.ui"
+						Outputs="ui_cameradialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="camerasetupdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe camerasetupdialog.ui -o ui_camerasetupdialog.h"
+						Description="UIC camerasetupdialog.ui"
+						Outputs="ui_camerasetupdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe camerasetupdialog.ui -o ui_camerasetupdialog.h"
+						Description="UIC camerasetupdialog.ui"
+						Outputs="ui_camerasetupdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="connectdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe connectdialog.ui -o ui_connectdialog.h"
+						Description="UIC connectdialog.ui"
+						Outputs="ui_connectdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe connectdialog.ui -o ui_connectdialog.h"
+						Description="UIC connectdialog.ui"
+						Outputs="ui_connectdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="decoderdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe decoderdialog.ui -o ui_decoderdialog.h"
+						Description="UIC decoderdialog.ui"
+						Outputs="ui_decoderdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe decoderdialog.ui -o ui_decoderdialog.h"
+						Description="UIC decoderdialog.ui"
+						Outputs="ui_decoderdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ioctldialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe ioctldialog.ui -o ui_ioctldialog.h"
+						Description="UIC ioctldialog.ui"
+						Outputs="ui_ioctldialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe ioctldialog.ui -o ui_ioctldialog.h"
+						Description="UIC ioctldialog.ui"
+						Outputs="ui_ioctldialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="monitordialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe monitordialog.ui -o ui_monitordialog.h"
+						Description="UIC monitordialog.ui"
+						Outputs="ui_monitordialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe monitordialog.ui -o ui_monitordialog.h"
+						Description="UIC monitordialog.ui"
+						Outputs="ui_monitordialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="regionsdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe regionsdialog.ui -o ui_regionsdialog.h"
+						Description="UIC regionsdialog.ui"
+						Outputs="ui_regionsdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe regionsdialog.ui -o ui_regionsdialog.h"
+						Description="UIC regionsdialog.ui"
+						Outputs="ui_regionsdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="relaysdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe relaysdialog.ui -o ui_relaysdialog.h"
+						Description="UIC relaysdialog.ui"
+						Outputs="ui_relaysdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe relaysdialog.ui -o ui_relaysdialog.h"
+						Description="UIC relaysdialog.ui"
+						Outputs="ui_relaysdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="sensorsdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe sensorsdialog.ui -o ui_sensorsdialog.h"
+						Description="UIC sensorsdialog.ui"
+						Outputs="ui_sensorsdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe sensorsdialog.ui -o ui_sensorsdialog.h"
+						Description="UIC sensorsdialog.ui"
+						Outputs="ui_sensorsdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="smodialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe smodialog.ui -o ui_smodialog.h"
+						Description="UIC smodialog.ui"
+						Outputs="ui_smodialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe smodialog.ui -o ui_smodialog.h"
+						Description="UIC smodialog.ui"
+						Outputs="ui_smodialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="smoyuvplayer.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe smoyuvplayer.ui -o ui_smoyuvplayer.h"
+						Description="UIC smoyuvplayer.ui"
+						Outputs="ui_smoyuvplayer.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe smoyuvplayer.ui -o ui_smoyuvplayer.h"
+						Description="UIC smoyuvplayer.ui"
+						Outputs="ui_smoyuvplayer.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="startupdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe startupdialog.ui -o ui_startupdialog.h"
+						Description="UIC startupdialog.ui"
+						Outputs="ui_startupdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe startupdialog.ui -o ui_startupdialog.h"
+						Description="UIC startupdialog.ui"
+						Outputs="ui_startupdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="statviewdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe statviewdialog.ui -o ui_statviewdialog.h"
+						Description="UIC statviewdialog.ui"
+						Outputs="ui_statviewdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe statviewdialog.ui -o ui_statviewdialog.h"
+						Description="UIC statviewdialog.ui"
+						Outputs="ui_statviewdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="systemdialog.ui">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe systemdialog.ui -o ui_systemdialog.h"
+						Description="UIC systemdialog.ui"
+						Outputs="ui_systemdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\uic.exe"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\uic.exe systemdialog.ui -o ui_systemdialog.h"
+						Description="UIC systemdialog.ui"
+						Outputs="ui_systemdialog.h"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="qrc;*"
+			UniqueIdentifier="{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}"
+			ParseFiles="false">
+			<File
+				RelativePath="images\about.png"/>
+			<File
+				RelativePath="images\alarm.png"/>
+			<File
+				RelativePath="dvrcp.qrc">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\rcc.exe;yuvtorgb.cg;images\about.png;images\new.png;images\stop.png;images\alarm.png;images\play.png;images\pause.png;images\open.png"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\rcc.exe -name dvrcp dvrcp.qrc -o release\qrc_dvrcp.cpp"
+						Description="RCC dvrcp.qrc"
+						Outputs="release\qrc_dvrcp.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="l:\tools\windows\Qt\4.2.2\bin\rcc.exe;yuvtorgb.cg;images\about.png;images\new.png;images\stop.png;images\alarm.png;images\play.png;images\pause.png;images\open.png"
+						CommandLine="l:\tools\windows\Qt\4.2.2\bin\rcc.exe -name dvrcp dvrcp.qrc -o debug\qrc_dvrcp.cpp"
+						Description="RCC dvrcp.qrc"
+						Outputs="debug\qrc_dvrcp.cpp"
+						Path="l:/tools/windows/Qt/4.2.2/bin"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="images\new.png"/>
+			<File
+				RelativePath="images\open.png"/>
+			<File
+				RelativePath="images\pause.png"/>
+			<File
+				RelativePath="images\play.png"/>
+			<File
+				RelativePath="images\stop.png"/>
+			<File
+				RelativePath="yuvtorgb.cg"/>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

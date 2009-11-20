@@ -1,0 +1,419 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\DvrFCD.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\DvrFCD.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DVRFCD_DIALOG DIALOGEX 0, 0, 659, 433
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PlayDvrFCD"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Display 01",IDC_STATIC_DISPLAY_01,8,16,160,100,WS_BORDER
+    LTEXT           "Display 02",IDC_STATIC_DISPLAY_02,169,16,160,100,WS_BORDER
+    LTEXT           "Display 03",IDC_STATIC_DISPLAY_03,330,16,160,100,WS_BORDER
+    LTEXT           "Display 04",IDC_STATIC_DISPLAY_04,491,16,160,100,WS_BORDER
+    LTEXT           "Display 05",IDC_STATIC_DISPLAY_05,8,118,160,100,WS_BORDER
+    LTEXT           "Display 06",IDC_STATIC_DISPLAY_06,169,118,160,100,WS_BORDER
+    LTEXT           "Display 07",IDC_STATIC_DISPLAY_07,330,118,160,100,WS_BORDER
+    LTEXT           "Display 08",IDC_STATIC_DISPLAY_08,491,118,160,100,WS_BORDER
+    LTEXT           "Display 09",IDC_STATIC_DISPLAY_09,8,221,160,100,WS_BORDER
+    LTEXT           "Display 10",IDC_STATIC_DISPLAY_10,169,221,160,100,WS_BORDER
+    LTEXT           "Display 11",IDC_STATIC_DISPLAY_11,330,221,160,100,WS_BORDER
+    LTEXT           "Display 12",IDC_STATIC_DISPLAY_12,491,221,160,100,WS_BORDER
+    LTEXT           "Display 13",IDC_STATIC_DISPLAY_13,8,323,160,100,WS_BORDER
+    LTEXT           "Display 14",IDC_STATIC_DISPLAY_14,169,323,160,100,WS_BORDER
+    LTEXT           "Display 15",IDC_STATIC_DISPLAY_15,330,323,160,100,WS_BORDER
+    LTEXT           "Display 16",IDC_STATIC_DISPLAY_16,491,323,160,100,WS_BORDER
+    CONTROL         "Board 1",IDC_RADIO_BOARD1,"Button",BS_AUTORADIOBUTTON,150,2,40,10
+    CONTROL         "Board 2",IDC_RADIO_BOARD2,"Button",BS_AUTORADIOBUTTON,210,2,40,10
+    CONTROL         "Board 3",IDC_RADIO_BOARD3,"Button",BS_AUTORADIOBUTTON,270,2,40,11
+    CONTROL         "Board 4",IDC_RADIO_BOARD4,"Button",BS_AUTORADIOBUTTON,330,2,40,11
+END
+
+IDD_DECODE_DIALOG DIALOGEX 0, 0, 273, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Decode Setup"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,62,152,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,148,152,50,14
+    CONTROL         "File Name",IDC_RADIO_FILENAME,"Button",BS_AUTORADIOBUTTON | WS_GROUP,22,56,49,10
+    CONTROL         "Camera",IDC_RADIO_CAMERA,"Button",BS_AUTORADIOBUTTON,22,120,60,10
+    LTEXT           "Static",IDC_STATIC_FILE_PATH,24,74,220,15,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Browse",IDC_BUTTON_BROWSE,194,93,50,14
+    COMBOBOX        IDC_COMBO_CAMERA,89,120,153,58,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Input Source",IDC_STATIC,10,39,251,105,BS_FLAT
+    GROUPBOX        "Decode Way",IDC_STATIC,10,6,251,29,BS_FLAT
+    CONTROL         "HW Decode",IDC_RADIO_HW_DECODE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,48,18,54,10
+    CONTROL         "SW Decode",IDC_RADIO_SW_DECODE,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,175,18,54,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,3
+ PRODUCTVERSION 1,0,0,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "PlayDvrFCD"
+            VALUE "FileDescription", "PlayDvrFCD"
+            VALUE "FileVersion", "1.0.0.3"
+            VALUE "InternalName", "DvrFCD.exe"
+            VALUE "LegalCopyright", "PlayDvrFCD.  All rights reserved."
+            VALUE "OriginalFilename", "DvrFCD.exe"
+            VALUE "ProductName", "PlayDvrFCD"
+            VALUE "ProductVersion", "1.0.0.3"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DVRFCD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 651
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 423
+        HORZGUIDE, 16
+        HORZGUIDE, 118
+        HORZGUIDE, 191
+        HORZGUIDE, 221
+    END
+
+    IDD_DECODE_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 272
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_CONTROL MENU 
+BEGIN
+    POPUP "InitDvrBoard"
+    BEGIN
+        MENUITEM "Init All DVRBoard ",          ID_INIT_DVRBOARD
+    END
+    POPUP "Decode && Preview"
+    BEGIN
+        POPUP "Board 1"
+        BEGIN
+            MENUITEM "Decode && Preview CH01",      ID_DECODE_CH_01
+            MENUITEM "Decode && Preview CH02",      ID_DECODE_CH_02
+            MENUITEM "Decode && Preview CH03",      ID_DECODE_CH_03
+            MENUITEM "Decode && Preview CH04",      ID_DECODE_CH_04
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH05",      ID_DECODE_CH_05
+            MENUITEM "Decode && Preview CH06",      ID_DECODE_CH_06
+            MENUITEM "Decode && Preview CH07",      ID_DECODE_CH_07
+            MENUITEM "Decode && Preview CH08",      ID_DECODE_CH_08
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH09",      ID_DECODE_CH_09
+            MENUITEM "Decode && Preview CH10",      ID_DECODE_CH_10
+            MENUITEM "Decode && Preview CH11",      ID_DECODE_CH_11
+            MENUITEM "Decode && Preview CH12",      ID_DECODE_CH_12
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH13",      ID_DECODE_CH_13
+            MENUITEM "Decode && Preview CH14",      ID_DECODE_CH_14
+            MENUITEM "Decode && Preview CH15",      ID_DECODE_CH_15
+            MENUITEM "Decode && Preview CH16",      ID_DECODE_CH_16
+        END
+        POPUP "Board 2"
+        BEGIN
+            MENUITEM "Decode && Preview CH01",      ID_DECODE_CH_17
+            MENUITEM "Decode && Preview CH02",      ID_DECODE_CH_18
+            MENUITEM "Decode && Preview CH03",      ID_DECODE_CH_19
+            MENUITEM "Decode && Preview CH04",      ID_DECODE_CH_20
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH05",      ID_DECODE_CH_21
+            MENUITEM "Decode && Preview CH06",      ID_DECODE_CH_22
+            MENUITEM "Decode && Preview CH07",      ID_DECODE_CH_23
+            MENUITEM "Decode && Preview CH08",      ID_DECODE_CH_24
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH09",      ID_DECODE_CH_25
+            MENUITEM "Decode && Preview CH10",      ID_DECODE_CH_26
+            MENUITEM "Decode && Preview CH11",      ID_DECODE_CH_27
+            MENUITEM "Decode && Preview CH12",      ID_DECODE_CH_28
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH13",      ID_DECODE_CH_29
+            MENUITEM "Decode && Preview CH14",      ID_DECODE_CH_30
+            MENUITEM "Decode && Preview CH15",      ID_DECODE_CH_31
+            MENUITEM "Decode && Preview CH16",      ID_DECODE_CH_32
+        END
+        POPUP "Board 3"
+        BEGIN
+            MENUITEM "Decode && Preview CH01",      ID_DECODE_CH_33
+            MENUITEM "Decode && Preview CH02",      ID_DECODE_CH_34
+            MENUITEM "Decode && Preview CH03",      ID_DECODE_CH_35
+            MENUITEM "Decode && Preview CH04",      ID_DECODE_CH_36
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH05",      ID_DECODE_CH_37
+            MENUITEM "Decode && Preview CH06",      ID_DECODE_CH_38
+            MENUITEM "Decode && Preview CH07",      ID_DECODE_CH_39
+            MENUITEM "Decode && Preview CH08",      ID_DECODE_CH_40
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH09",      ID_DECODE_CH_41
+            MENUITEM "Decode && Preview CH10",      ID_DECODE_CH_42
+            MENUITEM "Decode && Preview CH11",      ID_DECODE_CH_43
+            MENUITEM "Decode && Preview CH12",      ID_DECODE_CH_44
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH13",      ID_DECODE_CH_45
+            MENUITEM "Decode && Preview CH14",      ID_DECODE_CH_46
+            MENUITEM "Decode && Preview CH15",      ID_DECODE_CH_47
+            MENUITEM "Decode && Preview CH16",      ID_DECODE_CH_48
+        END
+        POPUP "Board 4"
+        BEGIN
+            MENUITEM "Decode && Preview CH01",      ID_DECODE_CH_49
+            MENUITEM "Decode && Preview CH02",      ID_DECODE_CH_50
+            MENUITEM "Decode && Preview CH03",      ID_DECODE_CH_51
+            MENUITEM "Decode && Preview CH04",      ID_DECODE_CH_52
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH05",      ID_DECODE_CH_53
+            MENUITEM "Decode && Preview CH06",      ID_DECODE_CH_54
+            MENUITEM "Decode && Preview CH07",      ID_DECODE_CH_55
+            MENUITEM "Decode && Preview CH08",      ID_DECODE_CH_56
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH09",      ID_DECODE_CH_57
+            MENUITEM "Decode && Preview CH10",      ID_DECODE_CH_58
+            MENUITEM "Decode && Preview CH11",      ID_DECODE_CH_59
+            MENUITEM "Decode && Preview CH12",      ID_DECODE_CH_60
+            MENUITEM SEPARATOR
+            MENUITEM "Decode && Preview CH13",      ID_DECODE_CH_61
+            MENUITEM "Decode && Preview CH14",      ID_DECODE_CH_62
+            MENUITEM "Decode && Preview CH15",      ID_DECODE_CH_63
+            MENUITEM "Decode && Preview CH16",      ID_DECODE_CH_64
+        END
+    END
+    POPUP "Play Audio", GRAYED
+    BEGIN
+        POPUP "Board 1"
+        BEGIN
+            MENUITEM "Audio CH01",                  ID_AUDIO_CH_01
+            MENUITEM "Audio CH02",                  ID_AUDIO_CH_02
+            MENUITEM "Audio CH03",                  ID_AUDIO_CH_03
+            MENUITEM "Audio CH04",                  ID_AUDIO_CH_04
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH05",                  ID_AUDIO_CH_05
+            MENUITEM "Audio CH06",                  ID_AUDIO_CH_06
+            MENUITEM "Audio CH07",                  ID_AUDIO_CH_07
+            MENUITEM "Audio CH08",                  ID_AUDIO_CH_08
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH09",                  ID_AUDIO_CH_09
+            MENUITEM "Audio CH10",                  ID_AUDIO_CH_10
+            MENUITEM "Audio CH11",                  ID_AUDIO_CH_11
+            MENUITEM "Audio CH12",                  ID_AUDIO_CH_12
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH13",                  ID_AUDIO_CH_13
+            MENUITEM "Audio CH14",                  ID_AUDIO_CH_14
+            MENUITEM "Audio CH15",                  ID_AUDIO_CH_15
+            MENUITEM "Audio CH16",                  ID_AUDIO_CH_16
+        END
+        POPUP "Board 2"
+        BEGIN
+            MENUITEM "Audio CH01",                  ID_AUDIO_CH_17
+            MENUITEM "Audio CH02",                  ID_AUDIO_CH_18
+            MENUITEM "Audio CH03",                  ID_AUDIO_CH_19
+            MENUITEM "Audio CH04",                  ID_AUDIO_CH_20
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH05",                  ID_AUDIO_CH_21
+            MENUITEM "Audio CH06",                  ID_AUDIO_CH_22
+            MENUITEM "Audio CH07",                  ID_AUDIO_CH_23
+            MENUITEM "Audio CH08",                  ID_AUDIO_CH_24
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH09",                  ID_AUDIO_CH_25
+            MENUITEM "Audio CH10",                  ID_AUDIO_CH_26
+            MENUITEM "Audio CH11",                  ID_AUDIO_CH_27
+            MENUITEM "Audio CH12",                  ID_AUDIO_CH_28
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH13",                  ID_AUDIO_CH_29
+            MENUITEM "Audio CH14",                  ID_AUDIO_CH_30
+            MENUITEM "Audio CH15",                  ID_AUDIO_CH_31
+            MENUITEM "Audio CH16",                  ID_AUDIO_CH_32
+        END
+        POPUP "Board 3"
+        BEGIN
+            MENUITEM "Audio CH01",                  ID_AUDIO_CH_33
+            MENUITEM "Audio CH02",                  ID_AUDIO_CH_34
+            MENUITEM "Audio CH03",                  ID_AUDIO_CH_35
+            MENUITEM "Audio CH04",                  ID_AUDIO_CH_36
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH05",                  ID_AUDIO_CH_37
+            MENUITEM "Audio CH06",                  ID_AUDIO_CH_38
+            MENUITEM "Audio CH07",                  ID_AUDIO_CH_39
+            MENUITEM "Audio CH08",                  ID_AUDIO_CH_40
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH09",                  ID_AUDIO_CH_41
+            MENUITEM "Audio CH10",                  ID_AUDIO_CH_42
+            MENUITEM "Audio CH11",                  ID_AUDIO_CH_43
+            MENUITEM "Audio CH12",                  ID_AUDIO_CH_44
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH13",                  ID_AUDIO_CH_45
+            MENUITEM "Audio CH14",                  ID_AUDIO_CH_46
+            MENUITEM "Audio CH15",                  ID_AUDIO_CH_47
+            MENUITEM "Audio CH16",                  ID_AUDIO_CH_48
+        END
+        POPUP "Board 4"
+        BEGIN
+            MENUITEM "Audio CH01",                  ID_AUDIO_CH_49
+            MENUITEM "Audio CH02",                  ID_AUDIO_CH_50
+            MENUITEM "Audio CH03",                  ID_AUDIO_CH_51
+            MENUITEM "Audio CH04",                  ID_AUDIO_CH_52
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH05",                  ID_AUDIO_CH_53
+            MENUITEM "Audio CH06",                  ID_AUDIO_CH_54
+            MENUITEM "Audio CH07",                  ID_AUDIO_CH_55
+            MENUITEM "Audio CH08",                  ID_AUDIO_CH_56
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH09",                  ID_AUDIO_CH_57
+            MENUITEM "Audio CH10",                  ID_AUDIO_CH_58
+            MENUITEM "Audio CH11",                  ID_AUDIO_CH_59
+            MENUITEM "Audio CH12",                  ID_AUDIO_CH_60
+            MENUITEM SEPARATOR
+            MENUITEM "Audio CH13",                  ID_AUDIO_CH_61
+            MENUITEM "Audio CH14",                  ID_AUDIO_CH_62
+            MENUITEM "Audio CH15",                  ID_AUDIO_CH_63
+            MENUITEM "Audio CH16",                  ID_AUDIO_CH_64
+        END
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\DvrFCD.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

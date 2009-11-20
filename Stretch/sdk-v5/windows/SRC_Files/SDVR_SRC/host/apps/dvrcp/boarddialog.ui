@@ -1,0 +1,635 @@
+<ui version="4.0" >
+ <class>BoardDialog</class>
+ <widget class="QDialog" name="BoardDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>535</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>0</hsizetype>
+    <vsizetype>13</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>535</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>535</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Board Information</string>
+  </property>
+  <widget class="QGroupBox" name="uiGrpBoxBrdVersions" >
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>261</width>
+     <height>178</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>DVR Board Versions:</string>
+   </property>
+   <widget class="QLabel" name="fw_version" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>41</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Firmware Build Date:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>62</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Boot Loader Version:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>83</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>BSP Version:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>103</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>DVR Board Revision:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dvr_board_rev" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>103</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>123</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Chip Revision:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fw_build_date" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>43</y>
+      <width>100</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="boot_loader_version" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>62</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dvr_chip_rev" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>123</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_serial_no" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>143</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Serial No.:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bsp_version" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>83</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serial_no" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>143</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Firmware Version:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="uiGrpBoxBrdConfig" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>241</width>
+     <height>178</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>DVR Board Configuration:</string>
+   </property>
+   <widget class="QLabel" name="videoInputsLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>23</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="audioInputsLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>43</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>63</y>
+      <width>141</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Number of sensors:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="numSensorsLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>63</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>83</y>
+      <width>141</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Number of relays:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="numRelaysLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>83</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>103</y>
+      <width>101</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>SMO available:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SMOAvailableLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>103</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>43</y>
+      <width>161</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Number of audio inputs:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>23</y>
+      <width>161</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Number of video inputs:</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="uiGrpBoxPciBoardInfo" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>194</y>
+     <width>241</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>PCIe Board Information:</string>
+   </property>
+   <widget class="QLabel" name="label_slot_num" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>21</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>PCI Slot No.:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pci_slot_no" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>21</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>pci slot</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_board_type" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Board Type:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="board_type" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>boardtype</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_vendor_id" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Vendor ID:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vendor_id" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>vendor_id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sub_vendor_id" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Sub Vendor ID:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sub_vendor_id" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>100</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>sub_vendor_id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_device_id" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Device ID:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="device_id" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>80</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Device ID</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sub_system_id" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Sub System ID:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sub_system_id" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>120</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Sub system ID</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="closeButton" >
+   <property name="geometry" >
+    <rect>
+     <x>440</x>
+     <y>323</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Close</string>
+   </property>
+   <property name="default" >
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>BoardDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>271</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>163</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

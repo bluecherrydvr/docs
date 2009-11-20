@@ -1,0 +1,2229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<TITLE>Package List</TITLE>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+function get_cookie(name) 
+{
+    var start = document.cookie.indexOf(name + "=");
+    var len = start+name.length + 1;
+    if (! start && name != document.cookie.substring(0,name.length)) {
+	return null;
+    }
+    if (start == -1) {
+	return null;
+    }
+    var end = document.cookie.indexOf(";", len);
+    if (end == -1) {
+	end = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(len, end));
+}
+
+function set_cookie(name, value, expires, path, domain, secure) 
+{
+    document.cookie = name + "=" + escape(value) +
+	( expires ? ";expires=" + expires.toGMTString() : "") +
+	( path ? ";path=" + path : "") + 
+	( domain ? ";domain=" + domain : "") +
+	( secure ? ";secure" : "");
+}
+
+function put_style(style) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000);
+    set_cookie('cdoc_style', style, expires);
+}
+
+function get_style() {
+    var style = get_cookie('cdoc_style');
+    if (style == null) {
+	style = 'relative';
+	put_style(style);
+    }
+    return style;
+}
+
+function click_put_style(style) {
+    put_style(style);
+    location.reload();
+}
+
+document.writeln('<STYLE TYPE="text/css">');
+document.writeln('<!--');
+var style = get_style();
+if (style == 'fixed-10pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 20pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 5pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else if (style == 'fixed-12pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 24pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 6pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 1.8em;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 1.2em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 2em;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 0.5em;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+}
+document.writeln('-->');
+document.writeln('</STYLE>');
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<!-- START-CDOC-XREF-LIST
+    Package sdvr_ui_sdk.html sdvr_ui_sdk.html Stretch
+    Package dvr_common.html dvr_common.html dvr_common
+    Package dvrfw.html dvrfw.html dvrfw
+    Package sdvr_sdk.html sdvr_sdk.html sdvr_sdk
+END-CDOC-XREF-LIST -->
+<!-- START-CDOC-XREF-TOC -->
+<H1>Table of Contents</H1>
+<!-- CDOC-CHOOSE-STYLE --><CENTER>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('relative');">normal, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-10pt');">10pt, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-12pt');">12pt</A>
+<!-- CDOC-CHOOSE-STYLE --></CENTER>
+<P>
+Contents:
+<A HREF="#cdoc_xref_section_Package">Package</A>,
+<A HREF="#cdoc_xref_index">Index</A>
+</P>
+<H2><A NAME="cdoc_xref_section_Package"></A>Package</H2>
+<TABLE>
+<TR><TD></TD><TD></TD><TD ALIGN="right"><STRONG>Last modified Date</STRONG></TD>
+</TR><TR>
+    <TD><A HREF="sdvr_ui_sdk.html">Stretch</A></TD>
+    <TD>&nbsp; &nbsp; DVR Display SDK (sdvr_ui_sdk)</TD>
+    <TD ALIGN="right">&nbsp; &nbsp; Mar 30, 2009 at 18:30 UTC</TD>
+</TR>
+<TR>
+    <TD><A HREF="dvr_common.html">dvr_common</A></TD>
+    <TD>&nbsp; &nbsp; Common Definitions Shared Between Board and PC</TD>
+    <TD ALIGN="right">&nbsp; &nbsp; Mar 30, 2009 at 18:30 UTC</TD>
+</TR>
+<TR>
+    <TD><A HREF="dvrfw.html">dvrfw</A></TD>
+    <TD>&nbsp; &nbsp; Common Header File Internal to the DVR Firmware</TD>
+    <TD ALIGN="right">&nbsp; &nbsp; Mar 30, 2009 at 18:30 UTC</TD>
+</TR>
+<TR>
+    <TD><A HREF="sdvr_sdk.html">sdvr_sdk</A></TD>
+    <TD>&nbsp; &nbsp; Stretch DVR SDK</TD>
+    <TD ALIGN="right">&nbsp; &nbsp; Mar 30, 2009 at 18:30 UTC</TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-TOC -->
+<H2><A NAME="cdoc_xref_index"></A>Index</H2>
+<CENTER>
+<A HREF="#cdoc_xref_A">A</A>
+<A HREF="#cdoc_xref_B">B</A>
+<A HREF="#cdoc_xref_C">C</A>
+<A HREF="#cdoc_xref_D">D</A>
+<A HREF="#cdoc_xref_E">E</A>
+<A HREF="#cdoc_xref_F">F</A>
+<A HREF="#cdoc_xref_G">G</A>
+H
+<A HREF="#cdoc_xref_I">I</A>
+J
+K
+L
+M
+<A HREF="#cdoc_xref_N">N</A>
+O
+<A HREF="#cdoc_xref_P">P</A>
+Q
+R
+<A HREF="#cdoc_xref_S">S</A>
+<A HREF="#cdoc_xref_T">T</A>
+U
+<A HREF="#cdoc_xref_V">V</A>
+W
+X
+Y
+Z
+</CENTER>
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_A"></A>A</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__AIM_TEST_ERRORS">AIM_TEST_ERRORS</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__ASWITCH_ENABLE_ERR">ASWITCH_ENABLE_ERR</A></NOBR></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_B"></A>B</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvrfw.html#Types__bootloader_versions">bootloader_versions</A></NOBR></TD>
+<TD width="33%"></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_C"></A>C</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Types__CHIP_S6100_3_REV_C">CHIP_S6100_3_REV_C</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Types__CHIP_S6105_3_REV_D">CHIP_S6105_3_REV_D</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Types__CHIP_S6106_3_REV_F">CHIP_S6106_3_REV_F</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6100_3_REV_D">CHIP_S6100_3_REV_D</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6105_3_REV_F">CHIP_S6105_3_REV_F</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6106_3_UNKNOWN">CHIP_S6106_3_UNKNOWN</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6100_3_REV_F">CHIP_S6100_3_REV_F</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6105_3_UNKNOWN">CHIP_S6105_3_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_UNKNOWN">CHIP_UNKNOWN</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6100_3_UNKNOWN">CHIP_S6100_3_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6106_3_REV_C">CHIP_S6106_3_REV_C</A></NOBR></TD>
+<TD></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6105_3_REV_C">CHIP_S6105_3_REV_C</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__CHIP_S6106_3_REV_D">CHIP_S6106_3_REV_D</A></NOBR></TD>
+<TD></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_D"></A>D</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__DDR_DIAG_ADDRLINES_FAIL">DDR_DIAG_ADDRLINES_FAIL</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_DESTROY">DVR_JOB_DESTROY</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_SMO_NOT_DISABLED">DVR_STATUS_SMO_NOT_DISABLED</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DDR_DIAG_BITFLIP_FAIL">DDR_DIAG_BITFLIP_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_HOST_DECODE">DVR_JOB_HOST_DECODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_SMO_NOT_SUPPORTED">DVR_STATUS_SMO_NOT_SUPPORTED</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DDR_DIAG_DMA_FAIL">DDR_DIAG_DMA_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_HOST_ENCODE">DVR_JOB_HOST_ENCODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_UNSUPPORTED_COMMAND">DVR_STATUS_UNSUPPORTED_COMMAND</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DDR_DIAG_READ_DMA_FAIL">DDR_DIAG_READ_DMA_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Routines__DVR_JOB_NUM">DVR_JOB_NUM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_VDET_ERROR">DVR_STATUS_VDET_ERROR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DDR_DIAG_WRITEREAD_FAIL">DDR_DIAG_WRITEREAD_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_RESET">DVR_JOB_RESET</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_VPP_RUNTIME_ERROR">DVR_STATUS_VPP_RUNTIME_ERROR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_ALL">DEBUG_FLAG_ALL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_JOB_STATE_AUDIO_LOST">DVR_JOB_STATE_AUDIO_LOST</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_AUDIO_FORMAT">DVR_STATUS_WRONG_AUDIO_FORMAT</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_AUDIO_OPERATIONS">DEBUG_FLAG_AUDIO_OPERATIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_JOB_STATE_VIDEO_LOST">DVR_JOB_STATE_VIDEO_LOST</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_CAMERA_NUMBER">DVR_STATUS_WRONG_CAMERA_NUMBER</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_BOARD">DEBUG_FLAG_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_VIDEO_OUTPUT">DVR_JOB_VIDEO_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_CAMERA_TYPE">DVR_STATUS_WRONG_CAMERA_TYPE</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_CHANNEL">DEBUG_FLAG_CHANNEL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_LED_TYPE_ALARM">DVR_LED_TYPE_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_CODEC_FORMAT">DVR_STATUS_WRONG_CODEC_FORMAT</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_DEBUGGING_ON">DEBUG_FLAG_DEBUGGING_ON</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_LED_TYPE_RECORD">DVR_LED_TYPE_RECORD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_CODEC_RESOLUTION">DVR_STATUS_WRONG_CODEC_RESOLUTION</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_DECODER">DEBUG_FLAG_DECODER</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_DEBUG">DVR_OSD_DTS_DEBUG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_JOB_ID">DVR_STATUS_WRONG_JOB_ID</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_DISPLAY_OPERATIONS">DEBUG_FLAG_DISPLAY_OPERATIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_DEBUG_2">DVR_OSD_DTS_DEBUG_2</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_JOB_TYPE">DVR_STATUS_WRONG_JOB_TYPE</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_ENCODER">DEBUG_FLAG_ENCODER</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_DMY_12H">DVR_OSD_DTS_DMY_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_WRONG_VIDEO_FORMAT">DVR_STATUS_WRONG_VIDEO_FORMAT</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_FW_WRITE_TO_FILE">DEBUG_FLAG_FW_WRITE_TO_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_DMY_24H">DVR_OSD_DTS_DMY_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_TERM_75OHM">DVR_TERM_75OHM</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_GENERAL_SDK">DEBUG_FLAG_GENERAL_SDK</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_MDY_12H">DVR_OSD_DTS_MDY_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_TERM_HIGH_IMPEDANCE">DVR_TERM_HIGH_IMPEDANCE</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_OSD">DEBUG_FLAG_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_MDY_24H">DVR_OSD_DTS_MDY_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_UART_CMD_CONFIG">DVR_UART_CMD_CONFIG</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_OUTPUT_TO_SCREEN">DEBUG_FLAG_OUTPUT_TO_SCREEN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_NONE">DVR_OSD_DTS_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_UART_CMD_OUTPUT">DVR_UART_CMD_OUTPUT</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_RECORD_TO_FILE">DEBUG_FLAG_RECORD_TO_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_YMD_12H">DVR_OSD_DTS_YMD_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VC_FORMAT_H264">DVR_VC_FORMAT_H264</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_SENSORS_RELAYS">DEBUG_FLAG_SENSORS_RELAYS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_DTS_YMD_24H">DVR_OSD_DTS_YMD_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VC_FORMAT_JPEG">DVR_VC_FORMAT_JPEG</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_SMO">DEBUG_FLAG_SMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_OSD_OPCODE_CLEAR_TEXT">DVR_OSD_OPCODE_CLEAR_TEXT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VC_FORMAT_MPEG4">DVR_VC_FORMAT_MPEG4</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_VIDEO_ALARM">DEBUG_FLAG_VIDEO_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_OSD_OPCODE_CONFIG">DVR_OSD_OPCODE_CONFIG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VC_FORMAT_NONE">DVR_VC_FORMAT_NONE</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_VIDEO_FRAME">DEBUG_FLAG_VIDEO_FRAME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_OSD_OPCODE_SHOW">DVR_OSD_OPCODE_SHOW</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_CIF">DVR_VIDEO_RES_CIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__DEBUG_FLAG_WRITE_TO_FILE">DEBUG_FLAG_WRITE_TO_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_OSD_OPCODE_TEXT">DVR_OSD_OPCODE_TEXT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_CLASSIC_2CIF">DVR_VIDEO_RES_CLASSIC_2CIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_AUDDET_TEST_NO_SYNC_ERR">DECODER_AUDDET_TEST_NO_SYNC_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_POS_BL">DVR_OSD_POS_BL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_CLASSIC_4CIF">DVR_VIDEO_RES_CLASSIC_4CIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_AUDIO_TEST_INIT_ERR">DECODER_AUDIO_TEST_INIT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_POS_BR">DVR_OSD_POS_BR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_CLASSIC_CIF">DVR_VIDEO_RES_CLASSIC_CIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_AUDIO_TEST_NO_AUDIO_ERR">DECODER_AUDIO_TEST_NO_AUDIO_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_POS_CUSTOM">DVR_OSD_POS_CUSTOM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_DCIF">DVR_VIDEO_RES_DCIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_AUDIO_TEST_TIMEOUT">DECODER_AUDIO_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_POS_TL">DVR_OSD_POS_TL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_FULL">DVR_VIDEO_RES_FULL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_UNIQUE_AUDIO_TEST_ERR">DECODER_UNIQUE_AUDIO_TEST_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_OSD_POS_TR">DVR_OSD_POS_TR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_HALF">DVR_VIDEO_RES_HALF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_UNIQUE_VIDEO_TEST_ERR">DECODER_UNIQUE_VIDEO_TEST_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RAWV_FORMAT_YUV_4_2_0">DVR_RAWV_FORMAT_YUV_4_2_0</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_INVALID">DVR_VIDEO_RES_INVALID</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDDET_TEST_CONFLICT_ERR">DECODER_VIDDET_TEST_CONFLICT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RAWV_FORMAT_YUV_4_2_2">DVR_RAWV_FORMAT_YUV_4_2_2</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VIDEO_RES_QCIF">DVR_VIDEO_RES_QCIF</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDDET_TEST_INIT_ERR">DECODER_VIDDET_TEST_INIT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RAWV_FORMAT_YVU_4_2_0">DVR_RAWV_FORMAT_YVU_4_2_0</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VOUT_OPCODE_START">DVR_VOUT_OPCODE_START</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDDET_TEST_NO_INPUT_ERR">DECODER_VIDDET_TEST_NO_INPUT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RC_CBR">DVR_RC_CBR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VOUT_OPCODE_STOP">DVR_VOUT_OPCODE_STOP</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDDET_TEST_NO_SYNC_ERR">DECODER_VIDDET_TEST_NO_SYNC_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RC_CQ">DVR_RC_CQ</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_ACTION_ANALYTIC">DVR_VPP_ACTION_ANALYTIC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDDET_TEST_UNKNOWN_CHIP">DECODER_VIDDET_TEST_UNKNOWN_CHIP</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RC_CQP">DVR_RC_CQP</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_ACTION_DEINTERLACE">DVR_VPP_ACTION_DEINTERLACE</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDEO_TEST_INIT_ERR">DECODER_VIDEO_TEST_INIT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RC_NONE">DVR_RC_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_ACTION_MEDIAN_FILTER">DVR_VPP_ACTION_MEDIAN_FILTER</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDEO_TEST_NO_VIDEO_ERR">DECODER_VIDEO_TEST_NO_VIDEO_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_RC_VBR">DVR_RC_VBR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_ACTION_SLATERAL">DVR_VPP_ACTION_SLATERAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DECODER_VIDEO_TEST_TIMEOUT">DECODER_VIDEO_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_MAP_MAX_SIZE">DVR_REGION_MAP_MAX_SIZE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_MODE_ANALYTICS">DVR_VPP_MODE_ANALYTICS</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVRFW_OSD_LEN">DVRFW_OSD_LEN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_OPCODE_CONFIG">DVR_REGION_OPCODE_CONFIG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_VPP_MODE_SLATERAL">DVR_VPP_MODE_SLATERAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_BUG">DVRFW_VER_BUG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_OPCODE_ENABLE">DVR_REGION_OPCODE_ENABLE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VPP_OPCODE_CONTROL">DVR_VPP_OPCODE_CONTROL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_BUILD">DVRFW_VER_BUILD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_OPCODE_FINISH">DVR_REGION_OPCODE_FINISH</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VPP_OPCODE_REGIONS">DVR_VPP_OPCODE_REGIONS</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_MAJOR">DVRFW_VER_MAJOR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_OPCODE_START">DVR_REGION_OPCODE_START</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_2CIF_NTSC">DVR_VSTD_2CIF_NTSC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvrfw.html#Defines__DVRFW_VER_MINOR">DVRFW_VER_MINOR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_TYPE_BD">DVR_REGION_TYPE_BD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_2CIF_PAL">DVR_VSTD_2CIF_PAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_G711">DVR_AC_FORMAT_G711</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_TYPE_MD">DVR_REGION_TYPE_MD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_4CIF_NTSC">DVR_VSTD_4CIF_NTSC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_G726_16K">DVR_AC_FORMAT_G726_16K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_TYPE_ND">DVR_REGION_TYPE_ND</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_4CIF_PAL">DVR_VSTD_4CIF_PAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_G726_24K">DVR_AC_FORMAT_G726_24K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_REGION_TYPE_PR">DVR_REGION_TYPE_PR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_CIF_NTSC">DVR_VSTD_CIF_NTSC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_G726_32K">DVR_AC_FORMAT_G726_32K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_AUTH_KEY">DVR_REP_AUTH_KEY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_CIF_PAL">DVR_VSTD_CIF_PAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_G726_48K">DVR_AC_FORMAT_G726_48K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_BD">DVR_REP_BD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_D1_NTSC">DVR_VSTD_D1_NTSC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AC_FORMAT_NONE">DVR_AC_FORMAT_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_BOARD">DVR_REP_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_D1_PAL">DVR_VSTD_D1_PAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AUDIO_RATE_16KHZ">DVR_AUDIO_RATE_16KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_CODEC_INFO">DVR_REP_CODEC_INFO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_QCIF_NTSC">DVR_VSTD_QCIF_NTSC</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AUDIO_RATE_32KHZ">DVR_AUDIO_RATE_32KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_CONTROL">DVR_REP_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_QCIF_PAL">DVR_VSTD_QCIF_PAL</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AUDIO_RATE_8KHZ">DVR_AUDIO_RATE_8KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_DECODE">DVR_REP_DECODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_VSTD_UNKNOWN">DVR_VSTD_UNKNOWN</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_AUDIO_RATE_INVALID">DVR_AUDIO_RATE_INVALID</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_ENCODE">DVR_REP_ENCODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_ac_format_e">dvr_ac_format_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_AUTH_KEY_LEN">DVR_AUTH_KEY_LEN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_ENC_ALARM">DVR_REP_ENC_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_ac_format_enum">dvr_ac_format_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_G711">DVR_DATA_G711</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_FONT_TABLE">DVR_REP_FONT_TABLE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_audio_rate_e">dvr_audio_rate_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_G726_16K">DVR_DATA_G726_16K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_HMO">DVR_REP_HMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_audio_rate_enum">dvr_audio_rate_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_G726_32K">DVR_DATA_G726_32K</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_IOCTL">DVR_REP_IOCTL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_auth_key_t">dvr_auth_key_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_B">DVR_DATA_H264_B</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_JOB">DVR_REP_JOB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_bd_t">dvr_bd_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_I">DVR_DATA_H264_I</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_MD">DVR_REP_MD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_board_t">dvr_board_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_IDR">DVR_DATA_H264_IDR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_ND">DVR_REP_ND</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_chip_rev_e">dvr_chip_rev_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_P">DVR_DATA_H264_P</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_OSD">DVR_REP_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_chip_rev_enum">dvr_chip_rev_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_PPS">DVR_DATA_H264_PPS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_OSD_EX">DVR_REP_OSD_EX</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_codec_info_t">dvr_codec_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_H264_SPS">DVR_DATA_H264_SPS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_PR">DVR_REP_PR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#">dvr_common</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_DATA_HDR_LEN">DVR_DATA_HDR_LEN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_REGIONS_MAP">DVR_REP_REGIONS_MAP</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_control_t">dvr_control_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_DATA_HDR_SIG">DVR_DATA_HDR_SIG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_RELAYS">DVR_REP_RELAYS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_data_header_t">dvr_data_header_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_DATA_HDR_VER">DVR_DATA_HDR_VER</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_SENSORS">DVR_REP_SENSORS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_data_type_e">dvr_data_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_JPEG">DVR_DATA_JPEG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_SMO">DVR_REP_SMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_data_type_enum">dvr_data_type_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_MOTION_VALUES">DVR_DATA_MOTION_VALUES</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_SMO_ATTRIB">DVR_REP_SMO_ATTRIB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_decode_info_t">dvr_decode_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_MPEG4_B">DVR_DATA_MPEG4_B</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_TIME">DVR_REP_TIME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_enc_alarm_info_t">dvr_enc_alarm_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_MPEG4_I">DVR_DATA_MPEG4_I</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_UART">DVR_REP_UART</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_encode_info_t">dvr_encode_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_MPEG4_P">DVR_DATA_MPEG4_P</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_VER_INFO">DVR_REP_VER_INFO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_font_table_t">dvr_font_table_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_MPEG4_VOL">DVR_DATA_MPEG4_VOL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_VIDEO_OUTPUT">DVR_REP_VIDEO_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_hmo_t">dvr_hmo_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_RAW_AUDIO">DVR_DATA_RAW_AUDIO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_REP_WATCHDOG">DVR_REP_WATCHDOG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_ioctl_t">dvr_ioctl_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_RAW_VIDEO">DVR_DATA_RAW_VIDEO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_AUTH_KEY">DVR_SET_AUTH_KEY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_job_action_e">dvr_job_action_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_RAW_VIDEO_U">DVR_DATA_RAW_VIDEO_U</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_BD">DVR_SET_BD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_job_action_enum">dvr_job_action_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_RAW_VIDEO_V">DVR_DATA_RAW_VIDEO_V</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_BOARD">DVR_SET_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_job_t">dvr_job_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_RAW_VIDEO_Y">DVR_DATA_RAW_VIDEO_Y</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_CONTROL">DVR_SET_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_job_type_e">dvr_job_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_DATA_UNKNOWN">DVR_DATA_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_DECODE">DVR_SET_DECODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_job_type_enum">dvr_job_type_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_ENGLISH">DVR_FONT_ENGLISH</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_ENCODE">DVR_SET_ENCODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_led_type_e">dvr_led_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_FORMAT_YUV_4_2_0">DVR_FONT_FORMAT_YUV_4_2_0</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_ENC_ALARM">DVR_SET_ENC_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_led_type_enum">dvr_led_type_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_INDEX">DVR_FONT_OPCODE_BUF_INDEX</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_FONT_TABLE">DVR_SET_FONT_TABLE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_md_t">dvr_md_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_UTF16">DVR_FONT_OPCODE_BUF_UTF16</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_HMO">DVR_SET_HMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_message_e">dvr_message_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_UU">DVR_FONT_OPCODE_BUF_UU</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_IOCTL">DVR_SET_IOCTL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_message_enum">dvr_message_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_VV">DVR_FONT_OPCODE_BUF_VV</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_JOB">DVR_SET_JOB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_nd_t">dvr_nd_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_WIDTH">DVR_FONT_OPCODE_BUF_WIDTH</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_MD">DVR_SET_MD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_dts_e">dvr_osd_dts_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_BUF_YY">DVR_FONT_OPCODE_BUF_YY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_ND">DVR_SET_ND</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_dts_enum">dvr_osd_dts_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_COPY">DVR_FONT_OPCODE_COPY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_OSD">DVR_SET_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_ex_t">dvr_osd_ex_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_COPY_DONE">DVR_FONT_OPCODE_COPY_DONE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_OSD_EX">DVR_SET_OSD_EX</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_pos_e">dvr_osd_pos_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_FINISH">DVR_FONT_OPCODE_FINISH</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_PR">DVR_SET_PR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_pos_enum">dvr_osd_pos_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_SELECT">DVR_FONT_OPCODE_SELECT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_REGIONS_MAP">DVR_SET_REGIONS_MAP</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_osd_t">dvr_osd_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_FONT_OPCODE_START">DVR_FONT_OPCODE_START</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_RELAYS">DVR_SET_RELAYS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_pr_t">dvr_pr_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_FW_INTERNAL">DVR_FW_INTERNAL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_SENSORS">DVR_SET_SENSORS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_rawv_format_e">dvr_rawv_format_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_AUTH_KEY">DVR_GET_AUTH_KEY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_SMO">DVR_SET_SMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_rawv_format_enum">dvr_rawv_format_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_BD">DVR_GET_BD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_TIME">DVR_SET_TIME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_rc_e">dvr_rc_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_BOARD">DVR_GET_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_UART">DVR_SET_UART</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_rc_enum">dvr_rc_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_CODEC_INFO">DVR_GET_CODEC_INFO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_VIDEO_OUTPUT">DVR_SET_VIDEO_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_regions_map_t">dvr_regions_map_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_CONTROL">DVR_GET_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SET_WATCHDOG">DVR_SET_WATCHDOG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_relay_t">dvr_relay_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_DECODE">DVR_GET_DECODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_BLIND_DETECTED">DVR_SIGNAL_BLIND_DETECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_sensor_t">dvr_sensor_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_ENCODE">DVR_GET_ENCODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_FATAL_ERROR">DVR_SIGNAL_FATAL_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_sig_host_t">dvr_sig_host_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_ENC_ALARM">DVR_GET_ENC_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_HEARTBEAT">DVR_SIGNAL_HEARTBEAT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_signal_type_e">dvr_signal_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_HMO">DVR_GET_HMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_MOTION_DETECTED">DVR_SIGNAL_MOTION_DETECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_signal_type_enum">dvr_signal_type_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_IOCTL">DVR_GET_IOCTL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_NIGHT_DETECTED">DVR_SIGNAL_NIGHT_DETECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_smo_attrib_t">dvr_smo_attrib_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_JOB">DVR_GET_JOB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_RUNTIME_ERROR">DVR_SIGNAL_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_smo_capabilities_e">dvr_smo_capabilities_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_MD">DVR_GET_MD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_SENSOR_ACTIVATED">DVR_SIGNAL_SENSOR_ACTIVATED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_smo_t">dvr_smo_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_ND">DVR_GET_ND</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_VIDEO_DETECTED">DVR_SIGNAL_VIDEO_DETECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_status_e">dvr_status_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_OSD">DVR_GET_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_VIDEO_LOST">DVR_SIGNAL_VIDEO_LOST</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_status_enum">dvr_status_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_OSD_EX">DVR_GET_OSD_EX</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIGNAL_WATCHDOG_EXPIRED">DVR_SIGNAL_WATCHDOG_EXPIRED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_term_e">dvr_term_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_PR">DVR_GET_PR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SIG_HOST">DVR_SIG_HOST</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_term_enum">dvr_term_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_RELAYS">DVR_GET_RELAYS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SMO_CAP_ALPHA_BLENDING">DVR_SMO_CAP_ALPHA_BLENDING</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_time_t">dvr_time_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_SENSORS">DVR_GET_SENSORS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SMO_CAP_ANALOG">DVR_SMO_CAP_ANALOG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_uart_t">dvr_uart_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_SMO">DVR_GET_SMO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SMO_CAP_OSD">DVR_SMO_CAP_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vc_format_e">dvr_vc_format_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_SMO_ATTRIB">DVR_GET_SMO_ATTRIB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SMO_CAP_OUTPUT">DVR_SMO_CAP_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vc_format_enum">dvr_vc_format_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_TIME">DVR_GET_TIME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_SMO_CAP_TILING">DVR_SMO_CAP_TILING</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_ver_info_t">dvr_ver_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_UART">DVR_GET_UART</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_AUDIO_RUNTIME_ERROR">DVR_STATUS_AUDIO_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_video_res_e">dvr_video_res_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_VER_INFO">DVR_GET_VER_INFO</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_DECODER_RUNTIME_ERROR">DVR_STATUS_DECODER_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_video_res_enum">dvr_video_res_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_GET_WATCHDOG">DVR_GET_WATCHDOG</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_ENCODER_RUNTIME_ERROR">DVR_STATUS_ENCODER_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_videoout_t">dvr_videoout_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_ICFLAG_BRT">DVR_ICFLAG_BRT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_EXCEED_CPU_LIMIT">DVR_STATUS_EXCEED_CPU_LIMIT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vpp_action_e">dvr_vpp_action_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_ICFLAG_CONT">DVR_ICFLAG_CONT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_ILLEGAL_COMMAND">DVR_STATUS_ILLEGAL_COMMAND</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vpp_action_enum">dvr_vpp_action_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_ICFLAG_HUE">DVR_ICFLAG_HUE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_ILLEGAL_PARAMETER">DVR_STATUS_ILLEGAL_PARAMETER</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vpp_mode_e">dvr_vpp_mode_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_ICFLAG_SAT">DVR_ICFLAG_SAT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_ILLEGAL_SMO_PARAMS">DVR_STATUS_ILLEGAL_SMO_PARAMS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_vpp_mode_enum">dvr_vpp_mode_enum</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_ICFLAG_SHARP">DVR_ICFLAG_SHARP</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_INTERNAL_ERROR">DVR_STATUS_INTERNAL_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__dvr_watchdog_t">dvr_watchdog_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_CLOSE_CHAN">DVR_IOCTL_CODE_CLOSE_CHAN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_INVALID_TIME">DVR_STATUS_INVALID_TIME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#">dvrfw</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_DECODER_REGS">DVR_IOCTL_CODE_DECODER_REGS</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_JOB_ALREADY_CREATED">DVR_STATUS_JOB_ALREADY_CREATED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_camera_encode">dvrfw_camera_encode</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_GAIN_MODE">DVR_IOCTL_CODE_GAIN_MODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_JOB_NOT_CREATED">DVR_STATUS_JOB_NOT_CREATED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_data_proxy">dvrfw_host_data_proxy</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_IMG_CONTROL">DVR_IOCTL_CODE_IMG_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_JOB_NOT_DISABLED">DVR_STATUS_JOB_NOT_DISABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_decode">dvrfw_host_decode</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_LED">DVR_IOCTL_CODE_LED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_JOB_NOT_ENABLED">DVR_STATUS_JOB_NOT_ENABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_encode">dvrfw_host_encode</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_MOTION_FRAME_FREQ">DVR_IOCTL_CODE_MOTION_FRAME_FREQ</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_NO_IO_BOARD">DVR_STATUS_NO_IO_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_host_msg_proxy">dvrfw_host_msg_proxy</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_OPEN_CHAN">DVR_IOCTL_CODE_OPEN_CHAN</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_OK">DVR_STATUS_OK</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_io_manager">dvrfw_io_manager</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_RAWV_FORMAT">DVR_IOCTL_CODE_RAWV_FORMAT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_OUT_OF_MEMORY">DVR_STATUS_OUT_OF_MEMORY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_smo_manager">dvrfw_smo_manager</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_TERMINATION">DVR_IOCTL_CODE_TERMINATION</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_RES_LIMIT_EXCEEDED">DVR_STATUS_RES_LIMIT_EXCEEDED</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_stdout_manager">dvrfw_stdout_manager</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__DVR_IOCTL_CODE_VPP_CONTROL">DVR_IOCTL_CODE_VPP_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_RUNTIME_ERROR">DVR_STATUS_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvrfw.html#Routines__dvrfw_vout_manager">dvrfw_vout_manager</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_CAMERA_ENCODE">DVR_JOB_CAMERA_ENCODE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_SMO_CHAN_FAILED">DVR_STATUS_SMO_CHAN_FAILED</A></NOBR></TD>
+<TD></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_JOB_CREATE">DVR_JOB_CREATE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Types__DVR_STATUS_SMO_NOT_CREATED">DVR_STATUS_SMO_NOT_CREATED</A></NOBR></TD>
+<TD></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_E"></A>E</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__EPSON_REG_TEST_INIT_ERR">EPSON_REG_TEST_INIT_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__EPSON_REG_TEST_WALKING_ERR">EPSON_REG_TEST_WALKING_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="sdvr_ui_sdk.html#Defines__EXTERN">EXTERN</A></NOBR></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_F"></A>F</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="sdvr_sdk.html#Defines__false">false</A></NOBR></TD>
+<TD width="33%"></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_G"></A>G</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__GLOBAL_RESET_TEST_ERR">GLOBAL_RESET_TEST_ERR</A></NOBR></TD>
+<TD width="33%"></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_I"></A>I</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="sdvr_sdk.html#Defines__INVALID_CHAN_HANDLE">INVALID_CHAN_HANDLE</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_ALARMOUT_ERR">IOBOARD_ALARMOUT_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_LOOPBACK_ERR">IOBOARD_LOOPBACK_ERR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_ALARMIN_ERR">IOBOARD_ALARMIN_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_CAMTERM_ERR">IOBOARD_CAMTERM_ERR</A></NOBR></TD>
+<TD></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_ALARMOUTRELAY_ERR">IOBOARD_ALARMOUTRELAY_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__IOBOARD_LED_ERR">IOBOARD_LED_ERR</A></NOBR></TD>
+<TD></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_N"></A>N</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__NVP1104_REG_TEST_ERR">NVP1104_REG_TEST_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__NVP1114_REG_TEST_ERR">NVP1114_REG_TEST_ERR</A></NOBR></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_P"></A>P</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__PCIE_EYEMASK_TEST_ERR">PCIE_EYEMASK_TEST_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_DDR_DLL_ERR">PLL_TEST_DDR_DLL_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_MHZ_ERR">PLL_TEST_MHZ_ERR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PCIE_EYEMASK_TEST_NO_CBB">PCIE_EYEMASK_TEST_NO_CBB</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_DP0_PLL_ERR">PLL_TEST_DP0_PLL_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_SYS_PLL_ERR">PLL_TEST_SYS_PLL_ERR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PCIE_EYEMASK_TEST_TIMEOUT">PCIE_EYEMASK_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_DP2_PLL_ERR">PLL_TEST_DP2_PLL_ERR</A></NOBR></TD>
+<TD></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_AIM_PLL_ERR">PLL_TEST_AIM_PLL_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__PLL_TEST_IO_PLL_ERR">PLL_TEST_IO_PLL_ERR</A></NOBR></TD>
+<TD></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_S"></A>S</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_G711">SDVR_AUDIO_ENC_G711</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_MPEG4_B">SDVR_FRAME_MPEG4_B</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_config_sensors">sdvr_config_sensors</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_G726_16K">SDVR_AUDIO_ENC_G726_16K</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_MPEG4_I">SDVR_FRAME_MPEG4_I</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_create_chan">sdvr_create_chan</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_G726_24K">SDVR_AUDIO_ENC_G726_24K</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_MPEG4_P">SDVR_FRAME_MPEG4_P</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_destroy_chan">sdvr_destroy_chan</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_G726_32K">SDVR_AUDIO_ENC_G726_32K</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_MPEG4_VOL">SDVR_FRAME_MPEG4_VOL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_diag_code_e">sdvr_diag_code_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_G726_48K">SDVR_AUDIO_ENC_G726_48K</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_RAW_AUDIO">SDVR_FRAME_RAW_AUDIO</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_display_debug_callback">sdvr_display_debug_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_ENC_NONE">SDVR_AUDIO_ENC_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_RAW_VIDEO">SDVR_FRAME_RAW_VIDEO</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_dts_style_e">sdvr_dts_style_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_RATE_16KHZ">SDVR_AUDIO_RATE_16KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_VIDEO_ENCODED_PRIMARY">SDVR_FRAME_VIDEO_ENCODED_PRIMARY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_auth_key">sdvr_enable_auth_key</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_RATE_32KHZ">SDVR_AUDIO_RATE_32KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_VIDEO_ENCODED_SECONDARY">SDVR_FRAME_VIDEO_ENCODED_SECONDARY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_blind_detection">sdvr_enable_blind_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_RATE_8KHZ">SDVR_AUDIO_RATE_8KHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_AUDIO_RUNTIME">SDVR_FRMW_ERR_AUDIO_RUNTIME</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_decoder">sdvr_enable_decoder</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_AUDIO_RATE_NONE">SDVR_AUDIO_RATE_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_CHANNEL_ALREADY_CREATED">SDVR_FRMW_ERR_CHANNEL_ALREADY_CREATED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_deinterlacing">sdvr_enable_deinterlacing</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_AV_STATE_AUDIO_LOST">SDVR_AV_STATE_AUDIO_LOST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_CHANNEL_NOT_CREATED">SDVR_FRMW_ERR_CHANNEL_NOT_CREATED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_encoder">sdvr_enable_encoder</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_AV_STATE_VIDEO_LOST">SDVR_AV_STATE_VIDEO_LOST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_CHANNEL_NOT_DISABLED">SDVR_FRMW_ERR_CHANNEL_NOT_DISABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_motion_detection">sdvr_enable_motion_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_BITRATE_CONTROL_CBR">SDVR_BITRATE_CONTROL_CBR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_CHANNEL_NOT_ENABLED">SDVR_FRMW_ERR_CHANNEL_NOT_ENABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_motion_detection_ex">sdvr_enable_motion_detection_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_BITRATE_CONTROL_CONSTANT_QUALITY">SDVR_BITRATE_CONTROL_CONSTANT_QUALITY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_DECODER_RUNTIME_ERROR">SDVR_FRMW_ERR_DECODER_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_night_detection">sdvr_enable_night_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_BITRATE_CONTROL_CQP">SDVR_BITRATE_CONTROL_CQP</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_ENCODER_RUNTIME_ERROR">SDVR_FRMW_ERR_ENCODER_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_noise_reduction">sdvr_enable_noise_reduction</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_BITRATE_CONTROL_NONE">SDVR_BITRATE_CONTROL_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_EXCEED_CPU_LIMIT">SDVR_FRMW_ERR_EXCEED_CPU_LIMIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_privacy_regions">sdvr_enable_privacy_regions</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_BITRATE_CONTROL_VBR">SDVR_BITRATE_CONTROL_VBR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_ILLEGAL_COMMAND">SDVR_FRMW_ERR_ILLEGAL_COMMAND</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_enable_sensor">sdvr_enable_sensor</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_BOARD_SERIAL_LENGTH">SDVR_BOARD_SERIAL_LENGTH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_ILLEGAL_PARAMETER">SDVR_FRMW_ERR_ILLEGAL_PARAMETER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_err_e">sdvr_err_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHAN_TYPE_DECODER">SDVR_CHAN_TYPE_DECODER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_ILLEGAL_SMO_PARAMS">SDVR_FRMW_ERR_ILLEGAL_SMO_PARAMS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__sdvr_err_ui_e">sdvr_err_ui_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHAN_TYPE_ENCODER">SDVR_CHAN_TYPE_ENCODER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_INTERNAL_ERROR">SDVR_FRMW_ERR_INTERNAL_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_firmware_ver_t">sdvr_firmware_ver_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHAN_TYPE_NONE">SDVR_CHAN_TYPE_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_INVALID_TIME">SDVR_FRMW_ERR_INVALID_TIME</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_font_table_t">sdvr_font_table_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHAN_TYPE_OUTPUT">SDVR_CHAN_TYPE_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_NO_IO_BOARD">SDVR_FRMW_ERR_NO_IO_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_frame_type_e">sdvr_frame_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6100_3_REV_C">SDVR_CHIP_S6100_3_REV_C</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_OUT_OF_MEMORY">SDVR_FRMW_ERR_OUT_OF_MEMORY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_alarm_motion_value">sdvr_get_alarm_motion_value</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6100_3_REV_D">SDVR_CHIP_S6100_3_REV_D</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_RES_LIMIT_EXCEEDED">SDVR_FRMW_ERR_RES_LIMIT_EXCEEDED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_alarm_video_encoder_params">sdvr_get_alarm_video_encoder_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6100_3_REV_F">SDVR_CHIP_S6100_3_REV_F</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_RUNTIME_ERROR">SDVR_FRMW_ERR_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_audio_encoder_channel_params">sdvr_get_audio_encoder_channel_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6100_3_UNKNOWN">SDVR_CHIP_S6100_3_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_SMO_CHAN_FAILED">SDVR_FRMW_ERR_SMO_CHAN_FAILED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_av_buffer">sdvr_get_av_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6105_3_REV_C">SDVR_CHIP_S6105_3_REV_C</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_SMO_NOT_CREATED">SDVR_FRMW_ERR_SMO_NOT_CREATED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_blind_detection">sdvr_get_blind_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6105_3_REV_D">SDVR_CHIP_S6105_3_REV_D</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_SMO_NOT_DISABLED">SDVR_FRMW_ERR_SMO_NOT_DISABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_board_attributes">sdvr_get_board_attributes</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6105_3_REV_F">SDVR_CHIP_S6105_3_REV_F</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_SMO_NOT_SUPPORTED">SDVR_FRMW_ERR_SMO_NOT_SUPPORTED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_board_config">sdvr_get_board_config</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6105_3_UNKNOWN">SDVR_CHIP_S6105_3_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_UNSUPPORTED_COMMAND">SDVR_FRMW_ERR_UNSUPPORTED_COMMAND</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_board_count">sdvr_get_board_count</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6106_3_REV_C">SDVR_CHIP_S6106_3_REV_C</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_VDET_ERROR">SDVR_FRMW_ERR_VDET_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_board_index">sdvr_get_board_index</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6106_3_REV_D">SDVR_CHIP_S6106_3_REV_D</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_VPP_RUNTIME_ERROR">SDVR_FRMW_ERR_VPP_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_alarm_value">sdvr_get_buffer_alarm_value</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6106_3_REV_F">SDVR_CHIP_S6106_3_REV_F</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_AUDIO_FORMAT">SDVR_FRMW_ERR_WRONG_AUDIO_FORMAT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_channel">sdvr_get_buffer_channel</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_S6106_3_UNKNOWN">SDVR_CHIP_S6106_3_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CAMERA_NUMBER">SDVR_FRMW_ERR_WRONG_CAMERA_NUMBER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_frame_type">sdvr_get_buffer_frame_type</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_CHIP_UNKNOWN">SDVR_CHIP_UNKNOWN</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CAMERA_TYPE">SDVR_FRMW_ERR_WRONG_CAMERA_TYPE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_sub_encoder">sdvr_get_buffer_sub_encoder</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_DATA_HDR_SIG">SDVR_DATA_HDR_SIG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CHANNEL_ID">SDVR_FRMW_ERR_WRONG_CHANNEL_ID</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_timestamp">sdvr_get_buffer_timestamp</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_DATA_HDR_VER">SDVR_DATA_HDR_VER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CHANNEL_TYPE">SDVR_FRMW_ERR_WRONG_CHANNEL_TYPE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_buffer_yuv_format">sdvr_get_buffer_yuv_format</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DDR_ADDRLINES_FAIL">SDVR_DIAG_DDR_ADDRLINES_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CODEC_FORMAT">SDVR_FRMW_ERR_WRONG_CODEC_FORMAT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_chan_num">sdvr_get_chan_num</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DDR_BITFLIP_FAIL">SDVR_DIAG_DDR_BITFLIP_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_CODEC_RESOLUTION">SDVR_FRMW_ERR_WRONG_CODEC_RESOLUTION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_chan_type">sdvr_get_chan_type</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DDR_DMA_FAIL">SDVR_DIAG_DDR_DMA_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRMW_ERR_WRONG_VIDEO_FORMAT">SDVR_FRMW_ERR_WRONG_VIDEO_FORMAT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_chan_user_data">sdvr_get_chan_user_data</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DDR_READ_DMA_FAIL">SDVR_DIAG_DDR_READ_DMA_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_FT_FONT_ENGLISH">SDVR_FT_FONT_ENGLISH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_date_time">sdvr_get_date_time</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DDR_WRITEREAD_FAIL">SDVR_DIAG_DDR_WRITEREAD_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_FT_FORMAT_BDF">SDVR_FT_FORMAT_BDF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_driver_version">sdvr_get_driver_version</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_AUDDET_TEST_NO_SYNC_ERR">SDVR_DIAG_DECODER_AUDDET_TEST_NO_SYNC_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_ALL">SDVR_ICFLAG_ALL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_error_text">sdvr_get_error_text</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_AUDIO_TEST_INIT">SDVR_DIAG_DECODER_AUDIO_TEST_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_BRIGHTNESS">SDVR_ICFLAG_BRIGHTNESS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_firmware_version_ex">sdvr_get_firmware_version_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_AUDIO_TEST_NO_AUDIO">SDVR_DIAG_DECODER_AUDIO_TEST_NO_AUDIO</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_CONTRAST">SDVR_ICFLAG_CONTRAST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_motion_detection">sdvr_get_motion_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_AUDIO_TEST_TIMEOUT">SDVR_DIAG_DECODER_AUDIO_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_HUE">SDVR_ICFLAG_HUE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_night_detection">sdvr_get_night_detection</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_UNIQUE_VIDEO_TEST">SDVR_DIAG_DECODER_UNIQUE_VIDEO_TEST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_SATURATION">SDVR_ICFLAG_SATURATION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_pci_attrib">sdvr_get_pci_attrib</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDDET_TEST_CONFLICT_ERR">SDVR_DIAG_DECODER_VIDDET_TEST_CONFLICT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_ICFLAG_SHARPNESS">SDVR_ICFLAG_SHARPNESS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_privacy_regions">sdvr_get_privacy_regions</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDDET_TEST_INIT_ERR">SDVR_DIAG_DECODER_VIDDET_TEST_INIT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LED_TYPE_ALARM">SDVR_LED_TYPE_ALARM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_relays">sdvr_get_relays</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDDET_TEST_NO_INPUT_ERR">SDVR_DIAG_DECODER_VIDDET_TEST_NO_INPUT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LED_TYPE_RECORD">SDVR_LED_TYPE_RECORD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_sdk_params">sdvr_get_sdk_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDDET_TEST_NO_SYNC_ERR">SDVR_DIAG_DECODER_VIDDET_TEST_NO_SYNC_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LOC_BOTTOM_LEFT">SDVR_LOC_BOTTOM_LEFT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_sdk_version">sdvr_get_sdk_version</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDDET_TEST_UNKNOWN_CHIP">SDVR_DIAG_DECODER_VIDDET_TEST_UNKNOWN_CHIP</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LOC_BOTTOM_RIGHT">SDVR_LOC_BOTTOM_RIGHT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_sensors">sdvr_get_sensors</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDEO_TEST_INIT">SDVR_DIAG_DECODER_VIDEO_TEST_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LOC_CUSTOM">SDVR_LOC_CUSTOM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_smo_attributes">sdvr_get_smo_attributes</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDEO_TEST_NO_VIDEO">SDVR_DIAG_DECODER_VIDEO_TEST_NO_VIDEO</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LOC_TOP_LEFT">SDVR_LOC_TOP_LEFT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_smo_grid">sdvr_get_smo_grid</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_DECODER_VIDEO_TEST_TIMEOUT">SDVR_DIAG_DECODER_VIDEO_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_LOC_TOP_RIGHT">SDVR_LOC_TOP_RIGHT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_smo_grid_ex">sdvr_get_smo_grid_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_EPSON_REG_TEST_INIT">SDVR_DIAG_EPSON_REG_TEST_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_BD_REGIONS">SDVR_MAX_BD_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_supported_vstd">sdvr_get_supported_vstd</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_EPSON_REG_TEST_WALKING">SDVR_DIAG_EPSON_REG_TEST_WALKING</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Defines__SDVR_MAX_DRAW_REGIONS">SDVR_MAX_DRAW_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_video_encoder_channel_params">sdvr_get_video_encoder_channel_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_NVP1104_REG_TEST">SDVR_DIAG_NVP1104_REG_TEST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_MD_REGIONS">SDVR_MAX_MD_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_video_in_params">sdvr_get_video_in_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_NVP1114_REG_TEST">SDVR_DIAG_NVP1114_REG_TEST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_OSD">SDVR_MAX_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_video_output_buffer">sdvr_get_video_output_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_OK">SDVR_DIAG_OK</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_OSD_EX_TEXT">SDVR_MAX_OSD_EX_TEXT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_video_standard">sdvr_get_video_standard</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PCIE_EYEMASK_TEST_ERR">SDVR_DIAG_PCIE_EYEMASK_TEST_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_OSD_TEXT">SDVR_MAX_OSD_TEXT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_watchdog_state">sdvr_get_watchdog_state</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PCIE_EYEMASK_TEST_NO_CBB">SDVR_DIAG_PCIE_EYEMASK_TEST_NO_CBB</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_MAX_PR_REGIONS">SDVR_MAX_PR_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_get_yuv_buffer">sdvr_get_yuv_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PCIE_EYEMASK_TEST_TIMEOUT">SDVR_DIAG_PCIE_EYEMASK_TEST_TIMEOUT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_DEBUG">SDVR_OSD_DTS_DEBUG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_image_ctrl_t">sdvr_image_ctrl_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_AIM">SDVR_DIAG_PLL_TEST_AIM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_DMY_12H">SDVR_OSD_DTS_DMY_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_init_uart">sdvr_init_uart</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_DDR">SDVR_DIAG_PLL_TEST_DDR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_DMY_24H">SDVR_OSD_DTS_DMY_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_led_type_e">sdvr_led_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_DP0">SDVR_DIAG_PLL_TEST_DP0</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_MDY_12H">SDVR_OSD_DTS_MDY_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_location_e">sdvr_location_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_DP2">SDVR_DIAG_PLL_TEST_DP2</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_MDY_24H">SDVR_OSD_DTS_MDY_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_mb_region_t">sdvr_mb_region_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_IO">SDVR_DIAG_PLL_TEST_IO</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_NONE">SDVR_OSD_DTS_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_motion_detection_t">sdvr_motion_detection_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_MHZ">SDVR_DIAG_PLL_TEST_MHZ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_YMD_12H">SDVR_OSD_DTS_YMD_12H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_motion_value_analyzer">sdvr_motion_value_analyzer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_PLL_TEST_SYS">SDVR_DIAG_PLL_TEST_SYS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_OSD_DTS_YMD_24H">SDVR_OSD_DTS_YMD_24H</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_night_detection_t">sdvr_night_detection_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_COMPARE">SDVR_DIAG_SPI_TEST_COMPARE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_RAWV_FORMAT_YUV_4_2_0">SDVR_RAWV_FORMAT_YUV_4_2_0</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_osd_config_ex_t">sdvr_osd_config_ex_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_ERASE">SDVR_DIAG_SPI_TEST_ERASE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_RAWV_FORMAT_YUV_4_2_2">SDVR_RAWV_FORMAT_YUV_4_2_2</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_osd_set_font_table">sdvr_osd_set_font_table</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_MAINT">SDVR_DIAG_SPI_TEST_MAINT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_RAWV_FORMAT_YVU_4_2_0">SDVR_RAWV_FORMAT_YVU_4_2_0</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_osd_text_config_ex">sdvr_osd_text_config_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_MISC">SDVR_DIAG_SPI_TEST_MISC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_REGION_BLIND">SDVR_REGION_BLIND</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_osd_text_config_t">sdvr_osd_text_config_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_PROG">SDVR_DIAG_SPI_TEST_PROG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_REGION_MAP_4CIF_WIDTH">SDVR_REGION_MAP_4CIF_WIDTH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_osd_text_show">sdvr_osd_text_show</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_READ">SDVR_DIAG_SPI_TEST_READ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_REGION_MAP_D1_WIDTH">SDVR_REGION_MAP_D1_WIDTH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_osd_use_font_table">sdvr_osd_use_font_table</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_SPI_TEST_UNLOCK">SDVR_DIAG_SPI_TEST_UNLOCK</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_REGION_MAP_LINE_NTSC">SDVR_REGION_MAP_LINE_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_pci_attrib_t">sdvr_pci_attrib_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TW2815_REG_TEST">SDVR_DIAG_TW2815_REG_TEST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__SDVR_REGION_MAP_LINE_PAL">SDVR_REGION_MAP_LINE_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_privacy_region_t">sdvr_privacy_region_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TW2864_REG_TEST">SDVR_DIAG_TW2864_REG_TEST</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_REGION_MOTION">SDVR_REGION_MOTION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_rawv_formats_e">sdvr_rawv_formats_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TWI_EEPROM_TEST_COMPARE">SDVR_DIAG_TWI_EEPROM_TEST_COMPARE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_REGION_PRIVACY">SDVR_REGION_PRIVACY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_read_ioctl">sdvr_read_ioctl</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TWI_EEPROM_TEST_INIT">SDVR_DIAG_TWI_EEPROM_TEST_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SIGNAL_FATAL_ERROR">SDVR_SIGNAL_FATAL_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_read_uart">sdvr_read_uart</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TWI_EEPROM_TEST_READ">SDVR_DIAG_TWI_EEPROM_TEST_READ</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SIGNAL_RUNTIME_ERROR">SDVR_SIGNAL_RUNTIME_ERROR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_region_t">sdvr_region_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TWI_EEPROM_TEST_WP_COMPARE">SDVR_DIAG_TWI_EEPROM_TEST_WP_COMPARE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SMO_CAP_ALPHA_BLENDING">SDVR_SMO_CAP_ALPHA_BLENDING</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_regions_type_e">sdvr_regions_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DIAG_TWI_EEPROM_TEST_WRITE">SDVR_DIAG_TWI_EEPROM_TEST_WRITE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SMO_CAP_ANALOG">SDVR_SMO_CAP_ANALOG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_release_av_buffer">sdvr_release_av_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_BOARD_BOOT_FAIL">SDVR_DRV_BOARD_BOOT_FAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SMO_CAP_OSD">SDVR_SMO_CAP_OSD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_release_yuv_buffer">sdvr_release_yuv_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_BOARD_CLOSE">SDVR_DRV_ERR_BOARD_CLOSE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SMO_CAP_OUTPUT">SDVR_SMO_CAP_OUTPUT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_remove_region">sdvr_remove_region</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_BOARD_CONNECT">SDVR_DRV_ERR_BOARD_CONNECT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_SMO_CAP_TILING">SDVR_SMO_CAP_TILING</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_rgb">sdvr_rgb</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_BOARD_IN_USE">SDVR_DRV_ERR_BOARD_IN_USE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_TERM_75OHM">SDVR_TERM_75OHM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_run_diagnostics">sdvr_run_diagnostics</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_BOARD_RESET">SDVR_DRV_ERR_BOARD_RESET</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_TERM_HIGH_IMPEDANCE">SDVR_TERM_HIGH_IMPEDANCE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#">sdvr_sdk</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_CLOSE">SDVR_DRV_ERR_CHANNEL_CLOSE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Defines__SDVR_UI_ERR_NONE">SDVR_UI_ERR_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_sdk_close">sdvr_sdk_close</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_CONNECT">SDVR_DRV_ERR_CHANNEL_CONNECT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Defines__SDVR_UI_LS_DASH">SDVR_UI_LS_DASH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_sdk_init">sdvr_sdk_init</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_CREATE">SDVR_DRV_ERR_CHANNEL_CREATE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Defines__SDVR_UI_LS_DOT">SDVR_UI_LS_DOT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_sdk_params_t">sdvr_sdk_params_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_DEAD">SDVR_DRV_ERR_CHANNEL_DEAD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Defines__SDVR_UI_LS_SOLID">SDVR_UI_LS_SOLID</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_send_av_frame">sdvr_send_av_frame</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_IN_USE">SDVR_DRV_ERR_CHANNEL_IN_USE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_BLIND">SDVR_VIDEO_ALARM_BLIND</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_send_confirmation_callback">sdvr_send_confirmation_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_CHANNEL_NOT_ACTIVE">SDVR_DRV_ERR_CHANNEL_NOT_ACTIVE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_DETECTED">SDVR_VIDEO_ALARM_DETECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_send_video_output">sdvr_send_video_output</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_INVALID_PARAMETER">SDVR_DRV_ERR_INVALID_PARAMETER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_LOSS">SDVR_VIDEO_ALARM_LOSS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_sensor_callback">sdvr_sensor_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_IPC_INIT">SDVR_DRV_ERR_IPC_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_MOTION">SDVR_VIDEO_ALARM_MOTION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_alarm_video_encoder_params">sdvr_set_alarm_video_encoder_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_MSG_RECV">SDVR_DRV_ERR_MSG_RECV</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_NIGHT">SDVR_VIDEO_ALARM_NIGHT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_audio_encoder_channel_params">sdvr_set_audio_encoder_channel_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_MSG_SEND">SDVR_DRV_ERR_MSG_SEND</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ALARM_NONE">SDVR_VIDEO_ALARM_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_av_frame_callback">sdvr_set_av_frame_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_NO_CHANNELS">SDVR_DRV_ERR_NO_CHANNELS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ENC_H264">SDVR_VIDEO_ENC_H264</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_camera_termination">sdvr_set_camera_termination</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_NO_RECV_BUFFERS">SDVR_DRV_ERR_NO_RECV_BUFFERS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ENC_JPEG">SDVR_VIDEO_ENC_JPEG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_chan_user_data">sdvr_set_chan_user_data</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_DRV_ERR_NO_SEND_BUFFERS">SDVR_DRV_ERR_NO_SEND_BUFFERS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ENC_MPEG4">SDVR_VIDEO_ENC_MPEG4</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_channel_default">sdvr_set_channel_default</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ENC_PRIMARY">SDVR_ENC_PRIMARY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_ENC_NONE">SDVR_VIDEO_ENC_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_confirmation_callback">sdvr_set_confirmation_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ENC_SECONDARY">SDVR_ENC_SECONDARY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_CIF">SDVR_VIDEO_RES_DECIMATION_CIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_date_time">sdvr_set_date_time</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_AUTH_KEY_LEN">SDVR_ERR_AUTH_KEY_LEN</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_CLASSIC_2CIF">SDVR_VIDEO_RES_DECIMATION_CLASSIC_2CIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_decoder_size">sdvr_set_decoder_size</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_AUTH_KEY_MISSING">SDVR_ERR_AUTH_KEY_MISSING</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_CLASSIC_4CIF">SDVR_VIDEO_RES_DECIMATION_CLASSIC_4CIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_display_debug">sdvr_set_display_debug</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_BOARD_CLOSED">SDVR_ERR_BOARD_CLOSED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_CLASSIC_CIF">SDVR_VIDEO_RES_DECIMATION_CLASSIC_CIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_gain_mode">sdvr_set_gain_mode</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_BOARD_CONNECTED">SDVR_ERR_BOARD_CONNECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_DCIF">SDVR_VIDEO_RES_DECIMATION_DCIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_led">sdvr_set_led</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_BOARD_NOT_CONNECTED">SDVR_ERR_BOARD_NOT_CONNECTED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_EQUAL">SDVR_VIDEO_RES_DECIMATION_EQUAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_motion_value_frequency">sdvr_set_motion_value_frequency</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_BUF_NOT_AVAIL">SDVR_ERR_BUF_NOT_AVAIL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_FOURTH">SDVR_VIDEO_RES_DECIMATION_FOURTH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_regions">sdvr_set_regions</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_CALLBACK_FAILED">SDVR_ERR_CALLBACK_FAILED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_HALF">SDVR_VIDEO_RES_DECIMATION_HALF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_regions_map">sdvr_set_regions_map</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_CAMERA_IN_REC">SDVR_ERR_CAMERA_IN_REC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_NONE">SDVR_VIDEO_RES_DECIMATION_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_sdk_params">sdvr_set_sdk_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_CHANNEL_CLOSED">SDVR_ERR_CHANNEL_CLOSED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_QCIF">SDVR_VIDEO_RES_DECIMATION_QCIF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_sensor_callback">sdvr_set_sensor_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_COMMAND_NOT_SUPPORTED">SDVR_ERR_COMMAND_NOT_SUPPORTED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_RES_DECIMATION_SIXTEENTH">SDVR_VIDEO_RES_DECIMATION_SIXTEENTH</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_signals_callback">sdvr_set_signals_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_DBG_FILE">SDVR_ERR_DBG_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_176x112">SDVR_VIDEO_SIZE_176x112</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_smo_grid">sdvr_set_smo_grid</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_DECODER_NOT_ENABLED">SDVR_ERR_DECODER_NOT_ENABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_176x144">SDVR_VIDEO_SIZE_176x144</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_smo_grid_ex">sdvr_set_smo_grid_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_ENCODER_NOT_DISABLED">SDVR_ERR_ENCODER_NOT_DISABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_352x240">SDVR_VIDEO_SIZE_352x240</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_video_alarm_callback">sdvr_set_video_alarm_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_ENCODER_NOT_ENABLED">SDVR_ERR_ENCODER_NOT_ENABLED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_352x288">SDVR_VIDEO_SIZE_352x288</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_video_encoder_channel_params">sdvr_set_video_encoder_channel_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_FAILED_ADD_AUDIO_TRACK">SDVR_ERR_FAILED_ADD_AUDIO_TRACK</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_528x320">SDVR_VIDEO_SIZE_528x320</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_video_in_params">sdvr_set_video_in_params</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_FAILED_ADD_VIDEO_TRACK">SDVR_ERR_FAILED_ADD_VIDEO_TRACK</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_528x384">SDVR_VIDEO_SIZE_528x384</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_watchdog_state">sdvr_set_watchdog_state</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_FONT_ID">SDVR_ERR_FONT_ID</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_704x240">SDVR_VIDEO_SIZE_704x240</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_watchdog_state_ex">sdvr_set_watchdog_state_ex</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INTERNAL">SDVR_ERR_INTERNAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_704x288">SDVR_VIDEO_SIZE_704x288</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_set_yuv_format">sdvr_set_yuv_format</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_ARG">SDVR_ERR_INVALID_ARG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_704x480">SDVR_VIDEO_SIZE_704x480</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_signal_info_t">sdvr_signal_info_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_BITRATE">SDVR_ERR_INVALID_BITRATE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_704x576">SDVR_VIDEO_SIZE_704x576</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_signals_callback">sdvr_signals_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_BITRATE_CONTROL">SDVR_ERR_INVALID_BITRATE_CONTROL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_720x240">SDVR_VIDEO_SIZE_720x240</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_signals_type_e">sdvr_signals_type_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_BOARD">SDVR_ERR_INVALID_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_720x288">SDVR_VIDEO_SIZE_720x288</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_smo_attribute_t">sdvr_smo_attribute_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_CHANNEL">SDVR_ERR_INVALID_CHANNEL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_720x480">SDVR_VIDEO_SIZE_720x480</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_smo_capabilities_e">sdvr_smo_capabilities_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_CHAN_HANDLE">SDVR_ERR_INVALID_CHAN_HANDLE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_SIZE_720x576">SDVR_VIDEO_SIZE_720x576</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_smo_grid_t">sdvr_smo_grid_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_FPS">SDVR_ERR_INVALID_FPS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_2CIF_NTSC">SDVR_VIDEO_STD_2CIF_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_smo_osd_text_config">sdvr_smo_osd_text_config</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_FRAME_TYPE">SDVR_ERR_INVALID_FRAME_TYPE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_2CIF_PAL">SDVR_VIDEO_STD_2CIF_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_smo_osd_text_show">sdvr_smo_osd_text_show</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_GOP">SDVR_ERR_INVALID_GOP</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_4CIF_NTSC">SDVR_VIDEO_STD_4CIF_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_start_recording">sdvr_start_recording</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_HANDLE">SDVR_ERR_INVALID_HANDLE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_4CIF_PAL">SDVR_VIDEO_STD_4CIF_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_start_video_output">sdvr_start_video_output</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_OSD_ID">SDVR_ERR_INVALID_OSD_ID</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_CIF_NTSC">SDVR_VIDEO_STD_CIF_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_stop_recording">sdvr_stop_recording</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_QUALITY">SDVR_ERR_INVALID_QUALITY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_CIF_PAL">SDVR_VIDEO_STD_CIF_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_stop_video_output">sdvr_stop_video_output</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_REGION">SDVR_ERR_INVALID_REGION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_D1_NTSC">SDVR_VIDEO_STD_D1_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_stream_raw_audio">sdvr_stream_raw_audio</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_INVALID_RESOLUTION">SDVR_ERR_INVALID_RESOLUTION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_D1_PAL">SDVR_VIDEO_STD_D1_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_stream_raw_video">sdvr_stream_raw_video</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_IN_STREAMING">SDVR_ERR_IN_STREAMING</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_NONE">SDVR_VIDEO_STD_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_stream_raw_video_secondary">sdvr_stream_raw_video_secondary</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_LOAD_FIRMWARE">SDVR_ERR_LOAD_FIRMWARE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_QCIF_NTSC">SDVR_VIDEO_STD_QCIF_NTSC</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_sub_encoders_e">sdvr_sub_encoders_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_MAX_REGIONS">SDVR_ERR_MAX_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VIDEO_STD_QCIF_PAL">SDVR_VIDEO_STD_QCIF_PAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_term_e">sdvr_term_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_NOBUF">SDVR_ERR_NOBUF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VPP_MODE_ANALYTICS">SDVR_VPP_MODE_ANALYTICS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_trigger_relay">sdvr_trigger_relay</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_NONE">SDVR_ERR_NONE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_VPP_MODE_SLATERAL">SDVR_VPP_MODE_SLATERAL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_clear_yuv">sdvr_ui_clear_yuv</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_NO_AFRAME">SDVR_ERR_NO_AFRAME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SMO_ENABLE_ERR">SMO_ENABLE_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_close">sdvr_ui_close</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_NO_DVR_BOARD">SDVR_ERR_NO_DVR_BOARD</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_COMPARE_ERR">SPI_TEST_COMPARE_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__sdvr_ui_color_key_t">sdvr_ui_color_key_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_NO_VFRAME">SDVR_ERR_NO_VFRAME</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_ERASE_ERR">SPI_TEST_ERASE_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_draw_frame">sdvr_ui_draw_frame</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_ODD_SMO_COORDINATES">SDVR_ERR_ODD_SMO_COORDINATES</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_MAINT_ERR">SPI_TEST_MAINT_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_draw_yuv">sdvr_ui_draw_yuv</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_OPEN_REC_FILE">SDVR_ERR_OPEN_REC_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_MISC_ERR">SPI_TEST_MISC_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__sdvr_ui_hwnd_t">sdvr_ui_hwnd_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_OSD_FONT_FILE">SDVR_ERR_OSD_FONT_FILE</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_PROG_ERR">SPI_TEST_PROG_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_init">sdvr_ui_init</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_OSD_LENGTH">SDVR_ERR_OSD_LENGTH</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_READ_ERR">SPI_TEST_READ_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__sdvr_ui_preview_cb">sdvr_ui_preview_cb</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_OUT_OF_MEMORY">SDVR_ERR_OUT_OF_MEMORY</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__SPI_TEST_UNLOCK_ERR">SPI_TEST_UNLOCK_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_refresh">sdvr_ui_refresh</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_SDK_BUF_EXCEEDED">SDVR_ERR_SDK_BUF_EXCEEDED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#">Stretch</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__sdvr_ui_region_t">sdvr_ui_region_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_SDK_NO_FRAME_BUF">SDVR_ERR_SDK_NO_FRAME_BUF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_add_region">sdvr_add_region</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_set_key_color">sdvr_ui_set_key_color</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_SMO_PORT_NUM">SDVR_ERR_SMO_PORT_NUM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_aenc_e">sdvr_aenc_e</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_set_preview_callback">sdvr_ui_set_preview_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_CHANNEL_NOT_START">SDVR_ERR_UI_CHANNEL_NOT_START</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_alarm_video_enc_params_t">sdvr_alarm_video_enc_params_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_set_yuv_buffer">sdvr_ui_set_yuv_buffer</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_DRAWINFO_FULL">SDVR_ERR_UI_DRAWINFO_FULL</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_alloc_av_buffer">sdvr_alloc_av_buffer</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_start_video_preview">sdvr_ui_start_video_preview</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_DRAW_YUV">SDVR_ERR_UI_DRAW_YUV</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_alloc_av_buffer_wait">sdvr_alloc_av_buffer_wait</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_stop_video_preview">sdvr_ui_stop_video_preview</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_INIT">SDVR_ERR_UI_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_audio_enc_chan_params_t">sdvr_audio_enc_chan_params_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Routines__sdvr_ui_version">sdvr_ui_version</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_INVALID_PARAM">SDVR_ERR_UI_INVALID_PARAM</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_audio_rate_e">sdvr_audio_rate_e</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_upgrade_firmware">sdvr_upgrade_firmware</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_INVALID_YUV_BUF">SDVR_ERR_UI_INVALID_YUV_BUF</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_av_buf_payload">sdvr_av_buf_payload</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_venc_e">sdvr_venc_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_MAX_PREVIEW_REGIONS">SDVR_ERR_UI_MAX_PREVIEW_REGIONS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_av_buf_sequence">sdvr_av_buf_sequence</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_alarm_callback">sdvr_video_alarm_callback</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_MEMORY">SDVR_ERR_UI_MEMORY</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_av_buf_video_dimensions">sdvr_av_buf_video_dimensions</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_alarm_e">sdvr_video_alarm_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_NO_BUFFER">SDVR_ERR_UI_NO_BUFFER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_av_buf_yuv_payload">sdvr_av_buf_yuv_payload</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_enc_chan_params_t">sdvr_video_enc_chan_params_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_NO_INIT">SDVR_ERR_UI_NO_INIT</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_av_buffer_t">sdvr_av_buffer_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_res_decimation_e">sdvr_video_res_decimation_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_SET_BUFFER">SDVR_ERR_UI_SET_BUFFER</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_av_frame_callback">sdvr_av_frame_callback</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_size_e">sdvr_video_size_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_ui_sdk.html#Types__SDVR_ERR_UI_VIDEO_SIZE">SDVR_ERR_UI_VIDEO_SIZE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_blind_detection_t">sdvr_blind_detection_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_video_std_e">sdvr_video_std_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_UNSUPPORTED_FIRMWARE">SDVR_ERR_UNSUPPORTED_FIRMWARE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_board_attrib_t">sdvr_board_attrib_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_vpp_mode_e">sdvr_vpp_mode_e</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_WRONG_CHANNEL_TYPE">SDVR_ERR_WRONG_CHANNEL_TYPE</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_board_config_t">sdvr_board_config_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_write_ioctl">sdvr_write_ioctl</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_ERR_WRONG_DRIVER_VERSION">SDVR_ERR_WRONG_DRIVER_VERSION</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_board_connect">sdvr_board_connect</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_write_uart">sdvr_write_uart</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_AUDIO_ENCODED">SDVR_FRAME_AUDIO_ENCODED</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_board_connect_ex">sdvr_board_connect_ex</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_yuv_buffer_t">sdvr_yuv_buffer_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_G711">SDVR_FRAME_G711</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_board_disconnect">sdvr_board_disconnect</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_bool">sx_bool</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_B">SDVR_FRAME_H264_B</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_board_reset">sdvr_board_reset</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_int16">sx_int16</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_I">SDVR_FRAME_H264_I</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_board_settings_t">sdvr_board_settings_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_int32">sx_int32</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_IDR">SDVR_FRAME_H264_IDR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_br_control_e">sdvr_br_control_e</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_int64">sx_int64</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_P">SDVR_FRAME_H264_P</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_chan_def_t">sdvr_chan_def_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_int8">sx_int8</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_PPS">SDVR_FRAME_H264_PPS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_chan_handle_t">sdvr_chan_handle_t</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_uint16">sx_uint16</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_H264_SPS">SDVR_FRAME_H264_SPS</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_chan_type_e">sdvr_chan_type_e</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_uint32">sx_uint32</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_JPEG">SDVR_FRAME_JPEG</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Routines__sdvr_change_region">sdvr_change_region</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_uint64">sx_uint64</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__SDVR_FRAME_MOTION_VALUES">SDVR_FRAME_MOTION_VALUES</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sdvr_chip_rev_e">sdvr_chip_rev_e</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__sx_uint8">sx_uint8</A></NOBR></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_T"></A>T</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__TW2815_REG_TEST_ERR">TW2815_REG_TEST_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__TWI_EEPROM_TEST_INIT_ERR">TWI_EEPROM_TEST_INIT_ERR</A></NOBR></TD>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__TWI_EEPROM_TEST_WRITE_ERR">TWI_EEPROM_TEST_WRITE_ERR</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__TW2864_REG_TEST_ERR">TW2864_REG_TEST_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__TWI_EEPROM_TEST_READ_ERR">TWI_EEPROM_TEST_READ_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Types__time_t">time_t</A></NOBR></TD>
+</TR>
+<TR>
+<TD><NOBR><A HREF="dvr_common.html#Defines__TWI_EEPROM_TEST_COMPARE_ERR">TWI_EEPROM_TEST_COMPARE_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="dvr_common.html#Defines__TWI_EEPROM_TEST_WP_COMPARE_ERR">TWI_EEPROM_TEST_WP_COMPARE_ERR</A></NOBR></TD>
+<TD><NOBR><A HREF="sdvr_sdk.html#Defines__true">true</A></NOBR></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+<!-- START-CDOC-XREF-INDEX -->
+<H3><A NAME="cdoc_xref_V"></A>V</H3>
+<TABLE class="index" width="100%">
+<TR>
+<TD width="33%"><NOBR><A HREF="dvr_common.html#Defines__VOUT_ENABLE_ERR">VOUT_ENABLE_ERR</A></NOBR></TD>
+<TD width="33%"></TD>
+<TD width="33%"></TD>
+</TR>
+</TABLE>
+<!-- END-CDOC-XREF-INDEX -->
+</BODY>
+</HTML>

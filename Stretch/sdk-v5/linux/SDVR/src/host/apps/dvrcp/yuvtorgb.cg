@@ -1,0 +1,69 @@
+
+float3 main(float2 coord: TEXCOORD,
+            uniform samplerRECT y_tex,
+            uniform samplerRECT u_tex,
+            uniform samplerRECT v_tex) : COLOR
+{
+    float3 OUT;
+
+    float2 half_coord = coord / 2;
+
+    float y = 1.1643 * (texRECT(y_tex, coord).r - 0.0625);
+    float u = texRECT(u_tex, half_coord).r - 0.5;
+    float v = texRECT(v_tex, half_coord).r - 0.5;
+
+    OUT.r = y               + 1.5958 * v ;
+    OUT.g = y - 0.39173 * u - 0.8129 * v ;
+    OUT.b = y + 2.017   * u              ;
+
+    return OUT;
+}
+
+float4 noop(in float4 color: COLOR) : COLOR
+{
+    return color;
+}
+
+/*
+// All components are in y_tex sampler 
+float3 main(float2 coord: TEXCOORD,
+            uniform samplerRECT y_tex) : COLOR
+{
+    float3 OUT;
+
+    float2  y_coord = float2(coord.x, 480 - coord.y);
+
+    float y = 1.1643 * (texRECT(y_tex, y_coord).r - 0.0625);
+    float u = texRECT(y_tex, y_coord).g - 0.5;
+    float v = texRECT(y_tex, y_coord).b - 0.5;
+
+    OUT.r = y               + 1.5958 * v ;
+    OUT.g = y - 0.39173 * u - 0.8129 * v ;
+    OUT.b = y + 2.017   * u              ;
+
+    return OUT;
+}
+*/
+/*
+float3 main(float2 coord: TEXCOORD,
+            uniform samplerRECT y_tex,
+            uniform samplerRECT u_tex,
+            uniform samplerRECT v_tex) : COLOR
+{
+    // YCbCr->RGB conversion matrix ITU-R BT.601 (standard definition)
+    static float3x3 YCbCr_to_RGB = float3x3(
+        1.0000,  0.0000,  1.4022,
+        1.0000, -0.3457, -0.7145,
+        1.0000,  1.7710,  0.0000
+    );
+
+    float2  y_coord = float2(coord.x, 480 - coord.y);
+    float2 uv_coord = y_coord / 2;
+
+    float  y = texRECT(y_tex,  y_coord).r;
+    float cb = texRECT(u_tex, uv_coord).r - 0.5;
+    float cr = texRECT(v_tex, uv_coord).r - 0.5;
+
+    return mul(YCbCr_to_RGB, float3(y, cb, cr));
+}
+*/

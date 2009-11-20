@@ -1,0 +1,3269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<TITLE>Stretch Media Player API. (splayer)</title>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+<!--
+function get_cookie(name) 
+{
+    var start = document.cookie.indexOf(name + "=");
+    var len = start+name.length + 1;
+    if (! start && name != document.cookie.substring(0,name.length)) {
+	return null;
+    }
+    if (start == -1) {
+	return null;
+    }
+    var end = document.cookie.indexOf(";", len);
+    if (end == -1) {
+	end = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(len, end));
+}
+
+function set_cookie(name, value, expires, path, domain, secure) 
+{
+    document.cookie = name + "=" + escape(value) +
+	( expires ? ";expires=" + expires.toGMTString() : "") +
+	( path ? ";path=" + path : "") + 
+	( domain ? ";domain=" + domain : "") +
+	( secure ? ";secure" : "");
+}
+
+function put_style(style) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000);
+    set_cookie('cdoc_style', style, expires);
+}
+
+function get_style() {
+    var style = get_cookie('cdoc_style');
+    if (style == null) {
+	style = 'relative';
+	put_style(style);
+    }
+    return style;
+}
+
+function click_put_style(style) {
+    put_style(style);
+    location.reload();
+}
+
+document.writeln('<STYLE TYPE="text/css">');
+document.writeln('<!--');
+var style = get_style();
+if (style == 'fixed-10pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 20pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 5pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 9pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else if (style == 'fixed-12pt') {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 18pt;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 16pt;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 16pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 14pt;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 24pt;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 6pt;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 12pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 10pt;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+} else {
+	document.writeln('@media screen {');
+	document.writeln('    BODY {');
+	document.writeln('	background: rgb(220, 220, 220);');
+	document.writeln('	margin-left: .25in;');
+	document.writeln('	margin-right: .25in;');
+	document.writeln('    }');
+	document.writeln('}');
+	document.writeln('BODY {');
+	document.writeln('    font-family: Arial, sans-serif;');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    text-align: justify;');
+	document.writeln('}');
+	document.writeln('H1 {');
+	document.writeln('    font-size: 1.8em;');
+	document.writeln('    color: rgb(255, 0, 0);');
+	document.writeln('    text-align: center;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2 {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(0, 0, 255);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H2.int {');
+	document.writeln('    font-size: 1.4em;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('    margin-top: 1.4em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('H3 {');
+	document.writeln('    font-size: 1.2em;');
+	document.writeln('    page-break-after: avoid;');
+	document.writeln('}');
+	document.writeln('A {');
+	document.writeln('    text-decoration: none;');
+	document.writeln('}');
+	document.writeln('A:link {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:visited {');
+	document.writeln('    color: rgb(48, 96, 255);');
+	document.writeln('}');
+	document.writeln('A:hover { ');
+	document.writeln('    background: rgb(255, 255, 0);');
+	document.writeln('} ');
+	document.writeln('PRE.cdef A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdef {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(176, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.cdefint {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-weight: bold;');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.ccode {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(40, 40, 40);');
+	document.writeln('}');
+	document.writeln('PRE.text A:link {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text A:visited {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('PRE.text {');
+	document.writeln('    font-family: "Courier New", monospace;');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    color: rgb(0, 0, 0);');
+	document.writeln('}');
+	document.writeln('TD.int A:link {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('TD.int A:visited {');
+	document.writeln('    color: rgb(235, 27, 235);');
+	document.writeln('}');
+	document.writeln('DIV.descr {');
+	document.writeln('   padding-left: 2em;');
+	document.writeln('}');
+	document.writeln('* UL {');
+	document.writeln('    list-style: disc;');
+	document.writeln('}');
+	document.writeln('* LI {');
+	document.writeln('    margin-top: 0.5em;');
+	document.writeln('}');
+	document.writeln('TABLE {');
+	document.writeln('    font-size: 1em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+	document.writeln('TABLE.index {');
+	document.writeln('    font-size: 0.9em;');
+	document.writeln('    margin-top: 0in;');
+	document.writeln('    margin-bottom: 0in;');
+	document.writeln('}');
+}
+document.writeln('-->');
+document.writeln('</STYLE>');
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>Stretch Media Player API. &nbsp; (splayer)</H1>
+
+<CENTER>Last modified on Mar 30, 2009 at 18:30 UTC</CENTER>
+<!-- CDOC-CHOOSE-STYLE --><CENTER>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('relative');">normal, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-10pt');">10pt, </A>
+<!-- CDOC-CHOOSE-STYLE --><A HREF="javascript:click_put_style('fixed-12pt');">12pt</A>
+<!-- CDOC-CHOOSE-STYLE --></CENTER>
+
+<!-- last_modified : Mar 30, 2009 at 18:30 UTC -->
+
+<!-- package : splayer -->
+
+<!-- short-description : Stretch Media Player API. -->
+
+<!-- contact_name :  -->
+
+<!-- contact_email :  -->
+
+<!-- copyright :  -->
+
+<!-- cdoc-version : 2.4.5 -->
+<!-- ANCHOR_TABLE
+"Package"	"splayer"	"splayer.html"
+"Section"	"Include"	"Top__Include"
+"Section"	"Usage"	"Top__Usage"
+"Section"	"Pseudo code"	"Top__Pseudo___code"
+"Section"	"Special notes"	"Top__Special___notes"
+"Section"	"Types"	"Top__Types"
+"Typedef"	"splayer_state_e"	"Types__splayer_state_e"
+"Typedef"	"SPLAYER_EMPTY"	"Types__SPLAYER_EMPTY"
+"Typedef"	"SPLAYER_READY"	"Types__SPLAYER_READY"
+"Typedef"	"SPLAYER_PLAY"	"Types__SPLAYER_PLAY"
+"Typedef"	"SPLAYER_STOP"	"Types__SPLAYER_STOP"
+"Typedef"	"SPLAYER_PAUSE"	"Types__SPLAYER_PAUSE"
+"Typedef"	"splayer_search_type_e"	"Types__splayer_search_type_e"
+"Typedef"	"SPLAYER_SEARCH_BY_FRAME_NUM"	"Types__SPLAYER_SEARCH_BY_FRAME_NUM"
+"Typedef"	"SPLAYER_SEARCH_BY_FRAME_TIME"	"Types__SPLAYER_SEARCH_BY_FRAME_TIME"
+"Typedef"	"splayer_err_e"	"Types__splayer_err_e"
+"Typedef"	"SPLAYER_NOERROR"	"Types__SPLAYER_NOERROR"
+"Typedef"	"SPLAYER_NULL_POINTER"	"Types__SPLAYER_NULL_POINTER"
+"Typedef"	"SPLAYER_ALLOC_MEMORY_ERROR"	"Types__SPLAYER_ALLOC_MEMORY_ERROR"
+"Typedef"	"SPLAYER_NOT_IMPLEMENTED"	"Types__SPLAYER_NOT_IMPLEMENTED"
+"Typedef"	"SPLAYER_INVALID_PARAM"	"Types__SPLAYER_INVALID_PARAM"
+"Typedef"	"SPLAYER_INVALID_PORT"	"Types__SPLAYER_INVALID_PORT"
+"Typedef"	"SPLAYER_INITIALIZED"	"Types__SPLAYER_INITIALIZED"
+"Typedef"	"SPLAYER_NOT_READY"	"Types__SPLAYER_NOT_READY"
+"Typedef"	"SPLAYER_THREAD_ERROR"	"Types__SPLAYER_THREAD_ERROR"
+"Typedef"	"SPLAYER_INTERNAL_ERROR"	"Types__SPLAYER_INTERNAL_ERROR"
+"Typedef"	"SPLAYER_SUPPORT_FILE_ONLY"	"Types__SPLAYER_SUPPORT_FILE_ONLY"
+"Typedef"	"SPLAYER_SUPPORT_STREAM_ONLY"	"Types__SPLAYER_SUPPORT_STREAM_ONLY"
+"Typedef"	"SPLAYER_OPEN_FILE_ERROR"	"Types__SPLAYER_OPEN_FILE_ERROR"
+"Typedef"	"SPLAYER_UNSUPPORTED_FILE_FORMAT"	"Types__SPLAYER_UNSUPPORTED_FILE_FORMAT"
+"Typedef"	"SPLAYER_READ_FILE_ERROR"	"Types__SPLAYER_READ_FILE_ERROR"
+"Typedef"	"SPLAYER_FILE_NO_VIDEO"	"Types__SPLAYER_FILE_NO_VIDEO"
+"Typedef"	"SPLAYER_FILE_NO_AUDIO"	"Types__SPLAYER_FILE_NO_AUDIO"
+"Typedef"	"SPLAYER_VIDEO_DECODER_INIT_ERROR"	"Types__SPLAYER_VIDEO_DECODER_INIT_ERROR"
+"Typedef"	"SPLAYER_VIDEO_DEC_ERROR"	"Types__SPLAYER_VIDEO_DEC_ERROR"
+"Typedef"	"SPLAYER_AUDIO_DECODER_INIT_ERROR"	"Types__SPLAYER_AUDIO_DECODER_INIT_ERROR"
+"Typedef"	"SPLAYER_AUDIO_DEC_ERROR"	"Types__SPLAYER_AUDIO_DEC_ERROR"
+"Typedef"	"SPLAYER_RENDERER_NULL_POINTER"	"Types__SPLAYER_RENDERER_NULL_POINTER"
+"Typedef"	"SPLAYER_RENDERER_NO_VIDEO"	"Types__SPLAYER_RENDERER_NO_VIDEO"
+"Typedef"	"SPLAYER_RENDERER_NO_AUDIO"	"Types__SPLAYER_RENDERER_NO_AUDIO"
+"Typedef"	"SPLAYER_DDRAW_ERROR"	"Types__SPLAYER_DDRAW_ERROR"
+"Typedef"	"SPLAYER_DSOUND_ERROR"	"Types__SPLAYER_DSOUND_ERROR"
+"Typedef"	"SPLAYER_SNAPSHOT_BUFFER_SIZE"	"Types__SPLAYER_SNAPSHOT_BUFFER_SIZE"
+"Typedef"	"splayer_frame_pos_t"	"Types__splayer_frame_pos_t"
+"Typedef"	"splayer_frame_type_e"	"Types__splayer_frame_type_e"
+"Typedef"	"SPLAYER_FRAME_TYPE_UNKNOWN"	"Types__SPLAYER_FRAME_TYPE_UNKNOWN"
+"Typedef"	"SPLAYER_FRAME_TYPE_YV12"	"Types__SPLAYER_FRAME_TYPE_YV12"
+"Typedef"	"SPLAYER_FRAME_TYPE_AUDIO_S16LE"	"Types__SPLAYER_FRAME_TYPE_AUDIO_S16LE"
+"Typedef"	"splayer_frame_t"	"Types__splayer_frame_t"
+"Typedef"	"display_callback_t"	"Types__display_callback_t"
+"Typedef"	"decode_callback_t"	"Types__decode_callback_t"
+"Section"	"Defines"	"Top__Defines"
+"Define"	"SPLAYER_MAX_PORTS"	"Defines__SPLAYER_MAX_PORTS"
+"Define"	"SPLAYER_MAX_DISPLAY_REGIONS"	"Defines__SPLAYER_MAX_DISPLAY_REGIONS"
+"Define"	"EXTERN"	"Defines__EXTERN"
+"Section"	"Routines"	"Top__Routines"
+"Section"	"General player functions."	"Routines__General___player___functions___"
+"Routine"	"splayer_get_version"	"Routines__splayer_get_version"
+"Routine"	"splayer_init"	"Routines__splayer_init"
+"Routine"	"splayer_release"	"Routines__splayer_release"
+"Section"	"File player functions."	"Routines__File___player___functions___"
+"Routine"	"splayer_open_file"	"Routines__splayer_open_file"
+"Routine"	"splayer_close_file"	"Routines__splayer_close_file"
+"Routine"	"splayer_play"	"Routines__splayer_play"
+"Routine"	"splayer_stop"	"Routines__splayer_stop"
+"Routine"	"splayer_pause"	"Routines__splayer_pause"
+"Routine"	"splayer_double_speed"	"Routines__splayer_double_speed"
+"Routine"	"splayer_halve_speed"	"Routines__splayer_halve_speed"
+"Routine"	"splayer_set_play_pos"	"Routines__splayer_set_play_pos"
+"Routine"	"splayer_get_play_pos"	"Routines__splayer_get_play_pos"
+"Routine"	"splayer_register_file_end_msg"	"Routines__splayer_register_file_end_msg"
+"Routine"	"splayer_get_file_time"	"Routines__splayer_get_file_time"
+"Routine"	"splayer_next_frame"	"Routines__splayer_next_frame"
+"Routine"	"splayer_prev_frame"	"Routines__splayer_prev_frame"
+"Routine"	"splayer_get_total_frames"	"Routines__splayer_get_total_frames"
+"Routine"	"splayer_get_avg_time_per_frame"	"Routines__splayer_get_avg_time_per_frame"
+"Routine"	"splayer_get_state"	"Routines__splayer_get_state"
+"Routine"	"splayer_get_play_speed"	"Routines__splayer_get_play_speed"
+"Routine"	"splayer_get_played_time"	"Routines__splayer_get_played_time"
+"Routine"	"splayer_set_current_time"	"Routines__splayer_set_current_time"
+"Routine"	"splayer_get_played_frames"	"Routines__splayer_get_played_frames"
+"Routine"	"splayer_set_current_frame_num"	"Routines__splayer_set_current_frame_num"
+"Routine"	"splayer_set_volume"	"Routines__splayer_set_volume"
+"Routine"	"splayer_get_volume"	"Routines__splayer_get_volume"
+"Routine"	"splayer_get_picture_size"	"Routines__splayer_get_picture_size"
+"Routine"	"splayer_get_prev_key_frame_pos"	"Routines__splayer_get_prev_key_frame_pos"
+"Routine"	"splayer_get_next_key_frame_pos"	"Routines__splayer_get_next_key_frame_pos"
+"Routine"	"splayer_refresh_play"	"Routines__splayer_refresh_play"
+"Routine"	"splayer_play_sound"	"Routines__splayer_play_sound"
+"Routine"	"splayer_stop_sound"	"Routines__splayer_stop_sound"
+"Routine"	"splayer_play_sound_share"	"Routines__splayer_play_sound_share"
+"Routine"	"splayer_stop_sound_share"	"Routines__splayer_stop_sound_share"
+"Section"	"Stream player functions."	"Routines__Stream___player___functions___"
+"Routine"	"splayer_open_stream"	"Routines__splayer_open_stream"
+"Routine"	"splayer_input_data"	"Routines__splayer_input_data"
+"Routine"	"splayer_get_num_bytes_in_buffer"	"Routines__splayer_get_num_bytes_in_buffer"
+"Routine"	"splayer_close_stream"	"Routines__splayer_close_stream"
+"Section"	"Misc functions."	"Routines__Misc___functions___"
+"Routine"	"splayer_set_display_callback"	"Routines__splayer_set_display_callback"
+"Routine"	"splayer_take_video_snapshot"	"Routines__splayer_take_video_snapshot"
+"Routine"	"splayer_set_decode_callback"	"Routines__splayer_set_decode_callback"
+"Routine"	"splayer_set_display_region"	"Routines__splayer_set_display_region"
+-->
+
+<P>
+Contents: <A href="#Top__Table___of___Contents">Table of Contents</A>, 
+<A href="#Top__Include">Include</A>, 
+<A href="#Top__Usage">Usage</A>, 
+<A href="#Top__Special___notes">Special notes</A>, 
+<A href="#Top__Types">Types</A>, 
+<A href="#Top__Defines">Defines</A>, 
+<A href="#Top__Routines">Routines</A>, 
+<A href="#Top__Index">Index</A>, 
+<!-- MASTER_INDEX -->
+</P>
+
+
+<!-- SEC_DESCRIPTION_START -->
+
+<a name="Top__Include"></a>
+<H2>1 &nbsp; Include</H2>
+<PRE class="ccode">
+#include "splayer.h" 
+</PRE>
+
+<a name="Top__Usage"></a>
+<H2>2 &nbsp; Usage</H2>
+<P>
+The Stretch Media Player can play audio/video files and streams comprising of  
+sdvr_av_buffer packets obtained from the Stretch DVR SDK. 
+</P>
+<P>
+The player supports up to SPLAYER_MAX_PORTS of audio and video display.   
+Each port represents either a file or a data stream, and they operate in parallel.   
+The player supports simultaneous display of multiple video channels in multiple windows.   
+It also supports playing audio both pre-emptively, where only one of these ports may  
+play audio at a time, or shared, where the audio channels share the output. 
+</P>
+<P>
+Before using any other API functions, an application must initialize the player with  
+<NOBR><a href="#Routines__splayer_init">splayer_init</a>()</NOBR>.  Ports may then be initialized in two ways: for file mode,  
+<NOBR><a href="#Routines__splayer_open_file">splayer_open_file</a>()</NOBR> associates a port with a file; for streaming mode,  
+<NOBR><a href="#Routines__splayer_open_stream">splayer_open_stream</a>()</NOBR> initializes the decoding.  Once it has initialized a port, 
+the application calls <NOBR><a href="#Routines__splayer_play">splayer_play</a>()</NOBR> with a window handle to specify where to display the video. 
+</P>
+<P>
+When playing from file mode, the application can call various functions to pause, seek,  
+and back up in the video stream.  When playing a stream, the player displays frames and  
+then deletes the buffers.  Players in stream mode thus have fewer features available,  
+for example, pause playback. 
+</P>
+<P>
+In file mode, the player stops when it reaches the end of the file, and it may call back  
+the application when this event occurs.  Playback ends in file mode when  
+<NOBR><a href="#Routines__splayer_close_file">splayer_close_file</a>()</NOBR> is called for a port playing a file, and <NOBR><a href="#Routines__splayer_close_stream">splayer_close_stream</a>()</NOBR>  
+for a streaming port. 
+</P>
+
+<a name="Top__Pseudo___code"></a>
+<H3>2.1 &nbsp; Pseudo code</H3>
+<P>
+#include <EM>splayer.h</EM> 
+</P>
+<P>
+<PRE class="ccode">
+#define NETWORK_PACKET_SIZE 65536 
+#define FILE_PORT 1 
+#define STREAM_PORT 2 
+#define STREAM_BIT_RATE 2000000 
+</PRE>
+</P>
+<P>
+<PRE class="ccode">
+int main() 
+{ 
+    unsigned char *bufferFromNetwork; 
+    int bufferSize; 
+    sdvr_ui_hwnd_t filePlayWindow, networkPlayWindow; 
+    //  Initialization 
+    splayer_init(); 
+    bufferFromNetwork = malloc(NETWORK_PACKET_SIZE); 
+    //  [Create windows] 
+    ... 
+    //  Open one file port and one stream port 
+    splayer_open_file(FILE_PORT, "myfile.raw"); 
+    splayer_open_stream(STREAM_PORT, (STREAM_BIT_RATE / 8) * 10); 
+    //  Start playing both channels 
+    splayer_play(FILE_PORT, filePlayWindow); 
+    splayer_play(STREAM_PORT, networkPlayWindow); 
+    while(wantToKeepPlaying) 
+    { 
+        int numBytesInBuffer; 
+        network_receive_frame(bufferFromNetwork, &amp;bufferSize); 
+        //   Wait for buffer to have space for new data 
+        while(splayer_get_num_bytes_in_buffer(STREAM_PORT, &amp;numBytesInBuffer) + bufferSize &lt; (STREAM_BIT_RATE / 8) * 10); 
+        //  Add data to player 
+        splayer_stream_input_data(STREAM_PORT, bufferFromNetwork, bufferSize); 
+    }    
+    //  Stop playing 
+    splayer_close_file(FILE_PORT); 
+    splayer_close_stream(STREAM_PORT); 
+    splayer_release(); 
+    free(bufferFromNetwork); 
+    return 0; 
+</PRE>
+} 
+</P>
+
+<a name="Top__Special___notes"></a>
+<H2>3 &nbsp; Special notes</H2>
+<P>
+The current player API only supports Windows platform.   
+</P>
+
+<!-- SEC_DESCRIPTION_CLOSE -->
+
+<!-- SEC_TYPES_START -->
+
+<a name="Top__Types"></a>
+<H2>4 &nbsp; Types</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_state_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__SPLAYER_EMPTY">SPLAYER_EMPTY</A> = 0,
+    <A name="Types__SPLAYER_READY">SPLAYER_READY</A>,
+    <A name="Types__SPLAYER_PLAY">SPLAYER_PLAY</A>,
+    <A name="Types__SPLAYER_STOP">SPLAYER_STOP</A>,
+    <A name="Types__SPLAYER_PAUSE">SPLAYER_PAUSE</A>
+} splayer_state_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player state. 
+</P>
+<UL>
+<LI>
+<STRONG>SPLAYER_EMPTY</STRONG> - No file or stream has been opened. 
+</LI>
+<LI>
+<STRONG>SPLAYER_READY</STRONG> - Player is ready to play. 
+</LI>
+<LI>
+<STRONG>SPLAYER_PLAY</STRONG> - Player is playing. 
+</LI>
+<LI>
+<STRONG>SPLAYER_STOP</STRONG> - Player is stopped. 
+</LI>
+<LI>
+<STRONG>SPLAYER_PAUSE</STRONG> - Player is paused. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_search_type_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__SPLAYER_SEARCH_BY_FRAME_NUM">SPLAYER_SEARCH_BY_FRAME_NUM</A> = 0,
+    <A name="Types__SPLAYER_SEARCH_BY_FRAME_TIME">SPLAYER_SEARCH_BY_FRAME_TIME</A>
+} splayer_search_type_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player frame search type. 
+</P>
+<UL>
+<LI>
+<STRONG>SPLAYER_SEARCH_BY_FRAME_NUM</STRONG> - Search by frame number. 
+</LI>
+<LI>
+<STRONG>SPLAYER_SEARCH_BY_FRAME_TIME</STRONG> - Search by frame time in milli-second. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_err_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__SPLAYER_NOERROR">SPLAYER_NOERROR</A> = 3000,
+    <A name="Types__SPLAYER_NULL_POINTER">SPLAYER_NULL_POINTER</A>,
+    <A name="Types__SPLAYER_ALLOC_MEMORY_ERROR">SPLAYER_ALLOC_MEMORY_ERROR</A>,
+    <A name="Types__SPLAYER_NOT_IMPLEMENTED">SPLAYER_NOT_IMPLEMENTED</A>,
+    <A name="Types__SPLAYER_INVALID_PARAM">SPLAYER_INVALID_PARAM</A>,
+    <A name="Types__SPLAYER_INVALID_PORT">SPLAYER_INVALID_PORT</A>,
+    <A name="Types__SPLAYER_INITIALIZED">SPLAYER_INITIALIZED</A>,
+    <A name="Types__SPLAYER_NOT_READY">SPLAYER_NOT_READY</A>,
+    <A name="Types__SPLAYER_THREAD_ERROR">SPLAYER_THREAD_ERROR</A>,
+    <A name="Types__SPLAYER_INTERNAL_ERROR">SPLAYER_INTERNAL_ERROR</A>,
+    <A name="Types__SPLAYER_SUPPORT_FILE_ONLY">SPLAYER_SUPPORT_FILE_ONLY</A>,
+    <A name="Types__SPLAYER_SUPPORT_STREAM_ONLY">SPLAYER_SUPPORT_STREAM_ONLY</A>,
+    <A name="Types__SPLAYER_OPEN_FILE_ERROR">SPLAYER_OPEN_FILE_ERROR</A>,
+    <A name="Types__SPLAYER_UNSUPPORTED_FILE_FORMAT">SPLAYER_UNSUPPORTED_FILE_FORMAT</A>,
+    <A name="Types__SPLAYER_READ_FILE_ERROR">SPLAYER_READ_FILE_ERROR</A>,
+    <A name="Types__SPLAYER_FILE_NO_VIDEO">SPLAYER_FILE_NO_VIDEO</A>,
+    <A name="Types__SPLAYER_FILE_NO_AUDIO">SPLAYER_FILE_NO_AUDIO</A>,
+    <A name="Types__SPLAYER_VIDEO_DECODER_INIT_ERROR">SPLAYER_VIDEO_DECODER_INIT_ERROR</A>,
+    <A name="Types__SPLAYER_VIDEO_DEC_ERROR">SPLAYER_VIDEO_DEC_ERROR</A>,
+    <A name="Types__SPLAYER_AUDIO_DECODER_INIT_ERROR">SPLAYER_AUDIO_DECODER_INIT_ERROR</A>,
+    <A name="Types__SPLAYER_AUDIO_DEC_ERROR">SPLAYER_AUDIO_DEC_ERROR</A>,
+    <A name="Types__SPLAYER_RENDERER_NULL_POINTER">SPLAYER_RENDERER_NULL_POINTER</A>,
+    <A name="Types__SPLAYER_RENDERER_NO_VIDEO">SPLAYER_RENDERER_NO_VIDEO</A>,
+    <A name="Types__SPLAYER_RENDERER_NO_AUDIO">SPLAYER_RENDERER_NO_AUDIO</A>,
+    <A name="Types__SPLAYER_DDRAW_ERROR">SPLAYER_DDRAW_ERROR</A>,
+    <A name="Types__SPLAYER_DSOUND_ERROR">SPLAYER_DSOUND_ERROR</A>,
+    <A name="Types__SPLAYER_SNAPSHOT_BUFFER_SIZE">SPLAYER_SNAPSHOT_BUFFER_SIZE</A>
+} splayer_err_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player error code.  
+</P>
+<UL>
+<LI>
+<STRONG>SPLAYER_NOERROR</STRONG> - No error, operation succeeded. 
+</LI>
+<LI>
+<STRONG>SPLAYER_NULL_POINTER</STRONG> - Null player pointer. 
+</LI>
+<LI>
+<STRONG>SPLAYER_ALLOC_MEMORY_ERROR</STRONG> - Memory allocation failed. 
+</LI>
+<LI>
+<STRONG>SPLAYER_NOT_IMPLEMENTED</STRONG> - Feature not implemented. 
+</LI>
+<LI>
+<STRONG>SPLAYER_INVALID_PARAM</STRONG> - Invalid input parameter. 
+</LI>
+<LI>
+<STRONG>SPLAYER_INVALID_PORT</STRONG> - Invalid port number. 
+</LI>
+<LI>
+<STRONG>SPLAYER_INITIALIZED</STRONG> - Player is already initialized. 
+</LI>
+<LI>
+<STRONG>SPLAYER_NOT_READY</STRONG> - Player is not ready. 
+</LI>
+<LI>
+<STRONG>SPLAYER_THREAD_ERROR</STRONG> - Creating thread failed. 
+</LI>
+<LI>
+<STRONG>SPLAYER_INTERNAL_ERROR</STRONG> - Player internal error. 
+</LI>
+<LI>
+<STRONG>SPLAYER_SUPPORT_FILE_ONLY</STRONG> - Operation supported in file mode only. 
+</LI>
+<LI>
+<STRONG>SPLAYER_SUPPORT_STREAM_ONLY</STRONG> - Operation supported in streaming mode only. 
+</LI>
+<LI>
+<STRONG>SPLAYER_OPEN_FILE_ERROR</STRONG> - Failed to open file. 
+</LI>
+<LI>
+<STRONG>SPLAYER_UNSUPPORTED_FILE_FORMAT</STRONG> - File format is not supported. 
+</LI>
+<LI>
+<STRONG>SPLAYER_READ_FILE_ERROR</STRONG> - Read file error. 
+</LI>
+<LI>
+<STRONG>SPLAYER_FILE_NO_VIDEO</STRONG> - Input file does not have video. 
+</LI>
+<LI>
+<STRONG>SPLAYER_FILE_NO_AUDIO</STRONG> - Input file does not have audio. 
+</LI>
+<LI>
+<STRONG>SPLAYER_VIDEO_DECODER_INIT_ERROR</STRONG> - Video decoder initialization failed. 
+</LI>
+<LI>
+<STRONG>SPLAYER_VIDEO_DEC_ERROR</STRONG> - Video decoding error. 
+</LI>
+<LI>
+<STRONG>SPLAYER_AUDIO_DECODER_INIT_ERROR</STRONG> - Audio decoder initialization failed. 
+</LI>
+<LI>
+<STRONG>SPLAYER_AUDIO_DEC_ERROR</STRONG> - Audio decoding error. 
+</LI>
+<LI>
+<STRONG>SPLAYER_RENDERER_NULL_POINTER</STRONG> - // Null renderer pointer. 
+</LI>
+<LI>
+<STRONG>SPLAYER_RENDERER_NO_VIDEO</STRONG> - No video renderer. 
+</LI>
+<LI>
+<STRONG>SPLAYER_RENDERER_NO_AUDIO</STRONG> - No audio renderer. 
+</LI>
+<LI>
+<STRONG>SPLAYER_DDRAW_ERROR</STRONG> - DirectDraw error.  
+</LI>
+<LI>
+<STRONG>SPLAYER_DSOUND_ERROR</STRONG> - DirectSound error. 
+</LI>
+<LI>
+<STRONG>SPLAYER_SNAPSHOT_BUFFER_SIZE</STRONG> - Buffer size not enough to take snapshot. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_frame_pos_t"></a>
+<PRE class="cdef">
+typedef struct {
+    sx_int32 pos;
+    sx_int32 frame_num;
+    sx_int32 frame_time;
+} splayer_frame_pos_t;
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player frame position. 
+</P>
+<UL>
+<LI>
+<STRONG>pos</STRONG> - Frame position in the file. 
+</LI>
+<LI>
+<STRONG>frame_num</STRONG> - Frame number. 
+</LI>
+<LI>
+<STRONG>frame_time</STRONG> - Frame timestamp in millisecond. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_frame_type_e"></a>
+<PRE class="cdef">
+typedef enum {
+    <A name="Types__SPLAYER_FRAME_TYPE_UNKNOWN">SPLAYER_FRAME_TYPE_UNKNOWN</A> = 0,
+    <A name="Types__SPLAYER_FRAME_TYPE_YV12">SPLAYER_FRAME_TYPE_YV12</A>,
+    <A name="Types__SPLAYER_FRAME_TYPE_AUDIO_S16LE">SPLAYER_FRAME_TYPE_AUDIO_S16LE</A>
+} splayer_frame_type_e; 
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player frame type. 
+</P>
+<UL>
+<LI>
+<STRONG>SPLAYER_FRAME_TYPE_UNKNOWN</STRONG> - Unknown type. 
+</LI>
+<LI>
+<STRONG>SPLAYER_FRAME_TYPE_YV12</STRONG> - Video type YV12. 
+</LI>
+<LI>
+<STRONG>SPLAYER_FRAME_TYPE_AUDIO_S16LE</STRONG> - Audio type signed 16-bit little endian. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__splayer_frame_t"></a>
+<PRE class="cdef">
+typedef struct {
+    sx_uint8 *buf;
+    sx_int32 size;
+    sx_int32 width;
+    sx_int32 height;
+    sx_int64 timestamp;
+    splayer_frame_type_e type;
+    sx_int32 id;
+    sx_int32 alloc_size;
+} splayer_frame_t;
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player frame position. 
+</P>
+<UL>
+<LI>
+<STRONG>buf</STRONG> - Pointer of frame buffer. 
+</LI>
+<LI>
+<STRONG>size</STRONG> - Size of frame buffer in byte. 
+</LI>
+<LI>
+<STRONG>width</STRONG> - Frame width. 
+</LI>
+<LI>
+<STRONG>height</STRONG> - Frame height. 
+</LI>
+<LI>
+<STRONG>timestamp</STRONG> - Frame timestamp. 
+</LI>
+<LI>
+<STRONG>type</STRONG> - Frame type. 
+</LI>
+<LI>
+<STRONG>id</STRONG> - Frame id. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__display_callback_t"></a>
+<PRE class="cdef">
+typedef void (*display_callback_t)(sx_int32 port,
+                                   splayer_frame_t *frame);
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player display callback function prototype. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Types__decode_callback_t"></a>
+<PRE class="cdef">
+typedef void (*decode_callback_t)(sx_int32 port,
+                                  splayer_frame_t *frame);
+</PRE>
+<DIV CLASS="descr">
+<P>
+SDVR player decode callback function prototype. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_TYPES_CLOSE -->
+
+<!-- SEC_DEFINES_START -->
+
+<a name="Top__Defines"></a>
+<H2>5 &nbsp; Defines</H2>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SPLAYER_MAX_PORTS"></a>
+<PRE class="cdef">
+#define SPLAYER_MAX_PORTS
+</PRE>
+<DIV CLASS="descr">
+<P>
+Maximum number of player ports supported. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__SPLAYER_MAX_DISPLAY_REGIONS"></a>
+<PRE class="cdef">
+#define SPLAYER_MAX_DISPLAY_REGIONS
+</PRE>
+<DIV CLASS="descr">
+<P>
+Maximum number of display regions one player supports. 
+</P>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Defines__EXTERN"></a>
+<PRE class="cdef">
+#define EXTERN
+</PRE>
+<DIV CLASS="descr">
+<P>
+Declaration of exported dll functions. 
+For example: 
+<PRE class="ccode">
+    EXTERN void my_external_symbol(int a, double f); 
+</PRE>
+This specifies that the function has C linkage so that it can be used 
+when compiled with a C++ compiler. 
+</P>
+</DIV>
+
+</DIV>
+
+<!-- SEC_DEFINES_CLOSE -->
+
+<!-- SEC_ROUTINES_START -->
+
+<a name="Top__Routines"></a>
+<H2>6 &nbsp; Routines</H2>
+
+<a name="Routines__General___player___functions___"></a>
+<H3>6.1 &nbsp; General player functions.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_version"></a>
+<PRE class="cdef">
+void splayer_get_version (sx_uint8 * major,
+                          sx_uint8 * minor,
+                          sx_uint8 * revision,
+                          sx_uint8 * build);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function returns the player library version. 
+</P>
+<P>
+Stretch follows the convention of using four numbers for version  
+control. A change in the major number indicates major changes to  
+functionality, a change in the minor number indicates minor  
+changes to functionality, and a change in the revision number indicates 
+significant bug fixes that were introduced in the minor change functionality.  
+A change to the build number indicates only bug fixes that do not  
+change functionality.  
+</P>
+<P>
+This function can be called before or after <NOBR><a href="#Routines__splayer_init">splayer_init</a>()</NOBR>; 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+<EM>major</EM> - Pointer to a variable that holds the major version of the  
+SDK when this function returns.  
+</LI>
+<LI>
+<EM>minor</EM> - Pointer to a variable that holds the minor version of  
+the SDK when this function returns.  
+</LI>
+<LI>
+<EM>revision</EM> - Pointer to a variable that holds the revision version of the  
+SDK when this function returns.  
+</LI>
+<LI>
+<EM>build</EM> - Pointer to a variable that holds the build or bug fix  
+version of the SDK when this function returns.  
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+None.  
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_init"></a>
+<PRE class="cdef">
+splayer_err_e splayer_init ();
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function initializes the player library. 
+</P>
+<P>
+This function should be called before calling any other player functions. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+SPLAYER_NOERROR - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_release"></a>
+<PRE class="cdef">
+void splayer_release ();
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function releases the player library. 
+</P>
+<P>
+Parameters: 
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+<P>
+Returns: 
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+
+<a name="Routines__File___player___functions___"></a>
+<H3>6.2 &nbsp; File player functions.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_open_file"></a>
+<PRE class="cdef">
+splayer_err_e splayer_open_file (sx_int32 port, char *filename);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function opens a file for playback. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>filename</EM> - A pointer of zero-ended character array that contains the file name. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_close_file"></a>
+<PRE class="cdef">
+splayer_err_e splayer_close_file (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function closes the file that has been opened for playback.  
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_play"></a>
+<PRE class="cdef">
+splayer_err_e splayer_play (sx_int32 port, sdvr_ui_hwnd_t hwnd);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function starts playing audio/video from an opened file or stream to the  
+specified window. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>hwnd</EM> - The handle of the window where the video is displayed. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_stop"></a>
+<PRE class="cdef">
+splayer_err_e splayer_stop (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function stops playing. When playing a file, the player rewinds to the  
+beginning of the file.  The player stops updating the window. To start playing  
+the file again, call <STRONG>splayer_play</STRONG>. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_pause"></a>
+<PRE class="cdef">
+splayer_err_e splayer_pause (sx_int32 port, sx_bool pause);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function pauses or resumes playing. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>pause</EM> -  If it is true, then pause, otherwise resume playing. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_double_speed"></a>
+<PRE class="cdef">
+splayer_err_e splayer_double_speed (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function doubles the playing speed. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_halve_speed"></a>
+<PRE class="cdef">
+splayer_err_e splayer_halve_speed (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function halves the playing speed. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_play_pos"></a>
+<PRE class="cdef">
+splayer_err_e splayer_set_play_pos (sx_int32 port, float relative_pos);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function seeks to the relative position of the file. This function supports  
+file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>relative_pos</EM> - The relative position of the file. It ranges from 0.0 to 1.0. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_play_pos"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_play_pos (sx_int32 port, float *relative_pos);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function gets the current playing position in relative position of the file. 
+This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>relative_pos</EM> - Pointer of the relative position to be returned. It ranges  
+from 0.0 to 1.0. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_register_file_end_msg"></a>
+<PRE class="cdef">
+splayer_err_e splayer_register_file_end_msg (sx_int32         port,
+                                             sdvr_ui_hwnd_t   hwnd,
+                                             sx_uint32        msg);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function registers a window message that is sent when playing reaches the end  
+of file. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>hwnd</EM> - The handle of the window to receive this message. 
+</LI>
+<LI>
+<EM>msg</EM> - The message defined by an application. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_file_time"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_file_time (sx_int32 port, sx_int32 *time);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function gets the total file time in milliseconds. This function supports file  
+playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>time</EM> - Pointer of file duration in milliseconds to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_next_frame"></a>
+<PRE class="cdef">
+splayer_err_e splayer_next_frame (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function advances the player by a single frame when the player is in pause mode.  
+Call <STRONG>splayer_play</STRONG> to return to normal playback. This function supports file  
+playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_prev_frame"></a>
+<PRE class="cdef">
+splayer_err_e splayer_prev_frame (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function backs up the player to the previous key frame when the player is in  
+pause mode. Call <STRONG>splayer_play</STRONG> to return to normal playback. This function  
+supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_total_frames"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_total_frames (sx_int32   port,
+                                        sx_int32 * total_frames);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the file's total number of video frames. This function  
+supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>total_frames</EM> - Pointer of frames to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_avg_time_per_frame"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_avg_time_per_frame (sx_int32   port,
+                                              double   * avg_time_per_frame);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the average time per frame in milliseconds. This function  
+supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>avg_time_per_frame</EM> - Pointer of time to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_state"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_state (sx_int32 port, splayer_state_e *state);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the player state. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>state</EM> - Pointer of current player state to be returned.  
+See <STRONG>splayer_state_e</STRONG> for supported states. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_play_speed"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_play_speed (sx_int32 port, float *speed);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the current playback speed. This function supports file  
+playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>rate</EM> - Pointer of playback speed to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_played_time"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_played_time (sx_int32 port, sx_int32 *time);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the current playing position in milliseconds from the  
+beginning of file. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>time</EM> - The pointer of time to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_current_time"></a>
+<PRE class="cdef">
+splayer_err_e splayer_set_current_time (sx_int32 port, sx_int32 time);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets the current playing position in milliseconds from the beginning  
+of file. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>time</EM> - The position in milliseconds from the beginning of file. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_played_frames"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_played_frames (sx_int32 port, sx_int32 *frames);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the current playing position in video frames from the  
+beginning of file. This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>frames</EM> - Pointer of frames to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_current_frame_num"></a>
+<PRE class="cdef">
+splayer_err_e splayer_set_current_frame_num (sx_int32   port,
+                                             sx_int32   frame_num);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets the current playing position in frames from the beginning of file. 
+This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>time</EM> - The position in frames from the beginning of file. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_volume"></a>
+<PRE class="cdef">
+splayer_err_e splayer_set_volume (sx_int32 port, sx_uint16 volume);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets the sound volume. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>volume</EM> - Volume of this channel, range 0-10000. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_volume"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_volume (sx_int32 port, sx_uint16 *volume);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the specified channel's sound volume. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>volume</EM> - Pointer of volume to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_picture_size"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_picture_size (sx_int32   port,
+                                        sx_int32 * width,
+                                        sx_int32 * height);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function retrieves the specified channel's video size. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>width</EM> - The pointer of width to be returned. 
+</LI>
+<LI>
+<EM>height</EM> - The pointer of height to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_prev_key_frame_pos"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_prev_key_frame_pos (sx_int32                port,
+                                              sx_int32                curr_pos,
+                                              splayer_search_type_e   type,
+                                              splayer_frame_pos_t   * frame_pos);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function searches the position of the key frame before the designated position. 
+This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>curr_pos</EM> - Current position, it is either the time in milliseconds or the frame  
+number specified by type. 
+</LI>
+<LI>
+<EM>type</EM> - The search type. See <STRONG>splayer_search_type_e</STRONG> for supported search types. 
+</LI>
+<LI>
+<EM>frame_pos</EM> - Points to an <STRONG>splayer_frame_pos_t</STRONG> structure to receive the key  
+frame's information. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_next_key_frame_pos"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_next_key_frame_pos (sx_int32                port,
+                                              sx_int32                curr_pos,
+                                              splayer_search_type_e   type,
+                                              splayer_frame_pos_t   * frame_pos);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function searches the position of the key frame after the designated position. 
+This function supports file playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>curr_pos</EM> - Current position, it is either the time in milliseconds or the frame  
+number specified by type. 
+</LI>
+<LI>
+<EM>type</EM> - The search type. See <STRONG>splayer_search_type_e</STRONG> for supported search types. 
+</LI>
+<LI>
+<EM>frame_pos</EM> - Points to an <STRONG>splayer_frame_pos_t</STRONG> structure to receive the key 
+frame's information. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_refresh_play"></a>
+<PRE class="cdef">
+splayer_err_e splayer_refresh_play (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function refreshes the display window. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_play_sound"></a>
+<PRE class="cdef">
+splayer_err_e splayer_play_sound (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function enables the specified channel's sound playback. It stops sound playback of 
+other channels automatically. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_stop_sound"></a>
+<PRE class="cdef">
+splayer_err_e splayer_stop_sound ();
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function stops all channels' sound playback. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+None. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_play_sound_share"></a>
+<PRE class="cdef">
+splayer_err_e splayer_play_sound_share (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function enables the specified channel's sound playback in shared mode.  
+It does not stop sound playback of other channels. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_stop_sound_share"></a>
+<PRE class="cdef">
+splayer_err_e splayer_stop_sound_share (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function stops the specified channel's sound playback in shared mode.  
+It does not stop sound playback of other channels. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+
+<a name="Routines__Stream___player___functions___"></a>
+<H3>6.3 &nbsp; Stream player functions.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_open_stream"></a>
+<PRE class="cdef">
+splayer_err_e splayer_open_stream (sx_int32 port, sx_int32 buf_size);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function opens a stream to play.  
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>buf_size</EM> - The size of the buffer to be allocated for buffering the input stream.  
+This buffer should be long enough to hold several seconds of encoded video. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_input_data"></a>
+<PRE class="cdef">
+splayer_err_e splayer_input_data (sx_int32   port,
+                                  sx_uint8 * data_buf,
+                                  sx_int32   data_size);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sends streaming data to the player. This function supports streming  
+playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>data_buf</EM> - Pointer to the buffer containing the streaming data. 
+</LI>
+<LI>
+<EM>data_size</EM> - Size of the buffer in bytes. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_get_num_bytes_in_buffer"></a>
+<PRE class="cdef">
+splayer_err_e splayer_get_num_bytes_in_buffer (sx_int32    port,
+                                               sx_uint32 * num_bytes_in_buffer);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function gets the number of bytes currently used in the player's streaming buffer.  
+This function supports streaming playback mode only. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>num_bytes_in_buffer</EM> - Pointer to the size to be returned. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_close_stream"></a>
+<PRE class="cdef">
+splayer_err_e splayer_close_stream (sx_int32 port);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function closes a stream. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+
+<a name="Routines__Misc___functions___"></a>
+<H3>6.4 &nbsp; Misc functions.</H3>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_display_callback"></a>
+<PRE class="cdef">
+EXTERN splayer_err_e splayer_set_display_callback (sx_int32             port,
+                                                   display_callback_t   pCB);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets the display callback function.  
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>pCB</EM> - The pointer of the callback function.  
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_take_video_snapshot"></a>
+<PRE class="cdef">
+EXTERN splayer_err_e splayer_take_video_snapshot (sx_int32          port,
+                                                  splayer_frame_t * frame);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function takes snapshot of current playing video. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>frame</EM> - Pointer of frame to receive the snapshot. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_decode_callback"></a>
+<PRE class="cdef">
+EXTERN splayer_err_e splayer_set_decode_callback (sx_int32            port,
+                                                  decode_callback_t   pCB);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets the decode callback function.  
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>pCB</EM> - The pointer of the callback function.  
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+<DIV onMouseover="this.style.backgroundColor='rgb(235, 235, 235)'"  onMouseout="this.style.backgroundColor='rgb(220, 220, 220)'" >
+<a name="Routines__splayer_set_display_region"></a>
+<PRE class="cdef">
+EXTERN splayer_err_e splayer_set_display_region (sx_int32           port,
+                                                 sx_int32           region_num,
+                                                 sdvr_ui_region_t * region,
+                                                 sdvr_ui_hwnd_t     hwnd,
+                                                 sx_bool            enable);
+</PRE>
+<DIV CLASS="descr">
+<P>
+This function sets video display region. 
+</P>
+<P>
+Parameters:  
+</P>
+<UL>
+<LI>
+<EM>port</EM> - The port number of the player. It ranges from 0 to <STRONG>SPLAYER_MAX_PORTS</STRONG>. 
+</LI>
+<LI>
+<EM>region_num</EM> - Display region number. It's range is from 0 to <STRONG>SPLAYER_MAX_DISPLAY_REGIONS</STRONG>. 
+If region_num is 0, it means to use defaul display window (set by API function <STRONG>splayer_play</STRONG>).  
+In this case, <STRONG>hwnd</STRONG> and <STRONG>enable</STRONG> will be neglected. 
+</LI>
+<LI>
+<EM>region</EM> - Display region of source video. 
+</LI>
+<LI>
+<EM>hwnd</EM> - Handle of display window. If the window of this region has been set, this parameter will  
+be neglected. 
+</LI>
+<LI>
+<EM>enable</EM> - Flag to indicate if to open or close display region. 
+</LI>
+</UL>
+<P>
+Returns:  
+</P>
+<UL>
+<LI>
+SDVR_ERR_NONE - On success. Otherwise see the error code list. 
+</LI>
+</UL>
+</DIV>
+
+</DIV>
+
+<!-- SEC_ROUTINES_CLOSE -->
+
+<!-- SEC_FULL_TOC_START -->
+
+<a name="Top__Table___of___Contents"></a>
+<H2>7 &nbsp; Table of Contents</H2>
+<P align="left">
+<A href="#Top__Include">1 &nbsp; Include</A>
+<BR>
+<A href="#Top__Usage">2 &nbsp; Usage</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Top__Pseudo___code">2.1 &nbsp; Pseudo code</A>
+<BR>
+<A href="#Top__Special___notes">3 &nbsp; Special notes</A>
+<BR>
+<A href="#Top__Types">4 &nbsp; Types</A>
+<BR>
+<A href="#Top__Defines">5 &nbsp; Defines</A>
+<BR>
+<A href="#Top__Routines">6 &nbsp; Routines</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__General___player___functions___">6.1 &nbsp; General player functions.</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__File___player___functions___">6.2 &nbsp; File player functions.</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__Stream___player___functions___">6.3 &nbsp; Stream player functions.</A>
+<BR>
+&nbsp; &nbsp; &nbsp; <A href="#Routines__Misc___functions___">6.4 &nbsp; Misc functions.</A>
+<BR>
+<A href="#Top__Table___of___Contents">7 &nbsp; Table of Contents</A>
+<BR>
+<A href="#Top__Index">8 &nbsp; Index</A>
+</P>
+
+
+<!-- SEC_FULL_TOC_CLOSE -->
+
+<!-- GLOBAL_INDEX -->
+
+<!-- SEC_INDEX_START -->
+
+<a name="Top__Index"></a>
+<H2>8 &nbsp; Index</H2>
+<P>
+This index contains the following elements: 
+defines, routines, types, enum type elements (EnumElt),
+shell commands (ShCom), shell parameters (ShParam), and grammars.
+</P>
+<P>
+<TABLE class="index" COLS=7 BORDER=0 WIDTH="100%">
+<TR>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+<TD width=10></TD>
+<TD width="100*">Element</TD>
+<TD width="30*">Type</TD>
+<TD width="10*" align="right">Section</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__decode_callback_t">decode_callback_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_NOERROR">SPLAYER_NOERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__display_callback_t">display_callback_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_NOT_IMPLEMENTED">SPLAYER_NOT_IMPLEMENTED</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Defines__EXTERN">EXTERN</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">5</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_NOT_READY">SPLAYER_NOT_READY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_ALLOC_MEMORY_ERROR">SPLAYER_ALLOC_MEMORY_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_NULL_POINTER">SPLAYER_NULL_POINTER</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_AUDIO_DEC_ERROR">SPLAYER_AUDIO_DEC_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_open_file">splayer_open_file()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_AUDIO_DECODER_INIT_ERROR">SPLAYER_AUDIO_DECODER_INIT_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_OPEN_FILE_ERROR">SPLAYER_OPEN_FILE_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_close_file">splayer_close_file()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_open_stream">splayer_open_stream()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Stream___player___functions___">6.3</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_close_stream">splayer_close_stream()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Stream___player___functions___">6.3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_pause">splayer_pause()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_DDRAW_ERROR">SPLAYER_DDRAW_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_PAUSE">SPLAYER_PAUSE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_double_speed">splayer_double_speed()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_play">splayer_play()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_DSOUND_ERROR">SPLAYER_DSOUND_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_PLAY">SPLAYER_PLAY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_EMPTY">SPLAYER_EMPTY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_play_sound">splayer_play_sound()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_err_e">splayer_err_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_play_sound_share">splayer_play_sound_share()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_FILE_NO_AUDIO">SPLAYER_FILE_NO_AUDIO</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_prev_frame">splayer_prev_frame()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_FILE_NO_VIDEO">SPLAYER_FILE_NO_VIDEO</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_READ_FILE_ERROR">SPLAYER_READ_FILE_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_frame_pos_t">splayer_frame_pos_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_READY">SPLAYER_READY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_frame_t">splayer_frame_t</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_refresh_play">splayer_refresh_play()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_FRAME_TYPE_AUDIO_S16LE">SPLAYER_FRAME_TYPE_AUDIO_S16LE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_register_file_end_msg">splayer_register_file_end_msg()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_frame_type_e">splayer_frame_type_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_release">splayer_release()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__General___player___functions___">6.1</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_FRAME_TYPE_UNKNOWN">SPLAYER_FRAME_TYPE_UNKNOWN</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_RENDERER_NO_AUDIO">SPLAYER_RENDERER_NO_AUDIO</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_FRAME_TYPE_YV12">SPLAYER_FRAME_TYPE_YV12</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_RENDERER_NO_VIDEO">SPLAYER_RENDERER_NO_VIDEO</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_avg_time_per_frame">splayer_get_avg_time_per_frame()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_RENDERER_NULL_POINTER">SPLAYER_RENDERER_NULL_POINTER</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_file_time">splayer_get_file_time()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_SEARCH_BY_FRAME_NUM">SPLAYER_SEARCH_BY_FRAME_NUM</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_next_key_frame_pos">splayer_get_next_key_frame_pos()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_SEARCH_BY_FRAME_TIME">SPLAYER_SEARCH_BY_FRAME_TIME</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_num_bytes_in_buffer">splayer_get_num_bytes_in_buffer()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Stream___player___functions___">6.3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_search_type_e">splayer_search_type_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_picture_size">splayer_get_picture_size()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_current_frame_num">splayer_set_current_frame_num()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_play_pos">splayer_get_play_pos()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_current_time">splayer_set_current_time()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_play_speed">splayer_get_play_speed()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_decode_callback">splayer_set_decode_callback()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Misc___functions___">6.4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_played_frames">splayer_get_played_frames()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_display_callback">splayer_set_display_callback()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Misc___functions___">6.4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_played_time">splayer_get_played_time()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_display_region">splayer_set_display_region()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Misc___functions___">6.4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_prev_key_frame_pos">splayer_get_prev_key_frame_pos()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_play_pos">splayer_set_play_pos()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_state">splayer_get_state()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_set_volume">splayer_set_volume()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_total_frames">splayer_get_total_frames()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_SNAPSHOT_BUFFER_SIZE">SPLAYER_SNAPSHOT_BUFFER_SIZE</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_version">splayer_get_version()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__General___player___functions___">6.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__splayer_state_e">splayer_state_e</A>
+</NOBR></TD>
+<TD width="30*">Typedef</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_get_volume">splayer_get_volume()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_stop">splayer_stop()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_halve_speed">splayer_halve_speed()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_STOP">SPLAYER_STOP</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_init">splayer_init()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__General___player___functions___">6.1</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_stop_sound">splayer_stop_sound()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_INITIALIZED">SPLAYER_INITIALIZED</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_stop_sound_share">splayer_stop_sound_share()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_input_data">splayer_input_data()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Stream___player___functions___">6.3</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_SUPPORT_FILE_ONLY">SPLAYER_SUPPORT_FILE_ONLY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_INTERNAL_ERROR">SPLAYER_INTERNAL_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_SUPPORT_STREAM_ONLY">SPLAYER_SUPPORT_STREAM_ONLY</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_INVALID_PARAM">SPLAYER_INVALID_PARAM</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_take_video_snapshot">splayer_take_video_snapshot()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__Misc___functions___">6.4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_INVALID_PORT">SPLAYER_INVALID_PORT</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_THREAD_ERROR">SPLAYER_THREAD_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Defines__SPLAYER_MAX_DISPLAY_REGIONS">SPLAYER_MAX_DISPLAY_REGIONS</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">5</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_UNSUPPORTED_FILE_FORMAT">SPLAYER_UNSUPPORTED_FILE_FORMAT</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Defines__SPLAYER_MAX_PORTS">SPLAYER_MAX_PORTS</A>
+</NOBR></TD>
+<TD width="30*">Define</TD>
+<TD width="10*" align="right">
+<A href="#Top__Defines">5</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_VIDEO_DEC_ERROR">SPLAYER_VIDEO_DEC_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+<TR>
+<TD  width="100*">
+<NOBR><A href="#Routines__splayer_next_frame">splayer_next_frame()</A>
+</NOBR></TD>
+<TD width="30*">Routine</TD>
+<TD width="10*" align="right">
+<A href="#Routines__File___player___functions___">6.2</A>
+</TD>
+<TD width="10"></TD>
+<TD  width="100*">
+<NOBR><A href="#Types__SPLAYER_VIDEO_DECODER_INIT_ERROR">SPLAYER_VIDEO_DECODER_INIT_ERROR</A>
+</NOBR></TD>
+<TD width="30*">EnumElt</TD>
+<TD width="10*" align="right">
+<A href="#Top__Types">4</A>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+
+<!-- SEC_INDEX_CLOSE -->
+<P>
+<HR>
+</P>
+<P align="left">
+Package last modified on: Mar 30, 2009 at 18:30 UTC.<BR>
+</P>
+
+</BODY>
+</HTML>

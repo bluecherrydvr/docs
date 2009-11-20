@@ -1,0 +1,562 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\DvrFCD.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\DvrFCD.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DVRFCD_DIALOG DIALOGEX 0, 0, 659, 429
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DvrFCD"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Display 01",IDC_STATIC_DISPLAY_01,7,18,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 02",IDC_STATIC_DISPLAY_02,169,18,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 03",IDC_STATIC_DISPLAY_03,330,18,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 04",IDC_STATIC_DISPLAY_04,491,18,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 05",IDC_STATIC_DISPLAY_05,7,120,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 06",IDC_STATIC_DISPLAY_06,169,120,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 07",IDC_STATIC_DISPLAY_07,330,120,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 08",IDC_STATIC_DISPLAY_08,491,120,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 09",IDC_STATIC_DISPLAY_09,7,223,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 10",IDC_STATIC_DISPLAY_10,169,223,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 11",IDC_STATIC_DISPLAY_11,330,223,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 12",IDC_STATIC_DISPLAY_12,491,223,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 13",IDC_STATIC_DISPLAY_13,8,324,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 14",IDC_STATIC_DISPLAY_14,169,324,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 15",IDC_STATIC_DISPLAY_15,330,324,160,100,SS_NOTIFY | WS_BORDER
+    LTEXT           "Display 16",IDC_STATIC_DISPLAY_16,491,324,160,100,SS_NOTIFY | WS_BORDER
+    CONTROL         "Board 1",IDC_RADIO_BOARD1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,168,7,40,10
+    CONTROL         "Board 2",IDC_RADIO_BOARD2,"Button",BS_AUTORADIOBUTTON,228,7,40,10
+    CONTROL         "Board 3",IDC_RADIO_BOARD3,"Button",BS_AUTORADIOBUTTON,288,7,40,10
+    CONTROL         "Board 4",IDC_RADIO_BOARD4,"Button",BS_AUTORADIOBUTTON,348,7,40,10
+END
+
+IDD_DIALOG_BOARD_SETTING DIALOGEX 0, 0, 303, 176
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Board Setting"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Set",ID_SET_BOARD,246,155,50,14
+    GROUPBOX        "Video Standard",IDC_STATIC_VIDEO_STANDARD,9,10,133,154
+    CONTROL         "SDVR_VIDEO_STD_D1_PAL",IDC_RADIO_STD_D1_PAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,16,22,120,10
+    CONTROL         "SDVR_VIDEO_STD_D1_NTSC",IDC_RADIO_STD_D1_NTSC,"Button",BS_AUTORADIOBUTTON,16,36,120,10
+    CONTROL         "SDVR_VIDEO_STD_CIF_PAL",IDC_RADIO_STD_CIF_PAL,"Button",BS_AUTORADIOBUTTON,16,50,120,10
+    CONTROL         "SDVR_VIDEO_STD_CIF_NTSC",IDC_RADIO_STD_CIF_NTSC,"Button",BS_AUTORADIOBUTTON,16,64,120,10
+    CONTROL         "SDVR_VIDEO_STD_2CIF_PAL",IDC_RADIO_STD_2CIF_PAL,"Button",BS_AUTORADIOBUTTON,16,78,120,10
+    CONTROL         "SDVR_VIDEO_STD_2CIF_NTSC",IDC_RADIO_STD_2CIF_NTSC,
+                    "Button",BS_AUTORADIOBUTTON,16,92,120,10
+    CONTROL         "SDVR_VIDEO_STD_4CIF_PAL",IDC_RADIO_STD_4CIF_PAL,"Button",BS_AUTORADIOBUTTON,16,106,120,10
+    CONTROL         "SDVR_VIDEO_STD_4CIF_NTSC",IDC_RADIO_STD_4CIF_NTSC,
+                    "Button",BS_AUTORADIOBUTTON,16,120,119,10
+    CONTROL         "SDVR_VIDEO_STD_QCIF_PAL",IDC_RADIO_STD_QCIF_PAL,"Button",BS_AUTORADIOBUTTON,16,134,120,10
+    CONTROL         "SDVR_VIDEO_STD_QCIF_NTSC",IDC_RADIO_STD_QCIF_NTSC,
+                    "Button",BS_AUTORADIOBUTTON,16,148,120,10
+    GROUPBOX        "General Setting",IDC_STATIC_BOARD_GERNERAL,148,10,148,46
+    LTEXT           "PCI Timeout(sec.):",IDC_STATIC_PCI_TIMEOUT,154,31,64,8
+    EDITTEXT        IDC_EDIT_PCI_TIMEOUT,218,30,22,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    GROUPBOX        "OSD Font Table",IDC_STATIC_OSD_FONT_TABLE,148,61,148,89
+    CONTROL         "Use Custom Font Table",IDC_CHECK_CUSTOM_FONT_TABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,74,110,10
+    LTEXT           "Start Code:",IDC_STATIC_FONT_START_CODE,154,92,40,8
+    EDITTEXT        IDC_EDIT_FONT_START_CODE,195,91,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "End Code:",IDC_STATIC_FONT_END_CODE,228,92,40,8
+    EDITTEXT        IDC_EDIT_FONT_END_CODE,264,91,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "Y-COLOR:",IDC_STATIC_Y_COLOR,155,113,40,8
+    EDITTEXT        IDC_EDIT_Y_COLOR,191,112,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "U-COLOR:",IDC_STATIC_U_COLOR,155,135,40,8
+    EDITTEXT        IDC_EDIT_U_COLOR,191,134,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "V-COLOR:",IDC_STATIC_V_COLOR,228,135,40,8
+    EDITTEXT        IDC_EDIT_V_COLOR,264,134,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+END
+
+IDD_DIALOG_DRAW_REGION_SETTING DIALOGEX 0, 0, 563, 213
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Region Setting & PTZ Control"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Set",ID_REGION_SETTING_OK,335,180,40,16
+    LTEXT           "Display Region",IDC_STATIC_DRAW_REGION_AREA,0,0,320,213
+    GROUPBOX        "MD Setting",IDC_STATIC_MD_SETTING,335,4,112,170
+    CONTROL         "MD Layer 1",IDC_RADIO_MD_0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,341,27,53,10
+    CONTROL         "MD Layer 2",IDC_RADIO_MD_1,"Button",BS_AUTORADIOBUTTON,341,47,53,10
+    CONTROL         "MD Layer 3",IDC_RADIO_MD_2,"Button",BS_AUTORADIOBUTTON,341,67,53,10
+    CONTROL         "MD Layer 4",IDC_RADIO_MD_3,"Button",BS_AUTORADIOBUTTON,341,87,53,10
+    PUSHBUTTON      "Remove",IDC_BUTTON_REMOVE_REGION,341,139,49,16
+    LTEXT           "Threshold:",IDC_STATIC_THRESHOLD,394,14,36,8
+    EDITTEXT        IDC_EDIT_THRESHOLD1,395,26,40,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    CONTROL         "Enable MD",IDC_CHECK_ENABLE_MD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,341,160,50,10
+    PUSHBUTTON      "Set and Exit",IDC_BUTTON_SET_EXIT,505,199,50,14
+    GROUPBOX        "PTZ Control (Pelco D)",IDC_STATIC_PTZ_CONTROL,455,4,100,170
+    LTEXT           "Baud Rate:",IDC_STATIC_BAUD_RATE,462,17,37,8
+    LTEXT           "Address:",IDC_STATIC_ADDRESS,462,34,30,8
+    COMBOBOX        IDC_COMBO_BAUD_RATE,500,16,48,54,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_ADDRESS,500,33,48,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Init RS485",IDC_BUTTON_INIT_RS485,462,65,50,14
+    PUSHBUTTON      "Up",IDC_BUTTON_UP,484,83,40,12
+    PUSHBUTTON      "Left",IDC_BUTTON_LEFT,462,97,40,12
+    PUSHBUTTON      "Right",IDC_BUTTON_RIGHT,507,97,40,12
+    PUSHBUTTON      "Down",IDC_BUTTON_DOWN,485,111,40,12
+    PUSHBUTTON      "Focus Far",IDC_BUTTON_FOCUS_FAR,508,142,40,12
+    PUSHBUTTON      "Focus Near",IDC_BUTTON_FOCUS_NEAR,462,142,40,12
+    PUSHBUTTON      "Zoom In",IDC_BUTTON_ZOOM_IN,462,127,40,12
+    PUSHBUTTON      "Zoom Out",IDC_BUTTON_ZOOM_OUT,508,127,40,12
+    PUSHBUTTON      "Iris Large",IDC_BUTTON_IRIS_LARGE,462,157,40,12
+    PUSHBUTTON      "Iris Small",IDC_BUTTON_IRIS_SMALL,508,157,40,12
+    LISTBOX         IDC_LIST_RECT_ID,395,108,40,60,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_THRESHOLD2,395,46,40,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_THRESHOLD3,395,66,40,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_THRESHOLD4,395,86,40,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "Speed:",IDC_STATIC_SPEED,463,51,24,8
+    COMBOBOX        IDC_COMBO_SPEED,500,50,48,35,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Frequency:",IDC_STATIC_MOTION_FREQUENCY,342,106,40,8
+    EDITTEXT        IDC_EDIT_MOTION_FREQUENCY,342,117,32,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_RIGHT
+END
+
+IDD_DIALOG_RELAYS_SENEORS DIALOGEX 0, 0, 291, 244
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Relays & Sensors"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Set and Exit",ID_RELAYS_SENSORS_SET_EXIT,234,223,50,14
+    GROUPBOX        "Sensor Configuration",IDC_STATIC_SENSOR_CONFIG,7,76,277,139
+    GROUPBOX        "Trigger Relays",IDC_STATIC_TRIGGER_RELAYS,7,8,277,58
+    CONTROL         "1",IDC_CHECK_SENSOR1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,87,20,12
+    CONTROL         "2",IDC_CHECK_SENSOR2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,107,20,12
+    CONTROL         "3",IDC_CHECK_SENSOR3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,127,20,12
+    CONTROL         "4",IDC_CHECK_SENSOR4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,147,20,12
+    CONTROL         "5",IDC_CHECK_SENSOR5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,87,20,12
+    CONTROL         "6",IDC_CHECK_SENSOR6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,107,20,12
+    CONTROL         "7",IDC_CHECK_SENSOR7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,127,20,12
+    CONTROL         "8",IDC_CHECK_SENSOR8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,147,20,12
+    COMBOBOX        IDC_COMBO_SENSOR1,35,88,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR2,35,108,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR3,35,128,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR4,35,148,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR5,175,88,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR6,175,108,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR7,175,128,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SENSOR8,175,148,100,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "1",IDC_CHECK_TRIGGER1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,23,20,10
+    CONTROL         "2",IDC_CHECK_TRIGGER2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,23,20,10
+    CONTROL         "3",IDC_CHECK_TRIGGER3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,23,20,10
+    CONTROL         "4",IDC_CHECK_TRIGGER4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,166,23,20,10
+    CONTROL         "5",IDC_CHECK_TRIGGER5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,44,20,10
+    CONTROL         "6",IDC_CHECK_TRIGGER6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,44,20,10
+    CONTROL         "7",IDC_CHECK_TRIGGER7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,44,20,10
+    CONTROL         "8",IDC_CHECK_TRIGGER8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,166,44,20,10
+    PUSHBUTTON      "Trigger!",IDC_BUTTON_TRIGGER,208,40,50,14
+    PUSHBUTTON      "Set",ID_SENSORS_SET,15,165,40,14
+    LISTBOX         IDC_LIST_SENSORS,60,166,215,44,LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,3
+ PRODUCTVERSION 1,0,0,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileVersion", "1.0.0.3"
+            VALUE "InternalName", "DvrFCD.exe"
+            VALUE "OriginalFilename", "DvrFCD.exe"
+            VALUE "ProductVersion", "1.0.0.3"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DVRFCD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 651
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 424
+        HORZGUIDE, 7
+        HORZGUIDE, 118
+        HORZGUIDE, 220
+        HORZGUIDE, 323
+    END
+
+    IDD_DIALOG_BOARD_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_DIALOG_DRAW_REGION_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 555
+        BOTTOMMARGIN, 212
+    END
+
+    IDD_DIALOG_RELAYS_SENEORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CHANNEL_SETTING DIALOGEX 0, 0, 563, 289
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Channel Setting"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Set and Exit",ID_SET_CHANNEL,506,268,50,14
+    GROUPBOX        "Video and Audio",IDC_STATIC_VIDEO_AUDIO_SETTING,250,10,306,105
+    GROUPBOX        "OSD",IDC_STATIC_OSD_SETTING,7,10,231,208
+    LTEXT           "Frame Rate:",IDC_STATIC_FRAME_RATE,385,35,43,8
+    EDITTEXT        IDC_EDIT_FRAMERATE,427,34,22,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "Video Resolution Decimation:",IDC_STATIC_RES,260,73,96,8
+    CONTROL         "D1",IDC_RADIO_EQUAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,261,84,32,10
+    CONTROL         "CIF",IDC_RADIO_CIF,"Button",BS_AUTORADIOBUTTON,297,84,32,10
+    CONTROL         "QCIF",IDC_RADIO_QCIF,"Button",BS_AUTORADIOBUTTON,261,98,32,10
+    CONTROL         "HALF",IDC_RADIO_HALF,"Button",BS_AUTORADIOBUTTON,297,98,32,10
+    CONTROL         "DCIF",IDC_RADIO_DCIF,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,333,98,32,10
+    LTEXT           "Video Pre-Processing Mode:",IDC_STATIC_VPP,260,19,93,8
+    CONTROL         "Lateral Filter",IDC_RADIO_SLATERAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,261,30,57,10
+    CONTROL         "Analytics (Don't support OSD)",IDC_RADIO_ANALYTICS,
+                    "Button",BS_AUTORADIOBUTTON,261,44,113,10
+    CONTROL         "Enable OSD 1:",IDC_CHECK_ENABLE_OSD1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,19,63,10
+    LTEXT           "Text:",IDC_STATIC_OSD1_TEXT,14,33,18,8
+    EDITTEXT        IDC_EDIT_OSD1_TEXT,46,31,180,12,ES_AUTOHSCROLL,WS_EX_CLIENTEDGE
+    LTEXT           "Position:",IDC_STATIC_OSD1_POSITION,14,52,29,8
+    COMBOBOX        IDC_COMBO_OSD1_POS,46,51,100,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "X:",IDC_STATIC_OSD1_X_POS,153,53,8,8
+    EDITTEXT        IDC_EDIT_OSD1_X_POS,160,51,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "Y:",IDC_STATIC_OSD1_Y_POS,195,53,8,8
+    EDITTEXT        IDC_EDIT_OSD1_Y_POS,202,51,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "TimeStamp:",IDC_STATIC_OSD1_TIMESTAMP,14,72,42,8
+    COMBOBOX        IDC_COMBO_OSD1_TIMESTAMP,57,70,88,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Translucent:",IDC_STATIC_OSD1_TRANSLUCENT,14,92,42,8
+    CONTROL         "",IDC_SLIDER_OSD1_TRANSLUCENT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,55,91,150,12
+    LTEXT           "255",IDC_STATIC_OSD1_SHOW_TRANSLUCENT,212,92,13,8,0,WS_EX_RIGHT
+    CONTROL         "Enable OSD 2:",IDC_CHECK_ENABLE_OSD2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,127,63,10
+    LTEXT           "Text:",IDC_STATIC_OSD2_TEXT,14,141,18,8
+    EDITTEXT        IDC_EDIT_OSD2_TEXT,46,139,100,12,ES_AUTOHSCROLL,WS_EX_CLIENTEDGE
+    LTEXT           "Position:",IDC_STATIC_OSD2_POSITION,14,160,29,8
+    COMBOBOX        IDC_COMBO_OSD2_POS,46,159,100,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "X:",IDC_STATIC_OSD2_X_POS,154,160,8,8
+    EDITTEXT        IDC_EDIT_OSD2_X_POS,161,158,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "Y:",IDC_STATIC_OSD2_Y_POS,196,160,8,8
+    EDITTEXT        IDC_EDIT_OSD2_Y_POS,202,158,24,12,ES_AUTOHSCROLL | ES_NUMBER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    LTEXT           "TimeStamp:",IDC_STATIC_OSD2_TIMESTAMP,14,180,42,8
+    COMBOBOX        IDC_COMBO_OSD2_TIMESTAMP,57,178,88,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Translucent:",IDC_STATIC_OSD2_TRANSLUCENT,14,200,42,8
+    CONTROL         "",IDC_SLIDER_OSD2_TRANSLUCENT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,55,199,150,12
+    LTEXT           "255",IDC_STATIC_OSD2_SHOW_TRANSLUCENT,212,200,13,8,0,WS_EX_RIGHT
+    CONTROL         "Set Sound Mute",IDC_CHECK_MUTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,384,19,80,10
+    LTEXT           "BR:",IDC_STATIC_BRIGHTNESS,385,51,20,8
+    LTEXT           "CT:",IDC_STATIC_CONTRAST,385,63,20,8
+    LTEXT           "SA:",IDC_STATIC_SATURATION,385,75,20,8
+    LTEXT           "HU:",IDC_STATIC_HUE,385,87,20,8
+    CONTROL         "",IDC_SLIDER_BRIGHTNESS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,405,50,130,12
+    CONTROL         "",IDC_SLIDER_CONTRAST,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,405,62,130,12
+    CONTROL         "",IDC_SLIDER_SATURATION,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,405,74,130,12
+    CONTROL         "",IDC_SLIDER_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,405,86,130,12
+    LTEXT           "100",IDC_STATIC_SHOW_BRIGHTNESS,538,51,12,8,0,WS_EX_RIGHT
+    LTEXT           "100",IDC_STATIC_SHOW_CONTRAST,538,63,12,8,0,WS_EX_RIGHT
+    LTEXT           "100",IDC_STATIC_SHOW_SATURATION,538,75,12,8,0,WS_EX_RIGHT
+    LTEXT           "100",IDC_STATIC_SHOW_HUE,538,87,12,8,0,WS_EX_RIGHT
+    LTEXT           "SP:",IDC_STATIC_SHARPNESS,385,99,20,8
+    CONTROL         "",IDC_SLIDER_SHARPNESS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,405,98,130,12
+    LTEXT           "5",IDC_STATIC_SHOW_SHARPNESS,542,99,8,8,0,WS_EX_RIGHT
+    LTEXT           "Display raw video secondary",IDC_STATIC_DISPLAY_RAW_SECONDARY,250,122,250,160
+    LTEXT           "NOTE: Raw video secondary is set to D1 and framerate = 15 for this demo.",IDC_STATIC_SHOW_HINT,13,245,213,28
+    LTEXT           "Raw Video Secondary",IDC_STATIC_SECONDARY,508,122,41,19
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CHANNEL_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 556
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 282
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_CONTROL MENU 
+BEGIN
+    POPUP "InitDvrBoard"
+    BEGIN
+        MENUITEM "Init All DVRBoard ",          ID_INIT_ALL_DVRBOARD, CHECKED
+    END
+    POPUP "Connect Channel"
+    BEGIN
+        POPUP "Board 01"
+        BEGIN
+            MENUITEM "Connect Channel 01",          ID_CONNECTCHANNEL_01, CHECKED
+            MENUITEM "Connect Channel 02",          ID_CONNECTCHANNEL_02, CHECKED
+            MENUITEM "Connect Channel 03",          ID_CONNECTCHANNEL_03, CHECKED
+            MENUITEM "Connect Channel 04",          ID_CONNECTCHANNEL_04, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 05",          ID_CONNECTCHANNEL_05, CHECKED
+            MENUITEM "Connect Channel 06",          ID_CONNECTCHANNEL_06, CHECKED
+            MENUITEM "Connect Channel 07",          ID_CONNECTCHANNEL_07, CHECKED
+            MENUITEM "Connect Channel 08",          ID_CONNECTCHANNEL_08, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 09",          ID_CONNECTCHANNEL_09, CHECKED
+            MENUITEM "Connect Channel 10",          ID_CONNECTCHANNEL_10, CHECKED
+            MENUITEM "Connect Channel 11",          ID_CONNECTCHANNEL_11, CHECKED
+            MENUITEM "Connect Channel 12",          ID_CONNECTCHANNEL_12, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 13",          ID_CONNECTCHANNEL_13, CHECKED
+            MENUITEM "Connect Channel 14",          ID_CONNECTCHANNEL_14, CHECKED
+            MENUITEM "Connect Channel 15",          ID_CONNECTCHANNEL_15, CHECKED
+            MENUITEM "Connect Channel 16",          ID_CONNECTCHANNEL_16, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect All",                 ID_CONNECT_ALL_BOARD_01
+            MENUITEM "Disconnect All",              ID_DISCONNECT_ALL_BOARD_01
+        END
+        POPUP "Board 02"
+        BEGIN
+            MENUITEM "Connect Channel 01",          ID_CONNECTCHANNEL_17, CHECKED
+            MENUITEM "Connect Channel 02",          ID_CONNECTCHANNEL_18, CHECKED
+            MENUITEM "Connect Channel 03",          ID_CONNECTCHANNEL_19, CHECKED
+            MENUITEM "Connect Channel 04",          ID_CONNECTCHANNEL_20, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 05",          ID_CONNECTCHANNEL_21, CHECKED
+            MENUITEM "Connect Channel 06",          ID_CONNECTCHANNEL_22, CHECKED
+            MENUITEM "Connect Channel 07",          ID_CONNECTCHANNEL_23, CHECKED
+            MENUITEM "Connect Channel 08",          ID_CONNECTCHANNEL_24, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 09",          ID_CONNECTCHANNEL_25, CHECKED
+            MENUITEM "Connect Channel 10",          ID_CONNECTCHANNEL_26, CHECKED
+            MENUITEM "Connect Channel 11",          ID_CONNECTCHANNEL_27, CHECKED
+            MENUITEM "Connect Channel 12",          ID_CONNECTCHANNEL_28, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 13",          ID_CONNECTCHANNEL_29, CHECKED
+            MENUITEM "Connect Channel 14",          ID_CONNECTCHANNEL_30, CHECKED
+            MENUITEM "Connect Channel 15",          ID_CONNECTCHANNEL_31, CHECKED
+            MENUITEM "Connect Channel 16",          ID_CONNECTCHANNEL_32, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect All",                 ID_CONNECT_ALL_BOARD_02
+            MENUITEM "Disconnect All",              ID_DISCONNECT_ALL_BOARD_02
+        END
+        POPUP "Board 03"
+        BEGIN
+            MENUITEM "Connect Channel 01",          ID_CONNECTCHANNEL_33, CHECKED
+            MENUITEM "Connect Channel 02",          ID_CONNECTCHANNEL_34, CHECKED
+            MENUITEM "Connect Channel 03",          ID_CONNECTCHANNEL_35, CHECKED
+            MENUITEM "Connect Channel 04",          ID_CONNECTCHANNEL_36, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 05",          ID_CONNECTCHANNEL_37, CHECKED
+            MENUITEM "Connect Channel 06",          ID_CONNECTCHANNEL_38, CHECKED
+            MENUITEM "Connect Channel 07",          ID_CONNECTCHANNEL_39, CHECKED
+            MENUITEM "Connect Channel 08",          ID_CONNECTCHANNEL_40, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 09",          ID_CONNECTCHANNEL_41, CHECKED
+            MENUITEM "Connect Channel 10",          ID_CONNECTCHANNEL_42, CHECKED
+            MENUITEM "Connect Channel 11",          ID_CONNECTCHANNEL_43, CHECKED
+            MENUITEM "Connect Channel 12",          ID_CONNECTCHANNEL_44, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 13",          ID_CONNECTCHANNEL_45, CHECKED
+            MENUITEM "Connect Channel 14",          ID_CONNECTCHANNEL_46, CHECKED
+            MENUITEM "Connect Channel 15",          ID_CONNECTCHANNEL_47, CHECKED
+            MENUITEM "Connect Channel 16",          ID_CONNECTCHANNEL_48, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect All",                 ID_CONNECT_ALL_BOARD_03
+            MENUITEM "Disconnect All",              ID_DISCONNECT_ALL_BOARD_03
+        END
+        POPUP "Board 04"
+        BEGIN
+            MENUITEM "Connect Channel 01",          ID_CONNECTCHANNEL_49, CHECKED
+            MENUITEM "Connect Channel 02",          ID_CONNECTCHANNEL_50, CHECKED
+            MENUITEM "Connect Channel 03",          ID_CONNECTCHANNEL_51, CHECKED
+            MENUITEM "Connect Channel 04",          ID_CONNECTCHANNEL_52, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 05",          ID_CONNECTCHANNEL_53, CHECKED
+            MENUITEM "Connect Channel 06",          ID_CONNECTCHANNEL_54, CHECKED
+            MENUITEM "Connect Channel 07",          ID_CONNECTCHANNEL_55, CHECKED
+            MENUITEM "Connect Channel 08",          ID_CONNECTCHANNEL_56, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 09",          ID_CONNECTCHANNEL_57, CHECKED
+            MENUITEM "Connect Channel 10",          ID_CONNECTCHANNEL_58, CHECKED
+            MENUITEM "Connect Channel 11",          ID_CONNECTCHANNEL_59, CHECKED
+            MENUITEM "Connect Channel 12",          ID_CONNECTCHANNEL_60, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect Channel 13",          ID_CONNECTCHANNEL_61, CHECKED
+            MENUITEM "Connect Channel 14",          ID_CONNECTCHANNEL_62, CHECKED
+            MENUITEM "Connect Channel 15",          ID_CONNECTCHANNEL_63, CHECKED
+            MENUITEM "Connect Channel 16",          ID_CONNECTCHANNEL_64, CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "Connect All",                 ID_CONNECT_ALL_BOARD_04
+            MENUITEM "Disconnect All",              ID_DISCONNECT_ALL_BOARD_04
+        END
+    END
+    POPUP "Relays and Sensors"
+    BEGIN
+        MENUITEM "Board 01",                    ID_RELAYSSENSORS_BOARD01
+        MENUITEM "Board 02",                    ID_RELAYSSENSORS_BOARD02
+        MENUITEM "Board 03",                    ID_RELAYSSENSORS_BOARD03
+        MENUITEM "Board 04",                    ID_RELAYSSENSORS_BOARD04
+    END
+    POPUP "Get Protect ID"
+    BEGIN
+        MENUITEM "DvrBoard 01",                 ID_GETPROTECTID_DVRBOARD01
+        MENUITEM "DvrBoard 02",                 ID_GETPROTECTID_DVRBOARD02
+        MENUITEM "DvrBoard 03",                 ID_GETPROTECTID_DVRBOARD03
+        MENUITEM "DvrBoard 04",                 ID_GETPROTECTID_DVRBOARD04
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\DvrFCD.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,111 @@
+; ---------------------------------------------------------------------
+; H264_Dvr.inf - INF file for Stretch S6 PCI DVR board driver.
+;
+; Copyright (c) 2008 Stretch, Inc. All rights reserved.
+;
+; THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+; STRETCH, INC. USE, DISCLOSURE, OR REPRODUCTION IS PROHIBITED WITHOUT
+; THE PRIOR EXPRESS WRITTEN PERMISSION OF STRETCH, INC.
+; ---------------------------------------------------------------------
+
+
+[Version]
+Signature     = "$Chicago$"
+Class         = Media
+ClassGuid     = {4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider      = %STRETCH%
+DriverVer     = 03/24/2009, 5.0.1.0
+;CatalogFile   = stretch.cat
+
+[Manufacturer]
+%STRETCH%     = StretchInc
+
+[StretchInc]
+%PCI\VEN_18A2&DEV_0002&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0002&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0003&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0003&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0004&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0004&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0005&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0005&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0006&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0006&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0007&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0007&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0008&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0008&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_0009&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_0009&SUBSYS_00001540
+%PCI\VEN_18A2&DEV_000A&SUBSYS_000018A2.Desc% = Stretch_S6DVR.Install, PCI\VEN_18A2&DEV_000A&SUBSYS_00001540
+
+[DestinationDirs]
+Stretch_S6DVR.Files.Driver          = 10,System32\Drivers
+Stretch_S6DVR.Files.Driver.NTx86    = 10,System32\Drivers
+
+[SourceDisksNames]
+1 = "Stretch Install Directory",,,
+
+[SourceDisksFiles]
+H264_Dvr.sys = 1
+
+[SourceDisksFiles.x86]
+H264_Dvr.sys = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Windows 98
+
+[Stretch_S6DVR.Install]
+CopyFiles    = Stretch_S6DVR.Files.Driver
+AddReg       = Stretch_S6DVR.AddReg
+LogConfig    = Stretch_S6DVR.LogConfig
+
+[Stretch_S6DVR.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,H264_Dvr.sys
+
+[Stretch_S6DVR.Files.Driver]
+H264_Dvr.sys
+
+[Stretch_S6DVR.LogConfig]
+ConfigPriority = DESIRED
+IOConfig       = 380-382
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Windows 2000
+
+[Stretch_S6DVR.Install.NTx86]
+CopyFiles    = Stretch_S6DVR.Files.Driver.NTx86
+LogConfig    = Stretch_S6DVR.LogConfig
+
+[Stretch_S6DVR.Files.Driver.NTx86]
+H264_Dvr.sys,,,%COPYFLG_NOSKIP%
+
+[Stretch_S6DVR.Install.NTx86.Services]
+AddService   = Stretch_S6DVR, %SPSVCINST_ASSOCSERVICE%, Stretch_S6DVR.Service
+
+[Stretch_S6DVR.Service]
+DisplayName     = %Stretch_S6DVR.ServiceName%
+ServiceType     = %SERVICE_KERNEL_DRIVER%
+StartType       = %SERVICE_DEMAND_START%
+ErrorControl    = %SERVICE_ERROR_NORMAL%
+ServiceBinary   = %10%\System32\Drivers\H264_Dvr.sys
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Strings
+
+[Strings]
+Stretch_S6DVR                = "Standard H264 DVR Card Driver"
+Stretch_S6DVR.ServiceName    = "Standard H264 DVR Card Driver"
+STRETCH                      = "H264, Inc."
+
+SPSVCINST_ASSOCSERVICE       = 0x00000002
+COPYFLG_NOSKIP               = 2     ; Do not allow user to skip file
+SERVICE_KERNEL_DRIVER        = 1
+SERVICE_AUTO_START           = 2
+SERVICE_DEMAND_START         = 3
+SERVICE_ERROR_NORMAL         = 1
+
+PCI\VEN_18A2&DEV_0002&SUBSYS_000018A2.Desc   = "Standard H264 16 Ports DVR Card"
+PCI\VEN_18A2&DEV_0003&SUBSYS_000018A2.Desc   = "Standard H264 08 Ports DVR Card"
+PCI\VEN_18A2&DEV_0004&SUBSYS_000018A2.Desc   = "Standard H264 04 Ports DVR Card"
+PCI\VEN_18A2&DEV_0005&SUBSYS_000018A2.Desc   = "Standard H264 16 Ports Capture Card"
+PCI\VEN_18A2&DEV_0006&SUBSYS_000018A2.Desc   = "Standard H264 16 Ports DVR Card"
+PCI\VEN_18A2&DEV_0007&SUBSYS_000018A2.Desc   = "Stretch VRC6416-ba DVR Card"
+PCI\VEN_18A2&DEV_0008&SUBSYS_000018A2.Desc   = "Stretch 410-10040 Card"
+PCI\VEN_18A2&DEV_0009&SUBSYS_000018A2.Desc   = "Stretch 410-10041 Card"
+PCI\VEN_18A2&DEV_000A&SUBSYS_000018A2.Desc   = "Stretch VRC6016C DVR Card"
+
+

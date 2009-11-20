@@ -1,0 +1,4 @@
+avc			1
+desired_spatial_layer	2
+desired_temporal_layer	2
+destination		127.0.0.1:7016

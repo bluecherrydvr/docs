@@ -1,0 +1,504 @@
+<ui version="4.0" >
+ <class>DecoderDialog</class>
+ <widget class="QDialog" name="DecoderDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>615</width>
+    <height>438</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Decoder Properties</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox" >
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>390</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons" >
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioFileName" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>95</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>File Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelAudioDecoder" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>170</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Audio Decoder:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioADecoderNone" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>170</y>
+     <width>56</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="whatsThis" >
+    <string>Select if the given file name to decode is mp4 file format without any audio.</string>
+   </property>
+   <property name="text" >
+    <string>None</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioADecoderG711" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>170</y>
+     <width>56</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="whatsThis" >
+    <string>Select if the given file name to decode is mp4 file format and the video is encoded as H.264 with audio encoded as G711.</string>
+   </property>
+   <property name="text" >
+    <string>G711</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioADecoderG726_16K" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>330</x>
+     <y>170</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>G726-16K</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioADecoderG726_24K" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>420</x>
+     <y>170</y>
+     <width>82</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>G726-24K</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioADecoderG726_32K" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>170</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>G726-32K</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioVDecoderMP4" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>140</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>MP4</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioVDecoderMJPEG" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>360</x>
+     <y>140</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>MJPEG</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioCamera" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>200</y>
+     <width>95</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Camera</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelCameraName" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>230</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Camera Name:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="uiComboCameras" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>230</y>
+     <width>141</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="uiRadioVDecoderH264" >
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>140</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="whatsThis" >
+    <string>Select if the given file name to decode is mp4 file format and the video is encoded as H.264</string>
+   </property>
+   <property name="text" >
+    <string>H264</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelPath" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>110</y>
+     <width>100</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Path:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="uiBtnBrowse" >
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>100</y>
+     <width>75</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Browse...</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="uiLEditPath" >
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>100</y>
+     <width>311</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="whatsThis" >
+    <string>Specify a .mov file to decode. The .mov file must have been  created by DVRCP application.</string>
+   </property>
+   <property name="maxLength" >
+    <number>256</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelVideoSize" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>270</y>
+     <width>110</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Video Size:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="uiComboVideoSize" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>270</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis" >
+    <string>Selecting "Any" lets the firmware to choose where the decoder is created on. Select 1-64 to force which chip the decoder is created on. Each 16 channel range corresponds to a chip on the DVR board.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelVideoDecoder" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>140</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Video Decoder:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="uiLEditName" >
+   <property name="geometry" >
+    <rect>
+     <x>81</x>
+     <y>20</y>
+     <width>113</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>20</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelAttach" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>53</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Attach:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="uiLabelName" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>51</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Name:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="uiGroupBoxConnect" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>310</y>
+     <width>321</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Connect</string>
+   </property>
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="uiLableBoardId" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>110</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Board Index:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="uiLabelDecoderChan" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>110</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Decoder Channel:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="uiComboBoardId" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="uiComboDecoderChan" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="whatsThis" >
+     <string>Selecting "Any" lets the firmware to choose where the decoder is created on. Select 1-64 to force which chip the decoder is created on. Each 16 channel range corresponds to a chip on the DVR board.</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>uiLEditName</tabstop>
+  <tabstop>uiComboDecoderChan</tabstop>
+  <tabstop>uiRadioFileName</tabstop>
+  <tabstop>uiLEditPath</tabstop>
+  <tabstop>uiRadioVDecoderH264</tabstop>
+  <tabstop>uiRadioVDecoderMP4</tabstop>
+  <tabstop>uiRadioVDecoderMJPEG</tabstop>
+  <tabstop>uiRadioADecoderNone</tabstop>
+  <tabstop>uiRadioADecoderG711</tabstop>
+  <tabstop>uiRadioADecoderG726_16K</tabstop>
+  <tabstop>uiRadioADecoderG726_24K</tabstop>
+  <tabstop>uiRadioADecoderG726_32K</tabstop>
+  <tabstop>uiRadioCamera</tabstop>
+  <tabstop>uiComboCameras</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>DecoderDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DecoderDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

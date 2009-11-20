@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dvrcp", "apps\dvrcp\dvrcp.vcproj", "{B9A670C8-08B8-389F-A836-69E666F4B4E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B} = {16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD} = {AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdvr_sdk", "src\sdk\sdvr_sdk.vcproj", "{C6765DB7-D296-46D2-82DA-F18D1FAB484D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdvr_ui_sdk", "src\sdk\sdvr_ui_sdk\sdvr_ui_sdk.vcproj", "{5271FC0B-9876-4AA0-999A-41DA82D69BFB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdk_dll", "src\sdk\sdvr_sdk_dll\sdvr_sdk_dll.vcproj", "{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6765DB7-D296-46D2-82DA-F18D1FAB484D} = {C6765DB7-D296-46D2-82DA-F18D1FAB484D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ui_sdk_dll", "src\sdk\sdvr_ui_sdk_dll\sdvr_ui_sdk_dll.vcproj", "{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5271FC0B-9876-4AA0-999A-41DA82D69BFB} = {5271FC0B-9876-4AA0-999A-41DA82D69BFB}
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD} = {AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9A670C8-08B8-389F-A836-69E666F4B4E6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B9A670C8-08B8-389F-A836-69E666F4B4E6}.Debug|Win32.Build.0 = Debug|Win32
+		{B9A670C8-08B8-389F-A836-69E666F4B4E6}.Release|Win32.ActiveCfg = Release|Win32
+		{B9A670C8-08B8-389F-A836-69E666F4B4E6}.Release|Win32.Build.0 = Release|Win32
+		{C6765DB7-D296-46D2-82DA-F18D1FAB484D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C6765DB7-D296-46D2-82DA-F18D1FAB484D}.Debug|Win32.Build.0 = Debug|Win32
+		{C6765DB7-D296-46D2-82DA-F18D1FAB484D}.Release|Win32.ActiveCfg = Release|Win32
+		{C6765DB7-D296-46D2-82DA-F18D1FAB484D}.Release|Win32.Build.0 = Release|Win32
+		{5271FC0B-9876-4AA0-999A-41DA82D69BFB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5271FC0B-9876-4AA0-999A-41DA82D69BFB}.Debug|Win32.Build.0 = Debug|Win32
+		{5271FC0B-9876-4AA0-999A-41DA82D69BFB}.Release|Win32.ActiveCfg = Release|Win32
+		{5271FC0B-9876-4AA0-999A-41DA82D69BFB}.Release|Win32.Build.0 = Release|Win32
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}.Debug|Win32.Build.0 = Debug|Win32
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}.Release|Win32.ActiveCfg = Release|Win32
+		{AEF5DB58-AC34-4485-AE7C-D713BF0CEFDD}.Release|Win32.Build.0 = Release|Win32
+		{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}.Debug|Win32.Build.0 = Debug|Win32
+		{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}.Release|Win32.ActiveCfg = Release|Win32
+		{16D8CAF1-62CF-445E-A0C8-3DCCB33A780B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
