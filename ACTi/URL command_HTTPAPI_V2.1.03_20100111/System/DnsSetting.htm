@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DNS_SETTING</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DNS_PRIMARY, DNS_SECONDARY</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Primary or Secondary DNS (Domain Name 
+	Server) IP addresses. </font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, the Router's DNS configurations will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">IPv4 Addressing (xxx.xxx.xxx.xxx)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except video server devices in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all devices in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DNS_PRIMARY='168.95.1.1'</font><br><font face="Arial">
+	DNS_SECONDARY=''</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DNS_PRIMARY='168.95.1.1'</font><br><font face="Arial">
+	OK: DNS_SECONDARY=''</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DNS_PRIMARY='168.95.1.1'</font><br>
+	<font face="Arial">ERROR: DNS_SECONDARY=''</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Read-Only)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Dns.htm">DNS</a>, <a href="WanStatus.htm">WAN_STATUS</a>,
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DNS_PRIMARY</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DNS_SECONDARY</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?DNS_PRIMARY</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?DNS_SECONDARY</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DNS_PRIMARY='168.95.1.1'</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DNS_SECONDARY=''</font><br>
+	<foont face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?DNS_PRIMARY='168.95.1.1'</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?DNS_SECONDARY=''</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

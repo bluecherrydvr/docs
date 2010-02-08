@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>TITLE_NAME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">TITLE_NAME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set video title name in every channel.</font></p>
+	<p><font face="Arial">The CHANNEL=n command has to be set before this URL 
+	command. The format of the URL is</font></p>
+	<p><font face="Arial">
+	http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;CHANNEL=n&amp;TITLE_NAME=m</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp;&nbsp; is the channel ID started from 1 (Channel 1) and the 
+	range is from 1~4.</font><br>
+	<font face="Arial">m&nbsp; is the title name of the channel. It has be 
+	shorter than 8 bytes and could be A~Z, a~z and 0~9 characters. Characters 
+	after the 8th character will be removed before set to the device.</font></blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n: character string (&lt; 8bytes) in A~Z, a~z and 0~9.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">CHANNEL='1'</font><br>
+	<font face="Arial">TITLE_NAME='CAMERA 1'</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">CHANNEL='1'</font><br>
+	<font face="Arial">TITLE_NAME='CAMERA 1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: CHANNEL Value Failed (if CHANNEL is out of range)</font></blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : QUAD Encoder Only</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="OsdEnabled.htm">OSD_ENABLED</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;CHANNEL=1&amp;TITLE_NAME</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;CHANNEL=1&amp;TITLE_NAME='CAMERA 
+	1'</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="quad.htm">
+	QUAD CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

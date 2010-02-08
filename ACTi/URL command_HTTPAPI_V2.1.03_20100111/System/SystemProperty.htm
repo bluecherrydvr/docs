@@ -1,0 +1,123 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SYSTEM_PROPERTY</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SYSTEM_PROPERTY</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device system property.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">SYSTEM='E'<br>TYPE='A'<br>NO_OF_CHANNEL='01'<br>MULTIPLEXING='X'<br>NO_OF_AUDIO_WAYS='2'<br>AUDIO_TYPE='PCM'<br>MOTION_TYPE='0'<br>PROTOCOL_TYPE='2'</font></p>
+	<p><b><font face="Arial"><u><i>Description of System Property Message</i></u></font></b></p>
+	<ul>
+		<li><font face="Arial">SYSTEM</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">E: Standalone device</font><br>
+		<font face="Arial">A: PC device or Add-on card for PC</font><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">TYPE</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">A: Video Encoder device</font><br>
+		<font face="Arial">B: Video Decoder device</font><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">NO_OF_CHANNEL</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">1: not used. fix to 1 always</font><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">MULTIPLEXING</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">X: it is not a multiplexing device</font><br>
+		<font face="Arial">Q: it is a QUAD encoder device </font><br>
+		<font face="Arial">R: it is a Rckmount encoder device</font><br>
+		<font face="Arial">B: it is a blade encoder device</font><br>
+		<i><b><font face="Arial">Note that all devices except the QUAD encoder use 
+		MULTIPLEXING='X' now</font></b></i><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">NO_OF_AUDIO_WAYS</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">0: It has no Audio.<br>
+		1: It has one-way audio (MIC/Line In enabled device)<br>
+		2: It has two-way audio (MIC/Line In/Audio Out enabled device)<br>
+		</font>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">AUDIO_TYPE</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">PCM: PCM Audio format<br>
+		</font>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">MOTION_TYPE</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">0: 1CH Motion Detection<br>
+		1: QUAD Channel Motion Detection<br>
+		</font>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">PROTOCOL_TYPE</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">1: TCP1.0 protocol<br>
+		2. TCP2.0 protocol</font><br>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SystemInfo.htm">SYSTEM_INFO</a>,
+	<a href="SystemConf.htm">SYSTEM_CONFIG</a>, <a href="ServerReport.htm">
+	SERVER_REPORT</a>, <a href="SystemLog.htm">SYSTEM_LOG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SYSTEM_PROPERTY</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?SYSTEM_PROPERTY</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

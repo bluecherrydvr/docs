@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_EXPOSURE_MODE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_EXPOSURE_MODE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<font face="Arial">
+		<p>Get or Set the VIDEO Exposure Mode configuration.</p>
+		<p>
+        	Some sensors, like MT9V135 and MT9M131, the video exposure mode is associated with the video white balance mode.
+        </p>
+		<p>
+        	In DSP MT54G15 and IT1, there are four exposure modes. They are AUTO, IRIS_PRIORITY, SHUTTER_PRIORITY and MANUAL.
+         </p>
+		<p>
+        	In 
+        DSP HQ1, there are three exposure modes. They are IRIS_PRIORITY, SHUTTER_PRIORITY and MANUAL.</p>
+	<p><font face="Arial">The error message will be returned if the encoder does 
+	not support this URL.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">AUTO, 
+	MANUAL, IRIS_PRIORITY or SHUTTER_PRIORITY</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_EXPOSURE_MODE='AUTO'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_EXPOSURE_MODE='AUTO'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_EXPOSURE_MODE='AUTO'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoders with sensor MT9V135, 
+	MT9M131 and MT54G15,HQ1</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders with sensor MT9M131, IT1,HQ1,VXCMOS</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoWbMode.htm">VIDEO_WB_MODE</a>,
+	<a href="../Mpeg4/VideoBitRate.htm">VIDEO_WB_GAIN</a>,
+	<a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+	<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>,
+	<a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+	<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>, <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a>,
+	<a href="VideoFlickless.htm">VIDEO_FLICKLESS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_EXPOSURE_MODE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">VIDEO_</font><font face="Arial" size="3">EXPOSURE</font><font face="Arial" size="3">_MODE</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_EXPOSURE_MODE=AUTO</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">VIDEO_</font><font face="Arial" size="3">EXPOSURE</font><font face="Arial" size="3">_MODE=AUTO</font></blockquote>
+
+<p><font face="Arial">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

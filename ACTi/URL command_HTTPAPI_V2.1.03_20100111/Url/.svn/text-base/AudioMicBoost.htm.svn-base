@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>AUDIO_MIC_BOOST</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">AUDIO_MIC_BOOST</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set the AudioIn Sensitivity configuration. 
+	Check the device specification is needed before use this command. Only 
+	two-way audio device supports this URL.</font></p>
+	<p><font face="Arial">There are two levels for this volume control. They 
+	are 0dB and 20dB. Here is the mapping table of input 
+	argument and these four volume levels.</font></p>
+	<table border="1" width="60%" id="table1">
+		<tr>
+			<td align="center" width="338"><font face="Arial">Value of Input 
+			argument</font></td>
+			<td align="center"><font face="Arial">Volume Level</font></td>
+		</tr>
+		<tr>
+			<td width="338" align="center"><font face="Arial">0</font></td>
+			<td align="center"><font face="Arial">0dB</font></td>
+		</tr>
+		<tr>
+			<td width="338" align="center"><font face="Arial">1</font></td>
+			<td align="center"><font face="Arial">20dB</font></td>
+		</tr>
+		</table>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0 or 1</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote><font face="Arial">AUDIO_MIC_BOOST</font><font face="Arial" size="3">='1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial" size="3">OK: </font><font face="Arial">
+	AUDIO_MIC_BOOST</font><font face="Arial" size="3">='1'</font><br>
+	<font face="Arial" size="3">or</font><br><font face="Arial" size="3">ERROR: 
+	</font><font face="Arial">AUDIO_MIC_BOOST</font><font face="Arial" size="3">='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="AudioSetVol.htm">AUDIO_SET_VOL</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;AUDIO_MIC_BOOST</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;AUDIO_MIC_BOOST</font><font face="Arial" size="3">=</font><font face="Arial">1</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br>
+	</font>
+</p>
+
+</body>
+
+</html>

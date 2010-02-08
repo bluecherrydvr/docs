@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DDNS_HOSTNAME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DDNS_HOSTNAME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set DDNS (Dynamic Domain Name Server) host name 
+	configuration. This allows people to access this device through this host 
+	name.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	this URL is read-only command and the Router's DDNS configurations will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Character strings (&lt; 128 Bytes)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all devices in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DDNS_HOSTNAME=''</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DDNS_HOSTNAME='camera1.com'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DDNS_HOSTHANE=''</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL will be obsolete and replaced by 
+	<a href="DdnsConfig.htm">DDNS_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Ddns.htm">DDNS</a>, <a href="DdnsType.htm">DDNS_TYPE</a>, 
+	<a href="DdnsService.htm">DDNS_SERVICE</a>, <a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a>, 
+	<a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a>, <a href="DdnsConfig.htm">DDNS_CONFIG</a>, 
+	<a href="V2DdnsConfig.htm">V2_DDNS_CONFIG</a>, <a href="WanStatus.htm">WAN_STATUS</a>, <a href="V2WanStatus.htm">V2_WAN_STATUS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DDNS_HOSTNAME<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?DDNS_HOSTNAME</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DDNS_HOSTNAME=camera1.com<br>
+	<foont face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?DDNS_HSTNAME=camera1.com</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

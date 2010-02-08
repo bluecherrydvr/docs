@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_FPS_RATIO</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_FPS_RATIO</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the approximate FPS (Frame Per Second) number (Frame 
+	Rate) 
+	configuration in PlatfromT encoders</font></p>
+	<p><font face="Arial">Because the frame rate in PlatformT is vary from video 
+	resolution, the number of video stream, encoding type and video bitrate. It 
+	is very difficult to have a fixed frame rare in any kind of video 
+	conditions. Therefore, in PlatfromT encoder design, the frame rate will not 
+	be the explicit configurations. It gives the level from 1 to maximum FPS 
+	number to users. Please refer the
+	<a href="../../PaltformTFpsMgt/PlatfromTFpsMgt.htm">PlatformT frame rate 
+	management</a> document for further details.</font></p>
+	<p><font face="Arial">The input argument of this URL is the percentage of 
+	the maximum frame rate. It should be in the range of 1 and 100. The 
+	approximate frame rate is equal to <i><b>maximum( (maximum frame rate * 
+	n)/100, 1)</b></i> where n is the input argument of this URL.</font></p>
+	<p><font face="Arial">The device will give the result of calculation in the 
+	return message. The format of the return message is<br>VIDEO_FPS_RATIO=n,m 
+	where n is the percentage of the maximum frame rate and m is the approximate 
+	frame rate.<br><b>The &quot;m&quot; argument will be ignored if it is in this URL when 
+	writes.</b></font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n: 1~100 which is the percentage of the maximum frame 
+	rate.</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial">VIDEO_FPS_RATIO</font><font face="Arial" size="3">='50,9'</font>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_FPS_RATIO='50,9'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_FPS_RATIO=50,9'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">CHANNEL=1&amp;VIDEO_</font><font face="Arial">FPS_RATIO</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">CHANNEL=1&amp;VIDEO_FPS_NUM</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_FPS</font><font face="Arial">_RATIO=100</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/encoder/CGI?</font><font face="Arial" size="3">VIDEO_FPS_RATIO</font><font face="Arial">=100</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

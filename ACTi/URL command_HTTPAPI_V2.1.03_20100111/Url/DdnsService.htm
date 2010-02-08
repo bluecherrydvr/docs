@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DDNS_SERVICE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DDNS_SERVICE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set DDNS (Dynamic Domain Name Server) service server 
+	configuration. Currently, it provides the 12 predefined DDNS service servers to 
+	subscribe the DDNS services. There is no guarantee if these DDNS service 
+	servers 
+	are available from time to time.</font></p>
+	<p><font face="Arial">In EPL decoder, this URL is same as the
+	<a href="../System/DdnsService.htm">DDNS_SERVICE</a> in the
+	<a href="../System/system.htm">SYSTEM CGI</a> but only
+	<a href="../General/GeneralDescription.htm">Type1</a> URL command is 
+	supported.</font></p>
+	<p><font face="Arial">Therefore, the DDNS_SERVICE URL in WPL decoders is only addressed in this page.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">dyndns: members.dyndns.org</font><br>
+	<font face="Arial">qdns : members.3322.org</font><br>
+	<font face="Arial">ezip: www.ez-ip.net</font><br>
+	<font face="Arial">pgpow: www.penguinpowered.com</font><br>
+	<font face="Arial">dhs: members.dhs.org</font><br>
+	<font face="Arial">ods: update.ods.org</font><br>
+	<font face="Arial">tzo: cgi.tzo.com</font><br>
+	<font face="Arial">easydns:members.easydns.com</font><br>
+	<font face="Arial">justlinux: www.justlinux.com</font><br>
+	<font face="Arial">dyns: www.dyns.com</font><br>
+	<font face="Arial">hn: www.hn.org</font><br>
+	<font face="Arial">zoneedit: www.zoneedit.com</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DDNS_SERVICE='dyndns'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DDNS_SERVICE='dyndns'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DDNS_SERVICE='dyndns'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices (refer to
+	<a href="../System/DdnsService.htm">DDNS_SERVICE in the SYSTEM CGI</a>)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Ddns.htm">DDNS</a>(Only available in EPL 
+	Decoder Device), <a href="DdnsType.htm">DDNS_TYPE</a>,
+	<a href="DdnsHostName.htm">DDNS_HOSTNAME</a>, <a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a>, 
+	<a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;DDNS_SERVICE=dyndns</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a>, <a href="../System/system.htm">SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

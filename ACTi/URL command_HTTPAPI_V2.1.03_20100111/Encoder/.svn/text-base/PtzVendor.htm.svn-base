@@ -1,0 +1,193 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_VENDOR</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_VENDOR</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the PTZ Vendor and Protocol configurations.</font></p>
+	<p><font face="Arial">For IP Camera, this URL is useless and the PTZ Vendor 
+	and Protocol were fixed to ACTi. For a Video 
+	Server, this URL could get or set the PTZ vendor and protocol of the analog 
+	PTZ camera.</font><br>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	PTZ_VENDOR configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">The available PTZ Vendors and Protocols were listed 
+	below.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center"><b><font face="Arial">PTZ Vendor</font></b></td>
+			<td align="center"><b><font face="Arial">PTZ Protocol</font></b></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">ACTI</font></td>
+			<td align="center"><font face="Arial">ACTI</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">DYNACOLOR</font></td>
+			<td align="center"><font face="Arial">DYNACOLOR</font></td>
+		</tr>
+		<tr>
+			<td align="center" rowspan="2"><font face="Arial">EYEVIEW</font></td>
+			<td align="center"><font face="Arial">V1</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">V2</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">GE</font></td>
+			<td align="center">¡@</td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">HARRISONTECH</font></td>
+			<td align="center">¡@</td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">KAMPRO</font></td>
+			<td align="center"><font face="Arial">KAMPRO</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">LILIN</font></td>
+			<td align="center"><font face="Arial">LILIN</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">MESSOA</font></td>
+			<td align="center">¡@</td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">NICECAM</font></td>
+			<td align="center"><font face="Arial">NICECAM</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">PANASONIC</font></td>
+			<td align="center"><font face="Arial">PANASONIC</font></td>
+		</tr>
+		<tr>
+			<td align="center" rowspan="4"><font face="Arial">PELCO</font></td>
+			<td align="center"><font face="Arial">PELCOD</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">PELCOP</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">PELCOPV1</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">PELCOPV2</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">PIXIM</font></td>
+			<td align="center"><font face="Arial">PIXIM</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">SAMSUNG</font></td>
+			<td align="center"><font face="Arial">SAMSUNG</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">TOA</font></td>
+			<td align="center"><font face="Arial">TOA</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">VICOM</font></td>
+			<td align="center"><font face="Arial">VICOM</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">VIDEOTREC</font></td>
+			<td align="center"><font face="Arial">VIDEOTREC</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">VCL</font></td>
+			<td align="center">¡@</td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">SONY</font></td>
+			<td align="center"><font face="Arial">VISCA</font></td>
+		</tr>
+	</table>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">n,m where n: PTZ Vendor and m: PTZ Protocol. Refer to 
+	above table.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: PTZ_VENDOR='SONY,VISCA'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: PTZ_VENDOR='SONY,VISCA'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: PTZ_VENDOR='SONY,VISCA'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="Zoom.htm">ZOOM</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="Focus.htm">FOCUS</a>,
+	<a href="FocusPosition.htm">FOCUS_POSITION</a>, <a href="Move.htm">MOVE</a>,
+	<a href="MoveLimit.htm">MOVE_LIMIT</a>, <a href="MoveLimitGet.htm">
+	MOVE_LIMIT_GET</a>, <a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>,
+	<a href="Position.htm">POSITION</a>, <a href="PositionGet.htm">POSITION_GET</a>,
+	<a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_VENDOR</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_VENDOR</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_VENDOR=SONY,VISCA</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_VENDOR=SONY,VISCA</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

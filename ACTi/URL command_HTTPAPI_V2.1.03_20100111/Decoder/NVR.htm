@@ -1,0 +1,203 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>NVR</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">NVR</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Move the decoder to an encoder via stream engine. </font></p>
+	<p><font face="Arial">Here is the format of the input argument of this URL.</font></p>
+	<p><font face="Arial">NVR=STR_ENG_IP,STR_ENG_USER_NAME,STR_ENG_USER_PWD,STR_ENG_PORT_STREAM,STR_ENG_PORT_CONTROL,ENCODER_IP,&nbsp; 
+	ENCODER_USER_NAME,ENCODER_USER_PWD,ENCODER_MUL_IP,ENCODER_PORT_STREAM,ENCODER_PORT_CONTROL,ENCODER_PORT_RTSP,&nbsp; ENCODER_PORT_MULTICAST,ENCODER_PORT_HTTP,ENCODER_CHANNEL_NUM,CONTACT_TYPE,CONNECT_TIMEOUT</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="4">Input 
+			Argument</font></td>
+			<td align="center"><font face="Arial" size="4">Description</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">STR_ENG_IP</font></td>
+			<td>
+			<p align="left"><font face="Arial" size="2">&nbsp;The IP address of the 
+			Stream Engine</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">STR_ENG_USER_NAME</font></td>
+			<td><font face="Arial" size="2">&nbsp;The Account Name which is
+			<font color="#0000FF">base64 encoded </font>to logon the Stream 
+			Engine. </font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238" height="24">
+			<font face="Arial" size="2">
+			STR_ENG_USER_PWD</font></td>
+			<td height="24"><font face="Arial" size="2">&nbsp;The Account Password which 
+			is <font color="#0000FF">base64 encoded </font>to logon the 
+			Stream Engine</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			STR_ENG_PORT_STREAM</font></td>
+			<td>
+			<p align="left"><font face="Arial" size="2">&nbsp;The stream port of Stream 
+			Engine</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			STR_ENG_PORT_CONTROL</font></td>
+			<td><font face="Arial" size="2">&nbsp;The control port of Stream Engine</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_IP</font></td>
+			<td><font face="Arial" size="2">&nbsp;The IP address of the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_USER_NAME</font></td>
+			<td><font face="Arial" size="2">&nbsp;The Account Name which is
+			<font color="#0000FF">base64 encoded</font> to logon the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_USER_PWD</font></td>
+			<td><font face="Arial" size="2">&nbsp;The Account Password which is
+			<font color="#0000FF">base64 encoded</font> to logon the 
+			Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_MUL_IP</font></td>
+			<td><font face="Arial" size="2">&nbsp;The IP address of the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			ENCODER_PORT_STREAM</font></td>
+			<td>
+			<p align="left"><font face="Arial" size="2">&nbsp;The stream port&nbsp; of 
+			Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			ENCODER_PORT_CONTROL</font></td>
+			<td><font face="Arial" size="2">&nbsp;The control port&nbsp; of Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_PORT_RTSP</font></td>
+			<td><font face="Arial" size="2">The rtsp port&nbsp; of Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			ENCODER_PORT_MULTICAST</font></td>
+			<td><font face="Arial" size="2">The multicast port&nbsp; of Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">ENCODER_PORT_HTTP</font></td>
+			<td><font face="Arial" size="2">The http port of Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">
+			ENCODER_CHANNEL_NUM</font></td>
+			<td><font face="Arial" size="2">The channel tag of multi channel encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="2">CONTACT_TYPE</font></td>
+			<td><font face="Arial" size="2">This means connect type. It is defined by 
+			SDPD</font><table border="1" width="100%" id="table2">
+				<tr>
+					<td width="296"><b><font face="Arial" size="2">Contact type</font></b></td>
+					<td width="50"><b><font face="Arial" size="2">value</font></b></td>
+					<td><b><font face="Arial" size="2">Description</font></b></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">
+					CONTACT_TYPE_UNICAST_WOC_PREVIEW </font></td>
+					<td width="50" align="center"><font face="Arial" size="2">1</font></td>
+					<td><font face="Arial" size="2">Unicast without control</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">
+					CONTACT_TYPE_MULTICAST_WOC_PREVIEW </font></td>
+					<td width="50" align="center"><font face="Arial" size="2">2</font></td>
+					<td><font face="Arial" size="2">Multicast without control</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">CONTACT_TYPE_RTSP_PREVIEW
+					</font></td>
+					<td width="50" align="center"><font face="Arial" size="2">3</font></td>
+					<td><font face="Arial" size="2">Rtsp with control</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">CONTACT_TYPE_CONTROL_ONLY
+					</font></td>
+					<td width="50" align="center"><font face="Arial" size="2">4</font></td>
+					<td><font face="Arial" size="2">control only</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">
+					CONTACT_TYPE_UNICAST_PREVIEW </font></td>
+					<td width="50" align="center"><font face="Arial" size="2">5</font></td>
+					<td><font face="Arial" size="2">Unicast with control</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">
+					CONTACT_TYPE_MULTICAST_PREVIEW </font></td>
+					<td width="50" align="center"><font face="Arial" size="2">6</font></td>
+					<td><font face="Arial" size="2">Multicast with control</font></td>
+				</tr>
+				<tr>
+					<td width="296"><font face="Arial" size="2">CONTACT_TYPE_PLAYBACK
+					</font></td>
+					<td width="50" align="center"><font face="Arial" size="2">7</font></td>
+					<td><font face="Arial" size="2">Playback file</font></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" width="238" height="24"><font face="Arial">CONNECT_TIMEOUT</font></td>
+			<td height="24"><font face="Arial" size="2">connect timeout</font></td>
+		</tr>
+		</table>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">See Above</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">OK<or><br>or<br></font>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+	</p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">PlatformA Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;NVR='172.16.3.62,xxxxxx,xxxxxx,6002,6001,172.16.3.39,xxxxxx,xxxxxx,228.5.6.1,6002,6001,7070,5000,80,1,1,10'</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="decoder.htm">
+	DECODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

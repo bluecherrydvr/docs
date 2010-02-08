@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GET_STREAM</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+.blue {
+	color: #00F;
+}
+-->
+</style></head>
+
+<body>
+<h2>GET_STREAM</h2>
+<blockquote>
+  <p>Get the video/audio streams through this URL.</p>
+  <p>The encoder could stream the video/audio to the remote host as it gets the request by this URL if it is in TCP or RTP over UDP streaming method. The format of the video stream is B2 frame + Video raw data. The <a href="../System/RtpB2.htm">RTP_B2</a> controls if the B2 frame is put at the beginning of every video frame. </p>
+  <p align="left">This URL is available in SYSTEM and ENCODER   CGIs. If there is no input argument, the device will stream video to   the host. If the audio function is enabled, the device will stream the audio to   host as well. The GET_STREAM=VIDEO will get the video stream only event the   audio function is enabled. The GET_STREAM=AUDIO will get the audio stream only   if audio function is enabled. No error message will be returned if the audio   function is disable. There is no audio stream for the request in this case. Refer to <a href="../System/V2AudioEnabled.htm">V2_AUDIO_ENABLED</a> URL in SYSTEM CGI.</p>
+  <p align="left">Here is the snapshot the HTTP transaction of this   URL. Get MPEG4 video with PCM audio streams.</p>
+  <p align="left" class="red"><strong><u>Remote PC to Device:</u></strong></p>
+  <p align="left" class="red"><em>GET /cgi-bin/cmd/system?GET_STREAM HTTP/1.1 <br />
+    Cache-Control: no-cache <br />
+    Connection: Keep-Alive <br />
+    Pragma: no-cache <br />
+    Authorization: Basic QWRtaW46MTIzNDU2 <br />
+    Host: 172.16.3.79 <br />
+    User-Agent:   AHTTP</em></p>
+  <p align="left" class="blue"><u><strong>Device to Remote PC</strong></u></p>
+  <p align="left" class="blue"><em>HTTP/1.0 200 OK <br />
+    Cache-Control: no-cache <br />
+    Connection: Keep-Alive <br />
+    Pragma: no-cache <br />
+    Content-Type:   multipart/x-mixed-replace; boundary=----------------boundary <br />
+    <br />
+    ----------------boundary <br />
+    Content-Type: video/mpeg4 <br />
+    Content-Length: 26986 <br />
+    <br />
+    ........^i..F.yG............F.yG.E...........................   .........&lt;.c...........(=......qz.'.....x;...........+Z<br />
+    ...E......o....&quot;L.GC...6.......l   &amp;..1....7Bz......Mz...A.K.....U...?..^fL..T...2#....d+eO.t....0)....u9'.1..&quot;1{@..&lt;mV.lM..Uwz.{.'..t...?...}...b....I.X.....uY.H.n#.K..h..V...&amp;.j...%.........%...Vr3..   .....W:^i....a$}...}e..T...u.:..o.G?.XS...^$.   .~..8...e:d...&lt;&lt;.........C...:...m..R%.&gt;d.F...L..:j.........</em></p>
+  <p align="left" class="blue"><em>----------------boundary <br />
+    Content-Type:   audio/pcm <br />
+    Content-Length: 1052 <br />
+    <br />
+    ............D.yG.N....................................................................</em></p>
+  <p align="left">The Content-Type of the MPEG4 video and PCM audio   streams are video/mpeg4 and the audio/pcm</p>
+  <p align="left">Note that the video resolution and encoder type could not be changed by this URL. The video resolution and encoder type in the video stream are the same as the encoder settings.</p>
+</blockquote>
+<p align="left">Input Argument</p>
+<blockquote>
+  <p align="left">None<br />
+    or<br />
+    VIDEO<br />
+    or<br />
+    AUDIO (if Audio In is enabled)<br />
+    or<br />
+    VIDEO,AUDIO
+  (if Audio In is enabled)</p>
+</blockquote>
+<p>Attribute</p>
+<blockquote>
+  <p>Write</p>
+</blockquote>
+<p>Return of Message</p>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>Video / Audio streams<br />
+    or<br />
+  ERROR: invalid parameters</p>
+</blockquote>
+<p>Applicibility</p>
+<ul>
+  <li>EPL Platform: All encoders</li>
+  <li>PlatfromT: All encoders</li>
+  <li>Multi-Channel encoders: All encoders</li>
+</ul>
+<p>Status</p>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<p>See Also</p>
+<blockquote>
+  <p><a href="../System/V2AudioEnabled.htm">V2_AUDIO_ENABLED</a>, <a href="../System/V2StreamMethod.htm">V2_STREAMING_METHOD</a>, <a href="../System/RtpB2.htm">RTP_B2</a></p>
+</blockquote>
+<p>Example</p>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>
+  	http://ip:port/cgi-bin/<b>CGI</b>?USER=Admin&amp;PWD=123456&amp;GET_STREAM<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/<b>CGI</b>?GET_STREAM<br />
+    or<br />
+    http://ip:port/cgi-bin/<b>CGI</b>?USER=Admin&amp;PWD=123456&amp;GET_STREAM=VIDEO<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/<b>CGI</b>?GET_STREAM=VIDEO<br />
+    or<br />
+    http://ip:port/cgi-bin/<b>CGI</b>?USER=Admin&amp;PWD=123456&amp;GET_STREAM=AUDIO<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/<b>CGI</b>?GET_STREAM=AUDIO<br />
+    or<br />
+    http://ip:port/cgi-bin/<b>CGI</b>?USER=Admin&amp;PWD=123456&amp;GET_STREAM=VIDEO,AUDIO<br />
+    or<br />
+ 	http://ip:port/cgi-bin/cmd/<b>CGI</b>?GET_STREAM=VIDEO,AUDIO<br /><br />
+    where <b>CGI</b> could be system or encoder
+  </p>
+</blockquote>
+<p>Return To</p>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="../System/system.htm">SYSTEM CGI</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

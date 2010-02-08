@@ -1,0 +1,32 @@
+/COPYING/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/Makefile.head/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/Makefile.tail/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/README/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.aix/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.alpha/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.armlinux/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.cris-axis-linux-gnu/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.cygwin/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.freebsd/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.irix/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.linux/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.linux-gdb/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.macosx/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.mingw/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.openbsd/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.qnx4/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.solaris/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/config.sunos/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/configure/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/fix-makefile/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/genMakefiles/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/genWindowsMakefiles/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/win32config/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/win32config.Borland/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+/win32config~/1.1.1.1/Thu Dec 23 22:57:24 2004//TGOCLIENT_2_0_1_RC1
+D/BasicUsageEnvironment////
+D/UsageEnvironment////
+D/WindowsAudioInputDevice////
+D/groupsock////
+D/liveMedia////
+D/testProgs////

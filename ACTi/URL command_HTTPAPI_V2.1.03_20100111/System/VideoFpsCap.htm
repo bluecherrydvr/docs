@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_FPS_CAP</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_FPS_CAP</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the video FPS number capabilities.</font></p>
+	<p><font face="Arial">Because the TV Standard, NTSC and PAL, in D1 encoder 
+	could not be exist at the same time, the video FPS capabilities will 
+	be given based on the current TV standard in the device.</font></p>
+	<p><font face="Arial">The format of the return is CFPS1,CFPS2,CFPS2,CFPS3,...-VFPS1,VFPS2,VFPS3,... where 
+	CPSn is the is the FPS number in FPS Mode=MODE1 (Constant FPS Mode) and 
+	VFPSn is the FPS number in FPS Mode=Mode2. The '-' is used to separate these 
+	two FPS mode. The FPS1 is the smallest FPS number and the FPS2 is larger. There is no space characters 
+	in the return message.</font></p>
+	<p><font face="Arial">Because there is no specific FPS number in the dual 
+	streams encoders, the return of this URL is NONE.</font></p>
+	<p><font face="Arial">For example, </font></p>
+	<p><font face="Arial">In the&nbsp; EPL D1 NTSC camera, the 
+	return of this URL could be VIDEO_FPS_CAP='1,2,3,4,5,6,7,10,15,30-1,2,3,5,7,15,30'</font></p>
+	<p><font face="Arial">In the dual streams camera, the return of this URL could be
+	VIDEO_FPS_CAP='NONE'</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	the CHANNLE 1 video server's VIDEO_FPS_CAP configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">VIDEO_FPS_CAP='1,2,3,4,5,6,7,10,15,30-1,2,3,5,7,15,30'</font></blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoResCap.htm">VIDEO_RESOLUTION_CAP</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;VIDEO_FPS_CAP</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?VIDEO_FPS_CAP</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CHxx_VIDEO_CTRL</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CHxx_VIDEO_TCP_IP, CHxx_VIDEO_MULTICAST_IP</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or Get the IP and Multicast IP addresses of the 
+	encoder for the decoder.</font></p>
+	<p><font face="Arial">In CHxx_VIDEO_TCP_IP URL, it sets the encoder's IP 
+	address to the decoder for the connection.</font></p>
+	<p><font face="Arial">In CHxx_VIDEO_MULTICAST_IP URL, it sets the encoder's 
+	multicast IP address to the decodeer.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">IPv4 unicast or multicast address</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only in WPL Decoders</font></li>
+	<li><font face="Arial">Readable and Writable in EPL Decoders</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">In WPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">None</font></li>
+	</ul>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">Read Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">CH01_VIDEO_TCP_IP='192.168.0.100'</font><br>
+		<font face="Arial">CH01_VIDEO_MULTICAST_IP='228.5.6.1'</font><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">Write Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">OK: CH01_VIDEO_TCP_IP='192.168.0.100'</font><br>
+		<font face="Arial">OK: CH01_VIDEO_MULTICAST_IP='228.5.6.1'</font><br><font face="Arial">or</font><br>
+		<font face="Arial">ERROR: CH01_VIDEO_TCP_IP='192.168.0.100'</font><br>
+		<font face="Arial">ERROR: CH01_VIDEO_MULTICAST_IP='228.5.6.1'</font><br>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChVideoConnect.htm">CHxx_VIDEO_CONNECT</a>, 
+	<a href="ChVideoVarFps.htm">CHxx_VIDEO_VARFPS</a>, 
+	<a href="ChVideoCtrl.htm">CHxx_VIDEO_STREAM</a>, <a href="ChVideoCtrl.htm">CHxx_VIDEO_AUDIO</a>, 
+	<a href="ChVideoCtrl.htm">CHxx_VIDEO_CONTROL</a>, <a href="ChNamePwd.htm">CHxx_VIDEO_USERNAME</a>, 
+	<a href="ChNamePwd.htm">CHxx_VIDEO_PASSWORD</a>, <a href="ChPorts.htm">CHxx_PORT_STREAM</a>, 
+	<a href="ChPorts.htm">CHxx_PORT_CONTROL</a>, <a href="ChPorts.htm">CHxx_PORT_MULTICAST</a>, 
+	<a href="ChPorts.htm">CHxx_PORT_RTP</a>, <a href="ChPorts.htm">CHxx_PORT_HTTP</a>,
+	<a href="ChTime.htm">CHxx_TIME</a>, <a href="ChSourceType.htm">CHxx_SOURCE_TYPE</a>,
+	<a href="ChQuadChannel.htm">CHxx_QUAD_CHANNEL</a>, <a href="ChChannel.htm">
+	CHxx_CHANNEL</a>, <a href="Switch.htm">SWITCH</a>, <a href="VideoVarFps.htm">
+	VIDEO_VARFPS</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CH01_VIDEO_TCP_IP</font><br>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CH01_VIDEO_MULTICAST_IP</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">In WPL Decoder Devices</font><blockquote>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CHxx_VIDEO_TCP_IP=192.168.0.100</font><br>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CHxx_VIDEO_MULTICAST_IP=228.5.6.1</font><br>
+		<font face="Arial">where xx is from 01~16</font>
+	</blockquote>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<blockquote>
+		<p>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CH01_VIDEO_TCP_IP=192.168.0.100</font><br>
+		<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;CH01_VIDEO_MULTICAST_IP=228.5.6.1</font></p>
+	</blockquote>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

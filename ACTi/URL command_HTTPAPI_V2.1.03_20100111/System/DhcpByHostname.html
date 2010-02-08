@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DHCP By Hostname</title>
+<style type="text/css">
+<!--
+.myfont {
+	font-family: Arial;
+}
+-->
+</style>
+</head>
+
+<body>
+<h2 class="myfont">DHCP_BY_HOSTNAME</h2>
+<h3 class="myfont">Description</h3>
+<blockquote>
+  <p class="myfont">Set or get the configuration of using hostname in the DHCP.</p>
+  <p class="myfont">When it is enabled, the device will add its hostname in the DHCP discovery packet when it tries to get an IP address from DHCP servers. Note that this configuration is only valid if the <a href="WanType.htm">WAN_TYPE</a> = 1.</p>
+  <p class="myfont">Refer to the <a href="../../DhcpByHostname/DhcpByHostname.html">use hostname in DHCP</a> design specification for further details.</p>
+  <p class="myfont">The change of this configuration will not take effect immediately. It needs to save and reboot.</p>
+  <p class="myfont">If the CHANNEL=n was set with this URL to the Multi-Channel   device, this URL will be treated as read-only command and the Router's DHCP_BY_HOSTNAME   setting will be returned.</p>
+</blockquote>
+<h3 class="myfont">Input Argument</h3>
+<blockquote>
+  <p class="myfont">state<br />
+  where 0: disable, 1: enable</p>
+</blockquote>
+<h3 class="myfont">Attribute</h3>
+<ul>
+  <li class="myfont">Readable and Writable</li>
+  <li class="myfont">Not on-fly</li>
+</ul>
+<h3 class="myfont">Return of Message</h3>
+<ul>
+  <li class="myfont">Read Command</li>
+</ul>
+<blockquote>
+  <p class="myfont">DHCP_BY_HOSTNAME='0'</p>
+</blockquote>
+<ul>
+  <li class="myfont">Write Command</li>
+</ul>
+<blockquote>
+  <p class="myfont">OK: DHCP_BY_HOSTNAME='1'<br />
+  or<br />
+  ERROR: DHCP_BY_HOSTNAME='1'</p>
+</blockquote>
+<h3 class="myfont">Applicability</h3>
+<ul>
+  <li class="myfont">WIS Platform : All devices</li>
+  <li class="myfont">EPL Platform : All devices</li>
+  <li class="myfont">PlatformT : All encoder devices</li>
+  <li class="myfont">Multi-Channel Encoder : All devices</li>
+</ul>
+<h3 class="myfont">Status</h3>
+<blockquote>
+  <p class="myfont">Valid</p>
+</blockquote>
+<h3 class="myfont">See Also</h3>
+<blockquote>
+  <p class="myfont"><a href="WanType.htm">WAN_TYPE</a>, <a href="LanHostname.htm">LAN_HOSTNAME</a></p>
+</blockquote>
+<h3 class="myfont">Example</h3>
+<ul>
+  <li class="myfont">Read Operation</li>
+</ul>
+<blockquote>
+  <p class="myfont">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DHCP_BY_HOSTNAME<br />
+  or<br />
+  http://ip:port/cgi-bin/system?DHCP_BY_HOSTNAME</p>
+</blockquote>
+<ul>
+  <li class="myfont">Write Operation</li>
+</ul>
+<blockquote>
+  <p class="myfont">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DHCP_BY_HOSTNAME=1<br />
+or<br />
+http://ip:port/cgi-bin/system?DHCP_BY_HOSTNAME=1</p>
+</blockquote>
+<p class="myfont">Back to</p>
+<blockquote>
+  <p class="myfont"><a href="../../../index.htm">HOME</a>, <a href="system.htm">SYSTEM CGI</a></p>
+</blockquote>
+</body>
+</html>

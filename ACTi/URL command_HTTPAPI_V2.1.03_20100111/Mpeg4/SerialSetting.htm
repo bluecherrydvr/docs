@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SERIAL_SETTING</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>SERIAL_SETTING</h1>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the serial port configuration.</p>
+	<p>
+    	There is a serial port on the device for the RS232/RS485/RS422 port in video servers. The external device could be accessed or controlled 
+        through this port. For example, when the RS485 port in Analog PTZ camera connects to the Video Server's serial port, user could control 
+        this Analog PTZ camera by the video server through the Ethernet at remote site.<br>
+        Note that, there is no any hardware and software flow control mechanism implemented in this serial port.
+    </p>
+	<p>
+    	If the CHANNEL=n was not set with this URL to the Multi-Channel device, this command is read-only command and the CHANNEL 1 video 
+        server's SERIAL_SETTING configuration will be returned. If the CHANNEL 1 video server does not connect to the router, the error message 
+        will be returned.
+    </p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+	n,m<br>
+	where<br>
+	n is the serial data configuration. It could be
+  <blockquote>
+		8N1: 8 Data bits, No parity check, 1 Stop bit<br>
+		8O1: 8 Data bits, Odd parity check, 1 Stop bit<br>
+		8E1: 8 Data bits, Even parity check, 1 Stop bit<br>
+        8N2: 8 Data bits, No parity check, 2 Stop bit<br>
+        8O2: 8 Data bits, Odd parity check, 2 Stop bit<br>
+        8E2: 8 Data bits, Even parity check, 2 Stop bit<br>
+        7N2: 7 Data bits, No parity check, 2 Stop bit<br>
+        7O2: 7 Data bits, Odd parity check, 2 Stop bit<br>
+        7E2: 7 Data bits, Even parity check, 2 Stop bit
+	</blockquote>
+	<p>m is the baud rate. It could be 2400, 4800, 9600, 19200, 38400, 57600 or 115200</p>
+	<p><strong><u>Special Note</u></strong></p>
+	<p>In WPL encoder, only 8N1, 8O1 and 8E1 are available.</p>
+</blockquote>
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+<h3>Return of Message</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+    	SERIAL_SETTING='8N1,9600'
+	</blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+    	OK: SERIAL_SETTING='8N1,9600'<br>
+		or<br>
+		ERROR: SERIAL_SETTING='8N1,9600'
+	</blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>WPL Platform : All Encoders</li>
+		<li>EPL Platform : All Encoders</li>
+		<li>PlatformT : All Encoders</li>
+		<li>Multi-Channel Encoder : All Video Servers</li>
+	</ul>
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="SerialAscii.htm">SERIAL_ASCII</a>,
+		<a href="SerialHex.htm">SERIAL_HEX</a>
+    </p>
+</blockquote>
+<h3>Example</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/mpeg4?USER=Admin&amp;PWD=123456&amp;SERIAL_SETTING<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/mpeg4?SERIAL_SETTING
+	</blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/mpeg4?USER=Admin&amp;PWD=123456&amp;SERIAL_SETTING=8N1,9600<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/mpeg4?SERIAL_SETTING=8N1,9600
+    </blockquote>
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+    <a href="mpeg4.htm">MPEG4 CGI</a>
+</blockquote>
+
+</body>
+
+</html>

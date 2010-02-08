@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_STRAM_PROTOCOL</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_STREAMING_TYPE, PROTOCOL_TYPE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the device's video/audio streaming 
+	protocol.</font></p>
+	<p><font face="Arial">There are two video/audio streaming protocols we 
+	offered. One is TCP 1.0 which is out of fashion and available in all 1CH, 
+	2CH and QUAD Encoders and Decoder in WPL Platform. The other one is TCP 2.0 
+	which is most use. In all EPL, PlatformT and Multi-Channel devices, only 
+	this protocol is available.</font></p>
+	<p><font face="Arial">In all WPL Encoder devices, the V2_STREAMING_TYPE is 
+	READ/WRITE command and PROTOCOL_TYPE is READ Only command.</font></p>
+	<p><font face="Arial">In all EPL, PlatformT and Multi-Channel Encoder 
+	devices, these two commands are read only and 2 is returned always.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">1 : TCP 1.0</font><br>
+	<font face="Arial">2 : TCP 2.0</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_STREAMING_TYPE='2' or PROTOCOL_TYPE='2'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_STREAMING_TYPE='2'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_STREAMING_TYPE='2'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="V2StreamMethod.htm">V2_STREAMING_METHOD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_TYPE<br>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PROTOCOL_TYPE<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?V2_STREAMING_TYPE<br>
+	http://ip:port/cgi-bin/cmd/system?PROTOCOL_TYPE<br>
+	</font>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_TYPE=2<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?V2_STREAMING_TYPE=2</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,590 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>URL CGI Program</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="6">URL CGI Program</font></p>
+<p align="left"><font face="Arial">This CGI provides the URL command to access 
+the Decoder devices.</font></p>
+<p align="left"><font face="Arial">Only root could set the configuration through 
+this CGI. If the logon user is not root, all write commands will be 
+treated as read commands.</font></p>
+<p align="left"><font face="Arial">The return message of URL does not follow the
+<a href="../General/ReturnMessage.htm">Specification of Return Message</a>.</font></p>
+<p align="left"><font face="Arial">The document was created far ago and was not 
+maintained anymore. Please use URLs in <a href="../Decoder/decoder.htm">DECODER 
+CGI</a> for your applications.</font></p>
+<p align="left"><font face="Arial" size="4">NOTE:</font></p>
+<blockquote>
+	<p align="left"><font face="Arial">This CGI will be replaced with the
+	<a href="../Decoder/decoder.htm">DECODER CGI</a>. That will be claimed with 
+	the release of device's firmware in the future.</font></p>
+</blockquote>
+<p align="left"><font face="Arial" size="5">List of URLs</font></p>
+<blockquote>
+	<p align="left"><font face="Arial">The URL command in this CGI was not 
+	maintained anymore. Please the URL command in URL.CGI for further 
+	information. For New design, please refer the URL command in
+	<a href="../Decoder/decoder.htm">DECODER CGI</a>.</font></p>
+	<font FACE="Arial">
+	<p ALIGN="LEFT">The syntax of the command is listed as follow:</p>
+	<p>http://&lt;IP Address&gt;/cgi-bin/url.cgi?USER=&lt;Account Name&gt;&amp;PWD=&lt;Password&gt;&amp;&lt;Parameters&gt;</p>
+	</font>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" rowspan="2" width="282">
+			<font size="4" face="Arial">URL</font></td>
+			<td align="center" colspan="2"><font face="Arial" size="5">Attribute 
+			(R/W, On-Fly)<sup><a href="#Remark1">1</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="center"><font size="4" face="Arial">WPL Transcoder</font></td>
+			<td align="center"><font size="4" face="Arial">EPL Transcoder</font><b><sup><font face="Arial" size="4"><a href="#Remark2">2</a></font></sup></b></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><a href="LanHostname.htm">
+			<font face="Arial" size="2">HOST</font></a></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="LanHostname.htm">LAN_HOSTNAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="LanAddress.htm">LAN_IP</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="LanAddress.htm">LAN_NETMASK</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="Language.htm">LANGUAGE</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="BaudRate.htm">BAUDRATE</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO.X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="UartSetting.htm">UARTSETTING</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SerialSetting.htm">SERIAL_SETTING</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SerialAscii.htm">SERIAL_ASCII</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font size="2" face="Arial">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SerialHex.htm">SERIAL_HEX</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font size="2" face="Arial">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="VideoOsd.htm">VIDEO_OSD</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="Osd.htm">OSD</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdXY.htm">OSD_X</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdXY.htm">OSD_Y</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_DATE_TIME</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_SERVER_IP</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_CAMERA_NAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_LOCAL_IP</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_MOTION_DETECT</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="OsdCtrl.htm">OSD_STATUS</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="VideoTv.htm">VIDEO_TV</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="VolAudioOut.htm">VOL_AUDIOOUT</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="VolAudioIn.htm">VOI_AUDIOIN</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AudioMicBoost.htm">AUDIO_MIC_BOOST</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AudioSetVol.htm">AUDIO_SET_VOL</a></font></td>
+			<td align="center"><font size="2" face="Arial">None</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="Wan.htm">WAN</a></font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanType.htm">WAN_TYPE</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_IP</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_NETMASK</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_GATEWAY</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanPPPoE.htm">WAN_PPPOE_USERNAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="../System/Dns.htm">DNS</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DnsSetting.htm">DNS_PRIMARY</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DnsSetting.htm">DNS_SECONDARY</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="../System/Ddns.htm">DDNS</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DdnsType.htm">DDNS_TYPE</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DdnsHostName.htm">DDNS_HOSTNAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DdnsService.htm">DDNS_SERVICE</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="Port.htm">PORT</a></font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="PortHttp.htm">PORT_HTTP</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="PortHostSearch1_2.htm">PORT_HOST_SEARCH_1</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="PortHostSearch1_2.htm">PORT_HOST_SEARCH_2</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ProtocolVersion.htm">PROTOCOL_VERSION</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="V2StreamType.htm">V2_STREAMING_TYPE</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="VideoServer.htm">VIDEOSERVER</a></font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChVideoConnect.htm">CHxx_VIDEO_CONNECT</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChVideoVarFps.htm">CHxx_VIDEO_VARFPS</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChVideoCtrl.htm">CHxx_VIDEO_STREAM</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChVideoCtrl.htm">CHxx_VIDEO_AUDIO</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChVideoCtrl.htm">CHxx_VIDEO_CONTROL</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChIPAddr.htm">CHxx_VIDEO_TCP_IP</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChIPAddr.htm">CHxx_VIDEO_MULTICAST_IP</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChNamePwd.htm">CHxx_VIDEO_USERNAME</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChNamePwd.htm">CHxx_VIDEO_PASSWORD</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChPorts.htm">CHxx_PORT_STREAM</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChPorts.htm">CHxx_PORT_CONTROL</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChPorts.htm">CHxx_PORT_MULTICAST</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChPorts.htm">CHxx_PORT_RTP</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChPorts.htm">CHxx_PORT_HTTP</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font face="Arial" size="2">
+			<a href="ChTime.htm">CHxx_TIME</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="ChSourceType.htm">CHxx_SOURCE_TYPE</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="ChQuadChannel.htm">CHxx_QUAD_CHANNEL</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="ChChannel.htm">CHxx_CHANNEL</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WR,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="Switch.htm">SWITCH</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="VideoVarFps.htm">VIDEO_VARFPS</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="VideoSorceName.htm">VIDEO_SOURCE_NAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SwitchTcp.htm">SWITCH_TCP</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SwitchMul.htm">SWITCH_MUL</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SwitchRtp.htm">SWITCH_RTP</a></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="Account.htm">ACCOUNT</a></font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a></font></td>
+			<td align="center"><font size="2" face="Arial">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N</a></font></td>
+			<td align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="NetworkAccessStop.htm">NETWORKACCESS_STOP</a> <sup>
+			<a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="SetFrameQLen.htm">SET_FRAME_Q_LEN</a><sup>
+			<a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="Rs232Test.htm">RS232_TEST</a> <sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="282" align="center"><font size="2" face="Arial">
+			<a href="AudioLoopBack.htm">AUDIO_LOOP_BACK</a><sup>
+			<a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font face="Arial" size="2">None</font></td>
+			<td align="center"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+	</table>
+</blockquote>
+<p><font face="Arial" size="5">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+</blockquote>
+<div align="center">
+	<p align="left"><font face="Arial" size="5">Foot Note</font></div>
+<blockquote>
+<div align="left">
+	<table border="1" width="80%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">The first part is for Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only) or None 
+			(Not Support)</font><br>
+			<font face="Arial" size="2">The second part is for On-Fly 
+			indication. if the change of URL is 
+			effective immediately without save and reboot, It could be V (the URL is on-fly). 
+			Otherwise, it is X (the 
+			URL is not on-fly).</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font size="2" face="Arial">
+			<a name="Remark2">2</a></font></td>
+			<td><font face="Arial" size="2">The URL is available in SYSTEM and 
+			URL CGIs.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark3">3</a></font></td>
+			<td><font face="Arial" size="2">Only CHANNEL=01 is supported. The 
+			URL will be CH01_xxxxxx.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark4">4</a></font></td>
+			<td><font face="Arial" size="2">For Test and Internal Use Only</font></td>
+		</tr>
+		</table>
+</div>
+
+</blockquote>
+
+</body>
+
+</html>

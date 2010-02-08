@@ -1,0 +1,302 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventConfig</title>
+<style type="text/css">
+<!--
+.Arial {
+	font-family: Arial;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">EVENT_CONFIG</font></p>
+<h3><font face="Arial" size="4">Description</font></h3>
+<blockquote>
+	<p><font face="Arial">Set an event handler entry in the event handler 
+	configuration table or read all entries from event handler configuration 
+	table.</font></p>
+	<p><font face="Arial">There are 10 entries in the event handler 
+	configuration table. Every entry connects a specific event source to one or 
+	more event outputs. The event outputs will link to the their output 
+	configurations and external servers to process their tasks.</font></p>
+	<p><font face="Arial">If there is no input argument, the device will dump 
+	all entries configurations from event handler configuration table.</font></p>
+</blockquote>
+
+<h3><font size="4" face="Arial">Input Argument</font></h3>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+entry,state,wday,sHH:sMM,dHH:dMM,EventSrc,EventOutput</font></p>
+<blockquote>
+	<p><font face="Arial">entry: the index of the entry in the event handler 
+	configuration table. It is from 0 ~ 9 where 0 is the first entry of the 
+	table.</font></p>
+	<p><font face="Arial">state: 0:Disable, 1:Enable. 
+	If it is disable, this event entry will not be used.</font></p>
+	<p><font face="Arial">wday: the valid weekday of the events. Here is the 
+	format of wday.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td align="center" width="234"><b><font face="Arial">value is 
+				wday</font></b></td>
+				<td align="center"><b><font face="Arial">Description</font></b></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">1</font></td>
+				<td><font face="Arial">Monday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">2</font></td>
+				<td><font face="Arial">Tuesday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">3</font></td>
+				<td><font face="Arial">Wednesday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">4</font></td>
+				<td><font face="Arial">Thursday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">5</font></td>
+				<td><font face="Arial">Friday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">6</font></td>
+				<td><font face="Arial">Saturday</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">7</font></td>
+				<td><font face="Arial">Sunday</font></td>
+			</tr>
+		</table>
+		<p align="left"><font face="Arial">Example</font></p>
+		<p align="left"><font face="Arial">wday=1237 means the event will be 
+		active in every Monday, Tuesday, Wednesday and Sunday</font></p>
+		<p align="left"><font face="Arial">wday=1234567 means the event will be 
+		active everyday.</font></p>
+		<p align="left"><font face="Arial">wday=76421 means the event will be 
+		active in every Monday, Tuesday, Thursday, Saturday and Sunday. That is 
+		the same as wday=12467.</font></p>
+		<p align="left"><font face="Arial">sHH:sMM. It gives the starting time 
+		of a day specified in the wday argument. sHH is from 00~23 and sMM is 
+		from 00~59.</font></p>
+		<p align="left"><font face="Arial">dHH:dMM. it give the duration started 
+		from sHH:sMM of a day specified in the wday argument. The range of the 
+		dHH and dMM depends on the wday and sHH:sMM. The principle to setup the 
+		schedule rule of these arguments is the active event time should not be 
+		overlapped.</font></p>
+		<p align="left"><font face="Arial">Example</font></p>
+		<p align="left"><font face="Arial">wday,sHH,sMM,dHH,dMM=1234567,01:00,04:50 
+		means the active event time is from 01:00 to 05:50 every day.</font></p>
+		<p align="left"><font face="Arial">wday,sHH,sMM,dHH,dMM=135,20:00,06:00 
+		means the active event time is from 20:00 to 23:59 in every Monday, 
+		Wendesday, Friday and 00:00~02:00 in every Tuesday, Thursday and 
+		Saturday.</font></p>
+		<p align="left"><font face="Arial">wday,sHH,sMM,dHH,dMM=1,00:00,48:00 
+		means the active event time is from 00:00 every Monday to 00:00 every 
+		Thursday.</font></p>
+		<p align="left"><font face="Arial">EventSrc: indicates the event source. 
+		Here is the mapping of event source.</font></p>
+		<div align="center">
+			<table border="1" width="70%">
+				<tr>
+					<td width="168" align="center"><font face="Arial"><b>Value 
+					in EventSrc</b></font></td>
+					<td align="center"><font face="Arial"><b>Description</b></font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">DI1</font></td>
+					<td><font face="Arial">DI1 (Digital Input 1) is an event 
+					source. refer to <a href="EventDI.htm">EVENT_DIn</a> for 
+					further details</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">DI2</font></td>
+					<td><font face="Arial">DI2 (Digital Input 2) is an is an 
+					event source. refer to <a href="EventDI.htm">EVENT_DIn</a> 
+					for further details</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">DI1|DI2</font></td>
+					<td><font face="Arial">DI1 or DI2 are event sources. The 
+					event will be triggered as the DI1 or DI2 levels match the 
+					trigger levels. refer to <a href="EventDI.htm">EVENT_DIn</a> 
+					for further details</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">MD<b>n</b></font></td>
+					<td><font face="Arial">Motion Detection Region <b>n</b> is 
+					an event source. The <b>n</b> could be 1~3.</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">MD<b>n</b>|MD<b>n</b>|MD<b>n|</b>MDPIR</font></td>
+					<td><font face="Arial">MD1, MD2 or MD3 are event sources,<br>
+PIR Motion Sensor is an event source</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">VLOSS</font></td>
+					<td><font face="Arial">Video Loss State is an event source</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">SCH</font></td>
+					<td><font face="Arial">Schedule event. There is no external 
+					signals to act as event trigger. The device will use 
+					wday,sHH,sMM,dHH,dMM as the trigger source. When the device 
+					time is in the active event time, the event was triggered. 
+					Otherwise, the event was inactive.</font></td>
+				</tr>
+				<tr>
+					<td width="168" align="center"><font face="Arial">NIGHT</font></td>
+					<td><font face="Arial">Day&amp;Night status is an  an event 
+					source. When the device entered the night mode, the event 
+					was triggered.</font></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<p><font face="Arial">EventOutput: an event entry could connect single 
+	output or several output. It needs to put much attention if several outputs 
+	were connected. Or multiple event event entry connect to the same event 
+	output. Here is the mapping of the EventOutput.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td align="center" width="165"><font face="Arial"><b>value in 
+				EventOutput</b></font></td>
+				<td align="center"><font face="Arial"><b>Description</b></font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">DO<b>n</b></font></td>
+				<td><font face="Arial">Set the DO (Digital Output Signal) to the 
+				specific level. The <b>n</b> could be 1 or 2. Please refer to
+				<a href="EventRspDO.htm">EVENT_RSPDOn</a> for further detals.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">MSG<b>n</b></font></td>
+				<td><font face="Arial">Send the notification message vs. email 
+				or HTTP CGIs. The <b>n</b> could be 1 ~ 3. Please refer to
+				<a href="EventRspMsg.htm">EVENT_RSPMSGn</a> for further details.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">IMG<b>n</b></font></td>
+				<td><font face="Arial">Upload the video still image or video 
+				clip to the FTP server, email, or HTTP CGIs. The <b>n</b> could 
+				be 1 ~ 3. Please refer to <a href="EventRspImg.htm">
+				EVENT_RSPIMGn</a> for further details.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">GO</font></td>
+				<td><font face="Arial">Go to a preset point if it is a PTZ/Speed 
+				Dome camera</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">MD<b>n</b></font></td>
+				<td><font face="Arial">Change Motion configuration of the motion 
+				region <b>n</b> if event was triggered. If the event becomes 
+				inactive, restore the motion configuration back. The <b>n</b> 
+				could be 1 ~ 3.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">DAY</font></td>
+				<td><font face="Arial">Change the device to day mode if 
+				triggered. If event source is inactive, change device to night 
+				mode.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">NIGHT</font></td>
+				<td><font face="Arial">Change the device to night mode if 
+				triggered. If event source is inactive, change device to day 
+				mode.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="165"><font face="Arial">CMD</font></td>
+				<td><font face="Arial">send an URL command to a HTTP CGI</font></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">The '|' is used to connect different EventOutputs. 
+	Here are examples.</font></p>
+	<p><font face="Arial">DO1|DO2. The DO1 and DO2 levels will be updated based 
+	on event condition.</font></p>
+	<p><font face="Arial">MSG1|DO1. The DO1 levels will be updated and message 
+	will be issues based on EVENT_RSPIMG1 settings when the event source is 
+	triggered.</font></p>
+</blockquote>
+<h3><font face="Arial" size="4">Attribute</font></h3>
+<ul>
+<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<h3><font face="Arial" size="4">Return of Message</font></h3>
+<ul>
+  <li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+  <p><font face="Arial" size="3">EVENT_CONFIG='1,1,1234567,00:00,24:00,DI1,MSG1|IMG1'
+EVENT_CONFIG='2,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='3,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='4,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='5,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='6,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='7,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='8,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='9,0,1234567,00:00,24:00,NONE,NONE'
+EVENT_CONFIG='10,0,1234567,00:00,24:00,NONE,NONE'</font></p>
+</blockquote>
+<ul>
+  <li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OK: EVENT_CONFIG='</font><font face="Arial" size="3">1,1,1234567,00:00,24:00,DI1,MSG1|IMG1</font><font face="Arial">'<br>
+  or<br>
+  </font>
+	<font face="Arial" size="3">ERROR: </font>
+<font face="Arial">EVENT_CONFIG='</font><font face="Arial" size="3">1,1,1234567,00:00,24:00,DI1,MSG1|IMG1</font><font face="Arial">'</font></blockquote>
+<h3><font size="4" face="Arial">Applicability</font></h3>
+<ul>
+<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<h3><font size="4" face="Arial">Status</font></h3>
+<blockquote>
+  <p><font face="Arial">Valid</font></p>
+</blockquote>
+<h3><font size="4" face="Arial">See Also</font></h3>
+<blockquote>
+	<p class="Arial"><a href="EventDI.htm">EVENT_DIn</a>,
+	<a href="EventRspDO.htm">EVENT_RSPDOn</a>, <a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspImg.htm">EVENT_RSPIMGn</a>,
+	<a href="EventRspCmd.htm">EVENT_RSPCMDn</a>, <a href="EventRspMdPIR.htm">EVENT_RSPMDPIR</a>, <a href="EventRspGo.htm">EVENT_RSPGO</a>, <a href="FtpServer.htm">FTP_SERVER</a>, <a href="SmtpServer.htm">SMTP_PRI</a>,
+	<a href="SmtpServer.htm">SMTP_SEC</a>, <a href="HttpServer.htm">HTTP_SERVER</a></p>
+</blockquote>
+<h3><font size="4" face="Arial">Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></h3>
+	<ul>
+	  <li><font face="Arial" size="4">read operation</font></li>
+</ul>
+	<blockquote>
+	  <font face="Arial">
+      http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_CONFIG<br>
+      or<br>
+      http://ip:port/cgi-bin/cmd/encoder?EVENT_CONFIG</font>
+</blockquote>
+	<ul>
+	  <li><font face="Arial" size="4">Write Operation</font></li>
+</ul>
+<blockquote>
+    <font face="Arial">
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_CONFIG=1,1,1234567,00:00,24:00,DI1,MSG1|IMG1<<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_CONFIG=1,1,1234567,00:00,24:00,DI1,MSG1|IMG1</font>
+</blockquote>
+<h3><font face="Arial" size="4">Back to</font></h3>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

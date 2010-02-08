@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_SHARPNESS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_SHARPNESS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the Frequency Directive Sharpening parameters.</font></p>
+	<p><font face="Arial">This URL is only available in some PlatformT 
+	encoders which has the VX1129 video processor. As like the naming, sharpness can 
+	be adjust by separate high, middle, low frequencies. With the combination 
+	of these settings generated a curve on the histogram, which is limited by the ClipMin and 
+	ClipMax values.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">n,min,max,hf,mf,lf<br>
+	where<br>
+	n could be 0:disable, 1:default, 2:manual. If n = 0 or 1, the min, max, hf, 
+	mf and lf are forbidden.<br>
+	min : 0~127 ClipMin <br>
+	max : 0~127 ClipMax<br>
+	hf : 0~63 High Frequency<br>
+	mf : 0~63 Middle Frequency<br>
+	lf: 0~63 Low Frequency </font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">V2_SHARPNESS='1,10,240,20,20,20'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: V2_SHARPNESS='1,10,240,20,20,20'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: V2_SHARPNESS='1,10,240,20,20,20'</font><br>
+	¡@</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">PlatfotmT : All Encoders with video processor VX1129</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoSharpness.htm">VIDEO_SHARPNESS</a>,
+	<a href="VideoBlackLevel.htm">VIDEO_BLACKLEVEL</a>,
+	<a href="VideoDeinterlace.htm">VIDEO_DEINTERLACE</a>, <a href="VideoDnr.htm">
+	VIDEO_DNR</a>, <a href="VideoWdr.htm">VIDEO_WDR</a>,
+	<a href="VideoSkinTone.htm">VIDEO_SKINTONE</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">V2_SHARPNESS</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">V2_SHARPNESS</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">V2_SHARPNESS</font><font face="Arial">=1</font><font face="Arial" size="3">,10,240,20,20,20</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">V2_SHARPNESS=1,10,240,20,20,20</font><p>
+	<font face="Arial">or</font></p>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">V2_SHARPNESS</font><font face="Arial">=0</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">V2_SHARPNESS=0</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, 
+	<a href="file:///Y:/SSPD/SSPD_Design_Document/FirmwareDesignSpec/V1.0.07/URLDesignSpec/Encoder/Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

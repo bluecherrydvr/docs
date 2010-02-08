@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>OSD Format</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h3>Format of the Text Overlay</h3>
+<table width="80%" border="1" id="table1">
+  <tr>
+    <td align="center" width="225"><b>Setting Method</b></td>
+    <td align="center"><b>Description</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%YYYY</td>
+    <td align="left">Year in four digits. For example, 2008</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%YY</td>
+    <td align="left">Year in two digits. For example, 08</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%MM</td>
+    <td align="left">Month in two digits. For example, 01 for January, 12 for December</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%DD</td>
+    <td align="left">date in two digits. 01~31</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%hh</td>
+    <td align="left">hour in two digit. 00~23. Note that, we just support 24-hour indication.</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%mm</td>
+    <td align="left">minutes in two digits. 00~59</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%ss</td>
+    <td align="left">seconds in two digits. 00~59</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%W</td>
+    <td align="left">a character space, &quot;&nbsp;&quot;</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%H</td>
+    <td align="left">a hyphen, &quot;-&quot;</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%C</td>
+    <td align="left">a colon, &quot;:&quot;</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%X</td>
+    <td align="left">a slash, &quot;/&quot;</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%N</td>
+    <td align="left">show Camera Name (It might be truncated if maximum OSD length reaches)</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%V</td>
+    <td align="left">show &quot;VIDEO LOSS&quot; if Video Loss occurs</td>
+  </tr>
+  <tr>
+    <td align="center" width="225">%U</td>
+    <td align="left">User define text.</td>
+  </tr>
+</table>
+</body>
+</html>

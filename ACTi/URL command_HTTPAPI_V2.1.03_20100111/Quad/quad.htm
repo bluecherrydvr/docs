@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html;">
+<title>QUAD CGI Program</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="6">QUAD CGI Program</font></p>
+<p align="left"><font face="Arial">Only root could set the configuration through 
+this CGI. If the logon user is not root, all write commands will be 
+treated as read commands. </font></p>
+<p align="left"><font face="Arial">The CGI is only available in the WPL QUAD Encoder Devices.</font></p>
+<p align="left"><font face="Arial">In QUAD Encoder, it could show 4 channels' 
+video in one single video stream (QUAD Mode) or show one of four channels in one 
+single video stream (Channel Mode).</font></p>
+<p align="left"><font face="Arial">There is only Type1 URL command supported in 
+this CGI.</font></p>
+<p align="left"><font face="Arial">The format of the return message does not 
+follow the <a href="../General/ReturnMessage.htm">specification of return 
+message</a>. The return message will be described in every URL command.</font></p>
+<p align="left"><font face="Arial" size="5">List of URLs</font></p>
+<blockquote>
+	<table border="1" width="90%" id="table3">
+		<tr>
+			<td rowspan="2">
+			<p align="center">
+			<font face="Arial" size="5">URL</font></td>
+			<td>
+			<p align="center"><font face="Arial" size="5">Attribute 
+			(R/W, On-Fly)<sup><a href="#Remark1">1</a></sup></font></td>
+		</tr>
+		<tr>
+			<td>
+			<p align="center"><font face="Arial" size="4">WPL QUAD Encoder</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="Display.htm">DISPLAY</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="OsdEnabled.htm">OSD_ENABLED</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="MotionEnabled.htm">
+			MOTION_ENABLED</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="Sensitive.htm">SENSITIVE</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="TitleName.htm">TITLE_NAME</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="VideoAdjust.htm">BRIGHTNESS</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="VideoAdjust.htm">CONTRAST</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="VideoAdjust.htm">SATURATION</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial" size="2"><a href="VideoAdjust.htm">HUE</a></font></td>
+			<td align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+	</table>
+</blockquote>
+<div align="center">
+	<p align="left"><font face="Arial" size="5">Back to</font></p>
+	<blockquote>
+		<p align="left"><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+	</blockquote>
+	<p align="left"><font face="Arial" size="5">Foot Note</font></div>
+<div align="center">
+	<table border="1" width="95%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">The first part is for Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only) or None 
+			(Not Support)</font><br>
+			<font face="Arial" size="2">The second part is for On-Fly 
+			indication. if the change of URL is 
+			effective immediately without save and reboot, It could be V (the URL is on-fly). 
+			Otherwise, it is X (the 
+			URL is not on-fly).</font></td>
+		</tr>
+		</table>
+</div>
+
+</body>
+
+</html>

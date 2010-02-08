@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOTION_ENABLED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOTION_ENABLED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Enable or Disable the Motion Detection function in 
+	every channel.</font></p>
+	<p><font face="Arial">The input argument of this command is hexadecimal 
+	value. It controls how many channels motion detection are enabled or 
+	disabled. Here is the map of the input hexadecimal value and the channel 
+	motion detection.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" height="26"><font face="Arial" size="4">Bit value 
+			in the input argument</font></td>
+			<td align="center" height="26"><font face="Arial" size="4">Channel 
+			Motion Detection</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 0</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Channel 
+			1 Motion Detection Function</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 1</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Channel 
+			2 Motion Detection Function</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 2</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Channel 
+			3 Motion Detection Function</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 3</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Channel 
+			4 Motion Detection Function</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The bit value is 1, the corresponding channel motion 
+	detection is enabled. Otherwise, it is disable.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0xnn</font><p><font face="Arial">Note that the value in 
+	higher bit (bit 4~7) will not be acceptable and error message will be 
+	returned if the higher bit (but 5~7) is not zero.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">MOTION_ENABLED='0x00'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">MOTION_ENABLED='0x00'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: MOTION_ENABLED Value Failed</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : QUAD Encoder Only</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Sensitive.htm">SENSITIVE</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;MOTION_ENABLED</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;MOTION_ENABLED=0x00</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="quad.htm">
+	QUAD CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

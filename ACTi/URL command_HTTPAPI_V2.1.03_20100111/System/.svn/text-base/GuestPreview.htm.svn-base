@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>GUEST_PREVIEW</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">GUEST_PREVIEW</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Enable or Disable the guest preview function.</font></p>
+	<p><font face="Arial">In general, the host has to success in authentication 
+	for access of device. In public services, the devices were put into public 
+	domain to provide the general services. Then, the host could preview the 
+	video without authentication. In Guest Preview mode, the host could not 
+	access device configurations. It needs authentication to access the 
+	configurations no matter the device is in Guest Preview mode or not.</font></p>
+	<p><font face="Arial">The IP Address filter function helps the device to 
+	limit hosts to access it when the Guest Preview function is enabled</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this command is read-only command and the CHANNEL=1 
+	video server's&nbsp; GUEST_PREVIEW configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0 : Disable</font><br>
+	<font face="Arial">1 : Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">GUEST_PREVIEW='0'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: GUEST_PREVIEW='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: GUEST_PREVIEW='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WIS Platform : One channel encoder</font></li>
+	<li><font face="Arial">EPL Platform : All encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="IPFilterState.htm">IP_FILTER_STATE</a>,
+	<a href="IPFilterRule.htm">IP_FILTER_RULE</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;GUEST_PREVIEW</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?GUEST_PREVIEW</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;GUEST_PREVIEW=1</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?GUEST_PREVIEW=1</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

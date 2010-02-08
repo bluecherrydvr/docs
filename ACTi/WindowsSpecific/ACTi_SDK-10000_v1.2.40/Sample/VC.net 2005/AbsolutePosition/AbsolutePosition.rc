@@ -1,0 +1,232 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\AbsolutePosition.rc2""  // 非 Microsoft Visual C++ 編輯過的資源\r\n"
+    "#include ""afxres.rc""         // 標準元件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\AbsolutePosition.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "關於 AbsolutePosition"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "AbsolutePosition Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "確定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_ABSOLUTEPOSITION_DIALOG DIALOGEX 0, 0, 639, 343
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "AbsolutePosition"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Exit",IDCANCEL,582,320,50,16
+    CONTROL         "",IDC_STATIC1,"Static",SS_BLACKFRAME,7,7,411,329
+    PUSHBUTTON      "Connect",IDC_BUTTON1,529,36,50,14
+    PUSHBUTTON      "Disconnect",IDC_BUTTON2,582,34,50,14
+    PUSHBUTTON      "Send",IDC_BUTTON3,582,105,50,14
+    EDITTEXT        IDC_EDIT1,579,91,53,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,579,58,53,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,579,75,53,14,ES_AUTOHSCROLL
+    LTEXT           "Pan (1~1600)",IDC_STATIC,532,62,46,8
+    LTEXT           "Tilt (23~223)",IDC_STATIC,532,79,44,8
+    LTEXT           "Zoom (1~30)",IDC_STATIC,532,94,44,8
+    CONTROL         "",IDC_IPADDRESS1,"SysIPAddress32",WS_TABSTOP,530,15,102,
+                    15
+    PUSHBUTTON      "HOME",IDC_BUTTON5,582,120,50,14
+    CONTROL         "",IDC_STATIC2,"Static",SS_BLACKFRAME,427,201,100,100
+    PUSHBUTTON      "GetPTZPos",IDC_BUTTON6,556,141,76,14
+    PUSHBUTTON      "Check Pos Data",IDC_BUTTON7,556,155,76,14
+    EDITTEXT        IDC_EDIT4,592,171,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,592,185,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,592,200,40,14,ES_AUTOHSCROLL
+    LTEXT           "Pan:",IDC_STATIC,575,175,15,8
+    LTEXT           "Tilt:",IDC_STATIC,577,189,13,8
+    LTEXT           "Zoom:",IDC_STATIC,570,203,21,8
+    GROUPBOX        "Dynacolor",IDC_STATIC,527,53,105,163
+    LTEXT           "Pan Degree",IDC_STATIC,431,62,42,8
+    LTEXT           "Tilt Degree",IDC_STATIC,430,77,40,8
+    EDITTEXT        IDC_EDIT7,478,59,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,478,74,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "SendPTCmd",IDC_BUTTON8,467,91,50,14
+    GROUPBOX        "PT Command",IDC_STATIC,418,53,105,85
+    COMBOBOX        IDC_COMBO1,418,173,48,46,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "PTcmd Type",IDC_STATIC,418,162,48,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040403b6"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名稱>"
+            VALUE "FileDescription", "TODO: <檔案說明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "AbsolutePosition.exe"
+            VALUE "LegalCopyright", "TODO: (c) <公司名稱>.  All rights reserved."
+            VALUE "OriginalFilename", "AbsolutePosition.exe"
+            VALUE "ProductName", "TODO: <產品名稱>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x404, 950
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABSOLUTEPOSITION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 632
+        VERTGUIDE, 418
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "關於 AbsolutePosition(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows 通訊端安裝失敗。"
+END
+
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\AbsolutePosition.rc2"  // 非 Microsoft Visual C++ 編輯過的資源
+#include "afxres.rc"         // 標準元件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

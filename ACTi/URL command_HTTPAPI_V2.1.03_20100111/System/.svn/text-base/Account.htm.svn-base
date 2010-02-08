@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ACCOUNT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">ACCOUNT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get device ACCOUNT which it has one root-level account 
+	and 10 user-level accounts configuration. Only root has authorized to execute 
+	this command.</font></p>
+	<p><font face="Arial">Only the root-level account could have right to get or 
+	set all settings in the device. The user-level account could get the video 
+	and audio stream and some system information only.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, the command is read-only and Router's ACCOUNT configurations will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">ACCOUNT_ROOT_NAME='aaaa'<br>
+	ACCOUNT_ROOT_PASSWORD='111111'<br>
+	ACCONT_USER_NAME_1=''<br>
+	ACCONT_USER_PASSWORD_1=''<br>
+	ACCONT_USER_NAME_2=''<br>
+	ACCONT_USER_PASSWORD_2=''<br>
+	ACCONT_USER_NAME_3=''<br>
+	ACCONT_USER_PASSWORD_3=''<br>
+	ACCONT_USER_NAME_4=''<br>
+	ACCONT_USER_PASSWORD_4=''<br>
+	ACCONT_USER_NAME_5=''<br>
+	ACCONT_USER_PASSWORD_5=''<br>
+	ACCONT_USER_NAME_6=''<br>
+	ACCONT_USER_PASSWORD_6=''<br>
+	ACCONT_USER_NAME_7=''<br>
+	ACCONT_USER_PASSWORD_7=''<br>
+	ACCONT_USER_NAME_8=''<br>
+	ACCONT_USER_PASSWORD_8=''<br>
+	ACCONT_USER_NAME_9=''<br>
+	ACCONT_USER_PASSWORD_9=''<br>
+	ACCONT_USER_NAME_10=''<br>
+	ACCONT_USER_PASSWORD_10=''<br>
+	</font>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a>, 
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a>, 
+	<a href="AccountRoot.htm">ACCONT_ROOT</a>, <a href="AccountUserNamePwd.htm">
+	ACCOUNT_USER_NAME_N</a>, <a href="AccountUserNamePwd.htm">
+	ACCOUNT_USER_PASSWORD_N</a>, <a href="AccountUser.htm">ACCOUNT_USER_N</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;ACCOUNT<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?ACCOUNT</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

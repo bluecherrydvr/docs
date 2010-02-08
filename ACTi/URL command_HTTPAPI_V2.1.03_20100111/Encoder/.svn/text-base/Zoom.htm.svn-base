@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ZOOM</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">ZOOM</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Perform the zoom function.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">For PTZ IP Camera, the ZOOM=STOP should be sent after 
+	another ZOOM command had been sent.</font></p>
+	<p><font face="Arial">There are five levels in zoom speed. The PTZ camera 
+	might have more levels of zoom speed. In case, the linear scaling algorithm 
+	will be used for that.</font></p>
+	<p><font face="Arial">The zoom position in this URL is from 0x0 to 
+	0xFFFF. The PTZ camera might not have such wide range of the zoom position. 
+	However, the device will NOT validate the zoom position before parser and 
+	handle this URL. Please refer to the device specification to have correct 
+	zoom position range.</font></p>
+	<p><font face="Arial">Different Zoom module with different control value, 
+	for MT54G15, the control talble is</font></p>
+	<table border="0" cellpadding="0" cellspacing="0" width="216" style="border-collapse:
+ collapse;width:162pt">
+		<colgroup>
+			<col width="72" span="3" style="width:54pt">
+		</colgroup>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" width="72" style="height: 15.0pt; width: 54pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			Zoom</td>
+			<td width="72" style="width: 54pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			Heximal</td>
+			<td width="72" style="width: 54pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			Decimal</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			1x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x111</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			273</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			2x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x223</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			547</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			3x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x334</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			820</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			4x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x446</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			1094</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			5x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x557</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			1367</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			6x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x669</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			1641</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			7x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x780</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			1920</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			8x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x892</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			2194</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			9x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x1003</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			4099</td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="height: 15.0pt; font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			10x</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			0x1115</td>
+			<td style="font-family: Arial, sans-serif; text-align: center; color: black; font-size: 12.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: middle; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+			4373</td>
+		</tr>
+	</table>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">STOP</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">Cmd,0xn </font><br>
+	<font face="Arial">where Cmd could be TELE or WIDE and the n is a 
+	hexadecimal value for zoom speed from 2(slowest) to 7(fastest).</font><br>
+	<font face="Arial">The zoom speed could be ignored and the current zoom speed setting will be used.</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">DIRECT,0xn</font><br>
+	<font face="Arial">where n is a hexadecimal value from 0~FFFF to indicate the position of zoom.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK:</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="Focus.htm">FOCUS</a>,
+	<a href="FocusPosition.htm">FOCUS_POSITION</a>, <a href="Move.htm">MOVE</a>,
+	<a href="MoveLimit.htm">MOVE_LIMIT</a>, <a href="MoveLimitGet.htm">
+	MOVE_LIMIT_GET</a>, <a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>,
+	<a href="Position.htm">POSITION</a>, <a href="PositionGet.htm">POSITION_GET</a>,
+	<a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;ZOOM=TELE,0x5</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?ZOOM</font><font face="Arial" size="3">=</font><font face="Arial">TELE,0x5</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

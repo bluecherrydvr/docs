@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DN_TYPE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DN_TYPE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or Set the Day&amp;Night detection source in the Day&amp;Night Control Module. Some camera have a Day&amp;Night Control Module to manage the day and night time behavior. Please refer to the <a href="../../DayNightCtrl/DayNightCtrlModule.html">Day&amp;Night Control Module in Camera Page design specification</a> for further detail.</p>
+  <p>In the Day&amp;Night control module, there are two Day&amp;Night detection sources. One is CDS and the other one is the output of Day&amp;night trigger from DSP. If camera has both of them, this URL could set one of them as the Day&amp;Night detection source. If there is only one of them is available in camera, this URL is a read-only command and return the available Day&amp;Night detection source always.</p>
+  <p>If there is no Day&amp;Night Control Module in the camera but it is a Day&amp;Night capable camera, this URL command is read-only. This URL will return the CDS if there is CDS in the camera and return DSP if the Day&amp;Night detection was performed by the DSP or polling DSP gain level in firmware.</p>
+  <p>The error message, <strong>VIDEO_DN_TYPE not found</strong>, will be returned   if the encoders and camera do not support Day&amp;Night function or there is no   Day&amp;Night detection function.</p>
+  <p><strong><u>Important Note</u></strong></p>
+  <blockquote>
+    <p>The Day&amp;Night detection source is only configurable if the Day&amp;Night Mode is AUTO (<a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>=AUTO). When the Day&amp;Night Mode is DAY or NIGHT, the Day&amp;Night detection should be disable without any change of the configuration of Day&amp;Night Detection Source.</p>
+    <p>In firmware, there are two Day&amp;Night Gain Threshold configurations. One is for CDS Day&amp;Night detection  and the other one is for DSP Day&amp;Night detection. They share the same URL commands <a href="DayGainThd.htm">DAY_GAIN_THD</a> and <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>. The firmware will based on this VIDEO_DN_TYPE to configure the Day&amp;Night gain threshold settings when it received the gain threshold URLs.</p>
+  </blockquote>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>source<br />
+  where source could be<br />
+  CDS: the Day&Night detection source is CDS<br />
+  DSP: the Day&Night detection source is DSP.
+  </p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write (depends on camera Day&amp;Night function)</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>
+    VIDEO_DN_TYPE='CDS'<br />
+  </p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>ERROR: VIDEO_DN_TYPE='CDS'<br />
+or<br />
+ERROR: VIDEO_DN_TYPE not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatformT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>, 
+  <a href="VideoDNTimer.htm">VIDEO_DN_TIMER</a>, 
+  <a href="VideoDNIRLed.htm">VIDEO_DN_IRLED</a>, 
+  <a href="VideoDNIRCutFilter.htm">VIDEO_DN_IRCUT</a>, 
+  <a href="DayGainThd.htm">DAY_GAIN_THD</a>, 
+  <a href="NightGainThd.htm">NIGHT_GAIN_THD</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_TYPE<br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_TYPE</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_TYPE=CDS<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_TYPE=CDS</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html;">
+<title>System CGI Program</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="6">Mpeg4 CGI Program</font></p>
+<p align="left"><font face="Arial">Only root could set the configuration through 
+this MPEG4 CGI. If the logon user is not root, all write commands will be 
+treated as read commands. The CGI is only available in the Encoder Devices. The 
+URL in this CGI will be forwarded to all video servers by router in the 
+Multi-Channel Encoder platform.</font></p>
+<p align="left"><font face="Arial" size="4">NOTE:</font></p>
+<blockquote>
+	<p align="left"><font face="Arial">This CGI will be replaced with the
+	<a href="../Encoder/Encoder.htm">Encoder</a> CGI. That will be claimed with 
+	the release of device's firmware in the future.</font></p>
+</blockquote>
+<p align="left"><font face="Arial" size="5">List of URLs</font></p>
+<div align="center">
+	<table border="1" width="95%" id="table1">
+		<tr>
+			<td rowspan="3" align="center" width="25%">
+			<font face="Arial" size="5">URL</font></td>
+			<td colspan="4" align="center"><font face="Arial" size="5">Attribute 
+			(R/W, On-Fly)<sup><a href="#Remark1">1</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial" size="4">WPL 
+			Platform</font></td>
+			<td align="center"><font face="Arial" size="4">EPL 
+			Platfrom</font></td>
+			<td align="center"><font face="Arial" size="4">Platform 
+			T</font></td>
+			<td align="center"><font face="Arial" size="4">
+			Multi-Channel Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="16%"><i><font face="Arial">Encoder</font></i></td>
+			<td align="center" width="16%"><i><font face="Arial">Encoder</font></i></td>
+			<td align="center" width="16%"><i><font face="Arial">Encoder</font></i></td>
+			<td align="center" width="19%"><i><font face="Arial">Video Server</font></i></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoStatus.htm">VIDEO_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoCameraName.htm">
+			VIDEO_CAMERA_NAME</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoAdjust.htm">
+			VIDEO_BRIGHTNESS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoAdjust.htm">VIDEO_CONTRAST</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoAdjust.htm">
+			VIDEO_SATURATION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoAdjust.htm">VIDEO_HUE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoResolution.htm">
+			VIDEO_RESOLUTION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoBitRate.htm">VIDEO_BITRATE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoFps.htm">VIDEO_FPS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoFpsNum.htm">VIDEO_FPS_NUM</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoVariableFps.htm">VIDEO_VARIABLE_FPS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="DioStatus.htm">DIO_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="DioOutput.htm">DIO_OUTPUT</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionStatus.htm">MOTION_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionEnabled.htm">MOTION_ENABLED</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionSetting.htm">MOTION_SETTING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionSen.htm">MOTION_SENSITIVE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="SerialSetting.htm">SERIAL_SETTING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="SerialAscii.htm">SERAIL_ASCII</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="SerialHex.htm">SERIAL_HEX</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="RtpMcastStream.htm">RTP_MULTICAST_STREAMING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../System/Dummy.htm">DUMMY</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">XX,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">XX,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">XX,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">XX,X</font></td>
+		</tr>
+		</table>
+	<p align="left"><font face="Arial" size="5">Back to</font></p>
+	<blockquote>
+		<p align="left"><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+	</blockquote>
+	<p align="left"><font face="Arial" size="5">Foot Note</font></div>
+<div align="center">
+	<table border="1" width="95%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">The first part is for Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only) or None 
+			(Not Support)</font><br>
+			<font face="Arial" size="2">The second part is for On-Fly 
+			indication. if the change of URL is 
+			effective immediately without save and reboot, It could be V (the URL is on-fly). 
+			Otherwise, it is X (the 
+			URL is not on-fly).</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark2">2</a></font></td>
+			<td><font face="Arial" size="2">Only be available of 1CH and 2CH Encoder. For Quad Encoders, it 
+			is not available.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark3">3</a></font></td>
+			<td><font face="Arial" size="2">Return the CHANNEL 1 video server's 
+			configuration. If the CHANNEL 1 video server does not connect to 
+			router, the error message will be returned</font></td>
+		</tr>
+		</table>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_FPS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_FPS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get devce's FPS Mode. There are two FPS modes, 
+	Constant FPS and Variable FPS. </font></p>
+	<p><font face="Arial">This URL is read-only command in system CGI. In other 
+	CGI, mpeg and encoder, the VIDEO_FPS URL is readable and writable. When write, the error message will be returned if this 
+	URL in the device is read-only.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNLE 1 video server's VIDEO_FPS configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">In Constant FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to host is constant. In 
+	MPEG4 streaming, the GOP was set based on this frame rate. Every host gets 
+	the video stream with the same frame rate which is not able to be changed. 
+	For example, one I frame and 29 P frames will be streamed when the frame 
+	rate is 30 (GPO is 30). For MJPEG stream, the same rule is applied as well.</font></p>
+	<p><font face="Arial">In Variable FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to host is not constant, 
+	The GOP is 5 in all WPL Platform encoders and 8CH Multi-Channel Encoder. The 
+	GOP is 2 in all EPL Platform, PlatformT and 4CH, 16CH Multi-Channel 
+	Encoders. The host could change the frame rate at any time and get I frame 
+	only in MPEG4 steam in most cases. For example, the host get the 6 I frame 
+	in every second if it sets the frame rate to 6 and get 6 I frames and 24 P 
+	frames if it set the frame rate to 30 in MPEG4 stream. For MJPEG stream, the 
+	same rule is applied as well.</font></p>
+	<p>¡@</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">MODE1, MODE 2</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">VIDEO_FPS='MODE1'</font>
+<br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<ul>
+	<li><font face="Arial">In mpeg4 CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../Mpeg4/VideoFpsNum.htm">VIDEO_VARIABLE_FPS</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In encoder CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../Mpeg4/VideoFpsNum.htm">VIDEO_VARIABLE_FPS</a>, 
+	<a href="../Encoder/VariableFpsNum.htm">VARIABLE_FPS_NUM</a>, 
+	<a href="../Encoder/VideoMjpegFps.htm">VIDEO_MJPEG_FPS</a>, 
+	<a href="../Encoder/VideoH264Fps.htm">VIDEO_H264_FPS</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In system CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="VideoTv.htm">VIDEO_TV</a> 
+	(Read-Only)</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/<b>cgi_program</b>?USER=Admin&amp;PWD=123456&amp;VIDEO_FPS</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/<b>cgi_program</b>?VIDEO_FPS</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/<b>cgi_program</b>?USER=Admin&amp;PWD=123456&amp;VIDEP_FPS=MODE1</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/<b>cgi_program</b>?VIDEO_FPS=MODE1</font></p>
+	<font face="Arial">where</font><br>
+	<font face="Arial">cgi_program could be system, mpeg4 or encoder.</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOVE_SPEED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOVE_SPEED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or get the speed configurations in pan and tilt 
+	directions.</font></p>
+	<p><font face="Arial">The error message will be returned if the speeds of 
+	pan and tilt are not in the range of device's pan and tile speeds.</font></p>
+	<p><font face="Arial">When write, the new speed setting will take effect in 
+	the next movement. The speed will not be affected if the PT is running as 
+	new speeds were applied.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	MOVE_SPEED configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">PanSpeed,TiltSpeed</font><font face="Arial" size="3"><br>
+	or<br>None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: MAVE_SPEED='</font><font face="Arial">PanSpeed,TiltSpeed'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: MAVE_SPEED='</font><font face="Arial">PanSpeed,TiltSpeed'</font></blockquote>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial" size="3">MAVE_SPEED='</font><font face="Arial">PanSpeed,TiltSpeed'</font><br>
+	</p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="Zoom.htm">ZOOM</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="FocusPosition.htm">
+	FOCUS_POSITION</a>, <a href="Move.htm">MOVE</a>, <a href="MoveLimit.htm">
+	MOVE_LIMIT</a>, <a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a>,
+	<a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>, <a href="Position.htm">
+	POSITION</a>, <a href="PositionGet.htm">POSITION_GET</a>,
+	<a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MOVE_SPEED=3,5</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/encoder?MOVE_SPEED=3,5</font></blockquote>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MOVE_SPEED<br>or<br>http://ip:port/cgi-bin/cmd/encoder?MOVE_SPEED</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

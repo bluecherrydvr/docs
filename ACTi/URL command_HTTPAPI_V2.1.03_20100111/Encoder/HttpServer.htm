@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>HttpServer</title>
+<style type="text/css">
+<!--
+.arial {
+	font-family: Arial;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">HTTP_SERVER</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the HTTP servers 
+	configurations.</font></p>
+	<p class="arial">When set, the specific HTTP server has to be addressed in the argument of this URL. Whe read, the configurations of two HTTP servers will be returned.</p>
+	<p class="arial">There are two HTTP server database, named HTTPD1 and HTTPD2, in the device. The notification message, image and video could be uploaded to these servers as events were triggered. The event has to be associated with one of these servers before it was enabled.</p>
+	<p class="arial">The  Basic authentication is only supported here..If the user name is empty, the device will not do any authentication when it connects to the HTTP server.</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+id,state,addr,port,name,password,timer</font></p>
+<blockquote>
+	<p class="arial">id: the index of the HTTP servers. 1: HTTPD1 and 2:HTTPD2</p>
+	<p class="arial">state: state of the HTTP server. 0:Disable, 1:Enable</p>
+	<p class="arial">addr: address of the HTTP server. The maximum length is 63.</p>
+	<p class="arial"><font face="Arial">port: the HTTP server port number. The default number </font> </p>
+<p class="arial">name: the user name to login the HTTP server. The maximum length is 31.</p>
+	<p><font face="Arial">password: the user password to login the HTTP server. 
+</font><span class="arial">The maximum length is 31.</span></p>
+	<p><font face="Arial">timer: the maximum time in seconds to establish a HTTP 
+	connection. It could be from 0~60. If it is 0, the connection timer is 
+wrong.</font></p>
+	<p><font face="Arial">If the length of the input argument is longer than its 
+	maximum length limitation, the error message will be returned.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">HTTP_SERVER='1,0,www.server1.com,80,myname,mypwd,10'</font><br>
+	  <font face="Arial">HTTP_SERVER='2,0,www.server2.com,80,myname,mypwd,10'</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: HTTP_SERVER='1,0,www.server1.com,80,myname,mypwd,10'<br>
+	or<br>
+	</font>
+	<font face="Arial" size="3">ERROR: invalid parameters</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspImg.htm">EVENT_RSPIMGn</a>, <a href="EventRspCmd.htm">EVENT_RSPCMDn</a>, <a href="EventConfig.htm">EVENT_CONFIG</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+	<ul>
+	  <li><font face="Arial" size="4">read operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;HTTP_SERVER<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?HTTP_SERVER</font>
+    </blockquote>
+<ul>
+      <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;HTTP_SERVER=1,1,www.server1.com,80,myname,mypwd,10<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial">USER=Admin&amp;PWD=123456&amp;HTTP_SERVER=1,1,www.server1.com,80,myname,mypwd,10</font>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

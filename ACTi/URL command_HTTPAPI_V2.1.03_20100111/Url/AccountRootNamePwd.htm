@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ACCOUNT_ROOT_NAME_PASSWORD</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">ACCOUNT_ROOT_NAME, ACCOUNT_ROOT_PASSWORD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set root-level account name and password. Only 
+	root has authorized to execute this command.</font></p>
+	<p><font face="Arial">Only the root-level account could have right to get or 
+	set all settings in the device. The user-level account could get the video 
+	and audio stream and some system information only.</font></p>
+	<p><font face="Arial">In EPL decoder, these URLs are same as the
+	<a href="../System/AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a> and
+	<a href="../System/AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a> in the
+	<a href="../System/system.htm">SYSTEM CGI</a> but only
+	<a href="../General/GeneralDescription.htm">Type1</a> URL command is 
+	supported.</font></p>
+	<p><font face="Arial">Therefore, the ACCOUNT_ROOT_NAME and 
+	ACCOUNT_ROOT_PASSWORD URL in WPL decoders are only 
+	addressed in this page.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Character string (&lt;32 bytes for name and &lt; 64 bytes for 
+	password)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Account.htm">ACCOUNT</a>, 
+	<a href="AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a>, 
+	<a href="AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;ACCOUNT_ROOT_NAME=aaaa</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;ACCOUNT_ROOT_PASSWORD=111111</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">
+	URL_CGI</a>, <a href="../System/system.htm">SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

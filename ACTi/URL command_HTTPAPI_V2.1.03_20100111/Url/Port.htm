@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PORT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device's networking port number configurations. 
+	</font></p>
+	<p><font face="Arial">The return message of this command is different 
+	between WIS and EPL Decoder Device.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><b><i><font face="Arial">From WPL Decoder Devices</font></i></b><i><b><font face="Arial">:</font></b></i></p>
+	<blockquote>
+		<font face="Arial">PORT_HTTP='80'<br>
+		PORT_HOST_SEARCH_1='6005'<br>
+		PORT_HOST_SEARCH_2='6006'<br>
+		PORT_HOST_SDK_1='10060'<br>
+		PORT_HOST_SDK_2='10061'</font><br>
+	</blockquote>
+	<p><i><b><font face="Arial">
+	Form EPL Decoder Devices:</font></b></i></p>
+	<ul>
+		<li><font face="Arial">Not connect to an encoder</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial">PORT_HTTP='80'</font><br><font face="Arial">PORT_SEARCH_1='6005'</font><br>
+		<font face="Arial">PORT_SEARCH_2='6006'</font></p>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">connect to an encoder</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial">PORT_HTTP='80'<br>
+		PORT_HOST_SEARCH_1='6005'<br>
+		PORT_HOST_SEARCH_2='6006'<br>
+		PORT_REMOTE_REGISTER='6000'<br>
+		PORT_REMOTE_CONTROL='6001'<br>
+		PORT_REMOTE_VIDEO='6002'<br>
+		PORT_REMOTE_MULTICAST='5000'</font></p>
+		<p><font face="Arial">where the PORT_REMOTE_REGISTER, 
+		PORT_REMOTE_CONTROL, PORT_REMOTE_VIDEO, PORT_REMOTE_MULTICAST are the 
+		port used in the encoder</font></p>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PortHttp.htm">PORT_HTTP</a>,
+	<a href="PortHostSearch1_2.htm">PORT_HOST_SEARCH_1</a>, 
+	<a href="PortHostSearch1_2.htm">PORT_HOST_SEARCH_2</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;PORT</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

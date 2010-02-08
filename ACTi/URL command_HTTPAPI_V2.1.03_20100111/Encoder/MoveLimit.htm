@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOVE_LIMIT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOVE_LIMIT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or Clear the maximum movement limitation in pan and tilt 
+	directions.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">The error message will be returned if the positions of 
+	the Up-Right and Down-Left corners are over the maximum movement limit in 
+	the PT module or the position between Up-Right and Down-Left corners are 
+	conflict to each other.</font></p>
+	<p><font face="Arial">In CLEAR command, the movement limit will be reset to 
+	default settings in both Up-Right and Down-Left corners.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">SET,</font><font face="Arial" size="3">PositionPanUR,PositionTiltUR,PositionPanDL,PositionTiltDL<or><br>
+	or<br>CLEAR<br>where PositionPanUR and PositionTiltUR are the position to 
+	the Up-Right corner and<br></font><font face="Arial" size="3">PositionPanDL 
+	and PositionTiltDL re the position to the Down-Left corner.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK:</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="Zoom.htm">ZOOM</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="FocusPosition.htm">
+	FOCUS_POSITION</a>, <a href="Move.htm">MOVE</a>, <a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a>,
+	<a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>, 
+	<a href="MoveSpeed.htm">MOVE_SPEED</a>, <a href="Position.htm">
+	POSITION</a>, <a href="PositionGet.htm">POSITION_GET</a>,
+	<a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MOVE_LIMIT=SET,7187,-1224,-8179,3671</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?MOVE_LIMIT=SET,7187,-1224,-8179,3671</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?USER=Admin&amp;PWD=123456&amp;MOVE_LIMIT=CLEAR</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?MOVE_LIMIT=CLEAR</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspDOs</title>
+</head>
+
+<body>
+
+<p><font size="5" face="Arial">EVENT_RSPDO1, EVENT_RSPDO2</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<font face="Arial">
+	<p>Get or Set the DOs (Digital Out ports)  configurations.</p>
+	<p>The DOs could output the signal level to trigger external devices such as alarms. These output signals could be associated 
+	with the event sources based on users' applications.</p>
+	<p>This URL is available for devices which do not have 
+	DOs. This URL will be treated as dummy URL then.</p>
+    </font>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+level,dwell</font></p>
+<blockquote>
+	<p><font face="Arial">level: the active level. 0: active low, 1: active high<br>
+	dwell: the active time windows in seconds. It is from 0 ~ 86400 seconds. The 
+	0 means the output signal will be inactive as the event source becomes 
+	inactive. If it is not zero, the output level will be kept until the active 
+	window is expired no matter the event source is active or inactive.</font></p>
+	<p><font face="Arial">Here illustrate how the level and dwell work. Assume 
+	the EVENT_RSPDO1=1,3 which means the active level and time window of DO1 is 
+	high and 3 seconds and EVENT_RSPDO2=0,0 which means the active level is low 
+	and no time window in DO2.</font></p>
+	<p align="center">
+	<img border="0" src="images/DOTiming.JPG" width="449" height="400"></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">EVENT_RSPDO<b>n</b>='0,1'</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK:EVENT_RSPDO<b>n</b>='0,1'<br>
+	or<br>
+	</font>
+	<font face="Arial" size="3">ERROR:</font><font face="Arial">EVENT_RSPDO<b>n</b>='0,1'</font><p>
+	<font face="Arial">where <b>n</b> could be 1 or 2</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="EventConfig.htm">EVENT_CONFIG</a>, <a href="EventRspImg.htm">EVENT_RSPIMGn</a>, <a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspCmd.htm">EVENT_RSPCMDn</a>, <a href="EventRspGo.htm">EVENT_RSPGO</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+  <li><font face="Arial" size="4">read operation</font></li>
+</ul>
+<blockquote>
+  <p><font face="Arial">
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPDO<b>n</b><br>
+    or<br>
+  http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPDO<b>n</b></font></p>
+</blockquote>
+<ul>
+  <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPDO<b>n</b>=0,1<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPDO<b>n</b>=0,1<br>
+	where <b>n</b> could be 1 or 2</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p></blockquote>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SWITCH_TCP</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SWITCH_TCP</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Move the decoder to a encoder (in the TCP 2.0 mode) 
+	directly. The input argument of this URL has all necessary configurations of the encoder 
+	to connect to. And these configurations will be saved into the decoder's 
+	flash.</font></p>
+	<p><font face="Arial">Here is the format of the input argument of this URL.</font></p>
+	<p><font face="Arial">SWITCH_TCP=ENCODER_IP,USER_NAME,USER_PWD,VIDEO_AUDIO,VIDEO_CONTROL,PORT_STREAM,PORT_CONTROL,PORT_HTTP</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="238"><font face="Arial" size="4">Input 
+			Argument</font></td>
+			<td align="center"><font face="Arial" size="4">Description</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">ENCODER_IP</font></td>
+			<td><font face="Arial">&nbsp;The IP address of the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">USER_NAME</font></td>
+			<td><font face="Arial">&nbsp;The Account Name to logon the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">USER_PWD</font></td>
+			<td><font face="Arial">&nbsp;The Account Password to logon the 
+			Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">VIDEO_AUDIO</font></td>
+			<td><font face="Arial">&nbsp;1 or 0 to control if decoder needs to 
+			get the Audio Token to stream AudioOut to an encoder or not</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">VIDEO_CONTROL</font></td>
+			<td><font face="Arial">&nbsp;1 or 0 to control if decoder needs to 
+			establish the control session to the encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">PORT_STREAM</font></td>
+			<td><font face="Arial">&nbsp;TCP port number for video stream</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">PORT_CONTROL</font></td>
+			<td><font face="Arial">&nbsp;TCP port number for control session</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="238"><font face="Arial">PORT_HTTP</font></td>
+			<td><font face="Arial">&nbsp;HTTP port of the encoder</font></td>
+		</tr>
+	</table>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">See Above</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">OK: SWITCH_TCP='192.168.0.100,aaaa,111111,1,1,6002,6001,80'</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SwitchMul.htm">SWITCH_MUL</a>,
+	<a href="SwitchRtp.htm">SWITCH_RTP</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;SWITCH_TCP='192.168.0.100,aaaa,1111,1,1,6002,6001,80'</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

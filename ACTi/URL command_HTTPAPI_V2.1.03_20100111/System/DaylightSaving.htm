@@ -1,0 +1,175 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DAYLIGHT_SAVING_CONFIG</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DAYLIGHT_SAVING_CONFIG</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Day Light Saving configurations. There are 
+	two types of input arguments in this URL to set the start/end time of the 
+	Day Light Saving. </font></p>
+	<p><font face="Arial">In Type 1, 4 arguments are used to give the start/end 
+	time. The format is described below.</font><br>
+	<font face="Arial"><i>&lt;month&gt;,&lt;the order of week in a 
+	month&gt;,&lt;hour:minute&gt;,&lt;weekday&gt;</i>. If the start or end time 
+	begins on the hour, the third argument could be &lt;hour&gt;. The minute could be 
+	omitted in this URL.<br>
+	For example, the &quot;3,1,2:30,7&quot; sets the time to 2:30:00 on 
+	the first Sunday in March. And, the &quot;3,1,2,7&quot; sets the time to 2:00 on the 
+	first Sunday in March.</font></p>
+	<p><font face="Arial">In Type 2, 3 arguments are used to give the start/end 
+	time. the format is described below.</font><br>
+	<i>
+	<font face="Arial">&lt;month&gt;,&lt;month day&gt;,&lt;hour:minute&gt;. </font></i>
+	<font face="Arial">If the start or end time begins on the hour, the third 
+	argument could be &lt;hour&gt;. The minute could be omitted in this URL.</font><br>
+	<font face="Arial">For example, the &quot;3,31,14&quot; sets the time to 14:00 in the March 
+	31. And, the &quot;3,31,14:30&quot; sets the time to 14:30 in the March 31.</font></p>
+	<p><font face="Arial">There is no limitation for the start/end time to have 
+	the same format. For example, the format of start time is type1 and it of 
+	end time is type 2.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL is read-only command and the Router's Day 
+	Light Saving configurations will be returned.</font></p>
+	<p><font face="Arial">Please refer the
+	<a href="../../DaylightSavingDesignSpec/DaylightSavingDesignSpec.htm">
+	Daylight Saving Design Specification</a> for further details.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">a,b1,c1,d1,e1,f1,b2,c2,d2,e2,f2 where</font><br>
+	<font face="Arial">The &lt;b1,c1,d1,e1,f1&gt; indicates the start time of the Day Light Saving.</font><br>
+	<font face="Arial">The &lt;b2,c2,d2,e2,f2&gt; indicates the start time of the Day Light 
+	Saving.</font><br>
+	<table border="1" width="76%" id="table1">
+		<tr>
+			<td width="14%" align="center"><font size="4" face="Arial">Input 
+			Argument</font></td>
+			<td colspan="2" align="center"><font size="4" face="Arial">
+			Description</font></td>
+		</tr>
+		<tr>
+			<td width="14%" align="center"><font face="Arial">a</font></td>
+			<td colspan="2">
+	<font face="Arial">Day Light Saving Enable/Disable control. 0: Disable, 1: 
+			Enable</font></td>
+		</tr>
+		<tr>
+			<td width="14%" align="center"><font face="Arial">b1/b2</font></td>
+			<td width="85%" colspan="2"><font face="Arial">input argument type. 
+			1: Type1, 2: Type 2</font></td>
+		</tr>
+		<tr>
+			<td width="14%" align="center"><font face="Arial">c1/c2</font></td>
+			<td width="85%" colspan="2"><font face="Arial">month, 1, 2, 3, 4, 5, 
+			6, 7, 8, 9, 10, 11, 12</font></td>
+		</tr>
+		<tr>
+			<td width="14%" rowspan="2" align="center"><font face="Arial">d1/d2</font></td>
+			<td width="14%"><font face="Arial">when b1/b2 = 1</font></td>
+			<td width="70%"><font face="Arial">d1/d2 are the order of the week 
+			in a month. It could be 1, 2, 3, 4 for the first, second, third and 
+			last week in a month.</font></td>
+		</tr>
+		<tr>
+			<td width="14%"><font face="Arial">when b1/b2 = 2</font></td>
+			<td width="70%"><font face="Arial">d1/d2 are the month day started 
+			form 1 to 31.</font></td>
+		</tr>
+		<tr>
+			<td width="14%" align="center"><font face="Arial">e1/e2</font></td>
+			<td width="85%" colspan="2"><font face="Arial">the hour:minute of a 
+			day started form 0:00 to 23:59.</font></td>
+		</tr>
+		<tr>
+			<td width="14%" rowspan="2" align="center"><font face="Arial">f1/f2</font></td>
+			<td width="14%"><font face="Arial">when b1/b2 = 1</font></td>
+			<td width="70%"><font face="Arial">f1/f2 are the week day which 
+			started from 1 to 7, where 1 is for Monday and 7 is for Sunday</font></td>
+		</tr>
+		<tr>
+			<td width="14%"><font face="Arial">when b1/b2 = 2</font></td>
+			<td width="70%"><font face="Arial">f1/f2 are not used and will not 
+			be the input argument.</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The format of the input argument when start time type 
+	is type 1 and end time type is 2 is a,1,c1,d1,e1,f1,2,c2,d2,e2.<br>The 
+	format of the input argument when start time type is type 2 and end time 
+	type is 2 is a,2,c1,d1,e1,2,c2,d2,e2.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all encoders in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DAYLIGHT_SAVING_CONFIG='0,1,7,1,2:30,7,2,3,5,2:30'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DAYLIGHT_SAVING_CONFIG='0,1,7,1,2:45,7,2,3,5,2:45'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DAYLIGHT_SAVING_CONFIG='0,1,7,1,2:30,7,2,3,5,2:45'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH Encoder (Version after V2.08.01)</font></li>
+	<li><font face="Arial">EPL Platform : 1CH Encoder (Version after V3.07.00)</font></li>
+	<li><font face="Arial">PlatformT Platform: All Encoder Devices (Version 
+	after V4.00.00)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Router Version 
+	after 2.03.04)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Date.htm">DATE</a>, <a href="DateType.htm">
+	DATE_TYPE</a>, <a href="DateSntpIp.htm">DATE_SNTP_IP</a>,
+	<a href="DateSntpUpdate.htm">DATE_SNTP_UPDATE</a>,
+	<a href="DateManualDate.htm">DATE_MANUAL_DATE</a>,
+	<a href="DateManualTime.htm">DATE_MANUAL_TIME</a>,
+	<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a>, <a href="DateConfig.htm">
+	DATE_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DAYLIGHT_SAVING_CONFIG<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?DAYLIGHT_SAVING_CONFIG</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DAYLIGHT_SAVING_CONFIG=0,1,7,1,2,7,2,3,5,2<br>
+	<foont face="Arial">or<br>http://ip:port/cgi-bin/cmd/system?DAYLIGHT_SAVING_CONFIG=0,1,7,1,2,7,2,3,5,2<br>
+	</font>
+	</font>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

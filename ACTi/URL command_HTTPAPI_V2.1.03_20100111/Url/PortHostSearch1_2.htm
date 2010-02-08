@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT_SEARCH1_2</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PORT_HOST_SEARCH_1, PORT_HOST_SEARCH_2</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set device search server port numbers. 
+	We provide some utilities like IPUtility to find all our devices in the 
+	intranet through these UDP search ports.</font></p>
+	<p><font face="Arial">When write, the port number will be checked if it was 
+	used from other applications.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">UDP port number, 1~65535</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only in WPL Decoder Devices</font></li>
+	<li><font face="Arial">Readable and Writable in 
+	EPL Decoder Devices</font></li>
+	<li><font face="Arial">On-Fly (except WPL Decoder Devices)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">In WPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">None</font></li>
+	</ul>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">Read Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">PORT_HOST_SEARCH_1='6005'</font><br>
+		<font face="Arial">PORT_HOST_SEARCH_2='6006'</font>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">Write Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">OK: PORT_HOST_SEARCH_1='6005'</font><br>
+		<font face="Arial">OK: PORT_HOST_SEARCH_2='6006'</font><br>
+		<font face="Arial">or</font><br><font face="Arial">ERROR: PORT_HOST_SEARCH_1='6005'</font><br>
+		<font face="Arial">ERROR: PORT_HOST_SEARCH_2='6006'</font><br>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">VALID</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Port.htm">PORT</a>, <a href="PortHttp.htm">
+	PORT_HTTP</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;PORT_HOST_SEARCH_1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;PORT_HOST_SEARCH_2</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;PORT_HOST_SEARCH_1=6005</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;PORT_HOST_SEARCH_2=6006</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

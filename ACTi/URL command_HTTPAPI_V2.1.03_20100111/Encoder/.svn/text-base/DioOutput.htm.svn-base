@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DIO_OUTPUT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DIO_OUTPUT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set the device's DOs signal level. </font></p>
+	<p><font face="Arial">The input argument is in hexadecimal. The mapping of 
+	the hexadecimal value to the DOs are listed below.</font></p>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td width="370"><b><font face="Arial">Bit and value in the input 
+			argument</font></b></td>
+			<td><b><font face="Arial">Signal level in DO pins</font></b></td>
+		</tr>
+		<tr>
+			<td width="370"><font face="Arial">Bit 0 = 0</font></td>
+			<td><font face="Arial">DO1 is Low</font></td>
+		</tr>
+		<tr>
+			<td width="370"><font face="Arial">Bit 0 = 1</font></td>
+			<td><font face="Arial">DO1 is High</font></td>
+		</tr>
+		<tr>
+			<td width="370"><font face="Arial">Bit 1 = 0</font></td>
+			<td><font face="Arial">DO2 is Low</font></td>
+		</tr>
+		<tr>
+			<td width="370"><font face="Arial">Bit 1 = 1</font></td>
+			<td><font face="Arial">DO2 is High</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The value in the higher bits, bit 7~2, are ignored.</font></p>
+	<p><font face="Arial">The value in the return message is the echo of the 
+	input argument. It does not reflect the DO signal after this command.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">0xn (1byte hexadecimal value)</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Write Operation</font></pre></li>
+</ul>
+<blockquote><font face="Arial" size="3">OK: DIO_OUTPUT='0x00'</font> 
+	<font face="Arial"><br>or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+	<br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All&nbsp; Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;DIO_OUTPUT=0x01</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?DIO_OUTPUT=0x01</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">
+	ENCODER_CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

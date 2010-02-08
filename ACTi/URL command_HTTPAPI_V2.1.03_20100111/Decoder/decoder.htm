@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DECODER CGI Program</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="6">DECODER CGI Program</font></p>
+<p align="left"><font face="Arial">This CGI provides the URL command to access 
+the Decoder devices.</font></p>
+<p align="left"><font face="Arial">Only root could set the configuration through 
+this CGI. If the logon user is not root, all write commands will be 
+treated as read commands.</font></p>
+<p align="left"><font face="Arial" size="4">NOTE:</font></p>
+<blockquote>
+	<p align="left"><font face="Arial">The <a href="../Url/url.htm">URL CGI</a> 
+	which is old fashion CGI used for Decoder Devices. It will be divided into 
+	two parts of URLs. One will be migrated to the
+	<a href="../System/system.htm">SYSTEM CGI</a> and the other one will be 
+	moved and modified in this CGI.</font></p>
+	<p align="left"><font face="Arial">This CGI is available only for the 
+	firmware version after B1X-A2-B2.05.06 in WPL Decoders.</font></p>
+	<p align="left"><font face="Arial">This CGI is available only for the 
+	firmware version after B1D-220-V3.02.00 in EPL Decoders.</font></p>
+</blockquote>
+<p align="left"><font face="Arial" size="5">List of URLs</font></p>
+<blockquote>
+	<table border="1" width="80%" id="table5" height="243">
+		<tr>
+			<td rowspan="2" width="30%">
+			<p align="center"><font face="Arial" size="5">URL</font></td>
+			<td colspan="3">
+			<p align="center"><font face="Arial" size="5">Attribute<sup> </sup>(R/W, On-Fly)<sup><a href="#Remark1">1</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="23%">
+			<p align="center"><font face="Arial" size="4">WPL Decoder</font></td>
+			<td width="24%">
+			<p align="center"><font face="Arial" size="4">EPL Decoder</font></td>
+			<td width="21%">
+			<p align="center"><font size="4" face="Arial">PlatformT Decoder</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center" bgcolor="#FFFF00">
+			<p align="left">Video Function</td>
+			<td width="23%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="24%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="21%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="30%" align="center" bgcolor="#00FFFF">
+			<p align="left">Basic</td>
+			<td width="23%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="24%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="21%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="ChannelConfig.htm">CHANNEL_CONFIG</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="ChannelTime.htm">CHANNEL_TIME</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="ChannelInfo.htm">CHANNEL_INFO</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font size="2" face="Arial">
+			<a href="ChannelSwitch.htm">CHANNEL_SWITCH</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="NVR.htm">NVR</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center" bgcolor="#00FFFF">
+			<p align="left">OSD</td>
+			<td width="23%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="24%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="21%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="30%" align="center">
+			<font face="Arial" size="2"><a href="Osd.htm">OSD</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="OsdFormat.htm">OSD_FORMAT</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="OsdPosition.htm">OSD_POSITION</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="OsdPositionRange.htm">OSD_POSITION_RANGE</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RO,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="30%" align="center" bgcolor="#00FFFF">
+			<p align="left">MISC</td>
+			<td width="23%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="24%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="21%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="30%" align="center"><font face="Arial" size="2">
+			<a href="../System/Dummy.htm">DUMMY</a></font></td>
+			<td width="23%" align="center"><font face="Arial" size="2">XX,X</font></td>
+			<td width="24%" align="center"><font face="Arial" size="2">XX,X</font></td>
+			<td width="21%" align="center"><font face="Arial" size="2">XX,X</font></td>
+		</tr>
+		</table>
+</blockquote>
+<p><font face="Arial" size="5">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+</blockquote>
+<div align="center">
+	<p align="left"><font face="Arial" size="5">Foot Note</font></div>
+<div align="center">
+	<table border="1" width="90%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only) or None 
+			(not supported)<br>The X,X means it is an action URL which is not a 
+			read commend.</font></td>
+		</tr>
+		</table>
+</div>
+
+</body>
+
+</html>

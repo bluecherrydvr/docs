@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>QUAD_SEQUENCE_TIME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">QUAD_SEQUENCE_TIME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<div class="level2">
+	<blockquote>
+		<p><font face="Arial">Set or Get the display time of each channel in 
+		ACD-2000Q. when the <a href="VideoStream.htm">VIDEO_STREAM</a> is 
+		SEQUENTIAL</font></p>
+		<p><font face="Arial">In ACD2000Q SEQUENTIAL mode, it could display 
+		video source sequentially. The display sequence is in the following 
+		order and could not be configurable.</font></p>
+		<p><font face="Arial">Video play sequence:</font></p>
+		<p><font face="Arial">Quad -&gt; Channel 1 -&gt; Channel 2 -&gt; Channel 3 -&gt; 
+		Channel 4</font></p>
+		<p><font face="Arial">This sequence will be repeated until the streaming 
+		mode is changed.</font></p>
+		<p><font face="Arial">This URL sets the display time in second for each 
+		channel. If the time of a channel is 0, this channel will be skipped 
+		during the sequential preview. However, it is NOT allow to set all 
+		display time to 0.</font></p>
+	</blockquote>
+</div>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">TimeQuad,TimeCh1,TimeCh2,TimeCh3,TimeCh4<br>where<br>
+	TimeQuad: the display time of Quad channel and is from 5 to 65535<br>
+	TimeCh1: the display time of Channel 1 and is from 5 to 65535<br>TimeCh2: 
+	the display time of Channel 2 and is from 5 to 65535<br>TimeCh3: the display 
+	time of Channel 3 and is from 5 to 65535<br>TimeCh4: the display time of 
+	Channel 4 and is from 5 to 65535</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">QUAD_SEQUENCE_TIME</font><font face="Arial" size="3">='10,10,10,10,10'</font><br>
+	</p>
+</blockquote>
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial" size="3">OK: </font><font face="Arial">
+	QUAD_SEQUENCE_TIME</font><font face="Arial" size="3">='10,10,10,10,10'</font><br>
+	<font face="Arial" size="3">or</font><br><font face="Arial" size="3">ERROR: 
+	</font><font face="Arial">QUAD_SEQUENCE_TIME</font><font face="Arial" size="3">='10,10,10,10,10'</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : ACD2000Q</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoStream.htm">VIDEO_STREAM</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;QUAD_SEQUENCE_TIME</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?QUAD_SEQUENCE_TIME</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

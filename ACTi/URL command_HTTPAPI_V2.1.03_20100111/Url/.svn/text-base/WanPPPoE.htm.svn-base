@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN_PPPOE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN_PPPOE_USERNAME, WAN_PPPOE_PASSWORD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the PPPoE configuration on WAN port. These Settings are only 
+	valid if only if the WAN_TYPE is PPPoE. The input argument string length 
+	will be checked before apply it.</font></p>
+	<p><font face="Arial">In EPL decoder, this URL is same as the
+	<a href="../System/WanPPPoE.htm">WAN_PPPOE_USERNAME</a> and
+	<a href="../System/WanPPPoE.htm">WAN_PPPOE_PASSWORD</a> in the
+	<a href="../System/system.htm">SYSTEM CGI</a> but only
+	<a href="../General/GeneralDescription.htm">Type1</a> URL command is 
+	supported.</font></p>
+	<p><font face="Arial">Therefore, the WAN_PPPOE_USERNAME and 
+	WAN_PPPOE_PASSWORD URLs in WPL decoders are only addressed in this page.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">Character strings (&lt; 64 Bytes)</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font><br>
+	</p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices (refer to
+	<a href="../System/WanPPPoE.htm">WAN_PPPOE_USERNAMEand WAN_PPPOE_PASSWORD in 
+	the SYSTEM CGI</a>)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Wan.htm">WAN</a>, <a href="WanType.htm">WAN_TYPE</a>, 
+	<a href="WanAddress.htm">WAN_IP</a>, <a href="WanAddress.htm">WAN_NETMASK</a>, 
+	<a href="WanAddress.htm">WAN_GATEWAY</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_USERAME=''</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_PASSWORD=''</font></blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a>, <a href="../System/system.htm">SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+<p>¡@</p>
+
+</body>
+
+</html>

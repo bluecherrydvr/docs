@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>FOCUS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">FOCUS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Perform the focus function.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="231"><b><font face="Arial">FOCUS Command</font></b></td>
+			<td align="center"><b><font face="Arial">Description</font></b></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">STOP</font></td>
+			<td align="left"><font face="Arial">Stop the focus action.</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">FAR</font></td>
+			<td align="left"><font face="Arial">Put the focus on the far end.</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">NEAR</font></td>
+			<td align="left"><font face="Arial">Put the focus on the near end</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">AUTO</font></td>
+			<td align="left"><font face="Arial">Set the focus mode to auto mode</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">MANUAL</font></td>
+			<td align="left"><font face="Arial">Set the focus mode to manual 
+			mode</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">SWITCH</font></td>
+			<td align="left"><font face="Arial">Change the focus mode from 
+			current mode to the other one (Auto -&gt; Manual or Manual -&gt; Auto)</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="231"><font face="Arial">DIRECT,n</font></td>
+			<td align="left"><font face="Arial">Put the focus to the specific 
+			position</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">For PTZ IP Camera, the FOCUS=STOP should be sent after 
+	another FOCUS command had been sent.</font></p>
+	<p><font face="Arial">The focus position in this URL is from 0 to 
+	65535. The PTZ camera might not have such wide range of the focus position. 
+	However, the device will NOT validate the focus position before parser and 
+	handle this URL. Please refer to the device specification to have correct 
+	focus position range.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Cmd</font><br>
+	<font face="Arial">where Cmd could be STOP, FAR, NEAR, AUTO, MANUAL or 
+	SWITCH</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">DIRECT,n</font><br>
+	<font face="Arial">where n is the value from 0~65535 to indicate 
+	the position of focus.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK:</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="Zoom.htm">ZOOM</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="FocusPosition.htm">
+	FOCUS_POSITION</a>, <a href="Move.htm">MOVE</a>, <a href="MoveLimit.htm">
+	MOVE_LIMIT</a>, <a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a>,
+	<a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>, <a href="Position.htm">
+	POSITION</a>, <a href="PositionGet.htm">POSITION_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;FOCUS=FAR</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?FOCUS</font><font face="Arial" size="3">=FAR</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

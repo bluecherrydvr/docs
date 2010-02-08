@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT_TCP2</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PORT_REGISTER, PORT_CONTROL, PORT_VIDEO, 
+PORT_MULTICAST</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set device's streaming and control ports which 
+	are used in TCP 1.0 or TCP 2.0 streaming protocols. When write, the port number will be 
+	checked if it was used from other applications.</font></p>
+	<p><i><b><font face="Arial">PORT_REGISTER</font></b></i></p>
+	<p><font face="Arial">In device register port (PORT_REGISTER), it is used in 
+	the TCP 1.0 streaming protocol which is out of fashion. All of 
+	devices except the WPL devices do not support this protocol now. This URL 
+	will be the read-only command and return the 6000 for backward compatible 
+	consideration in all devices which do not support the ATCi TCP 1.0 protocol. 
+	And, the port 6000 is not used even it reply its register port is 6000.</font></p>
+	<p><i><b><font face="Arial">PORT_CONTROL</font></b></i></p>
+	<p><font face="Arial">In device control port (PORT_CONTROL), it is used in a 
+	TCP session to carry the control message between two devices. In the 
+	TCP 1.0 and 2.0 protocol, because the control port is used, all of 
+	devices have this port.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this will set the port base of all channels. The 
+	control port of the CHANNEL n will be the control port base + n -1. For 
+	example, the PORT_CTRL=6010 will set the base of control port to 6010. Then, 
+	the control port of CHANNEL 1 is 6010, the control port of CHANNEL 2 is 
+	6011. </font></p>
+	<p><i><b><font face="Arial">PORT_VIDEO</font></b></i></p>
+	<p><font face="Arial">In device video port (PORT_VIDEO), it is used in a TCP 
+	session to carry the Video and AudioIn streams from an encoder device to a 
+	decoder. In the TCP 1.0 and 2.0 protocol, because the video port is 
+	used, all of devices have this port.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this will set the port base of all channels. The video 
+	port of the CHANNEL n will be the video port base + n -1. For example, the 
+	PORT_VIDEO=6050 will set the base of control port to 6050. Then, the control 
+	port of CHANNEL 1 is 6050, the control port of CHANNEL 2 is 6051. </font></p>
+	<p><i><b><font face="Arial">PORT_MULTICAST</font></b></i></p>
+	<p><font face="Arial">In device multicast port (PORT_MULTICAST), it is used 
+	in an UDP session in multicast to carry the Video and AudioIn streams from 
+	an encoder to decoders. In the TCP 1.0 and 2.0 protocol, because the 
+	multicast port is used, all of devices have this port.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this will set the port base of all channels. The 
+	multicast port of all CHANNELs will be this multicast port. For example, the 
+	PORT_MULTICAST=5000 will set the multicast port of all CHANNEL to 5000.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td width="214"><font face="Arial"><b>URL Commnd Name</b></font></td>
+			<td><font face="Arial"><b>Description</b></font></td>
+		</tr>
+		<tr>
+			<td width="214"><font face="Arial">PORT_REGISTER</font></td>
+			<td>
+	<font face="Arial">TCP port number, 1~65535</font></td>
+		</tr>
+		<tr>
+			<td width="214"><font face="Arial">PORT_CONTROL</font></td>
+			<td>
+	<font face="Arial">TCP port number, 1~65535</font></td>
+		</tr>
+		<tr>
+			<td width="214"><font face="Arial">PORT_VIDEO</font></td>
+			<td>
+	<font face="Arial">TCP port number, 1~65535</font></td>
+		</tr>
+		<tr>
+			<td width="214"><font face="Arial">PORT_MULTICAST</font></td>
+			<td><font face="Arial">UDP port number, 1~65535</font></td>
+		</tr>
+	</table>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly (except all encoder in WPL and Multi-Channel Platforms)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">PORT_REGISTER='6000'</font><br>
+	<font face="Arial">PORT_CONTROL='6001'</font><br>
+	<font face="Arial">PORT_VIDEO='6002'</font><br>
+	<font face="Arial">PORT_MULTICAST='5000'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: PORT_REGISTER='6000'</font><br>
+	<font face="Arial">OK: PORT_CONTROL='6001'</font><br>
+	<font face="Arial">OK: PORT_VIDEO='6002'</font><br>
+	<font face="Arial">OK: PORT_MULTICAST='5000'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: PORT_REGISTER='6000'</font><br>
+	<font face="Arial">ERROR: PORT_CONTROL='6001'</font><br>
+	<font face="Arial">ERROR: PORT_VIDEO='6002'</font><br>
+	<font face="Arial">ERROR: PORT_MULTICAST='5000'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Port.htm">PORT</a>,
+	<a href="PortHttp.htm">PORT_HTTP</a>, <a href="PortSearch1_2.htm">PORT_SEARCH_1</a>, <a href="PortSearch1_2.htm">
+	PORT_SEARCH_2</a>, <a href="PortSearch.htm">PORT_SEARCH</a>,
+	<a href="PortRTP.htm">
+	V2_PORT_RTSP</a>, <a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a>,
+	<a href="PortRTP.htm">V2_PORT_RTP_MULTI_AUDIO</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_REGISTER</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_CONTROL</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_VIDEO</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_MULTICAST</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_REGISTER</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_CONTROL</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_VIDEO</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_MULTICAST</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_REGISTER=6000</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_CONTROL=6001</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_VIDEO=6002</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_MULTICAST=5000</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_REGISTER=6000</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_CONTROL=6001</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_VIDEO=6002</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_MULTICAST=5000</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br><br></p>
+
+</body>
+
+</html>

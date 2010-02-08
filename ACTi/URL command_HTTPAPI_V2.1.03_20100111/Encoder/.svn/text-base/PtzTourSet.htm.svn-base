@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOVE_TOUR_SET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_TOUR_SET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or clear a PTZ tour entry configuration. It could 
+	clear all tour entries in a tour group as well.</font></p>
+	<p><font face="Arial">In PTZ camera, there is 10 PTZ tour groups which has 
+	32 (EPL) and 64 (PlatformT) tour entries. The device could follow a tour group configuration to move 
+  the camera periodically. </font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<table border="1" width="93%" id="table1">
+		<tr>
+			<td align="center" width="442"><b><font face="Arial">PTZ_TOUR_SET Command</font></b></td>
+			<td width="371" align="center"><b><font face="Arial">Description</font></b></td>
+		</tr>
+		<tr>
+			<td align="left" width="442"><font face="Arial" size="2">
+		  Group,Entry,State,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom</font></td>
+			<td align="left"><font face="Arial" size="2">Set a configuration of 
+			the PTZ tour entry in a tour group (State=1).</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="442"><font face="Arial" size="2">
+			Group,Entry,0</font></td>
+			<td align="left"><font face="Arial" size="2">remove a PTZ tour entry 
+			from a tour group</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="442"><font face="Arial" size="2">Group,0</font></td>
+			<td align="left"><font face="Arial" size="2">remove all PTZ tour 
+			entries from a tour group</font></td>
+		</tr>
+		</table>
+	<ol style="font-family: Arial; font-size: 12pt">
+		<li><font face="Arial">Group: PTZ tour group ID is started from 1 to 10.</font></li>
+		<li>Entry: tour entry in the tour group. It started from 1. The 
+		device will execute the entries in the tour group by ascending order.</li>
+		<li>State: Set the entry to be valid or invalid. It is 1 for a valid 
+		entry and 0 for an invalid entry.</li>
+		<li>PersetPoint: Set the PTZ preset entry to associate this tour entry. 
+		It should be started from 1 to 32</li>
+		<li>Dwell: The timer for moving to and staying this entry in second. It 
+		should be in the range between 1 and 255</li>
+		<li>Sequence: The sequence order in the tour group. It started from 1. Currently, it is not used.</li>
+		<li>SpeedPan: The speed in pan to move to this preset point in this tour group. It should be in the range between 1 and 5.</li>
+		<li>SpeedTilt: The speed in tilt to move to this preset point in this tour group. It should be in the range between 1 and 5.</li>
+		<li>SpeedZoom: The speed in zoom to move to this preset point in this tour group. It should be in the range between 2 and 7.</li>
+	</ol>
+	<p>The SpeedPan, SpeedTilt and SpeedZoon are used in the PlatformT PTZ/Speed Dome camera only. These three arguments will be ignored in EPL PTZ camera with any error.</p>
+	<p><font face="Arial">To remove a specific tour entry, this URL could be 
+	  simplified to PTZ_TOUR_SET=Group,Entry,0 where Group is from 1~10 and Entry is from 1. However, the 
+	  complete arguments in this URL for clearing the entry is acceptable.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Refer to above command table</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3"> Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK:</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>, <a href="PtzPresetGo.htm">
+	PTZ_PRESET_GO</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourState.htm">PTZ_TOUR_STATE</a>, <a href="PtzTourName.htm">
+	PTZ_TOUR_NAME</a>, <a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a>,
+	<a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_TOUR_SET=1,2,1,5,10,1</font>,5,5,3<br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_TOUR_SET=1,2,1,5,10,1</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_TOUR_SET=1,2,0</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_TOUR_SET=1,2,0</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_TOUR_SET=1,0</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_PRESET_GET=1,0</font><br>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

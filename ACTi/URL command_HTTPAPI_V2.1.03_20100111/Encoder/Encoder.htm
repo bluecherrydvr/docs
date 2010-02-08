@@ -1,0 +1,1179 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Encoder CGI Program</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style>
+</head>
+
+<body>
+<h2 align="center">Encoder CGI Program</h2>
+<p align="left">
+	Only root could set the configuration through this MPEG4 CGI. If the logon user is not root, all write commands will be 
+	treated as read commands. The CGI is only available in the Encoder Devices. The 
+	URL in this CGI will be forwarded to all video servers by router in the Multi-Channel Encoder platform.
+</p>
+<p align="left">NOTE:</p>
+<blockquote>
+	<p align="left">This CGI is new CGI for replacing <a href="../Mpeg4/mpeg4.htm">mpeg4 CGI</a>.</p>
+</blockquote>
+<p align="left">List of URLs</p>
+<div align="center">
+	<table border="1" width="95%" id="table1">
+		<tr>
+			<td rowspan="3" align="center" width="25%">
+			<font face="Arial" size="2">URL</font></td>
+			<td colspan="4" align="center"><font face="Arial" size="2">Attribute 
+			(R/W, On-Fly)<a href="#Remark1">1</a></font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial" size="2">WIS 
+			Platform</font></td>
+			<td align="center"><font face="Arial" size="2">EPL 
+			Platform</font></td>
+			<td align="center"><font face="Arial" size="2">Platform 
+			T</font></td>
+			<td align="center"><font face="Arial" size="2">Multi-Channel Encoder<a href="#Remark2">2</a></font></td>
+		</tr>
+		<tr>
+			<td align="center" width="16%"><font face="Arial" size="2">Encoder</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">Encoder</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">Encoder</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">Video Server</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#FFFF00">
+			<font face="Arial" size="2">From MPEG4 CGI</font></td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="19%" bgcolor="#FFFF00">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoStatus.htm">VIDEO_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoCameraName.htm">
+			VIDEO_CAMERA_NAME</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoAdjust.htm">
+			VIDEO_BRIGHTNESS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_CONTRAST</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoAdjust.htm">
+			VIDEO_SATURATION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_HUE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/DioStatus.htm">DIO_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/MotionStatus.htm">MOTION_STATUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,X</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/MotionSetting.htm">MOTION_SETTING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/SerialSetting.htm">SERIAL_SETTING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/SerialAscii.htm">SERAIL_ASCII</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/SerialHex.htm">SERIAL_HEX</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/RtpMcastStream.htm">RTP_MULTICAST_STREAMING</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#FFFF00">
+			<font face="Arial" size="2">Video / Audio Function</font></td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="19%" bgcolor="#FFFF00">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">Basic</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoEncoder.htm">VIDEO_ENCODER</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoStream.htm">VIDEO_STREAM</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark5">5</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark5">5</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="../Mpeg4/VideoResolution.htm">
+			VIDEO_RESOLUTION</a></font></td>
+			<td align="center" width="16%" height="21"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%" height="21"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%" height="21"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%" height="21"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoFps.htm">
+			VIDEO_FPS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><b><font face="Arial" size="2">None</font></b></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoVariableFps.htm">VIDEO_VARIABLE_FPS</a></font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">WO,V</font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">WO,V</font></td>
+			<td align="center" width="16%"><b><font face="Arial" size="2">None</font></b></td>
+			<td align="center" width="19%"><font size="2" face="Arial">WO,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VariableFpsNum.htm">
+			VARIABLE_FPS_NUM</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><b><font face="Arial" size="2">None</font></b></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoFpsNum.htm">
+			VIDEO_FPS_NUM</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><b><font face="Arial" size="2">None</font></b></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MaxStreamTime.htm">
+			MAX_STREAM_TIME</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+		  <td align="left"><font face="Arial" size="2"><a href="Snapshot.htm">SNAPSHOT</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">X,X</font></td>
+		  <td align="center"><font face="Arial" size="2">X,X</font></td>
+		  <td align="center"><font face="Arial" size="2">X,X<a href="#Remark3">3</a></font></td>
+	  </tr>
+		<tr>
+		  <td align="left"><font face="Arial" size="2"><a href="SendAudio.html">SEND_AUDIO</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">OSD</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="OsdFormat.htm">OSD_FORMAT</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="OsdEnabled.htm">OSD_ENABLED</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark7">7</a></font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">None</font></td>
+			<td align="center" width="19%"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="PrivacyRegion.htm">
+			PRIVACY_REGION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">MJPEG</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoMjpegQuality.htm">
+			VIDEO_MJPEG_QUALITY</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoMjpegFps.htm">
+			VIDEO_MJPEG_FPS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">MPEG4/H.264</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoMpeg4Quality.htm">
+			VIDEO_MPEG4_QUALITY</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoH264Quality.htm">
+			VIDEO_H264_QUALITY</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/VideoBitRate.htm">
+			VIDEO_BITRATE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" height="21">
+			<font face="Arial" size="2"><a href="VideoMaxBitRate.htm">
+			VIDEO_MAX_BITRATE</a></font></td>
+			<td align="center" width="16%" height="21">
+			<font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%" height="21"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%" height="21"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%" height="21"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="VideoFpsRatio.htm">
+			VIDEO_FPS_RATIO</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="QuadSequenceTime.htm">
+			QUAD_SEQUENCE_TIME</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">RW,V<a href="#Remark7">7</a></font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">None</font></td>
+			<td align="center" width="19%"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+		  <td align="left"><font size="2"><a href="VideoGop.htm">VIDEO_GOP</a></font></td>
+		  <td align="center">None</td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#FFFF00">
+			<font face="Arial" size="2">Camera Function</font></td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="19%" bgcolor="#FFFF00">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">Video Quality Control</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoWbMode.htm">VIDEO_WB_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoWbGain.htm">VIDEO_WB_GAIN</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+		  <td align="left">
+          <font face="Arial" size="2"><a href="ExposureGainGet.html">EXPOSURE_GAIN_GET</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoShutterMode.htm">
+			VIDEO_SHUTTER_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoShutterSpeed.htm">VIDEO_SHUTTER_SPEED</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+	        <font face="Arial" size="2"><a href="VideoMaxShutter.htm">VIDEO_MAX_SHUTTER</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+		  <td align="left">
+          <font face="Arial" size="2"><a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoSlowShutter.htm">VIDEO_SLOW_SHUTTER</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoFlickless.htm">VIDEO_FLICKLESS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="LineFreq.htm">LINE_FREQ</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="VideoIris.htm">VIDEO_IRIS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+		  <td align="left"><font size="2" face="Arial"><a href="VideoIrisMode.html">VIDEO_IRIS_MODE</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+		  <td align="left"><font size="2" face="Arial"><a href="VideoDCLevel.htm">VIDEO_DC_LEVEL</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="VideoBlcMode.htm">VIDEO_BLC_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="VideoSenseupLevel.htm">VIDEO_SENSEUP_LEVEL</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="DayGainThd.htm">DAY_GAIN_THD</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="NightGainThd.htm">
+			NIGHT_GAIN_THD</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">NONE</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoMirrorMode.htm">VIDEO_MIRROR_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoFlipMode.htm">VIDEO_FLIP_MODE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoDeinterlace.htm">
+			VIDEO_DEINTERLACE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoDnr.htm">VIDEO_DNR</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoBlackLevel.htm">
+			VIDEO_BLACKLEVEL</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoSkinTone.htm">
+			VIDEO_SKINTONE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoWdr.htm">VIDEO_WDR</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="V2Sharpness.htm">V2_SHARPNESS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark6">6</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="LensCompensation.htm">LENS_COMPENSATION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<a href="VideoSharpness.htm"><font size="2" face="Arial">
+			VIDEO_SHARPNESS</font></a></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font size="2" face="Arial">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+		  <td align="left"><a href="VideoDNIRLed.htm"><font face="Arial" size="2">VIDEO_DN_IRLED</font></a></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+		  <td align="left"><a href="VideoDNIRCutFilter.htm"><font face="Arial" size="2">VIDEO_DN_IRCUT</font></a></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%">
+			<a href="VideoDNTimer.htm"><font face="Arial" size="2">VIDEO_DN_TIMER</font></a></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="VideoDNType.htm">VIDEO_DN_TYPE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">PTZ Control</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="CameraPreset.htm">CAMERA_PRESET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="Addr.htm">ADDR</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="PtzVendor.htm">PTZ_VENDOR</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="Zoom.htm">ZOOM</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="ZoomPosition.htm">ZOOM_POSITION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="Focus.htm">FOCUS</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="FocusPosition.htm">
+			FOCUS_POSITION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="Move.htm">MOVE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MoveLimit.htm">MOVE_LIMIT</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MoveLimitGet.htm">
+			MOVE_LIMIT_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MoveMaxSpeedGet.htm">
+			MOVE_MAX_SPEED_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="Position.htm">POSITION</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="PositionGet.htm">POSITION_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="XyzPosGet.htm">XYZ_POS_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzPresetSet.htm">
+			PTZ_PRESET_SET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="PtzPresetGet.htm">
+			PTZ_PRESET_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzPresetGo.htm">PTZ_PRESET_GO</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzTourSet.htm">PTZ_TOUR_SET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzTourGet.htm">PTZ_TOUR_GET</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+        <tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RO,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RO,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="PtzTourState.htm">
+			PTZ_TOUR_STATE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<a href="PtzTourName.htm"><font size="2" face="Arial">PTZ_TOUR_NAME</font></a></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font size="2" face="Arial"><a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V<a href="#Remark4">4</a></font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V<a href="#Remark3">3</a>,<a href="#Remark4">4</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#FFFF00">
+			<font face="Arial" size="2">Event/Ctrl Function</font></td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="19%" bgcolor="#FFFF00">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">Motion Detection</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/MotionEnabled.htm">
+			MOTION_ENABLED</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionConfig.htm">MOTION_CONFIG</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="../Mpeg4/MotionSen.htm">
+			MOTION_SENSITIVE</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionTimer.htm">MOTION_TIMER</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="MotionObj.htm">MOTION_OBJ</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+        <tr>
+			<td align="left">
+			<font face="Arial" size="2"><a href="PirMdConfig.htm">PIR_MD_CONFIG</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="DioOutput.htm">DIO_OUTPUT</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#00FFFF">
+			<font face="Arial" size="2">Event Handler</font></td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="16%" bgcolor="#00FFFF">　</td>
+			<td align="center" width="19%" bgcolor="#00FFFF">　</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+		  <a href="HttpServer.htm">HTTP_SERVER</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="HTTP_PROXY.htm">HTTP_PROXY</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+		  <a href="SmtpServer.htm">SMTP_SERVER</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+		  <a href="FtpServer.htm">FTP_SERVER</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+		  <a href="EventRspDO.htm">EVENT_RSPDO</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+		  <a href="EventRspMsg.htm">EVENT_RSPMSGn</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="EventRspImg.htm">EVENT_RSPIMGn</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="EventRspGo.htm">EVENT_RSPGO</a></font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="16%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="19%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="EventConfig.htm">EVENT_CONFIG</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="EventDI.htm">EVENT_DIn</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="25%">
+			<font face="Arial" size="2"><a href="EventRspCmd.htm">EVENT_RSPCMDn</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">None</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">RW,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+		  <td align="left"><font face="Arial" size="2"><a href="EventRspMd.htm">EVENT_RSPMDn</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+	  </tr>
+      <tr>
+		  <td align="left"><font face="Arial" size="2"><a href="EventRspMdPIR.htm">EVENT_RSPMDPIR</a></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%" bgcolor="#FFFF00">
+			<font face="Arial" size="2">Misc Function</font></td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="16%" bgcolor="#FFFF00">　</td>
+			<td align="center" width="19%" bgcolor="#FFFF00">　</td>
+		</tr>
+		<tr>
+		  <td align="left"><font face="Arial" size="2"><a href="GetStream.htm">GET_STREAM</a></font></td>
+		  <td align="center"><font face="Arial" size="2">XX,X</font></td>
+		  <td align="center"><font face="Arial" size="2">WO,V</font></td>
+		  <td align="center"><font face="Arial" size="2">WO,V</font></td>
+		  <td align="center"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+	  </tr>
+		<tr>
+			<td align="left" width="25%"><font size="2" face="Arial"><a href="GetCtrlMsg.htm">GET_CTRL_MSG</a></font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">XX,X</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="16%"><font face="Arial" size="2">WO,V</font></td>
+			<td align="center" width="19%"><font face="Arial" size="2">WO,V<a href="#Remark3">3</a></font></td>
+		</tr>
+        <tr>
+			<td align="left"><a href="GetDIState.htm">GET_DI_STATE</a></font></td>
+			<td align="center">RO,X</td>
+			<td align="center">RO,X</td>
+			<td align="center">RO,X</td>
+			<td align="center">RO,X<a href="#Remark3">3</a></td>
+		</tr>
+        <tr>
+			<td align="left"><a href="SetDo.htm">SET_DO</a></font></td>
+			<td align="center">WO,X</td>
+			<td align="center">WO,X</td>
+			<td align="center">WO,X</td>
+			<td align="center">WO,X<a href="#Remark3">3</a></td>
+		</tr>
+		<tr>
+		  <td align="left"><font face="Arial" size="2"><a href="../System/Dummy.htm">DUMMY</a></font></td>
+		  <td align="center"><font face="Arial" size="2">XX,X</font></td>
+		  <td align="center"><font face="Arial" size="2">XX,X</font></td>
+		  <td align="center"><font face="Arial" size="2">XX,X</font></td>
+		  <td align="center"><font face="Arial" size="2">XX,X</font></td>
+	  </tr>
+		</table>
+<p align="left">Back to</p>
+	<blockquote>
+		<p align="left"><a href="../index.htm">HOME</a></p>
+	</blockquote>
+<p align="left">Foot Note</div>
+<div align="center">
+	<table border="1" width="95%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">The first part is for Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only) or None 
+			(Not Support)<br>
+			The second part is for On-Fly 
+			indication. if the change of URL is 
+			effective immediately without save and reboot, It could be V (the URL is on-fly). 
+			Otherwise, it is X (the 
+			URL is not on-fly).</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark2">2</a></font></td>
+			<td><font face="Arial" size="2">Only be available of 4CH and 16CH 
+			Video Server</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark3">3</a></font></td>
+			<td><font face="Arial" size="2">Return the CHANNEL 1 video server's 
+			configuration. If the CHANNEL 1 video server does not connect to 
+			router, the error message will be returned</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark4">4</a></font></td>
+			<td><font face="Arial" size="2">Need to check device's specification 
+			to know its access attributes. It is helpful to check the
+			<a href="../../CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup 
+	Design Specification</a>.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark5">5</a></font></td>
+			<td><font face="Arial" size="2">Only be available of EPL QUAD Video 
+			Server. In EPL 1CH and Multi-Channel Encoders, the usage of this URL 
+			is different.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font size="2" face="Arial">
+			<a name="Remark6">6</a></font></td>
+			<td><font size="2" face="Arial">Only be available of some encoder 
+			which has the specific image processor like VX1129</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font size="2" face="Arial">
+			<a name="Remark7">7</a></font></td>
+			<td><font size="2" face="Arial">Only for ACD2000Q Video Server</font></td>
+		</tr>
+		</table>
+</div>
+
+</body>
+
+</html>

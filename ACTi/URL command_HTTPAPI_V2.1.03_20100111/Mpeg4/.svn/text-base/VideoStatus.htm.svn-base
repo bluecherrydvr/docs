@@ -1,0 +1,75 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_STATUS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_STATUS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the video configuration.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	the CHANNEL 1 video server's VIDEO_STATUS configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<pre><font face="Arial" size="3">VIDEO_BRIGHTNESS='25'
+VIDEO_CONTRAST='15'
+VIDEO_SATURATION='67'
+VIDEO_HUE='50'
+VIDEO_RESOLUTION='N1280x1024'
+VIDEO_BITRATE='3M'
+VIDEO_FPS='MODE1'
+VIDEO_FPS_NUM='8'
+VIDEO_CAMERA_NAME='Camera-1'</font><br></pre>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoAdjust.htm">VIDEO_BRIGHTNESS</a>, </font><font face="Arial" size="3">
+	<a href="VideoAdjust.htm">VIDEO_CONTRAST</a>, <a href="VideoAdjust.htm">VIDEO_SATURATION</a>,
+	<a href="VideoAdjust.htm">VIDEO_HUE</a>, <a href="VideoResolution.htm">VIDEO_RESOLUTION</a>,
+	<a href="VideoBitRate.htm">VIDEO_BITRATE</a>, <a href="VideoFps.htm">VIDEO_FPS</a>,
+	<a href="VideoFpsNum.htm">VIDEO_FPS_NUM</a>, <a href="VideoCameraName.htm">VIDEO_CAMERA_NAME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/mpeg4?USER=Admin&amp;PWD=123456&amp;VIDEO_STATUS</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/mpeg4?VIDEO_STATUS</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

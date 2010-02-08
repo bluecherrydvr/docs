@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CDR_DEBUG_LEVEL</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CDR_DEBUG_LEVEL</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Camera Doctor debugging level configuration. </font></p>
+	<p><font face="Arial">The Camera Doctor provides the run-time debugging 
+	mechanism to collect the device run-time state through an UDP connection. 
+	The client-server architecture is used in this mechanism where the device 
+	acts as a server and the remote host acts as the client. The client has to 
+	be able to send the command (refer to <a href="CdrEnable.htm">CDR_ENABLE</a>) 
+	to enable the Camera Doctor function in device and set the proper debug 
+	level to the device (this URL) and receive the debug message from the device 
+	through the UDP session (refer to <a href="CdrIPPort.htm">CDR_SERVER_IP_PORT</a>). 
+	Please refer the 
+	<a href="../../CameraDoctorDesignSpec/CameraDoctorDesignSpec.htm">Specification of the Camera Doctor</a> for further details.</font></p>
+	<p><font face="Arial">The device run-time message will be dumped to the 
+	remote host as the Camera Doctor was enabled. The debugging level affects 
+	how much message will be get from the device. The higher debugging level 
+	more message to get. That is the message in lower debugging level is the 
+	subset of it in higher debugging level.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">
+	1: the lowest level, only device's error message will be sent.<br>
+	2: warning and important information will be set.<br>
+	3: device internal run-time state information will be sent.<br>
+	4. as much as the information will be sent.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">CDR_DEBUG_LEVEL='1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: CDR_DEBUG_LEVEL='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: CDR_DEBUG_LEVEL='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH encoders (Version V2.07.14 and 
+	after)</font></li>
+	<li><font face="Arial">EPL Platform : All Decoders (Version V3.08.01 and 
+	after for Encoders, Version V3.02.00 and after for Decoders)</font></li>
+	<li><font face="Arial">PlatformT : All Devices (Version V4.00.00 and after 
+	for Encoders)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Version V2.04.00 and after for Router)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="CdrEnable.htm">CDR_ENABLE</a>,
+	<a href="CdrIPPort.htm">CDR_SERVER_IP_PORT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_DEBUG_LEVEL</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?CDR_DEBUG_LEVEL 
+	(Not available in All Decoders)</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_DEBUG_LEVEL=1<br>
+	<font face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?CDR_DEBUG_LEVEL=1 
+	(Not available in All Decoders)</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

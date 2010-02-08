@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_FAILOVER</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_FAILOVER</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the failover function.</font></p>
+	<p><font face="Arial">In WPL Encoder Platform, the LAN port could be act as 
+	the backup port which be able to take over the traffic form WAN when the WAN 
+	connection is broken. Once the WAN connection is recovered, the LAN will 
+	hand over the traffic to WAN. This is only available in all WPL encoders. </font></p>
+	<p><font face="Arial">Once the failover is enabled, the LAN port will not be 
+	functional until the WAN port connection is broken.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0 : Disable</font><br>
+	<font face="Arial">1 : Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_FAILOVER='0'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_FAILOVER='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_FAILOVER='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 8CH video server</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p>¡@</p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_FAILOVER</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_FAILOVER</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_FAILOVER=0<br>
+	<foont face="Arial">or<br>http://ip:port/cgi-bin/cmd/system?V2_FAILOVER=0</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

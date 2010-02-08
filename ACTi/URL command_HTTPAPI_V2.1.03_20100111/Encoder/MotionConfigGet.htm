@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOTION_CONFIG_GET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOTION_CONFIG_GET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<font face="Arial">Read the Motion Configuration by motion region basis.</font><br>
+	<p></p><p>
+	<font face="Arial">The return message format is almost the same as the 
+	format of <a href="MotionConfig.htm">MOTION_CONFIG</a> input argument 
+	without motion region index. </font></p>
+	<p>
+	<font face="Arial">n,state,ex,ey,sx,sy,sen,time,thd</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n is the motion region started from 1.</font><br>
+	<font face="Arial">state is the state of this motion region. If it is 1, 
+	this motion is enabled. If it is 0, this motion region is disabled.</font><br>
+	<font face="Arial">(ex,ey) is the coordinate in pixel of the left-top corner of the motion region.</font><br>
+	<font face="Arial">(sx,sy) is the coordinate in pixel of the right-button corner of the motion region</font><br>
+	<font face="Arial">sen is the sensitivity of the motion region and the range is 0~100.</font><br>
+	<font face="Arial">time is the motion timer in unit of second and the range is 1~300.</br>
+	thd is the the percentage of motion triggered microblocks in the motion 
+	region. 
+	</font>
+	</p>
+	<p>
+	<font face="Arial">The motion timer means the time interval started from a 
+	motion trigger (in control session) does not have motion trigger again. In 
+	other words, the remote host will not receive two successive motion triggers 
+	in control session during the motion time interval. Note that the motion 
+	trigger in video B2 data will not be affected by this timer.</font></p>
+	<p>
+	<font face="Arial">The 
+	motion region was divided into several microblocks (16x16 pixels in a motion 
+	block). Every microblock has it own calculation of motion detection. This 
+	URL gives an threshold of the number of motion triggered microblocks in 
+	the motion region. For example, there are 200 microblocks in a motion region 
+	and the threshold of the percentage of motion trigger microblocks is set to 10. The motion detection will be triggered when the 
+	number of motion triggered microblocks is higher than 20 in this region.
+	</font>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the CHANNEL 1 video server's MOTION_CONFIG_GET configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font>
+</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n is the motion region started from 1.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">MOTION_CONFIG_GET='1,0,0,0,0,0,0,1,10'</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH or 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<ul>
+	<li><font face="Arial">In mpeg4 CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../Mpeg4/MotionStatus.htm">MOTION_STATUS</a>, 
+	<a href="../Mpeg4/MotionEnabled.htm">MOTION_ENABLED</a>, 
+	<a href="../Mpeg4/MotionSetting.htm">MOTION_SETTING</a>, 
+	<a href="../Mpeg4/MotionSen.htm">MOTION_SENSITIVITY</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In encoder CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../Mpeg4/MotionEnabled.htm">MOTION_ENABLED</a>, 
+	<a href="MotionConfig.htm">MOTION_CONFIG</a>, 
+	<a href="../Mpeg4/MotionSen.htm">MOTION_SENSITIVITY</a>, <a href="MotionTimer.htm">MOTION_TIMER</a>,
+	<a href="MotionObj.htm">MOTION_OBJ</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MOTION_CONFIG_GET</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?MOTION_CONFIG_GET</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="../Mpeg4/mpeg4.htm">MPEG4 CGI</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

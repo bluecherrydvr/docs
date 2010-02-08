@@ -1,0 +1,378 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\PTZSample.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\PTZSample.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PTZSAMPLE_DIALOG DIALOGEX 0, 0, 575, 282
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PTZSample"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Submit",IDOK,118,244,50,12
+    PUSHBUTTON      "Exit",IDCANCEL,383,244,50,16
+    EDITTEXT        IDC_EDIT4ServerIP,46,29,118,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4Password,122,47,46,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4ID,46,47,38,12,ES_AUTOHSCROLL
+    LTEXT           "IP:",IDC_STATIC,13,29,10,8
+    LTEXT           "ID:",IDC_STATIC,13,47,11,8
+    LTEXT           "Password:",IDC_STATIC,87,47,34,8
+    EDITTEXT        IDC_EDIT4AddrID,46,113,31,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON4SeleFIle,150,128,14,14
+    EDITTEXT        IDC_EDIT4URLCmdOutput,45,221,118,13,ES_AUTOHSCROLL
+    LTEXT           "Addr ID:",IDC_STATIC,13,113,28,8
+    LTEXT           "Command:",IDC_STATIC,11,192,35,8
+    LTEXT           "URL:",IDC_STATIC,14,221,16,8
+    EDITTEXT        IDC_EDIT4Param1,46,205,38,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4Param2,111,205,45,13,ES_AUTOHSCROLL
+    LTEXT           "Param1:",IDC_STATIC,14,207,28,8
+    LTEXT           "Param2:",IDC_STATIC,85,207,28,8
+    EDITTEXT        IDC_EDIT4ProtocolFileName,46,129,104,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Get URL Cmd",IDOK4,64,244,50,12
+    COMBOBOX        IDC_COMBO4Command,46,190,73,59,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Connect",IDC_BUTTON4Connect,46,81,50,14
+    PUSHBUTTON      "Zoom In",IDC_BUTTON4ZOOMIN,382,79,49,11
+    PUSHBUTTON      "Zoom Out",IDC_BUTTON4ZOOMOUT,382,107,50,10
+    PUSHBUTTON      "Zoom Stop",IDC_BUTTON4ZOOMSTOP,382,92,49,11
+    GROUPBOX        "Zoom",IDC_STATIC,376,67,60,53
+    CONTROL         "",IDC_STATIC4VW,"Static",SS_BLACKFRAME,184,11,188,132
+    PUSHBUTTON      "L",IDC_BUTTON4PANLEFT,383,36,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "S",IDC_BUTTON4STOP,399,36,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "R",IDC_BUTTON4PANRIGHT,415,36,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "U",IDC_BUTTON4TILTUP,399,22,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "D",IDC_BUTTON4TILTDOWN,399,50,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "DR",IDC_BUTTON4RIGHTDOWN,415,50,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "DL",IDC_BUTTON4LEFTDOWN,383,50,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "UL",IDC_BUTTON4LEFTUP,383,22,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "UR",IDC_BUTTON4RIGHTUP,415,22,16,14,WS_GROUP,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "PAN/TILT",IDC_STATIC,376,14,60,53,WS_GROUP | WS_TABSTOP,
+                    WS_EX_TRANSPARENT
+    COMBOBOX        IDC_COMBO4Parity,46,65,38,63,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4Baudrate,122,65,45,67,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Disconnect",IDC_BUTTON4Disconnect,118,81,50,14
+    LTEXT           "RS232:",IDC_STATIC,13,65,24,8
+    LTEXT           "Baudrate:",IDC_STATIC,87,65,33,8
+    GROUPBOX        "Connection",IDC_STATIC,10,19,162,79
+    GROUPBOX        "Protocol",IDC_STATIC,10,104,161,74
+    PUSHBUTTON      "On",IDC_BUTTON4OSDON,307,164,48,10
+    PUSHBUTTON      "Off",IDC_BUTTON4OSDOFF,307,177,48,10
+    PUSHBUTTON      "U",IDC_BUTTON4UP2,273,161,15,14
+    PUSHBUTTON      "D",IDC_BUTTON4DOWN2,273,188,15,14
+    PUSHBUTTON      "L",IDC_BUTTON4LEFT2,257,175,15,14
+    PUSHBUTTON      "R",IDC_BUTTON4RIGHT2,289,175,15,14
+    PUSHBUTTON      "S",IDC_BUTTON4STOP2,273,175,15,14
+    PUSHBUTTON      "Focus In",IDC_BUTTON4FOCUSIN,382,133,50,10
+    PUSHBUTTON      "Focus Out",IDC_BUTTON4FOCUSOUT,382,157,50,10
+    PUSHBUTTON      "1",IDC_BUTTON14,201,222,10,9
+    GROUPBOX        "Preset",IDC_STATIC,187,213,181,50
+    PUSHBUTTON      "Iris On",IDC_BUTTON15,203,169,41,10
+    PUSHBUTTON      "Iris Off",IDC_BUTTON16,203,186,42,9
+    PUSHBUTTON      "Stop",IDC_BUTTON4FOCUSSTOP,382,145,50,10
+    PUSHBUTTON      "Leave",IDC_BUTTON4OSDLEAVE,307,188,48,10
+    GROUPBOX        "OSD",IDC_STATIC,253,153,106,53
+    GROUPBOX        "Iris",IDC_STATIC,197,153,52,53
+    GROUPBOX        "Focus",IDC_STATIC,376,121,60,50
+    PUSHBUTTON      "2",IDC_BUTTON17,211,222,10,9
+    PUSHBUTTON      "3",IDC_BUTTON18,221,222,10,9
+    PUSHBUTTON      "4",IDC_BUTTON19,231,222,10,9
+    PUSHBUTTON      "5",IDC_BUTTON20,241,222,10,9
+    PUSHBUTTON      "6",IDC_BUTTON21,251,222,10,9
+    PUSHBUTTON      "7",IDC_BUTTON22,261,222,10,9
+    PUSHBUTTON      "8",IDC_BUTTON23,271,222,10,9
+    PUSHBUTTON      "9",IDC_BUTTON24,281,222,10,9
+    PUSHBUTTON      "10",IDC_BUTTON25,291,222,10,9
+    PUSHBUTTON      "11",IDC_BUTTON26,301,222,10,9
+    PUSHBUTTON      "12",IDC_BUTTON27,311,222,10,9
+    PUSHBUTTON      "13",IDC_BUTTON28,321,222,10,9
+    PUSHBUTTON      "14",IDC_BUTTON29,331,222,10,9
+    PUSHBUTTON      "15",IDC_BUTTON30,341,222,10,9
+    PUSHBUTTON      "16",IDC_BUTTON31,351,222,10,9
+    PUSHBUTTON      "1",IDC_BUTTON32,203,236,10,9
+    PUSHBUTTON      "2",IDC_BUTTON33,213,236,10,9
+    PUSHBUTTON      "3",IDC_BUTTON34,223,236,10,9
+    PUSHBUTTON      "4",IDC_BUTTON35,233,236,10,9
+    PUSHBUTTON      "5",IDC_BUTTON36,243,236,10,9
+    PUSHBUTTON      "6",IDC_BUTTON37,253,236,10,9
+    PUSHBUTTON      "7",IDC_BUTTON38,263,236,10,9
+    PUSHBUTTON      "8",IDC_BUTTON39,273,236,10,9
+    PUSHBUTTON      "9",IDC_BUTTON40,283,236,10,9
+    PUSHBUTTON      "10",IDC_BUTTON41,293,236,10,9
+    PUSHBUTTON      "11",IDC_BUTTON42,303,236,10,9
+    PUSHBUTTON      "12",IDC_BUTTON43,313,236,10,9
+    PUSHBUTTON      "13",IDC_BUTTON44,323,236,10,9
+    PUSHBUTTON      "14",IDC_BUTTON45,331,236,10,9
+    PUSHBUTTON      "15",IDC_BUTTON46,341,236,10,9
+    PUSHBUTTON      "16",IDC_BUTTON47,351,236,10,9
+    LTEXT           "Set",IDC_STATIC,191,222,12,8
+    LTEXT           "Goto",IDC_STATIC,189,236,16,8
+    PUSHBUTTON      "1",IDC_BUTTON48,203,249,10,9
+    PUSHBUTTON      "2",IDC_BUTTON49,213,249,10,9
+    PUSHBUTTON      "3",IDC_BUTTON50,223,249,10,9
+    PUSHBUTTON      "4",IDC_BUTTON51,233,249,10,9
+    PUSHBUTTON      "5",IDC_BUTTON52,243,249,10,9
+    PUSHBUTTON      "6",IDC_BUTTON53,253,249,10,9
+    PUSHBUTTON      "7",IDC_BUTTON54,263,249,10,9
+    PUSHBUTTON      "8",IDC_BUTTON55,273,249,10,9
+    PUSHBUTTON      "9",IDC_BUTTON56,283,249,10,9
+    PUSHBUTTON      "10",IDC_BUTTON57,293,249,10,9
+    PUSHBUTTON      "11",IDC_BUTTON58,303,249,10,9
+    PUSHBUTTON      "12",IDC_BUTTON59,313,249,10,9
+    PUSHBUTTON      "13",IDC_BUTTON60,323,249,10,9
+    PUSHBUTTON      "14",IDC_BUTTON61,331,249,10,9
+    PUSHBUTTON      "15",IDC_BUTTON62,341,249,10,9
+    PUSHBUTTON      "16",IDC_BUTTON63,351,249,10,9
+    LTEXT           "Clr",IDC_STATIC,191,249,10,8
+    PUSHBUTTON      "BLC On",IDC_BUTTON4BLCON,385,172,44,11
+    PUSHBUTTON      "BLC Off",IDC_BUTTON4BLCON4BLCOFF,385,183,44,11
+    PUSHBUTTON      "Day Mode",IDC_BUTTON4BLCON4DandNOn,385,196,44,11
+    PUSHBUTTON      "Night Mode",IDC_BUTTON4BLCON4DandNOff,385,207,44,11
+    PUSHBUTTON      "Auto On",IDC_BUTTON4BLCON4DayNightAuto,385,220,44,11
+    PUSHBUTTON      "Auto Off",IDC_BUTTON4BLCON4DayNightAutoOff,385,232,44,
+                    11
+    GROUPBOX        "PTZ Cmd",IDC_STATIC,10,182,162,81
+    PUSHBUTTON      "Load",IDC_BUTTON4,118,161,50,14
+    COMBOBOX        IDC_COMBO4Vendor,46,145,67,77,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO4Protocol,46,161,67,79,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "File:",IDC_RADIO4File,"Button",BS_AUTORADIOBUTTON,12,
+                    130,29,10
+    CONTROL         "Build-in:",IDC_RADIO4Buildin,"Button",
+                    BS_AUTORADIOBUTTON,11,147,41,10
+    COMBOBOX        IDC_COMBO8,119,113,48,55,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Send Mode:",IDC_STATIC,81,115,39,8
+    PUSHBUTTON      "TestStart",IDC_BUTTON3,7,238,50,12
+    PUSHBUTTON      "TestStop",IDC_BUTTON5,7,251,50,12
+    EDITTEXT        IDC_EDIT4CommandCount,70,7,100,14,ES_AUTOHSCROLL | 
+                    ES_READONLY,WS_EX_RIGHT
+    LTEXT           "Command Count:",IDC_STATIC,12,7,56,8
+    LTEXT           "Pan (0~360)",IDC_STATIC,448,24,50,8
+    LTEXT           "Tilt (0~90)",IDC_STATIC,448,47,35,8
+    LTEXT           "Zoom (0~100)",IDC_STATIC,448,68,49,8
+    GROUPBOX        "Absolute PTZ",IDC_STATIC,443,15,115,135
+    EDITTEXT        IDC_EDIT10,504,21,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,504,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,504,65,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "SendAbsPTZcmd",IDC_BUTTON6,484,107,70,14
+    PUSHBUTTON      "SendAbsPTcmd",IDC_BUTTON7,484,127,67,14
+    COMBOBOX        IDC_COMBO2,504,86,41,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Direction",IDC_STATIC,448,88,36,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "PTZSample.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "PTZSample.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PTZSAMPLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 568
+        VERTGUIDE, 46
+        VERTGUIDE, 187
+        VERTGUIDE, 368
+        VERTGUIDE, 448
+        VERTGUIDE, 484
+        VERTGUIDE, 504
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+        HORZGUIDE, 263
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PTZSAMPLE_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO4Parity, 0x403, 4, 0
+0x384e, 0x0031, 
+    IDC_COMBO4Parity, 0x403, 4, 0
+0x3830, 0x0031, 
+    IDC_COMBO4Parity, 0x403, 4, 0
+0x3845, 0x0031, 
+    IDC_COMBO4Baudrate, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_COMBO4Baudrate, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_COMBO4Baudrate, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_COMBO4Baudrate, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_COMBO4Baudrate, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_COMBO4Baudrate, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_COMBO4Baudrate, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_COMBO4Baudrate, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_COMBO4Baudrate, 0x403, 7, 0
+0x3332, 0x3430, 0x3030, "\000" 
+    IDC_COMBO8, 0x403, 6, 0
+0x5352, 0x3332, 0x0032, 
+    IDC_COMBO8, 0x403, 4, 0
+0x5255, 0x004c, 
+    IDC_COMBO2, 0x403, 3, 0
+0x5743, "\000" 
+    IDC_COMBO2, 0x403, 4, 0
+0x4343, 0x0057, 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\PTZSample.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

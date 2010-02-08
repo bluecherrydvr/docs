@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_STREAMING_METHOD</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_STREAMING_METHOD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the method of video/audio streaming on the 
+	encoder.</font></p>
+	<p><font face="Arial">There are numbers of streaming methods the encoder to 
+	stream the video and audio data. These method might vary among different 
+	devices in different platform.</font></p>
+	<p><font face="Arial">In WPL, EPL and Multi-Channel Encoders, only one 
+	method is allowed to be available. That means the streaming connection 
+	between encoder and remote host will be closed if the streaming method is 
+	changed.</font></p>
+	<p><font face="Arial">In PlatformT Encoders, all unicast streaming methods could 
+	exist at the same time. Therefore, the remote host does not need to set the 
+	encoder's streaming method before it gets the unicast video stream. However, the 
+	device could accept any one of settings and return its setting for read 
+	command. For multicast streaming, Multicast Over UDP, RTP Over Multicast and RTP Over UDP and Multicast, 
+	this URL is needed to switch the streaming mode to service the video 
+	streaming.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this command is read-only command and the CHANNEL 1 
+	video server's V2_STREAMING_METHOD configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">Here is the list of the available streaming method vs 
+	encoder in different platforms.</font></p>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td width="257" align="center"><font face="Arial"><b>Encoder Type</b></font></td>
+			<td align="center"><font face="Arial"><b>Supported Streaming Method</b></font></td>
+		</tr>
+		<tr>
+			<td width="257" align="center" rowspan="6"><font face="Arial">
+			Encoder in WPL Platform</font></td>
+			<td><font face="Arial">TCP Only</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">Multicast Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">TCP and Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP and Multicast</font></td>
+		</tr>
+		<tr>
+			<td width="257" align="center" rowspan="5"><font face="Arial">
+			Encoder in EPL Platform</font></td>
+			<td><font face="Arial">TCP Only</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">Multicast Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP and Multicast</font></td>
+		</tr>
+		<tr>
+			<td width="257" align="center" rowspan="6"><font face="Arial">
+			Encoder In Multi-Channel Platform</font></td>
+			<td><font face="Arial">TCP Only</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">Multicast Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">TCP and Multicast (8CH Only)</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP and Multicast</font></td>
+		</tr>
+		<tr>
+			<td width="257" align="center" rowspan="6"><font face="Arial">
+			Encoder in PlatformT Platform</font></td>
+			<td><font face="Arial">TCP Only</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">Multicast Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">TCP and Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over Multicast</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">RTP Over UDP and Multicast</font></td>
+		</tr>
+		</table>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">
+	0 : TCP Only<br>
+	1 : Multicast Over UDP<br>
+	2 : TCP and Multicast<br>
+	3. RTP Over UDP<br>
+	4. RTP Over Multicast<br>
+	5: RTP Over UDP and Multicast</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_STREAMING_METHOD='0'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_STREAMING_METHOD='0'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_STREAMING_METHOD='0'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p>
+	<font face="Arial"><a href="StreamProtocol.htm">V2_STREAMING_TYPE</a>,
+	<a href="StreamProtocol.htm">PROTOCOL_TYPE</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_METHOD</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_STREAMING_METHOD</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_METHOD=0<br>
+	<foont face="Arial">or<br>http://ip:port/cgi-bin/cmd/system?V2_STREAMING_METHOD=0</font></font><br>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

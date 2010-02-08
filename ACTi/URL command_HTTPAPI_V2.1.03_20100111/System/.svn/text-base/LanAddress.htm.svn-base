@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LAN_ADDRESS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LAN_IP, LAN_NETMASK</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set IP or Netmask address of LAN port. </font></p>
+	<p><font face="Arial">In Multi-Channel device, this URL is read-only command 
+	and the Router's LAN port setting will be returned no matter the CHANNEL=n 
+	was set with this URL or not.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">IPv4 Addressing (xxx.xxx.xxx.xxx)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">LAN_IP='192.168.1.254'</font><br><font face="Arial">
+	LAN_NETMASK='255.255.255.0'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: LAN_IP='192.168.1.254'</font><br><font face="Arial">
+	OK: LAN_NETMASK='255.255.255.0'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: LAN_IP='192.168.1.254'</font><br>
+	<font face="Arial">ERROR: LAN_NETMASK='255.255.255.0'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices (Read/Write)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Read-Only)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Lan.htm">LAN</a>, 
+	<a href="LanHostname.htm">LAN_HOSTNAME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_IP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_NETMASK</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_IP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_NETMASK</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_IP=192.168.1.254</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_NETMASK=255.255.255.0</font><br>
+	<foont face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_IP=192.168.1.254</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_NETMASK=255.255.255.0</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

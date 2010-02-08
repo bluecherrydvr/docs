@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CDR_IP_PORT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CDR_SERVER_IP_PORT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Camera Doctor remote host IP and UDP Port 
+	configuration. </font></p>
+	<p><font face="Arial">The device will send the debugging message to the host 
+	at the IP:PORT set by this URL. Note that only unicast IP address is valid 
+	in this URL.</font></p>
+	<p><font face="Arial">The Camera Doctor provides the run-time debugging 
+	mechanism to collect the device run-time state through an UDP connection. 
+	The client-server architecture is used in this mechanism where the device 
+	acts as a server and the remote host acts as the client. The client has to 
+	be able to send the command (refer to <a href="CdrEnable.htm">CDR_ENABLE</a>) to enable the Camera Doctor function 
+	in device and set the proper debug level to the device (refer to
+	<a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a> URL) and receive the debug 
+	message from the device through the UDP session (this URL). Please refer the
+	<a href="../../CameraDoctorDesignSpec/CameraDoctorDesignSpec.htm">Specification 
+	of the Camera Doctor</a> for further details.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">
+	n,m<br>
+	where<br>
+	n is the IPv4 address of the remote host<br>
+	m is the UDP port number
+	</font>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">CDR_SERVER_IP_PORT='192.168.0.10,9000'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: CDR_SERVER_IP_PORT='192.168.0.10,9000'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: CDR_SERVER_IP_PORT='192.168.0.10:9000'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH encoders (Version V2.07.14 and 
+	after)</font></li>
+	<li><font face="Arial">EPL Platform : All Decoders (Version V3.08.01 and 
+	after for Encoders, Version V3.02.00 and after for Decoders)</font></li>
+	<li><font face="Arial">PlatformT : All Devices (Version V4.00.00 and after 
+	for Encoders)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Version V2.04.00 and after for 
+	Router)</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="CdrEnable.htm">CDR_ENABLE</a>,
+	<a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_SERVER_IP_PORT</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?CDR_SERVER_IP_PORT 
+	(Not available in All Decoders)</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_SERVER_IP_PORT=192.168.0.10,9000</font><br>
+	<foont face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?CDR_SERVER_IP_PORT=192.168.0.10,9000 
+	(Not available in All Decoders)</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CDR_IPERF_CLIENT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CDR_IPERF_CLIENT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Connect to the IPERF Server for connection quality 
+	test.</font></p>
+	<p><font face="Arial">When this command is submitted, the device will try to 
+	connect to an IPERF server to do the test of connection quality. The test 
+	report will be returned as the test is completed. Here is an example of the 
+	test report.</font></p>
+	<p><font face="Arial">1. TCP Testing</font></p>
+	<p><font face="Arial">
+	------------------------------------------------------------<br>
+	Client connecting to 172.16.3.60, TCP port 5001<br>
+	TCP window size:&nbsp; 16.0 KByte (default)<br>
+	------------------------------------------------------------<br>
+	[ 5] local 172.16.3.39 port 32491 connected with 172.16.3.60 port 5001<br>
+	[ID] Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bandwidth<br>
+	[ 5]&nbsp; 0.0-10.0 sec&nbsp;&nbsp; 13.1 MBytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.9 Mbits/sec</font></p>
+	<p><font face="Arial">2. UDP Testing (Test speed is 10Mbps in this example)</font></p>
+	<p><font face="Arial">
+	------------------------------------------------------------<br>
+	Client connecting to 172.16.3.60, UDP port 5001<br>
+	Sending 1470 byte datagrams<br>
+	UDP buffer size: 64.0 KByte (default)<br>
+	------------------------------------------------------------<br>
+	[ 3] local 172.16.3.39 port 32775 connected with 172.16.3.60 port 5001<br>
+	[ID] Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Transfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Bandwidth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Jitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Lost/Total Datagrams<br>
+	[ 3] 0.0-10.1 sec&nbsp;&nbsp;&nbsp;&nbsp; 5.81 MBytes&nbsp;&nbsp;&nbsp;&nbsp; 
+	4.83 Mbits/sec&nbsp;&nbsp;&nbsp;&nbsp; 2.436 ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	4357/ 8503 (51%)</font><br>
+	<font face="Arial">[ 3] Server Report :</font><br>
+	<font face="Arial">[ID] Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bandwidth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lost/Total Datagrams<br>
+	[ 3] 0.0-10.1 sec&nbsp;&nbsp;&nbsp;&nbsp; 5.81 MBytes&nbsp;&nbsp;&nbsp;&nbsp; 4.83 Mbits/sec&nbsp;&nbsp;&nbsp;&nbsp; 2.436 ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4357/ 8503 (51%)</font>
+	</p>
+	<p><font face="Arial">Here is the setup topology and the test flow of this 
+	URL.</font></p>
+	<p align="center">
+	<img border="0" src="images/iperf.bmp" width="598" height="409"></p>
+	<p align="left">
+	<font face="Arial">IPERF command vs. this URL.</font></p>
+	<p align="left">
+	<font face="Arial">1. TCP Client</font></p>
+	<p align="left">
+	<font face="Arial">&nbsp;&nbsp;&nbsp; CDR_IPERF_CLIENT=TCP,172.16.3.60&nbsp;&nbsp;&nbsp; 
+	==&gt; iperf -c 172.16.3.60 -f m</font></p>
+	<p align="left">
+	<font face="Arial">2. UDP Client</font></p>
+	<p align="left">
+	<font face="Arial">&nbsp;&nbsp;&nbsp; CDR_IPERF_CLIENT=UDP,172.16.3.60,3 ==&gt; 
+	iperf -c 172.16.3.60 -f m -u -b 3m</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">a,b,c where</font><br>
+	<font face="Arial">a : TCP or UDP</font><br>
+	<font face="Arial">b : IP Address of the IPERF Server</font><br>
+	<font face="Arial">c : The testing speed in Mbits/sec for UDP protocol. This argument 
+	will be ignored if the a is TCP</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">Test Report</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH encoders (Version V2.09.00 and 
+	after), 1CH decoder(Version V2.05.03 and later)</font></li>
+	<li><font face="Arial">EPL Platform : All Devices (Version V3.08.05 and 
+	after for Encoders, Version V3.02.01 and after for Decoders)</font></li>
+	<li><font face="Arial">PlatformT : All Devices (Version V4.00.03 and after 
+	for Encoders)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Version V2.04.00 and after for 
+	Router)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="CdrIperfServer.htm">CDR_IPERF_SERVER</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_IPERF_CLIENT=TCP,172.16.3.60<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?CDR_IPERF_CLIENT=TCP,172.16.3.60<br>
+	or<br>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_IPERF_CLIENT=UDP,172.16.3.60,3<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?CDR_IPERF_CLIENT=UDP,172.16.3.60,3</font>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

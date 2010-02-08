@@ -1,0 +1,1579 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>System CGI Program</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="6">&nbsp;&nbsp;&nbsp; System CGI Program</font></p>
+<p align="left"><font face="Arial">Only root could set the configuration through 
+this SYSTEM CGI. If the logon user is not root, all write commands will be 
+treated as read commands</font></p>
+<p align="left"><font face="Arial" size="5">List of URLs</font></p>
+<div align="center">
+	<table border="1" width="95%" id="table1">
+		<tr>
+			<td rowspan="3" align="center" width="25%">
+			<font face="Arial" size="5">URL</font></td>
+			<td colspan="8" align="center"><font face="Arial" size="5">Attribute 
+			(R/W/X, On-Fly)<sup><a href="#Remark1">1</a></sup></font></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><font face="Arial" size="4">WPL 
+			Platform</font></td>
+			<td colspan="2" align="center"><font face="Arial" size="4">EPL 
+			Platfrom</font></td>
+			<td colspan="2" align="center"><font face="Arial" size="4">Platform 
+			T</font></td>
+			<td colspan="2" align="center"><font face="Arial" size="4">
+			Multi-Channel Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="9%"><i><font face="Arial">Encoder<sup><a href="#Remark6">6</a></sup></font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Decoder</font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Encoder</font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Decoder</font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Encoder</font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Decoder</font></i></td>
+			<td align="center" width="9%"><i><font face="Arial">Router</font></i></td>
+			<td align="center" width="10%"><i><font face="Arial">Video Server<sup><a href="#Remark6">6</a></sup></font></i></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#FFFF00">System Function</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="10%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Maintain</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="FactoryDefault.htm">FACTORY_DEFAULT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="ConfigReset.htm">CONFIG_RESET</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="SaveReboot.htm">SAVE_REBOOT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Save.htm">SAVE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Reboot.htm">
+			REBOOT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Date &amp; Time</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Date.htm">DATE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="DateType.htm">
+			DATE_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" height="21"><font face="Arial" size="2">
+			<a href="DateSntpIp.htm">DATE_SNTP_IP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DateSntpUpdate.htm">DATE_SNTP_UPDATE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DateManualDate.htm">DATE_MANUAL_DATE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DateManualTime.htm">DATE_MANUAL_TIME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DateConfig.htm">DATE_CONFIG</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark2">2</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Trouble Shooting</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" height="23"><font face="Arial" size="2">
+			<a href="FwUpgStatus.htm">FW_UPG_STATUS</a></font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="SystemInfo.htm">SYSTEM_INFO</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="ServerReport.htm">SERVER_REPORT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="SystemLog.htm">
+			SYSTEM_LOG</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="SystemProperty.htm">SYSTEM_PROPERTY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="SystemInfoXml.htm">SYSTEM_INFO_XML</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial"><a href="CdrEnable.htm">
+			CDR_ENABLE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="CdrIPPort.htm">
+			CDR_SERVER_IP_PORT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="CdrIperfServer.htm">CDR_IPERF_SERVER</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="CdrIperfClient.htm">CDR_IPERF_CLIENT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">WO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="ActivexUrl.htm">ACTIVEX_URL</a></font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RO,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RO,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RO,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RO,X</font></td>
+			<td width="10%" align="center"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Misc</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PowerLED.htm">
+			POWER_LED</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Language.htm">
+			LANGUAGE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Dummy.htm">
+			DUMMY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">X,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">X,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#FFFF00">Network Function</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="10%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">MAC/PHY</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="SpeedWan.htm">SPEED_WAN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="SpeedLan.htm">SPEED_LAN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="V2FailOver.htm">V2_FAILOVER</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Basic TCP/IP</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Wan.htm">WAN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="WanStatus.htm">
+			WAN_STATUS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="V2WanStatus.htm">V2_WAN_STATUS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="WanType.htm">
+			WAN_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_IP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_NETMASK</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="WanAddress.htm">WAN_GATEWAY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="WanPPPoE.htm">
+			WAN_PPPOE_USERNAME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="WanPPPoE.htm">
+			WAN_PPPOE_PASSWORD</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font face="Arial" size="2"><a href="DhcpByHostname.html">DHCP_BY_HOSTNAME</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RO,X</font></td>
+	  </tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Lan.htm">LAN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="LanAddress.htm">LAN_IP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="LanAddress.htm">LAN_NETMASK</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="LanHostname.htm">LAN_HOSTNAME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Dns.htm">DNS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DnsSetting.htm">DNS_PRIMARY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DnsSetting.htm">DNS_SECONDARY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Ddns.htm">DDNS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="DdnsType.htm">
+			DDNS_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DdnsHostName.htm">DDNS_HOSTNAME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DdnsService.htm">DDNS_SERVICE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="DdnsConfig.htm">DDNS_CONFIG</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="V2DdnsConfig.htm">V2_DDNS_CONFIG</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortHttp.htm">
+			PORT_HTTP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial"><a href="IPv6State.htm">
+			IPV6_STATE</a></font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="10%" align="center"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Security </td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Login.htm">
+			LOGIN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Account.htm">ACCOUNT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountRoot.htm">ACCOUNT_ROOT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AccountUser.htm">ACCOUNT_USER_N</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortHttps.htm">PORT_HTTPS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="IPFilterState.htm">IP_FILTER_STATE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="IPFilterType.htm">IP_FILTER_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="IPFilterRule.htm">IP_FILTER_RULE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="GuestPreview.htm">GUEST_PREVIEW</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Streaming</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="V2StreamMethod.htm">V2_STREAMING_METHOD</a></font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,X</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">None</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RO,X</font></td>
+			<td width="10%" align="center"><font size="2" face="Arial">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="StreamProtocol.htm">V2_STREAMING_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" height="21"><font face="Arial" size="2">
+			<a href="StreamProtocol.htm">PROTOCOL_TYPE</a></font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="21">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center" height="21">
+			<font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Port.htm">PORT</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortTCP2.htm">
+			PORT_REGISTER</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortTCP2.htm">
+			PORT_CONTROL</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortTCP2.htm">
+			PORT_VIDEO</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortTCP2.htm">
+			PORT_MULTICAST</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortRTP.htm">
+			V2_PORT_RTSP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortRTP.htm">
+			V2_PORT_RTP_MULTI_VIDEO</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="PortRTP.htm">
+			V2_PORT_RTP_MULTI_AUDIO</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW.V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="McastTtl.htm">VIDEO_MULTICAST_TTL</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="V2McastIP.htm">
+			V2_MULTICAST_IP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="V2McastIF.htm">
+			V2_MULTICAST_IF</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="IgmpEnabled.htm">IGMP_ENABLED</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="RtspAuthen.htm">RTSP_AUTHEN</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="RtpB2.htm">
+			RTP_B2</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="2" face="Arial"><a href="../Encoder/GetStream.htm">GET_STREAM</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RO,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+	  </tr>
+		<tr>
+		  <td><font size="2" face="Arial"><a href="../Encoder/GetCtrlMsg.htm">GET_CTRL_MSG</a></font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,V</font></td>
+		  <td align="center"><font face="Arial" size="2">None</font></td>
+		  <td align="center"><font face="Arial" size="2">RO,X</font></td>
+		  <td align="center"><font face="Arial" size="2">RW,X</font></td>
+	  </tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">QoS</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="Tos.htm">TOS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="TosType.htm">VIDEO_TOS_TYPE</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="TosPriority.htm">VIDEO_TOS_PRIORITY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Manager</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="UpnpConfig.htm">UPNP_CONFIG</a></font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="9%" align="center"><font size="2" face="Arial">RW,V</font></td>
+			<td width="10%" align="center"><font size="2" face="Arial">None</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="PortSearch1_2.htm">PORT_SEARCH_1</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="PortSearch1_2.htm">PORT_SEARCH_2</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="PortSearch.htm">PORT_SEARCH</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#FFFF00">Camera Function</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="10%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" height="23"><font face="Arial" size="2"><a href="ProfileId.htm">
+			PROFILE_ID</a></font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="23">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="23"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center" height="23"><font face="Arial" size="2">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#FFFF00">Video Function</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="10%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Basic</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="VideoTv.htm">
+			VIDEO_TV</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="VideoResCap.htm">VIDEO_RESOLUTION_CAP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="VideoFps.htm">VIDEO_FPS</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="VideoFpsCap.htm">VIDEO_FPS_CAP</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#FFFF00">Audio Function</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="9%" align="center" bgcolor="#FFFF00">¡@</td>
+			<td width="10%" align="center" bgcolor="#FFFF00">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%" bgcolor="#00FFFF">Basic</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="9%" align="center" bgcolor="#00FFFF">¡@</td>
+			<td width="10%" align="center" bgcolor="#00FFFF">¡@</td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="V2AudioEnabled.htm">V2_AUDIO_ENABLED</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2">
+			<a href="AudioInSen.htm">AUDIO_IN_SENSITIVITY</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">RW,X<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%" height="22"><font face="Arial" size="2">
+			<a href="AudioOutVolume.htm">AUDIO_OUT_VOLUME</a></font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td width="9%" align="center" height="22">
+			<font face="Arial" size="2">RO,X</font></td>
+			<td width="10%" align="center" height="22">
+			<font face="Arial" size="2">RW,X<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font face="Arial" size="2"><a href="V2LowPass.htm">
+			V2_LOWPASS_FILTER</a></font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">RW,V</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="9%" align="center"><font face="Arial" size="2">None</font></td>
+			<td width="10%" align="center"><font face="Arial" size="2">None</font></td>
+		</tr>
+		</table>
+<p align="left"><font face="Arial" size="5">Back to</font></p>
+	<blockquote>
+		<p align="left"><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+	</blockquote>
+	<p align="left"><font face="Arial" size="5">Foot Note</font></div>
+<div align="center">
+	<table border="1" width="95%" id="table2">
+		<tr>
+			<td width="23" align="center"><a name="Remark1">
+			<font size="2" face="Arial">1</font></a></td>
+			<td><font face="Arial" size="2">The first part is for Access Mode. It could be RW 
+			(Readable and Writeable), RO (Read Only), WO (Write Only), X 
+			(Execution) or None 
+			(Not Support)</font><br>
+			<font face="Arial" size="2">The second part is for On-Fly 
+			indication. if the change of URL is 
+			effective immediately without save and reboot, It could be V (the URL is on-fly). 
+			Otherwise, it is X (the 
+			URL is not on-fly).</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark2">2</a></font></td>
+			<td><font face="Arial" size="2">Only be available of 1CH Encoder. For 2CH and Quad Encoders, it 
+			is not available.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark3">3</a></font></td>
+			<td><font face="Arial" size="2">Return the CHANNEL 1 video server's 
+			configuration. If the CHANNEL 1 video server does not connect to 
+			router, the error message will be returned</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark4">4</a></font></td>
+			<td><font face="Arial" size="2">Need to check device's specification 
+			to know its access attributes. It is helpful to check the
+			<a href="VideoTv.htm">VIDEO_TV</a> URL description.</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font face="Arial" size="2">
+			<a name="Remark5">5</a></font></td>
+			<td><font face="Arial" size="2">Need to check device's specification 
+			to know if there is AudioIn and AudioOut functions</font></td>
+		</tr>
+		<tr>
+			<td width="23" align="center"><font size="2" face="Arial">
+			<a name="Remark6">6</a></font></td>
+			<td><font size="2" face="Arial">The URL in system CGI are on-fly in 
+			WPL 1CH encoder firmware version and later.</font></td>
+		</tr>
+	</table>
+</div>
+
+</body>
+
+</html>

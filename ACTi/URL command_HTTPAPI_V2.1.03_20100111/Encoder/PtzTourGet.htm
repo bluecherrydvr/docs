@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_TOUR_GET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_TOUR_GET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get all valid PTZ tour entries configurations of a 
+	specific or current PTZ tour group. </font></p>
+	<p><font face="Arial">If the device is not in the touring mode and there is 
+	no input argument, the settings of tour group 1 will be returned.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">The format of return is listed below.</font></p>
+	<p><font face="Arial">PTZ_TOUR_GET='m,n,PresetPoint,Dwell,SpeedPan,SpeedTilt,SpeedZoom'</font></p>
+	<p><font face="Arial">where,</font></p>
+	<ol style="font-family: Arial; font-size: 12pt">
+		<li>m: Tour Group ID. It started from 1 to 10.</li>
+		<li>n: Entry index in the PTZ tour group. It started from 1 to 32 (EPL), 1 to 64 (PlatformT).</li>
+		<li>PresetPoint: Entry of PTZ preset table associated with this PTZ tour 
+		entry. It is from 1 to 32 (EPL), 1 to 64 (PlatformT).</li>
+		<li>Dwell: The timer for moving to and staying this entry in second. It 
+		is in the range between 1 and 255.</li>
+		<li>Sequence: not used and fixed to 1</li>
+		<li>SpeedPan: the speed in pan to move to the preset point. It should be in the range between 1 and 5.</li>
+		<li>SpeedTilt: the speed in tilt to move to the preset point. It should be in the range between 1 and 5.</li>
+        <li>SpeedZoom: the speed in zoom to move to the preset point. It should be in the range between 2 and 7.</li>
+    </ol>
+	<p>The SpeedPan, SpeedTilt and SpeedZoom are shown in the PlatformT PTZ/Speed Dome only. However, these three arguments will not been show in EPL PTZ camera without any error.</p>
+<p><font face="Arial">If there is no valid entry, the 'm,0' will be 
+	returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None (the valid entries in current tour group will be 
+	returned)<br>or<br>m where Tour Group ID from 1 to 10<br>or<br>ERROR: 
+	invalid parameters</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">PTZ_TOUR_GET='m,1,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom'<br>
+	PTZ_TOUR_GET='m,2,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom'<br>
+	PTZ_TOUR_GET='m,3,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom'<br>
+	.....<br>
+	PTZ_TOUR_GET='m,31,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom'<br>
+	PTZ_TOUR_GET='m,32,PresetPoint,Dwell,Sequence,SpeedPan,SpeedTilt,SpeedZoom'<br>
+	or<br>PTZ_TOUR_GET='m,0'</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>, <a href="PtzPresetGo.htm">PTZ_PRESET_GO</a>,
+	<a href="PtzTourSet.htm">PTZ_TOUR_SET</a>, <a href="PtzTourState.htm">
+	PTZ_TOUR_STATE</a>, <a href="PtzTourName.htm">PTZ_TOUR_NAME</a>,
+	<a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a>, <a href="PtzParkConfig.htm">
+	PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_TOUR_GET<br>
+	or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_TOUR_GET</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

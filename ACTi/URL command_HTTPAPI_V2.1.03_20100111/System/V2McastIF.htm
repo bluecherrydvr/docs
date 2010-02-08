@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_MULTICAST_IF</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_MULTICAST_IF</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the networking interface (LAN or WAN port) 
+	for sending/receiving multicast packets.</font></p>
+	<p><font face="Arial">In WPL Encoder Platform, there are two networking interface, 
+	LAN and WAN port,. By default, the multicast path is on LAN port. It needs 
+	to switch the multicast path to WAN port if your networking connection is on 
+	the WAN port.</font></p>
+	<p><font face="Arial">In WPL Decoder Platform, the multicast interface was 
+	locked to WAN port. Therefore, this command becomes to read-only and returns 
+	1 always.</font></p>
+	<p><font face="Arial">In EPL, PlatformT and Multi-Channel devices, there is 
+	only one networking port (WAN). It does not need to set this configuration. 
+	However, for back compatible consideration, this command needs to be 
+	supported in Read Only way and return 1 (WAN) always.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">1 : WAN Port</font><br>
+	<font face="Arial">2 : LAN Port</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable for all WPL Encoders</font></li>
+	<li><font face="Arial">Read-Only for other devices.</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_MULTICAST_IF='1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_MULTICAST_IF='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_MULTICAST_IF='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PortTCP2.htm">PORT_MULTICAST</a>,
+	<a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a>, <a href="PortRTP.htm">
+	V2_PORT_RTP_MULTI_AUDIO</a>, <a href="McastTtl.htm">VIDEO_MULTICAST_TTL</a>, 
+	<a href="V2McastIP.htm">V2_MULTICAST_IP</a>, <a href="IgmpEnabled.htm">IGMP_ENABLED</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_MULTICAST_IF</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_MULTICAST_IF</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_MULTICAST_IF=1<br>
+	<foont face="Arial">or<br>http://ip:port/cgi-bin/cmd/system?V2_MULTICAST_IF=1</font></font><br>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

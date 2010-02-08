@@ -1,0 +1,191 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_WB_GAIN</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_MAX_SHUTTER</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+  <p><font face="Arial">Get or Set the maximum (longest) shutter speed.</font></p>
+  <p><font face="Arial">In auto shutter mode (exposure mode has to be auto 
+    mode in some sensors), the sensor will adapt it's shutter speed to the 
+    lighting condition. The less lighting condition, the longer shutter speed. 
+    However, in the video streaming, the longer shutter causes the motion blur 
+    problem. User could limit sensor's the slowest shutter speed in its 
+    adaptation algorithm to have less motion blur. However, it causes higher 
+    video noise problem. The URL could help user to trade off these two 
+    situations (higher video noise and motion blur) well. Please refer the
+    <a href="../../CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup 
+    Design Specification</a> for further details. The function is also called 
+    maximum exposure time setting.</font></p>
+  <p><font face="Arial">The actual maximum auto shutter speed is vary from 
+    different sensors. Here is the summary of them.</font></p>
+  <div align="center">
+    <table border="1" width="80%" id="table1">
+      <tr>
+        <td width="155" align="center"><font face="Arial"><b>Maximum 
+          Auto Shutter/Sensor</b></font></td>
+        <td align="center" width="330"><font face="Arial"><b>MT9M131</b></font></td>
+        <td align="center"><font face="Arial"><b>IT-1</b></font></td>
+        </tr>
+      <tr>
+        <td height="22" width="155" align="center">
+          <font size="2" face="Arial">0</font></td>
+        <td height="22" width="330" align="center">
+          <font face="Arial" size="2">Use sensor's default setting</font></td>
+        <td height="22" align="center"><font face="Arial" size="2">Use 
+          sensor's default setting</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">1</font></td>
+        <td width="330" align="center"><font face="Arial" size="2">1/60 
+          or 1/50 seconds</font></td>
+        <td align="center">1/500</td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">2</font></td>
+        <td width="330" align="center"><font face="Arial" size="2">1/30 
+          or 1/25 seconds</font></td>
+        <td align="center">1/250</td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">3</font></td>
+        <td width="330" align="center"><font face="Arial" size="2">1/10 
+          seconds</font></td>
+        <td align="center"><font face="Arial" size="2">1/120 or 1/100 seconds</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">4</font></td>
+        <td width="330" align="center"><font face="Arial" size="2">1/5 
+          seconds</font></td>
+        <td align="center"><font face="Arial" size="2">1/60 or 1/50 seconds</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center">5</td>
+        <td width="330" align="center">None</td>
+        <td align="center"><font face="Arial" size="2">1/30 or 1/25 seconds</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">6</font></td>
+        <td width="330" align="center"><font size="2" face="Arial">None</font></td>
+        <td align="center"><font face="Arial" size="2">15/1 or 1/10 seconds</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">7</font></td>
+        <td width="330" align="center"><font size="2" face="Arial">None</font></td>
+        <td align="center">1/5</td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">8</font></td>
+        <td width="330" align="center"><font size="2" face="Arial">None</font></td>
+        <td align="center"><font size="2" face="Arial">1</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center"><font size="2" face="Arial">9
+          </font></td>
+        <td width="330" align="center"><font size="2" face="Arial">None</font></td>
+        <td align="center"><font size="2" face="Arial">2</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center">10</td>
+        <td width="330" align="center">¡@</td>
+        <td align="center"><font size="2" face="Arial">3</font></td>
+        </tr>
+      <tr>
+        <td width="155" align="center">11</td>
+        <td width="330" align="center">¡@</td>
+        <td align="center"><font size="2" face="Arial">4</font></td>
+        </tr>
+      </table>
+    </div>
+  <p>Below show the relation between light condtion&nbsp; and maximum shutter 
+    speed</p>
+  <p><img border="0" src="images/MinShtSpd.jpg" width="573" height="442"> </p>
+  <p><font face="Arial">The error message will be returned if the encoder does 
+    not support this URL.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0: Default maximum auto shutter speed.</font><br>
+	<font face="Arial">1: fast level of maximum auto shutter speed</font><br>
+	<font face="Arial">2: normal level of maximum auto shutter speed</font><br>
+	<font face="Arial">3: normal level of maximum auto shutter speed</font><br>
+	<font face="Arial">4: normal level of maximum auto shutter speed</font><br>
+	<font face="Arial">This shutter speed level 4 might not available if the desired inter-frame time interval is longer than this shutter speed.</font><br>
+	<font face="Arial">For example, this shutter speed is not available when the video frame rate is 30 which its inter-frame time interval is 33 msec.</font>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_MAX_SHUTTER='0'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_MAX_SHUTTER='0'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_MAX_SHUTTER='0'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoders with sensor MT9M131,HQ1</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders with sensor MT9M131 and IT1,HQ1, 
+	VXCMOS</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoWbMode.htm">VIDEO_WB_MODE</a>,
+	<a href="VideoWbGain.htm">VIDEO_WB_GAIN</a>, <a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+	<a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+	<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>,
+	<a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+	<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+	<a href="VideoFlickless.htm">VIDEO_FLICKLESS</a>,
+	<a href="VideoSlowShutter.htm">VIDEO_SLOW_SHUTTER</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_MAX_SHUTTER</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">VIDEO_MAX_SHUTTER</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_MAX_SHUTTER=0</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">VIDEO_MAX_SHUTTER=0</font></blockquote>
+
+<p><font face="Arial">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

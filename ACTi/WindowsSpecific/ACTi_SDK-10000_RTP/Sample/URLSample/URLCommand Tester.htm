@@ -1,0 +1,281 @@
+<!-- File : URLCommandList Version : 1.0.02 Date : 20061225-->
+<!-- File : URLCommandList Version : 1.0.01 Date : 20061129-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>URL Command Tester v1.0.01</title>
+    <style>
+    TD		{ font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; font-weight: bold; }
+
+    INPUT, 
+    TEXTAREA,
+    SELECT		{font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; color: #4B65F5; font-weight: bold;}
+
+    .h3Title2 {color: #444444;font-family: Arial, Verdana, Helvetica, sans-serif;font-size: 15px;font-weight: bold;margin-bottom: 6px;}
+    .h3Title {font:bold 15px Arial, Verdana, Helvetica, sans-serif;color:#444444;padding:3 0 2 0;}
+    .h3Arrow {MARGIN-LEFT: 7px; MARGIN-RIGHT: 0px; width:11 ; height:11 ; border:0}
+
+    .CmdList {BORDER-RIGHT: #9e9e9e 1px solid; BORDER-TOP: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-BOTTOM: #9e9e9e 1px solid}
+    .CmdList TD {font:normal 10pt Arial;padding:1 7 1 7}
+    .CmdList .Title {PADDING:1px 10px 1px 10px; BACKGROUND-POSITION: 50% bottom; BORDER-TOP: #ffffff 1px solid; FONT:bold 12px Arial; BACKGROUND-IMAGE: url(images/listViewBg.gif); COLOR: #33485c; BORDER-BOTTOM: #b0cbe2 1px solid; BACKGROUND-REPEAT: repeat-x; HEIGHT: 20px; BACKGROUND-COLOR: #f8f7f7}
+    
+    .RowEven {background-Color:#DFDFDF}
+    .RowOdd   {background-Color:#EFEFEF}
+
+    .config	.PageTitle	 { font-size: 12pt; color: #0000CC; }
+    .config	.AppltBlank { border: 1px solid #d9d9d9; margin-bottom: 5px; }
+    .config .AppltTitle { font-size: 10pt; line-height: 20px; cursor: hand ; color:#0000cc; background-color: #f2f2f2; padding-left: 5px;}
+    .config	.Label		{ font-size: 9pt; color: #555000; height:20px; text-align:left; font-weight: normal;}
+    .config	.Require	{ background-color:#FFFF80;}
+    .config	.ReadOnly	{ background-color:#ECE9D8;}
+    .config	.KeyWordReadOnly	{ background-color:#ECE9D8;}
+    
+    .ConfigTitle			{ border:0; margin-bottom:0;}
+    .ConfigTitle .left		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_left.gif'); }
+    .ConfigTitle .center	{ width:100%; height:20; background-image:url('./images/layout_config_title_center.gif'); font-size: 10pt; color: #000000;}
+    .ConfigTitle .right		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_right.gif');}
+    .ConfigTitle .hide		{ width:20px; height:20px; background-image:url('./images/layout_config_title_hide.gif');}
+    .ConfigTitle .show		{ width:20px; height:20px; background-image:url('./images/layout_config_title_show.gif');}
+    </style>
+</head>
+<body scroll="no">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td style="font:bold 20pt Arial;color:Blue">
+                URL Command Tester v1.0.02
+            </td>
+        </tr>
+        <tr>
+            <td class="config">
+				<table border="0" width="100%" class="AppltBlank" ID="Table3" style="padding:1 5 1 5">
+					<tr>
+						<td>
+							<table width="100%" height="100%" class="ConfigTitle" cellpadding="0" cellspacing="0" ID="Table5">
+								<tr>
+									<td><img src="images/space.gif" width="4"></td>
+									<td class="left"><img src="images/space.gif" width="8"></td>
+									<td class="center" id="defLBL_CameraInfo">
+										Connection Information
+									</td>
+									<td class="hide" onclick="TableShowHide(this);"><img src="images/space.gif" width="20"></td>
+									<td class="right"><img src="images/space.gif" width="8"></td>
+									<td><img src="images/space.gif" width="4"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="Label">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table6">
+								<tr>
+									<td id="defLBL_IPADDRESS" class="Label" style="width:1%"><nobr>&nbsp;IP Address&nbsp;</nobr></td>
+									<td><input name="defTXT_IPADDRESS" size="15" class="Require" value="192.168.0.100" ID="defTXT_IPADDRESS" onkeyup="ChgCommand();"></td>
+									<td id="defLBL_ACCOUNT" class="Label" style="width:1%"><nobr>&nbsp;Account&nbsp;</nobr></td>
+									<td><input name="defTXT_ACCOUNT" size="15" class="Require" value="Admin" ID="defTXT_ACCOUNT" onkeyup="ChgCommand();"></td>
+									<td id="defLBL_PASSWORD" class="Label" style="width:1%"><nobr>&nbsp;Password&nbsp;</nobr></td>
+									<td><input name="defTXT_PASSWORD" size="15" class="Require" value="123456" ID="defTXT_PASSWORD" onkeyup="ChgCommand();"></td>
+									<td id="defLBL_PASSWORD" class="Label" style="width:1%"><nobr>
+										<input name="defCHK_CHANNELNO" type="checkbox" ID="defCHK_CHANNELNO" onclick="ChgChannelNo(this);">
+										&nbsp;Multi-Channel : Channe No.&nbsp;</nobr>
+									</td>
+									<td><input name="defTXT_CHANNELNO" size="2" value="1" ID="defTXT_CHANNELNO" onkeyup="ChgChannelNo(this);" /></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+							<table cellpadding="0" cellspacing="0" ID="Table2">
+								<tr>
+									<td class="Label"> Commonly used&nbsp;&nbsp;</td>
+									<td><input type="button" value="System Info" onclick="Common('SystemInfo');" ID="Button3" NAME="Button3"/></td>
+									<td><input type="button" value="System Property" onclick="Common('SystemProperty');" ID="Button4" NAME="Button4"/></td>
+									<td><input type="button" value="Camera Status" onclick="Common('VideoStatus');" ID="Button5" NAME="Button5"/></td>
+									<td><input type="button" value="Device Config" onclick="Common('DeviceConfig');" ID="Button6" NAME="Button6"/></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td id="Td1" class="Label" colspan="2"><nobr> Request&nbsp;&nbsp;</nobr>
+							<input type="button" value="Reset" onclick="Reset();" ID="Button1" NAME="Button1"/>
+							<input type="button" value="Execute" onclick="Execute();" ID="Button2" NAME="Button2"/>
+							<input type="text" name="defTXT_REQUEST" size="155" ID="defTXT_REQUEST" onkeydown="OnKeyDown();">
+						</td>
+					</tr>
+					<tr>
+					    <td class="Label" style="padding:0 0 0 0">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="10%">
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" ID="Table1">
+											<tr><td id="Td2" class="Label" style="width:100">
+												<nobr> Response</nobr>
+											</td></tr>
+											<tr>
+												<td colspan="2">
+													<textarea name="defTXT_RESPONSE" rows="7" cols="65" ID="defTXT_RESPONSE" style="font:normal 10pt Arial;color:black">
+													</textarea>
+												</td>
+											</tr>
+										</table>
+									</td>
+								    <td align="left" valign="top" style="padding-left:5" width="100%">
+										<input type="hidden" id="CurrentTable" value="mpeg4" NAME="CurrentTable"/>
+										<table border="0" class="CmdList" id="systemList" cellpadding="0" cellspacing="0">
+											<tr>
+												<td class="Title" colspan="2" style="BORDER-RIGHT:#9e9e9e 1px solid;">Mpeg4 Quick Link</td>
+												<td class="Title" colspan="2">System Quick Link</td>
+											</tr>
+											<tr>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('mpeg40');">Video Quality Setting</a></td>
+												<td class="RowOdd" style="BORDER-RIGHT:#9e9e9e 1px solid;"><a href="#" onclick="GotoLink('mpeg44');">DIO</a></td>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('system0');">Device Operation</a></td>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('system4');">Account / Password</a></td>
+											</tr>
+											<tr>
+												<td class="RowEven"><a href="#" onclick="GotoLink('mpeg41');">Video Setting</a></td>
+												<td class="RowEven" style="BORDER-RIGHT:#9e9e9e 1px solid;"><a href="#" onclick="GotoLink('mpeg45');">Motion Detection</a></td>
+												<td class="RowEven"><a href="#" onclick="GotoLink('system1');">Network Setting</a></td>
+												<td class="RowEven"><a href="#" onclick="GotoLink('system5');">PORT Setting</a></td>
+											</tr>
+											<tr>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('mpeg42');">Camera Name</a></td>
+												<td class="RowOdd" style="BORDER-RIGHT:#9e9e9e 1px solid;"><a href="#" onclick="GotoLink('mpeg46');">Serial Port</a></td>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('system2');">Date / Time Setting</a></td>
+												<td class="RowOdd"><a href="#" onclick="GotoLink('system6');">Language</a></td>
+											</tr>
+											<tr>
+												<td class="RowEven"><a href="#" onclick="GotoLink('mpeg43');">Video Status</a></td>
+												<td class="RowEven" style="BORDER-RIGHT:#9e9e9e 1px solid;"><a href="#" onclick="GotoLink('mpeg47');">RTP Commands</a></td>
+												<td class="RowEven"><a href="#" onclick="GotoLink('system3');">Type of Service Setting</a></td>
+												<td class="RowEven"><a href="#" onclick="GotoLink('system7');">Other</a></td>
+											</tr>
+										</table>
+								    </td>
+								</tr>
+							</table>
+					    </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+		    <td height="100%">
+		        <iframe id="cmdList" src="URLCommandList.htm" height="100%" width="100%" frameborder="0"></iframe>
+		    </td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+    function ChgCommand() {
+        defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/http:\W\W[0-9.]*\W/,"http://" + defTXT_IPADDRESS.value + "/") ;
+        defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/.USER=[^&]*/,"?USER=" + defTXT_ACCOUNT.value ) ;
+        defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/&PWD=[^&]*/,"&PWD=" + defTXT_PASSWORD.value ) ;
+        defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/cgi-bin.system|cgi-bin.mpeg4/,"cgi-bin/" + CurrentTable.value ) ;
+    }
+    
+    Reset() ;
+    function Reset() {
+        var szIP = "http://"+defTXT_IPADDRESS.value+"/cgi-bin/" + CurrentTable.value ;
+        var szParam = "USER="+defTXT_ACCOUNT.value+"&PWD="+defTXT_PASSWORD.value ;
+        defTXT_REQUEST.value = szIP + "?" + szParam ;
+    }
+
+	function Common( szMode ) {
+		switch ( szMode ) {
+			case "SystemInfo" :
+				var szIP = "http://"+defTXT_IPADDRESS.value+"/cgi-bin/system" ;
+				var szParam = "USER="+defTXT_ACCOUNT.value+"&PWD="+defTXT_PASSWORD.value + "&SYSTEM_INFO";
+			break ;
+			case "SystemProperty" :
+				var szIP = "http://"+defTXT_IPADDRESS.value+"/cgi-bin/system" ;
+				var szParam = "USER="+defTXT_ACCOUNT.value+"&PWD="+defTXT_PASSWORD.value + "&SYSTEM_PROPERTY";
+			break ;
+			case "VideoStatus" :
+				var szIP = "http://"+defTXT_IPADDRESS.value+"/cgi-bin/mpeg4" ;
+				var szParam = "USER="+defTXT_ACCOUNT.value+"&PWD="+defTXT_PASSWORD.value + "&VIDEO_STATUS";
+			break ;
+			case "DeviceConfig" :
+				var szIP = "http://"+defTXT_IPADDRESS.value+"/cgi-bin/update" ;
+				var szParam = "USER="+defTXT_ACCOUNT.value+"&PWD="+defTXT_PASSWORD.value + "&CONFIG_GET";
+			break ;
+		}
+        defTXT_REQUEST.value = szIP + "?" + szParam ;
+	}
+
+    function Execute() {
+        var xmlhttp = null;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            xmlhttp = new ActiveXObject('MSXML2.XMLHTTP.3.0');
+        }
+        
+        try {
+		    xmlhttp.open("GET", defTXT_REQUEST.value ,false) ;
+		    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded") ;
+		    xmlhttp.send() ;
+		    defTXT_RESPONSE.value = xmlhttp.responseText ;
+		} catch(e) {
+		    try {
+		        var idx = defTXT_REQUEST.value.indexOf("?") ;
+		        var szIP = defTXT_REQUEST.value.substring( 0, idx ) ;
+		        var szParam = defTXT_REQUEST.value.substr( idx+1 ) ;
+		        xmlhttp.open("GET", szIP ,false) ;
+		        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded") ;
+		        xmlhttp.send(szParam) ;
+		        defTXT_RESPONSE.value = xmlhttp.responseText ;
+		    } catch(e) {
+		        defTXT_RESPONSE.value = e.description ;
+		    }
+        }
+    }
+    
+    function OnKeyDown() {
+        switch(event.keyCode) {
+            case 13 :
+                Execute() ;
+                break ;
+        }
+    }
+    
+    function GotoLink( szLink ) {
+		cmdList.oLink.href = "#"+szLink ;
+		cmdList.oLink.click() ;
+    }
+    
+    function ChgChannelNo( oSrc ) {
+		if ( oSrc.type.toUpperCase()=="CHECKBOX" ) {
+			if ( oSrc.checked ) {
+				var szPWD = defTXT_REQUEST.value.match(/&PWD=[^&]*/) ;
+				var szCH = "&CHANNEL=" + defTXT_CHANNELNO.value ;
+				defTXT_REQUEST.value = defTXT_REQUEST.value.replace(szPWD,szPWD+szCH) ;
+			} else {
+				defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/&CHANNEL=[^&]*/, "" ) ;
+			}
+		} else {
+			if ( defCHK_CHANNELNO.checked )
+				defTXT_REQUEST.value = defTXT_REQUEST.value.replace(/&CHANNEL=[^&]*/, "&CHANNEL=" + defTXT_CHANNELNO.value ) ;
+		}
+    }
+    
+    function TableShowHide( objArg ) {
+        var objTable = objArg ;
+        while ( 1 ) {
+            if ( objTable.className=="AppltBlank" ) break ;
+            objTable = objTable.parentElement ;
+        }
+
+        if ( objTable.rows[1].style.display=="none" ) {
+            objTable.rows[1].style.display="inline" ;
+            objArg.className = "hide"
+        } else {
+            objTable.rows[1].style.display="none" ;
+            objArg.className = "show"
+        }
+        
+    }
+</script>
+</html>

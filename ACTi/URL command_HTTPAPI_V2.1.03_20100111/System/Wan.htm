@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the WAN port configuration. If the WAN Type is Dynamic, the 
+	networking address (IP, Netmask and Gateway) in the return message is not 
+	the runtime setting.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	the Router's WAN port configuration will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">WAN_TYPE='1'</font><br>
+	<font face="Arial">WAN_IP='192.168.0.100'</font><br>
+	<font face="Arial">WAN_NETMASK='255.255.255.0'</font><br>
+	<font face="Arial">WAN_GATEWAY='192.168.0.254'</font><br>
+	<font face="Arial">WAN_PPPOE_USERNAME=''</font><br>
+	<font face="Arial">WAN_PPPOE_PASSWORD=''</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="WanStatus.htm">WAN_STATUS</a>,
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a>, <a href="WanType.htm">WAN_TYPE</a>,
+	<a href="WanAddress.htm">WAN_IP</a>, <a href="WanAddress.htm">WAN_NETMASK</a>,
+	<a href="WanAddress.htm">WAN_GATEWAY</a>, <a href="WanPPPoE.htm">
+	WAN_PPPOE_USERNAME</a>, <a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

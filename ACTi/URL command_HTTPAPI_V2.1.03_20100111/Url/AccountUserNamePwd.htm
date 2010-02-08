@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ACCOUNT_USER_NAME_PASSWORD</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">ACCOUNT_USER_NAME_N, ACCOUNT_USER_PASSWORD_N</font></p>
+<p><font face="Arial" size="4">where N is the user-level index started from 1.</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set user-level account name and password. 
+	Only root and the same user index account have authorized to execute this command.</font></p>
+	<p><font face="Arial">When write, the account name has not be the same as 
+	the root account name.</font></p>
+	<p><font face="Arial">Only the root-level account could have right to get or set all settings 
+	in the device. The user-level account could get the video and audio stream 
+	and some system information only.</font></p>
+	<p><font face="Arial">Because there are 10 user-level accounts in the device, the last 
+	character, N, in these command indicates the user index of the user-level 
+	account and its range is in 1~10.</font></p>
+	<p><font face="Arial">In EPL decoder, these URLs are same as the
+	<a href="../System/AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a> and
+	<a href="../System/AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N </a>in the
+	<a href="../System/system.htm">SYSTEM CGI</a> but only
+	<a href="../General/GeneralDescription.htm">Type1</a> URL command is 
+	supported.</font></p>
+	<p><font face="Arial">Therefore, the ACCOUNT_USER_NAME_N and 
+	ACCOUNT_USER_PASSWORD_N URL in WPL decoders are only 
+	addressed in this page.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Character string (&lt;32 bytes for name and &lt; 64 bytes for 
+	password)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font><br>
+	</p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Account.htm">ACCOUNT</a>,
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a>, 
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;ACCOUNT_USER_NAME_N=''</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;ACCOUNT_USER_PASSWORD_N=''</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">
+	URL_CGI</a>, <a href="../System/system.htm">SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

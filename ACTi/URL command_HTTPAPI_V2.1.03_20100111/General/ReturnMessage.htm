@@ -1,0 +1,259 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Return Message of URL</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">Return Message of URL</font></p>
+<blockquote>
+	<p><font face="Arial">The return message of URL are defined as followed the 
+	HTTP standard. To all devices, there are two parts of the return 
+	message of the URL. These two parts of message were sent in two TCP packets. 
+	The first part is the HTTP status header for return code and the second part 
+	is the return message of URL.</font></p>
+	<p><font face="Arial">Example of the return message of the URL to read 
+	WAN_TYPE.</font></p>
+	<p><font face="Arial"><font color="#0000FF">
+	<span style="background-color: #C0C0C0">HTTP/1.0 200 OK <br>
+	Content-type: text/plain<br>
+	<br>
+	WAN_TYPE='1'</span></font></font></p>
+	<p><font face="Arial">Example of the return message of the URL to&nbsp; set 
+	WAN_TYPE=1</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">HTTP/1.0 200 OK <br>
+	Content-type: text/plain<br>
+	<br>
+	OK: WAN_TYPE='1'</span></font></p>
+	<p><font face="Arial">Example of the return message of the URL to&nbsp; set 
+	WAN_TYPE=0 (incorrect argument)</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">HTTP/1.0 200 OK <br>
+	Content-type: text/plain<br>
+	<br>
+	ERROR: WAN_TYPE='1'</span></font></p>
+</blockquote>
+<p><font face="Arial" size="4">HTTP Status Header</font></p>
+<blockquote>
+	<font face="Arial">
+	<p>The format of the HTTP status code is</p>
+	<p ALIGN="LEFT">HTTP/1.0 &lt;HTTP_CODE&gt; &lt;HTTP_TEXT&gt; \r\n</p>
+	<p>The most used HTTP codes are listed below.</p>
+	</font><font face="Arial">
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td align="center">HTTP_CODE</td>
+			<td align="center">HTTP_TEXT</td>
+			<td align="center">
+			<p align="left">Description</td>
+		</tr>
+		<tr>
+			<td align="center">200</td>
+			<td align="center">OK</td>
+			<td align="left">Valid URL Comnand</td>
+		</tr>
+		<tr>
+			<td align="center">400</td>
+			<td align="center">Unauthorize</td>
+			<td align="left">Error in authentication</td>
+		</tr>
+		<tr>
+			<td align="center">401</td>
+			<td align="center">Not Found</td>
+			<td align="left">General Error</td>
+		</tr>
+	</table>
+	</font>
+</blockquote>
+<p><font face="Arial" size="4">Return Message</font></p>
+<blockquote>
+	<p><font face="Arial">In general, there are five types of the return message 
+	of the URL.</font></p>
+	<ol>
+		<li><font face="Arial"><a href="#type1">CMD='VALUE'</a></font></li>
+		<li><font face="Arial"><a href="#type2">OK: CMD='VALUE'</a></font></li>
+		<li><font face="Arial"><a href="#type3">OK</a></font></li>
+		<li><font face="Arial"><a href="#type4">ERROR: CMD='VALUE'</a></font></li>
+		<li><font face="Arial"><a href="#type5">ERROR: Descriptions of Error</a></font></li>
+	</ol>
+	<p><font face="Arial">Please refer the <a href="GeneralDescription.htm">
+	Description of URL</a> to get the format of URL for further details.</font></p>
+	<p><font face="Arial">Note that the HTTP return code is 200 in the return 
+	message type 4 and 5. User should not use the HTTP return code to check if 
+	the device accepts the URL command or not.</font></p>
+	<p><i><b><font face="Arial"><a name="type1"></a>1. CMD='VALUE'</font></b></i></p>
+	<p><font face="Arial">This return message is used in the READ URL command. 
+	The device will echo this URL command and give the value in the two ' ' 
+	symbols.</font></p>
+	<p><font face="Arial">If there is more than one URL in the URL command, the 
+	return message of every URL will be shown. For example,</font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE is</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">WAN_TYPE='1'</span></font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE&amp;WAN_IP is</font></p>
+	<p><font color="#0000FF"><font face="Arial">
+	<span style="background-color: #C0C0C0">WAN_TYPE='1'</span></font><span style="background-color: #C0C0C0"><br>
+	</span>
+	<font face="Arial"><span style="background-color: #C0C0C0">WAN_IP='192.168.0.100'</span></font></font></p>
+	<p><b><i><font face="Arial"><a name="type2"></a>2. OK: CMD='VALUE'</font></i></b></p>
+	<p><font face="Arial">This return message is used in the WRITE URL command. 
+	The device will echo this URL command and give the value after this command in the two ' ' 
+	symbols.</font></p>
+	<p><font face="Arial">If there is more than one URL in the URL command, the 
+	return message of every URL will be shown. For example,</font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE=1 is</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">OK: WAN_TYPE='1'</span></font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE=1&amp;WAN_IP=192.168.1.100 is</font></p>
+	<p><font color="#0000FF"><font face="Arial">
+	<span style="background-color: #C0C0C0">OK: WAN_TYPE='1'</span></font><span style="background-color: #C0C0C0"><br>
+	</span>
+	<font face="Arial"><span style="background-color: #C0C0C0">OK: WAN_IP='192.168.0.100'</span></font></font></p>
+	<p><b><i><font face="Arial"><a name="type3"></a>3. OK</font></i></b></p>
+	<p><font face="Arial">This return message is used in the ACTION URL command 
+	like SAVE, REBOOT, FACTORY_DEFAULT and so on. There is no value returned for 
+	this command. For example,</font></p>
+	<p><font face="Arial">Return Message of the URL REBOOT is</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">OK</span></font></p>
+	<p><b><i><font face="Arial"><a name="type4"></a>4. ERROR: CMD='VALUE'</font></i></b></p>
+	<p><font face="Arial">This return message is used in the WRITE URL command 
+	but the input argument is incorrect. 
+	The device will echo this URL command and give the value which is the 
+	setting in the device.</font></p>
+	<p><font face="Arial">If there is more than one URL in the URL command, the 
+	return message of every URL will be shown. For example,</font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE=0 where the range 
+	of WAN_TYPE is 1~3:</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">ERROR: WAN_TYPE='1'</span></font></p>
+	<p><font face="Arial">It shows the current WAN_TYPE setting inn the device 
+	is 1.</font></p>
+	<p><font face="Arial">Return Message of the URL WAN_TYPE=0&amp;WAN_IP=192.168.1.100 is</font></p>
+	<p><font color="#0000FF"><font face="Arial">
+	<span style="background-color: #C0C0C0">ERROR: WAN_TYPE='1'</span></font><span style="background-color: #C0C0C0"><br>
+	</span>
+	<font face="Arial"><span style="background-color: #C0C0C0">OK: WAN_IP='192.168.0.100'</span></font></font></p>
+	<p><font face="Arial">It shows the argument of WAN_TYPE setting is incorrect 
+	and the WAN_TYPE configuration is not updated, but the WAN_IP setting is 
+	updated successfully.</font></p>
+	<p><b><i><font face="Arial"><a name="type5"></a>5: ERROR: Description of 
+	Error</font></i></b></p>
+	<p><font face="Arial">This return message is for the error condition which 
+	could not be described in the ERROR: CMD='VALUE' format. The URL likes read 
+	or write only command or action command might have such kind to return 
+	message. Here is the summary of the possible error return message in this 
+	format.</font></p>
+	<table border="1" width="70%" id="table2">
+		<tr>
+			<td><b><font face="Arial">Description of Error</font></b></td>
+			<td width="584"><b><font face="Arial">Description</font></b></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">missing USER/PWD</font></td>
+			<td width="584"><font face="Arial">The USER or PWD command was not 
+			found in the <a href="GeneralDescription.htm">Type1 URL</a></font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">bad account/password</font></td>
+			<td width="584"><font face="Arial">The user account name or password 
+			is incorrect in the <a href="GeneralDescription.htm">Type1 URL.</a></font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">missing CHANNEL</font></td>
+			<td width="584"><font face="Arial">The CHANNEL command was not found</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">bad CHANNEL=n</font></td>
+			<td width="584"><font face="Arial">The channel n Video Server is not 
+			active in the Multi-Channel Encoder device or the channel n is out 
+			of range in the Multi-Channel Encoder device</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">CMD not found</font></td>
+			<td width="584"><font face="Arial">The device does not support this 
+			CMD</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">CMD is write-only</font></td>
+			<td width="584"><font face="Arial">The CMD is write only in the 
+			device</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">CMD is read-only</font></td>
+			<td width="584"><font face="Arial">The CMD is read only in the 
+			device</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">not authorized</font></td>
+			<td width="584"><font face="Arial">The CMD is not allow to be 
+			execute because of lower logon level.</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">invalid parameters</font></td>
+			<td width="584"><font face="Arial">The input argument is incorrect 
+			in the Write-Only Command and Write Operation with a list index, 
+			like MOTION_CONFIG in ENCODER CGI&nbsp; </font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">no command</font></td>
+			<td width="584"><font face="Arial">There is no URL command</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">firmware image<sup><a href="#note1">note1</a></sup></font></td>
+			<td width="584"><font face="Arial">Firmware image file is corrupted 
+			or MD5 check error in firmware upgrade URLs</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">firmware version<sup><a href="#note1">note1</a></sup></font></td>
+			<td width="584"><font face="Arial">Firmware version mismatches in 
+			firmware upgrade URLs</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">firmware type<sup><a href="#note1">note1</a></sup></font></td>
+			<td width="584"><font face="Arial">Firmware Type error (AC/NB 
+			mismatches) in firmware upgrade URLs</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">config image</font></td>
+			<td width="584"><font face="Arial">Configuration file is corrupted</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">oem image</font></td>
+			<td width="584"><font face="Arial">OEM image file is corrupted</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">profile image</font></td>
+			<td width="584"><font face="Arial">Camera Profile image file is 
+			corrupted</font></td>
+		</tr>
+		<tr>
+			<td height="27"><font face="Arial">profile ID<sup><a href="#note1">note1</a></sup></font></td>
+			<td width="584" height="27"><font face="Arial">Profile ID mismatches in profile 
+			upgrade URLs</font></td>
+		</tr>
+		<tr>
+			<td height="24"><font face="Arial">internal error &lt;more description&gt;</font></td>
+			<td width="584" height="24"><font face="Arial">There is an error internally. 
+			There might be more description of the error</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial"><font color="#0000FF"><b><a name="note1"></a>note1</b></font> 
+	:&nbsp; In Multi-Channel Encoder, the firmware or profile upgrade URLs could 
+	update many Video Servers. The error message for these URLs will give the 
+	CHANNEL ID to identify which video server fails of upgrading. For example, 
+	the error message might look like that.</font></p>
+	<p><font face="Arial" color="#0000FF">
+	<span style="background-color: #C0C0C0">ERROR: CHANNEL=1 firmware image</span></font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

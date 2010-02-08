@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOTION_ENABLED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOTION_ENABLED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set Motion Enabled configuration. The parameter 
+	is in the hexadecimal format.</font></p>
+	<p><font face="Arial">In most of video encoders, there are three motion 
+	regions. Every motion region has it own control configuration space and 
+	could be enabled individually. Please refer to
+	<a href="../Encoder/MotionConfig.htm">MOTION_CONFIG</a> in ENCODER CGI to 
+	have further details. This URL could enable and disable all motion regions 
+	no matter individual motion's settings.</font><br>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	MOTION_ENABLED configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">0x0n<br>
+	where n = 0, motion detection is disabled. n=1, motion detection is enabled.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">MOTION_ENABLED='0x00'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: MOTION_ENABLED='0x00'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: MOTION_ENABLED='0x00'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<ul>
+	<li><font face="Arial">In mpeg4 CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="MotionStatus.htm">MOTION_STATUS</a>, 
+	<a href="MotionSetting.htm">MOTION_SETTING</a>, <a href="MotionSen.htm">MOTION_SENSITIVITY</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In encoder CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../Encoder/MotionConfig.htm">MOTION_CONFIG</a>, 
+	<a href="../Encoder/MotionConfigGet.htm">MOTION_CONFIG_GET</a>, 
+	<a href="MotionSen.htm">MOTION_SENSITIVITY</a>, 
+	<a href="../Encoder/MotionTimer.htm">MOTION_TIMER</a>,
+	<a href="../Encoder/MotionObj.htm">MOTION_OBJ</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;MOTION_ENABLED</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?MOTION_ENABLED</font></p>
+	<p><font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;MOTION_ENABLED=0x00</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?MOTION_ENABLED=0x00</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a>, <a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

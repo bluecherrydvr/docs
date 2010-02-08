@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_WDR</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h2>VIDEO_WDR</h2>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or set the Wide Dynamic Range configurations.</p>
+	<p>
+    	This URL is only available in some PlatformT encoders/camera which have the DNP DT018054 image processor. 
+        It sets the WDR operating mode and the level of WDR.</p>
+	<p>There are two WDR levels in the firmware. One is for day time mode and the other one is for night time mode. However, the DNP DT018054 has only one level in runtime. The firmware has to load one of these two levels to the device based on the day/night state in camera if the WDR mode is AUTO.</p>
+	<p>When WDR mode is ON, the WDR is enable always and the day time level is loaded to the device. The night time level will not be used in this mode.</p>
+	<p>When WDR mode is OFF, the WDR is disable. The day/night time levels are not used.	</p>
+	<p>The WDR day/time level is in the range of 0 and 255. The 0 means the WDR is disable. The lower level, less image adaptation in WDR.</p>
+	<p>For the devices which do not have Day/Night Control function like video server, the WDR should work at ON or OFF mode. However, consider the flexiale usage of this URL, it accepts the AUTO mode in these devices. The firmware will load the WDR level based on its Day/Night state event it is not able to detect the Day/Night State. No error message will be returned when the AUTO mode is set to the device. The camera profile should set the WDR mode to ON in such kind devices.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>
+    	mode,DayLevel,NightLevel<br>
+		where<br>
+mode could be AUTO, ON or OFF<br>
+		DayLevel : the level of WDR for day time and is from 0~255. 0 meas disable<br>
+	NightLevel : the level of WDR for night time mode and is from 0~255. 0 means disable</p>
+	<p>The DayLevel and NightLevel could be ignored in this URL. The firmware will use its current WDR level settings to perform WDR function if the input argument of this URL does not have DayLevel and NightLevel.</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read and Write</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	VIDEO_WDR='AUTO,120,0'
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	OK: VIDEO_WDR='AUTO,120,0'<br>
+	or<br>
+	ERROR: VIDEO_WDR='AUTO,120,0'
+</blockquote>
+<h3>Applicability</H3>
+<ul>
+	<li>PlatformT : All Encoders with video processor DNP DT018054 image processor</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="VideoBlackLevel.htm">VIDEO_BLACKLEVEL</a>,
+	<a href="VideoDeinterlace.htm">VIDEO_DEINTERLACE</a>, 
+    <a href="VideoDnr.htm">VIDEO_DNR</a>, 
+    <a href="VideoSkinTone.htm">VIDEO_SKINTONE</a>,
+	<a href="V2Sharpness.htm">V2_SHARPNESS</a>
+</blockquote>
+<h3>Example</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WDR<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/VIDEO_WDR
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WDR=AUTO,120,0<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/VIDEO_WDR=AUTO,120,0<br>
+	or<br>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WDR=AUTO<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/VIDEO_WDR=OFF<br>
+    or<br>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WDR=ON,120<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/VIDEO_WDR=ON</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+	<a href="Encoder.htm">
+	ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

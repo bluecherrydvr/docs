@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT_RTP</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_PORT_RTSP, V2_PORT_RTP_MULTI_VIDEO, 
+V2_PORT_RTP_MULTI_AUDIO</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set device's RTSP server port number and the 
+	multicast port numbers for multicast video and audio RTP streams. When 
+	write, the port number will be checked if it was used from other 
+	applications. The video and audio RTP ports have to be even ports.</font></p>
+	<p><i><b><font face="Arial">V2_PORT_RTSP</font></b></i></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this will set the part base of all channels. The RTSP 
+	port of the CHANNEL n will be the RTSP port base + 2 * (n -1). For example, 
+	the V2_PORT_RTSP=7070 will set the base of RTSP port to 7070. Then, the RTSP 
+	port of CHANNEL 1 is 7070, the control port of CHANNEL 2 is 7072.</font></p>
+	<p><i><b><font face="Arial">V2_PORT_RTP_MULTI_VIDEO, V2_PORT_RTP_MULTI_AUDIO</font></b></i></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, this will set the port base of all channels. The 
+	multicast port of all CHANNELs will be this multicast port. For example, the 
+	V2_PORT_RTP_MULTI_VIDEO=5000 and&nbsp; V2_PORT_RTP_MULTI_AUDIO=5002 will set 
+	the RTP multicast port of all CHANNEL to 5000 for video and 5002 for audio.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td width="214"><font face="Arial"><b>URL Commnd Name</b></font></td>
+			<td><font face="Arial"><b>Description</b></font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">V2_PORT_RTSP</font></td>
+			<td>
+	<font face="Arial">TCP port number, 1~65535</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">V2_PORT_RTP_MULTI_VIDEO</font></td>
+			<td><font face="Arial">even UDP port number, 2~65534</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">V2_PORT_RTP_MULTI_AUDIO</font></td>
+			<td><font face="Arial">even UDP port number, 2~65534</font></td>
+		</tr>
+		</table>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly (except all encoder in WPL Platforms)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_PORT_RTSP='7007'</font><br>
+	<font face="Arial">V2_PORT_RTP_MULTI_VIDEO='5000'</font><br>
+	<font face="Arial">V2_PORT_RTP_MULTI_AUDIO='5002'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_PORT_RTSP='7007'</font><br>
+	<font face="Arial">OK: V2_PORT_RTP_MULTI_VIDEO='5000'</font><br>
+	<font face="Arial">OK: V2_PORT_RTP_MULTI_AUDIO='5002'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_PORT_RTSP='7007'</font><br>
+	<font face="Arial">ERROR: V2_PORT_RTP_MULTI_VIDEO='5000'</font><br>
+	<font face="Arial">ERROR: V2_PORT_RTP_MULTI_AUDIO='5002'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Port.htm">PORT</a>,
+	<a href="PortHttp.htm">PORT_HTTP</a>,
+	<a href="PortSearch1_2.htm">PORT_SEARCH_1</a>, <a href="PortSearch1_2.htm">
+	PORT_SEARCH_2</a>, <a href="PortSearch.htm">PORT_SEARCH</a>,
+	<a href="PortTCP2.htm">PORT_REGISTER</a>, <a href="PortTCP2.htm">
+	PORT_CONTROL</a>, <a href="PortTCP2.htm">PORT_VIDEO</a>,
+	<a href="PortTCP2.htm">PORT_MULTICAST</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTSP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTP_MULTI_VIDEO</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTP_MULTI_AUDIO</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTSP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTP_MULTI_VIDEO</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTP_MULTI_AUDIO</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTSP=7070</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTP_MULTI_VIDEO=5000</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_PORT_RTP_MULTI_AUDIO=5002</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTSP=7070</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTP_MULTI_VIDEO=5001</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?V2_PORT_RTP_MULTI_AUDIO=5002</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

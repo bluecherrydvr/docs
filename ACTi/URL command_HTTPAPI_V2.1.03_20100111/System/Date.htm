@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DATE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DATE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the Date configurations. </font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, the Router's Date configurations will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">DATE_TYPE='2'</font><br>
+	<font face="Arial">DATE_SNTP_IP='192.168.0.2'</font><br>
+	<font face="Arial">DATE_SNTP_UPDATE='86400'</font><br>
+	<font face="Arial">DATE_MANUAL_DATE='010100002004'</font><br>
+	<font face="Arial">DATE_MANUAL_TIME='00:00:00'</font><br>
+	<font face="Arial">DATE_MANUAL_ZONE='+00'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="DateType.htm">DATE_TYPE</a>, <a href="DateSntpIp.htm">DATE_SNTP_IP</a>, 
+	<a href="DateSntpUpdate.htm">DATE_SNTP_UPDATE</a>, 
+	<a href="DateManualDate.htm">DATE_MANUAL_DATE</a>, 
+	<a href="DateManualTime.htm">DATE_MANUAL_TIME</a>, 
+	<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a>, <a href="DateConfig.htm">
+	DATE_CONFIG</a>, <a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?DATE</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

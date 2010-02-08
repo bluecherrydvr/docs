@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CHxx_TIME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CHANNEL_TIME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set the time of stay in second for a connected channel 
+	to the decoder. In here, this time duration is called channel dwell time.</font></p>
+	<p><font face="Arial">If the channel dwell time is set to 0, the decoder 
+	will stay this channel forever.</font></p>
+	<p><font face="Arial">In the decoder devices, it could connect an 
+	encoder and move to next channel after current channel dwell time.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n,m</font><br><font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : the channel ID in the decoder, 1~16</font><br>
+	<font face="Arial">m : channel dwell time from 0 to 65535.</font></blockquote>
+<ul>
+	<li><b><u><i><font face="Arial">Note:</font></i></u></b><br>
+	<font face="Arial">1. If the n is missing in the read operation, the target 
+	channel of this read command is channel 1.</font></li>
+</ul>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote><font face="Arial">CHANNEL_TIME='1,60'</font><br>
+	<font face="Arial">CHANNEL_TIME='2,60'</font><br>
+	<font face="Arial">CHANNEL_TIME='3,60'<br>...<br>...</font><br>
+	<font face="Arial">CHANNEL_TIME='15,60'</font><br>
+	<font face="Arial">CHANNEL_TIME='16,60'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OK: CHANNEL_TIME='1,60'</font><br>
+	<font face="Arial">or</font><br><font face="Arial">ERROR: CHANNEL_TIME='1,60'</font></blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">PlatformA Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChannelConfig.htm">CHANNEL_CONFIG</a>,
+	<a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a>,
+			<a href="ChannelInfo.htm">CHANNEL_INFO</a>,
+			<a href="ChannelSwitch.htm">CHANNEL_SWITCH</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_TIME</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_TIME</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_TIME=2,60</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_TIME=2,60</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

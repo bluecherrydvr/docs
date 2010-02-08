@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SERIAL_ASCII</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SERIAL_ASCII</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Send the string in ASCII to serial port. For example, 
+	SERIAL_ASCII=1234 to send the 0x30,0x31,0x32,0x33 to the serial port.</font></p>
+	<p><font face="Arial">There is a serial port on the device for the 
+	RS232/RS485/RS422 port. The external device could be accessed or controlled 
+	through this port. For example, when the RS485 port in Analog PTZ camera 
+	connects to the Video Server's serial port, user could control this Analog 
+	PTZ camera by the Video Server through the Ethernet at remote site.</font></p>
+	<p><font face="Arial">Note that, there is no any hardware and software flow 
+	control mechanism implemented in this serial port. Therefore, the serial 
+	data might be lost if the data rate between the serial port device (like 
+	analog PTZ camera) and encoder or the remote host and encoder does not match 
+	or the serial data very bursts into the encoder. </font><br>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">Character Strings</font><br>
+	</p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK<br></font><font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SerialSetting.htm">SERIAL_SETTING</a>,
+	<a href="SerialHex.htm">SERIAL_HEX</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/mpeg4?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">SERIAL_ASCII=abcd</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/mpeg4?</font><font face="Arial" size="3">SERIAL_ASCII=abcd</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

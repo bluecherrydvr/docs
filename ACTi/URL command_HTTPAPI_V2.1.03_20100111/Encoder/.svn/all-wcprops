@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repos/!svn/ver/2557/FWDesignSpec/DFI/URLDesignSpec/Encoder
+END
+VideoMaxShutter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/2557/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMaxShutter.htm
+END
+VideoBlackLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/1830/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoBlackLevel.htm
+END
+MotionConfigGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/MotionConfigGet.htm
+END
+MotionConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1889/FWDesignSpec/DFI/URLDesignSpec/Encoder/MotionConfig.htm
+END
+VideoBlcMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoBlcMode.htm
+END
+DioOutput.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1889/FWDesignSpec/DFI/URLDesignSpec/Encoder/DioOutput.htm
+END
+PtzTourScan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1513/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzTourScan.htm
+END
+MoveMaxSpeedGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/MoveMaxSpeedGet.htm
+END
+VideoWbGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoWbGain.htm
+END
+EventDI.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventDI.htm
+END
+VideoExposureGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoExposureGain.htm
+END
+PtzPresetGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2131/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzPresetGet.htm
+END
+PtzTourSet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2131/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzTourSet.htm
+END
+MoveLimitGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/MoveLimitGet.htm
+END
+HttpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/HttpServer.htm
+END
+EventConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2364/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventConfig.htm
+END
+Addr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/Addr.htm
+END
+TextOverlayFormat.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/repos/!svn/ver/2147/FWDesignSpec/DFI/URLDesignSpec/Encoder/TextOverlayFormat.html
+END
+PtzPresetSet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2131/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzPresetSet.htm
+END
+VideoGop.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2351/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoGop.htm
+END
+V2Sharpness.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1830/FWDesignSpec/DFI/URLDesignSpec/Encoder/V2Sharpness.htm
+END
+VideoIrisMode.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/!svn/ver/2064/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoIrisMode.html
+END
+FtpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/FtpServer.htm
+END
+MaxStreamTime.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/MaxStreamTime.htm
+END
+PtzParkConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzParkConfig.htm
+END
+PrivacyRegion.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/2407/FWDesignSpec/DFI/URLDesignSpec/Encoder/PrivacyRegion.htm
+END
+LensCompensation.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/LensCompensation.htm
+END
+PtzTourName.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzTourName.htm
+END
+EventRspDO.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspDO.htm
+END
+VideoSlowShutter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoSlowShutter.htm
+END
+GetStream.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2100/FWDesignSpec/DFI/URLDesignSpec/Encoder/GetStream.htm
+END
+EventRspGo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspGo.htm
+END
+VideoSharpness.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoSharpness.htm
+END
+PirMdConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2364/FWDesignSpec/DFI/URLDesignSpec/Encoder/PirMdConfig.htm
+END
+VideoMjpegQuality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMjpegQuality.htm
+END
+VideoWbMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoWbMode.htm
+END
+PositionGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/PositionGet.htm
+END
+VideoDCLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2526/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDCLevel.htm
+END
+LineFreq.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/LineFreq.htm
+END
+VideoShutterSpeed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoShutterSpeed.htm
+END
+VideoExposureMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/2526/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoExposureMode.htm
+END
+Move.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2147/FWDesignSpec/DFI/URLDesignSpec/Encoder/Move.htm
+END
+VideoDNIRLed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2140/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDNIRLed.htm
+END
+GetDIState.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2179/FWDesignSpec/DFI/URLDesignSpec/Encoder/GetDIState.html
+END
+VideoDnr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDnr.htm
+END
+CameraPreset.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/CameraPreset.htm
+END
+XyzPosGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/XyzPosGet.htm
+END
+EventRspMsg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2312/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspMsg.htm
+END
+Encoder.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2364/FWDesignSpec/DFI/URLDesignSpec/Encoder/Encoder.htm
+END
+Focus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/Focus.htm
+END
+TSD_CONFIG.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/1407/FWDesignSpec/DFI/URLDesignSpec/Encoder/TSD_CONFIG.htm
+END
+VideoWdr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2438/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoWdr.htm
+END
+Zoom.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/1935/FWDesignSpec/DFI/URLDesignSpec/Encoder/Zoom.htm
+END
+VideoFlipMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoFlipMode.htm
+END
+PtzTourState.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzTourState.htm
+END
+VideoShutterMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoShutterMode.htm
+END
+PtzVendor.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzVendor.htm
+END
+VideoIris.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2410/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoIris.htm
+END
+OsdFormat.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2407/FWDesignSpec/DFI/URLDesignSpec/Encoder/OsdFormat.htm
+END
+Snapshot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/Snapshot.htm
+END
+MotionObj.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/MotionObj.htm
+END
+OsdEnabled.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/OsdEnabled.htm
+END
+VideoSenseupLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoSenseupLevel.htm
+END
+VideoMjpegFps.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMjpegFps.htm
+END
+Position.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2312/FWDesignSpec/DFI/URLDesignSpec/Encoder/Position.htm
+END
+FocusPosition.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/FocusPosition.htm
+END
+MoveLimit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/MoveLimit.htm
+END
+VideoDNIRCutFilter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/repos/!svn/ver/2140/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDNIRCutFilter.htm
+END
+VideoDeinterlace.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDeinterlace.htm
+END
+VideoEncoder.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoEncoder.htm
+END
+VideoMirrorMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMirrorMode.htm
+END
+NightGainThd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2179/FWDesignSpec/DFI/URLDesignSpec/Encoder/NightGainThd.htm
+END
+ZoomPosition.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/1935/FWDesignSpec/DFI/URLDesignSpec/Encoder/ZoomPosition.htm
+END
+GetCtrlMsg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2100/FWDesignSpec/DFI/URLDesignSpec/Encoder/GetCtrlMsg.htm
+END
+VariableFpsNum.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/!svn/ver/1544/FWDesignSpec/DFI/URLDesignSpec/Encoder/VariableFpsNum.htm
+END
+HTTP_PROXY.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/1407/FWDesignSpec/DFI/URLDesignSpec/Encoder/HTTP_PROXY.htm
+END
+VideoSkinTone.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1830/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoSkinTone.htm
+END
+VideoStream.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoStream.htm
+END
+ExposureGainGet.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/2140/FWDesignSpec/DFI/URLDesignSpec/Encoder/ExposureGainGet.html
+END
+SendAudio.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/SendAudio.html
+END
+MoveSpeed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/1490/FWDesignSpec/DFI/URLDesignSpec/Encoder/MoveSpeed.htm
+END
+EventRspMd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2364/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspMd.htm
+END
+VideoDNTimer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2471/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDNTimer.htm
+END
+EventRspCmd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspCmd.htm
+END
+VideoDNType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2140/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDNType.htm
+END
+QuadSequenceTime.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/QuadSequenceTime.htm
+END
+EventRspMdPIR.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/2365/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspMdPIR.htm
+END
+EventRspImg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/EventRspImg.htm
+END
+VideoDayNightMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/2140/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoDayNightMode.htm
+END
+MotionTimer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/1889/FWDesignSpec/DFI/URLDesignSpec/Encoder/MotionTimer.htm
+END
+VideoFlickless.htm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/!svn/ver/2431/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoFlickless.htm
+END
+MaxAutoShutter.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/2179/FWDesignSpec/DFI/URLDesignSpec/Encoder/MaxAutoShutter.html
+END
+SmtpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/SmtpServer.htm
+END
+DayGainThd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2179/FWDesignSpec/DFI/URLDesignSpec/Encoder/DayGainThd.htm
+END
+VideoMpeg4Quality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMpeg4Quality.htm
+END
+SetDo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/1468/FWDesignSpec/DFI/URLDesignSpec/Encoder/SetDo.htm
+END
+PostfixNamingRule.htm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/2099/FWDesignSpec/DFI/URLDesignSpec/Encoder/PostfixNamingRule.htm
+END
+VideoFpsRatio.htm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoFpsRatio.htm
+END
+VideoAgcGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/2047/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoAgcGain.htm
+END
+VideoH264Quality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoH264Quality.htm
+END
+PtzPresetGo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2131/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzPresetGo.htm
+END
+PtzTourGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2131/FWDesignSpec/DFI/URLDesignSpec/Encoder/PtzTourGet.htm
+END
+VideoMaxBitRate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/!svn/ver/1353/FWDesignSpec/DFI/URLDesignSpec/Encoder/VideoMaxBitRate.htm
+END

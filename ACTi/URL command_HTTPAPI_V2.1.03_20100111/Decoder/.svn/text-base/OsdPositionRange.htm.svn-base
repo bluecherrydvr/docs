@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD_POSITION_RANGE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">OSD_POSITION_RANGE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the range of the offset in pixel of upper OSD position.</font></p>
+	<p><font face="Arial">Because the range of the offset for upper OSD are 
+	different among WPL, EPL and PlaformT decoder devices, users will not know 
+	how to set the <a href="OsdPosition.htm">OSD_POSITION</a> correcly if they 
+	don't have knowledge of the range of offset. This URL provides a mechanism 
+	to allow users to get the range of the offset without caring which decoder 
+	they used.</font></p>
+	<p><font face="Arial">The format of the return message is x1,x2,y1,y2 where 
+	x1 is the smallest value and x2 is the largest value in the range of X and 
+	y1 is the smallest value and y2 is the largest value in the range of Y. For 
+	example, the 1,100,8,96 means the range of X is (1~100) and the range of Y 
+	is (8,96).</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OSD_POSITION_RANGE='1,100,1,100'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">PlatformA Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Osd.htm">OSD</a>, <a href="OsdFormat.htm">OSD_FORMAT</a>, 
+	<a href="OsdPosition.htm">OSD_POSITION</a>,
+			<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_POSITION_RANGE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?OSD_POSITION_RANGE</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="decoder.htm">
+	DECODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

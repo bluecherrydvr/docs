@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN_TYPE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN_TYPE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set WAN connection type. Three types, Dynamic, 
+	Static and PPPoE, are supported.</font></p>
+	<p><font face="Arial">In Dynamic connection type, the device will try to get 
+	the IP/Netmask/Gateway/DNS settings from a DHCP server.</font></p>
+	<p><font face="Arial">In Static connection type, the device will use WAN_IP, 
+	WAN_NETMASK and WAN_GATEWAY to configure its WAN port.</font></p>
+	<p><font face="Arial">In PPPoE connection type, the device will try to 
+	establish the PPP connection. The WAN_PPPOE_USERNAME and WAN_PPPOE_PASSWORD 
+	will be used for authentication.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL will be treated as read-only command and 
+	the Router's WAN connection type will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">1: Dynamic</font><br>
+	<font face="Arial">2: Static</font><br>
+	<font face="Arial">3: PPPoE</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">WAN_TYPE='1'</font>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: WAN_TYPE='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: WAN_TYPE='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Wan.htm">WAN</a>, <a href="WanStatus.htm">WAN_STATUS</a>,
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a>, <a href="WanAddress.htm">WAN_IP</a>, 
+	<a href="WanAddress.htm">WAN_NETMASK</a>, 
+	<a href="WanAddress.htm">WAN_GATEWAY</a>, <a href="WanPPPoE.htm">WAN_PPPOE_USERNAME</a>, 
+	<a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_TYPE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_TYPE</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_TYPE=1</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_TYPE=1</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CDR_ENABLE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CDR_ENABLE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Camera Doctor Enable state configuration.
+	</font></p>
+	<p><font face="Arial">The Camera Doctor provides the run-time debugging 
+	mechanism to collect the device run-time state through an UDP connection. 
+	The client-server architecture is used in this mechanism where the device 
+	acts as a server and the remote host acts as the client. The client has to 
+	be able to send the command (this URL) to enable the Camera Doctor function 
+	in device and set the proper debug level to the device (refer to
+	<a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a> URL) and receive the debug 
+	message from the device through the UDP session (refer to
+	<a href="CdrIPPort.htm">CDR_SERVER_IP_PORT</a> URL). Please refer the
+	<a href="../Specification/CameraDoctorDesignSpec.htm">Specification of the 
+	Camera Doctor</a> for further details.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0: Disable</font><br>
+	<font face="Arial">1: Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">CDR_ENABLE='0'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: CDR_ENABLE='0'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: CDR_ENABLE='0'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH encoders (Version V2.07.14 and 
+	after)</font></li>
+	<li><font face="Arial">EPL Platform : All Decoders (Version V3.08.01 and 
+	after for Encoders, Version V3.02.00 and after for Decoders)</font></li>
+	<li><font face="Arial">PlatformT : All Devices (Version V4.00.00 and after 
+	for Encoders)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Version V2.04.00 and after for 
+	Router)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a>,
+	<a href="CdrIPPort.htm">CDR_SERVER_IP_PORT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_ENABLE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?CDR_ENABLE 
+	(Not available in All Decoders)</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_ENABLE=1<br>
+	<font face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?CDR_ENABLE=1 
+	(Not available in All Decoders)</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

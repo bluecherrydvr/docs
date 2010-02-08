@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>POSITION</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">POSITION</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Move the camera to the specific position.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="316"><b><font face="Arial">MOVE Command</font></b></td>
+			<td align="center"><b><font face="Arial">Description</font></b></td>
+		</tr>
+		<tr>
+			<td align="center" width="316"><font face="Arial">
+			ABSOLUTE,PositionPan,PositionTilt,SpeedPan,SpeedTilt</font></td>
+			<td align="left"><font face="Arial">Move camera to the specific 
+			position with specific 
+			speeds. The (PositionPan, PositionTilt) is the distance of position 
+			(0,0).</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="316"><font face="Arial">
+			RELATE,PositionPan,PositionTilt,SpeedPan,SpeedTilt</font></td>
+			<td align="left"><font face="Arial">Move camera to the specific 
+			position with specific 
+			speeds. The (PositionPan, PositionTilt) is the distance of current 
+			camera position.</font></td>
+		</tr>
+		</table>
+	<p><font face="Arial">The PositionPan and PositionTilt are signed integers. The PTZ camera might not have such wide range of 
+	these positions. 
+	However, the device will NOT validate them before parser and 
+	handle this URL. Please refer to the device specification to have correct 
+	pan and tilt position ranges.</font></p>
+	<p><font face="Arial">In RELATE position command, the value in PositionPan 
+	and PositionTilt is represented signed integer. The movement of this command 
+	based on the <a href="VideoMirrorMode.htm">MIRROR</a> and
+	<a href="VideoFlipMode.htm">FLIP</a> settings in the device.</font></p>
+	<p><font face="Arial">If the URL does not bring the SpeedTilt and SpeedPan, 
+	the current pan and tilt speeds will be used.</font></p>
+	<p><font face="Arial">The SpeedPan and SpeedTilt are started from 1 (slowest) to 5 (fastest)</font></p>
+	<p><font face="Arial">There are five levels in SpeedPan and SpeedTilt. The PTZ camera 
+	might have more levels of them. In case, the linear scaling algorithm 
+	will be used for that.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Refer to above command table</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">
+		OK: echo the command<br>
+		or<br>
+		ERROR: invalid parameters<br>
+		or<br> 
+ERROR: internal error.</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="Zoom.htm">ZOOM</a>,
+	<a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="FocusPosition.htm">
+	FOCUS_POSITION</a>, <a href="MoveLimit.htm">MOVE_LIMIT</a>,
+	<a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a>, <a href="MoveMaxSpeedGet.htm">
+	MOVE_MAX_SPEED_GET</a>, <a href="PositionGet.htm">POSITION_GET</a>,
+	<a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;POSITION=ABSOLUTE,100,100</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?POSITION=ABSOLUTE,-100,100</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

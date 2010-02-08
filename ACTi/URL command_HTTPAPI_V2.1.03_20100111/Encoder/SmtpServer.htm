@@ -1,0 +1,158 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SmtpServer</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SMTP_PRI, SMTP_SEC</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the SMTP primary and secondary servers 
+	configurations.</font></p>
+	<p><font face="Arial">There are two SMTP mail servers for device to send 
+	email. The device will use the primary SMTP server first if it is enabled. 
+	If the device failed to connect to the primary SMTP mail server, it will try 
+	the secondary SMTP mail server. If the device successes in sending email 
+	through the primary SMTP server, it will not send the email again through 
+	secondary SMTP mail server.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+state,auth,name,password,sender,server,SmtpPort,PopPort,timer</font></p>
+<blockquote>
+	<p><font face="Arial">state: state of the SMTP Server. 0:Disable, 1:Enable. 
+	If it is disable, the device will not send email through this server.</font></p>
+	<p><font face="Arial">auth: the method of authentication. There are many 
+	kinds of method of authentication between the device and server. User has to 
+	check what kind of authentication method is used in his SMTP mail server. 
+	Here is the list of available authentication methods.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td align="center" width="234"><font face="Arial"><b>value in 
+				auth</b></font></td>
+				<td align="center"><font face="Arial"><b>description</b></font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">0</font></td>
+				<td><font face="Arial">None</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">1</font></td>
+				<td><font face="Arial">Login</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">2</font></td>
+				<td><font face="Arial">Plain</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">3</font></td>
+				<td><font face="Arial">Cram MD5</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">4</font></td>
+				<td><font face="Arial">Digest MD5</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="234"><font face="Arial">5</font></td>
+				<td><font face="Arial">POP Relay</font></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">name: the user name to login the SMTP mail server. The 
+	maximum length is 63</font></p>
+	<p><font face="Arial">password: the user password to login the SMTP mail server. 
+	The maximum length is 31.</font></p>
+	<p><font face="Arial">sender: The sender's email address. The maximum length 
+	is 63.</font></p>
+	<p><font face="Arial">server: the address of the SMTP mail server. The 
+	maximum length is 31.</font></p>
+	<p><font face="Arial">SmtpPort: the port number of the SMTP mail server. The 
+	default is 25.</font></p>
+	<p><font face="Arial">PopPort: The port number of the POP3 server. The 
+	default is 110. This is used if the auth is 5.</font></p>
+	<p><font face="Arial">timer: the maximum time in second to 
+	connect to the SMTP server. It could be from 0 ~ 300. If it is 0, the 
+	connection timer is disable. The device will attempt to connect the SMTP server unless something 
+	wrong during the connection.</font></p>
+	<p><font face="Arial">If the length of the input argument is longer than its 
+	maximum length limitation, the error message will be returned.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">
+	SMTP_PRI='1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10'</font></p>
+	<p><font face="Arial">SMTP_SEC='1,1,name,pwd,myaddr@mail.com,smpt2.mail.com,25,110,10'</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: SMTP_PRI='1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10'<br>
+	or<br>
+	</font>
+	<font face="Arial" size="3">ERROR:</font><font face="Arial"> 
+	SMTP_PRI='1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10'</font><p>
+	<font face="Arial">OK: SMTP_PRI='1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10'<br>
+	or<br>
+	</font>
+	<font face="Arial" size="3">ERROR:</font><font face="Arial"> 
+	SMTP_PRI='1,1,name,pwd,myaddr@mail.com,smpt2.mail.com,25,110,10'</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspImg.htm">EVENT_RSPIMGn</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+	<ul>
+	  <li><font face="Arial" size="4">read operation</font></li>
+	</ul>
+	<blockquote><font face="Arial">
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SMTP_PRI&amp;SMTP_SEC<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?SMTP_PRI&amp;SMTP_SEC</font>
+    </blockquote>
+<ul>
+      <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SMTP_PRI=1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?SMTP_PRI=1,1,name,pwd,myaddr@mail.com,smpt1.mail.com,25,110,10<br>
+	<p>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SMTP_SEC=1,1,name,pwd,myaddr@mail.com,smpt2.mail.com,25,110,10<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?SMTP_SEC=1,1,name,pwd,myaddr@mail.com,smpt2.mail.com,25,110,10
+    </p>
+    </font>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

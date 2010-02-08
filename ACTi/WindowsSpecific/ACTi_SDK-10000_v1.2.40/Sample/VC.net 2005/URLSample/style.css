@@ -1,0 +1,31 @@
+    TD		{ font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; font-weight: bold; }
+
+    INPUT, 
+    TEXTAREA,
+    SELECT		{font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; color: #4B65F5; font-weight: bold;}
+
+    .h3Title2 {color: #444444;font-family: Arial, Verdana, Helvetica, sans-serif;font-size: 15px;font-weight: bold;margin-bottom: 6px;}
+    .h3Title {font:bold 15px Arial, Verdana, Helvetica, sans-serif;color:#444444;padding:3 0 2 0;}
+    .h3Arrow {MARGIN-LEFT: 7px; MARGIN-RIGHT: 0px; width:11 ; height:11 ; border:0}
+
+    .CmdList {BORDER-RIGHT: #9e9e9e 1px solid; BORDER-TOP: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-BOTTOM: #9e9e9e 1px solid}
+    .CmdList TD {font:normal 10pt Arial;padding:1 10 1 10}
+    .CmdList .Title {PADDING:3px 10px 3px 10px; BACKGROUND-POSITION: 50% bottom; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 13px; BACKGROUND-IMAGE: url(images/listViewBg.gif); COLOR: #33485c; BORDER-BOTTOM: #b0cbe2 1px solid; BACKGROUND-REPEAT: repeat-x; HEIGHT: 20px; BACKGROUND-COLOR: #f8f7f7}
+    
+    .RowEvent {background-Color:#DFDFDF}
+    .RowOdd   {background-Color:#EFEFEF}
+
+    .config	.PageTitle	 { font-size: 12pt; color: #0000CC; }
+    .config	.AppltBlank { border: 1px solid #d9d9d9; margin-bottom: 5px; }
+    .config .AppltTitle { font-size: 10pt; line-height: 20px; cursor: hand ; color:#0000cc; background-color: #f2f2f2; padding-left: 5px;}
+    .config	.Label		{ font-size: 9pt; color: #555000; height:20px; text-align:left; font-weight: normal;}
+    .config	.Require	{ background-color:#FFFF80;}
+    .config	.ReadOnly	{ background-color:#ECE9D8;}
+    .config	.KeyWordReadOnly	{ background-color:#ECE9D8;}
+    
+    .ConfigTitle			{ border:0; margin-bottom:0;}
+    .ConfigTitle .left		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_left.gif'); }
+    .ConfigTitle .center	{ width:100%; height:20; background-image:url('./images/layout_config_title_center.gif'); font-size: 10pt; color: #000000;}
+    .ConfigTitle .right		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_right.gif');}
+    .ConfigTitle .hide		{ width:20px; height:20px; background-image:url('./images/layout_config_title_hide.gif');}
+    .ConfigTitle .show		{ width:20px; height:20px; background-image:url('./images/layout_config_title_show.gif');}

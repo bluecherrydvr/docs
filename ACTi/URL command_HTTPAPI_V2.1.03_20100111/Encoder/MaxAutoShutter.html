@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Max Auto Shutter</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>MAX_AUTO_SHUTTER</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the maximum (longest) auto shutter speed in the camera. In auto shutter mode, the camera could adapt its shutter speed according to the light condition. In low light environment, the shutter is getting longer. The motion blur in the video might be seen then. To avoid this situation, the shutter speed will be limited to a reasonable speed in the low light condition.</p>
+  <p>When the lighting condition is good, the setting of longest auto shutter speed does not cause any problem because the shutter speed will not reach it. A special care should be taken if the maximum auto shutter is limited to a fast speed might cause poor video quality.</p>
+  <p>The URL helps users to fine tune the auto shutter speed operating range to fit users' environment.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>index,<br />
+  where it is the index of the maximum auto shutter speed in the following mapping table. The  speeds in the following table were concerned to be backward compatible of maximum auto shutter speed configurations which were defined before. So, the speeds could not have the same ascending order as index.</p>
+  <div align="center"></div>
+  <div align="center"></div>
+  <div align="center"></div>
+  <div align="center"></div>
+  <table width="54%" border="1">
+    <tr>
+      <td><div align="center"><strong>index</strong></div></td>
+      <td><div align="center"><strong>50Hz lighting environment</strong></div></td>
+      <td><div align="center"><strong>60Hz lighting environment</strong></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">1</div></td>
+      <td><div align="center">1/60 seconds        </div></td>
+      <td><div align="center">1/50 seconds</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">2</div></td>
+      <td><div align="center">1/30 seconds        </div></td>
+      <td><div align="center">1/25 seconds</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">3</div></td>
+      <td colspan="2"><div align="center">1/10 seconds        </div></td>
+    </tr>
+    <tr>
+      <td><div align="center">4</div></td>
+      <td colspan="2"><div align="center">1/5 seconds</div>        <div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">5</div></td>
+      <td colspan="2"><div align="center">1/1000 seconds</div>        <div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">6</div></td>
+      <td colspan="2"><div align="center">1/500 seconds</div>        <div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">7</div></td>
+      <td colspan="2"><div align="center">1/250 seconds</div>        <div align="center"></div></td>
+    </tr>
+    <tr>
+      <td><div align="center">8</div></td>
+      <td><div align="center">1/120 seconds        </div></td>
+      <td><div align="center">1/100 seconds</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">9</div></td>
+      <td colspan="2"><div align="center">1 second        </div></td>
+    </tr>
+    <tr>
+      <td><div align="center">10</div></td>
+      <td colspan="2"><div align="center">2 seconds</div></td>
+    </tr>
+  </table>
+  <p>There gives the possible configurations of the maximum auto shutter speeds. Some camera might not be capable of reaching slow shutter speed you set based on above table. Please refer the <a href="../../CameraSetupDesignSpec/CameraSetupDesignSpec.htm">camera page design specification</a> to know the working range of the auto shutter speed. </p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Command</li>
+</ul>
+<blockquote>
+  <p>MAX_AUTO_SHUTTER = '4'</p>
+</blockquote>
+<ul>
+  <li>Write Command</li>
+</ul>
+<blockquote>
+  <p>OK: MAX_AUTO_SHUTTER = '4'  <br />
+    or<br />
+  ERROR: MAX_AUTO_SHUTTER = '4'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform: All camera with the sensor MT9M131, MT54G15 or HQ1</li>
+  <li>PlatfromT: All camera with the sensor MT9M131, IT1 or HQ1</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>
+  <a href="VideoWbMode.htm">VIDEO_WB_MODE</a>, 
+  <a href="VideoWbGain.htm">VIDEO_WB_GAIN</a>, 
+  <a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>, 
+  <a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>, 
+  <a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>, 
+  <a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>, 
+  <a href="VideoShutterSpeed.htm">VIDEO_SHUTTER_SPEED</a>, 
+  <a href="VideoFlickless.htm">VIDEO_FLICKLESS</a>, 
+  <a href="LineFreq.htm">LINE_FREQ</a>, 
+  <a href="VideoSlowShutter.htm">VIDEO_SLOW_SHUTTER</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Command</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MAX_AUTO_SHUTTER<br />
+  or<br />
+  http://ip:port/cgi-bin/encoder?MAX_AUTO_SHUTTER</p>
+</blockquote>
+<ul>
+  <li>Write Command</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MAX_AUTO_SHUTTER=4<br />
+    or<br />
+  http://ip:port/cgi-bin/encoder?MAX_AUTO_SHUTTER=4</p>
+</blockquote>
+<h3>Back to</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

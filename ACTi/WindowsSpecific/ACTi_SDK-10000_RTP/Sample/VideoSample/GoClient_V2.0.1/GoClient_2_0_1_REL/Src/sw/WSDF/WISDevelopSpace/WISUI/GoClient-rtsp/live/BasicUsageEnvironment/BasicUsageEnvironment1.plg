@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: BasicUsageEnvironment1 - Win32 Release--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" BasicUsageEnvironment0.cpp
+BasicUsageEnvironment0.cpp
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" BasicUsageEnvironment.cpp
+BasicUsageEnvironment.cpp
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" BasicTaskScheduler0.cpp
+BasicTaskScheduler0.cpp
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" BasicTaskScheduler.cpp
+BasicTaskScheduler.cpp
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" DelayQueue.cpp
+DelayQueue.cpp
+ "D:\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -I../UsageEnvironment/include -I../groupsock/include -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"D:\Microsoft Visual Studio\VC98\include" BasicHashTable.cpp
+BasicHashTable.cpp
+ lib -out:libBasicUsageEnvironment.lib   BasicUsageEnvironment0.obj BasicUsageEnvironment.obj  BasicTaskScheduler0.obj BasicTaskScheduler.obj  DelayQueue.obj BasicHashTable.obj
+Microsoft (R) Library Manager Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+
+
+<h3>Results</h3>
+BasicUsageEnvironment1.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

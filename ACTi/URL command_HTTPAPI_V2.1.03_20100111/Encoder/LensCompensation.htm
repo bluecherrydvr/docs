@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LENS_COMPENSATION</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LENS_COMPENSATION</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">In camera, it might have some calibration of the 
+	default lens. If the user change the lens, it might do not need to do the 
+	calibration. In this case, user needs to disable this function.</font></p>
+	<p><font face="Arial">The error message will be returned if the encoder does 
+	not support this URL.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">0: Not Calibrate the lens, 1: Calibrate the lens</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">LENS_COMPENSATION='1'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK:LENS_COMPENSATION='1'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: LENS_COMPENSATION='1'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoders with sensor MT9V135 or 
+	MT9M131</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders with sensor MT9M131</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoMirrorMode.htm">VIDEO_MIRROR_MODE</a>,
+	<a href="VideoFlipMode.htm">VIDEO_FLIP_MODE</a>,
+	<a href="DayGainThd.htm">DAY_GAIN_THD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">LENS_COMPENSATION</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">LENS_COMPENSATION</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">LENS_COMPENSATION=</font><font face="Arial">1</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">LENS_COMPENSATION=</font><font face="Arial">1</font></blockquote>
+
+<p><font face="Arial">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

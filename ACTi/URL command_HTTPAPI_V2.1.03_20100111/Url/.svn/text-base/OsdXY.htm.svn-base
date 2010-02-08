@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD_XY</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">OSD_X, OSD_Y</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the beginning position of the OSD 
+	information.</font></p>
+	<p><font face="Arial">The device could show some information of the encoder 
+	and its information on the TV screen. The OSD information will be placed on 
+	the upper-left corner on the screen with a specific offset (x,y) in pixels. 
+	The URL could get or set this offset of the OSD.</font></p>
+	<p><font face="Arial">The range of the input argument are vary from WPL 
+	decoders and EPL decoders. Of course, it should make sense to have readable 
+	on the TV screen which the video resolution should be concerned.</font></p>
+	<p><font face="Arial">The range of OSD offset in WPL decoders is X: 8~96 
+	pixels and Y: 8~96 pixels.</font></p>
+	<p><font face="Arial">The range of OSD offset in WPL decoders is X: 1~100 
+	pixels and Y: 1~100 pixels.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n where is the position in pixel from (0,0) for OSD 
+	offset.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only in WPL Decoders</font></li>
+	<li><font face="Arial">Readable and Writable in EPL Decoders</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">In WPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">None</font></li>
+	</ul>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial" size="3">Read Operation</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial">OSD_X</font><font face="Arial" size="3">='30'</font><br>
+		<font face="Arial">OSD_Y</font><font face="Arial" size="3">='25'</font></p>
+	</blockquote>
+	<ul>
+		<li><font face="Arial" size="3">Write Operation</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial" size="3">OK: </font><font face="Arial">OSD_X</font><font face="Arial" size="3">='30'</font><br>
+		<font face="Arial">OK: OSD_Y</font><font face="Arial" size="3">='25'</font><br>
+		<font face="Arial">or</font><br>
+		<font face="Arial">ERROR: OSD_X</font><font face="Arial" size="3">='30'</font><br>
+		<font face="Arial">ERROR: OSD_Y</font><font face="Arial" size="3">='25'</font></p>
+	</blockquote>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Host.htm">HOST</a>(only available in WPL 
+	Decoder Devices), <a href="VideoOsd.htm">VIDEO_OSD</a>,</font>
+	<font face="Arial"><a href="Osd.htm">OSD</a>, <a href="OsdCtrl.htm">OSD_DATE_TIME</a>, 
+	<a href="OsdCtrl.htm">OSD_SERVER_IP</a>,
+	<a href="OsdCtrl.htm">OSD_CAMERA_NAME</a>, <a href="OsdCtrl.htm">
+	OSD_LOCAL_IP</a>, <a href="OsdCtrl.htm">OSD_MOTION_DETECT</a>,
+	<a href="OsdCtrl.htm">OSD_STATUS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;OSD_X</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;OSD_Y</font></p>
+</blockquote>
+
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;OSD_X=30</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;OSD_Y=25</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

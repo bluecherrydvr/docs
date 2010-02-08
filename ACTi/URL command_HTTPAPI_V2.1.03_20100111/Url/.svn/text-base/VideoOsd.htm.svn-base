@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_OSD</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_OSD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Enable or Disable to show the specific information of 
+	the encoder or decoder on the OSD. </font></p>
+	<p><font face="Arial">The Decoder could show some information of Encoder or 
+	itself on the TV screen. The information is listed below.</font></p>
+	<table border="1" width="60%" id="table1">
+		<tr>
+			<td align="center" width="379"><font size="4" face="Arial">
+			Information on the OSD</font></td>
+			<td align="center"><font size="4" face="Arial">Related URL</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">Date and Time information of the 
+			encoder</font></td>
+			<td><font face="Arial">OSD_DATE_TIME, OSD_DATE_FORMAT</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The IP addresses of the encoder</font></td>
+			<td><font face="Arial">OSD_SERVER_IP</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The camera name of the encoder</font></td>
+			<td><font face="Arial">OSD_CAMERA_NAME</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The IP addresses of the Decoder
+			</font></td>
+			<td><font face="Arial">OSD_LOCAL_IP</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The Motion Trigger form the 
+			encoder</font></td>
+			<td><font face="Arial">OSD_MOTION_DETECT</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The DI Trigger from the Decoder</font></td>
+			<td><font face="Arial">OSD_STATUS</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The value in some bits in input argument of this URL 
+	controls if the specific information could be on the TV screen or not. The 
+	bitmap of the input argument and the OSD information is listed below.</font></p>
+	<table border="1" width="60%" id="table2">
+		<tr>
+			<td align="center" width="379"><font size="4" face="Arial">
+			bit in the Input argument</font></td>
+			<td align="center"><font face="Arial" size="4">Information on the 
+			OSD</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 0</font></td>
+			<td width="379"><font face="Arial">Date and Time information of the 
+			encoder</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 1</font></td>
+			<td width="379"><font face="Arial">The IP addresses of the encoder</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 2</font></td>
+			<td width="379"><font face="Arial">The camera name of the encoder</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 3</font></td>
+			<td width="379"><font face="Arial">The IP addresses of the Decoder
+			</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 4</font></td>
+			<td width="379"><font face="Arial">The Motion Trigger form the 
+			encoder</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">BIT 5</font></td>
+			<td width="379"><font face="Arial">The DI Trigger from the Decoder</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">When the bit in the input argument is set, the 
+	associated information will be shown on the OSD. Otherwise, the associated 
+	information will not be shown. For example, the Date and Camera name will be 
+	shown on the OSD in the VIDEO_OSD=0x05.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Hexadecimal Value: 0x00~0x2F.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Host.htm">HOST</a>(only available in WPL 
+	Decoder Devices), <a href="OsdXY.htm">OSD_X</a>, <a href="OsdXY.htm">OSD_Y</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEO_OSD=0x2f</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">OSD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get OSD configurations. </font></p>
+	<p><font face="Arial">The Decoder could show some information of Encoder or 
+	itself on the TV screen. The information is listed below.</font></p>
+	<table border="1" width="60%" id="table1">
+		<tr>
+			<td align="center" width="379"><font size="4" face="Arial">
+			Information on the OSD</font></td>
+			<td align="center"><font size="4" face="Arial">Related URL</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">Date and Time information of the 
+			encoder</font></td>
+			<td><font face="Arial">OSD_DATE_TIME, OSD_DATE_FORMAT</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The IP addresses of the encoder</font></td>
+			<td><font face="Arial">OSD_SERVER_IP</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The camera name of the encoder</font></td>
+			<td><font face="Arial">OSD_CAMERA_NAME</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The IP addresses of the Decoder
+			</font></td>
+			<td><font face="Arial">OSD_LOCAL_IP</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The Motion Trigger form the 
+			encoder</font></td>
+			<td><font face="Arial">OSD_MOTION_DETECT</font></td>
+		</tr>
+		<tr>
+			<td width="379"><font face="Arial">The DI Trigger from the Encoder</font></td>
+			<td><font face="Arial">OSD_STATUS</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">These URLs in the above table, control if the 
+	associated information could be shown in the TV screen or not. Please refer 
+	these URLs for further details.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">OSD_DATE_TIME='1'<br>
+	OSD_SERVER_IP='1'<br>
+	OSD_CAMERA_NAME='1'<br>
+	OSD_LOCAL_IP='1'<br>
+	OSD_MOTION_DETECT='1'<br>
+	OSD_STATUS='1'<br>
+	OSD_DATE_FORMAT='1'</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="OsdXY.htm">OSD_X</a>, <a href="OsdXY.htm">
+	OSD_Y</a>, <a href="OsdCtrl.htm">OSD_DATE_TIME</a>,
+	<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a>, <a href="OsdCtrl.htm">
+	OSD_SERVER_IP</a>, <a href="OsdCtrl.htm">OSD_CAMERA_NAME</a>,
+	<a href="OsdCtrl.htm">OSD_LOCAL_IP</a>, <a href="OsdCtrl.htm">
+	OSD_MOTION_DETECT</a>, <a href="OsdCtrl.htm">OSD_STATUS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;OSD</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

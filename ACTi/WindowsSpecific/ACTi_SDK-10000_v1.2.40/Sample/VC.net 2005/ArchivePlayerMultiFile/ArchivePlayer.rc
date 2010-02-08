@@ -1,0 +1,231 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\ArchivePlayer.rc2""  // 非 Microsoft Visual C++ 編輯過的資源\r\n"
+    "#include ""afxres.rc""         // 標準元件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ArchivePlayer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "關於 ArchivePlayer"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "ArchivePlayerMultiFile Version 1.0",IDC_STATIC,40,10,
+                    119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "確定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_ARCHIVEPLAYER_DIALOG DIALOGEX 0, 0, 561, 381
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "ArchivePlayerMultiFile"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,7,356,411,15
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    WS_DISABLED | WS_TABSTOP,423,346,131,18
+    PUSHBUTTON      "《",IDC_BUTTON1,430,311,58,14,WS_DISABLED
+    PUSHBUTTON      "STOP",IDC_BUTTON2,430,326,58,14,WS_DISABLED
+    PUSHBUTTON      "PAUSE",IDC_BUTTON3,488,326,58,14,WS_DISABLED
+    PUSHBUTTON      "》",IDC_BUTTON4,488,311,58,14
+    CONTROL         "",IDC_STATIC1,"Static",SS_GRAYFRAME | SS_REALSIZEIMAGE,
+                    7,7,411,329
+    LTEXT           "F",IDC_STATIC,429,366,8,8
+    LTEXT           "8",IDC_STATIC,545,366,8,8
+    LTEXT           "4",IDC_STATIC,521,366,8,8
+    LTEXT           "2",IDC_STATIC,498,366,8,8
+    LTEXT           "1",IDC_STATIC,476,366,8,8
+    LTEXT           "1/2",IDC_STATIC,449,367,12,8
+    LTEXT           "",IDC_STATIC2,7,344,124,8
+    RTEXT           "",IDC_STATIC3,293,343,124,8
+    CTEXT           "",IDC_STATIC4,143,344,146,8
+    GROUPBOX        "Snapshot",IDC_STATIC,430,221,113,49,BS_LEFT | WS_GROUP
+    CONTROL         ".BMP",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,437,253,31,
+                    10
+    CONTROL         ".JPG",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,437,235,30,
+                    10
+    PUSHBUTTON      "Save",IDC_BUTTON6,483,251,50,14
+    EDITTEXT        IDC_EDIT2,423,54,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,423,85,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,423,113,98,14,ES_AUTOHSCROLL
+    LTEXT           "Raw File #1 Name:",IDC_STATIC,423,41,60,8
+    LTEXT           "Raw File #2 Name:",IDC_STATIC,423,73,60,8
+    LTEXT           "Raw File #3 Name:",IDC_STATIC,423,102,60,8
+    PUSHBUTTON      "...",IDC_BUTTON7,521,52,25,14
+    PUSHBUTTON      "...",IDC_BUTTON8,521,83,25,14
+    PUSHBUTTON      "...",IDC_BUTTON9,521,112,25,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,7
+ PRODUCTVERSION 1,0,0,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040903b6"
+        BEGIN
+            VALUE "FileVersion", "1, 0, 0, 7"
+            VALUE "InternalName", "ArchivePlayer.exe"
+            VALUE "OriginalFilename", "ArchivePlayer.exe"
+            VALUE "ProductVersion", "1, 0, 0, 7"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 950
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ARCHIVEPLAYER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 554
+        VERTGUIDE, 423
+        VERTGUIDE, 521
+        VERTGUIDE, 546
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "關於 ArchivePlayer(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows 通訊端安裝失敗。"
+END
+
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\ArchivePlayer.rc2"  // 非 Microsoft Visual C++ 編輯過的資源
+#include "afxres.rc"         // 標準元件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

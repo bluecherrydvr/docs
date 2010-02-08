@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SEND_AUDIO</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+<h2>SEDN_AUDIO</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Remote host sends the audio data through HTTP session to the device to play out.</p>
+  <p>In two-way audio enabled device, it could accept the audio data from the remote host and play the audio data through its audio out interface. There is only one host could play the audio on the device at any time. The audio token in the device controls is used for this criterion.That means the host have to get the audio token first.</p>
+  <p>If audio token is not available, the error message, 503 Service Unavailable, will be returned.</p>
+  <p>Currently, the device just only accepts the PCM with 8KHz sample rate, 16bits/sample format.</p>
+  <p>In the multiple channel video server, the HTTP port of this command should be the HTTP port of the channel not the router.</p>
+  <p>The POST method is used in this URL command to send to the device. If there is no error code was replied from the device, the host could upload its audio data to the device. The multipart/x-mixed-replace in the content type is used during the upload. The length of every multipart boundary is 1024 bytes. Here is the network trace from host to the device as an example.</p>
+  <p class="red">POST /cgi-bin/cmd/encoder?SEND_AUDIO HTTP/1.1<br />
+    Content-Type: multipart/x-mixed-replace;boundary=----------AoutBoundary<br />
+    Connection: Keep-Alive<br />
+    Cache-Control: no-cache<br />
+  Authorization: Basic YWRtaW46MTIzNDU2</p>
+  <p class="red">----------AoutBoundary<br />
+    Content-Type: audio/pcm<br />
+    Content-Length: 1024</p>
+  <p class="red">....Audio raw data....</p>
+  <p class="red">----------AoutBoundary<br />
+Content-Type: audio/pcm<br />
+Content-Length: 1024</p>
+  <p class="red">....Audio raw data....</p>
+  <p class="red">....</p>
+</blockquote>
+<h3>Input Augument</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Attribute</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Return of Message</h3>
+<blockquote>
+  <p>None if everything is OK,<br />
+    401 Unauthorized if fails of authentication,<br />
+    503 Service Unavailable if it is not two-way audio device or audio token is not available,<br />
+    404 Not Found if there is something wrong in the POST header.<br />
+  </p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>WPL Platfrom: 1CH encoder</li>
+  <li>EPL Platfrom: All Encoders</li>
+  <li>PlatfromT: All Encoders</li>
+  <li>Multi-Channel Encoder: All Video Servers</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Example</h3>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=admin&amp;PWD=123456&amp;SEND_AUDIO	<br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?SEND_AUDIO</p>
+</blockquote>
+<h3>Bcak to</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

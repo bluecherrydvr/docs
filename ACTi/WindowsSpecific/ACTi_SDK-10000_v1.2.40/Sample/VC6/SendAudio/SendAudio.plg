@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SendAudio - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x404 /fo"Release/SendAudio.res" /d "NDEBUG" "D:\SDK\SDK-10000_v1.2.33\Sample\VC6\SendAudio\SendAudio.rc"" 
+Creating temporary file "C:\DOCUME~1\ROGER~1.HUN\LOCALS~1\Temp\RSPD7.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/SendAudio.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\SDK\SDK-10000_v1.2.33\Sample\VC6\SendAudio\SendAudio.cpp"
+"D:\SDK\SDK-10000_v1.2.33\Sample\VC6\SendAudio\SendAudioDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ROGER~1.HUN\LOCALS~1\Temp\RSPD7.tmp" 
+Creating temporary file "C:\DOCUME~1\ROGER~1.HUN\LOCALS~1\Temp\RSPD8.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/SendAudio.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\SDK\SDK-10000_v1.2.33\Sample\VC6\SendAudio\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ROGER~1.HUN\LOCALS~1\Temp\RSPD8.tmp" 
+Creating command line "link.exe KMpeg4.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/SendAudio.pdb" /machine:I386 /out:"Release/SendAudio.exe"  ".\Release\SendAudio.obj" ".\Release\SendAudioDlg.obj" ".\Release\StdAfx.obj" ".\Release\SendAudio.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+SendAudio.cpp
+SendAudioDlg.cpp
+Generating Code...
+Linking...
+LINK : warning LNK4089: all references to "SHELL32.dll" discarded by /OPT:REF
+
+
+
+<h3>Results</h3>
+SendAudio.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

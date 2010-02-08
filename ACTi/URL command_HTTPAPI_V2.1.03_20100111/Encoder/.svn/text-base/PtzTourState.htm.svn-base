@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_TOUR_STATE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_TOUR_STATE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Enable or Disable PTZ Tour function.</font></p>
+	<p><font face="Arial">There are 10 groups in the PTZ Tour Table and 32 tour 
+	entries in every tour group. These tour entries in tour groups could be pre-configured and used for patrol applications. 
+	This URL will load the specific PTZ tour group configuration to the camera 
+	when it enables tour function. If the tour group is invalid, camera will do 
+	nothing but return OK message.</font></p>
+	<p><font face="Arial">The Auto Scan function is available in PTZ camera. 
+	This URL could enable this function as well. Note that the tour and scan 
+	functions are exclusive.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n, where n could be DISABLE, TOUR1, TOUR2, TOUR3, TOUR4, 
+	TOUR5, TOUR6, TOUR7, TOUR8, TOUR9, TOUR10 or SCAN</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">PTZ_TOUR_STATE='DISABLE'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: PTZ_TOUR_STATE='SCAN'</font><br>
+	<font face="Arial" size="3">or</font><br><font face="Arial" size="3">ERROR: 
+	PTZ_TOUR_STATE='TOUR4'</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>, <a href="PtzPresetGo.htm">
+	PTZ_PRESET_GO</a>, <a href="PtzTourSet.htm">
+	PTZ_TOUR_SET</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourName.htm">PTZ_TOUR_NAME</a>, <a href="PtzTourScan.htm">
+	PTZ_TOUR_SCAN</a>, <a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_TOUR_STATE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_TOUR_STATE</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_TOUR_STATE=TOUR10</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_TOUR_STATE=TOUR10</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

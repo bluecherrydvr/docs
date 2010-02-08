@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN_STATUS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN_STATUS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the WAN port runtime status. The device will try to PING the Gateway 
+	to know if the WAN connection is alive and www.hinet.net to know if the DNS 
+	settings are working. The DDNS status will be returned as well.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, the Router's runtime status will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">IP Address : 192.168.0.100<br>
+	Netmask : 255.255.255.0<br>
+	Gateway : 192.168.0.254<br>
+	DNS Server : 168.95.1.1 192.168.0.254<br>
+	DDNS Host : Localhost<br>
+	WAN Connect Status : Connect<br>
+	DNS Connect Status : Connect<br>
+	DDNS Connect Status: Disconnect</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Wan.htm">WAN</a>, 
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a>, <a href="WanType.htm">WAN_TYPE</a>, 
+	<a href="WanAddress.htm">WAN_IP</a>, <a href="WanAddress.htm">WAN_NETMASK</a>, 
+	<a href="WanAddress.htm">WAN_GATEWAY</a>, 
+	<a href="WanPPPoE.htm">WAN_PPPOE_USERNAME</a>, <a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_STATUS</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_STATUS</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

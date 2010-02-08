@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: UsageEnvironment1 - Win32 Release--------------------
+</h3>
+
+
+Microsoft (R) Program Maintenance Utility   Version 6.00.8168.0
+Copyright (C) Microsoft Corp 1988-1998. All rights reserved.
+
+ "C:\Program Files\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"C:\Program Files\Microsoft Visual Studio\VC98\include" UsageEnvironment.cpp
+UsageEnvironment.cpp
+ "C:\Program Files\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"C:\Program Files\Microsoft Visual Studio\VC98\include" HashTable.cpp
+HashTable.cpp
+ "C:\Program Files\Microsoft Visual Studio\VC98\bin\cl" -c -Iinclude -Ox -c -W3 -DCRTAPI1=_cdecl -DCRTAPI2=_cdecl -nologo -D_X86_=1 -D_WINNT -D_WIN32_WINNT=0x0400 -D_WIN32_IE=0x0300 -DWINVER=0x0400 -DWIN32  -D_WIN32 -D_MT -D_DLL -MD -I. -I"C:\Program Files\Microsoft Visual Studio\VC98\include" strDup.cpp
+strDup.cpp
+ lib -out:libUsageEnvironment.lib  UsageEnvironment.obj HashTable.obj strDup.obj
+Microsoft (R) Library Manager Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+
+
+
+<h3>Results</h3>
+UsageEnvironment1.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNAPSHOT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SNAPSHOT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get a still image in JPEG format from the encoder.</font><br>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the target device is the CHANNEL 1 and the image 
+	resolution is the same as the current video resolution in CHANNEL 1 and the 
+	JPEG quality is 70. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">In MPEG4 streaming, it will send the MPEG4 NOP during 
+	the snapshot to maintain constant frame rate.</font></p>
+	<p><font face="Arial">Here is the URL handshake of the SNAPSHOT.</font></p>
+	<p><font face="Arial">The format of this URL http://172.16.3.35/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT is listed below.</font></p>
+	<p><b><font face="Arial">Stage 1: Send this URL to the device for 
+	getting a still image</font></b></p>
+	<p><u><i><font face="Arial">ASCII FORMAT</font></i></u></p>
+	<p><img border="0" src="images/SnapshotGet.bmp" width="732" height="116"></p>
+	<p><u><i><font face="Arial">Hex Dump Format</font></i></u></p>
+	<p><img border="0" src="images/SnapshotGetHex.bmp" width="610" height="351"></p>
+	<p><b><font face="Arial">Stage 2 : Device reply with a JPEG image</font></b></p>
+	<p><u><i><font face="Arial">ASCII FORMAT</font></i></u></p>
+	<p><img border="0" src="images/SnapshotReply.bmp" width="724" height="438"></p>
+	<p><u><i><font face="Arial">Hex Dump Format</font></i></u></p>
+	<p>
+	<img border="0" src="images/SnapshotReplyHex.bmp" width="608" height="963"></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None (use current video resolution and default JPEG 
+	quality setting)</font><br>
+	<font face="Arial">or </font><br>
+	<font face="Arial">n,m</font><br>
+	<font face="Arial">where </font><br>
+	<font face="Arial">n is the image size (need to refer the supported video resolutions in the device, 
+	<a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a>)</font><br>
+	<font face="Arial">m is the quality of the JPEG and the range is 0~100.	The higher value, the higher quality. 
+	This argument does not must to have.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">JPEG image</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial">Error Message</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoders (version 3.08.02)</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../Mpeg4/VideoResolution.htm">
+	VIDEO_RESOLUTION</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT</font><p>
+	<font face="Arial">or</font></p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT=N640x480,90</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT=N640x480,90</font><p>
+	<font face="Arial">or</font></p>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT=N640x480</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT=N640x480</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="../Mpeg4/mpeg4.htm">MPEG4 CGI</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

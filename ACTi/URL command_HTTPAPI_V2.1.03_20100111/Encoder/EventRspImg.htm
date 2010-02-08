@@ -1,0 +1,227 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspImg</title>
+</head>
+
+<body>
+
+<p><font size="5" face="Arial">EVENT_RSPIMG1, EVENT_RSPIMG2, EVENT_RSPIMG3</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the video image engine of the event 
+	configurations.</font></p>
+	<p><font face="Arial">When event source is triggered, the device could 
+	upload 
+	the video image or video clip to the SMTP mail server, FTP server or the HTTP 
+	CGI program.</font></p>
+	<p><font face="Arial">The video still image was made by using snapshot 
+	technique. The image size is the same as the streaming video resolution and 
+	not configurable. The extend file name of the video still image is *.jpg.</font></p>
+	<p><font face="Arial">The video clip is the raw data of the video stream. 
+	The specific header will be inserted in the head of raw data to allow the 
+	specific player could play it. The extern file name of the video clip is 
+	*.raw.</font></p>
+	<p><font face="Arial">To upload video still images to the SMTP mail server, the SMTP 
+	mail server configurations have to be set first. Refer to the URL
+	<a href="SmtpServer.htm">SMTP_PRI</a> 
+	and <a href="SmtpServer.htm">SMTP_SEC</a> for further information.</font></p>
+	<p><font face="Arial">To upload the video still images or video clip to the 
+	FTP server, the FTP server configurations have to be ser first. Refer to the 
+	URL <a href="FtpServer.htm">FTP_SERVER</a> for further information.</font></p>
+	<p><font face="Arial">Currently, upload video still image to SMTP mail 
+	server and upload video still image or video clip to FTP server are 
+	available.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type,PreBuf,UploadTime,ImageRate,ImageName,UploadPath,HostUrl,subject,VideoSrc</font></p>
+<blockquote>
+	<p><font face="Arial">type: the method of sending message. </font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td width="146">
+				<p align="center"><b><font face="Arial">value in type </font>
+				</b></td>
+				<td>
+				<p align="center"><b><font face="Arial">description</font></b></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">0</font></td>
+				<td><font face="Arial">no image will be uploaded. disable this 
+				function</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">1</font></td>
+				<td><font face="Arial">upload the video still image to SMTP server</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">2</font></td>
+				<td><font face="Arial">upload the video still image to the HTTP 
+				CGI Program 1</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">3</font></td>
+				<td><font face="Arial">upload the video still image to the HTTP 
+				CGI Program 2</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">4</font></td>
+				<td><font face="Arial">upload the video still image to the FTP 
+				server</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">5</font></td>
+				<td><font face="Arial">upload the video clip to the HTTP CGI 
+				Program 1</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">6</font></td>
+				<td><font face="Arial">upload the video clip to the HTTP CGI 
+				Program 1</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">7</font></td>
+				<td><font face="Arial">upload the video clip to the FTP server</font></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">PreBuf: the time in seconds before the event source 
+	was triggered. It could be 0, 1, 2 or 3 seconds. It does not guarantee to 
+	have video with precise timing control. And it is only valid for type 4~7. 
+	For still image upload, this argument has to fixed to 0.</font></p>
+	<p><font face="Arial">UploadTime: the time in seconds to upload video to the 
+	remote server when the event source was triggered. It could be from 0 to 
+	86400. If it is 0, the video upload will be stopped as the event source 
+	becomes inactive.</font></p>
+	<p><font face="Arial">ImageRate: the frame rate of the still image. It was 
+	not used and has to be fixed to 0. For uploading still images, the device 
+	will do its best effort to snapshot the video image for uploading until the 
+	UploadTime is expired or event source becomes inactive (UploadTime is 0). 
+	For uploading video clip, this argument is not used and has to be fixed to 
+	0. The frame rate of the video clip is the same frame rate in streaming 
+	mode.</font></p>
+	<p><font face="Arial">ImageName: the prefix of file name of the video still 
+	image or video clip. The postfix of the file name could be decoded by
+	<a href="PostfixNamingRule.htm">the rule of postfix naming rule</a>. The 
+	first character of this value has not to be '%'. The maximum length is 63.</font></p>
+	<p><font face="Arial">UploadPath: the prefix of the upload path of the video 
+	still image or video clip. The postfix of the file name could be decoded by
+	<a href="PostfixNamingRule.htm">the rule of postfix naming rule</a>. The 
+	first character of this value has not to be '%'. The maximum length is 63.</font></p>
+	<p><font face="Arial">HostUrl: The destination host address. It depends on the value in type 
+  argument. The maximum length is 63.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td width="146">
+				<p align="center"><b><font face="Arial">value in type </font>
+				</b></td>
+				<td>
+				<p align="center"><b><font face="Arial">definition of host</font></b></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><p><font face="Arial">0</font></p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p></td>
+				<td><font face="Arial">no used.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">1</font></td>
+				<td><font face="Arial">The receipt email address. The ';&quot; was 
+				used to connect several email addresses.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">2, 5</font></td>
+				<td><font face="Arial">The URL for CGI 1 including the CGI path</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">3, 6</font></td>
+				<td><font face="Arial">The URL for CGI 2 including the CGI path</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="146"><font face="Arial">4,7</font></td>
+				<td><font face="Arial">Not used</font></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">subject: The subject of the mail. This is only used 
+	if the type is 1. It was not used in another type. The character in the 
+	subject has to follow RFC 3986 Uniform Resource Identifier Generic Syntax. 
+	The maximum length is 31.</font></p>
+	<p><font face="Arial">VideoSrc: This is used of dual stream platform. For 
+	EPL it is fixed to 1. In Dual Streams Platform, it indicates which video 
+	stream is used for uploading video images. The 1 is for video stream 1 and 2 
+	is for video stream 2.</font></p>
+	<p><font face="Arial">If the length of the input argument is longer than its 
+	maximum length limitation, the error message will be returned.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">EVENT_RSPIMG<b>n</b>='1,0,3,0,image_%N-%Y,Dir%hh%mm%ss,myname@mail,com,MySubject,1'</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: EVENT_RSPIMG<b>n</b>='4,0,1,0,snapshot-%Y,Dir-%N,host,sujbect,1'<br>
+	or<br>
+	</font>
+	<font face="Arial" size="3">ERROR: </font><font face="Arial">EVENT_RSPIMG<b>n</b>='7,1,5,0,video-%Y,Dir-%N,host,subject,1'</font><p>
+	<font face="Arial">where <b>n</b> could be 1, 2 or 3</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="EventConfig.htm">EVENT_CONFIG</a>, <a href="EventRspDO.htm">EVENT_RSPDOn</a>, 
+	<a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspGo.htm">EVENT_RSPGO</a>, <a href="FtpServer.htm">FTP_SERVER</a>,
+	<a href="SmtpServer.htm">SMTP_PRI</a>, <a href="SmtpServer.htm">SMTP_SEC</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+	<ul>
+	  <li><font face="Arial" size="4">read operation</font></li>
+</ul>
+	<blockquote><font face="Arial">
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPIMG<b>n</b><br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPIMG<b>n</b></font>
+    </blockquote>
+<ul>
+      <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPIMG<b>n</b>=4,0,1,0,name,folder,,,1<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPIMG<b>n</b>=4,0,1,0,name,folder,,,1<br>
+	where <b>n</b> could be 1, 2 or 3</font>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

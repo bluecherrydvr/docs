@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_TV</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_TV</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Analog TV setting (NTSC or PAL) for Video 
+	Out.</font></p>
+	<p><font face="Arial">The range of input argument of this URL is vary from 
+	WPL decoders and EPL decoders.</font></p>
+	<p><font face="Arial">In WPL decoder, the &quot;NTSC&quot; and &quot;PAL&quot; strings are used 
+	as the input argument of this URL.</font></p>
+	<p><font face="Arial">In EPL decoder, the &quot;0&quot; and &quot;1&quot; are used as the input 
+	argument of this URL. The &quot;0&quot; means the PAL and &quot;1&quot; means the NTSC.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">NTSC or PAL in WPL decoder</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">0 or 1 in EPL decoder</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only in WPL Decoders</font></li>
+	<li><font face="Arial">Readable and Writable in EPL Decoders</font></li>
+	<li><font face="Arial">On-Fly (except EPL Decoders)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">In WPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">None</font></li>
+	</ul>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<ul>
+		<li><font face="Arial">Read Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">VIDEO_TV='1'</font><br>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">Write Operation</font></li>
+	</ul>
+	<blockquote>
+		<font face="Arial">OK: VIDEO_TV='1'</font><br><font face="Arial">or</font><br>
+		<font face="Arial">ERROR: VIDEO_TV='1'</font><br>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Host.htm">HOST</a>(only available in WPL 
+	Decoder Devices)</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEO_TV</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">In WPL Decoder Devices</font><blockquote>
+		<p><font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEO_TV=NTSC</font></p>
+	</blockquote>
+	<p><font face="Arial">In EPL Decoder Devices</font></p>
+	<blockquote>
+		<p><font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEO_TV=1</font></p>
+	</blockquote>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

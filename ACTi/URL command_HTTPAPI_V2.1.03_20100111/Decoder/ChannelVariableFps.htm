@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CHANNEL_VARIABLE_FPS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CHANNEL_VARIABLE_FPS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or Get the variable FPS number in the specific 
+	channel in the decoder. The decoder will request this FPS number when it 
+	connects to the encoder which it is in the constant or variable FPS mode.</font></p>
+	<p><font face="Arial">There are two FPS modes in the encoder, Constant FPS 
+	and Variable FPS. </font></p>
+	<p><font face="Arial">In Constant FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to decoder is constant. In 
+	encoder's MPEG4 streaming, the GOP was set based on this frame rate. Every 
+	decoder gets 
+	the video stream with the same frame rate which is not able to be changed. 
+	For example, one I frame and 29 P frames will be streamed when the frame 
+	rate is 30 (GPO is 30).</font></p>
+	<p><font face="Arial">In Variable FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to decoder is not constant, 
+	The GOP is 5 in all WPL Platform encoders and 8CH Multi-Channel Encoders. The 
+	GOP is 2 in all EPL, PlatformT and 4CH, 16CH Multi-Channel 
+	Encoders. The decoder could change the frame rate at any time and get I frame 
+	only in MPEG4 steam in most cases. For example, the host get the 6 I frame 
+	in every second if it sets the frame rate to 6 and get 6 I frames and 24 P 
+	frames if it set the frame rate to 30 in MPEG4 stream.</font></p>
+	<p><font face="Arial">Note that the supported variable FPS numbers are 
+	different from encoders to encoders. The user should use the VIDEO_FPS_CAP 
+	in <a href="../System/system.htm">SYSTEM CGI</a> to get this information 
+	before use this URL.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<ul>
+	<li><font face="Arial">For Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">n</font><br><font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : the channel ID in the decoder, 1~16.</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">For Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">n,m</font><br><font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : the channel ID in the decoder, 1~16</font><br>
+	<font face="Arial">m : the index of variable FPS number, where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	0: Get the video from encoder which is in the constant FPS mode. The FPS 
+	number is decided by the encoder.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Get 
+	the video from encoder which is in the Variable FPS mod and the FPS number 
+	is 30/25 in NTSC/PAL.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: Get the video 
+	from encoder which is in the Variable FPS mod and the FPS number is 6/5 in 
+	NTSC/PAL.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3: Get the video from encoder 
+	which is in the Variable FPS mod and the FPS number is 3/2 in NTSC/PAL.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	4: Get the video from encoder which is in the Variable FPS mod and the FPS 
+	number is 1/1 in NTSC/PAL.</font></blockquote>
+<ul>
+	<li><b><u><i><font face="Arial">Note:</font></i></u></b><br>
+	<font face="Arial">1. n is fixed to 1 for all EPL decoder devices.</font><br>
+	<font face="Arial">2. If the n is missing in the read operation, the target 
+	channel of this read command is channel 1.</font></li>
+</ul>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote><font face="Arial">CHANNEL_VARIABLE_FPS='1,1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OK: CHANNEL_VARIABLE_FPS='1,1'</font><br>
+	<font face="Arial">or</font><br><font face="Arial">ERROR: 
+	CHANNEL_VARIABLE_FPS='1,1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChannelConfig.htm">CHANNEL_CONFIG</a>,
+	<a href="ChannelTime.htm">CHANNEL_TIME</a>,
+			<a href="ChannelInfo.htm">CHANNEL_INFO</a>,
+			<a href="ChannelSwitch.htm">CHANNEL_SWITCH</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Read Operation (Only in EPL Decoder Devices)</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_VARIABLE_FPS=2</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_VARIABLE_FPS=2<br>
+	<br>
+	http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_VARIABLE_FPS (get channel 1's variable FPS number setting)</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_VARIABLE_FPS (get channel 1's variable FPS number setting)</font>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_VARIABLE_FPS=2,30</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_VARIABLE_FPS=2,30</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

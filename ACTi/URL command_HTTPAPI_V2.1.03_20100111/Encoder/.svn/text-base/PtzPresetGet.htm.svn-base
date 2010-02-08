@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_PRESET_GET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_PRESET_GET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get all valid PTZ 
+	Preset Entries configurations.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">The format of return is listed below.</font></p>
+	<p>
+	<font face="Arial">PTZ_PRESET_GET='n,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'</font></p>
+	<p><font face="Arial">where,</font></p>
+	<ol style="font-family: Arial; font-size: 12pt">
+		<li><font face="Arial">n: Entry index in the PTZ Preset Table which 
+    has 32 entries for EPL and 64 entries for PlatfromT. It started from 1.</font></li>
+		<li>PanPos: absolute position in PAN.</li>
+		<li>TiltPos: absolute position in TILT.</li>
+		<li>ZoomPos: absolute position in ZOOM.</li>
+		<li>PanSpeed: Speed of PAN movement, it is in the range of 1 and 5. The 
+		higher value, the faster movement.</li>
+		<li>TiltSpeed: Speed of TILT movement, it is in the range of 1 and 5. 
+		The higher value, the faster movement.</li>
+		<li>ZoomSpeed: Speed of ZOOM movement, it is in the range of 2 and 7. 
+		The higher value, the faster movement.</li>
+		<li>Dwell: The timer for moving to and staying this entry in second. This configuration is not used now. 
+		It will be fixed to 10.</li>
+		<li>Name: name of this entry.</li>
+	</ol>
+	<p><font face="Arial">If there is no valid entry, the empty string '' 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial">Read</font><font face="Arial" size="3"> Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">PTZ_PRESET_GET='1,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	PTZ_PRESET_GET='2,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	PTZ_PRESET_GET='3,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	...<br>...<br>...<br>PTZ_PRESET_GET='30,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	PTZ_PRESET_GET='31,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	PTZ_PRESET_GET='32,PanPos,TiltPos,ZoomPos,SpeedPan,SpeedTilt,SpeedZoom,Dwell,Name'<br>
+	or<br>PTZ_PRESET_GET=''</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGo.htm">PTZ_PRESET_GO</a>, <a href="PtzTourSet.htm">
+	PTZ_TOUR_SET</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourState.htm">PTZ_TOUR_STATE</a>, <a href="PtzTourName.htm">
+	PTZ_TOUR_NAME</a>, <a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a>,
+	<a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_PRESET_GET<br>
+	or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_PRESET_GET</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

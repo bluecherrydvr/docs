@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SERVER_REPORT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SERVER_REPORT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device's system information, WAN port status, 
+	System Log and configuration parameters. The return of this URL was divided 
+	into four parts separated by the specific tag enclosed by [ ]. </font> </p>
+	<p><font face="Arial">Note that the Production ID was shown in the System 
+	Information in the return of this URL. </font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">The return of message will be a little bit different 
+	from devices. Here give an example.</font></p>
+	<p><font face="Arial">[System Information]<br>
+	Firmware Version = A1D-220-V3.09.10-AC<br>
+	MAC Address = 00:0F:7C:65:75:47<br>
+	Production ID = ACM8511-08G-X-00378<br>
+	Factory Default Type = Two Ways Audio (0x74)<br>
+	Company Name = Camera Corporation<br>
+	WEB Site = www.acti.com<br>
+	Profile ID = MT54G15-RXX_V080609A<br>
+	<br>
+	[WAN Status]<br>
+	IP Address : 172.16.3.36<br>
+	Netmask : 255.255.255.0<br>
+	Gateway : 172.16.3.253<br>
+	DNS Server : 172.16.5.19 168.95.1.1 59.124.232.169<br>
+	DNS Host : <br>
+	WAN Connect Status : Connect<br>
+	DNS Connect Status : Connect<br>
+	DDNS Connect Status : Disconnect</font></p>
+	<p><font face="Arial">[System log]<br>
+	Starting Modules Manager<br>
+	Start loading Profile File ...<br>
+	load Profile Files Done<br>
+	Start loading OEM Config File ...<br>
+	Load OEM Config File Done!<br>
+	Start loading SYS File ...<br>
+	Load SYS File Done!<br>
+	WAN speed = 0<br>
+	Starting DNS Manager<br>
+	Starting Wan Manager<br>
+	Dynamic IP Setting in <br>
+	DHCP address acquired<br>
+	HOSTNAME=LocalHost<br>
+	Starting DDNS Manager<br>
+	DDNS Disabled<br>
+	Init system time by RTC time or Manual Time<br>
+	NTP/SNTP Enabled<br>
+	Starting WEB Server<br>
+	Starting DDNS Manager<br>
+	DDNS Disabled<br>
+	Starting Streaming Server</font></p>
+	<p><font face="Arial">[Parameter]<br>
+	WAN_TYPE='1'<br>
+	WAN_IP='192.168.0.100'<br>
+	WAN_NETMASK='255.255.255.0'<br>
+	WAN_GATEWAY='192.168.0.254'<br>
+	WAN_PPPOE_USERNAME=''<br>
+	WAN_PPPOE_PASSWORD=''<br>
+	SPEED_WAN='0'<br>
+	LANGUAGE='0'<br>
+	PORT_HTTP='80'<br>
+	PORT_SEARCH_1='6005'<br>
+	PORT_SEARCH_2='6006'<br>
+	LAN_HOSTNAME='LOCALHOST'<br>
+	DNS_PRIMARY=''<br>
+	DNS_SECONDARY=''</font></p>
+	<p><font face="Arial">......</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SystemProperty.htm">SYSTEM_PROPERTY</a>,
+	<a href="SystemInfo.htm">SYSTEM_INFO</a>, <a href="SystemConf.htm">
+	SYSTEM_CONFIG</a>, <a href="SystemLog.htm">SYSTEM_LOG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SERVER_REPORT</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?SERVER_REPORT</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+8
+
+dir
+2557
+http://172.16.5.24/svn/repos/FWDesignSpec/DFI/URLDesignSpec/System/images
+http://172.16.5.24/svn/repos
+
+
+
+2009-10-22T15:25:42.849282Z
+2411
+mingyoung.you
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7c9d123a-9eb7-4984-aada-07009b1e6ffa
+
+iperf.bmp
+file
+
+
+
+
+2009-11-03T10:16:16.961874Z
+6c4675ad426dce30e24fe38eab4aad42
+2009-03-05T14:00:43.555172Z
+1353
+jarron.cho
+has-props
+
+Thumbs.db
+file
+
+
+
+
+2009-11-03T10:16:17.039999Z
+0b38499b54165460b12c4a7bc50a4440
+2009-03-05T14:00:43.555172Z
+1353
+jarron.cho
+has-props
+

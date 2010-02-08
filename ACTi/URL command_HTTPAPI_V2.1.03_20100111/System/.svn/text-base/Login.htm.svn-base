@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LOGIN</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LOGIN</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Login the device and get the level of this logon. 
+	Currently, there are two levels for logon user. They are root and user 
+	levels. In root level, all features are available. In user level, the 
+	feature is very limited.</font></p>
+	<p><font face="Arial">The account name and password are given within this 
+	URL but not as the input argument. For example, this URL was entered as</font></p>
+	<p><font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LOGIN</font></p>
+	<p><font face="Arial">The account name and password are carried in this URL. 
+	The device will response this logon after it checks this user account 
+	information.</font></p>
+	<p><font face="Arial">The error message will be returned if the account name 
+	or password is incorrect.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">If root level logon:</font><br>
+	<font face="Arial">LOGIN='1'</font><br>
+	<font face="Arial">If user level logon:</font><br>
+	<font face="Arial">LOGIN='2'</font><br>
+	<font face="Arial">If the account name or password is incorrect</font><br>
+	<font face="Arial">ERROR: bad account/password</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Account.htm">ACCOUNT</a>,
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a>, 
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a>,
+	<a href="AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a>,
+	<a href="AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N</a>,
+	<a href="AccountUser.htm">ACCOUNT_USER_N</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LOGIN</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?LOGIN</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

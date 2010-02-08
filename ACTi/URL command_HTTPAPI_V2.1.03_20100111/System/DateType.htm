@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DATE_TYPE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DATE_TYPE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Date type configuration. Some devices have 
+	RTC which the date and time will keep working even the power was unplugged. 
+	Based on the Date type, the device will set the date and time properly. 
+	Then, the device's date and time information will be carried by video 
+	streams.</font></p>
+	<p><font face="Arial">If the Date type is SNTP synchronization, the device 
+	date and time might be started by Manual date and time settings if it fails 
+	of connecting to NTP server and there is no RTC. </font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	this URL is read-only command and the Router's DATE configurations will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">1: Manual Date Type</font><br>
+	<font face="Arial">2: SNTP Synchronization</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all encoders in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DATE_TYPE='2'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DATE_TYPE='2'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DATE_TYPE='2'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL will be obsolete and replaced by 
+	<a href="DateConfig.htm">DATE_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Date.htm">DATE</a>, <a href="DateSntpIp.htm">DATE_SNTP_IP</a>, 
+	<a href="DateSntpUpdate.htm">DATE_SNTP_UPDATE</a>, 
+	<a href="DateManualDate.htm">DATE_MANUAL_DATE</a>, 
+	<a href="DateManualTime.htm">DATE_MANUAL_TIME</a>, 
+	<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a>, <a href="DateConfig.htm">
+	DATE_CONFIG</a>, <a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_TYPE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?DATE_TYPE</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_TYPE=2<br>
+	<font face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?DATE_TYPE=2</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

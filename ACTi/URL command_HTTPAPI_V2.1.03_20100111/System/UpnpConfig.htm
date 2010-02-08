@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>UPnP_CONFIG</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">UPNP_CONFIG</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set UPnP Configurations.</font></p>
+	<p><font face="Arial">When the UPnP function is enabled in the device, the 
+	remote hosts which are UPnP enabled devices like WindowsXP could discover 
+	the device automatically. Therefore, the hosts could visit the device's WEB 
+	page directly without knowing device's IP addresses.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">state,name<br>where<br>state: 0 (disable) or 1 (enabled).<br>
+	name: UPnP friendly name in 31 bytes character string. These characters 
+	should be readable and the space ,' ', character is acceptable. If state = 
+	0, this argument could be omitted. if state = 1 and the name argument is 
+	missing, the device will use its current UPnP Friend name setting to start 
+	its UPnP.</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable </font></li>
+	<li><font face="Arial">On-Fly </font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">UPNP_CONFIG='0'<br>or<br>UPNP_CONFIG='1,IPCAM-00001'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: UPNP_CONFIG='0'<br>or<br>OK: UPNP_CONFIG='1,IPCAM-00001'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: UPNP_CONFIG='0'</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WIS Platform: All devices</font></li>
+	<li><font face="Arial">EPL Platform: All devices</font></li>
+	<li><font face="Arial">PlatformT : All devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=admin&amp;PWD=123456&amp;UPNP_CONFIG<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?UPNP_CONFIG</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=admin&amp;PWD=123456&amp;UPNP_CONFIG=1,IPCAM-00001<br>
+    or<br>http://ip:port/cgi-bin/cmd/system?UPNP_CONFIG=1,IPCAM-00001</font></p>
+</blockquote>
+<p>See also</p>
+<p>Back to</p>
+<blockquote>
+  <p><a href="../index.htm">HOME	</a></p>
+</blockquote>
+</body>
+
+</html>

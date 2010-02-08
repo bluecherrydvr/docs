@@ -1,0 +1,118 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD_ENABLED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">OSD_ENABLED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Control of the OSD (On Screen Display) function.</font></p>
+	<p><font face="Arial">The input argument of this command is hexadecimal 
+	value. It controls how many types of information could be shown on the OSD. 
+	Here is the map of the input hexadecimal value and the information type on 
+	OSD.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center"><font face="Arial" size="4">Bit value in the 
+			input argument</font></td>
+			<td align="center"><font face="Arial" size="4">Type of information 
+			on OSD</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 0</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Video 
+			(Channel) Title Name</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 1</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Video 
+			Loss Trigger</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 2</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Motion 
+			Detection Trigger</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 3</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; Date 
+			and Time</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">Bit 4</font></td>
+			<td align="left"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp; DIO 
+			status</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The bit value is 1, the corresponding device 
+	information will be shown on the OSD. And the bit value is 0, the 
+	corresponding device information will not be shown on the OSD.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0xnn</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">nn : in hexadecimal and decoded in bit-wise for type of 
+	device information on OSD.</font><p><font face="Arial">Note that the value 
+	in higher bit (bit 5~7) will not effect the OSD display function and there 
+	is no error message returned if the higher bit (but 5~7) is not zero.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OSD_ENABLED='0x0f'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OSD_ENABLED='0x0f'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: OSD_ENABLED Value Failed (if the setting is lager 
+	than 0xff)</font></blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : QUAD Encoder Only</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="MotionEnabled.htm">MOTION_ENABLED</a>,
+	<a href="TitleName.htm">TITLE_NAME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;OSD_ENABLED</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/quad?USER=Admin&amp;PWD=123456&amp;OSD_ENABLED=0x0f</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="quad.htm">
+	QUAD CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

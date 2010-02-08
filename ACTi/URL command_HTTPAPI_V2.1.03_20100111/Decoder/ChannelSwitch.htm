@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CHxx_TIME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CHANNEL_SWITCH</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Force the decoder to move to the specific channel.</font></p>
+	<p><font face="Arial">Device could play 
+	the video/audio stream from encoders with a sequence of their channel list. 
+	It will start from channel 1 then move to channel 2 (if it is valid) after 
+	the channel 1's dwell time. When the last valid channel's dwell time is 
+	expired, the channel 1 will be connected again.</font></p>
+	<p><font face="Arial">The URL could force the decoder to move to a specific 
+	channel immediately. After that, the decoder will follow its rule to play 
+	channels. It the channel is not valid in this URL, the decoder will ignore 
+	this URL but return the error message.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<ul>
+	<li><font face="Arial">For Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">n</font><br><font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : the channel ID in the decoder, 1~16</font></blockquote>
+<ul>
+	<li><b><u><i><font face="Arial">Note:</font></i></u></b><br>
+	<font face="Arial">1. If the n is missing, the target channel of this command is channel 1.</font></li>
+</ul>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OK: CHANNEL_SWITCH='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">PlatformA Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChannelConfig.htm">CHANNEL_CONFIG</a>,
+	<a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a>,
+			<a href="ChannelTime.htm">CHANNEL_TIME</a>,
+			<a href="ChannelInfo.htm">CHANNEL_INFO</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_SWITCH=2</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_SWITCH=2</font></p>
+	<p><font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_SWITCH 
+	(move to channel 1)</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_SWITCH 
+	(move to channel 1)</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LANGUAGE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LANGUAGE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Language configuration. </font></p>
+	<p><font face="Arial">Currently, there are several language sets available 
+	in the device. The mapping of the language index and language set is listed 
+	below. Because the language set is added from time to time and might be vary 
+	from device to device. It needs to check the specification of the device to 
+	know how many and which language sets are available for a device.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL will be treated as read-only command and 
+	the Router's LANGUAGE setting will be returned.</font></p>
+	<p><font face="Arial">Mapping table of language index and language set</font></p>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td width="204" align="center"><b><font face="Arial">Language Index</font></b></td>
+			<td width="309" align="center"><b><font face="Arial">Language Set</font></b></td>
+			<td align="center"><b><font face="Arial">Character Set</font></b></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">0</font></td>
+			<td width="309" align="center"><font face="Arial">English</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">1</font></td>
+			<td width="309" align="center"><font face="Arial">Traditional 
+			Chinese</font></td>
+			<td align="center"><font face="Arial">BIG5</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">2</font></td>
+			<td width="309" align="center"><font face="Arial">Simplified Chinese</font></td>
+			<td align="center"><font face="Arial">BG2312</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">3</font></td>
+			<td width="309" align="center"><font face="Arial">Japanese</font></td>
+			<td align="center"><font face="Arial">EUC-JP</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">4</font></td>
+			<td width="309" align="center"><font face="Arial">Spanish</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">5</font></td>
+			<td width="309" align="center"><font face="Arial">Italian</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">6</font></td>
+			<td width="309" align="center"><font face="Arial">German</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">7</font></td>
+			<td width="309" align="center"><font face="Arial">Portuguese</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">8</font></td>
+			<td width="309" align="center"><font face="Arial">Czech</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">9</font></td>
+			<td width="309" align="center"><font face="Arial">French</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center" height="23"><font face="Arial">10</font></td>
+			<td width="309" align="center" height="23"><font face="Arial">Finnish</font></td>
+			<td align="center" height="23"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">11</font></td>
+			<td width="309" align="center"><font face="Arial">Hungarian</font></td>
+			<td align="center"><font face="Arial">ISO-8859-2</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">12</font></td>
+			<td width="309" align="center"><font face="Arial">Danish</font></td>
+			<td align="center"><font face="Arial">ISO-8859-1</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">13</font></td>
+			<td width="309" align="center"><font face="Arial">Greek</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">14</font></td>
+			<td width="309" align="center"><font face="Arial">Mexio</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">15</font></td>
+			<td width="309" align="center"><font face="Arial">Dutch</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">16</font></td>
+			<td width="309" align="center"><font face="Arial">Russia</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">17</font></td>
+			<td width="309" align="center"><font face="Arial">Turkey</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center"><font face="Arial">18</font></td>
+			<td width="309" align="center"><font face="Arial">Indonesia</font></td>
+			<td align="center"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center" height="22"><font face="Arial">19</font></td>
+			<td width="309" align="center" height="22"><font face="Arial">Swedish</font></td>
+			<td align="center" height="22"><font face="Arial">UTF-8</font></td>
+		</tr>
+		<tr>
+			<td width="204" align="center" height="22"><font face="Arial">20</font></td>
+			<td width="309" align="center" height="22"><font face="Arial">Polish</font></td>
+			<td align="center" height="22"><font face="Arial">UTF-8</font></td>
+		</tr>
+	</table>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0~Max Language index</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">LANGUAGE='0'</font>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: LANGUAGE='0'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: LANGUAGE='0'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<p>¡@</p>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LANGUAGE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?LANGUAGE</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LANGUAGE=0</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?LANGUAGE=0</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

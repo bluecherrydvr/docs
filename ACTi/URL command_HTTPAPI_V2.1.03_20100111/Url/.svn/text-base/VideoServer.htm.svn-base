@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEOSERVER</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEOSERVER</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the settings of encoder which the device connects 
+	to. The setting include</font></p>
+	<p><font face="Arial">CHxx_VIDEO_CONNECT, CHxx_VIDEO_STREAM, 
+	CHxx_VIDEO_AUDIO, CHxx_VIDEO_CONTROL, CHxx_VIDEO_TCP_IP, 
+	CHxx_VIDEO_MULTICAST_IP, CHxx_VIDEO_USERNAME, CHxx_VIDEO_PASSWORD, CHxx_TIME, 
+	CHxx_PORT_STREAMIN, CHxx_PORT_CONTROL, CHxx_PORT_MULTICAST, CHxx_PORT_RTP 
+	and CHxx_PORT_HTTP</font></p>
+	<p><font face="Arial">where xx&nbsp; is the channel number of the connected 
+	encoder. The channel number is started from 01.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">CHxx_VIDEO_CONNECT='1'<br>
+	CHxx_VIDEO_STREAM='1'<br>
+	CHxx_VIDEO_AUDIO='0'<br>
+	CHxx_VIDEO_CONTROL='1'<br>
+	CHxx_VIDEO_TCP_IP='172.16.3.59'<br>
+	CHxx_VIDEO_MULTICAST_IP='228.5.6.1'<br>
+	CHxx_VIDEO_USERNAME='Admin'<br>
+	CHxx_VIDEO_PASSWORD='123456'<br>
+	CHxx_TIME='0'<br>
+	CHxx_PORT_STREAMIN='6002'<br>
+	CHxx_PORT_CONTROL='6001'<br>
+	CHxx_PORT_MULTICAST='5000'<br>
+	CHxx_PORT_RTP='7070'<br>
+	CHxx_PORT_HTTP='80'</font></p>
+	<p><font face="Arial">where xx is the channel number started from 01.</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p>¡@</p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEOSERVER</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

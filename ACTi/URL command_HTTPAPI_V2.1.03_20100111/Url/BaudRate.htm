@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>BAUDRATE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">BAUDRATE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set the baud rate of serial port.</font></p>
+	<p><font face="Arial">There is a serial port on the device for the 
+	RS232/RS485/RS422 port. The external device could be accessed or controlled 
+	through this port. For example, when the RS485 port in Analog PTZ camera 
+	connects to the Video Server's serial port, user could control this Analog 
+	PTZ camera through the Video Sever by Joystick connected to Decoder's 
+	RS232/RS485/RS422 port.</font></p>
+	<p><font face="Arial">Note that, there is no any hardware and software flow 
+	control mechanism implemented in this serial port. For example, the RS485 
+	port in Joystick 
+	connects to the Decoder's serial port.</font><br>
+	</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">baud rate. It could be 2400, 4800, 9600, 19200, 38400, 57600, 115200</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Host.htm">HOST</a>(only available in WPL 
+	Decoder Devices), <a href="UartSetting.htm">UARTSETTING</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;BAUDRATE</font><font face="Arial" size="3">=9600</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

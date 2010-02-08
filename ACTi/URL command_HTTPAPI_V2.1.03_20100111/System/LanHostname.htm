@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LAN_HOSTNAME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LAN_HOSTNAME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Host Name in the device. It allows user to 
+	access the device by Host name rather IP address. Some networking 
+	configurations in user's PC need to be set correctly to use this function.</font></p>
+	<p><font face="Arial">The input argument string length will be checked 
+	before apply it.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	the Router's Host name configuration will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Character strings (&lt; 32 Bytes)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except video server in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all WPL Platform devices)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	LAN_HOSTNAME='LocalHost'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: LAN_HOSTNAME='LocalHost'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: LAN_HOSTNAME='LocalHost'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Lan.htm">LAN</a>, <a href="LanAddress.htm">
+	LAN_IP</a>, <a href="LanAddress.htm">LAN_NETMASK</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_HOSTNAME</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_HOSTNAME</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LAN_HOSTNAME=LocalHost</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?LAN_HOSTNAME=LocalHost</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

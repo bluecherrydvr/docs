@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EXPOSURE_GAIN_GET</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>EXPOSURE_GAIN_GET</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get the current DSP exposure gain or the output level of CDS.</p>
+  <p>The camera with <a href="../../DayNightCtrl/DayNightCtrlModule.html">Day&amp;Night Control Module</a> and CDS is used for Day&amp;Night detection supports the method to read the CDS level by this URL. Users could learn how the lighting condition is by reading the CDS level. The CDS output level will be normalized to 0~100 in this URL. The higher level of CDS, the lower lighting condition.</p>
+  <p>The exposure gain in some DSP in the camera could be read by this URL. The higher level of DSP exposure gain, the lower lighting condition. The exposure gain of DSP will be normalized to 0~100 in this URL. The higher value of exposure gain, the lower lighting condition.</p>
+  <p>The error message, <strong>EXPOSURE_GAIN_GET   not found</strong>, will be returned   if the encoders and camera  do not support Day&amp;Night function or there is no Day&amp;Night detection function.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Readonly</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>
+  <p>EXPOSURE_GAIN_GET='50'<br />
+  or<br />
+  ERROR: EXPOSURE_GAIN_GET not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders with Day&amp;Night Control Module or sensor/DSP could export the exposure gain</li>
+  <li>PlatfromT : All encoders with Day&amp;Night Control Moduel or sensor/DSP could export the exposure gain</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>
+  <a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>, 
+  <a href="DayGainThd.htm">DAY_GAIN_THD</a>, 
+  <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>, 
+  <a href="VideoDNType.htm">VIDEO_DN_TYPE</a>
+  </p>
+</blockquote>
+<h3>Example</h3>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EXPOSURE_GAIN_GET<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?EXPOSURE_GAIN_GET</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

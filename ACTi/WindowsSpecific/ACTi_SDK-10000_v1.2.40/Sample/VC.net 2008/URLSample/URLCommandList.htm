@@ -1,0 +1,1320 @@
+<!-- File : URLCommandList Version : 1.5.00 Date : 20071101-->
+<!-- File : URLCommandList Version : 1.0.02 Date : 20061225-->
+<!-- File : URLCommandList Version : 1.0.01 Date : 20061129-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>URL Command Tester</title>
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <style>
+    TD		{ font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; font-weight: bold; }
+
+    INPUT, 
+    TEXTAREA,
+    SELECT		{font-size: 8pt; font-family: Arial,Helvetica,Sans-Serif; color: #4B65F5; font-weight: bold;}
+
+    .h3Title2 {color: #444444;font-family: Arial, Verdana, Helvetica, sans-serif;font-size: 15px;font-weight: bold;margin-bottom: 6px;}
+    .h3Title {font:bold 15px Arial, Verdana, Helvetica, sans-serif;color:#444444;padding:3 0 2 0;}
+    .h3Arrow {MARGIN-LEFT: 7px; MARGIN-RIGHT: 0px; width:11 ; height:11 ; border:0}
+
+    .CmdList {BORDER-RIGHT: #9e9e9e 1px solid; BORDER-TOP: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-BOTTOM: #9e9e9e 1px solid}
+    .CmdList TD {font:normal 9pt Arial;padding:1 10 1 10}
+    .CmdList .Title {PADDING:3px 10px 3px 10px; BACKGROUND-POSITION: 50% bottom; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(images/listViewBg.gif); COLOR: #33485c; BORDER-BOTTOM: #b0cbe2 1px solid; BACKGROUND-REPEAT: repeat-x; HEIGHT: 20px; BACKGROUND-COLOR: #f8f7f7}
+    
+    .RowEven {background-Color:#DFDFDF; font-size:10pt}
+    .RowOdd   {background-Color:#EFEFEF; font-size:10pt}
+
+    .config	.PageTitle	 { font-size: 12pt; color: #0000CC; }
+    .config	.AppltBlank { border: 1px solid #d9d9d9; margin-bottom: 5px; }
+    .config .AppltTitle { font-size: 10pt; line-height: 20px; cursor: hand ; color:#0000cc; background-color: #f2f2f2; padding-left: 5px;}
+    .config	.Label		{ font-size: 9pt; color: #555000; height:20px; text-align:left; font-weight: normal;}
+    .config	.Require	{ background-color:#FFFF80;}
+    .config	.ReadOnly	{ background-color:#ECE9D8;}
+    .config	.KeyWordReadOnly	{ background-color:#ECE9D8;}
+    
+    .ConfigTitle			{ border:0; margin-bottom:0;}
+    .ConfigTitle .left		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_left.gif'); }
+    .ConfigTitle .center	{ width:100%; height:20; background-image:url('./images/layout_config_title_center.gif'); font-size: 10pt; color: #000000;}
+    .ConfigTitle .right		{ width:8px;  height:20px; background-image:url('./images/layout_config_title_right.gif');}
+    .ConfigTitle .hide		{ width:20px; height:20px; background-image:url('./images/layout_config_title_hide.gif');}
+    .ConfigTitle .show		{ width:20px; height:20px; background-image:url('./images/layout_config_title_show.gif');}
+    </style>
+</head>
+<body>
+    <xml id="URLCMD">
+        <ROOT>
+            <CATALOG>
+                <CATALOG_NAME>mpeg4</CATALOG_NAME>
+                <CATEGORY>
+                    <CATEGORY_NAME>Video Quality Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Video Quality Setting</CATEGORY_DESC>
+                    <VIDEO_BRIGHTNESS type="text" rw="RW" range="0-100">55</VIDEO_BRIGHTNESS>
+                    <PARAMETER_DESC id="VIDEO_BRIGHTNESS">Get, Set brightness</PARAMETER_DESC>
+                    <VIDEO_CONTRAST type="text" rw="RW" range="0-100">55</VIDEO_CONTRAST>
+                    <PARAMETER_DESC id="VIDEO_CONTRAST">Get, Set contrast</PARAMETER_DESC>
+                    <VIDEO_SATURATION type="text" rw="RW" range="0-100">55</VIDEO_SATURATION>
+                    <PARAMETER_DESC id="VIDEO_SATURATION">Get, Set Saturation</PARAMETER_DESC>
+                    <VIDEO_HUE type="text" rw="RW" range="0-100">55</VIDEO_HUE>
+                    <PARAMETER_DESC id="VIDEO_HUE">Get, Set Hue</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Video Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Video Setting</CATEGORY_DESC>
+                    <VIDEO_RESOLUTION type="option" rw="RW">
+						<OPTION value="N1280x1024">N1280x1024</OPTION>
+						<OPTION value="N1280x720">N1280x720</OPTION>
+                        <OPTION value="N720x480">N720x480</OPTION>
+                        <OPTION value="N640x480">N640x480</OPTION>
+                        <OPTION value="N352x240">N352x240</OPTION>
+                        <OPTION value="N176x120">N176x120</OPTION>
+                        <OPTION value="N160x112">N160x112</OPTION>
+                        <OPTION value="P720x576">P720x576</OPTION>
+                        <OPTION value="P640x480">P640x480</OPTION>
+                        <OPTION value="P352x288">P352x288</OPTION>
+                        <OPTION value="P176x144">P176x144</OPTION>
+                    </VIDEO_RESOLUTION>
+                    <PARAMETER_DESC id="VIDEO_RESOLUTION">NTSC to PAL Need SaveReboot</PARAMETER_DESC>
+                    <VIDEO_BITRATE type="option" rw="RW">
+                        <OPTIOIN value="28K">28K</OPTIOIN>
+                        <OPTIOIN value="56K">56K</OPTIOIN>
+                        <OPTIOIN value="128K">128K</OPTIOIN>
+                        <OPTIOIN value="256K">256K</OPTIOIN>
+                        <OPTIOIN value="384K">384K</OPTIOIN>
+                        <OPTIOIN value="500K">500K</OPTIOIN>
+                        <OPTIOIN value="750K">750K</OPTIOIN>
+                        <OPTIOIN value="1M">1M</OPTIOIN>
+                        <OPTIOIN value="1.2M">1.2M</OPTIOIN>
+                        <OPTIOIN value="1.5M">1.5M</OPTIOIN>
+                        <OPTIOIN value="2M">2M</OPTIOIN>
+                        <OPTIOIN value="2.5M">2.5M</OPTIOIN>
+                        <OPTIOIN value="3M">3M</OPTIOIN>
+                    </VIDEO_BITRATE>
+                    <PARAMETER_DESC id="VIDEO_BITRATE">Get, Set video bitrate</PARAMETER_DESC>
+                    <VIDEO_FPS_NUM type="option" rw="RW">
+                        <NTSC>
+                            <OPTIOIN value="30">30</OPTIOIN>
+                            <OPTIOIN value="15">15</OPTIOIN>
+                            <OPTIOIN value="10">10</OPTIOIN>
+                            <OPTIOIN value="7">7</OPTIOIN>
+                            <OPTIOIN value="6">6</OPTIOIN>
+                            <OPTIOIN value="5">5</OPTIOIN>
+                            <OPTIOIN value="4">4</OPTIOIN>
+                            <OPTIOIN value="3">3</OPTIOIN>
+                            <OPTIOIN value="2">2</OPTIOIN>
+                            <OPTIOIN value="1">1</OPTIOIN>
+                        </NTSC>
+                        <PAL>
+                            <OPTIOIN value="25">25</OPTIOIN>
+                            <OPTIOIN value="12">12</OPTIOIN>
+                            <OPTIOIN value="8">8</OPTIOIN>
+                            <OPTIOIN value="6">6</OPTIOIN>
+                            <OPTIOIN value="5">5</OPTIOIN>
+                            <OPTIOIN value="4">4</OPTIOIN>
+                            <OPTIOIN value="3">3</OPTIOIN>
+                            <OPTIOIN value="2">2</OPTIOIN>
+                            <OPTIOIN value="1">1</OPTIOIN>
+                        </PAL>
+                    </VIDEO_FPS_NUM>
+                    <PARAMETER_DESC id="VIDEO_FPS_NUM">Get, Set video frame number</PARAMETER_DESC>
+                    <VIDEO_FPS type="option" rw="RW">
+                        <OPTION value="MODE1">Constant</OPTION>
+                        <OPTION value="MODE2">Variable</OPTION>
+                    </VIDEO_FPS>
+                    <PARAMETER_DESC id="VIDEO_FPS">Need SaveReboot</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Camera Name</CATEGORY_NAME>
+                    <CATEGORY_DESC>Camera Name</CATEGORY_DESC>
+                    <VIDEO_CAMERA_NAME type="text" rw="RW" range="Max: 20 Bytes">Camera 1</VIDEO_CAMERA_NAME>
+                    <PARAMETER_DESC id="VIDEO_CAMERA_NAME">Get, Set camera name</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Video Status</CATEGORY_NAME>
+                    <CATEGORY_DESC>Video Status</CATEGORY_DESC>
+                    <VIDEO_STATUS type="ReadOnly" rw="RO"></VIDEO_STATUS>
+                    <PARAMETER_DESC id="VIDEO_STATUS">Get video status</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>DIO</CATEGORY_NAME>
+                    <CATEGORY_DESC>DIO</CATEGORY_DESC>
+                    <DIO_OUTPUT type="option" rw="WO">
+                        <OPTION value="0x00">DO1 LOW, DO2 LOW</OPTION>
+                        <OPTION value="0x01">DO1 HI , DO2 LOW</OPTION>
+                        <OPTION value="0x02">DO1 LOW, DO2 HI </OPTION>
+                        <OPTION value="0x03">DO1 HI , DO2 HI </OPTION>
+                    </DIO_OUTPUT>
+                    <PARAMETER_DESC id="DIO_OUTPUT">Set DIO output</PARAMETER_DESC>
+                    <DIO_STATUS type="ReadOnly" rw="RO"></DIO_STATUS>
+                    <PARAMETER_DESC id="DIO_STATUS">Get DIO status</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Motion Detection</CATEGORY_NAME>
+                    <CATEGORY_DESC>Motion Detection</CATEGORY_DESC>
+                    <MOTION_ENABLED type="option" rw="RW">
+                        <OPTION value="0x00">Disabled</OPTION>
+                        <OPTION value="0x01">Enabled</OPTION>
+                    </MOTION_ENABLED>
+                    <PARAMETER_DESC id="MOTION_ENABLED">Get, Set motion enabled flag</PARAMETER_DESC>
+                    <MOTION_SETTING type="text" rw="WO" range="id,x1,y1,x2,y2,sensitivity">1,100,100,200,200,70</MOTION_SETTING>
+                    <PARAMETER_DESC id="MOTION_SETTING">Set motion detection settings</PARAMETER_DESC>
+                    <MOTION_SENSITIVE type="text" rw="WO" range="window,sensitive">1,70</MOTION_SENSITIVE>
+                    <PARAMETER_DESC id="MOTION_SENSITIVE">Set motion detection sensitivity</PARAMETER_DESC>
+                    <MOTION_STATUS type="ReadOnly" rw="RO"></MOTION_STATUS>
+                    <PARAMETER_DESC id="MOTION_STATUS">Get motion detection status</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Serial Port</CATEGORY_NAME>
+                    <CATEGORY_DESC>Serial Port</CATEGORY_DESC>
+                    <SERIAL_SETTING type="Multi" rw="RW" range="line,baudrate">
+                        <LINE type="option">
+                            <OPTION value="8N1">8N1</OPTION>
+                            <OPTION value="8O1">8O1</OPTION>
+                            <OPTION value="8E1">8E1</OPTION>
+                        </LINE>
+                        <BAUD_RATE type="option">
+                            <OPTION value="2400">2400</OPTION>
+                            <OPTION value="4800">4800</OPTION>
+                            <OPTION value="9600">9600</OPTION>
+                            <OPTION value="19200">19200</OPTION>
+                            <OPTION value="38400">38400</OPTION>
+                            <OPTION value="57600">57600</OPTION>
+                            <OPTION value="115200">115200</OPTION>
+                        </BAUD_RATE>
+                    </SERIAL_SETTING>
+                    <PARAMETER_DESC id="SERIAL_SETTING">Get, Set serial port setting</PARAMETER_DESC>
+                    <SERIAL_ASCII type="text" rw="WO" range="ASCII String"></SERIAL_ASCII>
+                    <PARAMETER_DESC id="SERIAL_ASCII">Set ASCII data via serial port</PARAMETER_DESC>
+                    <SERIAL_HEX type="text" rw="WO" range="HEX String"></SERIAL_HEX>
+                    <PARAMETER_DESC id="SERIAL_HEX">Set HEX data via serial port</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>RTP Commands</CATEGORY_NAME>
+                    <CATEGORY_DESC>RTP Commands</CATEGORY_DESC>
+                    <RTP_MULTICAST_STREAMING type="option" rw="RW">
+                        <OPTION value="PLAY">PLAY</OPTION>
+                        <OPTION value="PAUSE">PAUSE</OPTION>
+                    </RTP_MULTICAST_STREAMING>
+                    <PARAMETER_DESC id="RTP_MULTICAST_STREAMING">Get, Set RTP multicast streaming methods</PARAMETER_DESC>
+                </CATEGORY>
+            </CATALOG>
+            <CATALOG>
+                <CATALOG_NAME>system</CATALOG_NAME>
+                <CATEGORY>
+                    <CATEGORY_NAME>Device Operation</CATEGORY_NAME>
+                    <CATEGORY_DESC>Device Operation</CATEGORY_DESC>
+                    <SAVE_REBOOT type="ReadOnly" rw="WO"></SAVE_REBOOT>
+                    <PARAMETER_DESC id="SAVE_REBOOT">Set Save and Reboot command</PARAMETER_DESC>
+                    <SAVE type="ReadOnly" rw="WO"></SAVE>
+                    <PARAMETER_DESC id="SAVE">Set Save command</PARAMETER_DESC>
+                    <REBOOT type="ReadOnly" rw="WO"></REBOOT>
+                    <PARAMETER_DESC id="REBOOT">Set Reboot command</PARAMETER_DESC>
+                    <FACTORY_DEFAULT type="ReadOnly" rw="WO"></FACTORY_DEFAULT>
+                    <PARAMETER_DESC id="FACTORY_DEFAULT">Set Factory Default command</PARAMETER_DESC>
+                    <SYSTEM_INFO type="ReadOnly" rw="RO"></SYSTEM_INFO>
+                    <PARAMETER_DESC id="SYSTEM_INFO">Get System Information</PARAMETER_DESC>
+                    <SYSTEM_PROPERTY type="ReadOnly" rw="RO"></SYSTEM_PROPERTY>
+                    <PARAMETER_DESC id="SYSTEM_PROPERTY">Get System Parameters</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Network Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Network Setting</CATEGORY_DESC>
+                    <LAN_HOSTNAME type="text" rw="RW" range="Max sizes:30 Bytes">Hostname</LAN_HOSTNAME>
+                    <PARAMETER_DESC id="LAN_HOSTNAME">Get, Set LAN Hostname</PARAMETER_DESC>
+                    <LAN_CONFIG type="Multi" rw="RW" range="LAN_IP,LAN_NETMASK">
+						<LAN_IP type="text" rw="RW" range="xxx.xxx.xxx.xxx"></LAN_IP>
+						<LAN_NETMASK type="text" rw="RW" range="xxx.xxx.xxx.xxx"></LAN_NETMASK>
+                    </LAN_CONFIG>
+                    <PARAMETER_DESC id="LAN_CONFIG">Get, Set LAN Config</PARAMETER_DESC>
+                    <WAN type="ReadOnly" rw="RO"></WAN>
+                    <PARAMETER_DESC id="WAN">Get WAN information</PARAMETER_DESC>
+                    <WAN_STATUS type="ReadOnly" rw="RO"></WAN_STATUS>
+                    <PARAMETER_DESC id="WAN_STATUS">Get WAN status</PARAMETER_DESC>
+                    <V2_WAN_STATUS type="ReadOnly" rw="RO"></V2_WAN_STATUS>
+                    <PARAMETER_DESC id="V2_WAN_STATUS">Get WAN status v2</PARAMETER_DESC>                    
+                    <WAN_TYPE type="option" rw="RW">
+                        <OPTION value="1">Dynamic IP</OPTION>
+                        <OPTION value="2">Static IP</OPTION>
+                        <OPTION value="3">PPPoE</OPTION>
+                    </WAN_TYPE>
+                    <PARAMETER_DESC id="WAN_TYPE">Get, Set WAN Type</PARAMETER_DESC>
+                    <WAN_IP type="text" rw="RW" range="IP Address">192.168.0.100</WAN_IP>
+                    <PARAMETER_DESC id="WAN_IP">Get, Set WAN IP Address</PARAMETER_DESC>
+                    <WAN_NETMASK type="text" rw="RW" range="IP Address">255.255.255.0</WAN_NETMASK>
+                    <PARAMETER_DESC id="WAN_NETMASK">Get, Set WAN netmask</PARAMETER_DESC>
+                    <WAN_GATEWAY type="text" rw="RW" range="IP Address">192.168.0.253</WAN_GATEWAY>
+                    <PARAMETER_DESC id="WAN_GATEWAY">Get, Set WAN gateway</PARAMETER_DESC>
+                    <WAN_PPPOE_USERNAME type="text" rw="RW" range="Max sizes:60 Bytes">username</WAN_PPPOE_USERNAME>
+                    <PARAMETER_DESC id="WAN_PPPOE_USERNAME">Get, Set PPPoE user name</PARAMETER_DESC>
+                    <WAN_PPPOE_PASSWORD type="text" rw="RW" range="Max sizes:60 Bytes">password</WAN_PPPOE_PASSWORD>
+                    <PARAMETER_DESC id="WAN_PPPOE_PASSWORD">Get, Set PPPoE password</PARAMETER_DESC>
+                    <DNS type="ReadOnly" rw="RO"></DNS>                   
+                    <PARAMETER_DESC id="DNS">Get DNS information</PARAMETER_DESC>                    
+                    <DNS_PRIMARY type="text" rw="RW" range="IP Address">192.168.1.1</DNS_PRIMARY>
+                    <PARAMETER_DESC id="DNS_PRIMARY">Get, Set primary DNS</PARAMETER_DESC>
+                    <DNS_SECONDARY type="text" rw="RW" range="IP Address">192.168.1.2</DNS_SECONDARY>
+                    <PARAMETER_DESC id="DNS_SECONDARY">Get, Set secondary DNS</PARAMETER_DESC>                 
+                    <DDNS_TYPE type="option" rw="RW">
+                        <OPTION value="1">Disabled</OPTION>
+                        <OPTION value="2">Enabled</OPTION>
+                    </DDNS_TYPE>
+                    <PARAMETER_DESC id="DDNS_TYPE">Get, Set DDNS type</PARAMETER_DESC>
+                    <DDNS_HOSTNAME type="text" rw="RW" range="String">hostname</DDNS_HOSTNAME>
+                    <PARAMETER_DESC id="DDNS_HOSTNAME">Get, Set DDNS hostname</PARAMETER_DESC>
+                    <DDNS_SERVICE type="option" rw="RW">
+                        <OPTION value="dyndns">members.dyndns.org</OPTION>
+                        <OPTION value="qdns" >members.3322.org</OPTION>
+                        <OPTION value="ezip" >www.EZ-IP.Net</OPTION>
+                        <OPTION value="pgpow"  >www.penguinpowered.com</OPTION>
+                        <OPTION value="dhs"  >members.dhs.org</OPTION>
+                        <OPTION value="ods"  >update.ods.org</OPTION>
+                        <OPTION value="tzo"  >cgi.tzo.com</OPTION>
+                        <OPTION value="easydns"  >members.easydns.com</OPTION>
+                        <OPTION value="justlinux"  >www.justlinux.com</OPTION>
+                        <OPTION value="dyns"  >www.dyns.cx</OPTION>
+                        <OPTION value="hn"  >www.hn.org</OPTION>
+                        <OPTION value="zoneedit"  >www.zoneedit.com</OPTION>
+                    </DDNS_SERVICE>
+                    <PARAMETER_DESC id="DDNS_SERVICE">Get, Set DDNS service</PARAMETER_DESC>
+                    <DDNS_USERNAME type="text" rw="RW" range="Max sizes:30 Bytes">username</DDNS_USERNAME>
+                    <PARAMETER_DESC id="DDNS_USERNAME">Get, Set DDNS user name</PARAMETER_DESC>
+                    <DDNS_PASSWORD type="text" rw="RW" range="Max sizes:30 Bytes">password</DDNS_PASSWORD>
+                    <PARAMETER_DESC id="DDNS_PASSWORD">Get, Set DDNS password</PARAMETER_DESC>
+                    <DDNS_CONFIG type="Multi" rw="RW" range="DDNS_TYPE,DDNS_HOSTNAME,DDNS_SERVICE,DDNS_USERNAME,DDNS_PASSWORD">
+						<A type="option" rw="RW">
+							<OPTION value="1">Disabled</OPTION>
+							<OPTION value="2">Enabled</OPTION>
+						</A>
+						<B type="text" rw="RW" range="String">hostname</B>
+						<C type="option" rw="RW">
+							<OPTION value="dyndns">members.dyndns.org</OPTION>
+							<OPTION value="qdns" >members.3322.org</OPTION>
+							<OPTION value="ezip" >www.EZ-IP.Net</OPTION>
+							<OPTION value="pgpow"  >www.penguinpowered.com</OPTION>
+							<OPTION value="dhs"  >members.dhs.org</OPTION>
+							<OPTION value="ods"  >update.ods.org</OPTION>
+							<OPTION value="tzo"  >cgi.tzo.com</OPTION>
+							<OPTION value="easydns"  >members.easydns.com</OPTION>
+							<OPTION value="justlinux"  >www.justlinux.com</OPTION>
+							<OPTION value="dyns"  >www.dyns.cx</OPTION>
+							<OPTION value="hn"  >www.hn.org</OPTION>
+							<OPTION value="zoneedit"  >www.zoneedit.com</OPTION>
+						</C>
+						<D type="text" rw="RW" range="Max sizes:30 Bytes">username</D>
+						<E type="text" rw="RW" range="Max sizes:30 Bytes">password</E>
+                    </DDNS_CONFIG>
+                    <PARAMETER_DESC id="DDNS_CONFIG">Get or Set the DDNS configuration. This is the new added command. All configurations of DDNS will be binded to this command and all settings will be checkes first. This command will replace the DDNS_TYPE, DDNS_HOSTNAME, DDNS_SERVICE, DDNS_USERNAME and DDNS_PASSWORD commands</PARAMETER_DESC>
+                    <DDNS type="ReadOnly" rw="RO"></DDNS>
+                    <PARAMETER_DESC id="DDNS">Get the DDNS information</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Date / Time Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Date / Time Setting</CATEGORY_DESC>     
+                    <DATE_TYPE type="option" rw="RW">
+                        <OPTION value="1">Manual Setting</OPTION>
+                        <OPTION value="2">NTP/SNTP</OPTION>
+                    </DATE_TYPE>
+                    <PARAMETER_DESC id="DATE_TYPE">Get, Set Date type</PARAMETER_DESC>
+                    <DATE_SNTP_IP type="text" rw="RW" range="IP Address">192.168.1.35</DATE_SNTP_IP>
+                    <PARAMETER_DESC id="DATE_SNTP_IP">Get, Set SNTP IP address</PARAMETER_DESC>
+                    <DATE_SNTP_UPDATE type="option" rw="RW">
+                        <OPTION value="300">5 min</OPTION>
+                        <OPTION value="3600">1 Hour</OPTION>
+                        <OPTION value="21600">6 Hours</OPTION>
+                        <OPTION value="43200">12 Hours</OPTION>
+                        <OPTION value="86400">1 Day</OPTION>
+                    </DATE_SNTP_UPDATE>
+                    <PARAMETER_DESC id="DATE_SNTP_UPDATE">Get, Set SNTP Update Interval</PARAMETER_DESC>
+                    <DATE_MANUAL_DATE type="text" rw="RW" range="MMDDhhmmYYYY">033100002006</DATE_MANUAL_DATE>
+                    <PARAMETER_DESC id="DATE_MANUAL_DATE">Get, Set Date manually</PARAMETER_DESC>
+                    <DATE_MANUAL_TIME type="text" rw="RW" range="hh:mm:ss">10:45:58</DATE_MANUAL_TIME>
+                    <PARAMETER_DESC id="DATE_MANUAL_TIME">Get, Set Time manually</PARAMETER_DESC>
+                    <DATE_MANUAL_ZONE type="option" rw="RW">
+						<OPTION value="-12">GMT-12</OPTION>
+						<OPTION value="-11">GMT-11</OPTION>
+						<OPTION value="-10">GMT-10</OPTION>
+						<OPTION value="-09">GMT-09</OPTION>
+						<OPTION value="-08">GMT-08</OPTION>
+						<OPTION value="-07">GMT-07</OPTION>
+						<OPTION value="-06">GMT-06</OPTION>
+						<OPTION value="-05">GMT-05</OPTION>
+						<OPTION value="-04">GMT-04</OPTION>
+						<OPTION value="-03">GMT-03</OPTION>
+						<OPTION value="-02">GMT-02</OPTION>
+						<OPTION value="-01">GMT-01</OPTION>
+						<OPTION value="+00">GMT-00</OPTION>
+						<OPTION value="+01">GMT+01</OPTION>
+						<OPTION value="+02">GMT+02</OPTION>
+						<OPTION value="+03">GMT+03</OPTION>
+						<OPTION value="+04">GMT+04</OPTION>
+						<OPTION value="+05">GMT+05</OPTION>
+						<OPTION value="+06">GMT+06</OPTION>
+						<OPTION value="+07">GMT+07</OPTION>
+						<OPTION value="+08">GMT+08</OPTION>
+						<OPTION value="+09">GMT+09</OPTION>
+						<OPTION value="+10">GMT+10</OPTION>
+						<OPTION value="+11">GMT+11</OPTION>
+						<OPTION value="+12">GMT+12</OPTION>
+						<OPTION value="+13">GMT+13</OPTION>
+                    </DATE_MANUAL_ZONE>
+                    <PARAMETER_DESC id="DATE_MANUAL_ZONE">Get, Set time zone manually</PARAMETER_DESC>
+                    <DATE type="ReadOnly" rw="RO"></DATE>                  
+                    <PARAMETER_DESC id="DATE">Get Date information</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Type of Service Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Type of Service Setting</CATEGORY_DESC>
+                    <TOS type="ReadOnly" rw="RO"></TOS>                    
+                    <PARAMETER_DESC id="TOS">Get TOS information</PARAMETER_DESC>
+                    <VIDEO_TOS_TYPE type="option" rw="RW">
+                        <OPTION value="1">Disabled</OPTION>
+                        <OPTION value="2">Enabled</OPTION>
+                    </VIDEO_TOS_TYPE>
+                    <PARAMETER_DESC id="VIDEO_TOS_TYPE">Get, Set video TOS type</PARAMETER_DESC>
+                    <VIDEO_TOS_PRIORITY type="option" rw="RW">
+                        <OPTION value="Minimize-Delay">Minimize-Delay</OPTION>
+                        <OPTION value="Maximize-Throughput">Maximize-Throughput</OPTION>
+                        <OPTION value="Maximize-Reliability">Maximize-Reliability</OPTION>
+                        <OPTION value="Minimize-Cost">Minimize-Cost</OPTION>
+                        <OPTION value="Normal-Service">Normal-Service</OPTION>
+                    </VIDEO_TOS_PRIORITY>
+                    <PARAMETER_DESC id="VIDEO_TOS_PRIORITY">Get, Set TOS Priority</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Account / Password</CATEGORY_NAME>
+                    <CATEGORY_DESC>Account / Password</CATEGORY_DESC>
+                    <ACCOUNT type="ReadOnly" rw="RO"></ACCOUNT>
+                    <PARAMETER_DESC id="ACCOUNT">Get Account information</PARAMETER_DESC>                    
+                    <ACCOUNT_ROOT_NAME type="text" rw="RW" range="Max sizes:30 Bytes">Admin</ACCOUNT_ROOT_NAME>
+                    <PARAMETER_DESC id="ACCOUNT_ROOT_NAME">Get, Set root account name</PARAMETER_DESC>
+                    <ACCOUNT_ROOT_PASSWORD type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_ROOT_PASSWORD>
+                    <PARAMETER_DESC id="ACCOUNT_ROOT_PASSWORD">Get, Set root account password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_1 type="text" rw="RW" range="Max sizes:30 Bytes">guest1</ACCOUNT_USER_NAME_1>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_1">Get, Set user1 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_1 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_1>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_1">Get, Set user1 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_2 type="text" rw="RW" range="Max sizes:30 Bytes">guest2</ACCOUNT_USER_NAME_2>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_2">Get, Set user2 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_2 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_2>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_2">Get, Set user2 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_3 type="text" rw="RW" range="Max sizes:30 Bytes">guest3</ACCOUNT_USER_NAME_3>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_3">Get, Set user3 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_3 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_3>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_3">Get, Set user3 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_4 type="text" rw="RW" range="Max sizes:30 Bytes">guest4</ACCOUNT_USER_NAME_4>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_4">Get, Set user4 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_4 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_4>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_4">Get, Set user4 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_5 type="text" rw="RW" range="Max sizes:30 Bytes">guest5</ACCOUNT_USER_NAME_5>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_5">Get, Set user5 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_5 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_5>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_5">Get, Set user5 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_6 type="text" rw="RW" range="Max sizes:30 Bytes">guest6</ACCOUNT_USER_NAME_6>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_6">Get, Set user6 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_6 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_6>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_6">Get, Set user6 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_7 type="text" rw="RW" range="Max sizes:30 Bytes">guest7</ACCOUNT_USER_NAME_7>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_7">Get, Set user7 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_7 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_7>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_7">Get, Set user7 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_8 type="text" rw="RW" range="Max sizes:30 Bytes">guest8</ACCOUNT_USER_NAME_8>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_8">Get, Set user8 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_8 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_8>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_8">Get, Set user8 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_9 type="text" rw="RW" range="Max sizes:30 Bytes">guest9</ACCOUNT_USER_NAME_9>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_9">Get, Set user9 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_9 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_9>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_9">Get, Set user9 password</PARAMETER_DESC>
+                    <ACCOUNT_USER_NAME_10 type="text" rw="RW" range="Max sizes:30 Bytes">guest10</ACCOUNT_USER_NAME_10>
+                    <PARAMETER_DESC id="ACCOUNT_USER_NAME_10">Get, Set user10 user name</PARAMETER_DESC>
+                    <ACCOUNT_USER_PASSWORD_10 type="text" rw="RW" range="Max sizes:30 Bytes">123456</ACCOUNT_USER_PASSWORD_10>
+                    <PARAMETER_DESC id="ACCOUNT_USER_PASSWORD_10">Get, Set user10 password</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>PORT Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>PORT Setting</CATEGORY_DESC>                    
+                    <PORT type="ReadOnly" rw="RO"></PORT>
+                    <PARAMETER_DESC id="PORT">Get Port information</PARAMETER_DESC>
+					<PORT_HTTP type="text" rw="RW" range="0~65535">80</PORT_HTTP>
+                    <PARAMETER_DESC id="PORT_HTTP">Get, Set HTTP port</PARAMETER_DESC>
+                    <PORT_SEARCH_1 type="text" rw="RW" range="0~65535">6005</PORT_SEARCH_1>
+                    <PARAMETER_DESC id="PORT_SEARCH_1">Get, Set Search Port 1</PARAMETER_DESC>
+                    <PORT_SEARCH_2 type="text" rw="RW" range="0~65535">6006</PORT_SEARCH_2>
+                    <PARAMETER_DESC id="PORT_SEARCH_2">Get, Set Search Port 2</PARAMETER_DESC>
+                    <PORT_REGISTER type="text" rw="RW" range="0~65535">6000</PORT_REGISTER>
+                    <PARAMETER_DESC id="PORT_REGISTER">Get, Set Register Port</PARAMETER_DESC>
+                    <PORT_CONTROL type="text" rw="RW" range="0~65535">6001</PORT_CONTROL>
+                    <PARAMETER_DESC id="PORT_CONTROL">Get, Set Control Port</PARAMETER_DESC>
+                    <PORT_VIDEO type="text" rw="RW" range="0~65535">6002</PORT_VIDEO>
+                    <PARAMETER_DESC id="PORT_VIDEO">Get, Set Video Port</PARAMETER_DESC>
+                    <PORT_MULTICAST type="text" rw="RW" range="0~65535">5000</PORT_MULTICAST>
+                    <PARAMETER_DESC id="PORT_MULTICAST">Get, Set Multicast Port</PARAMETER_DESC>
+                    <V2_PORT_RTSP type="text" rw="RW" range="0~65535">7070</V2_PORT_RTSP>
+                    <PARAMETER_DESC id="V2_PORT_RTSP">Get, Set RTSP Port</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Language</CATEGORY_NAME>
+                    <CATEGORY_DESC>Language</CATEGORY_DESC>
+                    <LANGUAGE type="option" rw="RW">
+                        <OPTION value="0">0 - English</OPTION>
+                        <OPTION value="1">1 - Traditional Chinese</OPTION>
+                        <OPTION value="2">2 - Simplified Chinese</OPTION>
+                        <OPTION value="3">3 - Japanese</OPTION>
+                        <OPTION value="4">4 - Spanish</OPTION>
+                        <OPTION value="5">5 - Italian</OPTION>
+                        <OPTION value="6">6 - German</OPTION>
+                        <OPTION value="7">7 - Portuguese</OPTION>
+                        <OPTION value="8">8 - Czech</OPTION>
+                        <OPTION value="9">9 - French</OPTION>
+                    </LANGUAGE>
+                    <PARAMETER_DESC id="LANGUAGE">Get, Set displayed language</PARAMETER_DESC>
+                </CATEGORY>
+                <CATEGORY>
+                    <CATEGORY_NAME>Other</CATEGORY_NAME>
+                    <CATEGORY_DESC>Other</CATEGORY_DESC>
+                    <V2_STREAMING_TYPE type="option" rw="RW">
+                        <OPTION value="1">TCP Version 1.0</OPTION>
+                        <OPTION value="2">TCP Version 2.0</OPTION>
+                    </V2_STREAMING_TYPE>
+                    <PARAMETER_DESC id="V2_STREAMING_TYPE">Get, Set video streaming type</PARAMETER_DESC>
+                    <V2_STREAMING_METHOD type="option" rw="RW">
+                        <OPTION value="0">TCP Only for TCP2.0</OPTION>
+                        <OPTION value="1">Multicast Only for TCP2.0</OPTION>
+                        <OPTION value="2">TCP &amp; Multicast for TCP2.0</OPTION>
+                        <OPTION value="3">RTP over UDP for TCP2.0</OPTION>
+                        <OPTION value="4">RTP over Multicast for TCP2.0</OPTION>
+                        <OPTION value="5">RTP over UDP &amp; Multicast for TCP2.0</OPTION>
+                    </V2_STREAMING_METHOD>
+                    <PARAMETER_DESC id="V2_STREAMING_METHOD">Get, Set video streaming method</PARAMETER_DESC>
+                    <RTSP_AUTHEN type="option" rw="RW">
+                        <OPTION value="1">Disabled</OPTION>
+                        <OPTION value="2">Enabled</OPTION>
+                    </RTSP_AUTHEN>
+                    <PARAMETER_DESC id="RTSP_AUTHEN">Get or Set RTSP_AUTHEN. When it is disabled, there is no need to perform the RTSP authentication to get the Video/Audio Stream through RTSP/RTP</PARAMETER_DESC>
+                    <RTB_B2 type="option" rw="RW">
+                        <OPTION value="1">Disabled</OPTION>
+                        <OPTION value="2">Enabled</OPTION>
+                    </RTB_B2>
+                    <PARAMETER_DESC id="RTB_B2">Get or Set B2_RTP_APPENDED. When it is disabled, there is no B2 Frame appended to every RTP video frame</PARAMETER_DESC>
+                    <V2_MULTICAST_IF type="option" rw="RW">
+                        <OPTION value="0">LAN Port</OPTION>
+                        <OPTION value="1">WAN Port</OPTION>
+                    </V2_MULTICAST_IF>
+                    <PARAMETER_DESC id="V2_MULTICAST_IF">Get, Set multicast interface</PARAMETER_DESC>
+                    <V2_MULTICAST_IP type="text" rw="RW" range="224.3.1.0 ~ 239.255.255.255 for TCP2.0">228.5.6.1</V2_MULTICAST_IP>
+                    <PARAMETER_DESC id="V2_MULTICAST_IP">Get, Set multicast IP address</PARAMETER_DESC>
+                    <V2_PORT_RTP_MULTI_VIDEO type="text" rw="RW" range="Video port for rtp over multicast">5000</V2_PORT_RTP_MULTI_VIDEO>
+                    <PARAMETER_DESC id="V2_PORT_RTP_MULTI_VIDEO">Get, Set RTP Multicast Video Port</PARAMETER_DESC>
+                    <V2_PORT_RTP_MULTI_AUDIO type="text" rw="RW" range="Audio port for rtp over multicast">5002</V2_PORT_RTP_MULTI_AUDIO>
+                    <PARAMETER_DESC id="V2_PORT_RTP_MULTI_AUDIO">Get, Set RTP Multicast Audio Port</PARAMETER_DESC>
+                    <V2_FAILOVER type="option" rw="RW">
+                        <OPTION value="0">Disabled</OPTION>
+                        <OPTION value="1">Enabled</OPTION>
+                    </V2_FAILOVER>
+                    <PARAMETER_DESC id="V2_FAILOVER">Get, Set network failover function</PARAMETER_DESC>
+                    <IGMP_ENABLED type="option" rw="RW">
+                        <OPTION value="0">Disabled</OPTION>
+                        <OPTION value="1">Enabled</OPTION>
+                    </IGMP_ENABLED>
+                    <PARAMETER_DESC id="IGMP_ENABLED">Get, Set IGMP function</PARAMETER_DESC>
+                    <SPEED_LAN type="option" rw="RW">
+                        <OPTION value="0">Auto detect speed</OPTION>
+                        <OPTION value="1">100Mbps/Full Duplex</OPTION>
+                        <OPTION value="2">100Mbps/Half Duplex</OPTION>
+                        <OPTION value="3">10Mbps/Full Duplex</OPTION>
+                        <OPTION value="4">10Mbps/Half Duplex</OPTION>
+                    </SPEED_LAN>
+                    <PARAMETER_DESC id="SPEED_LAN">Get, Set LAN speed setting</PARAMETER_DESC>
+                    <SPEED_WAN type="option" rw="RW">
+                        <OPTION value="0">Auto detect speed</OPTION>
+                        <OPTION value="1">100Mbps/Full Duplex</OPTION>
+                        <OPTION value="2">100Mbps/Half Duplex</OPTION>
+                        <OPTION value="3">10Mbps/Full Duplex</OPTION>
+                        <OPTION value="4">10Mbps/Half Duplex</OPTION>
+                    </SPEED_WAN>
+                    <PARAMETER_DESC id="SPEED_WAN">Get, Set WAN speed setting</PARAMETER_DESC>
+                    <VIDEO_MULTICAST_TTL type="text" rw="RW" range="1 ~ 255">255</VIDEO_MULTICAST_TTL>
+                    <PARAMETER_DESC id="VIDEO_MULTICAST_TTL">Get, Set video multicast TTL</PARAMETER_DESC>
+                    <VIDEO_MULTICAST_IP type="text" rw="RW" range="1~255 multicast ip for TCP1.0">1</VIDEO_MULTICAST_IP>
+                    <PARAMETER_DESC id="VIDEO_MULTICAST_IP">Get, Set Multicast IP</PARAMETER_DESC>
+                    <VIDEO_LAN type="option" rw="RW">
+                        <OPTION value="DISABLE">DISABLE</OPTION>
+                        <OPTION value="TCP">TCP</OPTION>
+                        <OPTION value="MULTICAST">MULTICAST</OPTION>
+                    </VIDEO_LAN>
+                    <PARAMETER_DESC id="VIDEO_LAN">Get, Set LAN port setting</PARAMETER_DESC>
+                    <VIDEO_WAN type="option" rw="RW">
+                        <OPTION value="DISABLE">DISABLE</OPTION>
+                        <OPTION value="TCP">TCP</OPTION>
+                        <OPTION value="MULTICAST">MULTICAST</OPTION>
+                    </VIDEO_WAN>
+                    <PARAMETER_DESC id="VIDEO_WAN">Get, Set WAN port setting</PARAMETER_DESC>
+                    <VIDEO_RESOLUTION_CAP type="ReadOnly" rw="RO"></VIDEO_RESOLUTION_CAP>                  
+                    <PARAMETER_DESC id="VIDEO_RESOLUTION_CAP">Get the supported video resolutions. It will be permuted to descend to lowest resolution. The ";" will be used to separate the video resolution bwtewwn NTSC and PAL.</PARAMETER_DESC>
+                    <VIDEO_FPS_CAP type="ReadOnly" rw="RO"></VIDEO_FPS_CAP>                  
+                    <PARAMETER_DESC id="VIDEO_FPS_CAP">Get Date information</PARAMETER_DESC>
+                    <DAYLIGHT_SAVING_CONFIG type="Multi" rw="RW" range="Arguments:a,b,c,d,e,f,g. The (b,c,d) sets the start time of daylight saving and (e,f,g) set the ending time of daylight saving">
+                        <A type="option">
+                            <OPTION value="0">Disable</OPTION>
+                            <OPTION value="1">Enable</OPTION>
+                        </A>
+                        <B type="option">
+                            <OPTION value="FIRST">FIRST</OPTION>
+                            <OPTION value="LAST">LAST</OPTION>
+                        </B>
+                        <C type="option">
+                            <OPTION value="1">Mon.</OPTION>
+                            <OPTION value="2">Tue.</OPTION>
+                            <OPTION value="3">Wed.</OPTION>
+                            <OPTION value="4">Thu.</OPTION>
+                            <OPTION value="5">Fri.</OPTION>
+                            <OPTION value="6">Sat.</OPTION>
+                            <OPTION value="7">Sun.</OPTION>
+                        </C>
+                        <D type="option">
+                            <OPTION value="1">Jan.</OPTION>
+                            <OPTION value="2">Feb.</OPTION>
+                            <OPTION value="3">Mar.</OPTION>
+                            <OPTION value="4">Apr.</OPTION>
+                            <OPTION value="5">May</OPTION>
+                            <OPTION value="6">Jun.</OPTION>
+                            <OPTION value="7">Jul.</OPTION>
+                            <OPTION value="8">Aug.</OPTION>
+                            <OPTION value="9">Sep.</OPTION>
+                            <OPTION value="10">Oct.</OPTION>
+                            <OPTION value="11">Nov.</OPTION>
+                            <OPTION value="12">Dec.</OPTION>
+                        </D>
+                        <E type="option">
+                            <OPTION value="FIRST">FIRST</OPTION>
+                            <OPTION value="LAST">LAST</OPTION>
+                        </E>
+                        <F type="option">
+                            <OPTION value="1">Mon.</OPTION>
+                            <OPTION value="2">Tue.</OPTION>
+                            <OPTION value="3">Wed.</OPTION>
+                            <OPTION value="4">Thu.</OPTION>
+                            <OPTION value="5">Fri.</OPTION>
+                            <OPTION value="6">Sat.</OPTION>
+                            <OPTION value="7">Sun.</OPTION>
+                        </F>
+                        <G type="option">
+                            <OPTION value="1">Jan.</OPTION>
+                            <OPTION value="2">Feb.</OPTION>
+                            <OPTION value="3">Mar.</OPTION>
+                            <OPTION value="4">Apr.</OPTION>
+                            <OPTION value="5">May</OPTION>
+                            <OPTION value="6">Jun.</OPTION>
+                            <OPTION value="7">Jul.</OPTION>
+                            <OPTION value="8">Aug.</OPTION>
+                            <OPTION value="9">Sep.</OPTION>
+                            <OPTION value="10">Oct.</OPTION>
+                            <OPTION value="11">Nov.</OPTION>
+                            <OPTION value="12">Dec.</OPTION>
+                        </G>
+                    </DAYLIGHT_SAVING_CONFIG>
+                    <PARAMETER_DESC id="DAYLIGHT_SAVING_CONFIG">Get or Set the Datlight saving configuration.</PARAMETER_DESC>
+                </CATEGORY>
+            </CATALOG>
+            <CATALOG>
+                <CATALOG_NAME>Encoder</CATALOG_NAME>
+                <CATEGORY>
+                    <CATEGORY_NAME>Video Setting</CATEGORY_NAME>
+                    <CATEGORY_DESC>Video Setting</CATEGORY_DESC>
+                    <VIDEO_WB_MODE type="option" rw="RW">
+                        <OPTION value="AUTO">AUTO</OPTION>
+                        <OPTION value="INDOOR">INDOOR</OPTION>
+                        <OPTION value="HOLD_CURRENT">HOLD_CURRENT</OPTION>
+                        <OPTION value="ATW">ATW</OPTION>
+                        <OPTION value="MANUAL">MANUAL</OPTION>
+                        <OPTION value="OUTDOOR">OUTDOOR</OPTION>
+                    </VIDEO_WB_MODE>
+                    <PARAMETER_DESC id="VIDEO_WB_MODE">Get or Set the VIDEO White Balance Mode configuration. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_WB_GAIN type="Multi" rw="RW" range="LAN_IP,LAN_NETMASK">
+						<RGAIN type="text" rw="RW" range="0~255"></RGAIN>
+						<BGAIN type="text" rw="RW" range="0~255"></BGAIN>
+                    </VIDEO_WB_GAIN>
+                    <PARAMETER_DESC id="VIDEO_WB_GAIN">Get or Set the RGain and BGain when White Balance Mode is MANUAL. If the VIDEO_WB_MODE is not MANUAL, this command is not valid. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_EXPOSURE_MODE type="option" rw="RW">
+                        <OPTION value="AUTO">AUTO</OPTION>
+                        <OPTION value="MANUAL">MANUAL</OPTION>
+                    </VIDEO_EXPOSURE_MODE>
+                    <PARAMETER_DESC id="VIDEO_EXPOSURE_MODE">Get or Set the Video Exposure Mode configuration. The parameter will be checked if it is valid</PARAMETER_DESC>
+                    <VIDEO_EXPOSURE_GAIN type="text" rw="RW" range="0~255"></VIDEO_EXPOSURE_GAIN>
+                    <PARAMETER_DESC id="VIDEO_EXPOSURE_GAIN">Get or Set the Video Exposure Gain when the Video Exposure Mode is Manual. If the VIDEO_EXPOSURE_MODE is not MANAUL, this command is not valid. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_SHUTTER_SPEED type="option" rw="RW">
+                        <OPTION value="25">25</OPTION>
+                        <OPTION value="30">30</OPTION>
+                        <OPTION value="50">50</OPTION>
+                        <OPTION value="60">60</OPTION>
+                        <OPTION value="100">100</OPTION>
+                        <OPTION value="120">120</OPTION>
+                        <OPTION value="250">250</OPTION>
+                        <OPTION value="500">500</OPTION>
+                        <OPTION value="1000">1000</OPTION>
+                        <OPTION value="2000">2000</OPTION>
+                        <OPTION value="4000">4000</OPTION>
+                        <OPTION value="10000">10000</OPTION>
+                    </VIDEO_SHUTTER_SPEED>
+                    <PARAMETER_DESC id="VIDEO_SHUTTER_SPEED">Get or Set the Video Shutter Speed when the Video Exposure Mode is MANUAL. If the VIDEO_EXPOSURE_MODE is not MANUAL, this command is not valid. The reciprocal of parameter gives the shutter speed in sec. For example, the shutter speed is 1/25 sec when the VIDEO_SHUTTER_SPEED=25</PARAMETER_DESC>
+                    <VIDEO_FLICKLESS type="option" rw="RW">
+                        <OPTION value="AUTO">AUTO</OPTION>
+                        <OPTION value="60HZ">60HZ</OPTION>
+                        <OPTION value="50HZ">50HZ</OPTION>
+                    </VIDEO_FLICKLESS>
+                    <PARAMETER_DESC id="VIDEO_FLICKLESS">Get or Set the Video Flickless Mode configuration. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_ENCODER type="option" rw="RW">
+                        <OPTION value="MPEG4">MPEG4</OPTION>
+                        <OPTION value="MJPEG">MJPEG</OPTION>
+                    </VIDEO_ENCODER>
+                    <PARAMETER_DESC id="VIDEO_ENCODER">Get or Set the VIDEO White Balance Mode configuration. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_BITRATE type="option" rw="RW">
+                        <OPTION value="28K">28K</OPTION>
+                        <OPTION value="56K">56K</OPTION>
+                        <OPTION value="128K">128K</OPTION>
+                        <OPTION value="256K">256K</OPTION>
+                        <OPTION value="384K">384K</OPTION>
+                        <OPTION value="500K">500K</OPTION>
+                        <OPTION value="750K">750K</OPTION>
+                        <OPTION value="1M">1M</OPTION>
+                        <OPTION value="1.2M">1.2M</OPTION>
+                        <OPTION value="1.5M">1.5M</OPTION>
+                        <OPTION value="2M">2M</OPTION>
+                        <OPTION value="2.5M">2.5M</OPTION>
+                        <OPTION value="3M">3M</OPTION>
+                    </VIDEO_BITRATE>
+                    <PARAMETER_DESC id="VIDEO_BITRATE">Get or Set the Video Bitrate, The change is only effective when the VIDEO_ENCODER=MPEG4 and the VIDEO_MAX_BITRATE=UNLIMITED. The parameter will be checked first</PARAMETER_DESC>
+                    <VIDEO_MAX_BITRATE type="option" rw="RW">
+                        <OPTION value="28K">28K</OPTION>
+                        <OPTION value="56K">56K</OPTION>
+                        <OPTION value="128K">128K</OPTION>
+                        <OPTION value="256K">256K</OPTION>
+                        <OPTION value="384K">384K</OPTION>
+                        <OPTION value="500K">500K</OPTION>
+                        <OPTION value="750K">750K</OPTION>
+                        <OPTION value="1M">1M</OPTION>
+                        <OPTION value="1.2M">1.2M</OPTION>
+                        <OPTION value="1.5M">1.5M</OPTION>
+                        <OPTION value="2M">2M</OPTION>
+                        <OPTION value="2.5M">2.5M</OPTION>
+                        <OPTION value="3M">3M</OPTION>
+                        <OPTION value="UNLIMITED">UNLIMITED</OPTION>
+                    </VIDEO_MAX_BITRATE>
+                    <PARAMETER_DESC id="VIDEO_MAX_BITRATE">Get or Set the Maximum Video Bitrate, The change is only effective when the VIDEO_ENCODER=MPEG4. This will limited the video bitrate in MPEG4. The parameter will be checked </PARAMETER_DESC>
+                    <VIDEO_MPEG4_QUALITY type="option" rw="RW">
+                        <OPTION value="HIGH">HIGH</OPTION>
+                        <OPTION value="MIDDLE">MIDDLE</OPTION>
+                        <OPTION value="LOW">LOW</OPTION>
+                        <OPTION value="NONE">NONE</OPTION>
+                    </VIDEO_MPEG4_QUALITY>
+                    <PARAMETER_DESC id="VIDEO_MPEG4_QUALITY">Get or Set the Video Quality in MPEG4 mode. The change is only effective when the VIDEO_ENCODER=MPEG4. If the parameter is not NONE, the bit rate of the video stream is vary then. To set the parameter to NONE to back to the constant bitr rate mode.</PARAMETER_DESC>
+                    <VIDEO_FPS type="option" rw="RW">
+                        <OPTION value="MODE1">Constant</OPTION>
+                        <OPTION value="MODE2">Variable</OPTION>
+                    </VIDEO_FPS>
+                    <PARAMETER_DESC id="VIDEO_FPS">Get or Set the Video FPS mode. MODE1=Constant FPS mode. MODE2=Variable FPS Mode. This is the same as the VIDEO_FPS in MPEG4 CGI. The parameter will be checked first</PARAMETER_DESC>
+					<VIDEO_FPS_NUM type="text" rw="RW" range="1~30"></VIDEO_FPS_NUM>
+					<PARAMETER_DESC id="VIDEO_FPS_NUM">Get or Set the constant FPS number in MPEG4 mode. The change is only effective when the VIDEO_ENCODER=MPEG4 and VIDEO_FPS=MODE1. This command is the same as the VIDEO_FPS_NUM in mpeg4 CGI. The parameter will be checked first</PARAMETER_DESC>
+					<VIDEO_VARIABLE_FPS type="Multi" rw="WO" range="Socket ID, FPS number">
+						<N type="text" rw="RW"></N>
+						<M type="text" rw="RW"></M>
+					</VIDEO_VARIABLE_FPS>
+					<PARAMETER_DESC id="VIDEO_VARIABLE_FPS">Get or Set the Variable FPS number in MPEG4 and MJPEG mode. The change is only effective when the VIDEO_FPS=MODE2 and the V2_STREAMING_METHOD=0 or 3. This command is the same as the VIDEO_VARIABLE_FPS in MPEG4 CGI. The parameter will be checked first</PARAMETER_DESC>
+					<VARIABLE_FPS_NUM type="text" rw="RW" range="1~30"></VARIABLE_FPS_NUM>
+					<PARAMETER_DESC id="VARIABLE_FPS_NUM">Get or Set the Video Variable FPS number configuration. This set the number of frames in a second in the variable FPS mode when the host connected the encoder device. The host could change the frame rate by using VIDEO_VARIANLE_FPS command. The setting is only effective when the V2_STREAMING_MODE is not RTP. The parameter will be checked first</PARAMETER_DESC>
+					<VIDEO_RESOLUTION type="text" rw="RW" range=""></VIDEO_RESOLUTION>
+					<PARAMETER_DESC id="VIDEO_RESOLUTION">Get or Set Video Resolution. This is the same as the VIDEO_RESOLUTION in MPEG4 CGI. The parameter will be checked first</PARAMETER_DESC>
+					<VIDEO_MJPEG_QUALITY type="text" rw="RW" range="0~100"></VIDEO_MJPEG_QUALITY>
+                    <PARAMETER_DESC id="VIDEO_MJPEG_QUALITY">Get or Set the Video Compression Ratio. The higher value in the parameter get higher video quality and bit rate. The change is only effective when the VIDEO_ENCODER=MJPEG. The parameter will be checked first</PARAMETER_DESC>
+					<VIDEO_MJPEG_FPS type="text" rw="RW" range="1~30"></VIDEO_MJPEG_FPS>
+					<PARAMETER_DESC id="VIDEO_MJPEG_FPS">Get or Set the Video Frame Rate in MJPEG mode. This could limited the encoder to send the number of video frames in a second in MJPEG mode. The change is only effective when the VIDEO_ENCODER=MJPEG and VIDEO_FPS=MODE1. The parameter will be checked first</PARAMETER_DESC>
+                    <MOTION_ENABLED type="option" rw="RW">
+                        <OPTION value="0x00">Disable</OPTION>
+                        <OPTION value="0x01">Enable</OPTION>
+                    </MOTION_ENABLED>
+                    <PARAMETER_DESC id="MOTION_ENABLED">Get or set Motion Enabled configuration. The parameter is in the hexidecimal format. This is the same as the MOTION_ENABLED in MPEG4 CGI. The parameter will be checked first</PARAMETER_DESC>
+                    <MOTION_CONFIG type="Multi" rw="RW" range="N,SX,SY,EX,EY,SENS,TIME">
+						<N type="option">
+                            <OPTION value="1">1</OPTION>
+                            <OPTION value="2">2</OPTION>
+                            <OPTION value="3">3</OPTION>
+                        </N>
+						<SX type="text" rw="RW" range="1~300"></SX>
+						<SY type="text" rw="RW" range="1~300"></SY>
+						<EX type="text" rw="RW" range="1~300"></EX>
+						<EY type="text" rw="RW" range="1~300"></EY>
+						<SENS type="text" rw="RW" range="1~300"></SENS>
+						<TIME type="text" rw="RW" range="1~300"></TIME>
+                    </MOTION_CONFIG>
+					<PARAMETER_DESC id="MOTION_CONFIG">Read the Motion Configuration if the parameter is NULL. The format of return of command is MOTION_CONFIG=n,sx,sy,ex,ey,sen,time. Set the Motion Configuration to the specific motion region if the parameter is n,sx,sy,ex,ey,sen,time. The motion time give the motion trigger interval which the motion trigger will not be issued if two motion triggers in the motion interval. For Video B2, it will NOT have this limitation</PARAMETER_DESC>
+					<MOTION_SENSITIVE type="Multi" rw="RW" range="1~3,0~100">
+						<N type="option">
+                            <OPTION value="1">1</OPTION>
+                            <OPTION value="2">2</OPTION>
+                            <OPTION value="3">3</OPTION>
+                        </N>
+						<SENS type="text" rw="RW" range="0~100"></SENS>
+                    </MOTION_SENSITIVE>
+					<PARAMETER_DESC id="MOTION_SENSITIVE">Set the motion sensitivity to the specific motion region. This command is the same as the MOTION_SENSITIVE in MPEG4 CGI</PARAMETER_DESC>
+                    <MOTION_TIMER type="Multi" rw="RW" range="1~3,1~300">
+						<N type="option">
+                            <OPTION value="1">1</OPTION>
+                            <OPTION value="2">2</OPTION>
+                            <OPTION value="3">3</OPTION>
+                        </N>
+						<TIME type="text" rw="RW" range="1~300"></TIME>
+                    </MOTION_TIMER>
+					<PARAMETER_DESC id="MOTION_TIMER">Set the motion timer to the specific motion region. The motion time give the motion trigger interval which the motion trigger will not be issued if two motion triggers in the motion interval. The parameter will be checked first</PARAMETER_DESC>
+					<EVENT_ENABLED type="option" rw="RW">
+                        <OPTION value="0">Disable</OPTION>
+                        <OPTION value="1">Enable</OPTION>
+                    </EVENT_ENABLED>
+					<PARAMETER_DESC id="EVENT_ENABLED">Get or Set the Event Enable Configuration. The parameter will be checked first</PARAMETER_DESC>
+					<EVENT_PRE_TIME type="text" rw="RW" range="0~3">Get or Set the Motion Pre-trigger time. The unit of this parameter is second. </EVENT_PRE_TIME>
+                    <PARAMETER_DESC id="EVENT_PRE_TIME"></PARAMETER_DESC>
+                    <EVENT_POST_TIME type="text" rw="RW" range="0~300"></EVENT_POST_TIME>
+                    <PARAMETER_DESC id="EVENT_POST_TIME">Get or Set the Motion Post-trigger time. The unit of this parameter is second. The motion time give the motion trigger interval which the motion trigger will not be issued if two motion triggers in the motion interval.</PARAMETER_DESC>
+                    <EVENT_INTERVAL type="text" rw="RW" range="1~300"></EVENT_INTERVAL>
+                    <PARAMETER_DESC id="EVENT_INTERVAL">Get or Set the Event trigger interval. The unit of this parameter is second. Successive events happened in this interval will be treated as one event </PARAMETER_DESC>
+                </CATEGORY>
+              </CATALOG>
+        </ROOT>
+    </xml>
+    <a id="oLink"></a>
+    <table cellpadding="0" cellspacing="0" border="0" class="" width="100%">
+        <tr><td class="h3Title"><IMG class="h3Arrow" src="images/h3Arrow.gif" alt="MPEG4 Command List"> MPEG4</td></tr>
+        <tr>
+            <td width="100%">
+                <table border="0" class="CmdList" id="mpeg4List" cellpadding="0" cellspacing="0" title="mpeg4" style="width:100%">
+                    <tr>
+                        <td class="Title" style="width:1%">Get</td>
+                        <td class="Title" style="width:1%">Set</td>
+                        <td class="Title" style="width:22%">Command</td>
+                        <td class="Title" style="width:32%">Value</td>
+                        <td class="Title" style="width:44%">Description</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <table cellpadding="0" cellspacing="0" border="0" class="" width="100%">
+        <tr><td class="h3Title"><IMG class="h3Arrow" src="images/h3Arrow.gif" alt="SYSTEM Command List"> SYSTEM</td></tr>
+        <tr>
+            <td width="100%">
+                <table border="0" class="CmdList" id="systemList" cellpadding="0" cellspacing="0" title="system" width="100%">
+                    <tr>
+                        <td class="Title" style="width:1%">Get</td>
+                        <td class="Title" style="width:1%">Set</td>
+                        <td class="Title" style="width:22%">Command</td>
+                        <td class="Title" style="width:33%">Value</td>
+                        <td class="Title" style="width:44%">Description</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <table cellpadding="0" cellspacing="0" border="0" class="" width="100%" ID="Table1">
+        <tr><td class="h3Title"><IMG class="h3Arrow" src="images/h3Arrow.gif" alt="SYSTEM Command List"> ENCODER</td></tr>
+        <tr>
+            <td width="100%">
+                <table border="0" class="CmdList" id="encoderList" cellpadding="0" cellspacing="0" title="encoder" width="100%">
+                    <tr>
+                        <td class="Title" style="width:1%">Get</td>
+                        <td class="Title" style="width:1%">Set</td>
+                        <td class="Title" style="width:22%">Command</td>
+                        <td class="Title" style="width:33%">Value</td>
+                        <td class="Title" style="width:44%">Description</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+<script language="javascript" type="text/javascript">
+GenTable( "mpeg4", mpeg4List ) ;
+DrawList( mpeg4List ) ;
+GenTable( "system", systemList ) ;
+DrawList( systemList ) ;
+GenTable( "encoder", encoderList ) ;
+DrawList( encoderList ) ;
+
+ChgFpsNum() ;
+
+function GenTable( objTag, objTable ) {
+    var i, j, k, l, m;
+
+	switch( objTag ) {
+		case "mpeg4" :
+			var cl = URLCMD.getElementsByTagName("CATALOG")[0] ;
+		break ;
+		case "system" :
+			var cl = URLCMD.getElementsByTagName("CATALOG")[1] ;
+		break ;
+		case "encoder" :
+			var cl = URLCMD.getElementsByTagName("CATALOG")[2] ;
+		break ;
+	}
+
+    var rowIdx = AppendElement( "CATALOG", objTable ) ;
+//==========================CATEGORY SECTION============================================
+    var cg = cl.getElementsByTagName("CATEGORY") ;
+    for ( j=0 ; j<cg.length ; j++ ) {
+        var rowIdx = AppendElement( "CATEGORY", objTable ) ;
+        objTable.rows[rowIdx].cells[0].id = j ;
+        objTable.rows[rowIdx].cells[0].innerHTML = "<a name=\"" + objTag + j + "\"><nobr>" + cg[j].childNodes[0].text + "</nobr></a>" ;
+        objTable.rows[rowIdx].cells[0].colSpan = "5" ;
+        objTable.rows[rowIdx].cells[0].style.fontWeight = "bold"
+//==========================PARAMETER SECTION===========================================
+//======================================================================================
+        for ( k=2 ; k<cg[j].childNodes.length ; k+=2 ) {
+            if ( k>=2 ) var rowIdx = AppendElement( "PARAMETER", objTable ) ;
+            
+            var oTR = objTable.rows[rowIdx]
+            oTR.cells[0].id = j ;
+            try {
+//==========================Insert Parameter Name and Comment==========================
+                oTR.cells[2].innerText = cg[j].childNodes[k].tagName ;
+                switch ( cg[j].childNodes[k].tagName ) {
+                    case "VIDEO_RESOLUTION" : case "VIDEO_FPS" :
+                        oTR.cells[4].innerHTML = "<a style=\"color:Red\">"+cg[j].childNodes[k+1].text+"</a>" ;
+                    break ;
+                    default :
+                        oTR.cells[4].innerText = cg[j].childNodes[k+1].text ;
+                }
+            } catch(e) { alert(cg[j].childNodes[k-1].tagName) ; }
+//=========================Generate action checkbox=====================================
+            switch ( cg[j].childNodes[k].getAttribute("rw") ) {
+                case "RO" :
+                    oTR.cells[0].innerHTML = "<input type=\"checkbox\" onclick=\"PickParam(this, 'RO');\" />" ; break ;
+                case "WO" :
+                    oTR.cells[1].innerHTML = "<input type=\"checkbox\" onclick=\"PickParam(this, 'WO');\" />" ; break ;
+                case "RW" :
+                    oTR.cells[0].innerHTML = "<input type=\"checkbox\" onclick=\"PickParam(this, 'RW');\" />" ;
+                    oTR.cells[1].innerHTML = "<input type=\"checkbox\" onclick=\"PickParam(this, 'WR');\" />" ; break ;
+            }
+
+//=============================Generate Parameter input value style=============================
+            switch ( cg[j].childNodes[k].getAttribute("type") ) {
+                case "text" :
+                    var strHTML = "<input type=\"text\" value=\"" + cg[j].childNodes[k].text + "\""
+                    strHTML += " size=\"20\" onkeyup=\"ChgValue(this);\" disabled/>"
+                    if( cg[j].childNodes[k].getAttribute("range")!="" )
+						strHTML += "&nbsp;[" + cg[j].childNodes[k].getAttribute("range") + "]"                            
+                break ;
+                case "option" :
+                    var xmlOpt = cg[j].childNodes[k].childNodes ;
+                    switch ( cg[j].childNodes[k].tagName ) {
+                        case "VIDEO_RESOLUTION" :
+                            var strHTML = "<select id=\"defSEL_RESOLUTION\" onchange=\"ChgFpsNum();ChgValue(this);\" disabled>" ;
+                            for ( l=0 ; l<xmlOpt.length ; l++ ) {
+                                strHTML += "<option value=\""+xmlOpt[l].text+"\">"+xmlOpt[l].text+"</option>"
+                            }
+                        break ;
+                        case "VIDEO_FPS_NUM" :
+                            var strHTML = "<select id=\"defSEL_FPS\" onchange=\"ChgValue(this);\" disabled>" ;
+                        break ;
+                        default :
+                            var strHTML = "<select onchange=\"ChgValue(this);\" disabled>"
+                            for ( l=0 ; l<xmlOpt.length ; l++ ) {
+                                strHTML += "<option value=\""+xmlOpt[l].getAttribute("value")+"\">"+xmlOpt[l].text+"</option>"
+                            }
+                        break ;
+                    }
+                    strHTML += "</select>" ;
+                break ;
+                case "ReadOnly" :
+                    var strHTML = "" ;
+                break ;
+                case "Multi" :
+                    switch ( cg[j].childNodes[k].tagName ) {
+                        default :
+                            var items = cg[j].childNodes[k].childNodes, strHTML = "" ;
+                            for ( l=0 ; l<items.length ; l++ ) {
+								if ( l>0 ) strHTML += "," ;
+								switch( items[l].getAttribute("type") ) {
+									case "option" :
+										var xmlOpt = items[l].childNodes ;
+										strHTML += "<select onchange=\"ChgValue(this);\" disabled>"
+										for ( m=0 ; m<xmlOpt.length ; m++ ) {
+											strHTML += "<option value=\""+xmlOpt[m].getAttribute("value")+"\">"+xmlOpt[m].text+"</option>"
+										}
+										strHTML += "</select>" ;
+									break ;
+									case "text" :
+										strHTML += "<input type=\"text\" value=\"" + items[l].text + "\""
+										strHTML += " size=\"12\" onkeyup=\"ChgValue(this);\" disabled/>"
+									break ;
+								}
+                            }
+							strHTML += "<br>[" + cg[j].childNodes[k].getAttribute("range") + "]"     
+                        break ;
+                    }
+                break ;
+            }
+            oTR.cells[3].innerHTML = strHTML ;
+        }
+//======================================================================================
+//======================================================================================
+    }
+//======================================================================================
+}
+
+function AppendElement( szType, objTable ) {
+    var i , colSize=5 ;
+    switch (szType) {
+        case "CATALOG" : case "PARAMETER" :
+            var oTR = objTable.insertRow() ;
+            for (i=0 ; i<colSize ; i++) oTR.insertCell(0) ;
+            return oTR.rowIndex ;
+        case "CATEGORY" :
+			var oTR = objTable.insertRow() ;
+			oTR.insertCell(0) ;
+			return oTR.rowIndex ;
+        case "PARAMETER" :
+            
+        break ;
+    }
+}
+
+function DrawList( objTable ) {
+    for ( i=0 ; i<objTable.rows.length ; i++ ) {
+        if ( objTable.rows[i].cells[0].id%2==0 ) {
+            objTable.rows[i].className="RowEven" ;
+        } else {
+            objTable.rows[i].className="RowOdd" ;
+        }
+    }
+}
+
+//======================================================================================
+//========================InterActive Functions=========================================
+//======================================================================================
+
+function ChgValue( objSrc ) {
+	var oTD = objSrc.parentElement ;
+    var oTR = objSrc.parentElement.parentElement ;
+    var objCmd = top.document.getElementById("defTXT_REQUEST") ;
+    var szParam = oTR.cells[2].innerText ;
+    var objValue = oTR.cells[3].childNodes[0] ;
+    var re = new RegExp( "&" + szParam + "=[^&]*") ;
+
+    switch ( szParam ) {
+        case "SERIAL_SETTING" :
+        case "LAN_CONFIG" :
+        case "DAYLIGHT_SAVING_CONFIG" :
+        case "DDNS_CONFIG" :
+        case "VIDEO_WB_GAIN" :
+        case "VIDEO_VARIABLE_FPS" :
+		case "MOTION_CONFIG" :
+		case "MOTION_SENSITIVE" :
+		case "MOTION_TIMER" :
+
+			var szValue = "" ;
+			var aryVals = new Array() ;
+			for( i=0 ; i<oTD.childNodes.length ; i++ ) {
+				objValue = oTD.childNodes[i] ;
+				if( objValue.outerHTML!=undefined) {
+					var szTag = objValue.tagName.toUpperCase() ;
+					if( szTag == "SELECT" || szTag == "INPUT" ) {
+						aryVals.push( objValue ) ;
+						szValue += "," + objValue.value ;	
+					}
+				}
+			}
+			szValue = szValue.substr(1) ;
+        break ;      
+        default :
+            var szValue = objValue.value ;
+        break ;
+    }
+    switch( szParam ) {
+		case "DAYLIGHT_SAVING_CONFIG" :
+		case "DDNS_CONFIG" :
+			for( i=1 ; i<aryVals.length ; i++ ) {
+				aryVals[i].disabled = (aryVals[0].value==0) ;
+			}
+			if( aryVals[0].value==0 ) szValue = "0" ;
+		break ;
+    }
+    if ( oTR.cells[1].childNodes[0].checked )
+        objCmd.value = objCmd.value.replace( re, "&" + szParam + "=" + szValue ) ;
+
+    switch ( szParam ) {
+        case "VIDEO_RESOLUTION" : ChgValue( defSEL_FPS ) ; break ;
+        default : break ;
+    }
+}
+
+function ChgFpsNum() {
+    var i ;
+    while ( defSEL_FPS.options.length>0 ) { defSEL_FPS.remove(0); }
+    
+    if ( defSEL_RESOLUTION.value.charAt(0)=="N" ) {
+        var xmlOpt = URLCMD.getElementsByTagName("NTSC")[0] ;
+    } else {
+        var xmlOpt = URLCMD.getElementsByTagName("PAL")[0] ;
+    }
+    
+    for ( i=0 ; i<xmlOpt.childNodes.length ; i++ ) {
+        defSEL_FPS.add (new Option(xmlOpt.childNodes[i].text,xmlOpt.childNodes[i].text) ) ;
+    }
+}
+
+function PickParam( objSrc, szMode ) {
+    var oTR = objSrc.parentElement.parentElement ;
+    var objCmd = top.document.getElementById("defTXT_REQUEST") ;
+    var szParam = oTR.cells[2].innerText ;
+    var reW = new RegExp( "&" + szParam + "=[^&]*") ;
+    var reR = new RegExp( "&" + szParam ) ;
+
+    CHK_ChgTable( objSrc, oTR, objCmd ) ;
+
+    switch ( szMode ) {
+        case "RW" :
+            var objValue = oTR.cells[3].childNodes[0] ;
+            var objW = objSrc.parentElement.nextSibling.childNodes[0] ;
+
+            switch ( szParam ) {
+                case "SERIAL_SETTING" :
+                case "LAN_CONFIG" :
+                case "DAYLIGHT_SAVING_CONFIG" :
+                case "DDNS_CONFIG" :
+                case "VIDEO_WB_GAIN" :
+                case "VIDEO_VARIABLE_FPS" :
+                case "MOTION_CONFIG" :
+                case "MOTION_SENSITIVE" :
+                case "MOTION_TIMEER" :
+                    var objVal1 = objValue ;
+                    var objVal2 = objValue.parentElement.childNodes[2] ;
+                    if ( objSrc.checked ) {
+                        if ( objW.checked ) {
+                            objVal1.disabled = true ;
+                            objVal2.disabled = true ;
+                            objW.checked = false ;
+                            objCmd.value = objCmd.value.replace( reW, "&" + szParam ) ;
+                        } else {
+                            objCmd.value += "&" + szParam ;
+                        }
+                    } else {
+                        objCmd.value = objCmd.value.replace( reR, "" ) ;
+                    }
+                break ;
+                case "" :
+					
+                break ;
+                default :
+                    if ( objSrc.checked ) {
+                        if ( objW.checked ) {
+                            objValue.disabled = true ;
+                            objW.checked = false ;
+                            objCmd.value = objCmd.value.replace( reW, "&" + szParam ) ;
+                        } else {
+                            objCmd.value += "&" + szParam ;
+                        }
+                    } else {
+                        objCmd.value = objCmd.value.replace( reR, "" ) ;
+                    }
+                break ;
+            }
+
+        break ;
+        case "WR" :
+            var objValue = oTR.cells[3].childNodes[0] ;
+            var objR = objSrc.parentElement.previousSibling.childNodes[0] ;
+
+             switch ( szParam ) {
+                case "SERIAL_SETTING" :
+                case "LAN_CONFIG" :
+                case "DAYLIGHT_SAVING_CONFIG" :
+                case "DDNS_CONFIG" :
+                case "VIDEO_WB_GAIN" :
+                case "VIDEO_VARIABLE_FPS" :
+                case "MOTION_CONFIG" :
+                case "MOTION_SENSITIVE" :
+                case "MOTION_TIMER" :
+					var aryVals = new Array() ;
+					var szValue = "" ;
+					var objPTD = objValue.parentElement ;
+
+					for( i=0 ; i<objPTD.childNodes.length ; i++ ) {
+						objValue = objPTD.childNodes[i] ;
+
+						if( objValue.outerHTML!=undefined) {
+							var szTag = objValue.tagName.toUpperCase() ;
+							if( szTag == "SELECT" || szTag == "INPUT" ) {
+								aryVals.push( objValue ) ;
+								szValue += "," + objValue.value ;
+							}
+						}
+					}
+
+					szValue = szValue.substr(1) ;
+					if ( objSrc.checked ) {
+						for( i=0 ; i<aryVals.length ; i++ ) {
+							aryVals[i].disabled = false ;
+						}
+						if ( objR.checked ) {
+                            objR.checked = false ;
+                            objCmd.value = objCmd.value.replace( reR, "&" + szParam + "=" + szValue ) ;
+						} else {
+							objCmd.value += "&" + szParam + "=" + szValue ;
+						}
+					} else {
+						
+						for( i=0 ; i<aryVals.length ; i++ ) {
+							aryVals[i].disabled = true ;
+						}
+                        objCmd.value = objCmd.value.replace( reW, "" ) ;
+					}
+
+					ChgValue( aryVals[0] ) ;
+                break ;
+                default :
+                    if ( objSrc.checked ) {
+                        objValue.disabled = false ;
+                        if ( objR.checked ) {
+                            objR.checked = false ;
+                            objCmd.value = objCmd.value.replace( reR, "&" + szParam + "=" + objValue.value ) ;
+                        } else {
+                            objCmd.value += "&" + szParam + "=" + objValue.value ;
+                        }
+                    } else {
+                        objValue.disabled = true ;
+                        objCmd.value = objCmd.value.replace( reW, "" ) ;
+                    }
+                break ;
+            }
+        break ;
+        case "RO" :
+            if ( objSrc.checked ) {
+                objCmd.value += "&" + szParam ;
+            } else {
+                objCmd.value = objCmd.value.replace( reR, "" ) ;
+            }
+        break ;
+        case "WO" :
+            switch ( szParam ) {
+                case "REBOOT" : case "SAVE" :
+                    if ( szParam=="REBOOT" ) {
+                        var objCHK = oTR.previousSibling.previousSibling.cells[1].childNodes[0] ;
+                    } else {
+                        var objCHK = oTR.previousSibling.cells[1].childNodes[0] ;
+                    }
+                
+                    if ( objSrc.checked ) {
+                        if ( objCHK.checked ) {
+                            objCHK.checked = false ;
+                            objCmd.value = objCmd.value.replace( /&SAVE_REBOOT/g, "&" + szParam ) ;
+                        } else {
+                            objCmd.value += "&" + szParam ;
+                        }
+                    } else {
+                        objCmd.value = objCmd.value.replace( reR, "" ) ;
+                    }
+                break ;
+                case "VIDEO_VARIABLE_FPS" :
+					var objValue = oTR.cells[3].childNodes[0] ;
+					var objR = objSrc.parentElement.previousSibling.childNodes[0] ;
+					var aryVals = new Array() ;
+					var szValue = "" ;
+					var objPTD = objValue.parentElement ;
+
+					for( i=0 ; i<objPTD.childNodes.length ; i++ ) {
+						objValue = objPTD.childNodes[i] ;
+
+						if( objValue.outerHTML!=undefined) {
+							var szTag = objValue.tagName.toUpperCase() ;
+							if( szTag == "SELECT" || szTag == "INPUT" ) {
+								aryVals.push( objValue ) ;
+								szValue += "," + objValue.value ;
+							}
+						}
+					}
+
+					szValue = szValue.substr(1) ;
+
+					for( i=0 ; i<aryVals.length ; i++ ) {
+						aryVals[i].disabled = !objSrc.checked ;
+					}
+
+					if ( objSrc.checked )
+						objCmd.value += "&" + szParam + "=" + szValue ;
+					else
+                        objCmd.value = objCmd.value.replace( reW, "" ) ;
+
+					ChgValue( aryVals[0] ) ;
+                break ;
+                case "SAVE_REBOOT" :
+                    var objCHK1 = oTR.nextSibling.nextSibling.cells[1].childNodes[0] ;
+                    var objCHK2 = oTR.nextSibling.cells[1].childNodes[0] ;
+                    
+                    if ( objSrc.checked ) {
+                        if ( objCHK1.checked || objCHK2.checked ) {
+                            objCHK1.checked = false ;
+                            objCHK2.checked = false ;
+                            objCmd.value = objCmd.value.replace( /&SAVE/, "" ) ;
+                            objCmd.value = objCmd.value.replace( /&REBOOT/, "" ) ;
+                        }
+                        objCmd.value += "&" + szParam ;
+                    } else {
+                        objCmd.value = objCmd.value.replace( reR, "" ) ;
+                    }
+                break ;
+                case "FACTORY_DEFAULT" :
+                    if ( objSrc.checked ) {
+                        objCmd.value += "&" + szParam ;
+                    } else {
+                        objCmd.value = objCmd.value.replace( reR, "" ) ;
+                    }
+                break ;
+                default :
+                    var objValue = oTR.cells[3].childNodes[0] ;
+                    if ( objSrc.checked ) {
+                        objValue.disabled = false ;
+                        objCmd.value += "&" + szParam + "=" + objValue.value ;
+                    } else {
+                        objValue.disabled = true ;
+                        objCmd.value = objCmd.value.replace( reW, "" ) ;
+                    }
+                break ;
+            }
+        break ;
+    }
+}
+
+function CHK_ChgTable( oSRC, oTR, oCmd ) {
+    var objTable = oTR.parentElement.parentElement ;
+	var tblList = new Array() ;
+	tblList[0] = mpeg4List ;
+	tblList[1] = systemList ;
+	tblList[2] = encoderList ;
+
+    if ( objTable.title!=top.CurrentTable.value ) {
+		for( q=0 ; q<tblList.length ; q++ ) {
+			if( tblList[q].title!=objTable.title ) {
+				for ( i=1 ; i<tblList[q].rows.length ; i++ ) {
+					if ( tblList[q].rows[i].cells.length==1 ) continue ;
+					if ( tblList[q].rows[i].cells[0].childNodes[0] ) {
+						if ( tblList[q].rows[i].cells[0].childNodes[0].checked == true )
+								tblList[q].rows[i].cells[0].childNodes[0].click() ;
+					}
+	                    
+					if ( tblList[q].rows[i].cells[1].childNodes[0] ) {
+						if ( tblList[q].rows[i].cells[1].childNodes[0].checked == true )
+								tblList[q].rows[i].cells[1].childNodes[0].click() ;
+					}   
+				}
+				
+			}
+		}
+		top.CurrentTable.value = objTable.title ;
+        top.ChgCommand() ;
+        oSRC.click() ;
+    }
+}
+
+//Comment : Not implement -- MOTION_SENSITIVE
+//                           VIDEO_VARIABLE_FPS
+</script>
+</html>

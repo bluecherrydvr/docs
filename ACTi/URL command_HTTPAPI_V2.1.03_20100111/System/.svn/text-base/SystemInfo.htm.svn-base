@@ -1,0 +1,394 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>SYSTEM_INFO</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+}
+-->
+</style></head>
+
+<body>
+
+<p><font face="Arial" size="5">SYSTEM_INFO</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device system information. The system information is varied with 
+	different devices. There is some information which is related to the 
+	specific device's model and capabilities. Users could rely on these 
+	configurations to manage different device well. Here gives the definitions 
+	of these configurations in the return of this URL.</font></p>
+	<div align="left">
+		<table border="1" width="85%">
+			<tr>
+				<td width="178" align="center"><b><font face="Arial">
+				Configuration</font></b></td>
+				<td width="170" align="center"><b><font face="Arial">Possible 
+				settings</font></b></td>
+				<td align="center"><b><font face="Arial">Note</font></b></td>
+			</tr>
+			<tr>
+			  <td align="center"><div align="left">Sensor Board</div></td>
+			  <td align="center"><div align="left">MT9M131, MT53S88, ...</div></td>
+			  <td align="center"><div align="left">Refer to the sersor ID in device capability design specification</div></td>
+		  </tr>
+			<tr>
+			  <td align="center"><div align="left">Video Decoder</div></td>
+			  <td align="center"><div align="left">None, ADV7180, VX1129</div></td>
+			  <td align="center"><div align="left">Refer to the sersor ID in device capability design specification</div></td>
+		  </tr>
+			<tr>
+			  <td align="center"><div align="left">Video Processor</div></td>
+			  <td align="center"><div align="left">None, DT_018054</div></td>
+			  <td align="center"><div align="left">Refer to the sersor ID in device capability design specification</div></td>
+		  </tr>
+			<tr>
+			  <td align="center"><div align="left">Video Encoder</div></td>
+			  <td align="center"><div align="left">None, ADV7179, CH_7026</div></td>
+			  <td align="center"><div align="left">Refer to the sersor ID in device capability design specification</div></td>
+		  </tr>
+			<tr>
+				<td width="178" rowspan="2"><font size="2" face="Arial">
+				PTZ_IMAGE</font></td>
+				<td width="170"><font size="2" face="Arial">NONE</font></td>
+				<td><font face="Arial" size="2">It is not a PTZ/PT camera.</font></td>
+			</tr>
+			<tr>
+				<td width="170"><font size="2" face="Arial">PTZ Image Version
+				</font></td>
+				<td><font face="Arial" size="2">It is a PTZ/PT camera, depends 
+				on the image version.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">NETWORK PORTS</font></td>
+				<td width="170"><font face="Arial" size="2">1 or 2</font></td>
+				<td><font face="Arial" size="2">The number of network interface. 
+				WPL has 2 ports, EPL and PlatformT has 1 port.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">NETWORK_MODES</font></td>
+				<td width="170"><font face="Arial" size="2">AUTO, 100FD, 100HD, 
+				10FD, 10HD</font></td>
+				<td><font face="Arial" size="2">The link speed and duplex mode 
+				of the interface. In WPL, there are two ports. The settings of 
+				this configuration should be WAN_MODE,LAN_MODE</font></td>
+			</tr>
+			<tr>
+				<td width="178" rowspan="13"><font face="Arial" size="2">Unit 
+				Type</font></td>
+				<td width="170"><font face="Arial" size="2">Video Server</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">Quad Server</font></td>
+				<td><font face="Arial" size="2">Quad video server</font></td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP Dome</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP Speed Dome</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">Video Decoder</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP Cube Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP PTZ Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">IP Device </font>
+				</td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font face="Arial" size="2">Mega IP Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font size="2" face="Arial">Mega IP Dome</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font size="2" face="Arial">Mega IP Cube Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="170"><font size="2" face="Arial">Mega IP PTZ Camera</font></td>
+				<td>　</td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">DI</font></td>
+				<td width="170"><font face="Arial" size="2">0, 1, 2</font></td>
+				<td><font size="2" face="Arial">The number of DI ports</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">DO</font></td>
+				<td width="170"><font face="Arial" size="2">0, 1, 2</font></td>
+				<td><font face="Arial" size="2">The number of DO ports</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">Serial Port</font></td>
+				<td width="170"><font face="Arial" size="2">0, 1</font></td>
+				<td><font face="Arial" size="2">The number of RS422/RS485/RS232 
+				ports</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">Platform</font></td>
+				<td width="170"><font face="Arial" size="2">W, A, T</font></td>
+				<td><font face="Arial" size="2">Platform ID. W: WPL , A:EPL, 
+				T:PlatformT </font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">Channels</font></td>
+				<td width="170"><font face="Arial" size="2">1, 4, 8, 16</font></td>
+				<td><font face="Arial" size="2">The number of channels. In 4CH 
+				video server, this configuration in system info from router is 
+				4. </font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">Audio</font></td>
+				<td width="170"><font face="Arial" size="2">0,1,2</font></td>
+				<td><font face="Arial" size="2">0: No audio, 1:One-Way audio 
+				(device to remote host). 2:Two-Way audio</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">Audio Type</font></td>
+				<td width="170"><font face="Arial" size="2">PCM</font></td>
+				<td><font face="Arial" size="2">PCM: 16bit 8KHz PCM in audio</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font size="2" face="Arial">Motions</font></td>
+				<td width="170"><font face="Arial" size="2">1,3,4</font></td>
+				<td><font size="2" face="Arial">The number of motion region, in 
+				Quad Video server, this setting is 1 if it is in Single mode and 
+				it is 4 if it is in QUAD or Sequential Modes</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font size="2" face="Arial">ZOOM_LENS</font></td>
+				<td width="170"><font face="Arial" size="2">None, 10x, 22x 2.7x</font></td>
+				<td><font face="Arial" size="2">Optical Zoom Lens specification</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">VIDEO_RESOLUTION</font></td>
+				<td width="170"><font face="Arial" size="2">
+				N1280x1024,N1280x720,....</font></td>
+				<td><font face="Arial" size="2">The list of available video 
+				resolutions based on current TV Std.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">VIDEO_FPS_CAP</font></td>
+				<td width="170"><font face="Arial" size="2">1,2,4,8-1,2,4,8</font></td>
+				<td><font face="Arial" size="2">The available FPS numbers in FPS 
+				MODE1 and MODE2 based on current video resolution and TV Std, 
+				The first part of this setting is for FPS MODE1 and the last one 
+				is for FPS MODE2.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">VIDEO_BITRATE_CAP</font></td>
+				<td width="170"><font face="Arial" size="2">28K,56K,...,6M</font></td>
+				<td><font face="Arial" size="2">The list of available video 
+				bitrate settings</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">STREAMING_METHOD_CAP</font></td>
+				<td width="170"><font face="Arial" size="2">0,1,2,3,4,5</font></td>
+				<td><font face="Arial" size="2">0:TCP, 1:Multicast Over UDP, 
+				2:TCP &amp; MULTICAST, 3:RTP Over UDP, 4:RTP Over Multicast, 5:RTP 
+				Over UDP and Multicast</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">ENCODER_CAP</font></td>
+				<td width="170"><font face="Arial" size="2">MJPEG,MPEG4,H264</font></td>
+				<td><font face="Arial" size="2">The list of available video 
+				encoders.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">
+				VIDEO_RESOLUTION_CURRENT</font></td>
+				<td width="170"><font face="Arial" size="2">N1280x1024</font></td>
+				<td><font face="Arial" size="2">The current video resolution 
+				setting. If there is more than one video encoder, the video 
+				resolution will be listed down divided by ';'. Here is the 
+				format of this setting. 
+				Encoder_1_Resolution;Encoder_2_Resolution</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">VIDEO_FPS_CURRENT</font></td>
+				<td width="170"><font face="Arial" size="2">MODE1,8</font></td>
+				<td><font face="Arial" size="2">The current encoder FPS mode and 
+				FPS number settings.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">
+				VIDEO_BITRATE_CURRENT</font></td>
+				<td width="170"><font face="Arial" size="2">3M</font></td>
+				<td><font face="Arial" size="2">The current video bitrate 
+				setting of the encoder. If there is more than one video encoder, 
+				the video bitrate will be listed down divided by ';'. Here is 
+				the format of this setting. Encoder_1_Rate;Encoder_2_Rate</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font size="2" face="Arial">
+				STREAMING_METHOD_CURRENT</font></td>
+				<td width="170"><font size="2" face="Arial">0</font></td>
+				<td><font face="Arial" size="2">The current video streaming 
+				method.</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">ENCODER_CURRENT</font></td>
+				<td width="170"><font face="Arial" size="2">MJPEG,MPEG4,H264</font></td>
+				<td><font face="Arial" size="2">he current video encoding method 
+				of the encoder. If there is more than one video encoder, the 
+				video encoding method will be listed down divided by ';'. Here 
+				is the format of this setting. Encoder_1;Encoder_2</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">PROTOCOL</font></td>
+				<td width="170"><font face="Arial" size="2">V2.0, V1.0</font></td>
+				<td><font face="Arial" size="2">Streaming Protocol. V2.0 for all 
+				devices. V1.0 only available in old models (WPL)</font></td>
+			</tr>
+			<tr>
+				<td width="178"><font face="Arial" size="2">STREAMING MODE</font></td>
+				<td width="170"><font face="Arial" size="2">Single, Dual</font></td>
+				<td><font face="Arial" size="2">Single streaming mode, Dual 
+				Streaming mode</font></td>
+			</tr>
+			<tr>
+			  <td>Storage</td>
+			  <td>None, HD, SD, UNKNOWN</td>
+			  <td>The local storage type in the device</td>
+		  </tr>
+			<tr>
+			  <td>DN Control</td>
+			  <td>None, DSP, CDS</td>
+			  <td>The Day&amp;Night detection source. </td>
+		  </tr>
+			<tr>
+			  <td>DN Element</td>
+			  <td>None, IRLED, CUT_FILTER</td>
+			  <td>The Dant&amp;Night control elements</td>
+		  </tr>
+			<tr>
+			  <td><font face="Arial" size="2">MD_CAP</font></td>
+			  <td><font face="Arial" size="2">ENCODER,MD_SENSOR</font></td>
+			  <td><font face="Arial" size="2">motion could be detected by encoder or PIR MD sensor</font></td>
+		  </tr>
+			<tr>
+			  <td><font face="Arial" size="2">MD_SRC_CURRENT</font></td>
+			  <td><font face="Arial" size="2">MD_SENSOR</font></td>
+			  <td><font face="Arial" size="2">The current motion detection source</font></td>
+		  </tr>
+		</table>
+	</div>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">The return of message will be a little bit different 
+	from devices. </font></p>
+	<p><font face="Arial">The common part of message is listed below.</font></p>
+	<p><font face="Arial">Firmware Version = A1D-220-V3.06.12-AC<br>
+	MAC Address = 00:0F:7C:00:92:69<br>
+	Production ID = ACM3111-07E-X-00020<br>
+	Factory Default Type = Two Ways Audio (0x71)<br>
+	Company Name = Camera Corporation<br>
+	WEB Site = www.camera.com</font></p>
+	<p><font face="Arial">The different part of message is listed below.</font></p>
+	<font face="Arial">1. All encoder devices in EPL Platform and PlatformT:<br>
+	&nbsp;&nbsp;&nbsp; Profile ID = MT9V135-RB2_V071030A</font><p>
+	<font face="Arial">Some device's specifications are listed below. The EPL 
+	camera was used as an example.</font></p>
+	<p>
+	Sensor Board = MT9M131<br>
+	Video Decoder = None<br>
+	Video Processor = None<br>
+	Video Encoder = None<br>
+	PTZ_IMAGE = None<br>
+	NETWORK PORTS = 1<br>
+	NETWORK_MODE = AUTO<br>
+	Unit Type = Mega IP Cube Camera<br>
+	DI = 0<br>
+	DO = 0<br>
+	Serial Port = 0<br>
+	Platform = A<br>
+	Channels = 1<br>
+	Audio = 2<br>
+	Audio Type = PCM<br>
+	Motions = 3<br>
+	ZOOM_LENS =	None<br>
+	VIDEO_RESOLUTION_CAP = N1280x1024,N1280x720,N640x480,N320x240,N160x120<br>
+	VIDEO_FPS_CAP = 1,2,4,8-1,2,4,8<br>
+	VIDEO_BITRATE_CAP = 28K,56K,128K,256K,384K,500K,750K,1M,1.2M,1.5M,2M,2.5M,3M<br>
+	STREAMING_METHOD_CAP = 0,1,3,4,5<br>
+	ENCODER_CAP = MJEPG,MPEG4<br>
+	VIDEO_RESOLUTION_CURRENT = N1280x1024<br>
+	VIDEO_FPS_CURRENT = MODE1,8><br>
+	VIDEO_BITRATE_CURRENT = 3M<br>
+	STREAMING_METHOD_CURRENT = 0<br>
+	ENCODER_CURRENT=MPEG4<br>
+	PROTOCOL = V2.0<br>
+	STREAMING MODE = Single Stream<br>
+	Storage = None<br>
+	DN Control = DSP<br>
+	DN Element = IRLED,CUT_FILTER<br>
+	MD_CAP = ENCODER,MD_SENSOR<br>
+	MD_SRC_CURRENT=MD_SENSOR
+    </p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SystemProperty.htm">SYSTEM_PROPERTY</a>,<a href="ServerReport.htm">SERVER_REPORT</a>, <a href="SystemLog.htm">SYSTEM_LOG</a>,
+	<a href="SystemInfoXml.htm">SYSTEM_INFO_XML</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SYSTEM_INFO</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?SYSTEM_INFO</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

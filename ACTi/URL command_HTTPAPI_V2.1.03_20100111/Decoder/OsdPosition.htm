@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD_FORMAT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">OSD_POSITION</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the OSD position on the TV screen. </font></p>
+	<p><font face="Arial">The OSD has two parts, upper OSD and bottom OSD on the 
+	TV screen. The position of upper OSD is configurable by this URL. The bottom 
+	OSD is not configurable and depends on the Analog TV Standard (NTSC, PAL). 
+	The input argument of this URL gives the offset in pixel form the upper-left 
+	corner (0,0) as the starting position to show the OSD.</font></p>
+	<p align="left"><img border="0" src="osdimage.bmp" width="526" height="465"></p>
+	<p align="left"><font face="Arial">The format of the Video Out (NTSC or PAL) 
+	might be changed if the format of the video source does not match it. 
+	Therefore, the position of bottom OSD has to be adapted with new format of 
+	the Video Out.</font></p>
+	<p align="left"><font face="Arial">The range of the offset for upper OSD are 
+	different among WPL, EPL and PlaformT decoder devices. Here is the list of 
+	the range of offset in every devices.</font></p>
+	<table border="1" width="60%" id="table2">
+		<tr>
+			<td align="center" width="379"><font face="Arial" size="4">Decoder 
+			Devices</font></td>
+			<td align="center"><font face="Arial" size="4">Range of offset</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">WIS Decoder 
+			Devices</font></td>
+			<td width="379"><font face="Arial">&nbsp;X: 8~96, Y: 8~96</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">EPL Decoder 
+			Devices</font></td>
+			<td width="379"><font face="Arial">&nbsp;X: 1~100, Y: 1~100</font></td>
+		</tr>
+		<tr>
+			<td width="379" align="center"><font face="Arial">PlatformT Decoder 
+			Devices</font></td>
+			<td width="379"><font face="Arial">&nbsp;TBD</font></td>
+		</tr>
+		</table>
+	<p><font face="Arial">The URL OSD_OFFSET_RANGE allows user to know what the 
+	range of offset in this decoder device is.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">X,Y</font><br>
+	<font face="Arial">where the range of X and Y are listed in above table.</font>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OSD_POSITION='10,10'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote><font face="Arial">OK: OSD_POSITION='10,10'</font><br>
+	<font face="Arial">or</font><br><font face="Arial">ERROR: OSD_POSITION='10,10'</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Osd.htm">OSD</a>, <a href="OsdFormat.htm">OSD_FORMAT</a>, 
+	<a href="OsdPositionRange.htm">OSD_POSITION_RANGE</a>,
+			<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_POSITION</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?OSD_POSITION</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_POSITION=10,10</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?OSD_POSITION=10,10</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="decoder.htm">
+	DECODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

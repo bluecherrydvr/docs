@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOTION_SENSITIVITY</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOTION_SENSITIVE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p>
+	<font face="Arial">Set the motion sensitivity to the specific motion region.</font></p>
+	<p><font face="Arial">The higher motion sensitivity, higher probability of 
+	motion detection trigger.</font><br>
+	</p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n,sen</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n is the motion region started from 1</font><br>
+	<font face="Arial">sen is the sensitivity of the motion region and the range is 0~100.</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: MOTION_SENSITIVE='1,50'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All 1CH and 2CH Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<ul>
+	<li><font face="Arial">In mpeg4 CGI</font></li>
+</ul>
+<blockquote>
+	<p align="left"><font face="Arial"><a href="MotionStatus.htm">MOTION_STATUS</a>, 
+	<a href="MotionEnabled.htm">MOTION_ENABLED</a>, 
+	<a href="MotionSetting.htm">MOTION_SETTING</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In encoder CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="MotionEnabled.htm">MOTION_ENABLED</a>, 
+	<a href="../Encoder/MotionConfig.htm">MOTION_CONFIG</a>, 
+	<a href="../Encoder/MotionConfigGet.htm">MOTION_CONFIG_GET</a>, 
+	<a href="../Encoder/MotionTimer.htm">MOTION_TIMER</a>,
+	<a href="../Encoder/MotionObj.htm">MOTION_OBJ</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">MOTION_SENSITIVE=1,50</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">MOTION_SENSITIVE=1,50</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a>, <a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

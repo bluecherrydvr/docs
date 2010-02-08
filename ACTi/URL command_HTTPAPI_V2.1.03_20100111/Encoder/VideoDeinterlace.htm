@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_DEINTERLACE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_DEINTERLACE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the video de-interlace method.</font></p>
+	<p><font face="Arial">This URL is only available in some PlatformT 
+	encoders which has the VX1129 video processor. There are two video 
+	de-interlace modes in the encoder. The <b>3D adaptive de-interlacing</b> reserved the 
+	picture quality and the <b>Intra-Field based de-interlacing</b> prevents the motion blur. 
+	De-interlace function is always enabled, there is no option to disable.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">3D or INTRA.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_DEINTERLACE='3D'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_DEINTERLACE='3D'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_DEINTERLACE='3D'</font><br>
+	¡@</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">PlatfotmT : All Encoders with video processor VX1129</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoBlackLevel.htm">VIDEO_BLACKLEVEL</a>,
+	<a href="VideoDnr.htm">VIDEO_DNR</a>, <a href="VideoWdr.htm">VIDEO_WDR</a>,
+	<a href="VideoSkinTone.htm">VIDEO_SKINTONE</a>, <a href="V2Sharpness.htm">
+	V2_SHARPNESS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_DEINTERLACE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">VIDEO_DEINTERLACE</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_DEINTERLACE</font><font face="Arial">=3D</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">VIDEO_DEINTERLACE=3D</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, 
+	<a href="file:///Y:/SSPD/SSPD_Design_Document/FirmwareDesignSpec/V1.0.07/URLDesignSpec/Encoder/Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

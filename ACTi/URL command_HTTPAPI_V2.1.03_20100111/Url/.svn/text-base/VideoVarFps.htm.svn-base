@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_VARFPS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_VARFPS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Change the FPS in the received video streaming 
+	(current channel) in the decoder.</font></p>
+	<p><font face="Arial">There are two FPS modes in the encoder, Constant FPS 
+	and Variable FPS. </font></p>
+	<p><font face="Arial">In Constant FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to decoder is constant. In 
+	encoder's MPEG4 streaming, the GOP was set based on this frame rate. Every 
+	decoder gets 
+	the video stream with the same frame rate which is not able to be changed. 
+	For example, one I frame and 29 P frames will be streamed when the frame 
+	rate is 30 (GPO is 30).</font></p>
+	<p><font face="Arial">In Variable FPS mode, the frame rate , the number of 
+	frames per second, in the video stream from encoder to decoder is not constant, 
+	The GOP is 5 in all WPL Platform encoders and 8CH Multi-Channel Encoders. The 
+	GOP is 2 in all EPL, PlatformT and 4CH, 16CH Multi-Channel 
+	Encoders. The decoder could change the frame rate at any time and get I frame 
+	only in MPEG4 steam in most cases. For example, the host get the 6 I frame 
+	in every second if it sets the frame rate to 6 and get 6 I frames and 24 P 
+	frames if it set the frame rate to 30 in MPEG4 stream.</font></p>
+	<p><font face="Arial">Therefore, this URL will take effect if only if the 
+	connected encoder is in the Variable FPS mode.</font></p>
+	<p><font face="Arial">In WPL Decoder Devices, there are five options 
+	for variable FPS. They are</font></p>
+	<table border="1" width="70%" id="table2">
+		<tr>
+			<td align="center"><font face="Arial" size="4">Input Argument</font></td>
+			<td align="center" width="457"><font face="Arial" size="4">Variable 
+			FPS</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">0</font></td>
+			<td align="center" width="457"><font face="Arial">Using Encoder 
+			Variable FPS setting</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">1</font></td>
+			<td align="center" width="457"><font face="Arial">30 in NTSC or 25 
+			in PAL</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">2</font></td>
+			<td align="center" width="457"><font face="Arial">6 in NTSC or 5 in 
+			PAL</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">3</font></td>
+			<td align="center" width="457"><font face="Arial">3 in NTSC or 2 in 
+			PAL</font></td>
+		</tr>
+		<tr>
+			<td align="center"><font face="Arial">4</font></td>
+			<td align="center" width="457"><font face="Arial">1 in NTSC or 1 in 
+			PAL</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">This URL is the same as the URL CHxx_VIDEO_VARFPS when 
+	the xx is the same as the current channel but it is on-fly command.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0, 1, 2, 3 or 4</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only in WPL Decoders</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChVideoConnect.htm">CHxx_VIDEO_CONNECT</a>, 
+	<a href="ChVideoVarFps.htm">CHxx_VIDEO_VARFPS</a>, 
+	<a href="ChVideoCtrl.htm">CHxx_VIDEO_STREAM</a>, <a href="ChVideoCtrl.htm">CHxx_VIDEO_AUDIO</a>, 
+	<a href="ChVideoCtrl.htm">CHxx_VIDEO_CONTROL</a>, <a href="ChIPAddr.htm">CHxx_VIDEO_TCP_IP</a>, 
+	<a href="ChIPAddr.htm">CHxx_VIDEO_MULTICAST_IP</a>, 
+	<a href="ChNamePwd.htm">CHxx_VIDEO_USERNAME</a>, <a href="ChNamePwd.htm">CHxx_VIDEO_PASSWORD</a>, C<a href="ChPorts.htm">CHxx_PORT_STREAM</a>, 
+	<a href="ChPorts.htm">CHxx_PORT_CONTROL</a>, <a href="ChPorts.htm">CHxx_PORT_MULTICAST</a>, 
+	<a href="ChPorts.htm">CHxx_PORT_RTP</a>, <a href="ChPorts.htm">CHxx_PORT_HTTP</a>, 
+	<a href="ChTime.htm">CHxx_TIME</a>, <a href="ChSourceType.htm">CHxx_SOURCE_TYPE</a>,
+	<a href="ChQuadChannel.htm">CHxx_QUAD_CHANNEL</a>, <a href="Switch.htm">SWITCH</a></font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/url.cgi?USER=Admin&amp;PWD=123456&amp;VIDEO_VARFPS=1</font><br>
+	<font face="Arial">where xx is from 01~16</font>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="url.htm">URL 
+	CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

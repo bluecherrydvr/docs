@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DN_IRLED</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DN_IRLED
+</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the IR LED configuration. </p>
+  <p>The IR LED is controllable if only if there is a <a href="../../DayNightCtrl/DayNightCtrlModule.html">Day&amp;Night Control Module</a> and the IR LEDs are available in the camera. The IR LEDs in the module could be controlled by the moro-processor when the Day&amp;Night state in the module was changed  </p>
+  <p>This URL sets the control method of the micro-controller in the module to IR LEDs. </p>
+  <p>The error message, <strong>VIDEO_DN_IRLED not found</strong>, will be returned   if the there is no Day&amp;Night Control Module  or IR LEDs in the camera.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>n<br />
+    where n = 0 : the micro-controller will do nothing on IR LEDs when the Day&amp;Night state in the module was changed.<br />
+    n = 1 : the micro-controller will turn on the IR LEDs when the module switched the Day&amp;Night state to night time state and turn off the IR LEDs when the module switched the Day&amp;Night state to day time state.<br />
+  </p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_DN_IRLED='1'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: VIDEO_DN_IRLED='1'<br />
+    or<br />
+    ERROR: VIDEO_DN_IRLED='1'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatfromT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoDNIRCutFilter.htm">VIDEO_DN_IRCUT</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_IRLED<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_IRLED</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_IRLED=1<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_IRLED=1</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

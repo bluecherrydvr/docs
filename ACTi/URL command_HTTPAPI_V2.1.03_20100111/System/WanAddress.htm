@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN_ADDRESS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN_IP, WAN_NETMASK, WAN_GATEWAY</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set IP, Netmask or Gateway address of WAN port. These Settings 
+	are only valid if only of the WAN_TYPE is Static. If the WAN_TYPE is 
+	Dynamic, these settings will be applied if the device fails of getting the 
+	address from the DHCP server. The argument of these URL will be checked 
+	before apply them. The check mechanism is</font></p>
+	<ul>
+		<li><font face="Arial">WAN_IP has to be an unicast IP address.</font></li>
+		<li><font face="Arial">WAN_NETMASK has to be followed the rule of IP Netmask.</font></li>
+		<li><font face="Arial">WAN_GATEWAY has to be an unicast IP address</font></li>
+	</ul>
+	<p><font face="Arial">Because these URLs are sent separately, the device is not able to check 
+	if the WAN_IP and WAN_GATEWAY are in the same subnet.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL will be treated as read-only command and 
+	the Router's WAN port setting will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">IPv4 Addressing (xxx.xxx.xxx.xxx)</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except the video server in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">WAN_IP='192.168.0.100'</font><br><font face="Arial">
+	WAN_NETMASK='255.255.255.0'</font><br>
+	<font face="Arial">WAN_GATEWAY='192.168.0.254'</font> <br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: WAN_IP='192.168.0.100'</font><br><font face="Arial">
+	OK: WAN_NETMASK='255.255.255.0'</font><br>
+	<font face="Arial">OK: WAN_GATEWAY='192.168.0.254'</font> <br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: WAN_IP='192.168.0.100'</font><br>
+	<font face="Arial">ERROR: WAN_NETMASK='255.255.255.0'</font><br>
+	<font face="Arial">ERROR: WAN_GATEWAY='192.168.0.254'</font> <br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Wan.htm">WAN</a>, <a href="WanStatus.htm">WAN_STATUS</a>,
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a>, <a href="WanPPPoE.htm">WAN_PPPOE_USERNAME</a>, 
+	<a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_IP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_NETMASK</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_GATEWAY</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_IP</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_NETMASK</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_GATEWAY</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_IP=192.168.0.100</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_NETMASK=255.255.255.0</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_GATEWAY=192.168.0.254</font><br>
+	<foont face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_IP=192.168.0.100</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_NETMASK=255.255.255.0</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_GATEWAY=192.168.0.254</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

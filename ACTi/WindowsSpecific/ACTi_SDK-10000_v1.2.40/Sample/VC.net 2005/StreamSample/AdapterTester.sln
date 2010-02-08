@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdapterTester", "AdapterTester.vcproj", "{01A3327A-9BCD-44B7-9DD3-152C245DAD5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01A3327A-9BCD-44B7-9DD3-152C245DAD5A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{01A3327A-9BCD-44B7-9DD3-152C245DAD5A}.Debug|Win32.Build.0 = Debug|Win32
+		{01A3327A-9BCD-44B7-9DD3-152C245DAD5A}.Release|Win32.ActiveCfg = Release|Win32
+		{01A3327A-9BCD-44B7-9DD3-152C245DAD5A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

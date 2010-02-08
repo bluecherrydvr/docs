@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>RTP_B2</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">RTP_B2</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the control of appending B2 data to 
+	the RTP Video Frame. </font></p>
+	<p><font face="Arial">There is advance B2 data associated the video 
+	frame carried some video information like Motion Detection, DI triggers, 
+	Video Loss trigger, Timestamp. They will be very useful to remote host to 
+	handle some video processing. However, in RTP standard, there is no extended 
+	field to put B2 data in the RTP video frame. Therefore, we provides two 
+	features for this. One follows RTP header structure to packet the video 
+	frame into RTP video packets. The B2 data will not be appended to the 
+	end of the last RTP video packet. The other one appends the B2 data to 
+	the end of the last RTP video packet. Please refer the programming guide to 
+	have further information of B2 data.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNLE 1 video server's 
+	RTP_B2 configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">1: Disable</font><br>
+	<font face="Arial">2: Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except router in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all encoders in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">RTP_B2='2'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: RTP_B2='2'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: RTP_B2='2'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All 1CH Encoder Devices (Version after 
+	V2.06.12) </font></li>
+	<li><font face="Arial">EPL Platform : All encoder Devices (Version after 
+	V3.06.03)</font></li>
+	<li><font face="Arial">PlatformT : All encoder Devices (Version after 
+	V4.00.00)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="RtspAuthen.htm">RTSP_AUTHEN</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;RTP_B2</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?RTP_B2</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;RTP_B2=2</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?RTP_B2=2</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

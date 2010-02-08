@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DATE_CONFIG</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DATE_CONFIG</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Date 
+	configuration. It allows all Date configurations can be set in one time.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	this URL is read-only command and the Router's DATE configurations will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">a,b,c,d</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">a : DATE type, 1: Manual Date 2: SNTP Synchronization</font><br>
+	<font face="Arial">b : if a = 1, it is the manual date setting (mmdd0000yyyy), if a = 2, it is the SNTP server address (IPv4 address or host of SNTP server)</font><br>
+	<font face="Arial">c : if a = 1, it is the manual time setting (hh:mm:ss). if a = 2, it is the SNTP update interval in second</font><br>
+	<font face="Arial">d : time zone setting</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DATE_CONFIG='1,010100002004,00:00:00,+00'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">DATE_CONFIG='2,192.168.0.2,86400,+00'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DATE_CONFIG='1,010100002004,00:00:00,+00'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">OK: DATE_CONFIG='2,192.168.0.2,86400,+00'<br>
+	or<br>
+	ERROR: DATE_CONFIG='1,010100002004,00:00:00,+00'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DATE_CONFIG='2,192.168.0.2,86400,+00'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL is new command for replacing the URL 
+	DATE_TYPE, DATE_SNTP_IP, DATE_SNTP_UPDATE, DATE_MANUAL_DATE, 
+	DATE_MANUAL_TIME and DATE_MANUAL_ZONE</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Date.htm">DATE</a>, <a href="DateType.htm">DATE_TYPE</a>, 
+	<a href="DateSntpIp.htm">DATE_SNTP_IP</a>, <a href="DateSntpUpdate.htm">
+	DATE_SNTP_UPDATE</a>, 
+	<a href="DateManualDate.htm">DATE_MANUAL_DATE</a>, 
+	<a href="DateManualTime.htm">DATE_MANUAL_TIME</a>,
+	<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a>,
+	<a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_CONFIG<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?DATE_CONFIG</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_CONFIG=1,010100002004,00:00:00,+00<br>
+	or<br>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_CONFIG=2,192.168.0.2,86400,+00<br>
+	<font face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?DATE_CONFIG=1,010100002004,00:00:00,+00<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?DATE_CONFIG=2,192.168.0.2,86400,+00</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\AdapterTester.rc2""  // 非 Microsoft Visual C++ 編輯過的資源\r\n"
+    "#include ""afxres.rc""         // 標準元件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\AdapterTester.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ADAPTERTESTER_DIALOG DIALOGEX 0, 0, 523, 402
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "AdapterTester"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Play",IDOK,468,196,24,12
+    DEFPUSHBUTTON   "Start",IDOK2,420,196,24,12
+    PUSHBUTTON      "Pause",IDC_BUTTON2,468,208,24,12
+    PUSHBUTTON      "Stop",IDC_BUTTON3,420,208,24,12
+    PUSHBUTTON      "<<",IDC_BUTTON4,444,196,24,12
+    PUSHBUTTON      ">>",IDC_BUTTON5,492,196,24,12
+    PUSHBUTTON      "<",IDC_BUTTON6,444,208,24,12
+    PUSHBUTTON      ">",IDC_BUTTON7,492,208,24,12
+    PUSHBUTTON      "Exit",IDCANCEL,420,220,24,12
+    COMBOBOX        IDC_COMBO1,54,4,145,42,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Contact type :",IDC_STATIC,6,5,47,8
+    EDITTEXT        IDC_EDIT1,54,52,48,12,ES_AUTOHSCROLL
+    LTEXT           "Channel No. :",IDC_STATIC,7,54,43,8
+    CONTROL         "",IDC_IPADDRESS1,"SysIPAddress32",WS_TABSTOP,54,20,90,
+                    12
+    LTEXT           "Unicast IP :",IDC_STATIC,6,20,36,8
+    CONTROL         "",IDC_IPADDRESS2,"SysIPAddress32",WS_TABSTOP,54,36,90,
+                    12
+    LTEXT           "Multicast IP :",IDC_STATIC,6,36,41,8
+    EDITTEXT        IDC_EDIT2,198,34,162,14,ES_AUTOHSCROLL
+    LTEXT           "File name :",IDC_STATIC,158,37,35,8
+    PUSHBUTTON      "...",IDC_BUTTON1,360,34,18,14
+    EDITTEXT        IDC_EDIT3,54,68,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,54,84,48,12,ES_AUTOHSCROLL
+    LTEXT           "UID :",IDC_STATIC,6,68,17,8
+    LTEXT           "PWD :",IDC_STATIC,6,84,21,8
+    EDITTEXT        IDC_EDIT5,54,100,48,12,ES_AUTOHSCROLL
+    LTEXT           "Register Port :",IDC_STATIC,6,100,46,8
+    EDITTEXT        IDC_EDIT6,54,116,48,12,ES_AUTOHSCROLL
+    LTEXT           "Control Port :",IDC_STATIC,6,116,43,8
+    EDITTEXT        IDC_EDIT7,54,132,48,12,ES_AUTOHSCROLL
+    LTEXT           "Streaming Port",IDC_STATIC,5,132,48,8
+    EDITTEXT        IDC_EDIT8,54,228,48,12,ES_AUTOHSCROLL
+    LTEXT           "S Port C2S",IDC_STATIC,6,228,35,8
+    EDITTEXT        IDC_EDIT9,54,244,48,12,ES_AUTOHSCROLL
+    LTEXT           "S Port S2C",IDC_STATIC,6,244,35,8
+    EDITTEXT        IDC_EDIT10,54,164,48,12,ES_AUTOHSCROLL
+    LTEXT           "HTTP Port",IDC_STATIC,6,165,34,8
+    EDITTEXT        IDC_EDIT11,54,260,48,12,ES_AUTOHSCROLL
+    LTEXT           "Timeout",IDC_STATIC,6,260,27,8
+    EDITTEXT        IDC_EDIT12,54,148,48,12,ES_AUTOHSCROLL
+    LTEXT           "Multicast Port :",IDC_STATIC,6,148,48,8
+    EDITTEXT        IDC_EDIT13,54,180,48,12,ES_AUTOHSCROLL
+    LTEXT           "RTSP Port",IDC_STATIC,6,181,33,8
+    EDITTEXT        IDC_EDIT14,54,196,48,12,ES_AUTOHSCROLL
+    LTEXT           "Video RTP OM",IDC_STATIC,6,197,46,8
+    EDITTEXT        IDC_EDIT15,54,212,48,12,ES_AUTOHSCROLL
+    LTEXT           "Audio RTP OM",IDC_STATIC,6,213,46,8
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,420,234,96,10
+    LTEXT           "Static",IDC_VOLUME,423,243,87,8
+    PUSHBUTTON      "Test1",IDCANCEL2,444,220,24,12
+    PUSHBUTTON      "Start Audio Transfer",IDCANCEL3,420,319,96,9
+    PUSHBUTTON      "Stop Audio Transfer",IDCANCEL4,420,328,96,9
+    GROUPBOX        "Decode Mode",IDC_STATIC,420,123,96,30
+    CONTROL         "Decode All Frame",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,426,131,66,10
+    CONTROL         "Decode I Frame Only",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,426,141,82,10
+    CONTROL         "",IDC_STATIC2,"Static",SS_BLACKFRAME,108,53,306,228
+    GROUPBOX        "Select CODEC",IDC_STATIC,420,6,96,47,WS_GROUP
+    CONTROL         "XVIDCODEC",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,427,16,66,10
+    CONTROL         "WISCODEC",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,427,28,51,10
+    GROUPBOX        "Enable Decoder",IDC_STATIC,420,53,96,24
+    CONTROL         "Enable",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,426,64,36,10
+    CONTROL         "Disable",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,471,64,37,10
+    GROUPBOX        "Enable Render",IDC_STATIC,420,77,96,23
+    CONTROL         "Enable",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,426,87,41,10
+    CONTROL         "Disable",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,471,87,37,10
+    PUSHBUTTON      "Start record",IDC_BUTTON8,420,281,48,12
+    PUSHBUTTON      "Stop record",IDC_BUTTON9,468,281,48,12
+    EDITTEXT        IDC_EDIT16,438,296,79,12,ES_AUTOHSCROLL
+    LTEXT           "File :",IDC_STATIC,422,298,15,8
+    COMBOBOX        IDC_COMBO2,468,181,48,42,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Play Rate",IDC_STATIC,430,183,32,8
+    PUSHBUTTON      "Test2",IDCANCEL5,468,220,24,12
+    PUSHBUTTON      "Test3",IDCANCEL6,492,220,24,12
+    EDITTEXT        IDC_EDIT18,45,306,24,14,ES_AUTOHSCROLL
+    LTEXT           "Brightness",IDC_STATIC,12,306,33,8
+    EDITTEXT        IDC_EDIT19,45,324,24,14,ES_AUTOHSCROLL
+    LTEXT           "Contrast",IDC_STATIC,12,324,27,8
+    EDITTEXT        IDC_EDIT20,45,342,24,14,ES_AUTOHSCROLL
+    LTEXT           "Saturation",IDC_STATIC,12,342,33,8
+    EDITTEXT        IDC_EDIT21,45,359,24,14,ES_AUTOHSCROLL
+    LTEXT           "Hue",IDC_STATIC,14,359,14,8
+    PUSHBUTTON      "Set",IDC_BUTTON10,85,377,72,11
+    PUSHBUTTON      "Get",IDC_BUTTON11,13,377,72,11
+    PUSHBUTTON      "Set",IDC_BUTTON13,69,305,13,14
+    PUSHBUTTON      "Set",IDC_BUTTON15,69,324,13,14
+    PUSHBUTTON      "Set",IDC_BUTTON17,69,341,13,14
+    PUSHBUTTON      "Set",IDC_BUTTON19,69,359,13,14
+    EDITTEXT        IDC_EDIT22,117,306,24,14,ES_AUTOHSCROLL
+    LTEXT           "Resolution",IDC_STATIC,84,306,33,8
+    EDITTEXT        IDC_EDIT23,117,324,24,14,ES_AUTOHSCROLL
+    LTEXT           "FPS",IDC_STATIC,84,324,12,8
+    EDITTEXT        IDC_EDIT24,117,342,24,14,ES_AUTOHSCROLL
+    LTEXT           "Bitrate",IDC_STATIC,84,342,22,8
+    PUSHBUTTON      "Set",IDC_BUTTON21,141,305,13,14
+    PUSHBUTTON      "Set",IDC_BUTTON23,141,324,13,14
+    PUSHBUTTON      "Set",IDC_BUTTON25,141,341,13,14
+    PUSHBUTTON      "Save && Reboot",IDC_BUTTON27,420,376,96,18
+    GROUPBOX        "Video Config",IDC_STATIC,9,293,150,102
+    EDITTEXT        IDC_EDIT26,495,351,18,12,ES_AUTOHSCROLL
+    LTEXT           "Variable Frame Rate",IDC_STATIC,426,353,66,8
+    PUSHBUTTON      "Set",IDC_BUTTON28,420,364,96,8
+    EDITTEXT        IDC_EDIT25,209,309,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT27,228,309,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT28,245,309,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT29,264,309,18,14,ES_AUTOHSCROLL
+    LTEXT           "X      Y      W     H      Sensitivity",IDC_STATIC,211,
+                    301,105,8
+    LTEXT           "   Motion1",IDC_STATIC_M1,168,311,36,8
+    PUSHBUTTON      "Get",IDC_BUTTON12,240,377,36,11
+    PUSHBUTTON      "Set",IDC_BUTTON14,276,377,36,11
+    EDITTEXT        IDC_EDIT30,209,333,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT31,228,333,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT32,245,333,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT33,264,333,18,14,ES_AUTOHSCROLL
+    LTEXT           "   Motion2",IDC_STATIC_M2,168,335,36,8
+    EDITTEXT        IDC_EDIT34,209,357,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT35,228,357,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT36,245,357,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT37,264,357,18,14,ES_AUTOHSCROLL
+    LTEXT           "   Motion3",IDC_STATIC_M3,168,359,36,8
+    GROUPBOX        "Motion Setting",IDC_STATIC,164,293,156,102
+    EDITTEXT        IDC_EDIT38,283,309,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT39,283,333,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT40,283,357,18,14,ES_AUTOHSCROLL
+    CONTROL         "Enable",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,166,378,
+                    37,10
+    CONTROL         "Disable",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,202,
+                    378,37,10
+    GROUPBOX        "DI Status",IDC_STATIC,324,293,90,54
+    LTEXT           "               DI1",IDC_STATIC_DI1,330,323,78,8
+    LTEXT           "               DI2",IDC_STATIC_DI2,330,335,78,8
+    COMBOBOX        IDC_COMBO3,356,305,48,42,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Default",IDC_STATIC,330,307,23,8
+    PUSHBUTTON      "DO 1",IDC_BUTTON16,346,376,29,11
+    PUSHBUTTON      "DO 2",IDC_BUTTON18,377,376,29,11
+    GROUPBOX        "Send DO",IDC_STATIC,324,353,90,42
+    PUSHBUTTON      "X",IDC_BUTTON20,332,364,13,23
+    PUSHBUTTON      "DO Both",IDC_BUTTON22,346,364,60,11
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,108,282,306,10
+    LTEXT           "X      Y      W     H      Sensitivity",IDC_STATIC,211,
+                    325,104,8
+    LTEXT           "X      Y      W     H      Sensitivity",IDC_STATIC,211,
+                    349,105,8
+    COMBOBOX        IDC_COMBO4,198,20,96,41,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "TCP Type :",IDC_STATIC,157,21,36,8
+    LTEXT           "(Set this config for Multicast)",IDC_STATIC,298,21,93,8
+    LTEXT           "Static",IDC_STATIC_Audio,422,338,94,8
+    CONTROL         "IPPCODEC",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,427,40,48,10
+    LTEXT           "V.1.0.14",IDC_VERSION_INFO,487,0,28,8
+    GROUPBOX        "REC Type",IDC_STATIC,420,256,96,22,WS_GROUP
+    CONTROL         "RAW",IDC_RADIO23,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    426,266,31,10
+    CONTROL         "AVI",IDC_RADIO24,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    472,266,27,10
+    CONTROL         "DGDI",IDC_RADIO53,"Button",BS_AUTORADIOBUTTON,426,109,
+                    32,10
+    CONTROL         "DXDRAW",IDC_RADIO54,"Button",BS_AUTORADIOBUTTON,470,109,
+                    45,10
+    GROUPBOX        "Drawer Interface",IDC_STATIC,420,100,96,23
+    CONTROL         "Enable",IDC_RADIO55,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,426,162,37,10
+    CONTROL         "Disable",IDC_RADIO56,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,470,162,37,10
+    GROUPBOX        "Stretch Mode",IDC_STATIC,420,153,96,23,WS_GROUP
+    PUSHBUTTON      "Mute",IDC_BUTTON24,493,245,22,10
+    LTEXT           "Streaming Engine :",IDC_STATIC,206,6,62,8
+    COMBOBOX        IDC_COMBO5,267,4,113,67,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "VS",IDC_RADIO80,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,7,278,29,10
+    CONTROL         "Quad",IDC_RADIO81,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,43,278,33,10
+    EDITTEXT        IDC_EDIT17,117,361,38,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    NOT WS_BORDER
+    LTEXT           "TV STD",IDC_STATIC,85,361,26,8
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 166, 125
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "StreamingEngineConfig"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,102,50,14
+    CONTROL         "",IDC_IPADDRESS1,"SysIPAddress32",WS_TABSTOP,60,12,100,
+                    15
+    EDITTEXT        IDC_EDIT2,60,30,100,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT42,60,48,100,14,ES_AUTOHSCROLL
+    LTEXT           "IP : ",IDC_STATIC,6,15,14,8
+    LTEXT           "USER ID :",IDC_STATIC,6,32,32,8
+    LTEXT           "Password :",IDC_STATIC,6,50,36,8
+    EDITTEXT        IDC_EDIT43,60,66,100,14,ES_AUTOHSCROLL
+    LTEXT           "Streaming Port",IDC_STATIC,6,68,48,8
+    EDITTEXT        IDC_EDIT44,60,84,100,14,ES_AUTOHSCROLL
+    LTEXT           "Control Port ",IDC_STATIC,6,87,42,8
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 108, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Digital Zoom"
+FONT 8, "Arial", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_STATIC_PIC,"Static",SS_BLACKFRAME,7,7,23,20
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_NOTICKS | 
+                    WS_TABSTOP,7,33,96,15
+    LTEXT           "1x",IDC_STATIC1,7,51,9,8
+    LTEXT           "2x",IDC_STATIC2,24,51,9,8
+    LTEXT           "4x",IDC_STATIC3,39,51,9,8
+    LTEXT           "8x",IDC_STATIC4,55,51,9,8
+    PUSHBUTTON      "+",IDC_BUTTON1,95,48,8,11
+    PUSHBUTTON      "-",IDC_BUTTON2,85,48,8,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,14
+ PRODUCTVERSION 1,0,0,14
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040903b6"
+        BEGIN
+            VALUE "FileVersion", "1.0.0.14"
+            VALUE "InternalName", "AdapterTester.exe"
+            VALUE "OriginalFilename", "AdapterTester.exe"
+            VALUE "ProductVersion", "1.0.0.14"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 950
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ADAPTERTESTER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 516
+        BOTTOMMARGIN, 395
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 103
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR                  "lmove.cur"
+#endif    // Chinese (Taiwan) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE 4, 1
+#pragma code_page(950)
+#include "res\AdapterTester.rc2"  // 非 Microsoft Visual C++ 編輯過的資源
+#include "afxres.rc"         // 標準元件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>FW_UPG_STATUS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">FW_UPG_STATUS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Show the status of the firmware upgrade status to the 
+	remote host.</font></p>
+	<p><font face="Arial">The mapping of the return code and the status of 
+	firmware upgrade is listed below.</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td><font face="Arial" size="4">Return Code</font></td>
+			<td width="802"><font face="Arial" size="4">Status of firmware upgrade</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">0</font></td>
+			<td width="802"><font face="Arial">The firmware upgrade has not been issued</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">1</font></td>
+			<td width="802"><font face="Arial">The firmware upgrade is in progress</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">100</font></td>
+			<td width="802"><font face="Arial">The firmware upgrade was completed</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">110</font></td>
+			<td width="802"><font face="Arial">The firmware version is incorrect</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">111</font></td>
+			<td width="802"><font face="Arial">The firmware image was corrupted 
+			(firmware/MD5 file upload error or MD5 checksum error)</font></td>
+		</tr>
+		<tr>
+			<td><font face="Arial">112</font></td>
+			<td width="802"><font face="Arial">The firmware Type is in correct (AC/NB was 
+			mismatched)</font></td>
+		</tr>
+	</table>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">FW_UPG_STATUS='n'</font><br>
+	<font face="Arial">where n could be 0, 1, 100, 110, 111, 112</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WIS Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : Router Only</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../Update/update.htm">UPDATE CGI</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;FW_UPG_STATUS</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?FW_UPG_STATUS</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>
