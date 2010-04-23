@@ -1,0 +1,3 @@
+rm -f /dev/s6stretch*
+/sbin/rmmod s6stretch
+

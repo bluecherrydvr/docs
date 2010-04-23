@@ -1,0 +1,9 @@
+/sbin/insmod s6stretch.ko || exit 1
+grep s6stretch /proc/devices >/dev/null
+if [ $? != 0 ]; then echo No cards detected; exit 2; fi
+rm -f /dev/s6stretch*
+mknod /dev/s6stretch0 c `grep s6stretch /proc/devices | head -n 1 | cut -d ' ' -f 1` 0
+mknod /dev/s6stretch1 c `grep s6stretch /proc/devices | head -n 1 | cut -d ' ' -f 1` 1
+mknod /dev/s6stretch2 c `grep s6stretch /proc/devices | head -n 1 | cut -d ' ' -f 1` 2
+mknod /dev/s6stretch3 c `grep s6stretch /proc/devices | head -n 1 | cut -d ' ' -f 1` 3
+chmod 666 /dev/s6stretch*

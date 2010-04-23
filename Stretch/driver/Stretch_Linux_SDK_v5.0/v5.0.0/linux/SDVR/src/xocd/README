@@ -1,0 +1,28 @@
+
+- Use XOCD version 7.0.1 or later. The latest supported version can be
+  obtained from the Stretch customer portal.
+
+- After XOCD is installed, copy the appropriate topology file from here
+  into the XOCD directory and rename it to "topology.xml".
+
+- If you are using the ByteTools Catapult EJ-1 Ethernet JTAG probe, edit
+  the topology file and set the probe's IP address in the 'ipaddr' field.
+  The Catapult Installation and Quick Start Guide explains how to set up
+  the probe and discover its IP address.
+
+- Run XOCD. Make sure to unblock the program if there is a firewall
+  enabled, else you will not be able to connect to it.
+
+- To verify, run st-gdb and type "target remote <xocd_server>:20000"
+  where <xocd_server> is the name or IP address of the machine where
+  XOCD is running, and 20000 is the port number. You should be able
+  to connect to the processor and examine its registers.
+
+- Ports 20000 - 20003 connect to the s6scp processors, and ports
+  20004 - 20007 connect to the s6aux processors. That is, port 20000
+  connects to the s6scp in the first (master) S6, port 20001 connects
+  to the s6scp in the second S6, and so on.
+
+- Set up the Stretch IDE to connect to XOCD as described in the IDE
+  documentation.
+
