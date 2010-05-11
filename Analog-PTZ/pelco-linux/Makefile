@@ -1,19 +1,14 @@
 #---------------------------------------------------------------
 # May 1, 2002 Joe Briggs
 #--------------------------------------------------------------
-PELCO = pelco.o
-DEFS = pelco.h
 
-ifeq (,$(findstring Debian,$(shell cat /etc/issue)))
-	CFLAGS := ${CFLAGS} -DREDHAT
-endif
+CFLAGS = -Wall
+TARGET = pelco
 
-pelco: ${PELCO} ${LIBS} ${DEFS}
-	${CC} -o $@ ${PELCO} ${LIBS}
+all: $(TARGET)
 
-install:
-	install -m 0777 pelco /usr/local/bin
+install: all
+	install -m 0755 $(TARGET) /usr/local/bin
 
 clean:
-	-rm -f *.o 
-
+	rm -f *.o $(TARGET)
