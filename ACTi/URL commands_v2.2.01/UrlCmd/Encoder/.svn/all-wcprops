@@ -1,0 +1,743 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/repos/!svn/ver/3189/FWDesignSpec/SDK/UrlCmd/Encoder
+END
+NightMaxBitrate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/NightMaxBitrate.htm
+END
+VideoMaxShutter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2925/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMaxShutter.htm
+END
+VideoBlackLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoBlackLevel.htm
+END
+MotionConfigGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MotionConfigGet.htm
+END
+MotionConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MotionConfig.htm
+END
+VideoBlcMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoBlcMode.htm
+END
+PtzTourScan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzTourScan.htm
+END
+MoveMaxSpeedGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MoveMaxSpeedGet.htm
+END
+VideoWbGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/Encoder/VideoWbGain.htm
+END
+EventDI.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/EventDI.htm
+END
+VideoExposureGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2925/FWDesignSpec/SDK/UrlCmd/Encoder/VideoExposureGain.htm
+END
+PtzPresetGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzPresetGet.htm
+END
+PtzTourSet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzTourSet.htm
+END
+SteppedFocus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2954/FWDesignSpec/SDK/UrlCmd/Encoder/SteppedFocus.htm
+END
+MoveLimitGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MoveLimitGet.htm
+END
+HttpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/HttpServer.htm
+END
+NightWbMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/Encoder/NightWbMode.htm
+END
+EventConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/3182/FWDesignSpec/SDK/UrlCmd/Encoder/EventConfig.htm
+END
+DayNightState.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2824/FWDesignSpec/SDK/UrlCmd/Encoder/DayNightState.htm
+END
+Addr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/Addr.htm
+END
+TextOverlayFormat.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/TextOverlayFormat.html
+END
+PtzPresetSet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzPresetSet.htm
+END
+VideoGop.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoGop.htm
+END
+V2Sharpness.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/V2Sharpness.htm
+END
+VideoIrisMode.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoIrisMode.html
+END
+FtpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/FtpServer.htm
+END
+MaxStreamTime.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MaxStreamTime.htm
+END
+PtzParkConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzParkConfig.htm
+END
+PrivacyRegion.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PrivacyRegion.htm
+END
+LensCompensation.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/LensCompensation.htm
+END
+PtzTourName.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzTourName.htm
+END
+EventRspDO.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspDO.htm
+END
+VideoSlowShutter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoSlowShutter.htm
+END
+GetStream.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/GetStream.htm
+END
+EventRspGo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspGo.htm
+END
+VideoSharpness.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2900/FWDesignSpec/SDK/UrlCmd/Encoder/VideoSharpness.htm
+END
+NightSharpness.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightSharpness.htm
+END
+PirMdConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PirMdConfig.htm
+END
+VideoMjpegQuality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMjpegQuality.htm
+END
+NightFpsNum.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightFpsNum.htm
+END
+FocusCapGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2913/FWDesignSpec/SDK/UrlCmd/Encoder/FocusCapGet.htm
+END
+VideoWbMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2925/FWDesignSpec/SDK/UrlCmd/Encoder/VideoWbMode.htm
+END
+NightExposure.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightExposure.htm
+END
+PositionGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PositionGet.htm
+END
+VideoDCLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDCLevel.htm
+END
+LineFreq.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/LineFreq.htm
+END
+VideoShutterSpeed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoShutterSpeed.htm
+END
+VideoExposureMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoExposureMode.htm
+END
+Move.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/Move.htm
+END
+VideoDNIRLed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDNIRLed.htm
+END
+GetDIState.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/GetDIState.html
+END
+NightTimeProfile.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/Encoder/NightTimeProfile.htm
+END
+VideoDnr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDnr.htm
+END
+CameraPreset.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/CameraPreset.htm
+END
+NightVideoAdjust.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightVideoAdjust.htm
+END
+XyzPosGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/XyzPosGet.htm
+END
+EventRspMsg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspMsg.htm
+END
+TSD_CONFIG.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/TSD_CONFIG.htm
+END
+Encoder.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/3176/FWDesignSpec/SDK/UrlCmd/Encoder/Encoder.htm
+END
+Focus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/!svn/ver/3174/FWDesignSpec/SDK/UrlCmd/Encoder/Focus.htm
+END
+EventPush.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/3176/FWDesignSpec/SDK/UrlCmd/Encoder/EventPush.htm
+END
+VideoWdr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/3146/FWDesignSpec/SDK/UrlCmd/Encoder/VideoWdr.htm
+END
+Zoom.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/Zoom.htm
+END
+VideoFlipMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoFlipMode.htm
+END
+PtzTourState.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzTourState.htm
+END
+VideoShutterMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoShutterMode.htm
+END
+FpsCapQueryAll.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2900/FWDesignSpec/SDK/UrlCmd/Encoder/FpsCapQueryAll.htm
+END
+PtzVendor.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzVendor.htm
+END
+VideoIris.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/VideoIris.htm
+END
+OsdFormat.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/OsdFormat.htm
+END
+Snapshot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/Encoder/Snapshot.htm
+END
+OsdEnabled.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/OsdEnabled.htm
+END
+MotionObj.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MotionObj.htm
+END
+VideoSenseupLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoSenseupLevel.htm
+END
+VideoMjpegFps.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMjpegFps.htm
+END
+Position.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/Position.htm
+END
+FocusPosition.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/FocusPosition.htm
+END
+NightMjpegQuality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/NightMjpegQuality.htm
+END
+MoveLimit.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MoveLimit.htm
+END
+VideoDNIRCutFilter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDNIRCutFilter.htm
+END
+VideoDeinterlace.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDeinterlace.htm
+END
+VideoEncoder.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/Encoder/VideoEncoder.htm
+END
+VideoMirrorMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMirrorMode.htm
+END
+NightGainThd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/NightGainThd.htm
+END
+ZoomPosition.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/ZoomPosition.htm
+END
+GetCtrlMsg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/GetCtrlMsg.htm
+END
+VariableFpsNum.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/3189/FWDesignSpec/SDK/UrlCmd/Encoder/VariableFpsNum.htm
+END
+NightGop.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightGop.htm
+END
+HTTP_PROXY.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/HTTP_PROXY.htm
+END
+VideoSkinTone.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoSkinTone.htm
+END
+VideoStream.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/Encoder/VideoStream.htm
+END
+ExposureGainGet.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/ExposureGainGet.html
+END
+MoveSpeed.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MoveSpeed.htm
+END
+EventRspMd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspMd.htm
+END
+SendAudio.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/SendAudio.html
+END
+NightShutter.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightShutter.htm
+END
+VideoDNTimer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDNTimer.htm
+END
+EventRspCmd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspCmd.htm
+END
+VideoDNType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDNType.htm
+END
+NightIris.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/NightIris.htm
+END
+NightWbGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/Encoder/NightWbGain.htm
+END
+EventRspMdPIR.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspMdPIR.htm
+END
+QuadSequenceTime.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/QuadSequenceTime.htm
+END
+EventRspImg.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/3146/FWDesignSpec/SDK/UrlCmd/Encoder/EventRspImg.htm
+END
+VideoDayNightMode.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/VideoDayNightMode.htm
+END
+MotionTimer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MotionTimer.htm
+END
+VideoFlickless.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoFlickless.htm
+END
+ZoomCapGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2925/FWDesignSpec/SDK/UrlCmd/Encoder/ZoomCapGet.htm
+END
+NightVideoQuality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/NightVideoQuality.htm
+END
+MaxAutoShutter.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/MaxAutoShutter.html
+END
+SteppedZoom.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2975/FWDesignSpec/SDK/UrlCmd/Encoder/SteppedZoom.htm
+END
+SmtpServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/SmtpServer.htm
+END
+DayGainThd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/Encoder/DayGainThd.htm
+END
+VideoMpeg4Quality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMpeg4Quality.htm
+END
+PostfixNamingRule.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2900/FWDesignSpec/SDK/UrlCmd/Encoder/PostfixNamingRule.htm
+END
+SetDo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/SetDo.htm
+END
+VideoFpsRatio.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoFpsRatio.htm
+END
+VideoAgcGain.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoAgcGain.htm
+END
+VideoH264Quality.htm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/VideoH264Quality.htm
+END
+NightBitrate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/NightBitrate.htm
+END
+PtzPresetGo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzPresetGo.htm
+END
+PtzTourGet.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2652/FWDesignSpec/SDK/UrlCmd/Encoder/PtzTourGet.htm
+END
+VideoMaxBitRate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/!svn/ver/2710/FWDesignSpec/SDK/UrlCmd/Encoder/VideoMaxBitRate.htm
+END

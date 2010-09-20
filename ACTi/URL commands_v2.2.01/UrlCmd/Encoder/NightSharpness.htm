@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>NIGNT_SHARPNESS</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>NIGHT_SHARPNESS</h2>
+<p>&nbsp;</p>
+<h3">Description</h3>
+<blockquote>
+  <p>Get or Set the Video Sharpness Level for night time mode.</p>
+        
+  <p>This URLs is the same as the URL VIDEO_SHARPNESS in the ENCODER CGI and is   only available in PlatformT encoders. When the camera enters the night time   state, the night time video profile will be loaded. The video sharpness is the one of parameters in the night time video profile. Please refer to the <A href="NightTimeProfile.htm">parameters of night time profile</A> for further  details</p>
+  <p>This URL is only available for MT9M131 sensor now.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+	<blockquote>
+		0~255 for video sharpness. 0: map to 0 and 1~255  maps to 1 ~ 7 in MT9M131 sesnor.
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		NIGHT_SHARPNESS='192'
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+        OK: NIGHT_SHARPNESS='192'<br>
+        or<br>
+        ERROR: NIGHT_SHARPNESS='192'
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul><li>PlatfotmT : All camera with sensor MT9M131</li></ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		<p>Valid</p>
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>
+        <a href="VideoSharpness.htm">VIDEO_SHARPNESS</a>
+        </p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		<p>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHARPNESS<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHARPNESS
+        </p>
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+        	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHARPNESS=192<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHARPNESS=192
+        </p>
+    </blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+
+</body>
+
+</html>

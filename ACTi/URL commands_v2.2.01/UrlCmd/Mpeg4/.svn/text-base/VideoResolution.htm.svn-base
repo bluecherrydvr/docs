@@ -1,0 +1,331 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_RESOLUTION</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_RESOLUTION</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the video resolution in pixels. The range 
+	of the valid resolution is vary from devices to devices and some of them 
+	depends on the TV Standard (refer to <a href="../System/VideoTv.htm">
+	VIDEO_TV</a> in system CGI).</font></p>
+	<p><font face="Arial">Here define several resolution mode.</font></p>
+	<p><font face="Arial">The <a name="Resolution">resolution</a> mode depends 
+	on the configuration of sensors. The following table lists the available 
+	video resolutions within the video resolution mode.</font></p>
+	<blockquote>
+		<div align="center">
+			<table id="table27" width="80%" border="1">
+				<tr>
+					<td align="middle" width="232"><b><font face="Arial">
+					Resolution Mode</font></b></td>
+					<td align="middle"><b><font face="Arial">Available Video 
+					Resolution</font></b></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowspan="3"><b>WIS_D1</b></td>
+					<td align="middle"><font face="Arial">D1 (N720x480, 
+					P720x576)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">CIF (N352x240, 
+					P352x288)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QCIF (N160x112, 
+					P176x144)</font></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowSpan="4"><b>
+					<font face="Arial">D1</font></b></td>
+					<td align="middle"><font face="Arial">D1 (N720x480, 
+					P720x576)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">VGA (N640x480,P640x480)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">CIF (N352x240, 
+					P352x288)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QCIF (N160x112, 
+					P176x144)</font></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowSpan="2"><b>
+					<font face="Arial">VGA_D1</font></b></td>
+					<td align="middle"><font face="Arial">D1 (N720x480, 
+					P720x576)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">VGA (N640x480,P640x480)</font></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowSpan="3"><b>
+					<font face="Arial">VGA</font></b></td>
+					<td align="middle"><font face="Arial">VGA (N640x480)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">CIF (N352x240)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QCIF (N160x112)</font></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowSpan="5"><b>
+					<font face="Arial">1.3M</font></b></td>
+					<td align="middle"><font face="Arial">SXGA (N1280x1024)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">HD720(N1280x720)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">VGA (N640x480)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QVGA (N320x240)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QQVGA (N160x112)</font></td>
+				</tr>
+				<tr>
+					<td align="middle" width="232" rowSpan="5">
+					<font face="Arial"><b>IT1</b></font></td>
+					<td align="middle"><font face="Arial">N1280x960</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">HD720(N1280x720)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">VGA(N640x480)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QVGA(N320x240)</font></td>
+				</tr>
+				<tr>
+					<td align="middle"><font face="Arial">QQVGA (N160x112)</font></td>
+				</tr>
+			</table>
+		</div>
+	</blockquote>
+	<p>¡@</p>
+	<p><font face="Arial">Here gives the summary of the video resolution 
+	configuration with encoders in different platform.</font></p>
+	<p><font face="Arial">Note that the available resolution listed blow doesn't 
+	mean you could set them successfully. The resolution in some devices are 
+	associated with sensor and encoder capabilities. You need to check the 
+	return code to see if the URL was set successfully.</font></p>
+	<ul>
+		<li><font face="Arial">WPL Platform</font></li>
+	</ul>
+	<blockquote>
+		<table border="1" width="70%" id="table1">
+			<tr>
+				<td><font face="Arial"><b>Encoder Type</b></font></td>
+				<td width="359"><font face="Arial"><b>TV Standard</b></font></td>
+				<td width="190" align="center"><font face="Arial"><b>Resolution 
+				mode</b></font></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Camera</font></td>
+				<td width="359"><font face="Arial">NTSC (not 
+				configurable)</font></td>
+				<td width="190" rowspan="2" align="center">WIS_D1</td>
+			</tr>
+			<tr>
+				<td width="359"><font face="Arial">PAL (not 
+				configurable)</font></td>
+			</tr>
+			<tr>
+				<td height="51" rowspan="2"><font face="Arial">Video Server</font></td>
+				<td height="25" width="359"><font face="Arial">NTSC 
+				(configurable)</font></td>
+				<td width="190" rowspan="2" align="center">WIS_D1</td>
+			</tr>
+			<tr>
+				<td height="24" rowspan="3" width="359"><font face="Arial">PAL 
+				(configurable)</font></td>
+			</tr>
+			</table>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">Multi-Channel Platform</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial">For 4CH and 16CH video server, the available video 
+		resolution is the same as the EPL video server.</font></p>
+		<p><font face="Arial">For 8CH video server, the available video 
+		resolution is the same as the WPL video server. </font></p>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">EPL Platform</font></li>
+	</ul>
+	<blockquote>
+		<table border="1" width="70%" id="table2">
+			<tr>
+				<td width="222"><font face="Arial"><b>Encoder Type</b></font></td>
+				<td><font face="Arial"><b>TV Standard</b></font></td>
+				<td width="190" align="center"><font face="Arial"><b>Available Resolution</b></font></td>
+			</tr>
+			<tr>
+				<td width="222" rowspan="2">Camera <br>(sensor is HQ1-656 and 
+				MT53S88)</td>
+				<td><font face="Arial">NTSC (not configurable)</font></td>
+				<td width="190" rowspan="2" align="center">VGA_D1</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (not configurable)</font></td>
+			</tr>
+			<tr>
+				<td width="222" rowspan="2"><font face="Arial">Camera (Sensor is ADV7180)</font></td>
+				<td><font face="Arial">NTSC (not configurable)</font></td>
+				<td width="190" rowspan="2" align="center">D1</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (not configurable)</font></td>
+			</tr>
+			<tr>
+				<td width="222" rowspan="2"><font face="Arial">Camera (sensor is 
+				MT9V135)</font></td>
+				<td><font face="Arial">NTSC (configurable)</font></td>
+				<td rowspan="2" align="center">VGA</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (configurable)</font></td>
+			</tr>
+			<tr>
+				<td width="222"><font face="Arial">Camera (sensor is 
+				MT9M131)</font></td>
+				<td><font face="Arial">NTSC (not configurable)</font></td>
+				<td align="center">1.3M</td>
+			</tr>
+			<tr>
+				<td width="222" rowspan="2"><font face="Arial">Video Server</font></td>
+				<td><font face="Arial">NTSC (auto sense, not configurable)</font></td>
+				<td width="190" rowspan="2" align="center">D1</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (auto sense, not configurable)</font></td>
+			</tr>
+			</table>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">PlatformT</font></li>
+	</ul>
+	<blockquote>
+		<table border="1" width="70%" id="table3">
+			<tr>
+				<td width="222"><font face="Arial"><b>Encoder Type</b></font></td>
+				<td><font face="Arial"><b>TV Standard</b></font></td>
+				<td width="190" align="center"><font face="Arial"><b>Available Resolution</b></font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">Camera (sensor is MT9M131)</font></td>
+				<td><font face="Arial">NTSC (not configurable)</font></td>
+				<td align="center">1.3M</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">Camera ( sensor is IT-1)</font></td>
+				<td><font face="Arial">NTSC( not configurable)</font></td>
+				<td align="center"><font face="Arial">IT-1</font></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Video Server</font></td>
+				<td><font face="Arial">NTSC (auto sense, not configurable)</font></td>
+				<td width="190" rowspan="2" align="center">WIS_D1</td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (auto sense, not configurable)</font></td>
+			</tr>
+			</table>
+	</blockquote>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's VIDEO_RESOLUTION configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">The format of the video resolution string is listed 	below.</font><br>
+	<font face="Arial">Awwwxhhh</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : could be N for NTSC, P for PAL</font><br>
+	<font face="Arial">www&nbsp;: the width in pixel of the video image</font><br>
+	<font face="Arial">hhh&nbsp;&nbsp; : the height in pixel of the video image</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_RESOLUTION='N720x480'</font>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_RESOLUTION='N720x480'</font> <br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_RESOLUTION='N720x480'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All 1CH and 2CH Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../System/VideoTv.htm">VIDEO_TV</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_RESOLUTION</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">VIDEO_RESOLUTION</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font><br>
+	</p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_RESOLUTION='N720x480'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">VIDEO_RESOLUTION='N720x480'</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a>, <a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_PRESET_GO</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_PRESET_GO</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Force the PTZ camera to move the specific PTZ preset 
+	entry.</font></p>
+	<p><font face="Arial">There are 32 entries in the EPL PTZ Preset Table and 64 entries in the PlatformT PTZ Preset Table. These 
+	preset entries could be pre-configured and used for patrol applications. 
+	This URL will load the specific PTZ preset configuration to the camera to 
+	move to the specific positions. If the entry is invalid, camera will do 
+  nothing but return OK message.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n, where n is the entry number started from 1. The maximum entries of preset in EPL is 32 and PlatformT is 64.</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3"> Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">PTZ_PRESET_GO=1</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>, <a href="PtzTourSet.htm">
+	PTZ_TOUR_SET</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourState.htm">PTZ_TOUR_STATE</a>, <a href="PtzTourName.htm">
+	PTZ_TOUR_NAME</a>, <a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a>,
+	<a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_PRESET_GO=1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_PRESET_GO=1</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DATE_MANUAL_DATE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DATE_MANUAL_DATE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set Date manual date 
+	configuration. The date setting is set as the date locally. The time zone 
+	has to be matched the region where the device is deployed.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	this URL is read-only command and the Router's DATE configurations will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">mmdd0000yyyy</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">mm: 01~12 for manual month setting</font><br>
+	<font face="Arial">dd: 01~31 for manual date setting</font><br>
+	<font face="Arial">yyyy: ~2035 for manual year setting</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">On-Fly (except all devices in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">DATE_MANUAL_DATE='0101000020004'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: DATE_MANUAL_DATE='010100002004'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: DATE_MANUAL_DATE='010100002004'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL will be obsolete and replaced by 
+	<a href="DateConfig.htm">DATE_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Date.htm">DATE</a>, <a href="DateType.htm">DATE_TYPE</a>, 
+	<a href="DateSntpIp.htm">DATE_SNTP_IP</a>, <a href="DateSntpUpdate.htm">
+	DATE_SNTP_UPDATE</a>, 
+	<a href="DateManualTime.htm">DATE_MANUAL_TIME</a>, 
+	<a href="DateManualZone.htm">DATE_MANUAL_ZONE</a>, <a href="DateConfig.htm">
+	DATE_CONFIG</a>, <a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_MANUAL_DATE</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?DATE_MANUAL_DATE</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;DATE_MANUAL_DATE=010100002004</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?DATE_MANUAL_DATE=010100002004</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspGo</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>EVENT_RSPGO</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the event to a preset point of PTZ camera.</p>
+	<p>
+    	When event was triggered, the camera will record its current pan, tilt and zoom positions before it moved to the preset point.
+        Therefore, the device is capable of returning back to the position after its dwell time.
+        In this document, the position when the event was triggered is nemed &quot;resuemed position&quot;
+    </p>
+	<p>
+    	This command might conflict to the auto pan with park function. User should be care of the using senario when this function is enabled with auto pan.
+    </p>
+	<p>This URL is available for devices which is not a PTZ camera. This URL will be treated as dummy URL then.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>
+    	preset,dwell<br>
+        where<br>
+        preset: the index of the preset point. For Platform A, it is from 0 to 32. For Platform T, it is from 0 to 64.<br>
+        &nbsp;&nbsp;The 0 means event to preset point is disabled.<br>
+        dwell: the time in second to state the preset point after event was triggered. It is from 0 to 300 seconds.<br>
+        &nbsp;&nbsp;When 0, the camera will back to its resumed position as the event was inactive immediately.<br>
+        &nbsp;&nbsp;If it is not zero, the camera will back to position before the event was triggered when the dwell time is expired.
+    </p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	<p>EVENT_RSPGO='0,10'</p>
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	OK:EVENT_RSPGO='0,10'<br>
+	or<br>
+	ERROR: EVENT_RSPGO='0,10'
+</blockquote>
+
+<h3>Applicability</h3
+<ul>
+	<li>Platform A: All Devices</font></li>
+	<li>Platform T : All Devices</font></li>
+	<li>Multi-Channel Encoder : All Devices (ACD series)</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<a href="EventConfig.htm">EVENT_CONFIG</a>, 
+    <a href="EventRspImg.htm">EVENT_RSPIMGn</a>, 
+    <a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, 
+    <a href="EventRspCmd.htm">EVENT_RSPCMDn</a>, 
+    <a href="EventRspDO.htm">EVENT_RSPDOn</a>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>read operation</li></ul>
+<blockquote>
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPGO<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPGO
+</blockquote>
+<ul><li>write operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPGO=6,10<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPGO=6,10
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+  <a href="../index.htm">HOME</a>,
+  <a href="Encoder.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

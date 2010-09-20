@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspMsg</title>
+<style type="text/css">
+<!--
+.arial {
+	font-family: Arial;
+}
+body blockquote div table {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font size="5" face="Arial">EVENT_RSPMSG1, EVENT_RSPMSG2, EVENT_RSPMSG3</font></p>
+<h3><font face="Arial" size="4">Description</font></h3>
+<blockquote>
+	<p><font face="Arial">Get or Set the message engine of the event 
+	configurations.</font></p>
+	<p><font face="Arial">When event source is triggered, the device could send 
+	the pre-configured notification message to the SMTP mail server or the HTTP 
+	CGI program.</font></p>
+	<p><font face="Arial">To send the message to the SMTP mail server, the SMTP 
+	mail server configurations have to be set first. Refer to the URL 
+	<a href="SmtpServer.htm">SMTP_PRI</a> 
+	and <a href="SmtpServer.htm">SMTP_SEC</a> for further information.</font></p>
+	<p><font face="Arial">There are two parts in the URL when the message was uploaded to the remote HTTP CGIs by this command. The first part is the CGI program including the path and user defined URL commands which could be ignored. The second part is the messge. The name of the message is &quot;Message&quot;. Here are examples of the URL sending to the remote HTTP server.</font></p>
+	<p><font face="Arial">Assume the HTTP CGI is /cgi-bin/MyCgi.cgi and the message is &quot;This is a test message.&quot; The URL to the remote HTTP server should be /cgi-bin/MyCgi.cgi?Message=This is a test message.&quot;</font></p>
+	<p class="arial">Assume the HTTP CGI is /cgi-bin/MyCgi.cgi and the user defined URLs are CMD1=abc&amp;CMD2=def. The message is <font face="Arial">&quot;This is a test message.&quot; The URL to the remote HTTP server should be /cgi-bin/MyCgi.cgi?CMD1=abc&amp;CMD2=def&amp;Message=This is a test message.&quot;</font></p>
+</blockquote>
+
+<h3><font size="4" face="Arial">Input Argument</font></h3>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type,HostCgi,SubjectUrl,msg</font></p>
+<blockquote>
+	<p><font face="Arial">type: the method of sending message. </font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td width="130">
+				<p align="center"><b><font face="Arial">value in type </font>
+				</b></td>
+				<td width="492">
+				<p align="center"><b><font face="Arial">description</font></b></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><font face="Arial">0</font></td>
+				<td><font face="Arial">no message will be sent. disable this 
+				function</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><font face="Arial">1</font></td>
+				<td><font face="Arial">send the message to SMTP server</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><font face="Arial">2</font></td>
+				<td><font face="Arial">send the message to the HTTP CGI Program 
+				1</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><font face="Arial">3</font></td>
+				<td><font face="Arial">send the message to the HTTP CGI Program 
+				2</font></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">HostCgi: The destination host for this message. It depends on the value in type 
+  argument. The maximum length is 63.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td width="130">
+				<p align="center"><span class="arial"><b><font face="Arial">value in type </font>
+				</b></span></td>
+				<td width="492">
+			  <p align="center"><span class="arial"><b><font face="Arial">definition of HostCgi</font></b></span></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><span class="arial"><font face="Arial">0</font></span></td>
+				<td><span class="arial"><font face="Arial">no used.</font></span></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><span class="arial"><font face="Arial">1</font></span></td>
+				<td><span class="arial"><font face="Arial">The receipt email address. The ';&quot; was 
+				used to connect several email addresses.</font></span></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><span class="arial"><font face="Arial">2</font></span></td>
+				<td><span class="arial"><font face="Arial">CGI program path for HTTP server 1. The URL command could be appended to the CGI program. </font></span><font face="Arial">The space character is not allowed.</font></td>
+			</tr>
+			<tr>
+				<td align="center" width="130"><span class="arial"><font face="Arial">3</font></span></td>
+				<td><span class="arial"><font face="Arial">CGI program path for HTTP server 1. The URL command could be appended to the CGI program. The space character is not allowed.</font></span></td>
+			</tr>
+		</table>
+	</div>
+	<p><font face="Arial">SubjectUrl: The subject of the message. It depends on the value in the type argument. The character in the 
+	subject has to follow RFC 3986 Uniform Resource Identifier Generic Syntax. The maximum length is 31.
+</font></p>
+	<div align="center">
+	  <table border="1" width="70%">
+	    <tr>
+	      <td width="130"><p align="center"><span class="arial"><b><font face="Arial">value in type </font> </b></span></td>
+	      <td width="492"><p align="center"><span class="arial"><b><font face="Arial">definition of </font></b></span><b><font face="Arial">SubjectUrl</font></b></td>
+        </tr>
+	    <tr>
+	      <td align="center" width="130"><span class="arial"><font face="Arial">0</font></span></td>
+	      <td><span class="arial"><font face="Arial">no used.</font></span></td>
+        </tr>
+	    <tr>
+	      <td align="center" width="130"><span class="arial"><font face="Arial">1</font></span></td>
+	      <td><font face="Arial">The subject in the email Title</font></td>
+        </tr>
+	    <tr>
+	      <td align="center" width="130"><span class="arial"><font face="Arial">2</font></span></td>
+	      <td><font face="Arial">User defined URL Commands. This could be empty (no command)</font></td>
+        </tr>
+	    <tr>
+	      <td align="center" width="130"><span class="arial"><font face="Arial">3</font></span></td>
+	      <td><font face="Arial">User defined URL Commands. This could be empty (no command)</font></td>
+        </tr>
+      </table>
+  </div>
+	<p class="arial">message: The content of the message. The character in 
+the message has to follow RFC 3986 Uniform Resource Identifier Generic. In HTTP message, the space character is allowed and will be transfer to '+' when the message is uploaded. The maximum length is 151.</p>
+<p class="arial"><font face="Arial">If the length of the input argument is longer than its 
+	maximum length limitation, the error message will be returned.</font></p>
+</blockquote>
+<h3><font face="Arial" size="4">Attribute</font></h3>
+<ul>
+<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<h3><font face="Arial" size="4">Return of Message</font></h3>
+<ul>
+  <li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p class="arial">EVENT_RSPMSG<b>n</b>='1,myname@mail.com,MySubject,Here 
+	is my message.'<br>
+	or<br>
+	EVENT_RSPMSG<b>n</b>='2,/cgi-bin/MyCgi.cgi,CMD1=abc&amp;CMD2=def,Here 
+  is my message.'</p>
+</blockquote>
+<ul>
+  <li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p class="arial">OK: EVENT_RSPMSG<b>n</b>='1,myname@mail.com,MySubject,Here 
+	is my message.'<br>
+	or<br>
+	OK: EVENT_RSPMSG<b>n</b>='2,/cgi-bin/MyCgi.cgi,,Here 
+	is my message without extra URLs.'<br>
+	or<br>
+	ERROR: </font>EVENT_RSPMSG<b>n</b>='1,myname@mail.com,MySubject,Here 
+	is my message.'</p>
+	<p class="arial">where <b>n</b> could be 1, 2 or 3</p>
+</blockquote>
+<h3><font size="4" face="Arial">Applicability</font></h3>
+<ul>
+<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<h3><font size="4" face="Arial">Status</font></h3>
+<blockquote>
+  <p><font face="Arial">Valid</font></p>
+</blockquote>
+<h3><font size="4" face="Arial">See Also</font></h3>
+<blockquote>
+	<p class="arial"><a href="EventConfig.htm">EVENT_CONFIG</a>, <a href="EventRspDO.htm">EVENT_RSPDOn</a>, 
+	<a href="EventRspImg.htm">EVENT_IMGn</a>, <a href="EventRspCmd.htm">EVENT_RSPCMDn</a>, <a href="EventRspGo.htm">EVENT_RSPGO</a>, <a href="SmtpServer.htm">SMTP_PRI</a>,
+	<a href="SmtpServer.htm">SMTP_SEC</a>, <a href="HttpServer.htm">HTTP_SERVER</a></p>
+</blockquote>
+<h3><font size="4" face="Arial">Example</font></h3>
+	<ul>
+	  <li><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; read operation</font></li>
+	</ul>
+    <blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPMSG<b>n</b><br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPMSG<b>n</b></font>
+    </blockquote>
+<ul>
+      <li><font face="Arial" size="4">write  operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPMSG<b>n</b>=1,myname@mail.com,subject,message.<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPMSG<b>n</b>=1,myname@mail.com,subject,message.<br>
+	where <b>n</b> could be 1, 2 or 3</font>
+</blockquote>
+<h3><font face="Arial" size="4">Back to</font></h3>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

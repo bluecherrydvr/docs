@@ -1,0 +1,154 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>OSD_POSITION</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>OSD_FORMAT</h1>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	Get or Set the OSD format on the TV screen.
+    </p>
+	<p>
+    	The Decoder could show some information of Encoder or itself on the TV screen. This URL gives the definitions of how much information 
+        should be shown on the TV screen (called OSD). In EPL decoders, the foreground color and transparency level are configurable through this URL as well.
+        The background color is fixed to black.
+     </p>
+     <p>
+        The foreground color and transparency level settings are optional in EPL decoder and not available in WPL decoders. If there is no foreground color and
+        transparency level in the URL, they will not be changed in the device. The default foreground color and transparency level are green (00FF00) and 
+        25 (25% transparency in black color in the background).
+     </p>
+</blockquote>
+<h3>Input Argument</h3>
+	<blockquote>
+    	osd,color,transparency<br>
+    	where<br>
+    	osd: the bitmap of the definitions of OSD information.<br>
+    	color: foreground color. It is the 6 hexadecimal digitals, RRGGBB, to present the RGB colors.<br>
+    	The RR is for red color level, The GG is for green color and BB is for blue color.<br>
+    	The transparency could be 25, 50, 75, 100. Where 100 is the full transparency mode.
+    	<p>
+        	The color and transparency are optional in EPL decoders and not available in WPL decoder.
+   		</p>
+    	<h3><em>Bitmap in osd argument </em></h3>
+			<table border="1" width="60%" id="table2">
+		  <tr>
+					<td align="center" width="167"><strong>bitmap in osd</strong></td>
+					<td width="349" align="center"><strong>Information on the OSD</strong></td>
+				</tr>
+				<tr>
+					<td align="center">BIT 0</td>
+					<td align="center">Date and Time information of the encoder</td>
+				</tr>
+				<tr>
+					<td align="center">BIT 1</td>
+					<td align="center">The IP addresses of the encoder</td>
+				</tr>
+				<tr>
+					<td align="center">BIT 2</td>
+					<td align="center">The camera name of the encoder</td>
+				</tr>
+				<tr>
+					<td align="center">BIT 3</td>
+					<td align="center">The IP addresses of the Decoder</td>
+				</tr>
+				<tr>
+					<td align="center">BIT 4</td>
+					<td align="center">The Motion Trigger form the encoder</td>
+				</tr>
+				<tr>
+					<td align="center">BIT 5</td>
+					<td align="center">The DI Trigger from the Decoder</td>
+				</tr>
+			</table>
+		<p>
+        	When the bit in the input argument is set, the associated information will be shown on the OSD. Otherwise, the associated information will 
+            not be shown. For example, the Date and Camera name will be shown on the OSD in the OSD_FORMAT=0x05.
+        </p>
+		<p>
+        	The high bits, bit 6 and 7, in the input argument value will be ignored if they are not zero.
+        </p>
+</blockquote>
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write</li>
+		<li>On-Fly</li>
+    </ul>        
+<h3>Return of Message</h3>
+		<ul>
+			<li>Read Operation</li>
+		</ul>
+        <blockquote>
+			OSD_FORMAT='0x2f,00ff00,50' (for EPL Decoder)<br>
+    		or<br>
+    		OSD_FORMAT='0x2f' (for WPL Decoder)
+        </blockquote>
+		<ul>
+			<li>Write Operation</li>
+		</ul>
+        <blockquote>
+			OK: OSD_FORMAT='0x2f,00ff00,50'<br>
+			or<br>
+    		OK: OSD_FORMAT='0x2f'<br>
+	    	or<br>
+    		ERROR: OSD_FORMAT='0x2f,00ff00,50'<br>
+    		or<br>
+	    	ERROR: OSD_FORMAT='0x2f'
+    	</blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>WPL Decoder Devices</li>
+		<li>EPL Decoder Devices</li>
+	</ul>
+<h3>Status</h3>
+	<blockquote>
+		Valid
+	</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="Osd.htm">OSD</a>, 
+    <a href="OsdPosition.htm">OSD_POSITION</a>,
+	<a href="OsdPositionRange.htm">OSD_POSITION_RANGE</a>,
+	<a href="OsdDateFormat.htm">OSD_DATE_FORMAT</a>
+</blockquote>
+<h3>Example</h3>
+	<ul>
+		<li><font face="Arial">Read Operation</font></li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_FORMAT<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/decoder?OSD_FORMAT
+    </blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_FORMAT=0x2f,ff0000,100<br>
+        or<br>
+        http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;OSD_FORMAT=0x2f<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/decoder?OSD_FORMAT=0x2f,ff0000,100<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/decoder?OSD_FORMAT=0x2f
+    </blockquote>
+<h3>Back to</h3>
+	<a href="../index.htm">HOME</a>, 
+    <a href="decoder.htm">DECODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

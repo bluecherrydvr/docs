@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_SKINTONE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_SKINTONE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the Skin Tone adjustment.</font></p>
+	<p><font face="Arial">This URL is only available in some PlatformT 
+	encoders which has the VX1129 video processor.&nbsp; It will manipulate the 
+	specific R, G, B colors in the video image based on the parameters in the 
+	URL.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">n,m,r,g,b<br>
+	where<br>
+	n could be 0:disable, 1:default, 2:manual. When n=0 or 1, the m, r, g and b 
+	are forbidden.<br>
+	m is the adjustment level. It is from 0 to 63<br>
+	r : color level 0~255 in red<br>
+	g : color level 0~255 in green<br>
+	b : color level 0~255 in blue</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_SKINTONE='1,63,255,255,255'</font><br>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_SKINTONE='1,63,255,255,255'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_SKINTONE='1,63,255,255,255'</font><br>
+	¡@</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">PlatfotmT : All Encoders with video processor VX1129</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoBlackLevel.htm">VIDEO_BLACKLEVEL</a>,
+	<a href="VideoDeinterlace.htm">VIDEO_DEINTERLACE</a>, <a href="VideoDnr.htm">
+	VIDEO_DNR</a>, <a href="VideoWdr.htm">VIDEO_WDR</a>,
+	<a href="V2Sharpness.htm">V2_SHARPNESS</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_SKINTONE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">VIDEO_SKINTONE</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_SKINTONE</font><font face="Arial">=1</font><font face="Arial" size="3">,</font><font face="Arial">63,255,255,255</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">VIDEO_SKINTONE=1,63,255,255,255</font><p>
+	<font face="Arial">or</font></p>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_SKINTONE</font><font face="Arial">=0</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/</font><font face="Arial" size="3">VIDEO_SKINTONE=0</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, 
+	<a href="file:///Y:/SSPD/SSPD_Design_Document/FirmwareDesignSpec/V1.0.07/URLDesignSpec/Encoder/Encoder.htm">
+	ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

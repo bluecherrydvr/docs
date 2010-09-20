@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; ">
+<title>V2_AUDIO_ENABLED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">V2_AUDIO_ENABLED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the device's AudioIn (MIC or Line-IN) 
+	configuration. Check the device specification is needed before use this 
+	command.&nbsp; If the device does not have audio function, the command is 
+	read command and return 0 always.</font></p>
+	<p><font face="Arial">If the device supports two-way audio, the AudioOut 
+	will not be disabled when the V2_AUDIO_ENABLED=0.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	V2_AUDIO_ENABLED configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0 : Disable</font><br>
+	<font face="Arial">1 : Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly (except all device in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">V2_AUDIO_ENABLED='1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: V2_AUDIO_ENABLED='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: V2_AUDIO_ENABLED='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="AudioInSen.htm">AUDIO_IN_SENSITIVITY</a>,
+	<a href="AudioOutVolume.htm">AUDIO_OUT_VOLUME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_AUDIO_ENABLED<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?V2_AUDIO_ENABLED</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_AUDIO_ENABLED=1<br>
+	<foont face="Arial">or<br>
+	<a href="http://ip:port/cgi-bin/cmd/system?V2_AUDIO_ENABLED=1">http://ip:port/cgi-bin/cmd/system?V2_AUDIO_ENABLED=1</a></font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br>
+	</font>
+</p>
+
+</body>
+
+</html>

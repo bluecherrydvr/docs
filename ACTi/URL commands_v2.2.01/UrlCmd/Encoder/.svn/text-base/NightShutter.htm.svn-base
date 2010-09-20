@@ -1,0 +1,129 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Night Shutter</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>NIGHT_SHUTTER_MODE, NIGHT_SHUTTER_SPEED, NIGHT_MAX_SHUTTER</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set the Video Shutter configurations for night time mode.</p>
+		<p>These URLs is the same as the URL VIDEO_SHUTTER_MODE, VIDEO_SHUTTER_SPEED, MAX_AUTO_SHUTTER in the ENCODER CGI and are   only available in PlatformT encoders. When the camera enters the night time   state, the night time video profile will be loaded. The shutter control settings are the parameters in the night time video profile. Please refer to the <A href="NightTimeProfile.htm">parameters of night time profile</A> for further  details
+        </p>
+	</blockquote>
+
+<h3>Input Argument</h3>
+	<ul><li>NIGHT_SHUTTER_MODE</li></ul>
+	<blockquote>
+		AUTO, MANUAL
+	</blockquote>
+    <ul><li>NIGHT_SHUTTER_SPEED</li></ul>
+	<blockquote>
+		15,30, 60, 120, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000<br>
+        where the shutter speed is the 1/(input argument). For example, the shutter speed is 1/30 sec when the input argument is 30.
+	</blockquote>
+     <ul><li>NIGHT_MAX_SHUTTER</li></ul>
+	<blockquote>
+		1~10
+	</blockquote>
+
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    	NIGHT_SHUTTER_MODE='AUTO'<br>
+        NIGHT_SHUTTER_SPEED='60'<br>
+        NIGHT_MAX_SHUTTER='4'
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+        OK:NIGHT_SHUTTER_MODE='AUTO'<br>
+        or<br>
+        ERROR: NIGHT_SHUTTER_MODE='AUTO'<br>
+        <br>
+        OK:NIGHT_SHUTTER_SPEED='60'<br>
+        or<br>
+        ERROR: NIGHT_SHUTTER_SPEED='60'<br>
+        <br>
+        OK:NIGHT_MAX_SHUTTER='4'<br>
+        or<br>
+        ERROR: NIGHT_MAX_SHUTTER='4'
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul><li>PlatformT : All Camera</li></ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		<p>Valid</p>
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+    	<p>
+			<a href="VideoWbMode.htm">VIDEO_SHUTTER_MODE</a>,,
+			<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+            <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a>
+        </p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		<p>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHUTTER_MODE<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHUTTER_MODE<br>
+            <br>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHUTTER_SPEED<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHUTTER_SPEED<br>
+            <br>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_MAX_SHUTTER<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?<font face="Arial" size="3">NIGHT_MAX_SHUTTER
+        </p>
+	</blockquote>
+    <ul><li>Write Operation<</li></ul>
+	<blockquote>
+    	<p>
+        	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHUTTER_MODE=AUTO<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHUTTER_MODE=AUTO<br>
+            <br>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_SHUTTER_SPEED=60<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?NIGHT_SHUTTER_SPEED=60<br>
+            <br>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_MAX_SHUTTER=4<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?<font face="Arial" size="3">NIGHT_MAX_SHUTTER=4
+        </p>
+    </blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+    		<a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

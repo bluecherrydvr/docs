@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_STREAM</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>VIDEO_STREAM</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or Set the type of the video streaming mode.</p>
+	<p>There are two video streaming mode in the decoder. The one is the SINGLE mode and the other one is SEQUENTIAL mode. In SINGLE mode, the decoder gets a video stream from a specific channel all the time. In SEQUENTIAL mode, the decoder gets the video stream from a channel based on the acending order in the channel list which was pre-configured by users.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	SINGLE, SEQUENTIAL
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	VIDEO_STREAM='SINGLE'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: VIDEO_STREAM='SINGLE'<br>
+	or<br>
+    ERROR: VIDEO_STREAM='SINGLE'
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>Platform A : Decoders</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<a href="SetChannel.htm">SET_CHANNEL</a>,
+    <a href="ChannelConfig.htm">CHANNEL_CONFIG</a>,
+	<a href="ChannelSwitch.htm">CHANNEL_SWITCH</a>,
+  <a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a>,
+  <a href="ChannelTime.htm">CHANNEL_TIME</a>,
+  <a href="ChannelInfo.htm">CHANNEL_INFO</a>,
+    <a href="ChannelSwitch.htm">CHANNEL_SWITCH</a>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_STREAM<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?VIDEO_STREAM
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;VIDEO_STREAM=SINGLE<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/decoder?VIDEO_STREAM=SINGLE
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>,
+	<a href="decoder.htm">DECODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

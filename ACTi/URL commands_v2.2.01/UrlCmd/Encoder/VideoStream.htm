@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_STREAM</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_STREAM</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the type of the video streaming mode.</font></p>
+	<p><font face="Arial">This URL configures the video streaming mode for some 
+	specific encoder devices. </font>
+	</p>
+	<p><font face="Arial">In dual streams encoder devices, the available 
+	streaming mode is <font color="#FF0000">SINGLE</font> or 
+	<font color="#FF0000">DUAL</font>. In SINGLE streaming mode, the device is 
+	able to encode a single video stream. In DUAL streaming mode, the device 
+	could encode a video source to two different resolution and frame number 
+	video streams. </font>
+	</p>
+	<p><font face="Arial">In QUAD video servers, the available streaming mode is 
+	<font color="#FF0000">SINGLE, SEQUENTIAL,</font> and <font color="#FF0000">QUAD</font>. in 
+	SINGLE streaming mode, the device have 4 video streams from 4 
+	video sources. These 4 video streams shares the encoding bandwidth in the 
+	device. For example, every video stream has 7.5 PFS in D1. The device could 
+	stream one of them to remote device by request. In SEQUENTIAL mode, it is 
+	similar to SINGLE mode, the device will switch the video stream in channel 
+	1, 2, 3 and 4 order with the configurable displaying time. The frame rate in 
+	each video stream is 7.5 frames/second. In QUAD streaming 
+	mode, the device have a single video stream which encodes 4 video sources. 
+	These 4 video sources was encoded together into a single video frame in D1 
+	size (every video source is encoded in CIF size).</font></p>
+	<p><font face="Arial">In 1CH encoder or Multi-Channel devices, only
+	<font color="#FF0000">SINGLE</font> streaming mode is acceptable. This is 
+	for cross-platform consideration. The error message will be returned if it 
+	sets not SINGLE streaming mode.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">SINGLE, DUAL, SEQUENTIAL, QUAD</font></p>
+	<p><font face="Arial">Possible Input Argument with platform devices</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="302"><b><font face="Arial">Platfrom 
+			Devices</font></b></td>
+			<td align="center" width="245"><b><font face="Arial">Possible Input 
+			Argument</font></b></td>
+			<td align="center"><b><font face="Arial">Attribute</font></b></td>
+		</tr>
+		<tr>
+			<td align="center" width="302"><font face="Arial">1CH or 
+			Multi-Channel Encoder</font></td>
+			<td align="center" width="245"><font face="Arial">SINGLE</font></td>
+			<td align="center"><font face="Arial">RW</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="302"><font face="Arial">PlatfromT Encoder</font></td>
+			<td align="center" width="245"><font face="Arial">SINGLE, DUAL</font></td>
+			<td align="center"><font face="Arial">RW</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="302"><font face="Arial">EPL QUAD Video 
+			Server</font></td>
+			<td align="center" width="245"><font face="Arial">SINGLE, SEQUENTIAL, QUAD</font></td>
+			<td align="center"><font face="Arial">RW</font></td>
+		</tr>
+	</table>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial" size="3">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_STREAM='SINGLE'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_STREAM='SINGLE'</font><br>
+	<font face="Arial" size="3">or</font><br><font face="Arial" size="3">ERROR: VIDEO_STREAM='SINGLE'</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">PlatformW : All Encoders</font>. Firmware version 2.10.03 and later</li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Encoders</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="QuadSequenceTime.htm">QUAD_SEQUENCE_TIME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_STREAM</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?VIDEO_STREAM</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_STREAM=SINGLE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">VIDEO_STREAM=SINGLE</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

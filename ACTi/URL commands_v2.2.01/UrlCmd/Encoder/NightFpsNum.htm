@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>NIGHT_FPS_NUM</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>NIGHT_FPS_NUM</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or set the FPS (Frame Per Second) number (Frame Rate) configuration for night time mode.</p>
+	<p>This URLs is the same as the URL VIDEO_FPS_NUM in the ENCODER CGI and  only available in   PlatformT encoders. When the camera enters the night time state, the night time   video profile will be loaded. The video FPS number is  the one of parameters in the night time video profile. Please refer to the <A href="NightTimeProfile.htm">parameters of night time profile</A> for further   details.    </p>
+	<p>
+   	   The FPS number set by this URL will be set to the current encoder's FPS number. For example, the H.264 FPS number was set by this URL if the runtime encoder is H.264. When read, the runtime FPS number will be returned.
+</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	FPS Number. refer to the VIDEO_FPS_NUM URL.</blockquote>
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>NIGHT_FPS_NUMBER='30'</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	OK: NIGHT_FPS_NUMBER='30'<br>
+        or<br>
+        ERROR: NIGHT_FPS_NUMBER='30'
+	</blockquote>
+<h3>Applicability</h3>
+<ul>
+    <li>PlatformT : All Encoders</li>
+  </ul>
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+  <p><a href="../Mpeg4/VideoFpsNum.htm">VIDEO_FPS_NUM</a></p>
+	</blockquote>
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    	<p>
+			http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_FPS_NUM<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/encoder?NIGHT_FPS_NUM
+	</p>
+	</blockquote>
+    
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+			http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_FPS_NUM=30<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/encoder?NIGHT_FPS_NUM=30
+	</p>
+	</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>, <a href="../Encoder/Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

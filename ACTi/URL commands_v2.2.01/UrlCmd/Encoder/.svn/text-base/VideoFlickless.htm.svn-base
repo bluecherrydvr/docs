@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_FLICKLESS</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>VIDEO_FLICKLESS</h1>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the video flickerless mode.</p>
+	<p>
+    	Currently, the flickerless is used for different purposes depends on types of camera. The flickerless is used in the indoor environment with fluorescent
+        lamps. Some sensors are capable to adapt themselves to eliminate the video blinking or color rolling caused by mis-sync of the sensor shutter and
+        power line frequency.
+    </p>
+	<p><u><b>EPL MT9M131 and MT9V135 Camera</b></u></p>
+	<p>
+    	When the sensor is MT9V135 or MT9M131 in the camera, the flickerless was used for setting the lighting condition which is similar to 
+        line frequency. The real flickerless function is always ON in theses sensor (manual flickerless mode). Therefore, the input argument of this URL 
+        is 50HZ and 60HZ in EPL camera. 
+        Currently, we don't have plan to move the flickerless out to line frequency.</font></p>
+	<div align="center">
+		<table border="1" width="80%" id="table2">
+			<tr>
+				<td width="38%" align="center">Flickerless</td>
+				<td width="62%" align="center">Lighting Condition in Sensor</font></td>
+			</tr>
+			<tr>
+				<td align="center">50Hz</td>
+				<td align="center">50Hz</td>
+			</tr>
+			<tr>
+				<td align="center">60Hz</td>
+				<td align="center">60Hz</td>
+			</tr>
+		</table>
+	</div>
+	<p><b><u>PlatformT Camera</u></b></p>
+	<p>
+    	The PlatformT camera with MT9M131, the input argument of this URL is aluays ON (manual flickerless mode). The new configuration, line frequency,
+        gives the lighting condition to the sensor already. The flickerless configuration will not be used in this type of camera<br>
+        Therefore, the return message of this URL is fixed to ON in a write command no matter the input argument is ON, OFF, AUTO, 50Hz or 60Hz. 
+        No error message will be returned in this case.
+    </p>
+    <p>
+    	In PlatformT IT1 camera, the flicker issue will not be happened because the IT1 configurations we have could mamage 50Hz and 60Hz lighting condition well. So, the Flickerless shoule be fixed to OFF in IT1. This URL becomes read-only command. And the return message of this URL is fixed to OFF in a write command no matter the input argument is ON, OFF, AUTO, 50Hz or 60Hz. 
+    No error message will be returned in this case.</p>
+    <p>For other DSP or Sensors, the flickerless might be configurable.</p>
+	<p>
+    	The error message will be returned if the encoder does not support this URL.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	mode<br>
+    where<br>
+	mode can be 50HZ, 60HZ, AUTO, ON, OFF
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read and Write</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		VIDEO_FLICKLESS='60HZ'
+    </blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		OK: VIDEO_FLICKLESS='60HZ'<br>
+		or<br>
+		ERROR: VIDEO_FLICKLESS='60HZ'
+    </blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All Camera with sensor MT9V135, MT9M131, HQ1</li>
+		<li>PlatfotmT : All Camera with sensor MT9M131, IT-1, HQ1, VXCMOS</li>
+	</ul>
+<h3>Status</h3>
+	<blockquote>
+		Valid
+	</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="VideoWbMode.htm">VIDEO_WB_MODE</a>,
+	<a href="VideoWbGain.htm">VIDEO_WB_GAIN</a>, 
+    <a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+	<a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+	<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>,
+	<a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+	<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+    <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a>,
+    <a href="LineFreq.htm">LINE_FREQ</a>,
+    <a href="../System/VideoTv.htm">VIDEO_TV</a>
+</blockquote>
+<h3>Example</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_FLICKLESS<br>
+		or<br>
+		http://ip:port/cgi-bin/cmd/encoder?VIDEO_FLICKLESS
+	</blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_FLICKLESS=60HZ<br>
+		or<br>
+		http://ip:port/cgi-bin/cmd/encoder?VIDEO_FLICKLESS=60HZ
+    </blockquote>
+<h3>Back to</h3>
+	<blockquote>
+		<a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a>
+	</blockquote>
+
+</body>
+
+</html>

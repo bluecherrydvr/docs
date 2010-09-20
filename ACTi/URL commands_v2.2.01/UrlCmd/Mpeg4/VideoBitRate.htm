@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_BITRATE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_BITRATE</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the average video bitrate in bits/sec for 
+	MPEG4/H.264 encoding.</font></p>
+	<p><font face="Arial">This URL will not take effect if</font></p>
+	<ol>
+		<li><font face="Arial">The encoder type is MJPEG (refer to VIDEO_ENCODER)</font></li>
+		<li><font face="Arial">The Video Quality is not NONE in 
+		MPEG4/H.264 encoding (refer to VIDEO_MPEG4_QUALITY).</font></li>
+		<li><font face="Arial">The Maximum Video Bitrate is not unlimited for MPEG4/H.264 encoding 
+		(refer to VIDEO_MAX_BITRATE)</font></li>
+	</ol>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's VIDEO_BITRATE configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">28K, 56K, 128K, 256K, 384K, 500K, 750K, 1M, 1.2M, 
+	1.5M, 2M, 2.5M, 3M, 3.5M, 4M, 4.5M, 5M, 5.5M, 6M in unit of bits/sec.<br>
+	Note that bit rate from 3.5M to 6M are available in PaltformT encoders only.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">VIDEO_BITRATE='3M'</font>
+</blockquote>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_BITRATE='3M'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: VIDEO_BITRATE='3M'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All 1CH and 2CH Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../Encoder/VideoEncoder.htm">VIDEO_ENCODER</a>, 
+	<a href="../Encoder/VideoMaxBitRate.htm">VIDEO_MAX_BITRATE</a>, 
+	<a href="../Encoder/VideoMpeg4Quality.htm">VIDEO_MPEG4_QUALITY</a>, 
+	<a href="../Encoder/VideoH264Quality.htm">VIDEO_H264_QUALITY</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_BITRATE</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">VIDEO_BITRATE</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font><br>
+	</p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_BITRATE</font><font face="Arial">=3M</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">VIDEO_BITRATE</font><font face="Arial">=3M</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a>, <a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

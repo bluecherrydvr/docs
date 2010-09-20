@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNMP_PASSWORD</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SNMP_PASSWORD</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set SNMP (Simple Network Management Protocol) Password String.</p>
+		<p>In SNMP V3, the Trap message was protected by the authentication mechanism. The Trap name and password are used for this purpose. Be noted that Trap name and password are not used if the SNMP version is V1 or V2c because the Trap message in these SNMP version does not need authentication with SNMP agent.</p>
+		<p>In SNMP v3, the SNMP MIB access needs the authentication as well. This password is used for that then.</p>
+		<p><strong><u>Important Note</u></strong></p>
+		<blockquote>
+		  <p class="red">The minimum length of this password has to be longer than 7 characters when the SNMP V3 is enabled.</p>
+	  </blockquote>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and the Router's SNMP_TRAP_NAME configurations will be returned.
+    	</p>
+	</blockquote>
+    
+<h3>Input Argument</h3>
+	<blockquote>
+		Textual String (&gt;= 8 characters and < 64 characters)
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li>
+	</ul>
+	<blockquote>
+		SNMP_PASSWORD='mypasswd'
+</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+  OK: SNMP_PASSWORD='mypasswd'<br>
+		or<br>
+		ERROR: SNMP_PASSWORD='mypasswd'<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p> 
+       	  <a href="SnmpState.htm">SNMP_STATE</a>,
+        	 <a href="SnmpReadComm.htm">SNMP_READ_COMMUNITY</a>, 
+            <a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a>, 
+            <a href="SnmpTrap.htm">SNMP_TRAP</a>,
+            <a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a>,
+            <a href="SnmpTrapComm.htm">SNMP_TRAP_COMMUNITY</a>,
+            <a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a>
+        </p>
+    </blockquote>
+
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_PASSWORD<br>
+		or<br>
+http://ip:port/cgi-bin/cmd/system?SNMP_PASSWORD</blockquote>
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_PASSWORD=mypasswd<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_PASSWORD=mypasswd</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="system.htm">SYSTEM CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CONFIG_GET</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>CONFIG_GET</h1>
+<p>&nbsp;</p>
+
+<h3>Description</h3>
+	<blockquote>
+		<p>Get the device's configuration.</p>
+		<p>
+        	The device will reply its configurations as the return message of this URL. Note that some configurations are not the run-time configurations like WAN port configurations.
+        </p>
+        <p>
+        	The configurations, OEM_SERIAL_NUM, OEM_MODEL_NAME and OEM_MODEL_DESC are available in the return message of this URL.
+        </p>
+		<p>
+        	If the CHANNEL=n was not set with this URL to the Multi-Channel device, the router's configuration will be returned.
+            Otherwise, the channel n video server's configuration will be returned.
+        </p>
+	</blockquote>
+
+<h3>Input Argument</h3>
+	<blockquote>
+		<p>None</p>
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+		<li>Read Only</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation (example)</li></ul>
+	<blockquote>
+		WAN_TYPE='1'<br>
+        WAN_IP='192.168.0.100'<br>
+        WAN_NETMASK='255.255.255.0'<br>
+        WAN_GATEWAY='192.168.0.254'<br>
+        WAN_PPPOE_USERNAME=''<br>
+        WAN_PPPOE_PASSWORD=''<br>
+        SPEED_WAN='0'<br>
+        LANGUAGE='0'<br>
+        PORT_HTTP='80'<br>
+        PORT_SEARCH_1='6005'<br>
+        PORT_SEARCH_2='6006'<br>
+        LAN_HOSTNAME='ACTi'<br>
+        DNS_PRIMARY=''<br>
+        DNS_SECONDARY=''<br>
+        DDNS_TYPE='1'<br>
+        DDNS_HOSTNAME=''<br>
+        DDNS_SERVICE='dyndns'<br>
+        DDNS_USERNAME=''<br>
+        DDNS_PASSWORD=''<br>
+        DATE_TYPE='2'<br>
+        ........<br>
+        LAYOUT_FOOTER_COPYRIGHT='Copyright@2003-2008ACTi Corporation All Right Reserved'<br>
+        COMPANY_NAME='ACTi Corporation'<br>
+        COMPANY_URL='www.acti.com'<br>
+        ACTIVEX_URL=''<br>
+        OEM_SERIAL_NUM=''<br>
+		OEM_MODEL_NAME=''<br>
+		OEM_MODEL_DESC=''<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>WPL Platform : All Encoder Devices</li>
+		<li>EPL Platform : All Encoder Devices</li>
+		<li>PlatfotmT : All Encoder Devices</li>
+		<li>Multi-Channel Encoder : Router Only</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		Valid
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>
+       	<a href="ConfigSet.htm">CONFIG_SET</a></p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<blockquote>
+		<p>
+			http://ip:port/cgi-bin/update?USER=Admin&amp;PWD=123456&amp;CONFIG_GET<
+        </p>
+	</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>,
+        	<a href="update.htm">UPDATE CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

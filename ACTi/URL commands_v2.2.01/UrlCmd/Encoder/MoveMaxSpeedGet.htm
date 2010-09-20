@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOVE_MAX_SPEED_GET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">MOVE_MAX_SPEED_GET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the current movement limitation configuration of 
+	camera.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the CHANNEL 1 video server's MOVE_MAX_SPEED_GET 
+	configuration will be returned. If the CHANNEL 1 video server does not 
+	connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial">Read</font><font face="Arial" size="3"> Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: MOVE_MAX_SPEED_GET='n,m'</font><br>
+	<font face="Arial">where (n,m) 
+	are the maximum move speeds in direction (pan, tilt)</font><br>
+	<font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Both of them are started from 1 (slowest) to 5(fastest).</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Addr.htm">ADDR</a>, <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+	<a href="Zoom.htm">ZOOM</a>, <a href="ZoomPosition.htm">ZOOM_POSITION</a>,
+	<a href="Focus.htm">FOCUS</a>, <a href="Move.htm">MOVE</a>,
+	<a href="MoveLimit.htm">MOVE_LIMIT</a>, <a href="MoveLimitGet.htm">
+	MOVE_LIMIT_GET</a>, <a href="MoveSpeed.htm">MOVE_SPEED</a>,
+	<a href="Position.htm">POSITION</a>,
+	<a href="PositionGet.htm">POSITION_GET</a>, <a href="XyzPosGet.htm">XYZ_POS_GET</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;MOVE_MAX_SPEED_GET</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?MOVE_MAX_SPEED_GET</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

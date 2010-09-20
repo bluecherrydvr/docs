@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>WAN_PPPOE</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">WAN_PPPOE_USERNAME, WAN_PPPOE_PASSWORD</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or set the PPPoE configuration on WAN port. These Settings are only 
+	valid if only if the WAN_TYPE is PPPoE. The input argument string length 
+	will be checked before apply it.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL will be treated as read-only command and 
+	the Router's WAN port PPPoE setting will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">Character strings (&lt; 64 Bytes)</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except video server in 
+	Multi-Channel Platform)</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">WAN_PPPOE_USERNAME=''</font><br>
+	<font face="Arial">WAN_PPPOE_PASSWORD=''</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: WAN_PPPOE_USERNAME=''</font><br>
+	<font face="Arial">OK: WAN_PPPOE_PASSWORD=''</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: WAN_PPPOE_USERNAME=''</font><br>
+	<font face="Arial">ERROR: WAN_PPPOE_PASSWORD=''</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Wan.htm">WAN</a>, <a href="WanStatus.htm">WAN_STATUS</a>,
+	<a href="V2WanStatus.htm">V2_WAN_STATUS</a>, <a href="WanType.htm">WAN_TYPE</a>, 
+	<a href="WanAddress.htm">WAN_IP</a>, <a href="WanAddress.htm">WAN_NETMASK</a>, 
+	<a href="WanAddress.htm">WAN_GATEWAY</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Opeation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_USERAME</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_PASSWORD</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_PPPOE_USERNAME</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_PPPOE_PASSWORD</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_USERAME=''</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_PPPOE_PASSWORD=''</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_PPPOE_USERNAME=''</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?WAN_PPPOE_PASSWORD=''</font></blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+<p>¡@</p>
+
+</body>
+
+</html>

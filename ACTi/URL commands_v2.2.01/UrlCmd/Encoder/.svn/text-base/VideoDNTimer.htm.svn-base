@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DN_TIMER</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DN_TIMER</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the Day&amp;Night detection timer.</p>
+  <p>To have stable Day&amp;Night detection, the Day&amp;Night detection timers is good approach. The camera will monitor its internal gain level or the CDS output level to determine its Day&amp;Night state. Add the detection timer, the camera changes its Day&amp;Night state if its gain level or CDS output level has been stayed at a certain level for the detection timer interval. Please refer to the <a href="../../DayNightCtrl/DayNightCtrlDesignSpec.html">Day&amp;Night Control Camera Page Design Specification</a> for further details.</p>
+  <p>There are two timers in this URL. The first one is DayTimer and the last one is NightTimer. Both of them are in seconds and the range is from 0 to 255.</p>
+  <p>When CDS is used for Day&amp;Night detection source, the DayTimer and NightTimer have to be set to the Day&amp;Night control module. This module will monitor the output of CDS with these timers to determine the Day&amp;Night state.</p>
+  <p>When the DSP gain level is used for Day&amp;Night detection source, the firmware monitor the DSP gain with these timers to determine the Day&amp;Night state.</p>
+  <p>The error message, <strong>VIDEO_DN_TIMER not found</strong>, will be returned   if the encoders and camera do not support Day&amp;Night function or there is no   Day&amp;Night detection function.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>DayTimer,NightTimer<br />
+  where<br />
+DayTimer is the detection timer in seconds to switching night state to day state<br />
+  NightTimer is the detection timer in seconds to switching day state to night state</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_DN_TIMER=10,10</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: VIDEO_DN_TIMER=10,10
+    <br />
+  or<br />
+  ERROR: VIDEO_DN_TIMER=10,10<br />
+  or<br />
+  ERROR: VIDEO_DN_TIMER not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatfromT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>, <a href="DayNightState.htm">DAY_NIGHT_STATE</a>, <a href="DayGainThd.htm">DAY_GAIN_THD</a>, 
+  <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>, 
+  <a href="VideoDNType.htm">VIDEO_DN_TYPE</a>, 
+  <a href="../../DayNightCtrl/DayNightCtrlDesignSpec.html">Day&amp;Night Control Camera Page Design Specification</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation </li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_TIMER<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_TIMER</p>
+</blockquote>
+<ul>
+  <li>Write Operation </li>
+</ul>
+<blockquote>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_TIMER=10,10<br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_TIMER=10</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

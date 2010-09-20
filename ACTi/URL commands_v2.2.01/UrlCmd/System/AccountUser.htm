@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ACCOUNT_USER</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">ACCOUNT_USER_N</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set user index Naccount name and password.
+	Only root and the same user index account have authorized to execute this command.</font></p>
+	<p><font face="Arial">When write, the account name has not be the same as 
+	the root account name.</font></p>
+	<p><font face="Arial">Only the root-level account could have right to get or set all settings 
+	in the device. The user-level account could get the video and audio stream 
+	and some system information only.</font></p>
+	<p><font face="Arial">Because there are 10 user-level accounts in the device, the last 
+	character, N, in these command indicates the user index of the user-level 
+	account and its range is in 1~10.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL is read-only command and the Router's root 
+	ACCOUNT settings will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n,m</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : Character string (&lt;32 bytes) for user index 
+	N account name</font><br>
+	<font face="Arial">m : Character string (&lt; 64 bytes) for user index N account password</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Encoder)</font></li>
+	<li><font face="Arial">On-Fly (except all devices in  
+	Multi-Channel Encoder)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">ACCOUNT_USER_N=','</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: ACCOUNT_USER_N='user,123'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: ACCOUNT_USER_N=','</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL is new command for replacing the URL 
+	ACCOUNT_USER_NAME_N 
+	and ACCOUNT_USER_PASSWORD_N</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Account.htm">ACCOUNT</a>,
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a>, 
+	<a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a>, 
+	<a href="AccountRoot.htm">ACCONT_ROOT</a>, <a href="AccountUserNamePwd.htm">
+	ACCOUNT_USER_NAME_N</a>, <a href="AccountUserNamePwd.htm">
+	ACCOUNT_USER_PASSWORD_N</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;ACCOUNT_USER_N</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?ACCOUNT_USER_N</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;ACCOUNT_USER_N=user,123</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?ACCOUNT_USER_N=user,123</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

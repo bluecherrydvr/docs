@@ -1,0 +1,139 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>GetCtrlMsg</title>
+<style type="text/css">
+<!--
+.arial {
+	font-family: Arial;
+}
+body blockquote div table {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font size="5" face="Arial">GET_CTRL_MSG</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<font face="Arial">
+	<p>Request encoder to send the notification of DIs, motion, video loss and serial output data to the remote host..</p>
+	<p>The encoder monitors its levels of DIs, motion detection state, video losee state and serial output port in the runtime. It will be much helpful to the remote host to get these states from encoder without polling processes. The remote host just needs to send a single URL command to request the device to update them periordically or when one state of them was chaged.</p>
+	<p>Here is flow chare illusrated how this command works.</p>
+	<p><img src="images/CtrlMsgFlow.JPG" width="858" height="361"></p>
+	<p>The message of the DIs is defined here. The DI=n;level=m; where n is the index of the DI ports started from 1 and the m is the signal level. In the following example, there are two DI ports, DI1 and DI2 and the DI1 level is low and DI2 level is high.</p>
+	<p>--------CtrlMsgBoundary\r\n
+	  <br>
+	Content-Type: text/plain\r\n<br>
+	Contenr-Length: 28\r\n\r\n<br>
+	DI=1;level=0;\n<br>
+	DI=2;level=1;</p>
+	<p>The message of the MDs is defined here. The group=n;level=m;threshold=k; where n is the index of the motion region started form 1, m is the number of active micro-blocks in the motion region and k is the threshold of the number of micro-blocks in the motion region. The motion was treated triggered when the number of active micro-blocks is larger than or equal to the threshold of the number of micro-blocks.</p>
+  <p>In the following example, there are three motion regions in the encoder and the motion region 1 and 2 have motion triggered. The motion region 3 was not triggered.</p>
+	<p>--------CtrlMsgBoundary\r\n<br>
+	Content-Type: text/plain\r\n<br>
+Contenr-Length: 92\r\n\r\n<br>
+group=1;level=98;threshold=83;\n<br>
+group=2;level=57;threshold=43;\n<br>
+  group=3;level=5;threshold=10;</p>
+	<p>The message of the VLOSS is defined here. VLOSS=n; where n is the state of the video loss. 0: there is no video signal. 1: video source is locked.</p>
+	<p>--------CtrlMsgBoundary\r\n<br>
+Content-Type: text/plain\r\n<br>
+Contenr-Length: 9\r\n\r\n<br>
+VLOSS=0;</p>
+	<p>--------CtrlMsgBoundary\r\n<br>
+Content-Type: text/plain\r\n<br>
+Contenr-Length: 9\r\n\r\n<br>
+VLOSS=1;</p>
+	<p>The message of the SERAIL is defined here. The format of the message body is in binary. The message is the raw data of the buffer in the serial input port. In the following example, the raw data in the message is the ascii character string, 123456789.</p>
+	<p>--------CtrlMsgBoundary\r\n<br>
+Content-Type: application/octet-stream\r\n<br>
+Contenr-Length: 9\r\n\r\n<br>
+	123456789</p>
+    </font>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MD,DI,VLOSS,SERIAL,TIME
+</font></p>
+<blockquote>
+	<font face="Arial">
+	<p>MD: Register the motion detection state to the control message. The encoder will monitor the motion state to send the notification to the remote host. If host does not want to monitor them, this argument should not be in the argument.</p>
+	<p>DI: Register the levels of DIs to the control message. The encoder will monitor the DIs' level to send the notification to the remote host. If host does not want to monitor them, this argument should not be in the argument.</p>
+	<p>VLOSS: Register the video loss state to the control message. The encoder will monitor the video source state to send the notification to the remote host. If host does not want to monitor them, this argument should not be in the argument.</p>
+	<p>SERIAL: Register the serial input port to the control message. The encoder will monitor the buffer in the serial input port to send the notification to the remote host. If host does not want to monitor them, this argument should not be in the argument.</p>
+  <p>TIME: the notification timer in seconds. It is from 0 to 300 seconds. The encoder will send the notification to the remote host perodically event the monitoring states were not changed if this timer is not zero. If it is zero, the encoder sends the nodification if only if the monitor states were changed. Missing this argument will set the timer to 0.</p>
+  </font>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write-Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font> </p>
+<ul>
+  <li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p class="arial">Notification message<br>
+	or<br>
+	ERROR: GET_CTRL_MSG is write-only<br>
+	or<br>
+	ERROR: </font>invalid parameters</p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+  <p><font size="4" face="Arial">None</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+<ul>
+  <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">
+	1. Get motion detection and DI state with 3 seconds notification timer.<br>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_CTRL_MSG=DI,MD,3<br>or<br>
+	http://ip:port/cgi-bin/cmd/encoder?GET_CTRL_MSG=DI,MD,3</p>
+	<p>2. Get video loss state as the video loss state was changed.<br>
+	  http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_CTRL_MSG=VLOSS,0<br>
+or<br>
+http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_CTRL_MSG=VLOSS<br>
+	  or<br>
+http://ip:port/cgi-bin/cmd/encoder?GET_CTRL_MSG=VLOSS,0<br>
+or<br>
+http://ip:port/cgi-bin/cmd/encoder?GET_CTRL_MSG=VLOSS</p>
+	<p>3. Get motion detection, DI, video loss states and serial input port data when these states were changed.<br>
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_CTRL_MSG=DI,MD,VLOSS,SERIAL,0<br>
+or<br>
+http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_CTRL_MSG=DI,MD,VLOSS,SERIAL<br>
+or<br>
+http://ip:port/cgi-bin/cmd/encoder?GET_CTRL_MSG=DI,MD,VLOSS,SERIAL,0<br>
+or<br>
+http://ip:port/cgi-bin/cmd/encoder?GET_CTRL_MSG=DI,MD,VLOSS,SERIAL
+</font></blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial">
+  <a href="../index.htm">HOME</a>, 
+  <a href="Encoder.htm">ENCODER CGI</a>, 
+  <a href="../System/system.htm">SYSTEM CGI</a>
+  </font></p>
+</blockquote>
+<p><font face="Arial"></font></p>
+</body>
+
+</html>

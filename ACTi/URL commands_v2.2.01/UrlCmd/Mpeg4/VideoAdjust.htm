@@ -1,0 +1,129 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_ADJUST</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>
+	VIDEO_BRIGHTNESS, VIDEO_CONTRAST, <br>
+	VIDEO_SATURATION, VIDEO_HUE
+</h1>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or set the video parameters.</p>
+		<p>Note that VIDEO_HUE is Read-Only in some EPL and PlatformT encoders. Please check devices' specifications.</p>
+		<p>
+        	If the CHANNEL=n was not set with this URL to the Multi-Channel device,  this command is read-only command and the CHANNEL 1 video parameter configuration 
+            will be returned. If the CHANNEL 1 video server does not connect to the router, the error message will be returned.
+        </p>
+	</blockquote>
+
+<h3>Input Argument</h3>
+	<blockquote>
+		<p>0~100.</font></p>
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    	<p>
+            VIDEO_BRIGHTNESS='50'<br>
+            VIDEO_CONTRAST='50'<br>
+            VIDEO_SATURATION='50'><br>
+            VIDEO_HUE='50'
+        </p>
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+            OK: VIDEO_BRIGHTNESS='50'<br>
+            OK: VIDEO_CONTRAST='50'<br>
+            OK: VIDEO_SATURATION='50'<br>
+            OK: VIDEO_HUE='50'<br>
+            or<br>
+            ERROR: VIDEO_BRIGHTNESS='50'<br>
+            ERROR: VIDEO_CONTRAST='50'<br>
+            ERROR: VIDEO_SATURATION='50'<br>
+            ERROR: VIDEO_HUE='50'
+		</p>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+        <li>WPL Platform : All 1CH and 2CH Encoders</li>
+        <li>EPL Platform : All Encoders</li>
+        <li>PlatformT : All Encoders</li>
+        <li>Multi-Channel Encoder : All Video Servers</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		<p>Valid</p>
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>None</p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    	<p>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_BRIGHTNESS<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_CONTRAST<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_SATURATION<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_HUE<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_BRIGHTNESS<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_CONTRAST<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_SATURATION<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_HUE
+        </p>
+        where CGI could be mpeg4 or encoder
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_BRIGHTNESS=50<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_CONTRAST=50<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_SATURATION=50<br>
+            http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_HUE=50<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_BRIGHTNESS=50<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_CONTRAST=50<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_SATURATION=50<br>
+            http://ip:port/cgi-bin/cmd/CGI?VIDEO_HUE=50
+        </p>
+        where CGI could be mpeg4 or encoder
+    </blockquote>
+    
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="mpeg4.htm">MPEG4 CGI</a>,
+            <a href="../encoder/encoder.htm">ENCODER CGI</a>
+        </p>    
+	</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>AUDIO_IN_SENSITIVITY</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">AUDIO_IN_SENSITIVITY</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the AudioIn Sensitivity configuration. 
+	Check the device specification is needed before use this command.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	AUDIO_IN_SENSITIVITY configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+	<p><font face="Arial">For WPL Decoder Devices, there are four AudioIn Volume 
+	levels, mute, low, middle and larger. Considering consistency of this URL, 
+	the AudioIn level will be mapped into LOW and HIGH levels. Here is the 
+	mapping rule.</font></p>
+	<table border="1" width="70%" id="table1">
+		<tr>
+			<td align="center" width="417"><font face="Arial" size="4">AudioIn 
+			Level in WPL Decoder Device</font></td>
+			<td align="center"><font face="Arial" size="4">Sensitivity Level of 
+			this URL</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="417"><font face="Arial">low</font></td>
+			<td align="center"><font face="Arial">LOW</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="417"><font face="Arial">larger</font></td>
+			<td align="center"><font face="Arial">HIGH</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The mute and middle levels will be not implemented 
+	then.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">LOW : 0dB MIC Boost</font><br>
+	<font face="Arial">HIGH : 20 dB MIC Boost</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">AUDIO_IN_SENSITIVITY='HIGH'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: AUDIO_IN_SENSITIVITY='HIGH'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: AUDIO_IN_SENSITIVITY='HIGH'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform: All decoder devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (4CH and 16CH 
+	only)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="V2AudioEnabled.htm">V2_AUDIO_ENABLED</a>,
+	<a href="AudioOutVolume.htm">AUDIO_OUT_VOLUME</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;AUDIO_IN_SENSITIVITY<br>
+	or<br>http://ip:port/cgi-bin/cmd/system?AUDIO_IN_SENSITIVITY</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;AUDIO_IN_SENSITIVITY=HIGH<br>
+	<foont face="Arial">or<br>http://ip:port/cgi-bin/cmd/system?AUDIO_IN_SENSITIVITY=HIGH</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br>
+	</font>
+</p>
+
+</body>
+
+</html>

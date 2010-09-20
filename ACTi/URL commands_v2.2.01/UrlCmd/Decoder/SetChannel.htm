@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SET_CHANNEL</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>SET_CHANNEL</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+  <p>Add or remove the specific channel to or from the decoder's channel list.</p>
+  <p>In this URL, the decoder will not check if the channel is alive or not. The users should be sure of the availability of the channels before add the channel to the decoder's channel list. The configuration of the channel is created by the URL <a href="ChannelConfig.htm">CHANNEL_CONFIG</a> in decoder CGI.</p>
+  <p>If there is no input argument, the decoder will return the channels in the channel list. For example, the return message of this URL is<br />
+  SET_CHANNEL=1,2,3,6,8<br />
+  where channel 1, 2, 3, 6, 8 are in the channel list and decoder will connect to these channels sequentially.<br />
+  If these is no channel in the channel list, the SET_CHANNEL=NONE will be returned.
+  </p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>None (read command)<br />
+  or<br />
+  	command,channel (write command)<br />
+    where<br />
+    command: it could be ADD (add the channel to the channel list), DEL (remove the channel form the channel list).<br />
+  channel: the channel ID in the channel list. The range of channel is from 1~16.</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Readable and Writable</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>SET_CHANNEL='NONE'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: SET_CHANNEL='ADD,1'<br />
+    or<br />
+    ERROR: invalid parameters<br />
+  </p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>Platform A : Decoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoStream.htm">VIDEO_STREAM</a>, <a href="SetChannel.htm">SET_CHANNEL</a>, <a href="ChannelConfig.htm">CHANNEL_CONFIG</a>, <a href="ChannelSwitch.htm">CHANNEL_SWITCH</a>, <a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a>, <a href="ChannelTime.htm">CHANNEL_TIME</a>, <a href="ChannelInfo.htm">CHANNEL_INFO</a>, <a href="ChannelSwitch.htm">CHANNEL_SWITCH</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;SET_CHANNEL<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/decoder?SET_CHANNEL</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;SET_CHANNEL=ADD,1<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/decoder?SET_CHANNEL=ADD,1</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="SetChannel.htm">DECODER CGI</a></p>
+</blockquote>
+</body>
+</html>

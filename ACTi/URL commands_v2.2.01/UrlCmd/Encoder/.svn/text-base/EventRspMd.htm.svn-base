@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EVVENT_RSPMDn</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>EVENT_RSPMD1, EVENT_RSPMD2, EVENT_RSPMD3 </h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the motion detection configurations for events.</p>
+  <p>The state, sensitivity, active time and motion object size of a motion region could have different settings when the event was triggered. As the event becomes inactive, the motion settings in a motion region will be reloaded to the original values automatically.</p>
+  <p>The location and size of the motion window in the motion region is the same as the motion settings in normal state (event was not triggered). Refer to the <a href="MotionConfig.htm">MOTION_CONFIG</a> URL for general motion configurations.</p>
+  <p>This URL EVENT_RSPMD<strong>n</strong> configures the settings in <strong>n</strong>th motion regions. For example, the EVENT_RSPMD1 gets or sets the configurations of motion region 1 for events.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>state,sen,time,object</p>
+  <p>
+    state: 0: Disable, 1: Enable. motion detection is enabled/disable when event occurs.<br />
+    sen: sensitivity of motion detection (0~100). The higher value, more sensitive in motion detection.<br />
+    time: motion timer. (0~300 seconds).<br />
+    object: the size of the motion object
+  </p>
+</blockquote>
+<h3>Attribute</h3>
+<blockquote>
+  <p>Read and Write<br />
+  On-Fly</p>
+</blockquote>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>EVENT_RSPMDn='0,70,5,10'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: EVENT_RSPMDn='0,70,5,10'<br />
+  ERROR: EVENT_RSPMDn='0,70,5,10'</p>
+</blockquote>
+<h3>Applicability</h3>
+<blockquote>
+  <p>EPL Platform: All Encoders<br />
+  PlatformT: All Encoders<br />
+  Multi-Channel Encoder: All devices</p>
+</blockquote>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="EventConfig.htm">EVENT_CONFIG</a>, <a href="EventDI.htm">EVENT_DIn</a>, <a href="MotionConfig.htm">MOTION_CONFIG</a>, <a href="EventRspMdPIR.htm">EVENT_RSPMDPIR</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPMD<b>n</b><br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPMD<b>n</b></p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPMD<b>n</b>=0,70,5,10<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPMD<b>n</b>=0,70,5,10</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+</html>

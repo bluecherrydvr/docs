@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>SYSTEM_LOG</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+
+<p><font face="Arial" size="5">SYSTEM_LOG</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device system LOG messages. The system information is varied with 
+	different devices. </font> </p>
+	<p>The version of the bootloader and device capability should be added in the system log. If the bootloader version does not exported to the kernel, the &quot;<strong>UNKNOWN</strong>&quot; will be shown. If there is no device capablity in the device, the &quot;<strong>NONE</strong>&quot; will be shown. The version field used in the devcap is DevConf.FwDevCap.head.ver.</p>
+	<p>The format of showing bootloader version is</p>
+	<p>Bootloader Version nnn<br>
+	where nnn is the bootloader version.</p>
+	<p>The format of showing devcap version is</p>
+	<p>Devcap Version nnn<br>
+	where nnn is the bootloader version. It should be shown in 4-digit hexidecimal value with 0x prefixor &quot;NONE&quot;. For example, if nnn = 0x0001, the devcap version in system log should be Devcap Version 0x0001.</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><font face="Arial">The return of message will be a little bit different 
+	from devices. Here is an example.</font></p>
+	<p><span class="red"><font face="Arial">Bootloader Version UNKNOWN</font></span><font face="Arial"><br>
+    Starting Modules Manager<br>
+	  <span class="red">Devcap Version 0x0001</span><br>
+    Start loading Profile File ...<br>
+    load Profile Files Done<br>
+    Start loading OEM Config File ...<br>
+    Load OEM Config File Done!<br>
+    Start loading SYS File ...<br>
+    Load SYS File Done!<br>
+    WAN speed = 0<br>
+    Starting DNS Manager<br>
+    Starting Wan Manager<br>
+    Dynamic IP Setting in <br>
+    DHCP address acquired<br>
+    HOSTNAME=ACTi<br>
+    Starting DDNS Manager<br>
+    DDNS Disabled<br>
+    Init system time by RTC time or Manual Time<br>
+    NTP/SNTP Enabled<br>
+    Starting WEB Server<br>
+    Starting DDNS Manager<br>
+    DDNS Disabled<br>
+    Starting Streaming Server</font><br>
+  </p>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="SystemProperty.htm">SYSTEM_PROPERTY</a>,
+	<a href="SystemInfo.htm">SYSTEM_INFO</a>, <a href="ServerReport.htm">SERVER_REPORT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SYSTEM_LOG</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?SYSTEM_LOG</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

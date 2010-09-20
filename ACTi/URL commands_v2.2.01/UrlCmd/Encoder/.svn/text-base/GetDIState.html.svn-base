@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GET_DI_STATE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>GET_DI_STATE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get the levels of all Digital Inpout (DI) ports.</p>
+  <p>If there is no digital input ports, the return of this URL means the internal GPIOs level. These GPIOs might be flooting in the board design.They should not be refered in users applications then.</p>
+  <p>If the CHANNEL=n was not set with this URL to the   Multi-Channel device, this command is read-only command and the CHANNEL 1 video   server's DIO_STATUS configuration will be returned. If the CHANNEL 1 video   server does not connect to the router, the error message will be   returned.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read-Only</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>
+  <p>The return message is similiar to the return message of <a href="GetCtrlMsg.htm">GET_CTRL_MSG</a>=DI URL in encoder CGI. The format of return message is<br />
+  DI=N;level=L<br />
+  where N  is th index of DI ports. It is started from 1. L is the level of this DI port.</p>
+  <p>Example for 2 DIs<br />
+    The return message for 2 DIs should be like<br />
+  DI=1;level=0<br />
+  DI=2;level=1</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All Devices </li>
+  <li>PlatfotmT : All Devices </li>
+  <li>Multi-Channel Encoder : All Devices </li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="DioOutput.htm">DIO_OUTPUT</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>read operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;GET_DI_STATE<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?GET_DI_STATE</p>
+</blockquote>
+<h3>	Back to</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER_CGI</a></p>
+</blockquote>
+</body>
+</html>

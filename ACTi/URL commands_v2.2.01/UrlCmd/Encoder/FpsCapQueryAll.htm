@@ -1,0 +1,148 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>FPS_CAP_QUERY_ALL</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>FPS_CAP_QUERY_ALL</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get the video FPS number capabilities by giving some video settings.</p>
+	<p>
+    	Because the FPS number is very with several video settings like streaming mode, encoder type, video resolution and sensor type,
+        it is vary difficult to have a mapping table to give the correlation among these settings. In remote site, it is difficult to present
+        correct FPS number when other video parameters were changed. This URL gives the correct FPS capabilities for this purpose.</p>
+	<p>If the CHANNEL=n was not set in the Multi-Channel device, the CHANNLE 1 video server's FPS capabilities will be returned.
+    If the CHANNEL 1 video server does not connect to the router, the error message will be returned.</p>
+	<p><span class="red">Important Note<br>
+    </span>This URL will NOT set the encoder to the specific streaming mode, encoder type and the video resolution which they are the input arguments of this URL. These arguments provide device the parameter to calculate the FPS number listings for reference.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>
+    	stream,encoder1,resolution1,encoder2,resolution2<br>
+        where<br>
+        stream: video streaming mode. It could be SINGLE, DUAL or QUAD (for ACD2000Q only). Please refer to <a href="VideoStream.htm">VIDEO_STREAM</a> URL in ENCOODER CGI.<br>
+        encoder1: encoder type in stream 1. It could be MJPEG, MPEG4 or H264. Please refer to <a href="VideoEncoder.htm">VIDEO_ENCODER</a> URL in ENCODER CGI.<br>
+        resolution1: video resolution in stream 1. The format of this argument is the same as it in <a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a> URL in ENCODER CGI<br>
+        encoder2: encoder type in stream 2. It is similar to encoder1 here and only valid in the PlatformT encoders with DUAL streaming mode.<br>
+    resolution2: video resolution in stream 2. It is similar to resolution1 and only valid in the PlatformT encoders with DUAL streaming mode. </p>
+	<p><strong><u>PlatformW and PlatformA encoders</u></strong></p>
+	<blockquote>
+	  <p>Because the encoders in platformW and platformA are single stream devices, the encoder2 and resolution2 are ignored or could be  any values followed the format of encoder type and video resolution. The format of input argument could be</p>
+	  <p>stream,encoder1,resolution1<br>
+or<br>
+stream,encoder1,resolution1,encoder2,resolution2</p>
+  </blockquote>
+	<p><strong><u>PlatformT encoders</u></strong></p>
+	<blockquote>
+	  <p>When the first input argument stream is SINGLE, the encoder2 and resolution2 are ignored or could be any values followed the format of encoder type and video resolution. In this case, the format of the input argument could be</p>
+	  <p>stream,encoder1,resolution1<br>
+      or<br>
+      stream,encoder1,resolution1,encoder2,resolution2</p>
+	  <p>When the stream is DUAL, the stream1, resolution, stream2, resolution2 are needed to conduct the FPS number listings for two video streams. The format of the input argument has to be<br>
+      stream,encoder1,resolution1,encoder2,resolution2</p>
+  </blockquote>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read Only</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>
+	<p>
+    	The format of the return is S1M1FPS<strong class="red">-</strong>S1M2FPS<strong class="red">;</strong>S2M1FPS<strong><span class="red">-</span></strong>S2M2FPS<br>
+where<br>
+S1M1FPS is the FPS number listing in FPS Mode=MODE1 (Constant FPS Mode) for stream 1<br>
+S1M2FPS is the FPS number listing in FPS Mode=MODE2 (Variable FPS Mode) for stream 1<br>
+S2M1FPS is the FPS number listing in FPS Mode=MODE1 (Constant FPS Mode) for stream 2<br>
+S2M2FPS is the FPS number listing in FPS Mode=MODE2 (Variable FPS Mode) for stream 2<br>
+The format of these four return messages are the listing of the FPS number in ascent order. For example, it could be 1,2,3,4,5,7,19,15,30.<br>
+The <strong><span class="red">-</span></strong> is used to separate these two FPS modes and the <span class="red">;</span> is used to separate two streams' FPS number listings.</p>
+	<p>In PlatformW and PlatformA encoders, they are single stream devices. Therefore, the FPS number listing in stream 2 will not be in the return message. The format of the return message in these devices should be</p>
+	<blockquote>
+	  <p>S1M1FPS<strong class="red">-</strong>S1M2FPS</p>
+  </blockquote>
+	<p>In PlatformT encoders, they are dual stream devices. They could be configured to be a single stream devices or dual stream devices. The format of return message depends on the first input argument of this URL.</p>
+	<ul>
+	  <li>stream is SINGLE</li>
+  </ul>
+	<blockquote>
+	  <p>The format of the return message should be S1M1FPS only.</p>
+  </blockquote>
+	<ul>
+	  <li>stream in DUAL</li>
+  </ul>
+	<blockquote>
+	  <p>The format of the return message should be S1M1FPS<strong class="red">;</strong>S2M1FPS</p>
+  </blockquote>
+	
+	<p><strong><u>Example</u></strong> </p>
+	<p> In the PlatformA D1 NTSC camera, the return of this URL could be FPS_CAP_QUERY_ALL='1,2,3,4,5,6,7,10,15,30-1,2,3,5,7,15,30'<br>
+	  <br>
+    In the PlatformT camera, the return of this URL could be<br>
+    FPS_CAP_QUERY_ALL='1,2,3,4,5,6,7,10,15,30' (stream is SINGLE in the first input argument)<br>
+	or<br>
+	FPS_CAP_QUERY_ALL='1,2,3,4,5,6,7,10,15,30;1,2,3,4,5,6,7,10,15,30' (stream is DUAL in the first input argument)</p>
+	<p>The return message will be returned if there is no input argument or invalid input arguments. The return message is<br>
+	ERROR: invalid parameters</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW : All Encoder Devices (A1D-M2N-V2.10.03 and later)</li>
+	<li>PlatformA : All Encoder Devices (A1D-220-V3.12.04, A4Q-220-V3.04.00 and later)</li>
+	<li>PlatformT : All Encoder Devices (A1D-310-V4.07.10 and later)</li>
+	<li>Multi-Channel Encoder : All Devices (available firmware follows PlatformW and PlatformA firmware)</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="../System/VideoResCap.htm">VIDEO_RESOLUTION_CAP</a>,
+<a href="../System/VideoFpsCap.htm">VIDEO_FPS_CAP</a></blockquote>
+<h3>Example</h3>
+<ul>
+  <li>PlatformW and PlatformA encoders</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;FPS_CAP_QUERY_ALL=SINGLE,MPEG4,N720x480<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/encoder?FPS_CAP_QUERY_ALL=SINGLE,MPEG4,N720x480</p>
+</blockquote>
+<ul>
+  <li>PlatformT encoders</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;CHANNEL=n&amp;FPS_CAP_QUERY_ALL=DUAL,MPEG4,N1280x1024,MJPEG,N640x480<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/encoder?CHANNEL=n&amp;FPS_CAP_QUERY_ALL=DUAL,MPEG4,N1280x1024,MJPEG,N640x480<br>
+    where<br>
+  n: it could be 1 or 2 but without any meaning in this URL.</p>
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+    <a href="system.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

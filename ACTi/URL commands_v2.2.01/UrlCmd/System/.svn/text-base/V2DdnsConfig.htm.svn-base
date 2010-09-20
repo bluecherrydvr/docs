@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_DDNS_CONFIG</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>V2_DDNS_CONFIG</h1>
+<h3>Description</h3>
+	<blockquote>
+		<p>
+    		Get or Set DDNS (Dynamic Domain Name Server) configurations.
+    	</p>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and Router's DDNS configurations 
+        	will be returned.
+    	</p>
+	</blockquote>
+<h3>Input Argument</h3>
+	<blockquote>
+		type,hostname,service,name,password,addr,port
+        <table width="70%" border="1">
+  			<tr>
+    			<th width="21%" scope="col">Input Argument</th>
+    			<th width="79%" scope="col">Description</th>
+  			</tr>
+  			<tr>
+    			<td><div align="center">type</div></td>
+    			<td><div align="left">
+      				<table width="100%" border="1">
+        				<tr>
+          					<th width="17%" scope="col">Value</th>
+          					<th width="83%" scope="col">Description</th>
+        				</tr>
+        				<tr>
+          					<td><div align="center">1</div></td>
+          					<td>
+                            	<div align="left">
+                                	Disable DDNS service<BR>
+            						The rest of input arguments might be not appended. If they are appended in this URL, the error return message will be 
+                                    shown if there is something wrong in these input arguments
+                                </div>
+                            </td>
+        				</tr>
+        				<tr>
+          					<td><div align="center">2</div></td>
+          					<td>
+                            	<div align="left">
+                                	Enable DDNS service<BR>
+            						The rest of input arguments have to be appended. The error return message will be shown if there is something wrong 
+                                    in these input arguments.
+                                </div>
+                            </td>
+        				</tr>
+      				</table>
+    			</div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">hostname</div></td>
+    			<td><div align="left">
+                	The host name to register to DDNS server. The maximum length is 127. If the type is 2, the empty string is not allowed.
+                </div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">service</div></td>
+    			<td><div align="left">
+                	Name of DDNS service server. It could be<br>
+      				dyndns, qdns, ezip, pgpow, dhs, ods, tzo, easydns, justlinux, dyns, hn or zoneedit
+                </div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">name</div></td>
+    			<td><div align="left">User Name to logon DDNS service server (&lt; 32 bytes)</div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">password</div></td>
+    			<td><div align="left">User Password to logon DDNS service server (&lt; 32 bytes)</div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">addr</div></td>
+    			<td><div align="left">DDNS Server addresses (&lt; 32 bytes)</div></td>
+  			</tr>
+  			<tr>
+    			<td><div align="center">port</div></td>
+    			<td><div align="left">DDNS Server TCP Port number (1~65535)</div></td>
+  			</tr>
+		</table>
+	</blockquote>
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write (except all video servers in Multi-Channel Platform)</li>
+		<li>On-Fly</li>
+	</ul>
+<h3>Return of Message</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		V2_DDNS_CONFIG='1,,dyndns,,members.dyndns.org,80'<br>
+	</blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		OK: V2_DDNS_CONFIG='1' (when device received V2_DDNS_CONFIG=1 command)<br>
+		or<br>
+        OK: V2_DDNS_CONFIG='2,camera1.com,dyndns,root,123,192.168.0.100,80'<br>
+		or<br>
+		ERROR: V2_DNS_CONFIG='1,,dyndns,,members.dyndns.org,80'<br>
+	</blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>WIS Platform : 1CH Encoder (Version after V2.10.03)</li>
+		<li>EPL Platform : Encoder (Version after V3.09.10) and Decoder (Version after B1D-220-V3.02.02)</li>
+		<li>PlatformT: Encoder</li>
+		<li>Multi-Channel Encoder : All Devices (Router Version after 2.04.00)</li>
+	</ul>
+<h3>Status</h3>
+	<blockquote>
+        This URL is the new command for replacing the <a href="DdnsConfig.htm">DDNS_CONFIG</a>
+	</blockquote>
+<h3>See Also</h3>
+	<blockquote>
+        <a href="Ddns.htm">DDNS</a>, 
+        <a href="DdnsType.htm">DDNS_TYPE</a>, 
+		<a href="DdnsHostName.htm">DDNS_HOSTNAME</a>,
+        <a href="DdnsService.htm">DDNS_SERVICE</a>, 
+		<a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a>, 
+		<a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a>, 
+        <a href="DdnsConfig.htm">DDNS_CONFIG</a>, 
+        <a href="WanStatus.htm">WAN_STATUS</a>, 
+		<a href="V2WanStatus.htm">V2_WAN_STATUS</a>
+	</blockquote>
+<h3>Example</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_DDNS_CONFIG<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?V2_DDNS_CONFIG
+    </blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_DDNS_CONFIG=1</br>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_DDNS_CONFIG=2,cam.com,dyndns,root,123,192.168.0.100,80<br>
+		or<br>
+		http://ip:port/cgi-bin/cmd/system?V2_DDNS_CONFIG=1,,dyndns,,,,<br>
+		http://ip:port/cgi-bin/cmd/system?V2_DDNS_CONFIG=2,cam.com,dyndns,root,123,192.168.0.1.100,80
+    </blockquote>
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+    <a href="system.htm">SYSTEM CGI</a>
+</blockquote>
+
+</body>
+
+</html>

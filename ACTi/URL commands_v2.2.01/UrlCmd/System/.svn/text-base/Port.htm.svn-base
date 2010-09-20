@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PORT</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the device's networking port number configurations. 
+	The return message of this command depends on the type of devices. In 
+	Encoder devices. the HTTP, search, register, control, video and multicast port 
+	numbers will be returned. In Decoder devices, the HTTP and search port 
+	numbers will be returned.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	the CHANNLE 1 video server's PORT configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<p><i><b><font face="Arial">Form Encoder Devices:</font></b></i></p>
+	<blockquote>
+		<font face="Arial">PORT_HTTP='80'</font><br><font face="Arial">PORT_SEARCH_1='6005'</font><br>
+		<font face="Arial">PORT_SEARCH_2='6006'</font><br><font face="Arial">PORT_REGISTER='6000'</font><br>
+		<font face="Arial">PORT_CONTROL='6001'</font><br><font face="Arial">PORT_VIDEO='6002'</font><br>
+		<font face="Arial">PORT_MULTICAST='5000'</font><br>
+	</blockquote>
+	<p><i><b><font face="Arial">
+	Form Decoder Devices:</font></b></i></p>
+	<blockquote>
+		<p><font face="Arial">PORT_HTTP='80'</font><br><font face="Arial">PORT_SEARCH_1='6005'</font><br>
+		<font face="Arial">PORT_SEARCH_2='6006'</font><br></p>
+	</blockquote>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PortHttp.htm">PORT_HTTP</a>,
+	<a href="PortSearch1_2.htm">PORT_SEARCH_1</a>, <a href="PortSearch1_2.htm">
+	PORT_SEARCH_2</a>, <a href="PortSearch.htm">PORT_SEARCH</a>,
+	<a href="PortTCP2.htm">PORT_REGISTER</a>, <a href="PortTCP2.htm">
+	PORT_CONTROL</a>, <a href="PortTCP2.htm">PORT_VIDEO</a>,
+	<a href="PortTCP2.htm">PORT_MULTICAST</a>, <a href="PortRTP.htm">
+	V2_PORT_RTSP</a>, <a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a>,
+	<a href="PortRTP.htm">V2_PORT_RTP_MULTI_AUDIO</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?PORT</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PORT_SEARCH1_2</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PORT_SEARCH_1, PORT_SEARCH_2</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set device search server port numbers. 
+	We provide some utilities like IPUtility to find all our devices in the 
+	intranet through these UDP search ports.</font></p>
+	<p><font face="Arial">When write, the port number will be checked if it was 
+	used from other applications</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device, this URL is read-only command and the Router's search 
+	server port number will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">UDP port number, 1~65535</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable (except all video servers in 
+	Multi-Channel Encoder)</font></li>
+	<li><font face="Arial">On-Fly (except all devices in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">PORT_SEARCH_1='6005'</font><p><font face="Arial">
+	PORT_SEARCH_2='6006'</font><br>
+	</p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: PORT_SEARCH_1='6005'</font><br>
+	<font face="Arial">OK: PORT_SEARCH_2='6006'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: PORT_SEARCH_1='6005'</font><br>
+	<font face="Arial">ERROR: PORT_SEARCH_2='6006'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL will be obsolete and replaced by 
+	<a href="PortSearch.htm">PORT_SEARCH</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="Port.htm">PORT</a>,
+	<a href="PortHttp.htm">PORT_HTTP</a>, <a href="PortSearch.htm">PORT_SEARCH</a>,
+	<a href="PortTCP2.htm">PORT_REGISTER</a>, <a href="PortTCP2.htm">
+	PORT_CONTROL</a>, <a href="PortTCP2.htm">PORT_VIDEO</a>,
+	<a href="PortTCP2.htm">PORT_MULTICAST</a>, <a href="PortRTP.htm">
+	V2_PORT_RTSP</a>, <a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a>,
+	<a href="PortRTP.htm">V2_PORT_RTP_MULTI_AUDIO</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_SEARCH_1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_SEARCH_2</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_SEARCH_1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_SEARCH_2</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_SEARCH_1=6005</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PORT_SEARCH_2=6006</font><br>
+	<foont face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_SEARCH_1=6005</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?PORT_SEARCH_2=6006</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

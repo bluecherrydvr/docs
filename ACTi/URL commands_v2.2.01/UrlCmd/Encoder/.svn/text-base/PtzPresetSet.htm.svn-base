@@ -1,0 +1,135 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PTZ_PRESET_SET</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_PRESET_SET</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set the PTZ preset entry configuration.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+	<table border="1" width="90%" id="table1">
+		<tr>
+			<td align="center" width="294"><b><font face="Arial">PTZ_PRESET_SET Command</font></b></td>
+			<td align="center"><b><font face="Arial">Description</font></b></td>
+		</tr>
+		<tr>
+			<td align="left" width="294" height="21"><font face="Arial" size="2">
+			Entry,State,PanPos,TiltPos,ZoonPos,PanSpeed,TiltSpeed,ZoomSpeed,Dwell,Name</font></td>
+			<td align="left" height="21"><font face="Arial" size="2">Set a valid entry 
+			(State=1). Clear an entry (State=0)</font></td>
+		</tr>
+		<tr>
+			<td align="left" width="294" height="21">
+			<font size="2" face="Arial">Entry,1</font></td>
+			<td align="left" height="21"><font size="2" face="Arial">Set a valid 
+			entry. The current speed and position of the pan, tilt and zoom will 
+			be used for this preset point </font></td>
+		</tr>
+		<tr>
+			<td align="left" width="294"><font face="Arial" size="2">Entry,0</font></td>
+			<td align="left"><font face="Arial" size="2">Clear a entry</font></td>
+		</tr>
+		</table>
+	<ol style="font-family: Arial; font-size: 12pt">
+		<li><font face="Arial">Entry: For EPL, Entry index in the PTZ Preset Table which 
+	  has 32 entries. It started from 1 to 32.<br>
+      For PlatformT, Entry index in the PTZ Preset Table which 
+	  has 64 entries. It started from 1 to 64</font></li>
+		<li>State: Set the entry to be valid or invalid. It is 1 for a valid 
+      entry and 0 for an invalid entry.</li>
+		<li>PanPos: absolute position in PAN.</li>
+		<li>TiltPos: absolute position in TILT.</li>
+		<li>ZoomPos: absolute position in ZOOM.</li>
+		<li>PanSpeed: Speed of PAN movement, it is in the range of 1 and 5. The 
+	    higher value, the faster movement.</li>
+		<li>TiltSpeed: Speed of TILT movement, it is in the range of 1 and 5. 
+	    The higher value, the faster movement.</li>
+		<li>ZoomSpeed: Speed of ZOOM movement, it is in the range of 2 and 7. 
+	    The higher value, the faster movement.</li>
+		<li>Dwell: The timer for staying this entry in second. This configuration is not used now. 
+	    Keep this setting to 10 when you set an entry.</li>
+		<li>Name: name of this entry. The maximum length of this configuration 
+		  is 31. The name will be truncated if it is longer than 31.</li>
+	</ol>
+<p><font face="Arial">The PositionPan and PositionTilt are signed intergers. The PTZ camera might not have such wide range of 
+	these positions. 
+	However, the device will NOT validate them before parser and 
+	handle this URL. Please refer to the device specification to have correct 
+</font></p>
+	<p><font face="Arial">To clear the preset entry, this URL could be 
+	simplified to PTZ_PRESET_SET=Entry,0 where Entry is from 1. However, the 
+	complete arguments in this URL for clearing the entry is acceptable.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">Refer to above command table</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: </font>
+	<font face="Arial">PTZ_PRESET_SET='Entry,State,PanPos,TiltPos,ZoonPos,PanSpeed,TiltSpeed,ZoomSpeed,Dwell,Name'<br>
+	or<br></font>
+	<font face="Arial" size="3">OK: </font>
+	<font face="Arial">PTZ_PRESET_SET='Entry,n'</font><br>
+	<font face="Arial" size="3">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>,
+	<a href="PtzPresetGo.htm">PTZ_PRESET_GO</a>, <a href="PtzTourSet.htm">
+	PTZ_TOUR_SET</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourState.htm">PTZ_TOUR_STATE</a>, <a href="PtzTourName.htm">
+	PTZ_TOUR_NAME</a>, <a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a>,
+	<a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_PRESET_SET=1,1,0,0,0,3,3,5,10,Entry 
+	1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_PRESET_SET=1,1,0,0,0,3,3,5,10,Entry 
+	1</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?USER=Admin&amp;PWD=123456&amp;PTZ_PRESET_SET=1,0</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?PTZ_PRESET_SET=1,0</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

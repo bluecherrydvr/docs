@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNAPSHOT</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>SNAPSHOT</h1>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get a still image in JPEG format from the encoder.</p>
+	<p>In MPEG4 streaming, it will send the MPEG4 NOP during the snapshot to maintain constant frame rate.</p>
+    <p>
+    	If the CHANNEL=n was not set with this URL to the Multi-Channel device, the target device is the CHANNEL 1. If the CHANNEL 1 video server does not connect to the router,
+        the error message will be returned.
+    </p>
+	<p>Here is the URL handshake of the SNAPSHOT.</p>
+	<p>
+    	The format of this URL http://172.16.3.35/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT is listed below.
+    </p>
+	<p>Stage 1: Send this URL to the device for getting a still image</p>
+	<p><u><i>ASCII FORMAT</i></u></p>
+	<p><img border="0" src="images/SnapshotGet.JPG" width="732" height="116"></p>
+	<p><u><i>Hex Dump Format</i></u></p>
+	<p><img border="0" src="images/SnapshotGetHex.JPG" width="610" height="351"></p>
+	<p>Stage 2 : Device reply with a JPEG image</p>
+	<p><u><i>ASCII FORMAT</i></u></p>
+	<p><img border="0" src="images/SnapshotReply.JPG" width="724" height="438"></p>
+	<p><u><i>Hex Dump Format</i></u></p>
+	<p><img border="0" src="images/SnapshotReplyHex.JPG" width="608" height="963"></p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>None (use current video resolution and default JPEG quality setting)<br>
+	or<br>
+    n<br>
+    where <br>
+    n is the image size (need to refer the supported video resolutions in the device, <a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a>) <br>
+    the quality of the JPEG was defined by device.
+    or<br>
+	n,m<br>
+	where <br>
+	n is the image size (need to refer the supported video resolutions in the device, <a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a>)<br>
+	m is the quality of the JPEG and the range is 1~100. The higher value, the higher quality. </p>
+</blockquote>
+<h3>Attribute</h3>
+	<ul><li>On-Fly</li></ul>
+    
+<h3>Return of Message</h3>
+<blockquote>
+	JPEG image<br>
+	or<br>
+	ERROR:  Description of error
+</blockquote>
+
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All Encoders</li>
+		<li>PlatformT : All Encoders</li>
+		<li>Multi-Channel Encoder : 4CH and 16CH Video Servers</li>
+	</ul>
+    
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a>
+</blockquote>
+
+<h3>Example</h3>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+			http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT<br>
+			or<br>
+			http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT=N640x480,90<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT=N640x480,90<br>
+			or<br>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;SNAPSHOT=N640x480<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/encoder?SNAPSHOT=N640x480
+        </p>
+	</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>,
+			<a href="../Mpeg4/mpeg4.htm">MPEG4 CGI</a>,
+			<a href="Encoder.htm">ENCODER CGI</a>
+	</blockquote>
+    
+</body>
+
+</html>

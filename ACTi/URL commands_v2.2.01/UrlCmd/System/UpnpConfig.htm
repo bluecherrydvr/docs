@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>UPNP_CONFIG</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>UPNP_CONFIG</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set UPnP Configurations.</p>
+	<p>
+    	When the UPnP function is enabled in the device, the remote hosts which are UPnP enabled devices like Windows XP could discover the device automatically.
+        Therefore, the hosts could visit the device's WEB page directly without knowing device's IP addresses.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	state,name<br>
+    where<br>
+    state: 0 (disable) or 1 (enabled).<br>
+    name: UPnP friendly name in 31 bytes character string. These characters should be readable and the space ,' ', character is acceptable.
+    If state = 0, this argument could be omitted.<br>
+    if state = 1 and the name argument is missing, the device will use its current UPnP Friend name setting to start its UPnP.
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	UPNP_CONFIG='0'<br>
+    or<br>
+    UPNP_CONFIG='1,IPCAM-00001'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: UPNP_CONFIG='0'<br>
+    or<br>
+    OK: UPNP_CONFIG='1,IPCAM-00001'<br>
+	or<br>
+	ERROR: UPNP_CONFIG='0'
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>Platform W: All encoder devices</li>
+	<li>Platform A: All devices</li>
+	<li>Platform T: All devices</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=admin&amp;PWD=123456&amp;UPNP_CONFIG<br>
+	or<br>
+    http://ip:port/cgi-bin/cmd/system?UPNP_CONFIG
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=admin&amp;PWD=123456&amp;UPNP_CONFIG=1,IPCAM-00001<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/system?UPNP_CONFIG=1,IPCAM-00001
+</blockquote>
+
+<h3>See also</h3>
+<blockquote>
+	None
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+  <a href="../index.htm">HOME</a>,
+<a href="system.htm">SYSTEM CGI</a></blockquote>
+
+</body>
+
+</html>

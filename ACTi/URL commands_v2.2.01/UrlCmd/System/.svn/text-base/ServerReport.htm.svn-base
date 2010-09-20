@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SERVER_REPORT</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SERVER_REPORT</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	Get the device's system information, WAN port status, System Log and configuration parameters.
+        The return of this URL was divided into four parts separated by the specific tag enclosed by [ ].<br>
+    <strong>This URL is the root level URL command. Only the root could execute this command.</strong></p>
+	<p>
+    	The configurations, OEM_SERIAL_NUM, OEM_MODEL_NAME and OEM_MODEL_DESC are available in the return message [Parameter] of this URL.
+    </p>
+	<p>
+    	Note that the Production ID was shown in the System Information in the return of this URL.</p>
+	<p>If the CHANNEL=n was set with this URL to the Multi-Channel device, the channel n server report will be returned. Otherwise, the router server report will be returned.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	None
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Read Only</li>
+	<li>Not On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<blockquote>
+	<p>The return of message will be a little bit different from devices. Here give an example.</p>
+	<p>
+    	[System Information]<br>
+        Firmware Version = A1D-220-V3.09.10-AC<br>
+        MAC Address = 00:0F:7C:65:75:47<br>
+        Production ID = ACM8511-08G-X-00378<br>
+        Factory Default Type = Two Ways Audio (0x74)<br>
+        Company Name = Camera Corporation<br>
+        WEB Site = www.acti.com<br>
+        Profile ID = MT54G15-RXX_V080609A<br>
+        <br>
+        [WAN Status]<br>
+        IP Address : 172.16.3.36<br>
+        Netmask : 255.255.255.0<br>
+        Gateway : 172.16.3.253<br>
+        DNS Server : 172.16.5.19 168.95.1.1 59.124.232.169<br>
+        DNS Host : <br>
+        WAN Connect Status : Connect<br>
+        DNS Connect Status : Connect<br>
+        DDNS Connect Status : Disconnect
+    </p>
+    <p>
+    	[System log]<br>
+        Starting Modules Manager<br>
+        Start loading Profile File ...<br>
+        load Profile Files Done<br>
+        Start loading OEM Config File ...<br>
+        Load OEM Config File Done!<br>
+        Start loading SYS File ...<br>
+        Load SYS File Done!<br>
+        WAN speed = 0<br>
+        Starting DNS Manager<br>
+        Starting Wan Manager<br>
+        Dynamic IP Setting in <br>
+        DHCP address acquired<br>
+        HOSTNAME=LocalHost<br>
+        Starting DDNS Manager<br>
+        DDNS Disabled<br>
+        Init system time by RTC time or Manual Time<br>
+        NTP/SNTP Enabled<br>
+        Starting WEB Server<br>
+        Starting DDNS Manager<br>
+        DDNS Disabled<br>
+        Starting Streaming Server
+    </p>
+    <p>
+    	[Parameter]<br>
+        WAN_TYPE='1'<br>
+        WAN_IP='192.168.0.100'<br>
+        WAN_NETMASK='255.255.255.0'<br>
+        WAN_GATEWAY='192.168.0.254'<br>
+        WAN_PPPOE_USERNAME=''<br>
+        WAN_PPPOE_PASSWORD=''<br>
+        SPEED_WAN='0'<br>
+        LANGUAGE='0'<br>
+        PORT_HTTP='80'<br>
+        PORT_SEARCH_1='6005'<br>
+        PORT_SEARCH_2='6006'<br>
+        LAN_HOSTNAME='LOCALHOST'<br>
+        DNS_PRIMARY=''<br>
+        DNS_SECONDARY=''
+    </p>
+	<p>......</p>
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW : All Devices</li>
+	<li>PlatformA : All Devices</li>
+	<li>PlatformT : All Devices</li>
+	<li>Multi-Channel Encoder : All Devices</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="SystemProperty.htm">SYSTEM_PROPERTY</a>,
+		<a href="SystemInfo.htm">SYSTEM_INFO</a>,
+        <a href="SystemConf.htm">SYSTEM_CONFIG</a>,
+        <a href="SystemLog.htm">SYSTEM_LOG</a>
+    </p>
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SERVER_REPORT<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?SERVER_REPORT
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>, 
+        <a href="system.htm">SYSTEM CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

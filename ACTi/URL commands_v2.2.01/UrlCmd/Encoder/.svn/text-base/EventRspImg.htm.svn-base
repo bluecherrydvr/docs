@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>EventRspImg</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>EVENT_RSPIMG1, EVENT_RSPIMG2, EVENT_RSPIMG3</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the video image engine of the event configurations.</p>
+	<p>
+    	When event source is triggered, the device could upload the video image or video clip to the SMTP mail server, FTP server or the HTTP CGI program.
+    </p>
+	<p>
+    	The video still image was made by using snapshot technique. The image size is the same as the streaming video resolution and not configurable.
+        The extend file name of the video still image is *.jpg.
+    </p>
+	<p>
+    	The video clip is the raw data of the video stream.
+        The specific header will be inserted in the head of raw data to allow the specific player could play it.
+        The extend file name of the video clip is *.raw.
+    </p>
+	<p>
+    	To upload video still images to the SMTP mail server, the SMTP mail server configurations have to be set first.
+        Refer to the URL <a href="SmtpServer.htm">SMTP_PRI</a> and <a href="SmtpServer.htm">SMTP_SEC</a> for further information.
+    </p>
+	<p>
+    	To upload the video still images or video clip to the FTP server, the FTP server configurations have to be ser first.
+        Refer to the URL <a href="FtpServer.htm">FTP_SERVER</a> for further information.
+    </p>
+	<p>
+    	Currently, upload video still image to SMTP mail server and upload video still image or video clip to FTP server are available.
+    </p>
+    <p>
+    	The upload time should be smaller than the repeat time if the event source is SCH.
+        If the upload time is larger than the repeat time, the device will use the repeat time as the time base to handel the image upload in this case.
+        The upload time is not used then. Refer to EVENT_CONFIG URL.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>
+		type,PreBuf,UploadTime,ImageRate,ImageName,UploadPath,HostUrl,subject,VideoSrc<br>
+		where<br>
+        type: the method of sending message.
+    </p>
+  <table border="1" width="70%">
+		<tr>
+			<th width="30%" align="center">value in type</th>
+			<th align="center">description</th>
+        </tr>
+        <tr>
+			<td align="center">0</td>
+			<td>no image will be uploaded. disable this function</td>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td>upload the video still image to SMTP server</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+            <td>upload the video still image to the HTTP CGI Program 1</td>
+		</tr>
+		<tr>
+			<td align="center">3</td>
+			<td>upload the video still image to the HTTP CGI Program 2</td>
+		</tr>
+		<tr>
+			<td align="center">4</td>
+            <td>upload the video still image to the FTP server</td>
+		</tr>
+		<tr>
+			<td align="center">5</td>
+			<td>upload the video clip to the HTTP CGI Program 1</td>
+		</tr>
+		<tr>
+			<td align="center">6</td>
+			<td>upload the video clip to the HTTP CGI Program 2</td>
+		</tr>
+		<tr>
+			<td align="center">7</td>
+			<td>upload the video clip to the FTP server</td>
+		</tr>
+	</table>
+	<p>
+    	<strong>PreBuf</strong>: the time in seconds before the event source was triggered. It could be 0, 1, 2 or 3 seconds.
+        It does not guarantee to have video with precise timing control. And it is only valid for type 4~7.
+        For still image upload, this argument has to fixed to 0.<br>
+        <br>
+        <strong>UploadTime</strong>: the time in seconds to upload video to the remote server when the event source was triggered.
+        It could be from 0 to 86400. If it is 0, the video upload will be stopped as the event source becomes inactive.<br>
+        <br>
+        <strong>ImageRate</strong>: the frame rate of the still image. It was not used and has to be fixed to 0.
+        For uploading still images, the device will do its best effort to snapshot the video image for uploading until the UploadTime is expired or event source
+        becomes inactive (UploadTime is 0). For uploading video clip, this argument is not used and has to be fixed to 0.
+        The frame rate of the video clip is the same frame rate in streaming mode.<br>
+        <br>
+        <strong>ImageName</strong>: the prefix of file name of the video still image or video clip. The postfix of the file name could be decoded
+        by <a href="PostfixNamingRule.htm">the rule of postfix naming rule</a>. The first character of this value has not to be '%'.
+        The maximum length is 63.<br>
+        <br>
+        <strong>UploadPath</strong>: the prefix of the upload path of the video still image or video clip. The postfix of the file name could be decoded
+        by <a href="PostfixNamingRule.htm">the rule of postfix naming rule</a>. The first character of this value has not to be '%'.
+        The maximum length is 63.<br>
+        <br>
+      <strong>HostUrl</strong>: The destination host address. It depends on the value in type argument. The maximum length is 63.
+  </p>
+    <table border="1" width="70%">
+    	<tr>
+			<th width="30%" align="center">value in type</th>
+			<th align="center">definition of host</th>
+		</tr>
+		<tr>
+        	<td align="center">0</td>
+			<td>no used.</td>
+		</tr>
+		<tr>
+			<td align="center">1</font></td>
+			<td>The receipt email address. The ';&quot; was used to connect several email addresses.</td>
+		</tr>
+		<tr>
+			<td align="center">2, 5</td>
+			<td>The URL for CGI 1 including the CGI path</td>
+		</tr>
+		<tr>
+			<td align="center">3, 6</td>
+			<td>The URL for CGI 2 including the CGI path</td>
+		</tr>
+		<tr>
+			<td align="center">4,7</td>
+			<td>Not used</td>
+		</tr>
+	</table>
+	<p>
+    	<strong>subject</strong>: The subject of the mail. This is only used if the type is 1. It was not used in another type.
+        The character in the subject has to follow RFC 3986 Uniform Resource Identifier Generic Syntax. The maximum length is 31.<br>
+        <br>
+        <strong>VideoSrc</strong>: This is used of dual stream platform. For PlatformA it is fixed to 1.
+        In Dual Streams Platform, it indicates which video stream is used for uploading video images. The 1 is for video stream 1 and 2 is for video stream 2.
+  If the length of the input argument is longer than its maximum length limitation, the error message will be returned. </p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	<p>EVENT_RSPIMG<b>n</b>='1,0,3,0,image_%N-%Y,Dir%hh%mm%ss,myname@mail,com,MySubject,1'<br>
+	where <b>n</b> could be 1, 2 or 3 </p>
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: EVENT_RSPIMG<b>n</b>='4,0,1,0,snapshot-%Y,Dir-%N,host,sujbect,1'<br>
+	or<br>
+	ERROR: EVENT_RSPIMG<b>n</b>='7,1,5,0,video-%Y,Dir-%N,host,subject,1'<br>
+	where <b>n</b> could be 1, 2 or 3
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformA : All Devices</li>
+	<li>PlatformT : All Devices</li>
+	<li>Multi-Channel Encoder : All Devices</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="EventConfig.htm">EVENT_CONFIG</a>,
+        <a href="EventRspDO.htm">EVENT_RSPDOn</a>, 
+        <a href="EventRspMsg.htm">EVENT_RSPMSGn</a>,
+        <a href="EventRspGo.htm">EVENT_RSPGO</a>,
+        <a href="FtpServer.htm">FTP_SERVER</a>,
+        <a href="SmtpServer.htm">SMTP_PRI</a>,
+        <a href="SmtpServer.htm">SMTP_SEC</a>
+    </p>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>read operation</li></ul>
+<blockquote>
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPIMG<b>n</b><br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPIMG<b>n</b><br>
+where <b>n</b> could be 1, 2 or 3 </blockquote>
+<ul>
+  <li>write operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPIMG<b>n</b>=4,0,1,0,name,folder,,,1<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPIMG<b>n</b>=4,0,1,0,name,folder,,,1<br>
+	where <b>n</b> could be 1, 2 or 3
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+  <p>
+  	<a href="../index.htm">HOME</a>,
+    <a href="Encoder.htm">ENCODER CGI</a>
+ </p>
+</blockquote>
+</body>
+
+</html>

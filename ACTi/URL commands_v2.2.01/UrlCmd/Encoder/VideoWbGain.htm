@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_WB_GAIN</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>VIDEO_WB_GAIN</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the R-Gain and B-Gain.</p>
+	<p>
+    	The video R-Gain and B-Gain is only configurable if only of the <a href="VideoWbMode.htm">VIDEO_WB_MODE</a> is MANUAL.
+        Please refer the <a href="../../../DFI/CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup Design Specification</a> for further details.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	n,m</font><br>
+	where</font><br>
+	n : 1~255 for R-Gain value<br>
+	m : 1~255 for B-Gain value
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	VIDEO_WB_GAIN='128,128'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: VIDEO_WB_GAIN='128,128'<br>
+	or</font><br>
+	ERROR: VIDEO_WB_GAIN='128,128'
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformA : All Encoders with sensor MT9V135, MT9M131 and HQ1</li>
+	<li>PlatformT : All Encoders with sensor MT9M131,IT1,HQ1 and VXCMOS</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<a href="VideoWbMode.htm">VIDEO_WB_MODE</a>,
+	<a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+	<a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+	<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>,
+	<a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+	<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+    <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a>,
+    <a href="VideoFlickless.htm">VIDEO_FLICKLESS</a>
+</blockquote>
+
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WB_GAIN<br>
+	or<br>
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_WB_GAIN
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WB_GAIN=128,128<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?VIDEO_WB_GAIN=128,128
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

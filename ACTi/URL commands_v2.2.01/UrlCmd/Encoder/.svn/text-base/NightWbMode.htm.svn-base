@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>NIGHT_WB_MODE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>NIGHT_WB_MODE</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the white balance mode configuration for night time mode.</p>
+	<p>
+    	This URLs is the same as the URL VIDEO_WB_MODE in the ENCODER CGI and are only available in PlatformT encoders.
+        When the camera enters the night time state, the night time video profile will be loaded.
+        The white balance mode is the parameters in the night time video profile.
+        Please refer to the <A href="NightTimeProfile.htm">parameters of night time profile</A> for further details.
+    </p>
+	<p>
+    	The availability of white balance and the mode in the video white balance depend on the capability of the sensor in the sensor. 
+        In video servers, this feature is not available.
+        In some camera, the white balance and the video exposure control are correlated. Then video exposure control might be conflicted with white balance mode.
+        Please refer the <a href="../../../DFI/CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup</a> for further details.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	AUTO, INDOOR1, INDOOR2, OUTDOOR1, OUTDOOR2, HOLD, MANUAL</p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</font></li></ul>
+<blockquote>
+	NIGHT_WB_MODE='AUTO'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: NIGHT_WB_MODE='AUTO'<br>
+	or<br>
+	ERROR: NIGHT_WB_MODE='AUTO'<br>
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformT : All camera</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="NightWbGain.htm">NIGHT_WB_GAIN</a>
+	</p>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_WB_MODE<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?NIGHT_WB_MODE
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_WB_MODE=AUTO<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?NIGHT_WB_MODE=AUTO
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>,
+    <a href="Encoder.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

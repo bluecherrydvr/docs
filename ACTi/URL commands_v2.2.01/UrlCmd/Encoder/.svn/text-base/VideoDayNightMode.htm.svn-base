@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DAYNIGHT_MODE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DAYNIGHT_MODE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the encoder's Day&amp;Night mode.</p>
+  <p>For Day&amp;Night capable camera, this URL could control the behavior of the Day&amp;Night function.</p>
+  <p>When VIDEO_DAYNIGHT_MODE = AUTO, the day or night time state was set by the camera Day&amp;Night detection function. The firmware needs to response the state of Day&amp;Night. Some DSP supports Day&amp;Night functions and responses the lighting condition automatically. The gain threshold of day and night might need to be set proper gain level of turnover state of day and night.</p>
+  <p>When VIDEO_DAYNIGHT_MODE = DAY or NIGHT, the camera is forced to stay at the specific DAY or NIGHT state. The Day&amp;Night detection mechanism (if camera has it) will be disabled. How to disable the Day&amp;Night detection mechanism is not addressed in this document.</p>
+  <p>If the camera does not support the Day&amp;Night function, the return of this   URL is <span class="red">NONE</span>.</p>
+  <p>In video servers (single, QUAD or multiple channels), this URL is read-only command and the <span class="red">NONE</span> is returned always.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>
+  mode<br />
+  where mode could be<br />
+  AUTO : the Day&Night state in the encoder was decided by the Day&Night detection source<br />
+  DAY : force the camera to stay at day time state<br />
+  NIGHT : force the camera to stay at night time state</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write (depends on the camera)</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_DAYNIGHT_MODE='AUTO'<br />
+    or<br />
+  VIDEO_DAYNIGHT_MODE='NONE'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>
+  OK: VIDEO_DAYNIGHT_MODE='AUTO'<br />
+  or<br />
+  ERROR: VIDEO_DAYNIGHT_MODE='AUTO'<br />
+  or<br />
+  ERROR: VIDEO_DAYNIGHT_MODE is read-only</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>Platform W: All encoders</li>
+  <li>Platform A: All encoders</li>
+  <li>Platform T : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>
+  	<a href="DayNightState.htm">DAY_NIGHT_STATE</a>, <a href="VideoDNType.htm">VIDEO_DN_TYPE</a>, <a href="VideoDNTimer.htm">VIDEO_DN_TIMER</a>, <a href="VideoDNIRLed.htm">VIDEO_DN_IRLED</a>, <a href="VideoDNIRCutFilter.htm">VIDEO_DN_IRCUT</a>, <a href="DayGainThd.htm">DAY_GAIN_THD</a>, <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>, <a href="ExposureGainGet.html">EXPOSURE_GAIN_GET</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DAYNIGHT_MODE<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DAYNIGHT_MODE</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DAYNIGHT_MODE=AUTO<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DAYNIGHT_MODE=AUTO</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOEM</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

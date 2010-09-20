@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventPush</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>EVENT_PUSH</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	Trigger an event manually.<br>
+    People could force the encoder to response the event  by using this URL. The event rule has to be set before manual event is triggered.</p>
+	<p>The manual trigger could be used to verify if the event rule is configured correctly.
+	  The event will be responded no matter the event is in the effective time period or the real trigger source is active.
+	  The user could check if the event output meets the expectation immediately by using this manual trigger.
+  They don't need to wait for the real trigger source is active. That helps to save the setup time.</p>
+  <p>	  Another application is used when the event source is not from the encoder itself. The external device could send this URL to ask encoder to do something for it.</p>
+	<p>	  The encoder will extend the action time of the event which the manual trigger is associated with as the manual trigger occurs.<br>
+	  The encoder will ignore the manual trigger if the previous manual trigger is not returned. The error message &quot;ERROR: internal error. device is busy on previous EVENT_PUSH&quot; will be returned.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>
+    	index<br>
+        where<br>
+   </p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Write-Only</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<blockquote>
+	OK<br>
+	or<br>
+	ERROR: invalid parameters (if the index is out of range)<br>
+    or<br>
+    ERROR: EVENT_PUSH is write-only (if the index is missing)<br>
+    or<br>
+    ERROR: internal error. device is busy on previous EVENT_PUSH<br>
+    or<br>
+    ERROR: internal error. error description.
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformA: All Devices (Encoder:3.13.xx and later)</li>
+	<li>PlatformT: All Devices (4.09.xx and later)</li>
+	<li>Multi-Channel Video Server: ACD2200, ACD2300 and ACD2400</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="EventConfig.htm">EVENT_CONFIG</a>
+    </p>
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+	<p>
+    	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_PUSH=1<br>
+    	or<br>
+    	http://ip:port/cgi-bin/cmd/encoder?EVENT_PUSH=1
+    </p>
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+  <p>
+  	<a href="../index.htm">HOME</a>,
+    <a href="Encoder.htm">ENCODER CGI</a>
+  </p>
+</blockquote>
+</body>
+
+</html>

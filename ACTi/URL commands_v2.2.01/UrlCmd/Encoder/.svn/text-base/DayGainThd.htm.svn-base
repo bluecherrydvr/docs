@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DAY_GAIN_THD</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>DAY_GAIN_THD</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the gain threshold for day time state in the camera. The DAY_GAIN_THD and <a href="NightGainThd.htm">NIGHT_GAIN_THD</a> are the pair of gain thresholds  to control the camera to enter the Day&amp;Night state based on lighting condition.</p>
+  <p>This URL sets the gain level threshold for day/night state change of Night to Day. The lower value in this threshold, more lighting is needed to enter the day mode from night mode.</p>
+  <p>Some of Day&amp;Night capable camera are able to detect the lighting condition to set it Day&amp;Night state. The source of the Day&amp;Night detection could be CDS, DSP itself or reading the gain level in DSP. Therefore, setting gain thresholds on these detection sources gives the specific lighting condition to enter the day or night time state. </p>
+  <p>To make gain threshold work, the Day&amp;Night Mode has to be in AUTO mode. Refer to <a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a> URL. </p>
+  <p>The following figure illustrates how the gain threshold works.</p>
+  <p align="center"><img src="images/DayNightGain.JPG" width="617" height="364" /></p>
+  <p>When the CDS is used as the Day&amp;Night detection source, the output of the CDS is treated as the gain level which is used in the DSP. It helps to extend the usage for camera for different Day&amp;Night detection sources.</p>
+  <p>Some DSP has only one threshold for Day&amp;Night state detection. In this case, the <a href="NightGainThd.htm">NIGHT_GAIN_THD</a> is used.</p>
+  <p>The error message, <strong>DAY_GAIN_THD not found</strong>, will be returned   if the encoders and camera do not support Day&amp;Night function or there is no   Day&amp;Night detection function.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>level<br />
+  where level is from 0~100.</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>DAY_GAIN_THD='50'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: DAY_GAIN_THD='50'<br />
+  or<br />
+  ERROR: DAY_GAIN_THD='50'<br />
+  or<br />
+  ERROR: DAY_GAIN_THD not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatformT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>
+  <a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>, <a href="DayNightState.htm">DAY_NIGHT_STATE</a>, <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>, 
+  <a href="VideoDNTimer.htm">VIDEO_DN_TIMER</a>, 
+  <a href="VideoDNType.htm">VIDEO_DN_TYPE</a>, 
+  <a href="ExposureGainGet.html">EXPOSURE_GAIN_GET</a>, <a href="../../DayNightCtrl/DayNightCtrlDesignSpec.html">Day&amp;Night Control Camera Page Design Specification</a>
+  </p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;DAY_GAIN_THD<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?DAY_GAIN_THD</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;DAY_GAIN_THD=50<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?DAY_GAIN_THD=50</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="file:///C|/Documents and Settings/myyou/My Documents/ACTi/FWDesignSpec/DFI/URLDesignSpec/index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

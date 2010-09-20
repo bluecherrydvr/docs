@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Night Time Video Profile</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h1>Parameters of Night Time Video Profile</h1>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+  <p>As we know the lighting condition affects the video quality strongly in camera. To have better presentation of the video in the camera, many algorithms of image processing are proposed. In PlatformT camera, except utilizing the sensor/DSP capabilities of the day/night handler function, the camera provides the change of video parameters according to its day/night state. This helps the camera to adapt itself widely in the applications.</p>
+  <p>The parameters of the video profile for night time state are defined here. Every parameter has the corresponding URL to access. These URLs are located in the ENCODER CGI.</p>
+</blockquote>
+<h3>Parameters of Night Time Video Profile</h3>
+<blockquote>
+  <table width="70%" border="1" cellpadding="5">
+    <tr>
+      <th scope="col">Parameter</th>
+      <th scope="col">Corresponding URL in ENCODER CGI</th>
+    </tr>
+    <tr>
+      <td>Video Quality in MPEG4</td>
+      <td><a href="NightVideoQuality.htm">NIGHT_MPEG4_QUALITY</a></td>
+    </tr>
+    <tr>
+      <td>Video Quality in H.264</td>
+      <td><a href="NightVideoQuality.htm">NIGHT_H264_QUALITY</a></td>
+    </tr>
+    <tr>
+      <td>Video Quality in MJPEG</td>
+      <td><a href="NightMjpegQuality.htm">NIGHT_MJPEG_QUALITY</a></td>
+    </tr>
+    <tr>
+      <td>Video Bitrate</td>
+      <td><a href="NightBitrate.htm">NIGHT_BITRATE</a></td>
+    </tr>
+    <tr>
+      <td>Maximum Video Bitrate</td>
+      <td><a href="NightMaxBitrate.htm">NIGHT_MAX_BITRATE</a></td>
+    </tr>
+    <tr>
+      <td>GOP</td>
+      <td><a href="NightGop.htm">NIGHT_GOP</a></td>
+    </tr>
+    <tr>
+      <td>FPS Number</td>
+      <td><a href="NightFpsNum.htm">NIGHT_FPS_NUM</a></td>
+    </tr>
+    <tr>
+      <td>White Balance Mode</td>
+      <td><a href="NightWbMode.htm">NIGHT_WB_MODE</a></td>
+    </tr>
+    <tr>
+      <td>White Balance R/B Gains</td>
+      <td><a href="NightWbGain.htm">NIGHT_WB_GAIN</a></td>
+    </tr>
+    <tr>
+      <td>Exposure Mode</td>
+      <td><a href="NightExposure.htm">NIGHT_EXPOSURE_MODE</a></td>
+    </tr>
+    <tr>
+      <td>Exposure Gain</td>
+      <td><a href="NightExposure.htm">NIGHT_EXPOSURE_GAIN</a></td>
+    </tr>
+    <tr>
+      <td>AE Reference Target</td>
+      <td><a href="NightExposure.htm">NIGHT_AGC_GAIN</a></td>
+    </tr>
+    <tr>
+      <td>Shutter Mode</td>
+      <td><a href="NightShutter.htm">NIGHT_SHUTTER_MODE</a></td>
+    </tr>
+    <tr>
+      <td>Manual Shutter Speed</td>
+      <td><a href="NightShutter.htm">NIGHT_SHUTTER_SPEED</a></td>
+    </tr>
+    <tr>
+      <td>Maximum Auto Shutter Speed</td>
+      <td><a href="NightShutter.htm">NIGHT_MAX_SHUTTER</a></td>
+    </tr>
+    <tr>
+      <td>IRIS Mode, IRIS Level in F number</td>
+      <td><a href="NightIris.htm">NIGHT_IRIS</a>, <a href="NightIris.htm">NIGHT_IRIS_MODE</a></td>
+    </tr>
+    <tr>
+      <td>DC IRIS Level</td>
+      <td><a href="NightIris.htm">NIGHT_DC_LEVEL</a></td>
+    </tr>
+    <tr>
+      <td>Video Sharpness</td>
+      <td><a href="NightSharpness.htm">NIGHT_SHARPNESS</a></td>
+    </tr>
+    <tr>
+      <td>Video Brightness</td>
+      <td><a href="NightVideoAdjust.htm">NIGHT_BRIGHTNESS</a></td>
+    </tr>
+    <tr>
+      <td>Video Contrast</td>
+      <td><a href="NightVideoAdjust.htm">NIGHT_CONTRAST</a></td>
+    </tr>
+    <tr>
+      <td>Video Saturation</td>
+      <td><a href="NightVideoAdjust.htm">NIGHT_SATURATION</a></td>
+    </tr>
+  </table>
+</blockquote>
+<h3>Auto Loaded Video Parameters with Day/Night Switch</h3>
+<blockquote>
+  <p>Some video parameters should be concerned to be the part of the video parameters in Night Time Profile but not in the above list. These parameters could be managed automatically by firmware. So, it does not need to have user intervention. Or, these parameters have two settings for DAY and NIGHT time mode already. Here gives the description of these parameters.</p>
+  <p><strong><u>WDR (Wide Dynamic Range)</u></strong></p>
+  <blockquote>
+    <p>There are two settings of WDR levels in the WDR configurations. Please refer to VIDEO_WDR URL in ENCODER CGI. The firmware loads the day time WDR level in day time and loads the night time WDR level in night time automatically.</p>
+  </blockquote>
+  <p><strong><u>DNR (Digital Noise Reduction)</u></strong></p>
+  <blockquote>
+    <p>This function was disabled all the time. No difference in this parameter for day/night time mode.</p>
+  </blockquote>
+  <p><strong><u>BLC (Back Light Compensation)</u></strong></p>
+  <blockquote>
+    <p>Currently, it deos not show penefit to have two settings for day/night video management. It keeps one setting for all the time.</p>
+  </blockquote>
+  <p><strong><u>Black Level Extension</u></strong></p>
+  <blockquote>
+    <p>This function is only available in the PlatformT video server which is not a day/night capable camera. We don't concern it as the video parameter in night time video profile.</p>
+  </blockquote>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="javascript: history.go(-1)">BACK</a></p>
+</blockquote>
+</body>
+</html>

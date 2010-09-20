@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>FOCUS_CAP_GET</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>FOCUS_CAP_GET</h2>
+<p>&nbsp;</p>
+<h2>Description</h2>
+<blockquote>
+	<p>Get the focus capability from the camera.</p>
+	<p>
+    	This URL is only available in the PlatformT 35x zoom camera
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	None
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read Only</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>The format of return message is listed below.<br>
+Type,NearestPos,FarthestPos<br> 
+where
+<br> 
+Type: the focus control method of the lens. It could be MANUAL or MOTORIZED. The MANUAL means the focus could not be adjusted by camera itself. It was controlled manually. The MOTORIZED means the focus is able to be controlled by the camera.<br> 
+NearestPos: the nearest position of focus.<br> 
+FarthestPos: the farthest position of focus.
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformT : All Encoders with firmware 4.08</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+		<a href="Focus.htm">FOCUS</a>,
+    <a href="FocusPosition.htm">FOCUS_POSITION</a></p>
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;FOCUS_CAP_GET<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?FOCUS_CAP_GET
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+		<a href="Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

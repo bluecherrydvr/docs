@@ -1,0 +1,282 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CHANNEL_INFO</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CHANNEL_INFO</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get a specific channel configuration or all valid 
+	channels configurations in the decoder </font></p>
+	<p><font face="Arial">Here is the format of the return message of this URL 
+	which is the same definition in the <a href="ChannelConfig.htm">
+	CHANNEL_CONFIG</a>.</font></p>
+	<p><font face="Arial">a,b,c,d,e,f,g,h,i,j,k,l,m,n,o</font></p>
+	<table border="1" width="80%" id="table1">
+		<tr>
+			<td align="center" width="158"><font face="Arial" size="4">Items in 
+			Return Message</font></td>
+			<td align="center"><font face="Arial" size="4">Range/Format</font></td>
+			<td align="center" width="372"><font face="Arial" size="4">
+			Description</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">a</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~16 (refer to
+			<a href="#Note1">Note 1</a>)</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Channel ID in 
+			the Decoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">b</font></td>
+			<td align="left"><font face="Arial">&nbsp;0:1CH Encoder, 1:Qaud 
+			Encoder, 2:Multi-Channel Encoder</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder Type</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">c</font></td>
+			<td align="left"><font face="Arial">&nbsp;0~16 (refer to
+			<a href="#Note2">Note 2</a>)</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Channel ID in 
+			the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">d</font></td>
+			<td align="left"><font face="Arial">&nbsp;0:TCP, 1:Multicast, 2:RTP</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Streaming 
+			Method of Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">e</font></td>
+			<td align="left"><font face="Arial">&nbsp;0x00~0x07 (refer to
+			<a href="#Note3">Note 3</a>)</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Channel 
+			Capability</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">f</font></td>
+			<td align="left"><font face="Arial">&nbsp;Character string (&lt; 32 
+			bytes)</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Account Name 
+			to logon the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">g</font></td>
+			<td align="left"><font face="Arial">&nbsp;Character string (&lt; 64 
+			bytes)</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Account 
+			Password to logon the Encoder</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">h</font></td>
+			<td align="left"><font face="Arial">&nbsp;Unicast IPv4 addresses</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's IP 
+			Addresses</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">i</font></td>
+			<td align="left"><font face="Arial">&nbsp;Multicast IPv4 addresses</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's 
+			Multicast IP Addresses</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">j</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~65535</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's 
+			Video Streaming TCP Port Number</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">k</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~65535</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's 
+			Control TCP Port Number</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">l</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~65535</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's RTSP 
+			TCP Port Number</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">m</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~65535</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's HTTP 
+			Port Number</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">n</font></td>
+			<td align="left"><font face="Arial">&nbsp;1~65535</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Encoder's 
+			Multicast UDP Port Number</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="158"><font face="Arial">o</font></td>
+			<td align="left"><font face="Arial">&nbsp;0~65535 in second</font></td>
+			<td align="left" width="372"><font face="Arial">&nbsp;Time duration 
+			the decoder stay this channel</font></td>
+		</tr>
+	</table>
+	<p>¡@</p>
+	<table border="0" width="80%" id="table2">
+		<tr>
+			<td width="63"><font face="Arial"><a name="Note1"></a>
+			Note 1 :</font></td>
+			<td><font face="Arial">For EPL Decoder Devices, the Channel ID is 
+			fixed to 1.</font></td>
+		</tr>
+		<tr>
+			<td width="63" valign="top">¡@</td>
+			<td>¡@</td>
+		</tr>
+		<tr>
+			<td width="63" valign="top"><font face="Arial"><a name="Note2"></a>
+			Note 2 :</font></td>
+			<td><font face="Arial">For the Encoder Channel ID, it depends on the 
+			Encoder Type in the input argument b. The mapping of the range of 
+			Encoder Channel ID and the Encoder Type is listed below.</font></td>
+		</tr>
+		<tr>
+			<td width="63">¡@</td>
+			<td>
+			<table border="1" width="100%" id="table3">
+				<tr>
+					<td align="center" width="642"><font face="Arial">&nbsp;Range 
+					of Encoder Channel ID</font></td>
+					<td align="center"><font face="Arial">Encoder Type</font></td>
+				</tr>
+				<tr>
+					<td width="642"><font face="Arial">&nbsp;Fixed to 1</font></td>
+					<td><font face="Arial">&nbsp;1CH Encoder</font></td>
+				</tr>
+				<tr>
+					<td width="642"><font face="Arial">&nbsp;0~4 where 0: QUAD 
+					Channel, 1: Channel 1, 2: Channel 2, 3: Channel 3 and 4: 
+					Channel 4</font></td>
+					<td><font face="Arial">&nbsp;QUAD Encoder</font></td>
+				</tr>
+				<tr>
+					<td width="642"><font face="Arial">&nbsp;1~16 where 1: 
+					Channel 1, 2: Channel 2 , ..., 16: Channel 16</font></td>
+					<td><font face="Arial">&nbsp;Multi-Channel Encoder</font></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="63" valign="top">¡@</td>
+			<td>¡@</td>
+		</tr>
+		<tr>
+			<td width="63" valign="top"><font face="Arial"><a name="Note3"></a>
+			Note 3 :</font></td>
+			<td><font face="Arial">For the Channel Capability setting, it is in 
+			hexadecimal value. The bit 0, 1 and 2 set the Connection Type that 
+			the decoder connects to the encoder. The mapping of bit 0, 1 and 2 
+			in this input argument and Connection Type is listed below.</font></td>
+		</tr>
+		<tr>
+			<td width="63">¡@</td>
+			<td>
+			<table border="1" width="100%" id="table4">
+				<tr>
+					<td align="center" width="216"><font face="Arial" size="4">
+					Bit in the Value e</font></td>
+					<td align="center" width="161"><font face="Arial" size="4">
+					Connection Type</font></td>
+					<td align="center"><font face="Arial" size="4">Description</font></td>
+				</tr>
+				<tr>
+					<td width="216" align="center"><font face="Arial">0</font></td>
+					<td width="161">&nbsp;<font face="Arial">Get Video Stream</font></td>
+					<td><font face="Arial">1: Connect the Encoder for Video 
+					Stream, 0: Not connect the Encoder. If it is 0, the decoder 
+					will skip this channel (channel invalid)</font></td>
+				</tr>
+				<tr>
+					<td width="216" align="center"><font face="Arial">1</font></td>
+					<td width="161"><font face="Arial">&nbsp;Get Control Token</font></td>
+					<td><font face="Arial">Decoder establishes the control 
+					session to the Encoder for control signaling.</font></td>
+				</tr>
+				<tr>
+					<td width="216" align="center"><font face="Arial">2</font></td>
+					<td width="161"><font face="Arial">&nbsp;Get AudioOut Token</font></td>
+					<td><font face="Arial">Decoder could stream the Audio to the 
+					encoder</font></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<ul>
+	<li><font face="Arial">For Read a specific channel</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">n</font><br><font face="Arial">where</font><br>
+	<font face="Arial">n&nbsp; : the channel ID in the decoder, 1~16.</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">For Read all valid channel</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">None</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">For Read all valid channel</font></li>
+</ul>
+<blockquote><font face="Arial">CHANNEL_CONFIG='1,0,1,0,0x07,aaaa,111111,192.168.0.100,228,5,6,1,6002,6001,7070,5000,60'</font><br>
+	<font face="Arial">CHANNEL_CONFIG='2,0,1,0,0x07,aaaa,111111,192.168.0.106,228,5,6,6,6002,6001,7070,5000,600'</font><br>
+	<font face="Arial">CHANNEL_CONFIG='3,0,1,0,0x07,aaaa,111111,192.168.0.107,228,5,6,7,6002,6001,7070,5000,30'<br>
+	...<br>...</font><br>
+	<font face="Arial">CHANNEL_CONFIG='15,0,1,0,0x07,aaaa,111111,192.168.0.107,228,5,6,7,6002,6001,7070,5000,30'</font><br>
+	<font face="Arial">CHANNEL_CONFIG='16,0,1,0,0x07,aaaa,111111,192.168.0.107,228,5,6,7,6002,6001,7070,5000,30'</font></blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Decoder Devices</font></li>
+	<li><font face="Arial">EPL Decoder Devices</font></li>
+	<li><font face="Arial">PlatformT Decoder Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="ChannelConfig.htm">CHANNEL_CONFIG</a>,
+	<a href="ChannelVariableFps.htm">CHANNEL_VARIABLE_FPS</a>,
+			<a href="ChannelTime.htm">CHANNEL_TIME</a>,
+			<a href="ChannelSwitch.htm">CHANNEL_SWITCH</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_INFO</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_INFO</font><p>
+	<font face="Arial">http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;CHANNEL_INFO 
+	(get all valid channels configurations)</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/decoder?CHANNEL_INFO 
+	(get all valid channels configurations)</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="decoder.htm">
+	DECODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CONFIG_SET</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>CONFIG_SET</h1>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Upload the device configuration file to the device's flash. Then, the device will be rebooted automatically.</p>
+		<p><strong><u>Important Note</u></strong></p>
+		<blockquote>
+		  <p>The configurations, OEM_SERIAL_NUM, OEM_MODEL_NAME, OEM_MODEL_DESC, LAYOUT_FOOTER_COPYRIGHT, COMPANY_NAME, COMPANY_URL and ACTIVEX_URL have not be saved to the device when the device configurations are saved to the device.</p>
+	  </blockquote>
+        <p>To upload the channel module configuration file in the multiple channel video server, the CHANNEL=n should be set after the USER and PWD commands. If there is no CHANNEL=n in this URL, the router configuration file is uploaded.
+      </p>
+        <p>The format of this URL http://172.16.3.14/cgi-bin/update?USER=Admin&amp;PWD=123456&amp;CONFIG_SET is listed below.</p>
+        <p><b>Stage 1: Send this URL to the device for configuration file upload</b></p>
+        <blockquote>
+          <p><font color="#FF0000"><span style="background-color: #C0C0C0">
+            GET /cgi-bin/update?USER=admin&amp;PWD=123456&amp;CONFIG_SET HTTP/1.1 <br>
+            Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */* <br>
+            Accept-Language: zh-tw <br>
+            Accept-Encoding: gzip, deflate <br>
+            User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) <br>
+            Host: 172.16.3.14 <br>
+            Connection: Keep-Alive
+          </span></font>       	  </p>
+        </blockquote>
+        <p><b>Stage 2 : Device reply the URL</b>       	    </p>
+        <blockquote>
+          <p><font color="#0000FF"><span style="background-color: #C0C0C0">
+          HTTP/1.0 200 OK <br>
+            Content-type: text/html <br>
+            <br>
+            &lt;html&gt;&lt;head&gt;&lt;title&gt;UPLOAD FILES&lt;/title&gt;&lt;/head&gt;<br>
+            &lt;meta http-equiv=&quot;PRAGMA&quot; content=&quot;NO-CACHE&quot;&gt;&lt;body&gt;<br>
+            &lt;form name=&quot;UPLOAD_FORM&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot; action=&quot;update?CONFIG_SAVE&quot;&gt;<br>
+            CONFIG : &lt;input type=&quot;FILE&quot; name=&quot;CONFIG_FILE&quot; value=&quot;&quot; size=&quot;40&quot;&gt;<br>
+            &lt;br&gt;<br>
+            &lt;input type=&quot;submit&quot; value=&quot;Apply&quot; name=&quot;URL_FIRMWARE_SUBMIT&quot;&gt;<br>
+            &lt;input type=&quot;reset&quot; value=&quot;Reset&quot; name=&quot;URL_FIRMWARE_RESET&quot;&gt;<br>
+            &lt;br&gt;<br>
+            &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</span></font></p>
+        </blockquote>
+        <p><b>Stage 3: Upload the image file to device and get the return code</b></p>
+        <blockquote>
+          <p><font color="#FF0000"><span style="background-color: #C0C0C0">
+            POST /cgi-bin/update?CONFIG_SAVE 
+            HTTP/1.1 <br>
+            Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */* <br>
+            Referer: http://172.16.3.14/cgi-bin/update?USER=admin&amp;PWD=123456&amp;CONFIG_SET
+            <br>
+            Accept-Language: zh-tw <br>
+            Content-Type: multipart/form-data; 
+            boundary=---------------------------7d83b918e205b8 <br>
+            Accept-Encoding: gzip, deflate <br>
+            User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) <br>
+            Host: 172.16.3.14 <br>
+            Content-Length: 4855 <br>
+            Connection: Keep-Alive <br>
+            Cache-Control: no-cache <br>
+            <br>
+            -----------------------------7d83b918e205b8 <br>
+            Content-Disposition: form-data; name=&quot;CONFIG_FILE&quot;; filename=&quot;C:\Documents and Settings\MingYoung.You\My Documents\update.txt&quot;<br>
+            Content-Type: text/plain <br>
+            <br>
+            WAN_TYPE='1' <br>
+            WAN_IP='192.168.0.100' <br>
+            WAN_NETMASK='255.255.255.0' <br>
+            WAN_GATEWAY='192.168.0.254' <br>
+            WAN_PPPOE_USERNAME='' <br>
+            WAN_PPPOE_PASSWORD='' <br>
+            SPEED_WAN='0'
+          </span></font></p>
+          <p><font color="#FF0000"><span style="background-color: #C0C0C0">
+            ....................................................................
+          </span></font></p>
+          <p><font color="#FF0000"><span style="background-color: #C0C0C0">
+            ACTIVEX_URL='' <br>
+            <br>
+            -----------------------------7d83b918e205b8 <br>
+            Content-Disposition: form-data; name=&quot;URL_FIRMWARE_SUBMIT&quot; <br>
+            <br>
+            Apply <br>
+            -----------------------------7d83b918e205b8--
+          </span></font></p>
+        </blockquote>
+        <p><b>Stage 4: device reply this URL</b></p>
+    <blockquote>
+          <p><font color="#0000FF"><span style="background-color: #C0C0C0">
+          HTTP/1.0 200 OK <br>
+            Content-type: text/plain <br>
+            Content-Length: 3 <br>
+            <br>
+            OK
+          </span></font></p>
+    </blockquote>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+		None
+	</blockquote>
+    
+<h3>Attribute
+</h3>
+<ul>
+<li>Write Only</li></ul>
+    
+<h3>Return of Message</h3>
+	<blockquote>
+		OK<br>
+		or<br>
+		ERROR: config image<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+        <li>WPL Platform : All Encoder Devices</li>
+        <li>EPL Platform : All Encoder Devices</li>
+        <li>PlatfotmT : All Encoder Devices</li>
+        <li>Multi-Channel Encoder : Router Only</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		Valid
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>
+       	<a href="ConfigGet.htm">CONFIG_GET</a></p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<blockquote>
+        http://ip:port/cgi-bin/update?USER=Admin&amp;PWD=123456&amp;CONFIG_SET<br>
+        or<br>
+        http://ip:port/cgi-bin/update?USER=Admin&amp;PWD=123456&amp;CHANNEL=n&amp;CONFIG_SET (for CHANNEL=n video server in the Multi-Channel Encoder)
+	</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+        <p>
+        	<a href="../index.htm">HOME</a>,
+            <a href="update.htm">UPDATE CGI</a>
+        </p>
+</blockquote>
+
+</body>
+
+</html>

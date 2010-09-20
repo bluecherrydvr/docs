@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NIGNT_GOP</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>NIGHT_GOP</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the video GOP for night time mode. (the frame interval in two successive I frames).</p>
+  <p>The URL is the same as the URL VIDEO_GOP in the ENCODER CGI. This URLs is only available in   PlatformT encoders. When the camera enters the night time state, the night time   video profile will be loaded. The GOP in the video stream is the one of parameters in the night time video profile. Please refer to the <a href="NightTimeProfile.htm">parameters of night time profile</a> for further   details.  </p>
+  <p>In PlatformT encoder, it supports the H.246, MPEG4 and MJPEG. In MPEG4 and H264, they share the same variable of GOP. In dual streaming mode, the CHANNEL=n indicates the video stream for setting the video encoder GOP. For example, the CHANNEL=1&amp;NIGHT_GOP=5 sets the video stream 1 GOP to 5.</p>
+  <p>The benefit of larger GOP is lower average bit rate in video streaming if there is less big moving objects. But, it might still get high bit rate or poor image quality if there are many moving objects.</p>
+  <p>In constant video bit rate mode, the device adapts bit rate by 1 second basis. The bit rate will not be affected when we enlarge the GOP. Therefore, the GOP setting is only valid in the variable bit rate mode. (NIGTH_MPEG4_QUALITY or NIGTH_H264_QUALITY is not NONE)  </p>
+  <p>The device will accept the GOP change and will be applied to the device when the encoder type and video bit rate mode are changed to MPEG4/H.264 encoder and variable bit rate mode,</p>
+</blockquote>
+<h3>Input argument</h3>
+<blockquote>
+  <p>n<br />
+    where n could be 0~60.<br />
+    0: means the GOP sync with the frame rate. One I frame in 1 second. This is the default setting. People do not need to change the GOP as they changed the frame rate in MPEG4 or H.264.<br />
+  1~60: set the GOP value. The number of I frames in a second depends on GOV and frame rate then.</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>NIGHT_GOP='0'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: NIGHT_GOP='0'<br />
+    or<br />
+  ERROR: NIGHT_GOP='0'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>PlatformT : All Encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoEncoder.htm">VIDEO_ENCODER</a>, <a href="NightVideoQuality.htm">NIGHT_MPEG4_QUALITY</a>, <a href="NightVideoQuality.htm">NIGHT_H264_QUALITY</a>, <a href="../Mpeg4/VideoFpsNum.htm">VIDEO_FPS_NUM</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation  </li>
+  <blockquote>
+    <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_GOP<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?NIGHT_GOP</p>
+  </blockquote>
+  <li>Write Operation
+    <blockquote>
+      <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_GOP=0<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?NIGHT_GOP=0</p>
+    </blockquote>
+  </li>
+</ul>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

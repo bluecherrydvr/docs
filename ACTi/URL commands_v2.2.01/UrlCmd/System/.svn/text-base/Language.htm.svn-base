@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LANGUAGE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>LANGUAGE</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or set language configuration.</p>
+	<p>
+    	This URL sets the default language set when the user login the WEB page of the device. 
+        Because the language set is added from time to time and might be vary from device to device. It needs to check the specification of the device
+        to know how many and which language sets are available for a device.
+    </p>
+  <p>
+    	If the CHANNEL=n was set with this URL to the multiple channel video server, this URL will be treated as read-only command and
+        the Router's LANGUAGE setting will be returned.
+    </p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  n<br>
+  where n is the index of the language set. It is started form 0<br>
+  Here is the mapping table of language index (n) and language set
+  </p>
+  <table border="1" width="70%" id="table1">
+    <tr>
+      <th width="204" align="center">Language Index</th>
+      <th width="309" align="center">Language Set</th>
+      <th align="center"><b>Character Set</th>
+    </tr>
+    <tr>
+      <td align="center">0</td>
+      <td align="center">English</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">1</td>
+      <td align="center">Traditional Chinese</td>
+      <td align="center">BIG5</td>
+      </tr>
+    <tr>
+      <td align="center">2</td>
+      <td align="center">Simplified Chinese</td>
+      <td align="center">BG2312</td>
+      </tr>
+    <tr>
+      <td align="center">3</td>
+      <td align="center">Japanese/td>
+      <td align="center">EUC-JP</td>
+      </tr>
+    <tr>
+      <td align="center">4</td>
+      <td align="center">Spanish</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">5</td>
+      <td align="center">Italian</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">6</td>
+      <td align="center">German</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">7</td>
+      <td align="center">Portuguese</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">8</td>
+      <td align="center">Czech</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">9</td>
+      <td align="center">French</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">10</td>
+      <td align="center">Finnish</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">11</td>
+      <td align="center">Hungarian</td>
+      <td align="center">ISO-8859-2</td>
+      </tr>
+    <tr>
+      <td align="center">12</td>
+      <td align="center">Danish</td>
+      <td align="center">ISO-8859-1</td>
+      </tr>
+    <tr>
+      <td align="center">13</td>
+      <td align="center">Greek</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">14</td>
+      <td align="center">Mexio</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">15</td>
+      <td align="center">Dutch</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">16</td>
+      <td align="center">Russia</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">17</td>
+      <td align="center">Turkey</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">18</td>
+      <td align="center">Indonesia</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">19</td>
+      <td align="center">Swedish</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    <tr>
+      <td align="center">20</td>
+      <td align="center">Polish</td>
+      <td align="center">UTF-8</td>
+      </tr>
+    </table>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	LANGUAGE='0'
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	OK: LANGUAGE='0'<br>
+	or<br>
+	ERROR: LANGUAGE='0'<br>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW: All Devices</li>
+	<li>PlatformA: All Devices</li>
+	<li>PlatformT: All Devices</li>
+	<li>Multiple Channel Video Server: All Devices</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	<p>
+    	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LANGUAGE<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?LANGUAGE
+    </p>
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	<p>
+    	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;LANGUAGE=0<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?LANGUAGE=0</p>
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+        <a href="system.htm">SYSTEM CGI</a>
+  </p>
+</blockquote>
+
+</body>
+
+</html>

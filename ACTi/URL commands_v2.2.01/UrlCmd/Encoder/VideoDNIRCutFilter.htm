@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DN_IRCUT</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DN_IRCUT</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the IR Cut Filter configuration on the <a href="../../DayNightCtrl/DayNightCtrlModule.html">Day&amp;Night Control Module</a>.</p>
+  <p>The IR Cut Filter is located between Lens and the sensor. It could be controlled by external logic to stay or not stay between lens and sensor. When it stays between lens and sensor, the infra-red will be filtered before enter the sensor. If it does not stay between lens and sensor, the infra-red will enter the sensor.</p>
+  <p>Because the sensors could sense the infra-red from sun light, the video image will not have correct color affected by infra-red. Therefore, we need to filter the infra-red in front of sensor. </p>
+  <p>In night time, there is no sun light help to see the clear video image. The IR LEDs is used to reflect the object into the camera. In this case, we want the infra-red could get into the sensor. This will help to get the clear video image. Because the sensor or DSP will remove the color information in night time mode, the video image becomes black and white image but clear.</p>
+  <p>This URL sets how the micro-processor in the module  controls the IR cut filter. The micro-controller could change the position of the IR cut filter based on its Day&amp;Night state. When the micro-controller is set to handle the IR cut filter with its Day&amp;Night state (so-called AUTO mode), it will put the IR cut filter between the lens and sensor in day time state and move the IR cut filter out in night time state. When the micro-controller is set to NOT handle the IR cut filter (so-called OFF mode), the IR cut filter will stay between the lens and sensor all the time.</p>
+  <p>In some camera, their sensor or DSP is not able to remove the color information from the input light, the special care should be taken if the IR cut filter is moved out.  </p>
+<p>The error message, <strong>VIDEO_DN_IRCUT not found</strong>, will be returned   if the there is no Day&amp;Night Control Module  or IR LEDs in the camera.</p>
+<p class="red"><strong>Important Note : the IR Cut Filter should be configured to the AUTO mode for all applications.</strong></p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>n<br />
+    where n = 0 : the micro-controller will do nothing on IR Cut Filter when the Day&amp;Night state in the module was changed (OFF mode).<br />
+  n = 1 : the micro-controller will move the IR Cut Filter out when the module switched the Day&amp;Night state to night time state and put the IR Cut Filter between lens and sensor when the module switched the Day&amp;Night state to day time state. (AUTO)</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_DN_IRCUT='1'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: VIDEO_DN_IRCUT='1'<br />
+    or<br />
+    ERROR: VIDEO_DN_IRCUT='1'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>WPL Platform : All encoders</li>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatfromT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoDNIRLed.htm">VIDEO_DN_IRLED</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation </li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_IRCUT<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_IRCUT</p>
+</blockquote>
+<ul>
+  <li>Write Operation </li>
+</ul>
+<blockquote>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DN_IRCUT=1<br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_DN_IRCUT=1</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

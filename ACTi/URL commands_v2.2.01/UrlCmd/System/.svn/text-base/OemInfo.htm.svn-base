@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>OEM_INFO</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>OEM_INFO</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	Get the device OEM configurations.<br>
+        There are three configurations will be returned in the NB devices. They are
+    </p>
+	<ul>
+	  <li>OEM_SERIAL_NUM</li>
+	  <li>OEM_MODEL_NAME</li>
+	  <li>OEM_MODEL_DESC</li>
+  </ul>
+	<p>These three configurations are NULL by default and could be set by the NB firmware maker tool. If they are NULL or the device is AC device, the return value of them are</p>
+	<blockquote>
+	  <p>OEM_SERIAL_NUM=''<br>
+	  OEM_MODEL_NAME=''<br>
+	  OEM_MODEL_DESC=''</p>
+  </blockquote>
+	<p>In multiple channel video servers, the CHANNEL command with this URL is ignored. The OEM configurations in the system will be returnned.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>None</p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Read Only</li>
+	<li>Not On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul>
+  <li>AC device or NULL OEM Configurations</li>
+</ul>
+<blockquote>
+  <p>OEM_SERIAL_NUM=''<br>
+    OEM_MODEL_NAME=''<br>
+    OEM_MODEL_DESC=''</p>
+</blockquote>
+<ul>
+  <li>Not support this URL</li>
+</ul>
+<blockquote>
+  <p>ERROR: OEM_INFO not found</p>
+</blockquote>
+<ul>
+  <li>NB device and the OEM configurations are valid</li>
+</ul>
+<blockquote>
+  <p>OEM_SERIAL_NUM='XXX-123434'<br>
+    OEM_MODEL_NAME='MM-CC'<br>
+  OEM_MODEL_DESC='This is a camera'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW : 1CH encoder (2.10.04)</li>
+	<li>PlatformA : All devices. (Encoder: 3.12.06, Decoder:3.04.00, QUAD: 3.04.01)</li>
+	<li>PlatformT : All Devices (Encoder: 4.07.11)</li>
+	<li>Multi-Channel Encoder : All Devices (Router: 2.07.01)</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	None
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;OEM_INFO<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?OEM_INFO
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>,
+    <a href="system.htm">SYSTEM CGI</a>
+</blockquote>
+
+</body>
+
+</html>

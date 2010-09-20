@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_TV</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>VIDEO_TV</h1>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	Get or Set Analog TV setting (NTSC or PAL). In EPL, PlatformT and Multi-Channel Encoder devices, attribute of this setting is vary from 
+        device to device. The special notes for these devices are given below.
+  </p>
+	<table border="1" width="80%" id="table1">
+	  <tr>
+			<td width="351"><b>Device</b></td>
+			<td width="343"><b>Read/Write Attribute</b></td>
+		</tr>
+        <tr>
+			<td width="351">Video Server in WPL Platform</td>
+			<td>VIDEO_TV is read-write command and on-fly change</td>
+		</tr>
+        <tr>
+			<td width="351">WPL Camera</td>
+			<td>VIDEO_TV is read-only command and always return current TV Std. with OK code</td>
+		</tr>
+		<tr>
+			<td width="351">Video Server in EPL Platform</td>
+			<td>VIDEO_TV is read-only command and always return current TV Std. with OK code</td>
+		</tr>
+		<tr>
+			<td width="351">Video Server in 4CH and 16CH Multi-Channel Encoder</td>
+			<td>VIDEO_TV is read-only command and always return current TV Std. with OK code</td>
+		</tr>
+		<tr>
+			<td width="351">CMOS (MT9V135) camera in EPL Platform</td>
+			<td>VIDEO_TV is read-write command and on-fly change</td>
+		</tr>
+		<tr>
+			<td width="351">CMOS (MegaPixel, MT9M131) camera in EPL platform and PlatformT</td>
+			<td>VIDEO_TV is read-only command and always return NTSC with OK code</td>
+		</tr>
+		<tr>
+			<td width="351">IT-1 PlatformT camera</td>
+			<td>VIDEO_TV is read-only. The return value depends on the device capability configurations</font></td>
+		</tr>
+		<tr>
+			<td width="351">Video Server in PlatformT</td>
+			<td>VIDEO_TV is read-only command and always return NTSC with OK code</td>
+		</tr>
+		</table>
+	<p><u><i><b>Note for Decoder</b></i></u></p>
+	<blockquote>
+        <p>In Decoder Devices, the format of the Video Out was decided by the video source received from the encoder. For example, the Video Out 
+        format is NTSC when the decoder received the NTSC video stream from the encoder. However, the VIDEO_TV configuration in the 
+        decoder is used for the initializing the display of Video Out (including the OSD position, blue screen if there is no video). </p>
+  </blockquote>
+	<blockquote>
+	  <p class="red"><strong>Special design in TV Standard auto detectable video servers</strong></p>
+	  <p>To have correct display on TV  by a decoder when video loss occurs in a video server, the video server has to save the TV Std. setting to its configurations in flash when the video state is recovered from video loss to video lock. The video server could use this video TV setting to setup the TV decoder when it was rebooted again.</p>
+  </blockquote>
+	<p>If the CHANNEL=n was not set with this URL to the Multi-Channel device, this command is read-only command and the CHANNLE 1 
+        video server's VIDEO_TV configurations will be returned. If the CHANNEL 1 video server does not connect to the router, the error message 
+    will be returned.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+	NTSC or PAL</blockquote>
+<h3>Attribute</h3>
+	<blockquote>See above read/write attribute table</blockquote>
+<h3>Return of Message</h3>
+<blockquote>
+  <p><strong>When write, the OK message will be returned with the current Analog TV setting if this URL in the device is read-only.</strong></p>
+  <p>For example, the OK: VIDEO_TV='NTSC' will be returned when the VIDEO_TV=PAL is received in a NTSC camera.</p>
+  <p><strong><u>EPL and WPL Encoders</u></strong></p>
+  <ul>
+    <li>Read Operation</font></li>
+  </ul>
+  <blockquote>
+    <p>
+      VIDEO_TV='NTSC'
+    </p>
+  </blockquote>
+  <ul>
+    <li>Write Operation for MT9V135 camera</li>
+  </ul>
+  <blockquote>
+    <p>
+      OK: VIDEO_TV='NTSC'<br>
+      or<br>
+      ERROR: VIDEO_TV='NTSC'
+    if input arguments is not NTSC or PAL</p>
+  </blockquote>
+  <p>
+	<u><strong>PlatformT Encoders</strong></u><strong></strong></p>
+  <ul>
+    <li>Read Operation</li>
+  </ul>
+  <blockquote>
+    <p>
+      VIDEO_TV='NTSC'
+    </p>
+  </blockquote>
+  <ul>
+    <li>Write Operation(Only in VGA resolution mode. device dependence)</li>
+  </ul>
+  <blockquote>
+    <p>
+      OK: VIDEO_TV='NTSC'<br>
+      or<br>
+      ERROR: VIDEO_TV='NTSC'
+      if input arguments is not NTSC or PAL</p>
+  </blockquote>
+</blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>WPL Platform : All encoder Devices</li>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+		<li>Multi-Channel Encoder : All Devices</li>
+	</ul>
+<h3>Status</h3>
+	<blockquote>
+		Valid
+	</blockquote>
+<h3>See Also</h3>
+	<ul>
+		<li>In mpeg4 CGI</li>
+	</ul>
+	<blockquote>
+		<a href="../Mpeg4/VideoFps.htm">VIDEO_FPS</a>, 
+		<a href="../Mpeg4/VideoFpsNum.htm">VIDEO_VARIABLE_FPS</a>
+	</blockquote>
+	<ul>
+		<li>In encoder CGI</li>
+	</ul>
+	<blockquote>
+		<a href="../Mpeg4/VideoFps.htm">VIDEO_FPS</a>, 
+		<a href="../Mpeg4/VideoFpsNum.htm">VIDEO_VARIABLE_FPS</a>, 
+		<a href="../Encoder/VariableFpsNum.htm">VARIABLE_FPS_NUM</a>, 
+		<a href="../Encoder/VideoMjpegFps.htm">VIDEO_MJPEG_FPS</a>, 
+		<a href="../Encoder/VideoH264Fps.htm">VIDEO_H264_FPS</a>,
+		<a href="../Encoder/LineFreq.htm">LINE_FREQ</a>
+	</blockquote>
+	<ul>
+		<li>In system CGI</li>
+	</ul>
+	<blockquote>
+		<a href="VideoFps.htm">VIDEO_FPS</a> (Read-Only)
+	</blockquote>
+<h3>Example</h3>
+	<ul>
+		<li>Read Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;VIDEO_TV<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?VIDEO_TV
+    </blockquote>
+	<ul>
+		<li>Write Operation</li>
+	</ul>
+	<blockquote>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;VIDEO_TV=NTSC<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?VIDEO_TV=NTSC
+    </blockquote>
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+    <a href="system.htm">SYSTEM CGI</a>
+</blockquote>
+
+</body>
+
+</html>

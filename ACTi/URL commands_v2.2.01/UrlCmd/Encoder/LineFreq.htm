@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>LINE_FREQ</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">LINE_FREQ</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the power frequency (50 or 60Hz). </font></p>
+	<p><font face="Arial">The Power Frequency is used as the base of lighting 
+	synchronization calculation in CMOS sensor. Therefore, this URL is only 
+	valid in the CMOS or Mage-Pixel sensor camera. In the D1 encoder, the TV 
+	Standard, NTSC or PAL, is used for that, refer to <a href="../System/VideoTv.htm">
+	VIDEO_TV</a> in SYSTEM CGI. </font></p>
+	<p><font face="Arial">The LINE_FREQ will not be used in the D1 encoder and 
+	VIDEO_TV will not be used in CMOS and Mega-Pixel encoders. These two URL commands are readable 
+	and writable in these sensors.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNLE 1 video server's LINE_FREQ configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">50HZ, 60HZ</font></blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly (device dependence)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">LINE_FREQ='60HZ'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: LINE_FREQ='60HZ'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: LINE_FREQ='60HZ'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../System/VideoTv.htm">VIDEO_TV</a> in
+	<a href="../System/system.htm">SYSTEM</a> CGI</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;LINE_FREQ</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/encoder?LINE_FREQ</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;LINE_FREQ=60HZ</font><br>
+	<foont face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/encoder?LINE_FREQ=60HZ</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, </font>
+	<font face="Arial"><a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

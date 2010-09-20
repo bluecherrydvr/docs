@@ -1,0 +1,186 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>FOCUS</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>FOCUS</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Perform the focus function. The available focus commands depend on the camera types. The input argument section gives the dependency of the focus commands and the camera types.</p>
+	<p>
+    	If the CHANNEL=n was not set with this URL to the multiple channel devices, the error message will be returned.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>Cmd,Position</p>
+  <p>The Cmd is the focus command.<br>
+    The Position is the focus position and used only when the Cmd is DIRECT.  <br>
+  The following table lists the available focus commands by this URL.</p>
+  <table width="80%%" border="1" cellpadding="2">
+    <tr>
+      <th scope="col" width="10%%">Cmd</th>
+      <th scope="col" width="15%%">Position</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">STOP</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">stop the focus action</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">FAR</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">move the focus to the far end. If there is no STOP command to the camera, the focus will be move to the farthest position.</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">NEAR</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">move the focus to the near end. If there is no STOP command to the camera, the focus will be move to the nearest position.</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">AUTO</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">set the focus mode to auto mode. The camera will adjust the focus all the time.</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">MANUAL</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">set the focus mode to manual mode. The focus position will be fixed at the specific position set by users.</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">ZOOM_AF</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">set the focus mode to the ZOOM+AF mode. In this mode, the camera will not adjust the focus unless the zoom position was changed</font>.<br>
+      <font size="-1" color="red">New function for 35x camera in PlatformT firmware 4.08.00</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">HOLD</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">
+        trigger the camera to do the auto focus and lock the focus position after auto focus is done.
+        The focus mode will be set to the MANUAL mode after this command. The locked focus position will be in the return message of this command.
+        <br>
+      </font><font size="-1" color="red">New function for 35x camera in PlatformT firmware 4.08.00</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">SWITCH</font></div></td>
+      <td><div align="center"><font size="-1">None</font></div></td>
+      <td><font size="-1">switch the focus mode between AUTO and MANUAL. The focus mode will be changed to other mode as this command is entered. If the camera supports the ZOOM_AF, this commad will switch the focus mode between ZOOM_AF and MANUAL mode.</font></td>
+    </tr>
+    <tr>
+      <td><div align="center"><font size="-1">DIRECT</font></div></td>
+      <td><div align="center"><font size="-1">focus position</font></div></td>
+      <td><font size="-1">
+        Move the focus to the specific position. The focus mode is changed to MANUAL mode after this command.<br>
+        The focus position in this URL is from 0 to 65535. The PTZ camera might not have such wide range of the focus position.
+        However, the device will NOT validate the focus position before parser and handle this URL.
+      </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable (refer to Applicability)</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>FOCUS='AUTO'</p>
+  <p>The possible of focus mode in the return message is AUTO, MANUAL and ZOOM_AF.</p>
+</blockquote>
+<ul>
+  <li>Write Operation</font></li>
+</ul>
+<blockquote>
+FOCUS='echo the input arguments'<br>
+	or<br>
+    OK: FOCUS='HOLD,focus position'<br>
+    or<br>
+	ERROR: invalid parameters</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW: Write-Only. video server (PTZ Command Parser) and Speed Dome Camera with firmware 3.10.03 and later</li>
+	<li>PlatformA: Write-Only. PTZ camera. For video server (PTZ command parser), it needs firmware 3.13 and later</li>
+	<li>PlatformT: Camera with zoom lens, PTZ and Speed Dome camera with firmware 4.07</li>
+	<li>Multiple Channel Video Server: depends on the firmware version of the channel module.</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+    	<a href="Addr.htm">ADDR</a>,
+        <a href="PtzVendor.htm">PTZ_VENDOR</a>,
+        <a href="Zoom.htm">ZOOM</a>,
+        <a href="ZoomPosition.htm">ZOOM_POSITION</a>,
+        <a href="FocusPosition.htm">FOCUS_POSITION</a>,
+        <a href="Move.htm">MOVE</a>,
+        <a href="MoveLimit.htm">MOVE_LIMIT</a>,
+        <a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a>,
+        <a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a>,
+        <a href="Position.htm">POSITION</a>,
+        <a href="PositionGet.htm">POSITION_GET</a>
+    </p>
+</blockquote>
+
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;FOCUS<br>
+    or<br>
+  http://ip:port/cgi-bin/cmd/encoder?FOCUS</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;FOCUS=FAR<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/encoder?FOCUS=FAR
+    </p>
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+        <a href="Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

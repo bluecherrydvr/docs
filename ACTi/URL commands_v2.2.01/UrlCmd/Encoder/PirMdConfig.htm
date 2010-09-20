@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PIR_MD_CONFIG</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>PIR_MD_CONFIG</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Enable or Disable the Passive IR (PIR) motion sensor function and access the PIR sensor sensitivity, motion timer configurations.</p>
+  <p>The PIR sensor sensitivity controls the detecting distance of PIR sensor.</p>
+  <p>The motion timer acts same as the generic motion timer in firmware. Refer to the <a href="MotionTimer.htm">MOTION_TIMER</a> URL for details.</p>
+  <p>Be note that set MOTION_ENABLED=0x00 will not disable PIR motion sensor function. The way to disable PIR motion sensor fucntion is using this URL.</p>
+  <p>If there is no PIR motion sensor, the &quot;ERROR: PIR_MD_CONFIG not found&quot; will be returnned.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>n,sen,timer<br />
+  where n could be 0: Disable and 1: Enable<br />
+  sen: the sensitivity from 0~100. 0: means disable PIR motion sensor<br />
+  timer: the motion timer (0~300 seconds)<br />
+  </p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>PIR_MD_CONFIG='1,70,0'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: PIR_MD_CONFIG='1,70,0'<br />
+    or<br />
+    ERROR: PIR_MD_CONFIG='1,70,0'<br />
+    or<br />
+  ERROR: PIR_MD_CONFIG not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Camera with PIR motion sensor</li>
+  <li>PlatformT Camera with PIR motion sensor</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="../Mpeg4/MotionEnabled.htm">MOTION_ENABLED</a>, <a href="EventRspMdPIR.htm">EVENT_RSPMDPIR</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PIR_MD_CONFIG<br />
+  or<br />
+  http://ip:port/cgi-bin/cmd/encoder?PIR_MD_CONFIG</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;PIR_MD_CONFIG=1,70,0<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?PIR_MD_CONFIG=1,70,0</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>MOVE_TOUR_NAME</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">PTZ_TOUR_NAME</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Set or the name of a specific PTZ tour group or read 
+	the name of current tour group</font></p>
+	<p><font face="Arial">If the device is not in the touring mode, the settings 
+	of tour group 1 will be returned when read.</font></p>
+	<p><font face="Arial">In PTZ camera, there is 10 PTZ tour groups. The 
+	maximum length of tour group name is 31 characters. If the input string is 
+	longer than 31 characters, the input argument will be truncated.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">n,name<br>where <br>n is the tour group ID. 0: current 
+	working tour group. If the device is not in the touring mode, the settings 
+	of tour group 1 will be the target tour group to set the name. 1~10: tour 
+	group ID.<br>name is the character string (&lt;32 bytes) for the tour group 
+	name<br><or>or<br>None (read name of current tour group)</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable or Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial" size="3">OK: PTZ_TOUR_NAME='n,name'<br>where n is the 
+	group ID and name is the tour group name of the tour group.<br>or<br>ERROR: 
+	invalid parameters</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial" size="3">PTZ_TOUR_NAME='n,name'<br>where n is the 
+	current group ID and name is the tour group name of the tour group.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : 4CH and 16CH Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a>,
+	<a href="PtzPresetGet.htm">PTZ_PRESET_GET</a>, <a href="PtzPresetGo.htm">
+	PTZ_PRESET_GO</a>, <a href="PtzTourSet.htm">PTZ_TOUR_SET</a>, <a href="PtzTourGet.htm">PTZ_TOUR_GET</a>,
+	<a href="PtzTourState.htm">PTZ_TOUR_STATE</a>, <a href="PtzTourScan.htm">
+	PTZ_TOUR_SCAN</a>, <a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_TOUR_NAME=1,Tour 
+	Group 1</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_TOUR_NAME=1,Tour 
+	Group 1</font></blockquote>
+
+<ul>
+	<li><font face="Arial">Read Operation</font><font face="Arial" size="3"><br>
+	</font><font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">PTZ_TOUR_NAME</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/encoder?</font><font face="Arial" size="3">PTZ_TOUR_NAME</font></li>
+</ul>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

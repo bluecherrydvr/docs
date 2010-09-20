@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DAYPNIGHT_STATE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+.red {
+	color: #F00;
+}
+-->
+</style></head>
+
+<body>
+<h2>DAY_NIGHT_STATE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get current day/night state.  </p>
+  <p>This URL helps user to know what the day/night state is without previewing the video. The return value could be DAY if the encoder is in the day time state or NIGHT if the encoder is in night time state.</p>
+  <p>For the video server or the camera without day/night function, the DAY is always returned in this URL.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>
+  None<br />
+  </p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read Only</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>
+  <p>DAY_NIGHT_STATE='DAY'<br />
+  or<br />
+  DAY_NIGHT_STATE='NIGHT'<br />
+  or<br />
+  ERROR: DAY_NIGHT_STATE is read-only</p>
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+  <li>Platform W : All encoders (A1X-M2N-V2.10.03 and later)</li>
+  <li>Platform A : All encoders (A1D-220-V3.12.04 and later, A4Q-220-V3.04.00 and later)</li>
+  <li>Platform T : All encoders (A1D-310-V4.07.04 and later)</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p>
+  	<a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a>, <a href="VideoDNType.htm">VIDEO_DN_TYPE</a>, <a href="VideoDNTimer.htm">VIDEO_DN_TIMER</a>, <a href="VideoDNIRLed.htm">VIDEO_DN_IRLED</a>, <a href="VideoDNIRCutFilter.htm">VIDEO_DN_IRCUT</a>, <a href="DayGainThd.htm">DAY_GAIN_THD</a>, <a href="NightGainThd.htm">NIGHT_GAIN_THD</a>, <a href="ExposureGainGet.html">EXPOSURE_GAIN_GET</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;DAY_NIGHT_STATE<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?DAY_NIGHT_STATE</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOEM</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>V2_STRAM_PROTOCOL</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>V2_STREAMING_TYPE, PROTOCOL_TYPE</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the device's video/audio streaming protocol version.</p>
+	<p>
+    	Excpet the standart streaming protocol like RTSP/RTP, there are two non-standard streaming protocols in the encoder devices. One is &quot;TCP 1.0&quot; which is out of fashion and available in all platformW encoders.
+        Refer to SED and CAM series (not include the SED26xx).<br>
+        The other one is &quot;TCP 2.0&quot; which is the new one. In all platformA and platformT devices and multiple channel video servers, only this protocol is available.</p>
+	<p>In all platformW encoders, the V2_STREAMING_TYPE is a read/write command and PROTOCOL_TYPE is a read-only command.</p>
+	<p>In all PlatformA and PlatformT encoders and multiple channel video servers, these two commands are read-only and 2 is returned always.</p>
+    <p>
+    	Consider to cooperate with software partners, these URLs might be used to set to TCP2.0 to the platformA, platformT encoders and
+        Multiple Channel Video servers.
+        The error return message will cause they fail to connect to the devices. Therefore, the return message of these URL commands have special arrangement.
+        Refer to the return of message section.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	1 : TCP 1.0 streaming protocol<br>
+	2 : TCP 2.0 streaming protocol
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable for platformW encoders</li>
+    <li>Read-only for platformA, platformT encoders and multiple channel video servers</li>
+	<li>Not On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	V2_STREAMING_TYPE='2' or PROTOCOL_TYPE='2
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	OK: V2_STREAMING_TYPE='2'<br>
+	or<br>
+	ERROR: V2_STREAMING_TYPE='2'<br>
+    <br>
+    Note that the OK: V2_STREAMING_TYPE='2' is returned for V2_STREAMING_TYPE=2 in all devices which they support TCP2.0 only.<br>
+    The ERROR: V2_STREAMING_TYPE='2' is returned for V2_STREAMING_TYPE=n where n is not 2 in all devices which they support TCP2.0 only.<br>
+    These rules is applied to PROTOCOL_TYPE and V2_STREAMING_TYPE URLs.
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformW : All Encoder Devices</li>
+	<li>PlatformA : All Encoder Devices</li>
+	<li>PlatformT : All Encoder Devices</li>
+	<li>Multi-Channel Encoder : All Devices</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="V2StreamMethod.htm">V2_STREAMING_METHOD</a>
+</blockquote>
+<h3>Example</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_TYPE<br>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;PROTOCOL_TYPE<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?V2_STREAMING_TYPE<br>
+	http://ip:port/cgi-bin/cmd/system?PROTOCOL_TYPE<br>
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;V2_STREAMING_TYPE=2<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/system?V2_STREAMING_TYPE=2
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>,
+    <a href="system.htm">SYSTEM CGI</a>
+</blockquote>
+
+</body>
+
+</html>

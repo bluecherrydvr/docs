@@ -1,0 +1,123 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNMP_STATE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SNMP_STATE</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set SNMP (Simple Network Management Protocol) state configuration.</p>
+        <p>
+        	This URL could disable the SNMP function or enable the SNMP with the specific SNMP protocol  versions (V1, V2c or V3) . 
+      </p>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and the Router's SNMP_STATE configurations will be returned.
+    	</p>
+	</blockquote>
+    
+<h3>Input Argument</h3>
+	<blockquote>
+      <table width="40%" border="1" cellpadding="5">
+        <tr>
+          <th width="40%" scope="col">Input Argument</th>
+          <th scope="col">Description</th>
+        </tr>
+        <tr>
+          <th scope="row">0</th>
+          <td>SNMP function is disabled</td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>Enable SNMP V1</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Enable SNMP V2c</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Enable SNMP V1 and SNMP V2c</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Enable SNMP V3</td>
+        </tr>
+      </table>
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		SNMP_STATE='0'
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+		OK: SNMP_STATE='0'<br>
+		or<br>
+		ERROR: SNMP_STATE='0'<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>
+        	<a href="SnmpReadComm.htm">SNMP_READ_COMMUNITY</a>,
+            <a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a>,
+            <a href="SnmpTrap.htm">SNMP_TRAP</a>,
+            <a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a>,
+            <a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a>,
+            <a href="SnmpTrapComm.htm">SNMP_TRAP_COMMUNITY</a>,
+            <a href="SnmpPwd.htm">SNMP_PASSWORD</a>
+        </p>
+    </blockquote>
+
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_STATE<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_STATE</blockquote>
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+        http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_STATE=0<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_STATE=0
+    </blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="system.htm">SYSTEM CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>PostfixNamingRule</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">Postfix Naming Rule</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">This rule provides how to decode the specific symbol 
+	in the URL command input argument to conduct the full filename. The '%' is 
+	the head of these specific symbol for decoding. Here is the decoding mapping 
+	table.</font></p>
+	<div align="center">
+		<table border="1" width="70%">
+			<tr>
+				<td align="center"><b><font face="Arial">Symbol</font></b></td>
+				<td align="center"><b><font face="Arial">Description</font></b></td>
+				<td align="center" width="254"><b><font face="Arial">Example</font></b></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%YYYY</font></td>
+				<td><font face="Arial">4 digits for year</font></td>
+				<td width="254"><font face="Arial">2009 for year 2009</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%YY</font></td>
+				<td><font face="Arial">the last 2 digits of 4 digits year</font></td>
+				<td width="254"><font face="Arial">09 for year 2009</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%MM</font></td>
+				<td><font face="Arial">two digits for month. 01~12</font></td>
+				<td width="254"><font face="Arial">01 for January</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%DD</font></td>
+				<td><font face="Arial">two digits for date. 01~31</font></td>
+				<td width="254"><font face="Arial">01 for the 1st day of a month</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%hh</font></td>
+				<td><font face="Arial">two digits for hour. 00~23</font></td>
+				<td width="254">¡@</td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%mm</font></td>
+				<td><font face="Arial">two digits for minute. 00~59</font></td>
+				<td width="254">¡@</td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%ss</font></td>
+				<td><font face="Arial">two digits for second. 00~59</font></td>
+				<td width="254">¡@</td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%W</font></td>
+				<td><font face="Arial">a space character. ' '</font></td>
+				<td width="254"><font face="Arial">' '</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%N</font></td>
+				<td><font face="Arial">camera name</font></td>
+				<td width="254"><font face="Arial">camera-1</font></td>
+			</tr>
+			<tr>
+				<td align="center"><font face="Arial">%Y</font></td>
+				<td><font face="Arial">counter. It starts from 1 in every 
+				uploading task. The counter will be increased by 1 for next 
+				uploading file.</font></td>
+				<td width="254"><font face="Arial">1,2,3,4,5,...</font></td>
+			</tr>
+		</table>
+	</div>
+</blockquote>
+
+<p><font face="Arial" size="4">Example</font></p>
+<blockquote>
+	<p><font face="Arial">1. name-%YYYY-%MM-%DD@%hh%mm%ss for time 2009/06/05 
+22:50:30.</font></p>
+	<p><font face="Arial">The full name is
+	<a href="mailto:name-2009-06-05@225030">name-2009-06-05@225030</a></font></p>
+	<p><font face="Arial">2. X_%w-%N_TEST%Y for camera name is 'my-camera' and 
+	three successive uploaded files.</font></p>
+	<p><font face="Arial">The full name of these three files are</font></p>
+	<blockquote>
+		<p><font face="Arial">X_ -my-camera_TEST1, X_ -my-camera_TEST2, X_ 
+		-my-camera_TEST3</font></p>
+	</blockquote>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="EventRspImg.htm">EVENT_IMGn</a></font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

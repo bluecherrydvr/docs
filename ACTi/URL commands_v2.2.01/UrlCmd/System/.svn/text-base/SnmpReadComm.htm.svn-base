@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNMP_READ_COMMUNITY</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SNMP_READ_COMMUNITY</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set SNMP (Simple Network Management Protocol) Read Community String.</p>
+		<p>The community string acts as the password for SNMP network element. The READ Community is for the read-only access.</p>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and the Router's SNMP_READ_COMMUNITY configurations will be returned.
+    	</p>
+	</blockquote>
+    
+<h3>Input Argument</h3>
+	<blockquote>
+		Textual String (< 64 characters)
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li>
+	</ul>
+	<blockquote>
+		SNMP_READ_COMMUNITY='public'
+</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+	  OK: SNMP_READ_COMMUNITY='public'<br>
+		or<br>
+		ERROR: SNMP_READ_COMMUNITY='public'<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p> <a href="SnmpState.htm">SNMP_STATE</a>,
+            <a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a>,
+            <a href="SnmpTrap.htm">SNMP_TRAP</a>,
+            <a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a>,
+            <a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a>,
+            <a href="SnmpTrapComm.htm">SNMP_TRAP_COMMUNITY</a>,
+            <a href="SnmpPwd.htm">SNMP_PASSWORD</a>
+        </p>
+    </blockquote>
+
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+	  http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_READ_COMMUNITY<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_READ_COMMUNITY</blockquote>
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+    http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_READ_COMMUNITY=public<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_READ_COMMUNITY=public</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="system.htm">SYSTEM CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

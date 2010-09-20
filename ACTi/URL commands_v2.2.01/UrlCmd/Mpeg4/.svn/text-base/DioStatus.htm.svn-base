@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>DIO_STATUS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DIO_STATUS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the DIs and DOs signal level. The return of this command 
+	is in hexadecimal. The bit[1:0] indicate the DI 2/1 level and the bit[5:4] 
+	indicate the DO 1/1 level. the. For 
+	example, the DIO_STATUS=0x31 means the DI2 is low and DI1 is high and DO2 
+	and DO1 are high.</font></p>
+	<p><font face="Arial">Here is the mapping table of the bit in the return 
+	value and the DIs and DOs pins</font></p>
+	<table border="1" width="60%" id="table2">
+		<tr>
+			<td align="center" width="365"><font face="Arial" size="4">Bit in 
+			the Return Value</font></td>
+			<td align="center"><font face="Arial" size="4">DIO Pin</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="365"><font face="Arial">Bit 0</font></td>
+			<td align="center"><font face="Arial">DI1</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="365"><font face="Arial">Bit 1</font></td>
+			<td align="center"><font face="Arial">DI2</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="365"><font face="Arial">Bit 4</font></td>
+			<td align="center"><font face="Arial">DO1</font></td>
+		</tr>
+		<tr>
+			<td align="center" width="365"><font face="Arial">Bit 5</font></td>
+			<td align="center"><font face="Arial">DO2</font></td>
+		</tr>
+	</table>
+	<p><font face="Arial">The value in the bits 2, 3, 6 and 7 are ignored. The 1 
+	in the bit value indicates the level of the corresponding DIO pin is HIGH,</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the CHANNEL 1 video server's 
+	DIO_STATUS configuration will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li>
+	<pre><font face="Arial" size="3">Read Operation</font></pre></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">DIO_STATUS='0x00'</font>
+<br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="DioOutput.htm">DIO_OUTPUT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/mpeg4?USER=Admin&amp;PWD=123456&amp;DIO_STATUS</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/mpeg4?DIO_STATUS</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="mpeg4.htm">
+	MPEG4 CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

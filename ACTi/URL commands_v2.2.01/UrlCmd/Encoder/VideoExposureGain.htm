@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_EXPOSURE_GAIN</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>VIDEO_EXPOSURE_GAIN</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or set the video Exposure Gain.</p>
+	<p>
+    	The video exposure gain controls the exposure level of the sensor, DSP and ISP.
+        The availability of this exposure gain control depends on the sensor board configurations.
+  Please refer the <a href="../../../DFI/CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup Design Specification</a> for further details. </p>
+	<p>The error message will be returned if the encoder does not support this URL.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	1~255 for gain value
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	VIDEO_EXPOSURE_GAIN='128'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: VIDEO_EXPOSURE_GAIN='128'<br>
+	or<br>
+	ERROR: VIDEO_EXPOSURE_GAIN='128'<br>
+    or<br>
+    ERROR: VIDEO_EXPOSURE_GAIN not found
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformA : All camera with sensor MT9V135, MT9M131 or HQ1</li>
+	<li>PlatformT : All camera</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+		<a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+		<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>
+    </p>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	<p>
+		http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_EXPOSURE_GAIN<br>
+		or<br>
+		http://ip:port/cgi-bin/cmd/encoder?VIDEO_EXPOSURE_GAIN
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_EXPOSURE_GAIN=128<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?VIDEO_EXPOSURE_GAIN=128
+</blockquote>
+
+<p>Back to</p>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+        <a href="Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

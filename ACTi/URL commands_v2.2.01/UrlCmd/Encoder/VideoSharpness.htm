@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_SHARPNESS</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>VIDEO_SHARPNESS</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set the Video Sharpness Level.</p>
+		<p>
+        	This URL is only available for MT9M131 and MT9V135 sensor now. The value 1~255 will be mapped into 7 levels in these sensors.<br>
+			The error message will be returned if the encoder does not support this URL.
+        </p>
+	</blockquote>
+
+<h3>Input Argument</h3>
+	<blockquote>
+		1~255 for video sharpness.  1~255  maps to 1 ~ 7 into the sesnor.
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		VIDEO_SHARPNESS='192'
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+        <p>OK: VIDEO_SHARPNESS='192'<br>
+        or<br>
+        ERROR: VIDEO_SHARPNESS='192'</p>
+    </blockquote>
+	<h3>Applicability</h3>
+    <ul>
+    	<li>PlatformA : All camera with sensor MT9V135 or MT9M131</li>
+		<li>PlatfotmT: All camera with sensor MT9M131</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>
+		<p>Valid</p>
+	</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p>
+            <a href="VideoWbMode.htm">VIDEO_WB_MODE</a>,
+            <a href="VideoWbGain.htm">VIDEO_WB_GAIN</a>, 
+            <a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+            <a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+            <a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+            <a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+            <a href="VideoMaxShutter.htm">VIDEO_MAX_SHUTTER</a>,
+            <a href="VideoFlickless.htm">VIDEO_FLICKLESS</a>, 
+            <a href="V2Sharpness.htm">V2_SHARPNESS</a>
+        </p>
+	</blockquote>
+    
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+		<p>
+            http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_SHARPNESS<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?VIDEO_SHARPNESS
+        </p>
+	</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+        	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_SHARPNESS=192<br>
+            or<br>
+            http://ip:port/cgi-bin/cmd/encoder?VIDEO_SHARPNESS=192
+        </p>
+    </blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+	</blockquote>
+
+</body>
+
+</html>

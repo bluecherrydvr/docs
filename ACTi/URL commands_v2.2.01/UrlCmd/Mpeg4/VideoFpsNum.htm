@@ -1,0 +1,358 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_FPS_NUM</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1>VIDEO_FPS_NUM</h1>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or set the FPS (Frame Per Second) number (Frame Rate) configuration</p>
+	<p>
+    	This URL takes effect if only if the <a href="VideoFps.htm">VIDEO_FPS</a> is MODE1 for WPL and EPL encoders. Because the VIDEO_FPS is fixed to MODE 1 
+        in all PlatformT encoders, the URL is valid all the time.
+     </p>
+     <p>
+     	In multiple encoder platforms, like EPL and PlatformT, the FPS number set by this URL will be set to the current encoder's FPS number. For example, in EPL encoders, 
+        the MJPEG FPS number was set by this URL if the runtime encoder is MJPEG. When read, the runtime FPS number will be returned.
+     </p>
+     <p>
+    	The supported constant FPS number depends on the sensor and encoder (platform) capabilities. Here is the summary of the FPS number with sensors and encoders. 
+        Note that supported constant FPS number listed blow doesn't mean you could set them successfully. You need to check the return code to see if the URL was set successfully.
+    </p>
+	<ul><li>WPL Platform</li></ul>
+	<blockquote>
+		<table border="1" width="70%" id="table1">
+			<tr>
+				<th width="25%">Encoder Type</th>
+				<th width="35%">TV Standard</th>
+				<th>Supported FPS Number</th>
+			</tr>
+			<tr>
+				<td rowspan="2">Camera</td>
+				<td>NTSC (not configurable)</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td>PAL (not configurable)</td>
+				<td>1,2,3,4,5,6,8,12,25</td>
+			</tr>
+			<tr>
+				<td rowspan="2">Video Server</td>
+				<td>NTSC (configurable)</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td>PAL (configurable)</td>
+				<td>1,2,3,4,5,6,8,12,25</td>
+			</tr>
+		</table>
+	</blockquote>
+    
+	<ul><li>EPL Platform</li></ul>
+	<blockquote>
+		<table border="1" width="70%" id="table2">
+			<tr>
+				<th width="25%">Encoder Type</th>
+				<th width="35%">TV Standard</th>
+				<th>Supported FPS Number</th>
+			</tr>
+			<tr>
+				<td rowspan="2">Camera (D1 or VGA)</td>
+				<td>NTSC (not configurable)</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td>PAL (not configurable)</td>
+				<td>1,2,3,4,5,6,8,12,25</td>
+			</tr>
+			<tr>
+				<td rowspan="5">Camera (Mega-Pixel, 1.3M)</td>
+				<td>NTSC @ N1280x1024</td>
+				<td>1,2,4,8</td>
+			</tr>
+			<tr>
+				<td>NTSC @ N1280x720</td>
+				<td>1,2,5,10</td>
+			</tr>
+			<tr>
+				<td>NTSC @ N640x480</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td>NTSC @ N320x240</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td>NTSC @ N160x120</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</td>
+			</tr>
+			<tr>
+				<td rowspan="2">Video Server</td>
+				<td>NTSC (auto sense, not configurable)</td>
+				<td>1,2,3,4,5,6,7,8,10,15,30</font></td>
+			</tr>
+			<tr>
+				<td>PAL (auto sense, not configurable)</td>
+				<td>1,2,3,4,5,6,8,12,25</td>
+			</tr>
+		</table>
+	</blockquote>
+    
+    <ul><li>Mutli-Channel Video Server</li></ul>
+	<blockquote>
+		<p>
+        	The available FPS numbers depend on the type of the channel modules in the multiple channel video server. For example, 
+            the EPL FPS number is used if the channel modules are EPL encoders (Video Server).</p>
+	</blockquote>
+    
+    <ul><li>PlatformT</li>
+    </ul>
+    <blockquote>
+      <p>The available FPS numbers depend on the sensor board configurations, encoder type and streaming mode. To manage frame rate easily, we provides the maximum frame rate configuration   table associated with the video resolution, encoder type and streaming mode   here. This frame rate configuration table is very huge if we consider all   configurations in video bitrate in MPEG4, H.264 and compression ratio in MJPEG.   This table is based on 3.5Mbps in H.264 and MPEG4 and MJPEG with quality=100   (bitrate is about 18Mbps for two MJPEG streams) which are suitable for most of   applications.</p>
+      <table width="85%" border="1" id="table3">
+	    <tr>
+		    <th width="20%">Encoder Type</th>
+		    <th width="31%">TV Standard</th>
+		    <th width="11%">Streaming Mode</th>
+		    <th width="17%">Encoder Type</th>
+		    <th width="21%">Supported FPS Number</th>
+        </tr>
+		  <tr>
+		    <td rowspan="2">Camera (D1 or VGA)</td>
+		    <td>NTSC (not configurable)</td>
+		    <td rowspan="2">Single, Dual</td>
+		    <td rowspan="2">H.264, MPEG4, MJPEG</td>
+		    <td>1,2,3,4,5,6,7,8,10,15,30</td>
+	      </tr>
+		  <tr>
+		    <td>PAL (not configurable)</td>
+		    <td>1,2,3,4,5,6,8,12,25</td>
+	      </tr>
+		  <tr>
+		    <td rowspan="10">Camera (MT9M131)</td>
+		    <td rowspan="4">NTSC @ N1280x1024</td>
+		    <td>Single</td>
+		    <td>H.264, MPEG4, MJPEG</td>
+		    <td>1,2,3,4,6,9,18</td>
+	      </tr>
+		  <tr>
+		    <td rowspan="3">Dual</td>
+		    <td>H.264, X</td>
+		    <td>1,2,3,4,5,6,9,11</td>
+	    </tr>
+		  <tr>
+		    <td>MPEG4, X</td>
+		    <td>1,2,3,4,5,6,8</td>
+	    </tr>
+		  <tr>
+		    <td>MJPEG, MJPEG</td>
+		    <td>1,2,3,4,6,9,18</td>
+	    </tr>
+		  <tr>
+		    <td rowspan="5">NTSC @ N1280x720</td>
+		    <td rowspan="2">Single</td>
+		    <td>H.264,  MJPEG</td>
+		    <td>1,2,3,4,5,6,8,13,26</td>
+	      </tr>
+		  <tr>
+		    <td>MPEG4</td>
+		    <td>1,2,3,4,6,8,12,24</td>
+	    </tr>
+		  <tr>
+		    <td rowspan="3">Dual</td>
+		    <td><p>H.264, X</p></td>
+		    <td>1,2,3,4,5,8,16</td>
+	    </tr>
+		  <tr>
+		    <td>MPEG4, X</td>
+		    <td>1,2,4,6,12</td>
+	    </tr>
+		  <tr>
+		    <td>MJPEG, MJPEG</td>
+		    <td>1,2,3,4,5,6,8,13,26</td>
+	    </tr>
+		<tr>
+		    <td>NTSC @ N640x480, N320x240, N160x112</td>
+		    <td>Single, Dual</td>
+		    <td>H.264, MPEG4, H.264</td>
+		    <td>1,2,3,4,5,6,7,8,10,15,30</td>
+	    </tr>
+        <tr>
+		    <td rowspan="10">Camera (IT1)</td>
+		    <td>NTSC @ N1280x960</td>
+		    <td>Single</td>
+		    <td>H.264, MPEG4, MJPEG</td>
+		    <td>1,2,3,4,5,7,15</td>
+        </tr>
+		 <tr>
+		    <td rowspan="3">NTSC @ N1280x720</td>
+		    <td rowspan="3">Dual</td>
+		    <td>H.264, X</td>
+		    <td>1,2,3,4,5,7,11</td>
+	    </tr>
+		 <tr>
+		   <td>MPEG4, X</td>
+		   <td>1,2,3,4,5,7,9</td>
+	    </tr>
+		 <tr>
+		   <td>MJPEG, MJPEG</td>
+		   <td>1,2,3,4,5,7,15</td>
+	    </tr>
+		 <tr>
+		   <td rowspan="5">NTSC @ N1280x720</td>
+		   <td rowspan="2">Single</td>
+		   <td>H.264, MJPEG</td>
+		   <td>1,2,3,4,5,6,7,10,15,30</td>
+	    </tr>
+		 <tr>
+		   <td>MPEG4</td>
+		   <td>1,2,3,4,6,8,12,24</td>
+	    </tr>
+		 <tr>
+		   <td rowspan="3">Dual</td>
+		   <td>H.264, x</td>
+		   <td>1,2,3,4,5,6,7,10,15,16</td>
+	    </tr>
+		 <tr>
+		   <td>MPEG4, X</td>
+		   <td>1,2,3,4,6,8,12</td>
+	    </tr>
+		 <tr>
+		   <td>MJPEG, MJPEG</td>
+		   <td>1,2,3,4,5,6,7,10,15,27</td>
+	    </tr>
+		 <tr>
+		   <td>NTSC @ N640x480, N320x240, N160x112</td>
+		   <td>Single, Dual</td>
+		   <td>H.264, MPEG4, H.264</td>
+		   <td>1,2,3,4,5,6,7,8,10,15,30</td>
+	    </tr>
+		  <tr>
+		    <td rowspan="2">Video Server</td>
+		    <td>NTSC (auto sense, not configurable)</td>
+		    <td>Single, Dual</td>
+		    <td>H.264, MPEG4, H.264</td>
+		    <td>1,2,3,4,5,6,7,8,10,15,30</font></td>
+	      </tr>
+		  <tr>
+		    <td>PAL (auto sense, not configurable)</td>
+		    <td>Single, Dual</td>
+		    <td>H.264, MPEG4, H.264</td>
+		    <td>1,2,3,4,5,6,8,12,25</td>
+	      </tr>
+	  </table>
+      <br>
+      X: means the encoder types could be one of H.264, MPEG4 or MJPEG. Note that the H.264 and MPEG4 are exclusive.</blockquote>
+	<p>
+    	If the CHANNEL=n was not set with this URL to the Multi-Channel device,  this command is read-only command and the CHANNEL 1 video server's VIDEO_FPS_NUM 
+    	configuration will be returned. If the CHANNEL 1 video server does not connect to the router, the error message will be returned.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	FPS Number. Refer to the table above</blockquote>
+<h3>Attribute</h3>
+	<ul>
+		<li>Read and Write (depend on the CGI)</li>
+		<li>On-Fly</li>
+	</ul>
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>VIDEO_FPS_NUMBER='30'</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	OK: VIDEO_FPS_NUMBER='30'<br>
+        or<br>
+        ERROR: VIDEO_FPS_NUMBER='30'
+	</blockquote>
+<h3>Applicability</h3>
+	<ul>
+		<li>WPL Platform : All 1CH and 2CH Encoders</li>
+		<li>EPL Platform : All Encoders</li>
+        <li>PlatformT : All Encoders</li>
+		<li>Multi-Channel Encoder : All Video Servers</li>
+	</ul>
+	<blockquote>
+	  <p>The FPS=8 in D1 camera and video server was new added configuration. The availability of this setting in the firmware is listed below.</p>
+      <ul>
+        <li>PlatformW: 2.10.04</li>
+        <li>PlatformA:
+      		<ul>
+            	<li>Encoder: 3.12.09</li>
+            	<li>Decoder: 3.04.01</li>
+            	<li>QUAD: 3.04.00</li>
+          	</ul>
+        </li>
+        <li>PlatformT: 4.07.12</li></ul>
+     </blockquote>
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+ 
+<h3>See Also</h3>
+	<ul><li>In mpeg4 CGI</li></ul>
+	<blockquote>
+		<p>
+        	<a href="VideoFps.htm">VIDEO_FPS</a>, 
+        	<a href="VideoVariableFps.htm">VIDEO_VARIABLE_FPS</a>
+        </p>
+	</blockquote>
+	<ul><li>In encoder CGI</li></ul>
+	<blockquote>
+		<p>
+        	<a href="VideoFps.htm">VIDEO_FPS</a>, 
+			<a href="VideoVariableFps.htm">VIDEO_VARIABLE_FPS</a>, 
+            <a href="../Encoder/VariableFpsNum.htm">VARIABLE_FPS_NUM</a></p>
+	</blockquote>
+	<ul><li>In system CGI</li></ul>
+	<blockquote>
+		<p>
+        	<a href="../../../DFI/URLDesignSpec/System/VideoFps.htm">VIDEO_FPS</a> (Read-Only)
+        </p>
+	</blockquote>
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    	<p>
+			http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_FPS_NUM<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/CGI?VIDEO_FPS_NUM
+        </p>
+		where CGI could be mpeg4 or encoder
+	</blockquote>
+    
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    	<p>
+			http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;VIDEO_FPS_NUM=30<br>
+			or<br>
+			http://ip:port/cgi-bin/cmd/CGI?VIDEO_FPS_NUM=30
+    	</p>
+		where CGI could be mpeg4 or encoder
+	</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+		<a href="../../../DFI/URLDesignSpec/System/system.htm">SYSTEM CGI,</a>
+        <a href="mpeg4.htm">MPEG4 CGI</a>,
+		<a href="../Encoder/Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_IRIS_MODE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_IRIS_MODE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the IRIS mode configuration.</p>
+  <p>The camera with DC-IRIS lens might have configuration of DC level to control the IRIS. In this mode, the IRIS mode has to be set to AUTO mode. Therefore, the shutter mode should be manual shutter.</p>
+  <p>The IRIS mode should be MANUAL if the camera uses fixed IRIS lens. Therefore, the shutter mode could be AUTO in most applications or MANUAL.</p>
+  <p>This URL is slightly different from the <a href="VideoIris.htm">VIDEO_IRIS</a> URL which could set the IRIS mode and F number at the same time. The <a href="VideoIris.htm">VIDEO_IRIS</a> URL is used for some lens module (most of them are zoom lens) which could have specific F number in IRIS.</p>
+  <p>This URL is used with <a href="VideoDCLevel.htm">VIDEO_DC_LEVEL</a> to control the DC-Iris lens which could not use F number to set the IRIS.</p>
+  <p>The error message, <strong>VIDEO_IRIS_MODE not found</strong>, will be returned if the camera is not able to control the IRIS.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>
+  mode<br />
+  where mode could be<br />
+  AUTO : for auto IRIS lens<br />
+  MANUAL : for manual IRIS lens</p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_IRIS_MODE='AUTO'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: VIDEO_IRIS_MODE='AUTO'<br />
+    or<br />
+    ERROR: VIDEO_IRIS_MODE='AUTO'<br />
+    or<br />
+    ERROR: VIDEO_IRIS_MODE not found</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : The camera with DC-IRIS control function</li>
+  <li>PlatfromT : All camera with DC-IRIS control function</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoDCLevel.htm">VIDEO_DC_LEVEL</a>, 
+  <a href="VideoIris.htm">VIDEO_IRIS</a>, 
+  <a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>, 
+  <a href="VideoShutterSpeed.htm">VIDEO_SHUTTER_SPEED</a>, 
+  <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_IRIS_MODE<br />
+    or<br />
+  http://ip:port/cgi-bin/cmd/encoder?VIDEO_IRIS_MODE</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_IRIS_MODE=AUTO<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_IRIS_MODE=AUTO</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNMP_TRAP_COMMUNITY</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SNMP_TRAP_COMMUNITY</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set SNMP (Simple Network Management Protocol) Trap Community configuration.</p>
+		<p>The Trap community is used for Trap message. In general, the Trap community is not required when the device sends the Trap message to the remote SNMP receiver. But, in some SNMP server, the community string was used as a password to access of device data. Set the Trap community string correctly is the must then.</p>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and the Router's SNMP_TRAP_ADDR configurations will be returned.
+    	</p>
+	</blockquote>
+    
+<h3>Input Argument</h3>
+	<blockquote>
+		Texual String. ( &lt; 64 characters)</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li>
+	</ul>
+	<blockquote>
+		SNMP_TRAP_COMMUNITY=''
+</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+OK: SNMP_TRAP_COMMUNITY=''<br>
+		or<br>
+		ERROR: SNMP_TRAP_COMMUNITY=''<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p> 
+        	<a href="SnmpState.htm">SNMP_STATE</a>,
+        	 <a href="SnmpReadComm.htm">SNMP_READ_COMMUNITY</a>, 
+            <a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a>, 
+            <a href="SnmpTrap.htm">SNMP_TRAP</a>,
+            <a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a>,
+            <a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a>,
+            <a href="SnmpPwd.htm">SNMP_PASSWORD</a>
+        </p>
+    </blockquote>
+
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_TRAP_COMMUNITY<br>
+		or<br>
+http://ip:port/cgi-bin/cmd/system?SNMP_TRAP_COMMUNITY</blockquote>
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_TRAP_COMMUNITY=''<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_TRAP_COMMUNITY=''</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="system.htm">SYSTEM CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

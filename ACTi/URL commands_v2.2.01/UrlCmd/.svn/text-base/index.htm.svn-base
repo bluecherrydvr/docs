@@ -1,0 +1,171 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>URL Command Specification</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.EOL {
+	color: #464646;
+}
+-->
+</style></head>
+
+<body>
+
+<h1 align="center">URL Command Specification</h1>
+<h3 align="center">VERSION V2.2.01</h3>
+<p>
+	<div align="center">
+  		<table border="1" width="80%" id="table1" cellspacing="0" cellpadding="0">
+    		<tr>
+      			<th width="10%" align="center">Version</th>
+      			<th width="10%" align="center">Date</th>
+      			<th align="center">Description</font></th>
+    		</tr>
+    		<tr>
+        		<td align="center"><font size="-1">V2.1.03</font></td>
+      			<td align="center"><font size="-1">2009/12/02</font></td>
+      			<td align="left"><font size="-1">
+        			<ul>
+          				<li>Change the max. length of the string argument to 16 in OSD_FORMAT URL in encoder CGI</li>
+          				<li>Add VIDEO_GOP URL in Encoder CGI</li>
+          				<li>Set VIDEO_MAX_SHUTTER URL be valid again</li>                           
+          				<li>Update OSD_FORMAT URL in ENCODER CGI</li>
+          				<li>Add PIR_MD_CONFIG and EVENT_RSPMDPIR URL in ENCODER CGI</li>
+          				<li>Update EVENT_CONFIG for PIR motion sensor function</li>
+          				<li>Update OSD_FORMAT in DECODER CGI</li>
+          				<li>Update DDNS_CONFIG and V2_DDNS_CONFIG URLs in SYSTEM CGI</li>
+          				<li>Update VIDEO_DC_LEVEL URL in ENCODER CGI </li>    
+          				<li>Update VIDEO_FLICKLESS URL in ENCODER CGI </li>
+          				<li>Update VIDEO_TV URL</li>
+          				<li>Update SERIAL_SETTING in MPEG4, ENCODER and URL CGIs </li>
+          				<li>Update the -o option in CHANNEL_CONFIG in DECODER CGI</li>
+          			</ul>
+        		</font></td>
+    		</tr>
+            <tr>
+        		<td align="center"><font size="-1">V2.2.00</font></td>
+      			<td align="center"><font size="-1">2010/02/24</font></td>
+      			<td align="left">
+        			<ul>
+                    	<li><font size="-1">Remove VIDEO_MJPEG_FPS, MAX_STREAMING_TIME, VIDEO_FPS_RATIO from encoder CGI</font></li>
+                        <li><font size="-1">Remove GUEST_PREVIEW from system CGI</font></li>
+                        <li><font size="-1">Add URLs for Night Profile Handler in PlatfromT camera</font></li>
+                        <li><font size="-1">Add SNMP releated URLs in SYSTEM CGI</font></li>
+                        <li><font size="-1">Remove FW_UPG_STATUS URL from SYSTEM CGI</font></li>
+                        <li><font size="-1">Change the OEM configurations handling rules in the CONFIG_GET, CONFIG_SET, SERVER_REPORT URLs</font></li>
+                        <li><font size="-1">Change the implementation of FIRMWIRE_ALL URL in update CGI</font></li>
+                        <li><font size="-1">Add BONJOUR_CONFIG URL in the system CGI</font></li>
+                        <li><font size="-1">Add the PIR to the event output in EVENT_CONFIG URL in encoder CGI</font></li>
+                        <li><font size="-1">Correct EVENT_RSPGO URL command in encoder CGI</font></li>
+                        <li><font size="-1">Add SET_CHANNEL, VIDEO_STREAM and EVENT_RSPDO URLs in the decoder CGI</font></li>
+                        <li><font size="-1">Correcct SET_CHANNEL, OSD_DATE_FORMAT, URL CMD List in URL CGI</font></li>
+                        <li><font size="-1">Change input argument range in VIDEO_SHARPNESS in encoder CGI</font></li>
+                        <li><font size="-1">Add FPS_CAP_QUERY_ALL URL in encoder CGI</font></li>
+                        <li><font size="-1">Update the description of V2_STREAMING_TYPE in system CGI</font></li>
+                        <li>Update the error return message in the UPDATE CGI</li>
+                        <li><font size="-1">Update FOCUS URL in encoder CGI</font></li>
+                        <li><font size="-1">Add the FOCUS_CAP_GET, ZOOM_CAP_GET, STEPPED_ZOOM URLs in encoder CGI</font></li>
+                    </ul>
+                </td>
+             </tr>
+             <tr>
+        		<td align="center"><font size="-1">V2.2.01</font></td>
+      			<td align="center"><font size="-1">2010//</font></td>
+      			<td align="left"><font size="-1">
+        			<ul>
+                    	<li>Add ENCODER_TYPE, VIDEO_STREAM URL for PlatformW encoders</li>
+                    	<li>Change the quality range to 1~100 in SNAPSHOT URL in encoder CGI</li>
+                    	<li>Add OEM_INFO URL in system CGI</li>
+                    	<li>Update the VIDEO_DC_LEVEL URL in encoder CGI (IT1 DC IRIS level mapping rule was updated)</li>
+                    	<li>Add EVENT_PUSH URL in encoder CGI.</li>
+                    	<li>Add the evnets in the EVENT_CONFIG URL in encoder CGI</li>
+                    	<li>Add the 8 FPS to the VIDEO_FPS_NUM, VIDEO_VAIRABLE_FPS and VARIABLE_FPS_NUM URLs</li>
+                    	<li>Update SYSTEM_INFO and SYSTEM_INFO_XML in system CGI for multiple channel video servers.</li>
+                    	<li>change the length of input argument in SNMP_TRAP_NAME to 32.</li>
+                	</ul>
+                </font></td>
+             </tr>
+    	</table>
+    </div>
+</p>
+<p align="left"></p>
+<p align="left"></p>
+<p align="left"></p>
+<hr>
+<p align="left"></p>
+
+<h3><a href="General/GeneralDescription.htm">Description of URL</a></h3>
+
+<h3><a href="General/ReturnMessage.htm">Specification of Return Message</a></h3>
+
+<h3>List by CGI Program</h3>
+	<blockquote>
+		<p align="left">
+        	<a href="System/system.htm">SYSTEM CGI</a>, 
+			<a href="Mpeg4/mpeg4.htm">MPEG4 CGI</a>, 
+            <a href="Encoder/Encoder.htm">ENCODER CGI</a>, 
+			<a href="../../DFI/URLDesignSpec/Url/url.htm">URL CGI</a>, 
+			<a href="Decoder/decoder.htm">DECODER CGI</a>, <a href="Update/update.htm">UPDATE CGI</a>, 
+			<a href="../../DFI/URLDesignSpec/Quad/quad.htm">QUAD CGI</a>
+        </p>
+	</blockquote>
+    
+<h3>List by Platform</h3>
+	<blockquote>
+    <table border="1" width="80%" id="table2">
+			<tr><td colspan="2" bgcolor="#6666FF">WPL Platform</td></tr>
+			<tr>
+				<td width="20%">ENCODER</td>
+				<td>1-Channel, <span class="EOL">2-Channel*</span>, <span class="EOL">QUAD*</span></td>
+			</tr>
+			<tr>
+            	<td>DECODER</td>
+				<td class="EOL">1-Channel*</td>
+			</tr>
+			<tr><td colspan="2" bgcolor="#6666FF">EPL Platform</td></tr>
+			<tr>
+				<td>ENCODER</td>
+				<td>1-Channel</td>
+			</tr>
+			<tr>
+				<td>DECODER</td>
+				<td>1-Channel</td>
+			</tr>
+			<tr><td colspan="2" bgcolor="#6666FF">Multi-Channel Encoder</td></tr>
+			<tr>
+				<td>Router</td>
+				<td>4-Channel, 8-Channel, 16-Channel</td>
+			</tr>
+			<tr>
+				<td>Video Server</td>
+				<td>4-Channel, 8-Channel, 16-Channel</td>
+</tr>
+			<tr>
+				<td colspan="2" bgcolor="#6666FF">Platform T</td>
+			</tr>
+			<tr>
+				<td>ENCODER</td>
+				<td>1-Channel, 4-Channel</td>
+			</tr>
+			<tr>
+				<td>DECODER</td>
+				<td>1-Channel</td>
+			</tr>
+		</table>
+    <p>* : The product was EOL.</p>
+    </blockquote>
+    
+<h3>Back to</h3>
+<blockquote>
+	<a href="../../index.htm">HOME</a>
+</blockquote>
+
+</body>
+
+</html>

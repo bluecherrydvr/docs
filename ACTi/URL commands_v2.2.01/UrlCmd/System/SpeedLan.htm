@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SPEED_LAN</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">SPEED_LAN</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set link speed and duplex mode of LAN port. </font></p>
+	<p><font face="Arial">Consider the compatibility with ISV, this URL is set 
+	to read-only command for the device without LAN port like all EPL Platform, 
+	PlatformT and Multi-Channel devices. Then, the return 
+	message of this URL is LAN_SPEED='0' always.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0: Auto Negotiation</font><br>
+	<font face="Arial">1: Force to 100Mbps and Full Duplex Mode</font><br>
+	<font face="Arial">2: Force to 100Mbps and Half Duplex Mode</font><br>
+	<font face="Arial">3: Force to 10Mbps and Full Duplex Mode</font><br>
+	<font face="Arial">4: Force to 10Mbps and Half Duplex Mode</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable for all WPL Platform Devices</font></li>
+	<li><font face="Arial">Read Only for all EPL Platform, PlatformT and 
+	Multi-Channel Devices. 
+	The&nbsp; return message is LAN_SPEED='0' always.</font></li>
+	<li><font face="Arial">Not On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">LAN_SPEED='0'</font>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: LAN_SPEED='0'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: LAN_SPEED='0'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatformT : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><a href="SpeedWan.htm">SPEED_WAN</a></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SPEED_LAN</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?SPEED_LAN</font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SPEED_LAN=n</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?SPEED_LAN=n</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

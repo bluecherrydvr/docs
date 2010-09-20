@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>STEPPED_FOCUS</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>STEPPED_FOCUS</h2>
+<p>&nbsp;</p>
+<h3>Description</h3
+><blockquote>
+	<p>Send the stepped focus command to the zoom capable camera.</p>
+	<p>
+    	The focus control might not be easy to handle because the network latency of camera and the response of the mechanical parts in zoom lens.
+        The stepped focus command allows user to move the focus step by step with programmable step size.
+        That gives convenient way to have the precise focus on the object in the scene.
+    </p>
+	<p>The camera stops focus after it moved one focus step   by this command. It does not need to send the FOCUS=STOP command to stop action of focus in camera then.</p>
+	<p>This URL is only available  in the PlatformT 35x zoom camera.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>Direction[,StepSize]<br> 
+  where<br>
+  Direction: the direction of the zoom command. It could be NEAR or FAR<br>
+StepSize: the focus step size from 1 to 5. This argument is an optional argument.  If it is set by this URL, the camera will use it as the new step size to move focus in the zoom lens immediately. And this new step size will be recorded in the device configuration and be used later on. So, If it is not in this URL, the camera will use the previous step size to move focus in the zoom lens.</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Write Only</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<blockquote>
+	OK: STEPPED_FOCUS='echo the input arguments'</font><br>
+	<font face="Arial">or</font><br> 
+	ERROR: 
+STEPPED_FOCUS is write-only<br> 
+or
+<br> 
+ERROR: invalid parameters
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformT : All Encoders with firmware 4.08</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+   	<a href="Focus.htm">FOCUS</a>, <a href="FocusPosition.htm">FOCUS_POSITION</a>, <a href="FocusCapGet.htm">FOCUS_CAP_GET</a></p>
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+  http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;STEPPED_FOCUS=FAR,1<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?STEPPED_FOCUS=FAR,1
+    </blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+		<a href="Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

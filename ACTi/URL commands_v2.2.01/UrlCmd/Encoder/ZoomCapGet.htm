@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>ZOOM_CAP_GET</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>ZOOM_CAP_GET</h2>
+<p>&nbsp;</p>
+<h2>Description</h2>
+<blockquote>
+	<p>Get the zoom capability from the camera.</p>
+	<p>
+    	This URL is only available in the PlatformT 35x zoom camera.</p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	None
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read Only</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<blockquote>The format of return message is listed below.<br>
+Type,TelePos,WidePos<br> 
+where
+<br> 
+Type: the zoom control method of the lens. It could be MANUAL or MOTORIZED. The MANUAL means the zoom could not be adjusted by camera itself. It was controlled manually. The MOTORIZED means the zoom is able to be controlled by the camera.<br> 
+TelePos: the nearest position of zoom.<br> 
+WidePos: the farthest position of zoom.
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformT : All Encoders with firmware 4.08</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<p>
+		<a href="Zoom.htm">ZOOM</a>,
+    <a href="ZoomPosition.htm">ZOOM_POSITION</a>, <a href="SteppedZoom.htm">STEPPED_ZOOM</a></p>
+</blockquote>
+
+<h3>Example</h3>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;ZOOM_CAP_GET<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?ZOOM_CAP_GET
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<p>
+    	<a href="../index.htm">HOME</a>,
+		<a href="Encoder.htm">ENCODER CGI</a>
+    </p>
+</blockquote>
+
+</body>
+
+</html>

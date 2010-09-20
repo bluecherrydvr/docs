@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>CDR_IPERF_SERVER</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">CDR_IPERF_SERVER</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Enable or disable the IPERF daemon for connection 
+	quality 
+	test.</font></p>
+	<p><font face="Arial">When it is enabled, the device acted as the server to 
+	wait for IPERF client's connection. As the client connected to the server, 
+	the server will sent testing data to the client to measure the connection 
+	quality (bandwidth, Packet Lost Rate). The report will be generated in the 
+	client device.</font></p>
+	<p><font face="Arial">Here is the setup topology and the test flow of this 
+	URL.</font></p>
+	<p align="center">
+	<img border="0" src="images/iperf.bmp" width="598" height="409"></p>
+	<p align="left">
+	<font face="Arial">IPERF command vs. this URL.</font></p>
+	<p align="left">
+	<font face="Arial">1. TCP Server</font></p>
+	<p align="left">
+	<font face="Arial">&nbsp;&nbsp;&nbsp; CDR_IPERF_SERVER=ENABLE,TCP&nbsp;&nbsp;&nbsp; 
+	==&gt; iperf -s -f m &amp;</font></p>
+	<p align="left">
+	<font face="Arial">2. UDP Server</font></p>
+	<p align="left">
+	<font face="Arial">&nbsp;&nbsp;&nbsp; CDR_IPERF_SERVER=ENABLE,UDP&nbsp;&nbsp; 
+	==&gt; iperf -c -f m -u &amp;</font></p>
+	<p align="left">
+	<font face="Arial">3. Disable IPERF SERVER</font></p>
+	<p align="left">
+	<font face="Arial">&nbsp;&nbsp;&nbsp; CDR_IPERF_SERVER=DISABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	==&gt; killall iperf</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n,m where</font><br>
+	<font face="Arial">n&nbsp; : ENABLE or DISABLE</font><br>
+	<font face="Arial">m : TCP or UDP. This argument will be ignored if the n is 
+	DISABLE</font>.</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : 1CH encoders (Version V2.09.00 and 
+	after), 1CH decoder(Version V2.05.03 and later)</font></li>
+	<li><font face="Arial">EPL Platform : All Devices (Version V3.08.05 and 
+	after for Encoders, Version V3.02.01 and after for Decoders)</font></li>
+	<li><font face="Arial">PlatformT : All Devices (Version V4.00.03 and after 
+	for Encoders)</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices (Version V2.04.00 and after for 
+	Router)</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="CdrIperfClient.htm">CDR_IPERF_CLIENT</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;CDR_IPERF_SERVER=ENABLE,TCP<br>
+	<font face="Arial">or</font><br>http://ip:port/cgi-bin/cmd/system?CDR_IPERF_SERVER=ENABLE,TCP</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

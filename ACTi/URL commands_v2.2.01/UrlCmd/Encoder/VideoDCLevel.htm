@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIDEO_DC_LEVEL</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: medium;
+}
+-->
+</style></head>
+
+<body>
+<h2>VIDEO_DC_LEVEL</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the DC level for the DC-IRIS Lens. This URL is valid if the camera supports the DC-IRIS lens.</p>
+  <p>The DC-IRIS is a DC-Iris lens. The DSP could set a DC level to the lens to adjust the IRIS in the lens. Then the lighting on the DSP was changed. The DSP sets another DC level to the lens again. Through this feedback system, the DSP could get the optimal lighting for good quality image.</p>
+  <p>This URL is valid if only of the <a href="VideoIrisMode.html">VIDEO_IRIS_MODE</a> = AUTO.</p>
+  <p>The error message, <strong>VIDEO_DC_LEVEL not found</strong>, will be returned   if the  lens in camera is not a DC-Iris Lens.</p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  <p>level<br />
+  where level is in the range between 0 to 255.</p>
+  <p>The actual working range of DC IRIS level depends on the sensor/DSP. Here is the mapping table of level range and sensor/DSP.</p>
+  <table width="70%" border="1">
+    <tr>
+      <th scope="col">Sensor/DSP</th>
+      <th scope="col">Value in level</th>
+      <th scope="col"><p>Actual DC Level (write to H/W VR)</p></th>
+    </tr>
+    <tr>
+      <td><div align="center">IT1</div></td>
+      <td><div align="center">0~255</div></td>
+      <td><p align="center">255 - level</p></td>
+    </tr>
+    <tr>
+      <td rowspan="3"><div align="center">Others</div></td>
+      <td><div align="center">0~1</div></td>
+      <td><div align="center">0</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">2~128</div></td>
+      <td><div align="center">1~127</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">129~255</div></td>
+      <td><div align="center">127</div></td>
+    </tr>
+  </table>
+  <p>Based on the above mapping table, there is no error if the range of level in this URL is out of actual DC level working range in the device. The return code is the echo of the command in this case. For example, the return message of the URL VIDEO_DC_LEVEL=255 in HQ1 camera is </p>
+  <p>OK: VIDEO_DC_LEVEL=255. </p>
+  <p>But the actual DC level is 127 in HQ1 camera.</p>
+  <p>If the level is larger than 255, the error message is returned.</p>
+  <p><strong>The higher value in level, the smaller aperture in IRIS Lens.</strong></p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>VIDEO_DC_LEVEL='50'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: VIDEO_DC_LEVEL='50'<br />
+    or<br />
+    ERROR: VIDEO_DC_LEVEL='50'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>EPL Platform : All encoders</li>
+  <li>PlatfromT : All encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoIrisMode.html">VIDEO_IRIS_MODE</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DC_LEVEL<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_DC_LEVEL</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_DC_LEVEL=50<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?VIDEO_DC_LEVEL=50</p>
+</blockquote>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

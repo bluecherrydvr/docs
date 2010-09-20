@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>SNMP_TRAP</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>SNMP_TRAP</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+	<blockquote>
+		<p>Get or Set SNMP (Simple Network Management Protocol) Trap State.</p>
+		<p>When sets, it could disable the SNMP trap function or enable the SNMP Trap function with pre-defined trap message types. The SNMP device sends the trap message when its state matches the trap types.</p>
+		<p>The message format of the Trap is very from the SNMP version. That means the users have to select the correct SNMP version which matches the remote SNMP agent first.</p>
+		<p>
+    		If the CHANNEL=n was set with this URL to the Multi-Channel device,  this URL is read-only command and the Router's SNMP_TRAP configurations will be returned.
+    	</p>
+	</blockquote>
+    
+<h3>Input Argument</h3>
+	<blockquote>
+	  <table width="80%" border="1">
+	    <tr>
+	      <th scope="col" width="10%">Input Argument</th>
+	      <th scope="col" width="25%">Trap Type</th>
+	      <th scope="col">Description</th>
+        </tr>
+	    <tr>
+	      <th scope="row">0</th>
+	      <td>None</td>
+	      <td>Trap function is disabled</td>
+        </tr>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td>Cold Start</td>
+	      <td>Send the trap message when the device is powered up</td>
+        </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>Warm Start</td>
+	      <td>Send the trap message when the device is rebooted</td>
+        </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>Cold and Warm Start</td>
+	      <td>Send the trap message when the device is booted</td>
+        </tr>
+	    <tr>
+	      <th scope="row">4</th>
+	      <td>Authentication fall</td>
+	      <td>Send the trap message when authentication fails in MIB access</td>
+        </tr>
+	    <tr>
+	      <th scope="row">5</th>
+	      <td>Cold Start and Authentication fail</td>
+	      <td>Send the trap message when the device is powered up or authentication fails in MIB access</td>
+        </tr>
+	    <tr>
+	      <th scope="row">6</th>
+	      <td>Warm Start and Authentication fail</td>
+	      <td>Send the trap message when device is rebooted or authentication fails in MIB access</td>
+        </tr>
+	    <tr>
+	      <th scope="row">7</th>
+	      <td>All</td>
+	      <td>Send the trap message when the trap condition maches above cases</td>
+        </tr>
+      </table>
+	</blockquote>
+    
+<h3>Attribute</h3>
+	<ul>
+    	<li>Read and Write</li>
+		<li>On-Fly</li>
+	</ul>
+    
+<h3>Return of Message</h3>
+	<ul><li>Read Operation</li>
+	</ul>
+	<blockquote>
+		SNMP_TRAP='3'
+</blockquote>
+	<ul><li>Write Operation</li></ul>
+	<blockquote>
+    OK: SNMP_TRAP='3'<br>
+		or<br>
+		ERROR: SNMP_TRAP='3'<br>
+	</blockquote>
+    
+<h3>Applicability</h3>
+	<ul>
+		<li>EPL Platform : All encoder Devices</li>
+		<li>PlatformT : All encoder Devices</li>
+	</ul>
+    
+<h3>Status</h3>
+	<blockquote>Valid</blockquote>
+    
+<h3>See Also</h3>
+	<blockquote>
+		<p> <a href="SnmpState.htm">SNMP_STATE</a>,
+            <a href="SnmpReadComm.htm">SNMP_READ_COMMUNITY</a>,
+            <a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a>,
+            <a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a>,
+            <a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a>,
+            <a href="SnmpTrapComm.htm">SNMP_TRAP_COMMUNITY</a>,
+            <a href="SnmpPwd.htm">SNMP_PASSWORD</a>
+        </p>
+    </blockquote>
+
+<h3>Example</h3>
+	<ul><li>Read Operation</li></ul>
+	<blockquote>
+    http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_TRAP<br>
+		or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_TRAP</blockquote>
+<ul><li>Write Operation</li></ul>
+	<blockquote>
+  http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;SNMP_TRAP=3<br>
+        or<br>
+        http://ip:port/cgi-bin/cmd/system?SNMP_TRAP=3</blockquote>
+
+<h3>Back to</h3>
+	<blockquote>
+		<p>
+        	<a href="../index.htm">HOME</a>, 
+            <a href="system.htm">SYSTEM CGI</a>
+        </p>
+	</blockquote>
+
+</body>
+
+</html>

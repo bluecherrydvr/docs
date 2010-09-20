@@ -1,0 +1,230 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>OSD_FORMAT</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>OSD_FORMAT</h2>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the state of encoder's input OSD (Text Overlay) format.</p>
+	<p>
+    	In input OSD function, the textual strings or simple and small image could be shown on the video image for specific information 
+        of image. For example, the date/time, camera name, user defined text and so on.
+</p>
+	<p>When read, the configurations in all OSD regions will be returned.</p>
+	<p>
+    	In the WEB application, the host could preview the video stream on the WEB browser. In WEB preview page, there is a video 
+        control bar on the top of video preview. Some encoder information will be shown on the control bar like date and time.
+<strong>When the input OSD is enabled, the encoder's information will NOT be shown on the control bar</strong>. Otherwise, the encoder's information might be not synchronized between control bard information and input OSD. For example the device time might not be synchronized. </p>
+	<p>
+    	The number of the OSD regions is vary from encoder devices. In EPL 1CH encoder, there is only one OSD region. In PlatfromT 
+        encoder, there are four OSD regions. Therefore, any region ID will be treated as region 1 in EPL 1CH encoder.
+    </p>
+	<p>
+    	The horizontal position of an OSD region is fixed and started from the left edge. The vertical position of an OSD region could be set at top or
+    	bottom of the image.</p>
+	<p><strong><u>Text Overlay in EPL encoder</u></strong></p>
+	<p>
+    	Due to EPL input OSD limitation, the beginning horizontal position is vary from video resolutions and encoder types. Here is the summary 
+        of the horizontal position vs video resolutions and encoder types.</p>
+	<p>The background color is fixed to the 0x90FF90 in R,G,B color.</p>
+<div align="center">
+	  <table border="1" width="80%" id="table3">
+			<tr>
+				<td align="center" width="203"><b>Encoder Type</b></td>
+				<td width="271" align="center"><b>Video Resolution</b></td>
+				<td width="214" align="center"><b>Beginning horizontal position</b></td>
+			</tr>
+			<tr>
+				<td rowspan="2" width="203" align="center">Mega-Pixel Camera</td>
+				<td align="center">1280x1024, 1280x720</td>
+				<td align="center">256</td>
+			</tr>
+			<tr>
+				<td align="center">640x480, 320x160,160x112</td>
+				<td align="center">0</td>
+			</tr>
+			<tr>
+				<td width="203" align="center">D1 Camera or Video Server</td>
+				<td align="center">720x480,720x576, 640x480, 352x240,352x288,160x112,176x144</td>
+				<td align="center">1</td>
+			</tr>
+		</table>
+</div>
+<p align="left"><strong><u>Text Overlay in PlatformT Encoder</u></strong></p>
+    <p align="left">There are 4 regions for Text Overlay. These 4 regions are shared with the privacy mask functions. In text overlay function, the beginning horizontal position of every region is from the left of the image no metter what video resolution is. And, the vertical position of every region could be set at the top or button of the image.</p>
+    <p align="left">Because the background color could not be configurable and this URL does not have background argument. Therefore, the background color in platformT was preset to 0x808080 in R,G,B color.</p>
+  <p align="left">Refer to the Text Overlay and Privacy Mask control flow for WEB page design.</p>
+    <p align="left"><a href="images/PlatformTOSD.pdf">PlatformTOSD.pdf</a></p>
+    <p align="left"><strong><u>OSD Format</u></strong></p>
+  
+  <p>
+  Every region could show specific information with specific format. Here defined the OSD format and the method of setting format.</p>
+  <p>
+  		Refer to <a href="TextOverlayFormat.html">TextOverlayFormat.html</a> for format of output Text.
+   </p>
+	<div align="center">
+  <p align="left">The type of the input OSD was defined as well in this URL.</p>
+		<table border="1" width="80%" id="table2">
+			<tr>
+				<td align="center" width="225"><b>Type of OSD</b></td>
+				<td align="center"><b>Description</b></td>
+			</tr>
+			<tr>
+				<td align="center" width="225">Transparent</td>
+				<td>
+                	0~100 for OSD Text overlay level. The level 0 is non-transparent mode, the OSD will overwrite the video image completed.
+                    The level 100 is fully transparent, the OSD will not be able be seen on the video image.
+                </td>
+			</tr>
+			<tr>
+				<td align="center" width="225">Color</td>
+				<td>
+                	6 digitals for R(Red), G(Green) and B(Blue) colors. Two digits give the color level of a color in R, G or B. Here is the format. 
+                    RRGGBB where RR is the color level of red color. These value will be hexadecimal value. For example, ff0000 give the fully red
+                    color in OSD.
+                </td>
+			</tr>
+		</table>
+	  <p align="left">
+        	The input of the argument in the URL is Region,Color,Transparent,Pos,Format[,String] where
+		</p>
+		<table border="1" width="80%" id="table4">
+			<tr>
+				<td align="center" width="13%"><b>Argument</b></td>
+				<td align="center" width="15%"><b>Parameters</b></td>
+				<td align="center" width="69%"><b>Note</b></td>
+			</tr>
+			<tr>
+				<td width="13%"><div align="center">Region</div></td>
+				<td width="15%"><div align="center">1~4</div></td>
+				<td width="69%"><div align="left">OSD region. In EPL encoder, it should be fixed to 1</div></td>
+			</tr>
+			<tr>
+            	<td><div align="center">State</div></td>
+                <td><div align="center">0,1</div></td>
+                <td><div align="left">0: Disable, 1:Enable<br>
+                  <strong>In EPL and PlatformT encoders, the Text Overlay and Privacy Mask shared this OSD window, the Privacy Mask will be disabled automatically if the State = 1 in this URL</strong>.</div></td>
+            </tr>
+			<tr>
+				<td width="13%"><div align="center">Color</div></td>
+				<td width="15%"><div align="center">000000~ffffff</div></td>
+				<td width="69%"><div align="left">Text Color. The format is RRGGBB where RR is the color level in red, GG is for green and BB is for blue</div></td>
+			</tr>
+			<tr>
+				<td width="13%"><div align="center">Transparent</div></td>
+				<td width="15%"><div align="center">0~100</div></td>
+				<td width="69%"><div align="left">0: the foreground color of text is black, 1~100. Transparent level. 100 is fully transparent.<br>
+			      <strong>In EPL encoder, this parameter could
+              be either 0 or 100</strong>. </div></td>
+			</tr>
+			<tr>
+				<td width="13%"><div align="center">Pos</div></td>
+				<td width="15%"><div align="center">TOP, BOTTOM</div></td>
+				<td width="69%"><div align="left">The vertical position of the OSD region.</div></td>
+			</tr>
+			<tr>
+				<td width="13%"><div align="center">Format</div></td>
+				<td colspan="2"><div align="left">Refer to <a href="TextOverlayFormat.html">OSD format table</a></div></td>
+			</tr>
+			<tr>
+				<td height="38" width="13%"><div align="center">String</div></td>
+				<td height="38" width="15%"><div align="center">User defined string</div></td>
+				<td height="38" width="69%"><div align="left">In EPL, only 0~9, A~Z, ':', ' ', '/' and '-'. The maximum length of the text is 24 characters. If the overall text string is longer than 24, 
+                the user defined string will be truncated.<br>
+			  In PlatformT, the maximum length of the text is 16 characters. If the overall text string is longer than 16, 
+                the user defined string will be truncated.</div></td>
+			</tr>
+		</table>
+	</div>
+	<p>Here are some examples of this URL.</p>
+	<p>
+    	<strong>OSD_FORMAT=1,1,0000ff,50,TOP,%YYYY%X%MM%X%DD%W%hh%C%mm%C%ss</strong><br>
+        The OSD region 1 will shows the date and time with transparent level 50 in  blue. The format of date and time is YYYY/MM/DD HH:MM:SS. 
+        For example, 2008/09/01 20:03:45.
+</p>
+	<p>
+    	<strong>OSD_FORMAT=2,1,000000,0,TOP,%MM%HH%DD%X%hh%C%mm%C%ss%X%U,Test OSD</strong><br>
+        The OSD region 2 will shows the date, time and user in white. The background is black. The format of this OSD texts is 
+        MM-DD/HH:MM:SS/Test OSD. For example, 09-01/20:03:45/Test OSD
+</p>
+	<p>
+    	<strong>OSD_FORMAT=3,1,00ff00,0,BUTTOM,%N%W%V</strong><br>
+        The OSD region 3 will shows the camera name in green on the image with black background color. If the video loss was detected,
+        the VIDEO LOSS will be attached after the camera name. For example, it shows CAMERA-1 as the camera name and shows 
+        CAMERA-1 VIDEO LOSS when video loss occurs.
+</p>
+	<p>
+    	If the CHANNEL=n was not set with this URL to the 	Multi-Channel device, the error message will be returned.
+  </p>
+</blockquote>
+<h3>Input Argument</h3>
+<blockquote>
+  Region,State,Color,Transparent,Pos,Format[,String]
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+	<li>Read and Write</li>
+	<li>On-Fly</li>
+</ul>
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+  OSD_FORMAT='1,1,00ff00,30,TOP,%YYYY%X%MM%X%DD%W%hh%C%mm%C%ss'<br>
+  OSD_FORMAT='2,1,0000ff,50,BOTTOM,%YYYY%X%MM%X%DD%W%hh%C%mm%C%ss'<br>
+  ...
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+	OK: OSD_FORMAT='1,1,00ff00,30,TOP,%YYYY%X%MM%X%DD%W%hh%C%mm%C%ss'<br>
+	or<br>
+	ERROR: invalid parameters
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+	<li>EPL Platform : All Encoders</li>
+	<li>PlatfotmT : All Encoders</li>
+	<li>Multi-Channel Encoder : 4CH and 16CH Video Servers</li>
+</ul>
+<h3>Status<</h3>
+<blockquote>
+  Valid
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+	<a href="OsdEnabled.htm">OSD_ENABLED</a>, 
+    <a href="PrivacyRegion.htm">PRIVACY_REGION</a>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;OSD_FORMAT=1,1,00ff00,30,TOP,%YYYY%X%MM%X%DD<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?OSD_FORMAT=1,1,00ff00,30,TOP,%YYYY%X%MM%X%DD
+</blockquote>
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>, 
+    <a href="Encoder.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

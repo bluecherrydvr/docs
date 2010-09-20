@@ -1,0 +1,1425 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>System CGI Program</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1 align="center">System CGI Program</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><hr></p>
+<p>
+	Only root could set the configuration through this SYSTEM CGI. If the logon user is not root, all write commands will be treated as read commands
+</p>
+<h3>Quick Link</h3>
+	<p>
+		<blockquote>
+        	<a href="#DateUrl">Date &amp; Time URLs</a>,
+            <a href="#NetUrl">Networking URLs</a>,
+            <a href="#SnmpUrl">SNMP URLs</a>,
+            <a href="#DnsUrl">DNS &amp; DDNS URLs</a>,
+            <a href="#AccountUrl">Account Management URLs</a>,
+            <a href="#PortUrl">Portmap URLs</a>,
+            <a href="#StreamUrl">Video &amp; Audio Streaming URLs</a>,
+        	<a href="#DebugUrl">Diagnostic URLs</a>
+        </blockquote>
+	</p>
+
+<h3>List of URLs</h3>
+<div align="center">
+	<table border="1" width="80%" id="table1" cellpadding="5">
+		<tr>
+			<th rowspan="3" align="center">URL</th>
+			<th colspan="8" align="center">Attribute (R/W/X, On-Fly)<sup><a href="#Remark1">1</a></sup></td>
+		</tr>
+		<tr>
+			<th colspan="2" align="center">WPL Platform</th>
+			<th colspan="2" align="center">EPL Platfrom</th>
+			<th colspan="2" align="center">Platform T</th>
+			<th colspan="2" align="center">Multi-Channel Encoder</th>
+		</tr>
+		<tr>
+			<th align="center">Encoder<sup><a href="#Remark6">6</a></sup></font></i></td>
+			<th align="center">Decoder</th>
+			<th align="center">Encoder</th>
+			<th align="center">Decoder</th>
+			<th align="center">Encoder</th>
+			<th align="center">Decoder</th>
+			<th align="center" width="10%">Router</th>
+			<th align="center"  width="15%">Video Server<sup><a href="#Remark6">6</a></sup></th>
+		</tr>
+		<tr>
+        	<td colspan="9" bgcolor="#66CC66"><font size="+1">System Function</font></td>
+		</tr>
+		<tr>
+        	<td><font size="-1"><a href="FactoryDefault.htm">FACTORY_DEFAULT</a>
+            	&nbsp;<sup><a href="#Remark7"><b>7</b></a></sup></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="ConfigReset.htm">CONFIG_RESET</a>
+            	&nbsp;<sup><a href="#Remark7"><b>7</b></a></sup></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="SaveReboot.htm">SAVE_REBOOT</a>
+            	&nbsp;<sup><a href="#Remark7"><b>7</b></a></sup></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Save.htm">SAVE</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Reboot.htm">REBOOT</a>
+            	&nbsp;<sup><a href="#Remark7"><b>7</b></a></sup></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SystemInfo.htm">SYSTEM_INFO</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SystemInfoXml.htm">SYSTEM_INFO_XML</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="OemInfo.htm">OEM_INFO</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SystemProperty.htm">SYSTEM_PROPERTY</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="ProfileId.htm">PROFILE_ID</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PowerLED.htm">POWER_LED</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Language.htm">LANGUAGE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="ActivexUrl.htm">ACTIVEX_URL</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Dummy.htm">DUMMY</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+		</tr>
+        <!-- ######################## DATE & TIME CGI URLs ################################### -->
+        <tr>
+        	<td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="DateUrl">Date &amp; Time URLs</a></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Date.htm">DATE</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateType.htm">DATE_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateSntpIp.htm">DATE_SNTP_IP</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateSntpUpdate.htm">DATE_SNTP_UPDATE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateManualDate.htm">DATE_MANUAL_DATE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateManualTime.htm">DATE_MANUAL_TIME</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateManualZone.htm">DATE_MANUAL_ZONE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DateConfig.htm">DATE_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DaylightSaving.htm">DAYLIGHT_SAVING_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<!-- ######################## Network CGI URLs ################################### -->
+        <tr>
+        	<td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="NetUrl">Networking URLs</a></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="Wan.htm">WAN</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanStatus.htm">WAN_STATUS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="V2WanStatus.htm">V2_WAN_STATUS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanType.htm">WAN_TYPE</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanAddress.htm">WAN_IP</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanAddress.htm">WAN_NETMASK</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanAddress.htm">WAN_GATEWAY</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanPPPoE.htm">WAN_PPPOE_USERNAME</a></a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="WanPPPoE.htm">WAN_PPPOE_PASSWORD</a></a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="DhcpByHostname.html">DHCP_BY_HOSTNAME</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+	  	</tr>
+		<tr>
+			<td><font size="-1"><a href="SpeedWan.htm">SPEED_WAN</a></font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">WR,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="Lan.htm">LAN</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+        </tr>
+		<tr>
+			<td><font size="-1"><a href="LanAddress.htm">LAN_IP</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="LanAddress.htm">LAN_NETMASK</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="LanHostname.htm">LAN_HOSTNAME</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="SpeedLan.htm">SPEED_LAN</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="V2FailOver.htm">V2_FAILOVER</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>	
+		<tr>
+			<td><font size="-1"><a href="IPv6State.htm">IPV6_STATE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="IPFilterState.htm">IP_FILTER_STATE</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="IPFilterType.htm">IP_FILTER_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="IPFilterRule.htm">IP_FILTER_RULE</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="McastTtl.htm">VIDEO_MULTICAST_TTL</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+        <tr>
+	    	<td><font size="-1"><a href="V2McastIP.htm">V2_MULTICAST_IP</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="V2McastIF.htm">V2_MULTICAST_IF</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="IgmpEnabled.htm">IGMP_ENABLED</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="UpnpConfig.htm">UPNP_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="BonjourConfig.htm">BONJOUR_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <!-- ######################## SNMPURLs ################################### -->
+        <tr>
+        	<td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="SnmpUrl">SNMP URLs</a></font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpState.htm">SNMP_STATE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpReadComm.htm">SNMP_READ_COMMUNITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpWriteComm.htm">SNMP_WRITE_COMMUNITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpTrap.htm">SNMP_TRAP</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpTrapName.htm">SNMP_TRAP_NAME</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpTrapAddr.htm">SNMP_TRAP_ADDR</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr> 
+        <tr>
+		  	<td><font size="-1"><a href="SnmpTrapComm.htm">SNMP_TRAP_COMMUNITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="SnmpPwd.htm">SNMP_PASSWORD</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		    <td align="center"><font size="-1">None</font></td>
+		</tr>
+		<!-- ######################## DNS and DDNS URLs ################################### -->
+        <tr>
+       	  <td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="DnsUrl">DNS &amp; DDNS URLs</a></font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="Dns.htm">DNS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DnsSetting.htm">DNS_PRIMARY</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DnsSetting.htm">DNS_SECONDARY</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr><td><font size="-1"><a href="Ddns.htm">DDNS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsType.htm">DDNS_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsHostName.htm">DDNS_HOSTNAME</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsService.htm">DDNS_SERVICE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsUserNamePwd.htm">DDNS_USERNAME</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsUserNamePwd.htm">DDNS_PASSWORD</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="DdnsConfig.htm">DDNS_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial"><a href="V2DdnsConfig.htm">V2_DDNS_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <!-- ######################## Account Managenent URLs ################################### -->
+        <tr>
+       	  <td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="AccountUrl">Account Management URLs</a></font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1"><a href="Login.htm">LOGIN</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="Account.htm">ACCOUNT</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		 	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_NAME</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="AccountRootNamePwd.htm">ACCOUNT_ROOT_PASSWORD</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1"><a href="AccountRoot.htm">ACCOUNT_ROOT</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="AccountUserNamePwd.htm">ACCOUNT_USER_NAME_N</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="AccountUserNamePwd.htm">ACCOUNT_USER_PASSWORD_N</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="AccountUser.htm">ACCOUNT_USER_N</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<!-- ######################## Portmap URLs ################################### -->
+        <tr>
+       	  <td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="PortUrl">Portmap URLs</a></font></td>
+		</tr>
+        <tr>
+        	<td><font size="-1"><a href="PortHttp.htm">PORT_HTTP</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		  	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="PortHttps.htm">PORT_HTTPS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="Port.htm">PORT</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+        	<td><font size="-1"><a href="PortSearch1_2.htm">PORT_SEARCH_1</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortSearch1_2.htm">PORT_SEARCH_2</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	   	 	<td><font size="-1"><a href="PortSearch.htm">PORT_SEARCH</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		 	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortTCP2.htm">PORT_REGISTER</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortTCP2.htm">PORT_CONTROL</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortTCP2.htm">PORT_VIDEO</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortTCP2.htm">PORT_MULTICAST</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortRTP.htm">V2_PORT_RTSP</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="PortRTP.htm">V2_PORT_RTP_MULTI_AUDIO</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW.V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		 	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+        <!-- ######################## Video&Audio Streaming URLs ################################### -->
+        <tr>
+       	  <td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="StreamUrl">Video &amp; Audio Streaming URLs</a></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="V2StreamMethod.htm">V2_STREAMING_METHOD</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="StreamProtocol.htm">V2_STREAMING_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		 	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="StreamProtocol.htm">PROTOCOL_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="RtspAuthen.htm">RTSP_AUTHEN</a></font></td>
+			<td align="center"><font size="-1">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="RtpB2.htm">RTP_B2</a></font></td>
+			<td align="center"><font size="-1">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RW,X</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="../Encoder/GetStream.htm">GET_STREAM</a></font></td>
+		  <td align="center"><font size="-1">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		  <td align="center"><font size="-1">RW,X<sup><a href="#Remark8">8</a></sup></font></td>
+	  </tr>
+		<tr>
+		  <td><font size="-1"><a href="../Encoder/GetCtrlMsg.htm">GET_CTRL_MSG</a></font></td>
+		  <td align="center"><font size="-1">RW,X<sup><a href="#Remark2">2</a></sup></font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,X</font></td>
+	  </tr>
+      <tr>
+		  	<td><font size="-1"><a href="Tos.htm">TOS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+	  </tr>
+		<tr>
+		  	<td><font size="-1"><a href="TosType.htm">VIDEO_TOS_TYPE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		 	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="TosPriority.htm">VIDEO_TOS_PRIORITY</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		 	<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="VideoTv.htm">VIDEO_TV</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="VideoResCap.htm">VIDEO_RESOLUTION_CAP</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoFps.htm">VIDEO_FPS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="VideoFpsCap.htm">VIDEO_FPS_CAP</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		 	<td align="center"><font size="-1">RO,X<sup><a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="V2AudioEnabled.htm">V2_AUDIO_ENABLED</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark5">5</a></sup></font></td>
+		  	<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+        	<td><font size="-1"><a href="AudioInSen.htm">AUDIO_IN_SENSITIVITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  	<td align="center"><font size="-1">RW,X<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="AudioOutVolume.htm">AUDIO_OUT_VOLUME</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RW,X<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+	    	<td><font size="-1"><a href="V2LowPass.htm">V2_LOWPASS_FILTER</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <!-- ######################## Diagnostic CGI URLs ################################### -->
+        <tr>
+        	<td colspan="9" bgcolor="#66CC66"><font size="+1"><a name="DebugUrl">Diagnostic URLs</a></font></td>
+		</tr>
+        <tr>
+	    <td><font size="-1">
+			<a href="ServerReport.htm">SERVER_REPORT</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1"><a href="SystemLog.htm">
+			SYSTEM_LOG</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		  <td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+			<td width="25%"><font size="2" face="Arial">
+			<a href="CdrDebugLevel.htm">CDR_DEBUG_LEVEL</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td width="25%"><font size="2" face="Arial"><a href="CdrEnable.htm">
+			CDR_ENABLE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1"><a href="CdrIPPort.htm">
+			CDR_SERVER_IP_PORT</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1">
+			<a href="CdrIperfServer.htm">CDR_IPERF_SERVER</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+	    <td><font size="-1">
+			<a href="CdrIperfClient.htm">CDR_IPERF_CLIENT</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		</tr>
+	</table>
+</div>
+<h3>Foot Note</h3>
+<div align="center">
+	<table border="1" width="80%" id="table2">
+			<tr>
+				<th width="5%" align="center"><a name="Remark1"><font size="-1">1</font></a></th>
+				<td>
+                	<font size="-1">
+                    	The first part is for Access Mode. It could be RW (Read and Write), RO (Read Only), WO (Write Only) or None (Not Support)<br>
+						The second part is for On-Fly indication. if the change of URL is effective immediately without save and reboot, It could be V (the URL is on-fly). 
+                        Otherwise, it is X (the URL is not on-fly).
+                    </font>
+               </td>
+		</tr>
+		<tr>
+			<th align="center"><a name="Remark2"><font size="-1">2</font></a></th>
+			<td><font size="-1">Only be available of 1CH Encoder. For 2CH and Quad Encoders, it is not available.</font></td>
+		</tr>
+		<tr>
+			<td align="center"><a name="Remark3"><font size="-1">3</font></a></th>
+			<td><font size="-1">Return the CHANNEL 1 video server's configuration. If the CHANNEL 1 video server does not connect to router, the error message will be returned</font></td>
+		</tr>
+		<tr>
+			<th align="center"><a name="Remark4"><font size="-1">4</font></a></th>
+			<td><font size="-1">
+            	Need to check device's specification to know its access attributes. It is helpful to check the <a href="VideoTv.htm">VIDEO_TV</a> URL description.
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><a name="Remark5"><font size="-1">5</font></a></th>
+			<td><font size="-1">Need to check device's specification to know if there is AudioIn and AudioOut functions</font></td>
+		</tr>
+		<tr>
+			<th align="center"><a name="Remark6"><font size="-1">6</font></a></th>
+			<td><font size="-1">The URL in system CGI are on-fly in WPL 1CH encoder firmware version 2.09.11 and later.</font></td>
+		</tr>
+        <tr>
+			<th align="center"><a name="Remark7"><font size="-1">7</font></a></th>
+			<td><font size="-1">The device will be self-rebooted automatically adfter this URL command was executed</font></td>
+		</tr>
+        <tr>
+			<th align="center"><a name="Remark8"><font size="-1">8</font></a></th>
+			<td><font size="-1">Need to use channel's virtual HTTP port</font></td>
+		</tr>
+  </table>
+</div>
+<h3>Back to</h3>
+<blockquote>
+	<p><a href="../index.htm">HOME</a></p>
+</blockquote>
+
+</body>
+
+</html>

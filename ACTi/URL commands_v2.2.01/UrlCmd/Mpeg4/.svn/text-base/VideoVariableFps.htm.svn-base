@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_VARIABLE_FPS</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_VARIABLE_FPS</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">set the FPS (Frame Per Second) number (Frame 
+	Rate) 
+	configuration when the <a href="VideoFps.htm">VIDEO_FPS</a> is MODE2.</font></p>
+	<p><font face="Arial">This URL will not take effect if the
+	<a href="VideoFps.htm">VIDEO_FPS</a> is MODE1 or the
+	<a href="../System/V2StreamMethod.htm">V2_STREAMING_METHOD</a> is not TCP 
+	Only.</font></p>
+	<p><font face="Arial">This URL could ask the encoder to send the video 
+	stream with the specific FPS number by the remote host. To do that, the ID 
+	is needed to encoder to know whom requests the change of video FPS number. 
+	The stream socket ID is used then.</font></p>
+	<p><font face="Arial">The supported variable FPS number depends on the 
+	sensor and encoder (platform) capabilities. Here is the summary of the FPS 
+	number with sensors and encoders. Note that supported variable FPS number 
+	listed blow doesn't mean you could set them successfully. You need to check 
+	the return code to see if the URL was set successfully.</font></p>
+	<ul>
+		<li><font face="Arial">WPL Platform</font></li>
+	</ul>
+	<blockquote>
+		<table border="1" width="70%" id="table1">
+			<tr>
+				<td><font face="Arial"><b>Encoder Type</b></font></td>
+				<td width="252"><font face="Arial"><b>TV Standard</b></font></td>
+				<td width="292"><b><font face="Arial">Supported FPS Number</font></b></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Camera</font></td>
+				<td><font face="Arial">NTSC (not 
+				configurable)</font></td>
+				<td><font face="Arial">1,3,6,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (not 
+				configurable)</font></td>
+				<td><font face="Arial">1,3.5.25</font></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Video Server</font></td>
+				<td><font face="Arial">NTSC (configurable)</font></td>
+				<td><font face="Arial">1,3,6,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (configurable)</font></td>
+				<td><font face="Arial">1,3,5,25</font></td>
+			</tr>
+		</table>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">Mutli-Channel Encoder</font></li>
+	</ul>
+	<blockquote>
+		<p><font face="Arial">For 4CH and 16CH video server, the available video 
+		resolution is the same as the EPL video server.</font></p>
+		<p><font face="Arial">For 8CH video server, the available video 
+		resolution is the same as the WPL video server. </font></p>
+	</blockquote>
+	<ul>
+		<li><font face="Arial">EPL Platform</font></li>
+	</ul>
+	<blockquote>
+		<table border="1" width="70%" id="table2">
+			<tr>
+				<td><font face="Arial"><b>Encoder Type</b></font></td>
+				<td width="277"><font face="Arial"><b>TV Standard</b></font></td>
+				<td width="292"><b><font face="Arial">Supported FPS Number</font></b></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Camera (Sensor is ADV7180 or MT9V135)</font></td>
+				<td><font face="Arial">NTSC (not configurable)</font></td>
+				<td><font face="Arial">1,2,3,5,7,8,15,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (not configurable)</font></td>
+				<td><font face="Arial">1,2,3,4,6,12,25</font></td>
+			</tr>
+			<tr>
+				<td rowspan="5"><font face="Arial">Camera (sensor is 
+				MT9M131)</font></td>
+				<td><font face="Arial">NTSC @ N1280x1024</font></td>
+				<td><font face="Arial">1,2,4,8</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">NTSC @ N1280x720</font></td>
+				<td><font face="Arial">1,2,5,10</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">NTSC @ N640x480</font></td>
+				<td><font face="Arial">1,2,3,5,7,8,15,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">NTSC @ N320x240</font></td>
+				<td><font face="Arial">1,2,3,5,7,8,15,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">NTSC @ N160x120</font></td>
+				<td><font face="Arial">1,2,3,5,7,8,15,30</font></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><font face="Arial">Video Server</font></td>
+				<td><font face="Arial">NTSC (auto sense, not configurable)</font></td>
+				<td><font face="Arial">1,2,3,5,7,8,15,30</font></td>
+			</tr>
+			<tr>
+				<td><font face="Arial">PAL (auto sense, not configurable)</font></td>
+				<td><font face="Arial">1,2,3,4,6,12,25</font></td>
+			</tr>
+		</table>
+	</blockquote>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">n, m</font><br>
+	<font face="Arial">where</font><br>
+	<font face="Arial">n : the socket ID</font><br>
+	<font face="Arial">m: FPS Number. Refer to the table above</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Write Only</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial" size="3">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial" size="3">OK: VIDEO_VARIABLE_FPS='19,30'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial" size="3">ERROR: invalid parameters</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All 1CH and 2CH Encoders</font></li>
+	<li><font face="Arial">EPL Platform : All Encoders</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Video Servers</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">This URL will be obsolete in the future. The request 
+	of video frame number for the remote host will be done in the video 
+	streaming command. Please refer to the
+	<a href="../Specification/StreamingProtocol2.htm">Streaming 
+	Protocol Specification</a> for further details.</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<ul>
+	<li><font face="Arial">In mpeg4 CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="VideoFps.htm">VIDEO_FPS</a>, 
+	<a href="VideoFpsNum.htm">VIDEO_FPS_NUM</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In encoder CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="VideoFps.htm">VIDEO_FPS</a>, 
+	<a href="VideoFpsNum.htm">VIDEO_FPS_NUM</a>, 
+	<a href="../Encoder/VariableFpsNum.htm">VARIABLE_FPS_NUM</a>, 
+	<a href="../Encoder/VideoMjpegFps.htm">VIDEO_MJPEG_FPS</a>,
+	<a href="../Encoder/VideoH264Fps.htm">VIDEO_H264_FPS</a></font></p>
+</blockquote>
+<ul>
+	<li><font face="Arial">In system CGI</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial"><a href="../System/VideoFps.htm">VIDEO_FPS</a> 
+	(Read-Only), <a href="../System/V2StreamMethod.htm">V2_STREAMING_METHOD</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;</font><font face="Arial" size="3">VIDEO_VARIABLE_FPS</font><font face="Arial">=19,30</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/CGI?</font><font face="Arial" size="3">VIDEO_VARIABLE_FPS</font><font face="Arial">=19,30</font><p>
+	<font face="Arial">where CGI could be mpeg4 or encoder</font></p>
+</blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>,
+	<a href="../System/system.htm">SYSTEM CGI</a>, <a href="mpeg4.htm">MPEG4 CGI</a>,
+	<a href="../Encoder/Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

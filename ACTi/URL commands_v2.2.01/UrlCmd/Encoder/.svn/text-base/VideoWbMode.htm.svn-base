@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_WB_MODE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h2>VIDEO_WB_MODE</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the video white balance mode configuration.</p>
+	<p>
+    	The availability of white balance and the mode in the video white balance depend on the capability of the sensor in the sensor.
+        In video servers, this feature is not available. In some camera, the white balance and the video exposure control are correlated.
+        Then video exposure control might be conflicted with white balance mode. Please refer the
+        <A href"../../../DFI/CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup</A> for further details.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	AUTO, INDOOR1, INDOOR2, OUTDOOR1, OUTDOOR2, HOLD, MANUAL
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	VIDEO_WB_MODE='AUTO'
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	OK: VIDEO_WB_MODE='AUTO'<br>
+	or<br>
+	ERROR: VIDEO_WB_MODE='AUTO'
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>PlatformA : All Encoders with sensor MT9V135, MT9M131 and HQ1</li>
+	<li>PlatformT : All Encoders with sensor MT9M131, IT1, HQ1 and VXCMOS</li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	<a href="VideoWbGain.htm">VIDEO_WB_GAIN</a>,
+	<a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a>,
+	<a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a>,
+	<a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a>,
+	<a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a>,
+	<a href="VideoShutterSpeed.htm">VIDEO_SUHTTER_SPEED</a>,
+    <a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a>,
+    <a href="VideoFlickless.htm">VIDEO_FLICKLESS</a>
+</blockquote>
+
+<h3>Example</h3>
+<ul><li>Read Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WB_MODE<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?VIDEO_WB_MODE
+</blockquote>
+<ul><li>Write Operation</li></ul>
+<blockquote>
+	http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;VIDEO_WB_MODE=AUTO<br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?VIDEO_WB_MODE=AUTO
+</blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+	<a href="../index.htm">HOME</a>,
+    <a href="Encoder.htm">ENCODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

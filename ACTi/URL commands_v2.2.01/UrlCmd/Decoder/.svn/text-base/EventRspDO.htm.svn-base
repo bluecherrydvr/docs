@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspDOs</title>
+<style type="text/css">
+<!--
+.red {
+	color: #F00;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h2>EVENT_RSPDO1, EVENT_RSPDO2</h2>
+<p>&nbsp;</p>
+<h3>Description</h3>
+<blockquote>
+	<p>Get or Set the DOs (Digital Out ports)  configurations.</p>
+	<p>
+    	The DOs could output the specific signal level to trigger external devices such as alarms.
+        These output signals could be associated with the event sources, DIs (Digital Input), VLOSS (Video Loss), or MD (Motion Detection) based on users' applications.</p>
+	<p>The channel 1 is the target channel to connect to decoder's DOs when the decoder is in the SEQUENTIAL mode. Refer to the <a href="VideoStream.htm">VIDEO_STREAM</a> URL.</p>
+  <p>By default, the DOs are associated with the channel 1's DIs.</p>
+	<p>When the DOs are set to associate with the channel motion detection results, the DOs will output high signal level if a motion detection is active in motion detection regions. Otherwise, the DOs keep low signal level.</p>
+	<p>When the DOs are set the associate with the channel video loss event, the DOs will output high signal level if the channel video loss occurs. Otherwise, the DOs keep low signal level.</p>
+	<p>
+    	In the sequential mode, the special care has to be taken to identify which channel causes the DO level changes.
+    </p>
+</blockquote>
+
+<h3>Input Argument</h3>
+<blockquote>
+	<p>event<br>
+	where<br>
+	event: the possible value is listed below table.</p>
+	<table width="70%%" border="1" cellpadding="2">
+	  <tr>
+	    <th width="22%" scope="col">Possible Value in event</th>
+	    <th width="78%" scope="col">Description</th>
+      </tr>
+	  <tr>
+	    <td>DI</td>
+	    <td>The DO1 output level is associated with the channel's DI1. The DO2 output level is associated with the channel's DI2.</td>
+      </tr>
+	  <tr>
+	    <td>MD</td>
+	    <td>The DO<strong>n</strong> output level follows channel's motion detection result. When one of motion region was triggered, the DO<strong>n</strong> will be set to the high signal level. Otherwise, the DO<strong>n</strong> keep low signal level.</td>
+      </tr>
+	  <tr>
+	    <td>VLOSS</td>
+	    <td>The DO<strong>n</strong> output level follows channel's video loss detection result. When the video loss occurs, the DO<strong>n</strong> will be set to the high signal level. Otherwise, the DOn keep low signal level.</td>
+      </tr>
+  </table>
+	<p>The <strong>n</strong> could be 1 or 2.</p>
+</blockquote>
+
+<h3>Attribute</h3>
+<ul>
+	<li>Readable and Writable</li>
+	<li>On-Fly</li>
+</ul>
+
+<h3>Return of Message</h3>
+<ul>
+	<li>Read Operation</li>
+</ul>
+<blockquote>
+	EVENT_RSPDO<b>n</b>='MD'</p>
+</blockquote>
+<ul>
+	<li>Write Operation</li>
+</ul>
+<blockquote>
+	OK:EVENT_RSPDO<b>n</b>='MD'<br>
+	or<br>
+    ERROR: EVENT_RSPDO<b>n</b>='MD'</font>
+  <p>
+	<font face="Arial">where <b>n</b> could be 1 or 2</font></p>
+</blockquote>
+
+<h3>Applicability</h3>
+<ul>
+	<li>Platform A: All Devices</font></li>
+</ul>
+
+<h3>Status</h3>
+<blockquote>
+	Valid
+</blockquote>
+
+<h3>See Also</h3>
+<blockquote>
+	NONE
+</blockquote>
+
+<h3>Example</h3>
+<ul>
+  <li>read operation</li>
+</ul>
+<blockquote>
+    http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPDO<b>n</b><br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/decoder?EVENT_RSPDO<b>n</b><br>
+    where n could be 1 or 2
+</blockquote>
+<ul>
+  <li>write operation</li>
+</ul>
+<blockquote>
+	<p>http://ip:port/cgi-bin/decoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPDO<b>n</b>=MD<br>
+    or<br>
+	http://ip:port/cgi-bin/cmd/decoder?EVENT_RSPDO<b>n</b>=MD<br>
+    where <b>n</b> could be 1 or 2</p></blockquote>
+
+<h3>Back to</h3>
+<blockquote>
+  <a href="../index.htm">HOME</a>,
+  <a href="decoder.htm">DECODER CGI</a>
+</blockquote>
+
+</body>
+
+</html>

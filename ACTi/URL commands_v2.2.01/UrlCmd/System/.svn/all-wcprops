@@ -1,0 +1,611 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/repos/!svn/ver/3210/FWDesignSpec/SDK/UrlCmd/System
+END
+Ddns.htm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Ddns.htm
+END
+WanPPPoE.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/WanPPPoE.htm
+END
+SystemProperty.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SystemProperty.htm
+END
+GuestPreview.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/GuestPreview.htm
+END
+DateManualTime.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateManualTime.htm
+END
+Dummy.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Dummy.htm
+END
+CdrIperfClient.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/CdrIperfClient.htm
+END
+SystemInfo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/3210/FWDesignSpec/SDK/UrlCmd/System/SystemInfo.htm
+END
+DateConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateConfig.htm
+END
+IPFilterRule.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/IPFilterRule.htm
+END
+CdrDebugLevel.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/CdrDebugLevel.htm
+END
+PortHttps.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortHttps.htm
+END
+PortSearch.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortSearch.htm
+END
+PortSearch1_2.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortSearch1_2.htm
+END
+StreamProtocol.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2900/FWDesignSpec/SDK/UrlCmd/System/StreamProtocol.htm
+END
+SnmpState.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpState.htm
+END
+IPFilterState.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/IPFilterState.htm
+END
+CdrEnable.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/CdrEnable.htm
+END
+PowerLED.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PowerLED.htm
+END
+AudioOutVolume.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AudioOutVolume.htm
+END
+Dns.htm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Dns.htm
+END
+CdrIperfServer.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/CdrIperfServer.htm
+END
+V2DdnsConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/System/V2DdnsConfig.htm
+END
+WanType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/WanType.htm
+END
+RtpB2.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/RtpB2.htm
+END
+WanStatus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/WanStatus.htm
+END
+McastTtl.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/McastTtl.htm
+END
+AccountUser.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AccountUser.htm
+END
+SpeedLan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SpeedLan.htm
+END
+FwUpgStatus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/FwUpgStatus.htm
+END
+SnmpTrapAddr.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpTrapAddr.htm
+END
+CdrIPPort.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/CdrIPPort.htm
+END
+TosType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/TosType.htm
+END
+AccountUserNamePwd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AccountUserNamePwd.htm
+END
+Login.htm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Login.htm
+END
+SaveReboot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SaveReboot.htm
+END
+PortRTP.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortRTP.htm
+END
+AccountRootNamePwd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AccountRootNamePwd.htm
+END
+FactoryDefault.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/FactoryDefault.htm
+END
+PortTCP2.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortTCP2.htm
+END
+VideoTv.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/VideoTv.htm
+END
+SystemInfoXml.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/3210/FWDesignSpec/SDK/UrlCmd/System/SystemInfoXml.htm
+END
+DnsSetting.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DnsSetting.htm
+END
+V2AudioEnabled.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2AudioEnabled.htm
+END
+DhcpByHostname.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DhcpByHostname.html
+END
+Wan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Wan.htm
+END
+SnmpReadComm.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpReadComm.htm
+END
+DateSntpUpdate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateSntpUpdate.htm
+END
+SystemLog.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2752/FWDesignSpec/SDK/UrlCmd/System/SystemLog.htm
+END
+Reboot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Reboot.htm
+END
+Account.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Account.htm
+END
+V2LowPass.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2LowPass.htm
+END
+AccountRoot.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AccountRoot.htm
+END
+V2StreamMethod.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2StreamMethod.htm
+END
+SnmpTrap.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpTrap.htm
+END
+Tos.htm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Tos.htm
+END
+TosPriority.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/TosPriority.htm
+END
+UpnpConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2777/FWDesignSpec/SDK/UrlCmd/System/UpnpConfig.htm
+END
+ConfigReset.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/ConfigReset.htm
+END
+DateManualDate.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateManualDate.htm
+END
+DateSntpIp.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateSntpIp.htm
+END
+ProfileId.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/ProfileId.htm
+END
+DdnsConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DdnsConfig.htm
+END
+DateType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DateType.htm
+END
+IPFilterType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/IPFilterType.htm
+END
+SnmpTrapComm.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpTrapComm.htm
+END
+Language.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2913/FWDesignSpec/SDK/UrlCmd/System/Language.htm
+END
+Port.htm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Port.htm
+END
+ActivexUrl.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/ActivexUrl.htm
+END
+DdnsHostName.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DdnsHostName.htm
+END
+SnmpPwd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpPwd.htm
+END
+DdnsType.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DdnsType.htm
+END
+WanAddress.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/WanAddress.htm
+END
+OemInfo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/System/OemInfo.htm
+END
+RtspAuthen.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/RtspAuthen.htm
+END
+Save.htm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Save.htm
+END
+AudioInSen.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/AudioInSen.htm
+END
+V2McastIF.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2McastIF.htm
+END
+V2WanStatus.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2WanStatus.htm
+END
+ServerReport.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/2728/FWDesignSpec/SDK/UrlCmd/System/ServerReport.htm
+END
+DdnsUserNamePwd.htm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DdnsUserNamePwd.htm
+END
+VideoFpsCap.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/3189/FWDesignSpec/SDK/UrlCmd/System/VideoFpsCap.htm
+END
+BonjourConfig.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2721/FWDesignSpec/SDK/UrlCmd/System/BonjourConfig.htm
+END
+SnmpWriteComm.htm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SnmpWriteComm.htm
+END
+VideoResCap.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/VideoResCap.htm
+END
+SnmpTrapName.htm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/3210/FWDesignSpec/SDK/UrlCmd/System/SnmpTrapName.htm
+END
+SpeedWan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/SpeedWan.htm
+END
+IgmpEnabled.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/IgmpEnabled.htm
+END
+DateManualZone.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2900/FWDesignSpec/SDK/UrlCmd/System/DateManualZone.htm
+END
+V2McastIP.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2McastIP.htm
+END
+LanHostname.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/LanHostname.htm
+END
+DdnsService.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DdnsService.htm
+END
+Lan.htm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Lan.htm
+END
+Date.htm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/Date.htm
+END
+DaylightSaving.htm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/DaylightSaving.htm
+END
+V2FailOver.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/V2FailOver.htm
+END
+VideoFps.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/VideoFps.htm
+END
+LanAddress.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/LanAddress.htm
+END
+PortHttp.htm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/PortHttp.htm
+END
+system.htm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/!svn/ver/3085/FWDesignSpec/SDK/UrlCmd/System/system.htm
+END
+IPv6State.htm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/2664/FWDesignSpec/SDK/UrlCmd/System/IPv6State.htm
+END

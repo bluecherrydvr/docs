@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NIGNT_MAX_BITRATE</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+<h2>NIGHT_MAX_BITRATE</h2>
+<h3>Description</h3>
+<blockquote>
+  <p>Get or set the maximum video bitrate for night time mode.</p>
+  <p>The URL is the same as the URL <a href="VideoMaxBitRate.htm">VIDEO_MAX_BITRATE</a> in the ENCODER CGI. This URLs is only available in   PlatformT encoders. When the camera enters the night time state, the night time   video profile will be loaded. The maximum video bitrate in the video stream is the one of parameters in the night time video profile. Please refer to the <a href="NightTimeProfile.htm">parameters of night time profile</a> for further   details.</p>
+  <p><font face="Arial">This URL will take effect if</font></p>
+  <ol>
+    <li>The device enters night time mode</li>
+    <li><font face="Arial">The encoder type is MPEG4 or H.264. (refer to <a href="VideoEncoder.htm">VIDEO_ENCODER</a>)</font></li>
+    <li><font face="Arial">The Video Quality is NONE in 
+      MPEG4/H.264 encoding (refer to <a href="NightVideoQuality.htm">NIGHT_MPEG4_QUALITY</a> and <a href="NightVideoQuality.htm">NIGHT_H264_QUALITY</a>).</font></li>
+  </ol>
+<p> In dual streaming mode, the CHANNEL=n indicates the video stream for setting the maximum video bitrate. For example, the CHANNEL=1&amp;NIGHT_MAX_BITRATE=3M sets the video stream 1 maximum video bitrate to 3Mbps.</p>
+</blockquote>
+<h3>Input argument</h3>
+<blockquote>
+  <p><font face="Arial">28K, 56K, 128K, 256K, 384K, 500K, 750K, 1M, 1.2M, 
+	1.5M, 2M, 2.5M, 3M, 3.5M, 4M, 4.5M, 5M, 5.5M, 6M in unit of bits/sec.</font><br />
+    <font face="Arial">or</font><br />
+  <font face="Arial">UNLIMITED</font></p>
+</blockquote>
+<h3>Attribute</h3>
+<ul>
+  <li>Read and Write</li>
+  <li>On-Fly</li>
+</ul>
+<h3>Return Message</h3>
+<ul>
+  <li>Read Operation</li>
+</ul>
+<blockquote>
+  <p>NIGHT_MAX_BITRATE='3M'</p>
+</blockquote>
+<ul>
+  <li>Write Operation</li>
+</ul>
+<blockquote>
+  <p>OK: NIGHT_MAX_BITRATE='3M'<br />
+    or<br />
+  ERROR: NIGHT_MAX_BITRATE='3M'</p>
+</blockquote>
+<h3>Applicability</h3>
+<ul>
+  <li>PlatformT : All Encoders</li>
+</ul>
+<h3>Status</h3>
+<blockquote>
+  <p>Valid</p>
+</blockquote>
+<h3>See Also</h3>
+<blockquote>
+  <p><a href="VideoEncoder.htm">VIDEO_ENCODER</a>, <a href="NightVideoQuality.htm">NIGHT_MPEG4_QUALITY</a>, <a href="NightVideoQuality.htm">NIGHT_H264_QUALITY</a>, <a href="NightBitrate.htm">NIGHT_BITRATE</a></p>
+</blockquote>
+<h3>Example</h3>
+<ul>
+  <li>Read Operation  </li>
+  <blockquote>
+    <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_MAX_BITRATE<br />
+    or<br />
+    http://ip:port/cgi-bin/cmd/encoder?NIGHT_MAX_BITRATE</p>
+  </blockquote>
+  <li>Write Operation
+    <blockquote>
+      <p>http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;NIGHT_MAX_BITRATE=3M<br />
+or<br />
+http://ip:port/cgi-bin/cmd/encoder?NIGHT_MAX_BITRATE=3M</p>
+    </blockquote>
+  </li>
+</ul>
+<h3>Back To</h3>
+<blockquote>
+  <p><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>IGMP_ENABLED</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">IGMP_ENABLED</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get or Set the IGMP Enabled configuration.</font></p>
+	<p><font face="Arial">Because the L2/L3 device will flood the multicast 
+	packets to all of ports they have, it will waste lots of bandwidth when 
+	there are multicast streams go through them. There are networking protocols 
+	to helps these devices to be smarter to handle multicast streams. The IGMP 
+	is a protocol helps the L2/L3 device to learn how to forward multicast 
+	streams. </font></p>
+	<p><font face="Arial">This URL only takes effect if only if the device is in 
+	the multicasting mode. Then, the encoder will send the IGMP V2 Query packet 
+	periodically to the network. The remote host interested in this multicast 
+	stream will reply the Query. If the L2/L3 device understands the IGMP, it 
+	could learn which port it should forward the multicast stream.</font></p>
+	<p><font face="Arial">If the CHANNEL=n was set with this URL to the 
+	Multi-Channel device,  
+	this command is read-only command and the Router's IGMP_ENABLED configuration will be returned.</font></p>
+</blockquote>
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<font face="Arial">0 : Disable</font><br>
+	<font face="Arial">1 : Enable</font><br>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly (except all encoders in WPL Platform)</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">IGMP_ENABLED='1'</font><br>
+</blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">OK: IGMP_ENABLED='1'</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">ERROR: IGMP_ENABLED='1'</font><br>
+</blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatformT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p>Valid</p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="PortTCP2.htm">PORT_MULTICAST</a>,
+	<a href="PortRTP.htm">V2_PORT_RTP_MULTI_VIDEO</a>, <a href="PortRTP.htm">
+	V2_PORT_RTP_MULTI_AUDIO</a>, <a href="McastTtl.htm">VIDEO_MULTICAST_TTL</a>, 
+	<a href="V2McastIP.htm">V2_MULTICAST_IP</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;IGMP_ENABLED</font><br>
+	<font face="Arial">or</font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?IGMP_ENABLED</font></blockquote>
+<ul>
+	<li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;IGMP_ENABLED=1</font><br>
+	<foont face="Arial"><font face="Arial">or</font></font><br><font face="Arial">http://ip:port/cgi-bin/cmd/system?IGMP_ENABLED=1</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+<p><br></p>
+
+</body>
+
+</html>

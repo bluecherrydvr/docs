@@ -1,0 +1,274 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>General Description on URL</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+-->
+</style></head>
+
+<body>
+
+<h1 align="center">General Description on URL</h1>
+<p align="center">&nbsp;</p>
+<p align="center"><hr>
+<h3>Description</h3>
+<blockquote>
+	<p>
+    	All URLs use the GET method in the HTTP transaction. There are two URL types, Type 1 URL and Type 2 URL, supported in the CGI. 
+        These two types of URLs share the same URL commands. In Type1 URL, the user account and password are carried in the first two URL commands. 
+        In Type2 URL, is the user account and password are not in the URL. It needs to have extra HTTP authentication first. To distinguish these two types of URLs, the different CGI program path is used.
+    </p>
+</blockquote>
+<h3>CGI Path</h3>
+<blockquote>
+	<p>
+    	The CGI program path was defined in the firmware and not changeable. In type 1 URL, the CGI path is the /cgi-bin/. In type 2 URL, the CGI path is the /cgi-bin/cmd/<br>
+        For example, the URL Command in system CGI for type 1 URL is
+    </p>
+	<blockquote>
+    	<p>http://ip:port/cgi-bin/system?USER=xxxx&amp;PWD=xxxx&amp;CMD</p>
+  </blockquote>
+	<p>the URL command in system CGI for type 2 URL is </p>
+	<blockquote>
+		<p>http://ip:port/cgi-bin/cmd/system?CMD</p>
+  	</blockquote>
+</blockquote>
+<h3>Format of URL</h3>
+<blockquote>
+	<p><strong><u>Type1 URL</u></strong></p>
+	<p>
+    	In the first type, it is not secure URL because people could get the account and password easily by sniffing the network. However, it is very simple, 
+        all CGIs support this type URL currently. For security consideration, this type URL might be removed from all CGIs in the future. The format of the URL looks like
+</p>
+	<p><font color="#0000FF">http://ip:port/cgi-bin/CGI?USER=admin&amp;PWD=123456&amp;CMD1=VALUE1&amp;CMD2</font></p>
+	<p>
+    	where<br>
+        ip: the device IPv4 address<br>
+		port: the device's HTTP port. If it is 80, the port could be omitted<br>
+		CGI: CGI Program like system, mpeg4, encoder, update ,....<br>
+		CMD1=VALUE1 : a write command to set the VALUE1 to device's configuration associated with CMD1<br>
+		CMD2 : a read command to get the device's configuration associated with CMD2
+</p>
+	<p>
+    	You could find two successive URLs are connected by the symbol &quot;&amp; and the USER and PWD carried the user name and password in plain text as the part of URL command.
+</p>
+	<p>
+    	Note that except the USER, PWD and CHANNEL commands, the error in the URL will not stop processing the rest of URLs but the error message will be returned if there are many 
+        URLs in a single URL command.
+</p>
+	<p>Here is the dump of the content of an URL with Microsoft Internet Explorer 7   for reference. This URL is </p>
+	<p><font color="#0000FF">
+   		http://172.16.3.53/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_TYPE
+        </font>
+  </p>
+  <ul><li>URL from host to device</li></ul>
+		<blockquote>
+			<p><u><i>ASCII Format</i></u></p>
+			<p><font color="#FF0000">
+				<span style="background-color: #C0C0C0">
+                	GET /cgi-bin/system?USER=Admin&amp;PWD=123456&amp;WAN_TYPE HTTP/1.1 <br>
+					Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */* <br>
+					Accept-Language: zh-tw <br>
+					UA-CPU: x86 <br>
+					Accept-Encoding: gzip, deflate <br>
+					User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1) <br>
+					Host: 172.16.3.56 <br>
+					Connection: Keep-Alive
+                </span>
+             </font></p>
+			<p><span style="font-style: italic; text-decoration: underline">Hex Dump Format</font></span></p>
+			<p><img border="0" src="images/UrlFrematType1.JPG" width="608" height="350"></p>
+		</blockquote>
+		<ul><li><font Reply Message from device to host</font></li></ul>
+		<blockquote>
+			<p><u><i>ASCII Format</i></u></p>
+			<p><font color="#0000FF">
+				<span style="background-color: #C0C0C0">
+                	HTTP/1.0 200 OK <br>
+                    Content-type: text/plain<br>
+					<br>
+					WAN_TYPE='1'
+                </span>
+            </font></p>
+			<p><span style="font-style: italic; text-decoration: underline">Hex Dump Format</span></p>
+			<p><img border="0" src="images/UrlFrematType1Reply.JPG" width="612" height="66"></p>
+		</blockquote>
+		<p><b><u>Type2 URL</u></b></p>
+		<p>
+        	In the second type, it is more secure URL because the account and password has to be encrypted in the HTTP transaction. Not all CGIs support this type of URL. 
+            The system, mpeg4, encoder and decoder CGIs supports this. For security consideration, this type might be available to all CGIs in the future. 
+            The format of the URL looks like
+        </p>
+		<p><font color="#0000FF">http://ip:port/cgi-bin/cmd/CGI?CMD1=VALUE1&amp;CMD2</font></p>
+		<p>
+        	where<br>
+            the usage is very similar to the Type1 URL except the path of CGI program is different.
+        </p>
+		<p>
+        	Once you applied the URL, the login prompt window will be shown. You need to enter the account and password in the window to go further.
+        </p>
+		<p>
+        	Here is the dump of the content of an URL with Microsoft Internet Explorer 7 for reference. This URL is
+        </p>
+		<p><font color="#0000FF">http://172.16.3.53/cgi-bin/cmd/system?WAN_TYPE</font></p>
+		<ul><li>HTTP Session 1</li></ul>
+		<blockquote>
+			<p><b>The host sends the URL without any account information to the device.</b></p>
+			<p><u><i>ASCII format</i></u></p>
+			<p><span style="background-color: #C0C0C0">
+            	GET /cgi-bin/cmd/system?WAN_TYPE HTTP/1.1<br>
+				Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*<br>
+				Accept-Language: zh-tw <br>
+				UA-CPU: x86 <br>
+				Accept-Encoding: gzip, deflate <br>
+				User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1) <br>
+				Host: 172.16.3.56 <br>
+				Connection: Keep-Alive
+        	</span></p>
+			<p><u><i>Hex Dump Format</i></u></p>
+			<p><img border="0" src="images/UrlFrematType2-1.JPG" width="610" height="338"></p>
+			<p><b>The device reply the Unauthorized message and prompt the logon window.</b></p>
+			<p><u><i>ASCII Format</i></u></p>
+			<p><font color="#0000FF">
+	<span style="background-color: #C0C0C0">
+                	HTTP/1.1 401 Unauthorized <br>
+					Server: thttpd/2.25b 29dec2003 <br>
+					Content-Type: text/html; charset=iso-8859-1 <br>
+					Date: Wed, 26 Dec 2007 10:57:41 GMT <br>
+					Last-Modified: Wed, 26 Dec 2007 10:57:41 GMT <br>
+					Accept-Ranges: bytes <br>
+					Connection: close <br>
+					Cache-Control: no-cache,no-store <br>
+					WWW-Authenticate: Basic realm=&quot;cgi-bin/cmd&quot; <br>
+					<br>
+					&lt;HTML&gt;<br>
+					&lt;HEAD&gt;&lt;TITLE&gt;401 Unauthorized&lt;/TITLE&gt;&lt;/HEAD&gt;<br>
+					&lt;BODY BGCOLOR=&quot;#cc9999&quot; TEXT=&quot;#000000&quot; LINK=&quot;#2020ff&quot; VLINK=&quot;#4040cc&quot;&gt;<br>
+					&lt;H2&gt;401 Unauthorized&lt;/H2&gt;<br>
+					Authorization required for the URL '/cgi-bin/cmd/system?WAN_TYPE'.<br>
+					&lt;!--<br>
+					Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+					Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+					Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+					Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+					Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+                    Padding so that MSIE deigns to show this error instead of its own canned one.<br>
+					--&gt;<br>
+					&lt;HR&gt;<br>
+					&lt;ADDRESS&gt;&lt;A HREF=&quot;http://www.acme.com/software/thttpd/&quot;&gt;thttpd/2.25b 29dec2003&lt;/A&gt;&lt;/ADDRESS&gt;<br>
+					&lt;/BODY&gt;<br>
+					&lt;/HTML&gt;
+                </span>
+            </font></p>
+			<p><u><i>Hex Dump Format</i></u></p>
+			<p><img border="0" src="images/UrlFrematTypeReply2-1.JPG" width="607" height="913"></p>
+        </blockquote>
+		<ul><li><font face="Arial">HTTP Session 2</font></li></ul>
+  <blockquote>
+			<p><b>The host sends the URL with encrypted account information to the device.</b></p>
+			<p><u><i>ASCII Format</i></u></p>
+            <p><font color="#FF0000">
+            	<span style="background-color: #C0C0C0">
+                	GET /cgi-bin/cmd/system?WAN_TYPE HTTP/1.1 <br>
+					Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */* <br>
+					Accept-Language: zh-tw <br>
+					UA-CPU: x86 <br>
+					Accept-Encoding: gzip, deflate <br>
+					User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1) <br>
+					Host: 172.16.3.56 <br>
+					Connection: Keep-Alive <br>
+					Authorization: Basic QWRtaW46MTIzNDU2
+                </span>
+            </font></p>
+			<p><u><i>Hex Dump Format</i></u></p>
+			<p><img border="0" src="images/UrlFrematType2-2.JPG" width="610" height="364"></p>
+			<p><b>The device reply of the command</b></p>
+			<p><u><i>ASCII Format</i></u></p>
+			<p><font color="#0000FF">
+				<span style="background-color: #C0C0C0">
+                	HTTP/1.0 200 OK <br>
+					Content-type: text/plain<br>
+					<br>
+					WAN_TYPE='1'
+                </span>
+            </font></p>
+			<p><u><i>Hex Dump Format</i></u></p>
+			<p><img border="0" src="images/UrlFrematTypeReply2-2.JPG" width="610" height="67"></p>
+		</blockquote>
+		<p>Note that the CHANNEL=n command will be ignored if the device is an one channel device.</p>
+</blockquote>
+<h3>URL in Multi-Channel Encoder</h3>
+<blockquote>
+	<p>
+    	There are two levels of URL in a Multi-Channel Encoder device. The first level URL is for the Router and the second level URL is for the Video Server. 
+        To identify the level of URL, the CHANNEL command is used. The Router URL does not need to have CHANNEL command but the Video Server URL needs to use 
+        CHANNEL command.
+</p>
+	<p><b>Format of the Router URL</b></p>
+	<p>
+    	<font color="#0000FF">
+    		http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;CMD1=VALUE1&amp;CMD2
+        </font><br>
+		or<br>
+		<font color="#0000FF">http://ip:port/cgi-bin/cmd/CGI?CMD1=VALUE1&amp;CMD2</font>
+</p>
+	<p>You could find these formats are the same as the general URL describe above.</p>
+	<p><b>Format of the Video Server URL</b></p>
+	<p>
+    	<font color="#0000FF">
+			http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;CHANNEL=n&amp;CMD1=VALUE1&amp;CMD2
+		</font><br>
+		or<br>
+		<font color="#0000FF">
+			http://ip:port/cgi-bin/cmd/CGI?CHANNEL=n&amp;CMD1=VALUE1&amp;CMD2
+        </font><br>
+		where n is the channel ID of the Video Server started from 1.
+</p>
+	<p>
+    	The CHANNEL command must follow the account command or be the first command in the URL.
+  </p>
+</blockquote>
+<h3>URL in Quad Encoder or 2CH Video Server</h3>
+<blockquote>
+	<p>
+    	There are two levels of the URL in a QUAD or 2CH Encoder device. The first level is the global URL and the second level is the channel level URL. 
+        To identify the level of URL, the CHANNEL command is used. The global URL does not need to have CHANNEL command but the channel URL needs 
+        to use CHANNEL command.
+    </p>
+	<p><b>Format of the global URL</b></p>
+	<p>
+    	<font color="#0000FF">
+			http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;CMD1=VALUE1&amp;CMD2
+       	</font><br>
+		or<br>
+		<font color="#0000FF">http://ip:port/cgi-bin/cmd/CGI?CMD1=VALUE1&amp;CMD2</font><br>
+		where<br>
+		CGI: the CGI program. It could be system or quad.
+    </p>
+	<p><b>Format of the channel URL</b></p>
+	<p>
+    	<font color="#0000FF">
+    		http://ip:port/cgi-bin/CGI?USER=Admin&amp;PWD=123456&amp;CHANNEL=n&amp;CMD1=VALUE1&amp;CMD2
+        </font><br>
+		or<br>
+		<font color="#0000FF">http://ip:port/cgi-bin/cmd/CGI?CHANNEL=n&amp;CMD1=VALUE1&amp;CMD2</font><br>
+		<font face="Arial">where n is the channel ID of the Video Server started from 1.</font>
+    </p>
+	<p>
+    	The CHANNEL command must follow the account command or be the first command in the URL.
+    </p>
+</blockquote>
+<h3>Back to</h3>
+<blockquote>
+    <a href="javascript: history.go(-1)">HOME</a>
+</blockquote>
+
+</body>
+
+</html>

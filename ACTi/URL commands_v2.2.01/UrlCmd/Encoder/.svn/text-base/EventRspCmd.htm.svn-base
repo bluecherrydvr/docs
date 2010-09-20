@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>EventRspCmd</title>
+<style type="text/css">
+<!--
+.arial {
+	font-family: Arial;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font size="5" face="Arial">EVENT_RSPCMD1, EVENT_RSPCMD2, EVENT_RSPCMD3</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p class="arial">Get or Set the URL command engine of the event 
+  configurations.</p>
+	<p class="arial">When event source is triggered or becomes inactive, the device could send 
+the user defined URL commands to the remote HTTP CGI defined in the <a href="HttpServer.htm">HTTP_SERVER</a>.</p>
+	<p class="arial">There are two HTTP server database, named HTTPD1 and HTTPD2, in the device. The notification message, image and video could be uploaded to these servers as events were triggered. The event has to be associated with one of these servers before it was enabled.</p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<p><font face="Arial" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+id,OnCmd,OffCmd</font></p>
+<blockquote>
+	<p class="arial">id: the method of sending message. It indicates which HTTP server will be the target to sent the URLs. 1: HTTPD1, 2:HTTPD2.</p>
+	<p class="arial">OnCmd: The URL command including CGI path for triggered event. The maximum length is 63. </p>
+	<p class="arial">OffCmd: The URL command including CGI path for event changed to inactive from active state. The maximum length is 63<font face="Arial">.</font></p>
+<p><font face="Arial">If the length of the input argument is longer than its 
+	maximum length limitation, the error message will be returned.</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Readable and Writable</font></li>
+	<li><font face="Arial">On-Fly</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<ul>
+	<li><font face="Arial">Read Operation</font></li>
+</ul>
+<blockquote>
+	<p class="arial">EVENT_RSPCMD<b>n</b>='1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,/cgi-bin/MyCgi?NOTIFICATION=NotTriggered'<br>
+	or<br>
+	EVENT_RSPCMD<b>n</b>='1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,'</p>
+</blockquote>
+<ul>
+  <li><font face="Arial">Write Operation</font></li>
+</ul>
+<blockquote>
+  <p class="arial">OK: EVENT_RSPCMD<b>n</b>=1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,/cgi-bin/MyCgi?NOTIFICATION=NotTriggered''<br>
+	or<br>
+	ERROR: </font>EVENT_RSPCMD<b>n</b>='1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,/cgi-bin/MyCgi?NOTIFICATION=NotTriggered'</p>
+	<p class="arial">where <b>n</b> could be 1, 2 or 3</p>
+</blockquote>
+<p><font size="4" face="Arial">Applicability</font></p>
+<ul>
+	<li><font face="Arial">EPL Platform : All Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font size="4" face="Arial">Status</font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font size="4" face="Arial">See Also</font></p>
+<blockquote>
+	<p class="arial"><a href="EventConfig.htm">EVENT_CONFIG</a>, <a href="EventRspMd.htm">EVENT_MDn</a>, <a href="EventRspDO.htm">EVENT_RSPDOn</a>, <a href="EventRspMsg.htm">EVENT_RSPMSGn</a>, <a href="EventRspImg.htm">EVENT_RSPIMGn</a>, <a href="EventRspGo.htm">EVENT_RSPGO</a>, <a href="HttpServer.htm">HTTP_SERVER</a></p>
+</blockquote>
+<p><font size="4" face="Arial">Example</font></p>
+	<ul>
+	<li><font face="Arial" size="4">read operation</font></li>
+	</ul>
+    <blockquote>
+	<font face="Arial">http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPCMD<b>n</b><br>
+	or<br>
+	http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPCMD<b>n</b></font>
+    </blockquote>
+<ul>
+      <li><font face="Arial" size="4">write operation</font></li>
+</ul>
+<blockquote>
+	<p><font face="Arial">
+    http://ip:port/cgi-bin/encoder?USER=Admin&amp;PWD=123456&amp;EVENT_RSPCMD<b>n</b>
+    =1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,/cgi-bin/MyCgi?NOTIFICATION=NotTriggered<br>
+    or<br>
+    http://ip:port/cgi-bin/cmd/encoder?EVENT_RSPCMD<b>n</b>
+    =1,/cgi-bin/MyCgi?NOTIFICATION=Triggered,/cgi-bin/MyCgi?NOTIFICATION=NotTriggered<br>
+    where <b>n</b> could be 1, 2 or 3</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+  <p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="Encoder.htm">ENCODER CGI</a></font></p>
+</blockquote>
+</body>
+
+</html>

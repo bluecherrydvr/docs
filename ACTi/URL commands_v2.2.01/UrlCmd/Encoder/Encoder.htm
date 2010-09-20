@@ -1,0 +1,1150 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>Encoder CGI Program</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial;
+	font-size: small;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center">Encoder CGI Program</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><hr></p>
+<p>
+	Only root could set the configuration through URLs in this CGI. If the logon user is not root, all write commands will be treated as read commands. The CGI is only available in the Encoder Devices. 
+    The URL in this CGI will be forwarded to the specific channel in the Multi-Channel Encoder platform if there is a CHANNEL commmand.
+</p>
+<p>NOTE:</p>
+<blockquote>
+	<p>This CGI is new CGI for replacing <a href="../Mpeg4/mpeg4.htm">mpeg4 CGI</a>.</p>
+</blockquote>
+<h3>Quick Link</h3>
+	<p>
+		<blockquote>
+        	<a href="#EncUrl">URLs in ENCODER CGI</a>,
+            <a href="#CameraUrl">Camera Setup URLs</a>,
+            <a href="#DNUrl">Day/Night Control URLs</a>,
+            <a href="#NightUrl">Night Time Profile URLs</a>,
+            <a href="#PtzUrl">PTZ URLs</a>,
+        	<a href="#EventUrl">Event Handler URLs</a>
+        </blockquote>
+	</p>
+<h3>List of URLs</h3>
+<div align="center">
+	<table border="1" width="95%" id="table1">
+		<tr>
+			<th rowspan="3" align="center" width="25%">URL</td>
+			<th colspan="4" align="center">Attribute (R/W, On-Fly)<sup><a href="#Remark1">1</a></sup></th>
+		</tr>
+		<tr>
+			<th align="center" width="18%">Platform W</th>
+			<th align="center" width="18%">Platform A</th>
+			<th align="center" width="18%">Platform T</th>
+			<th align="center">Multi-Channel Encoder<a href="#Remark2">2</a></th>
+		</tr>
+		<tr>
+			<th align="center">Encoder</th>
+			<th align="center">Encoder</th>
+			<th align="center">Encoder</th>
+			<th align="center">Video Server</th>
+		</tr>
+		<tr>
+			<td colspan="5" bgcolor="#6699FF"><font size="+1">URLs are the same as them in mpeg4 CGI</font></td>
+		</tr>
+		<tr>        	
+			<td><font size="-1"><a href="../Mpeg4/VideoStatus.htm">VIDEO_STATUS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/DioOutput.htm">DIO_OUTPUT</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+		  <td align="center"><font size="-1">WO,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoCameraName.htm">VIDEO_CAMERA_NAME</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_BRIGHTNESS</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_CONTRAST</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_SATURATION</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoAdjust.htm">VIDEO_HUE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/DioStatus.htm">DIO_STATUS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/MotionStatus.htm">MOTION_STATUS</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/MotionSetting.htm">MOTION_SETTING</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/SerialSetting.htm">SERIAL_SETTING</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/SerialAscii.htm">SERAIL_ASCII</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/SerialHex.htm">SERIAL_HEX</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/RtpMcastStream.htm">RTP_MULTICAST_STREAMING</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoResolution.htm">VIDEO_RESOLUTION</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoBitRate.htm">VIDEO_BITRATE</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+	  </tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoFps.htm">VIDEO_FPS</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoVariableFps.htm">VIDEO_VARIABLE_FPS</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/VideoFpsNum.htm">VIDEO_FPS_NUM</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/MotionEnabled.htm">MOTION_ENABLED</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="../Mpeg4/MotionSen.htm">MOTION_SENSITIVE</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+
+        <!-- ######################## ENCODER CGI URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#6699FF"><font size="+1"><a name="EncUrl">URLs only avaliable in encoder CGI</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="VideoEncoder.htm">VIDEO_ENCODER</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoStream.htm">VIDEO_STREAM</a></font></td>
+			<td align="center"><font size="-1">RW,X</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark5">5</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VariableFpsNum.htm">VARIABLE_FPS_NUM</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>	
+        <tr>
+			<td><font size="-1"><a href="FpsCapQueryAll.htm">FPS_CAP_QUERY_ALL</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="Snapshot.htm">SNAPSHOT</a></font></td>
+		  <td align="center"><font size="-1">None</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RW,V</font></td>
+		  <td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+	  </tr>
+		<tr>
+		  	<td><font size="-1"><a href="SendAudio.html">SEND_AUDIO</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">RO,V</font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+        </tr>
+		<tr>
+			<td><font size="-1"><a href="OsdFormat.htm">OSD_FORMAT</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="OsdEnabled.htm">OSD_ENABLED</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark7">7</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PrivacyRegion.htm">PRIVACY_REGION</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoMjpegQuality.htm">VIDEO_MJPEG_QUALITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoMpeg4Quality.htm">VIDEO_MPEG4_QUALITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoH264Quality.htm">VIDEO_H264_QUALITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		
+		<tr>
+			<td><font size="-1"><a href="VideoMaxBitRate.htm">VIDEO_MAX_BITRATE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="QuadSequenceTime.htm">QUAD_SEQUENCE_TIME</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark7">7</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoGop.htm">VIDEO_GOP</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+		  	<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+        <tr>
+		  	<td><font size="-1"><a href="GetStream.htm">GET_STREAM</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+		  	<td align="center"><font size="-1">WO,V</font></td>
+		  	<td align="center"><font size="-1">WO,V</font></td>
+		  	<td align="center"><font size="-1">WO,V<sup><a href="#Remark8">8</a></sup></font></td>
+	  	</tr>
+		<tr>
+			<td><font size="-1"><a href="GetCtrlMsg.htm">GET_CTRL_MSG</a></font></td>
+			<td align="center"><font size="-1">XX,X</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="GetDIState.html">GET_DI_STATE</a></font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X</font></td>
+			<td align="center"><font size="-1">RO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SetDo.htm">SET_DO</a></font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X</font></td>
+			<td align="center"><font size="-1">WO,X<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="../System/Dummy.htm">DUMMY</a></font></td>
+		  	<td align="center"><font size="-1">WR,X</font></td>
+		  	<td align="center"><font size="-1">WR,X</font></td>
+		  	<td align="center"><font size="-1">WR,X</font></td>
+		  	<td align="center"><font size="-1">WR,X</font></td>
+	  	</tr>
+        <!-- ######################## Camera Page URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="CameraUrl">URLs for Camera Setup</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="VideoWbMode.htm">VIDEO_WB_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoWbGain.htm">VIDEO_WB_GAIN</a></font></td>
+            <td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoExposureMode.htm">VIDEO_EXPOSURE_MODE</a></font></td>
+            <td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="ExposureGainGet.html">EXPOSURE_GAIN_GET</a></font></td>
+		  <td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  </tr>
+		<tr>
+			<td><font size="-1"><a href="VideoExposureGain.htm">VIDEO_EXPOSURE_GAIN</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoShutterMode.htm">VIDEO_SHUTTER_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoShutterSpeed.htm">VIDEO_SHUTTER_SPEED</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td ><font size="-1"><a href="VideoMaxShutter.htm">VIDEO_MAX_SHUTTER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="MaxAutoShutter.html">MAX_AUTO_SHUTTER</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  </tr>
+		<tr>
+			<td><font size="-1"><a href="VideoSlowShutter.htm">VIDEO_SLOW_SHUTTER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoFlickless.htm">VIDEO_FLICKLESS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="LineFreq.htm">LINE_FREQ</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoAgcGain.htm">VIDEO_AGC_GAIN</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoIris.htm">VIDEO_IRIS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoIrisMode.html">VIDEO_IRIS_MODE</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  	</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoDCLevel.htm">VIDEO_DC_LEVEL</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  	</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoBlcMode.htm">VIDEO_BLC_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoSenseupLevel.htm">VIDEO_SENSEUP_LEVEL</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="VideoMirrorMode.htm">VIDEO_MIRROR_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoFlipMode.htm">VIDEO_FLIP_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoDeinterlace.htm">VIDEO_DEINTERLACE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="VideoDnr.htm">VIDEO_DNR</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoBlackLevel.htm">VIDEO_BLACKLEVEL</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoSkinTone.htm">VIDEO_SKINTONE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoWdr.htm">VIDEO_WDR</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="V2Sharpness.htm">V2_SHARPNESS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark6">6</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="LensCompensation.htm">LENS_COMPENSATION</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoSharpness.htm">VIDEO_SHARPNES</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <!-- ######################## Day/Night Control URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="DNUrl">URLs for Day/Night Control</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="VideoDayNightMode.htm">VIDEO_DAYNIGHT_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="DayNightState.htm">DAY_NIGHT_STATE</a></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="DayGainThd.htm">DAY_GAIN_THD</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="NightGainThd.htm">NIGHT_GAIN_THD</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoDNIRLed.htm">VIDEO_DN_IRLED</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  	</tr>
+		<tr>
+		  	<td><font size="-1"><a href="VideoDNIRCutFilter.htm">VIDEO_DN_IRCUT</a></font></td>
+		 	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  </tr>
+		<tr>
+			<td><font size="-1"><a href="VideoDNTimer.htm">VIDEO_DN_TIMER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="VideoDNType.htm">VIDEO_DN_TYPE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <!-- ######################## Night Profile URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="NightUrl">URLs for Night Time Profile</a></font></td></tr>
+        <tr>
+			<td><font size="-1"><a href="NightVideoQuality.htm">NIGHT_MPEG4_QUALITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightVideoQuality.htm">NIGHT_H264_QUALITY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+          <td><font size="-1"><a href="NightMjpegQuality.htm">NIGHT_MJPEG_QUALITY</a></font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+          <td align="center"><font size="-1">None</font></td>
+        </tr>
+        <tr>
+          <td><font size="-1"><a href="NightBitrate.htm">NIGHT_BITRATE</a></font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+          <td align="center"><font size="-1">None</font></td>
+        </tr>
+        <tr>
+          <td><font size="-1"><a href="NightMaxBitrate.htm">NIGHT_MAX_BITRATE</a></font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">None</font></td>
+          <td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+          <td align="center"><font size="-1">None</font></td>
+        </tr>
+        <tr>
+			<td><font size="-1"><a href="NightGop.htm">NIGHT_GOP</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightFpsNum.htm">NIGHT_FPS_NUM</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightWBMode.htm">NIGHT_WB_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+         <tr>
+			<td><font size="-1"><a href="NightWBGain.htm">NIGHT_WB_GAIN</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightExposure.htm">NIGHT_EXPOSURE_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightExposure.htm">NIGHT_EXPOSURE_GAIN</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightExposure.htm">NIGHT_AGC_GAIN</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightShutter.htm">NIGHT_SHUTTER_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightShutter.htm">NIGHT_SHUTTER_SPEED</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightShutter.htm">NIGHT_MAX_SHUTTER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightIris.htm">NIGHT_IRIS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightIris.htm">NIGHT_IRIS_MODE</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightIris.htm">NIGHT_DC_LEVEL</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightSharpness.htm">NIGHT_SHARPNESS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightVideoAdjust.htm">NIGHT_BRIGHTNESS</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightVideoAdjust.htm">NIGHT_CONTRAST</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="NightVideoAdjust.htm">NIGHT_SATURATION</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark9">9</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+        <!-- ######################## PTZ URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="PtzUrl">URLs for PTZ Control</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="CameraPreset.htm">CAMERA_PRESET</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Addr.htm">ADDR</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzVendor.htm">PTZ_VENDOR</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Zoom.htm">ZOOM</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="ZoomPosition.htm">ZOOM_POSITION</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SteppedZoom.htm">STEPPED_ZOOM</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+         <tr>
+			<td><font size="-1"><a href="ZoomCapGet.htm">ZOOM_CAP_GET</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Focus.htm">FOCUS</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="FocusPosition.htm">FOCUS_POSITION</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="SteppedFocus.htm">STEPPED_FOCUS</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="FocusCapGet.htm">FOCUS_CAP_GET</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Move.htm">MOVE</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="MoveLimit.htm">MOVE_LIMIT</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="MoveLimitGet.htm">MOVE_LIMIT_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="MoveMaxSpeedGet.htm">MOVE_MAX_SPEED_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="Position.htm">POSITION</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PositionGet.htm">POSITION_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="XyzPosGet.htm">XYZ_POS_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzPresetSet.htm">PTZ_PRESET_SET</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzPresetGet.htm">PTZ_PRESET_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzPresetGo.htm">PTZ_PRESET_GO</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzTourSet.htm">PTZ_TOUR_SET</a></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzTourGet.htm">PTZ_TOUR_GET</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="PtzTourScan.htm">PTZ_TOUR_SCAN</a></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RO,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzTourState.htm">PTZ_TOUR_STATE</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzTourName.htm">PTZ_TOUR_NAME</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="PtzParkConfig.htm">PTZ_PARK_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark4">4</a></sup></font></td>
+			<td align="center"><font size="-1">RW,V<sup><a href="#Remark3">3</a>,<a href="#Remark4">4</a></sup></font></td>
+		</tr>
+        <!-- ######################## Motion Detection URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="MotionUrl">URLs for Motion Detection</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="MotionConfig.htm">MOTION_CONFIG</a></font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="MotionTimer.htm">MOTION_TIMER</a></font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="MotionObj.htm">MOTION_OBJ</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V<sup><a href="#Remark3">3</a></sup></font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="PirMdConfig.htm">PIR_MD_CONFIG</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+		</tr>
+		<!-- ######################## Event Handler URLs ################################### -->
+        <tr><td colspan="5" bgcolor="#66CC66"><font size="+1"><a name="EventUrl">URLs for Event Handler</a></font></td></tr>
+		<tr>
+			<td><font size="-1"><a href="HttpServer.htm">HTTP_SERVER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="HTTP_PROXY.htm">HTTP_PROXY</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="SmtpServer.htm">SMTP_SERVER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="FtpServer.htm">FTP_SERVER</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="EventRspDO.htm">EVENT_RSPDO</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="EventRspMsg.htm">EVENT_RSPMSGn</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="EventRspImg.htm">EVENT_RSPIMGn</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="EventRspGo.htm">EVENT_RSPGO</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			</tr>
+		<tr>
+			<td><font size="-1"><a href="EventConfig.htm">EVENT_CONFIG</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+        <tr>
+			<td><font size="-1"><a href="EventPush.htm">EVENT_PUSH</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+			<td align="center"><font size="-1">WO,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="EventDI.htm">EVENT_DIn</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+			<td><font size="-1"><a href="EventRspCmd.htm">EVENT_RSPCMDn</a></font></td>
+			<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+		</tr>
+		<tr>
+		  <td><font size="-1"><a href="EventRspMd.htm">EVENT_RSPMDn</a></font></td>
+		  	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+	  </tr>
+      <tr>
+		  <td><font size="-1"><a href="EventRspMdPIR.htm">EVENT_RSPMDPIR</a></font></td>
+          	<td align="center"><font size="-1">None</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">RW,V</font></td>
+			<td align="center"><font size="-1">None</font></td>
+	  </tr>
+  	</table>
+</div>
+<h3>Back to</h3>
+	<blockquote>
+		<a href="../index.htm">HOME</a>
+	</blockquote>
+    
+<h3>Foot Note</h3>
+<div align="center">
+	<table border="1" width="95%" id="table2">
+		<tr>
+			<th width="2%" align="center"><a name="Remark1"><font size="-1">1</font></a></th>
+			<td><font size="-1">
+            	The first part is for Access Mode. It could be RW (Readable and Writeable), RO (Read Only), WO (Write Only) or None (Not Support)<br>
+                The second part is for On-Fly indication. if the change of URL is effective immediately without save and reboot, It could be V (the URL is on-fly). 
+                Otherwise, it is X (the URL is not on-fly).
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark2">2</a></font></th>
+			<td><font size="-1">Only be available of 4CH, 8CH and 16CH Video Server with EPL channel modules</font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark3">3</a></font></th>
+			<td><font size="-1">
+            	Return the CHANNEL 1 video server's configuration. If the CHANNEL 1 video server does not connect to router, the error message will be returned
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark4">4</a></font></th>
+			<td><font size="-1">
+            	Need to check device's specification to know its access attributes. It is helpful to check the
+                <a href="../../../DFI/CameraSetupDesignSpec/CameraSetupDesignSpec.htm">Camera Setup Design Specification</a>.
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark5">5</a></font></th>
+			<td><font size="-1">
+            	Only be available of EPL QUAD Video Server. In EPL 1CH and Multi-Channel Encoders, the usage of this URL is different.
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark6">6</a></font></th>
+			<td><font size="-1">
+            	Only be available of some encoder which has the specific image processor like VX1129
+            </font></td>
+		</tr>
+		<tr>
+			<th align="center"><font size="-1"><a name="Remark7">7</a></font></th>
+			<td><font size="-1">Only for ACD2000Q Video Server</font></td>
+		</tr>
+        <tr>
+			<th align="center"><font size="-1"><a name="Remark8">8</a></font></th>
+			<td><font size="-1">Need to use channel's virtual HTTP port</font></td>
+		</tr>
+        <tr>
+			<th align="center"><font size="-1"><a name="Remark9">9</a></font></th>
+			<td><font size="-1">Only take effective when the camera is in the night time mode</font></td>
+		</tr>
+		</table>
+</div>
+
+</body>
+
+</html>

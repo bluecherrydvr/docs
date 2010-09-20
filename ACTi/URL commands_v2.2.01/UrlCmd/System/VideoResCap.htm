@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>VIDEO_RESOLUTION_CAP</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">VIDEO_RESOLUTION_CAP</font></p>
+<p><font face="Arial" size="4">Description</font></p>
+<blockquote>
+	<p><font face="Arial">Get the video resolution capabilities.</font></p>
+	<p><font face="Arial">Because the TV Standard, NTSC and PAL, in D1 encoder 
+	could not be exist at the same time, the video resolution capabilities will 
+	be given based on the current TV standard in the device.</font></p>
+	<p><font face="Arial">The format of the return is Res1,Res2,Res3,... where 
+	Res1 is the highest resolution, Res2 is lower. There is no space characters 
+	in the return message.</font></p>
+	<p><font face="Arial">Because the video resolution capabilities of every 
+	stream in the dual streams encoder are the same, it does not need to give 
+	two video resolution capabilities in this URL.</font></p>
+	<p><font face="Arial">For example, </font></p>
+	<p><font face="Arial">in the&nbsp; EPL D1 NTSC camera, the return of this 
+	URL could be VIDEO_RESOLUTION_CAP='N720x480,N640x480,N352x240,N160x112'</font></p>
+	<p><font face="Arial">In the dual streams MegaPixel camera, the return of 
+	this URL could be VIDEO_RESOLUTION_CAP='N1280x1024,N1280x720,N640x480,N320x240,N160x112'</font></p>
+	<p><font face="Arial">If the CHANNEL=n was not set with this URL to the 
+	Multi-Channel device,  
+	the CHANNLE 1 video server's VIDEO_RESOLUTION_CAP configurations will be returned. If the 
+	CHANNEL 1 video server does not connect to the router, the error message 
+	will be returned.</font></p>
+</blockquote>
+
+<p><font size="4" face="Arial">Input Argument</font></p>
+<blockquote>
+	<p><font face="Arial">None</font></p>
+</blockquote>
+<p><font face="Arial" size="4">Attribute</font></p>
+<ul>
+	<li><font face="Arial">Read Only</font></li>
+</ul>
+<p><font face="Arial" size="4">Return of Message</font></p>
+<blockquote>
+	<font face="Arial">VIDEO_RESOLUTION_CAP='N720x480,N640x480,N352x240,N160x112'</font></blockquote>
+<p><font face="Arial"><font size="4">Applicability</font></font></p>
+<ul>
+	<li><font face="Arial">WPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">EPL Platform : All Encoder Devices</font></li>
+	<li><font face="Arial">PlatfotmT : All Encoder Devices</font></li>
+	<li><font face="Arial">Multi-Channel Encoder : All Devices</font></li>
+</ul>
+<p><font face="Arial"><font size="4">Status</font></font></p>
+<blockquote>
+	<p><font face="Arial">Valid</font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">See Also</font></font></p>
+<blockquote>
+	<p><font face="Arial"><a href="VideoFpsCap.htm">VIDEO_FPS_CAP</a></font></p>
+</blockquote>
+<p><font face="Arial"><font size="4">Example</font></font></p>
+<blockquote>
+	<font face="Arial">
+	http://ip:port/cgi-bin/system?USER=Admin&amp;PWD=123456&amp;VIDEO_RESOLUTION_CAP</font><br>
+	<font face="Arial">or</font><br>
+	<font face="Arial">http://ip:port/cgi-bin/cmd/system?VIDEO_RESOLUTION_CAP</font></blockquote>
+
+<p><font face="Arial" size="4">Back to</font></p>
+<blockquote>
+	<p><font face="Arial"><a href="../index.htm">HOME</a>, <a href="system.htm">
+	SYSTEM CGI</a></font></p>
+</blockquote>
+
+</body>
+
+</html>
