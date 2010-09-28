@@ -1,0 +1,74 @@
+
+
+#define ACTI_HEAD_MSG_B2_VIDEO_MPEG4 0x01
+#define ACTI_HEAD_MSG_B2_AUDIO_8KPCM 0x02
+#define ACTI_HEAD_MSG_B2_AUDIO_TIMESTAMP_8KPCM 0x03
+#define ACTI_HEAD_MSG_B2_VIDEO_MJPEG 0x04
+#define ACTI_HEAD_MSG_B2_VIDEO_H264 0x05
+
+typedef struct {
+	unsigned char acti[4]; /* 00 00 01 B2 */
+	unsigned char msg_type;		/* ACTI_HEAD_MSG_B2 */
+	unsigned char stream_id;	/* video streaming id */
+	unsigned char ext_b2_len;	/* 1: length of the ext. b2 private data appended to B2 frame */
+	unsigned char rsvd;
+	unsigned int len;
+}B2_HEADER;
+
+typedef struct
+{
+	time_t date_time;
+	unsigned char time_zone;		/* 0:-12, ..., 24:+13 */
+	unsigned char video_loss;		/* 0: video loss, 1 : video ok */
+	unsigned char motion;				/* 0x02: Motion 1 is active, 0x04: Motion 2 is active, 0x08 Motion 3 is active */
+	unsigned char dio;					/* for DIs, 0: DI triggered. 1: no triggered */
+	unsigned int count;					/* frame counter */
+	unsigned char resolution;		/* 0:N720x480, ... */
+	unsigned char bitrate;			/* 0:28K, ... */
+	unsigned char fps_mode;			/* 0:MODE1(constant), 1:0:MODE2 */
+	unsigned char fps_number;		/* In constant FPS mode,
+															it indicates the video server's constant FPS number.
+															In variable FPS mode,
+															in indicates the variable FPS number which was requested by the TCP host.
+															If it is not in TCP,
+															it indicates the variable FPS number */
+	struct timeval timestamp;
+	unsigned short md_actives[3]; /* # of active microblocks in motion region */
+	unsigned char reserved[2];
+}PRIVATE_DATA_B2;
+
+typedef struct
+{
+	B2_HEADER header;
+	PRIVATE_DATA_B2 prdata;
+}VIDEO_B2_FRAME;
+
+typedef struct
+{
+	B2_HEADER header;
+	struct timeval timestamp;
+	unsigned char reserved[8];
+}AUDIO_B2;
+
+inline bool fnCheckB2Header( const unsigned char * const buf )
+{
+	if( (buf[0]==0x00) && (buf[1]==0x00) &&
+		(buf[2]==0x01) && (buf[3]==0xb2) )
+	{
+		return true;
+	}
+	return false;
+}
+
+inline int fnFindB2Header( const unsigned char * const buf, unsigned int buflen)
+{
+	for( unsigned int i=0; i<buflen; i++)
+	{
+		if( (buf[i]==0x00) && (buf[i+1]==0x00) &&
+			(buf[i+2]==0x01) && (buf[i+3]==0xb2) )
+		{
+			return i;
+		}
+	}
+	return -1;
+}
