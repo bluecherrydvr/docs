@@ -1,0 +1,28 @@
+Vivotek corporate cameras:
+
+IP7361
+
+99.102.128.137
+
+RTSP port 4001
+l: root
+p: vivotekusa
+
+FD8361
+
+99.102.128.137
+
+RTSP port 4003
+l: root
+p: vivotekusa
+
+Beta testers camera:
+
+IP7330
+cams.accurategraphix.com
+RTSP port 554
+l: curtis
+p: bluecherry
+
+Customer asked us not to change the MJPEG streaming port from port 8080
+
