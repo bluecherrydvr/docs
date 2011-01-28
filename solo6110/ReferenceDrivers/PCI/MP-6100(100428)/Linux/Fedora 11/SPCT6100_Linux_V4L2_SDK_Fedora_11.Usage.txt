@@ -1,0 +1,77 @@
+[Note: If your system is based on Atom, please patch your kernel before
+using the SDK.]
+
+Step 1:
+	Description: Force Linux kernel to reserve memory for SPCT6100 driver.
+	
+	1.1:
+		append mem parameter to the 16th column (may be different in your system)
+		in /boot/grub/menu.lst. Please refer to Table 1 to check the parameter
+		you should append.
+		
+		(Table 1)
+		¢z---------------¢s-----------¢{
+		| System Memory | Parameter |
+		¢u---------------¢q-----------¢t
+		| 256MB         | mem=200M  |
+		¢u---------------¢q-----------¢t
+		| 512MB         | mem=400M  |
+		¢u---------------¢q-----------¢t
+		| 1024MB        | mem=900M  |
+		¢u---------------¢q-----------¢t
+		| 2048MB        | mem=1900M |
+		¢u---------------¢q-----------¢t
+		| 3072MB        | mem=2900M |
+		¢u---------------¢q-----------¢t
+		| 4096MB        | mem=3900M |
+		¢|---------------¢r-----------¢}
+		
+		EX: if your system has 512MB main memory, you should append
+		"mem=400M" to the 16th column and it should be like:
+		"kernel /vmlinuz-2.6.29.4-167.fc11.x86_64 ro root=<UUID> quiet mem=400M"
+		
+	1.2:
+		restart your system.
+		
+Step 2:
+	Description: Uncompress the package, set up the environment varibles and
+	execute the demo application.
+
+	2.1
+		tar jxvf [CSP-S-0011]SPCT6100_Linux_V4L2_SDK_Fedora_11.tgz
+	
+	2.2
+		cd install/x86-v4l2
+		
+	2.3
+		Initiate the environment
+		Usage: ./x86_init.sh [Reserved Memory Area]
+		please refer to Table 2 to check the parameter
+		
+		(Table 2)
+		¢z---------------¢s----------------------¢{
+		| System Memory | Reserved Memory Area |
+		¢u---------------¢q----------------------¢t
+		| 256MB         | 0x0C800000				   |
+		¢u---------------¢q----------------------¢t
+		| 512MB         | 0x19000000				   |
+		¢u---------------¢q----------------------¢t
+		| 1024MB        | 0x38400000				   |
+		¢u---------------¢q----------------------¢t
+		| 2048MB        | 0x76C00000				   |
+		¢u---------------¢q----------------------¢t
+		| 3072MB        | 0xB5400000				   |
+		¢u---------------¢q----------------------¢t
+		| 4096MB        | 0xF3C00000				   |
+		¢|---------------¢r----------------------¢}
+		
+		EX: if your system has 512MB main memory, you should initiate the
+		system by execute "./x86_init.sh 0x19000000"
+		
+	2.4
+		./dvr_v4l2
+	
+Note:
+	Change Video Standard:
+		If you have changed the standard of the video, please exit the application
+		and execute STEP 2.3 & STEP 2.4 to make the change take effect.	

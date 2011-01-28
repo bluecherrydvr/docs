@@ -1,0 +1,26 @@
+--- rpmbuild/BUILD/kernel-2.6.29/linux-2.6.29.i686/kernel/resource.c	2009-03-24 07:12:14.000000000 +0800
++++ linux-2.6.29.i686.6100/kernel/resource.c	2009-12-28 23:57:37.796786921 +0800
+@@ -149,10 +149,13 @@ static struct resource * __request_resou
+ 
+ 	if (end < start)
+ 		return root;
++
+ 	if (start < root->start)
+ 		return root;
++
+ 	if (end > root->end)
+ 		return root;
++
+ 	p = &root->child;
+ 	for (;;) {
+ 		tmp = *p;
+@@ -165,6 +168,9 @@ static struct resource * __request_resou
+ 		p = &tmp->sibling;
+ 		if (tmp->end < start)
+ 			continue;
++                if (!strcmp(root->name, "spct6100"))
++                  tmp = NULL;
++
+ 		return tmp;
+ 	}
+ }

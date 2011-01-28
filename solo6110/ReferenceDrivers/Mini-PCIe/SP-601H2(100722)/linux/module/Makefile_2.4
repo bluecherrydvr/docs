@@ -1,0 +1,17 @@
+KERNELDIR	= /usr/src/kernel-headers-2.4.27-3-686
+
+include $(KERNELDIR)/.config
+
+CFLAGS	+= -D__KERNEL__ -DMODULE
+CFLAGS	+= -I$(KERNELDIR)/include
+CFLAGS	+= -I./include
+CFLAGS	+= -Wall
+
+solo6x10-objs	:= main.o device.o sl_thread.o p2m.o vin.o disp.o fb_common.o fb_2.4.o enc.o dec.o g723.o uart_2.4.o i2c.o saa7128.o tw2815.o
+obj-m		:= solo6x10.o
+
+all:	$(solo6010-objs)
+	$(LD) -r -o $(obj-m) $(solo6010-objs)
+
+clean:
+	rm -f $(obj-m) $(solo6010-objs)

@@ -1,0 +1,71 @@
+--- rpmbuild/BUILD/kernel-2.6.29/linux-2.6.29.i686/arch/x86/pci/i386.c	2009-12-29 00:03:23.158906205 +0800
++++ linux-2.6.29.i686.6100/arch/x86/pci/i386.c	2009-12-28 23:19:13.188943695 +0800
+@@ -117,6 +117,7 @@ static void __init pcibios_allocate_bus_
+ 	struct pci_dev *dev;
+ 	int idx;
+ 	struct resource *r, *pr;
++        char spct6100_name[10]="spct6100";
+ 
+ 	/* Depth-First Search on bus tree */
+ 	list_for_each_entry(bus, bus_list, node) {
+@@ -127,6 +128,8 @@ static void __init pcibios_allocate_bus_
+ 				if (!r->flags)
+ 					continue;
+ 				pr = pci_find_parent_resource(dev, r);
++                                if (dev->vendor == 0x0216 && dev->device == 0x6100)
++                                  strcpy(pr->name, spct6100_name);
+ 				if (!r->start || !pr ||
+ 				    request_resource(pr, r) < 0) {
+ 					dev_info(&dev->dev, "BAR %d: can't allocate resource\n", idx);
+@@ -148,9 +151,11 @@ static void __init pcibios_allocate_reso
+ {
+ 	struct pci_dev *dev = NULL;
+ 	int idx, disabled;
++        int index;
+ 	u16 command;
+ 	struct resource *r, *pr;
+-
++        char spct6100_name[10]="spct6100";
++        
+ 	for_each_pci_dev(dev) {
+ 		pci_read_config_word(dev, PCI_COMMAND, &command);
+ 		for (idx = 0; idx < PCI_ROM_RESOURCE; idx++) {
+@@ -169,6 +174,21 @@ static void __init pcibios_allocate_reso
+ 					(unsigned long long) r->end,
+ 					r->flags, disabled, pass);
+ 				pr = pci_find_parent_resource(dev, r);
++                                if (dev->vendor == 0x0216 && dev->device == 0x6100 && idx == 0) {
++
++                                  if (dev->resource[0].end == 0x0)
++				    dev->resource[0].end = dev->resource[0].start + 0x01FFFFFF;
++
++                                  for (index = 0; index < 6; index++) {
++                                      if (index != 0) {
++                                        (dev->resource[index]).end = 0x0;
++                                        (dev->resource[index]).start = 0x0;
++                                      }
++                                  }
++                                  
++                                  strcpy(pr->name, spct6100_name);
++                                }
++
+ 				if (!pr || request_resource(pr, r) < 0) {
+ 					dev_info(&dev->dev, "BAR %d: can't allocate resource\n", idx);
+ 					/* We'll assign a new address later */
+@@ -198,6 +218,7 @@ static int __init pcibios_assign_resourc
+ {
+ 	struct pci_dev *dev = NULL;
+ 	struct resource *r, *pr;
++        char spct6100_name[10]="spct6100";
+ 
+ 	if (!(pci_probe & PCI_ASSIGN_ROMS)) {
+ 		/*
+@@ -210,6 +231,8 @@ static int __init pcibios_assign_resourc
+ 			if (!r->flags || !r->start)
+ 				continue;
+ 			pr = pci_find_parent_resource(dev, r);
++                        if (dev->vendor == 0x0216 && dev->device == 0x6100)
++                          strcpy(pr->name, spct6100_name);
+ 			if (!pr || request_resource(pr, r) < 0) {
+ 				r->end -= r->start;
+ 				r->start = 0;

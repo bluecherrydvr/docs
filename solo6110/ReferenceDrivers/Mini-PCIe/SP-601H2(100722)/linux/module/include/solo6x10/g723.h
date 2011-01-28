@@ -1,0 +1,11 @@
+#ifndef __SOLO6x10_G723_H
+#define __SOLO6x10_G723_H
+
+#define IOCTL_G723_MAGIC		'g'
+
+#define IOCTL_G723_CLEAR_WR_BUF	_IO(IOCTL_G723_MAGIC, 0)
+#define IOCTL_G723_CLEAR_RD_BUF	_IO(IOCTL_G723_MAGIC, 1)
+
+#define IOCTL_G723_MAXNR		2
+
+#endif
