@@ -1,8 +1,0 @@
-/WindowsAudioInputDevice.mak///
-/WindowsAudioInputDevice_common.cpp///
-/WindowsAudioInputDevice_common.hh///
-/WindowsAudioInputDevice_mixer.cpp///
-/WindowsAudioInputDevice_mixer.hh///
-/WindowsAudioInputDevice_noMixer.cpp///
-/WindowsAudioInputDevice_noMixer.hh///
-/showAudioInputPorts.cpp///

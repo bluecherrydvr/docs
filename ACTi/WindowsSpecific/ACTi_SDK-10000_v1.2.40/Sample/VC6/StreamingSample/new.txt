@@ -1,7 +1,0 @@
-extern "C" __declspec(dllexport) void KSetQuadMotionDetectionCallback( HANDLE h, DWORD UserParam, QUAD_MOTION_DETECTION_CALLBACK fnQuadMotionDetectionCallback )
-{
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	((CMpeg4Adapter *)h)->SetQuadMotionDetectionCallback( UserParam, fnQuadMotionDetectionCallback );
-}
-
-void	KSetFilePlayCompeleteCallback( HANDLE h, DWORD UserParam, FILE_PLAY_COMPLETE_CALLBAKC fnFilePlayCompeleteCallback );
