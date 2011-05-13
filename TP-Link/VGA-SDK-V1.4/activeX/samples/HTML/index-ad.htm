@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>AxViewer Test</title>
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<script type="text/JavaScript">
+<!--
+var mdenable0=0;
+var mdx0=0; 
+var mdy0=0; 
+var mddx0=0; 
+var mddy0=0; 
+var mdsensitivity0=0; 
+var mdthreshold0=0;
+var mdenable1, mdx1, mdy1, mddx1, mddy1, mdsensitivity1, mdthreshold1;
+var mdenable2, mdx2, mdy2, mddx2, mddy2, mdsensitivity2, mdthreshold2;
+function RGB(r,g,b){
+    return (b*65536+g*256+r);
+}
+function Viewer()
+{
+    document.open();
+    document.write("<OBJECT NAME='AxMC'");
+    document.write(" CLASSID='CLSID:B4CB8358-ABDB-47EE-BC2D-437B5DEBABCB' data='data:application/x-oleobject'");
+    document.write(" CODEBASE='AxViewer/AxMediaControl.cab#version=2,0,0,1' width=640 height=537>");
+    
+    document.write(" <PARAM name='BkColor' VALUE=" + RGB(0,0,0) + ">");
+    document.write(" <PARAM name='TextColor' VALUE=" + RGB(200,200,200) + ">");
+    document.write(" <PARAM name='ButtonColor' VALUE=" + RGB(100,180,200) + ">");
+    document.write(" <PARAM name='HoverColor' VALUE=" + RGB(18,204,214) + ">");
+    
+    document.write("	<PARAM name='UIMode' VALUE='ad'>");
+    document.write("	<PARAM name='ShowStatusBar' VALUE='1'>");
+    document.write("	<PARAM name='ShowToolBar' VALUE='0'>");
+    document.write("	<PARAM name='CaptionText' VALUE='Audio Detection'>");
+    document.write("	<PARAM name='EnableContextMenu' VALUE='1'>");
+    
+    document.write("	<PARAM name='ToolBarConfiguration' VALUE=''>");
+    document.write("	<PARAM name='HostIP' VALUE='192.168.1.12'>");
+    document.write("	<PARAM name='HttpPort' VALUE='80'>");
+    document.write("	<PARAM name='MediaProtocol' VALUE='3'>");
+    document.write("	<PARAM name='MediaChannel' VALUE='0'>");
+    document.write("	<PARAM name='MediaUsername' VALUE='admin'>");
+    document.write("	<PARAM name='MediaPassword' VALUE='admin'>");
+    document.write("  <PARAM name='AutoStart' VALUE='1'>");
+    document.write("	<PARAM name='MediaDelay' VALUE='0'>");
+    document.write("  <PARAM name='ShowToolTip' VALUE='1'>");
+    document.write("  <PARAM name='PTZMouseCtl' VALUE='0'>");
+    document.write("</OBJECT>");
+    document.write("<SCRIPT TYPE='text/javascript'>");
+    document.write("    AxMC.Play(1);");
+    document.write("    setTimeout(\"AxMC.AudioReceiveStart();\", 500);");
+    document.write("</SCRIPT>");
+    document.close();
+}
+function onunload(){
+    AxMC.Stop();
+    AxMC.ShowAD(0);
+}
+//-->
+</script>
+</head>
+<body leftmargin="10" topmargin="10" onUnload="onunload()">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<TR>
+    <TD valign="top">
+            <script>Viewer()</script>
+    </TD>
+</TR>
+<TR>
+    <TD valign="top">
+			<input type="button" value="Enable AD(1)" onClick="AxMC.ShowAD(1);">
+			<input type="button" value="Disable AD(0)" onClick="AxMC.ShowAD(0);">
+			<input type="button" value="Apply" onClick="AxMC.ApplyAD();">
+		    <script for="AxMC" event="OnADStateNotify(Id, Type, Value)">//alert("OnMDStateNotify: " + Id + ' ' + Type + ' ' + Value);</script>
+    </TD>
+</TR>
+<TR>
+    <TD valign="top">
+		Sensitivity : <input name="sensitivity" type="text" onChange="AxMC.SetADSensitivity(this.value);" value="5">
+    </TD>
+</TR>
+<TR>
+    <TD valign="top">
+		Threshold : <input name="thrwshold" type="text" onChange="AxMC.SetADThreshold(this.value);" value="50">
+    </TD>
+</TR>
+</table>
+</body>
+</html>

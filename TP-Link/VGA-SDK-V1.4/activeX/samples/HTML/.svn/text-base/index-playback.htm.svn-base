@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>AxViewer Test</title>
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<script type="text/JavaScript">
+<!--
+function RGB(r,g,b){
+    return (b*65536+g*256+r);
+}
+function Viewer()
+{
+    document.open();
+    document.write("<OBJECT NAME='AxMC'");
+    document.write(" CLASSID='CLSID:B4CB8358-ABDB-47EE-BC2D-437B5DEBABCB' data='data:application/x-oleobject'");
+    document.write(" CODEBASE='AxViewer/AxMediaControl.cab#version=2,0,0,1' width=605 height=440>");
+
+    document.write("	<PARAM name='BkColor' VALUE=" + RGB(180,230,180) + ">");
+    document.write("	<PARAM name='TextColor' VALUE=" + RGB(90,90,90) + ">");
+    document.write("	<PARAM name='ButtonColor' VALUE=" + RGB(110,110,110) + ">");
+    document.write("	<PARAM name='HoverColor' VALUE=" + RGB(18,204,214) + ">");
+    
+    document.write("	<PARAM name='UIMode' VALUE='none'>");
+    document.write("	<PARAM name='ShowStatusBar' VALUE='1'>");
+    document.write("	<PARAM name='ShowToolBar' VALUE='1'>");
+    document.write("	<PARAM name='CaptionText' VALUE='Playback'>");
+    document.write("	<PARAM name='EnableContextMenu' VALUE='1'>");
+    document.write("	<PARAM name='Capture' VALUE='0'>");
+    
+    document.write("	<PARAM name='ToolBarConfiguration' VALUE='playback+prev+next+open+zoom+time+position+rewind+forward+rotate'>");
+    document.write("	<PARAM name='HostIP' VALUE='192.168.1.2'>");
+    document.write("	<PARAM name='HttpPort' VALUE='80'>");
+    document.write("	<PARAM name='MediaProtocol' VALUE='3'>");
+    document.write("	<PARAM name='MediaChannel' VALUE='0'>");
+    document.write("	<PARAM name='MediaUsername' VALUE='admin'>");
+    document.write("	<PARAM name='MediaPassword' VALUE='admin'>");
+    document.write("  <PARAM name='AutoStart' VALUE='1'>");
+    document.write("	<PARAM name='MediaDelay' VALUE='0'>");
+    document.write("  <PARAM name='ShowToolTip' VALUE='1'>");
+    document.write("  <PARAM name='PTZMouseCtl' VALUE='0'>");
+	  document.write("</OBJECT>");
+    document.close();
+}
+function onunload(){
+    AxMC.Stop();
+}
+function Playback(value)
+{
+    AxMC.MediaFile = value;
+}
+
+function RecordStart()
+{
+	var recForm = document.rec_form;
+	AxMC.RecordPath = recForm.recPath.value;
+	AxMC.RecordName = recForm.recName.value;
+	if(recForm.recSuffix[0].checked)
+		AxMC.RecordSuffix = recForm.recSuffix[0].value;
+	else if(recForm.recSuffix[1].checked)
+		AxMC.RecordSuffix = recForm.recSuffix[1].value;
+	else
+		AxMC.RecordSuffix = recForm.recSuffix[2].value;
+	
+	if(recForm.recFormat[0].checked)
+		AxMC.RecordFormat = recForm.recFormat[0].value;
+	else if(recForm.recFormat[1].checked)
+		AxMC.RecordFormat = recForm.recFormat[1].value;
+	else
+		AxMC.RecordFormat = recForm.recFormat[2].value;
+	
+	var recFlags = 0;
+	if(recForm.recVideo.checked)
+		recFlags+=Number(recForm.recVideo.value);
+	if(recForm.recAudio.checked)
+		recFlags+=Number(recForm.recAudio.value);
+	AxMC.StartRecord(recFlags, AxMC.RecordFormat);
+}
+
+function RecordStop()
+{
+	AxMC.StopRecord();
+}
+//-->
+</script>
+</head>
+<body leftmargin="10" topmargin="10" onUnload="onunload()">
+<table border="1">
+  <tr>
+    <td colspan="3" align="center" valign="middle"><script>Viewer()</script></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="FullScreen(1)" onClick="AxMC.FullScreen(1);">    </td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="Play" onClick="AxMC.Play(1);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="Snapshot('C:\\test.jpg')" onClick="AxMC.SaveCurrentImage('C:\\test.jpg');">	</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DigitalZoom(100)" onClick="AxMC.DigitalZoom(100);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DigitalZoom(500)" onClick="AxMC.DigitalZoom(500);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DigitalZoom(1000)" onClick="AxMC.DigitalZoom(1000);">	</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DigitalZoomIn" onClick="AxMC.DigitalZoomIn();">	</td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DigitalZoomOut" onClick="AxMC.DigitalZoomOut();">	</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(1)" onClick="AxMC.DigitalZoomMove(1);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(2)" onClick="AxMC.DigitalZoomMove(2);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(3)" onClick="AxMC.DigitalZoomMove(3);">	</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(4)" onClick="AxMC.DigitalZoomMove(4);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(5)" onClick="AxMC.DigitalZoomMove(5);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(6)" onClick="AxMC.DigitalZoomMove(6);">	</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(7)" onClick="AxMC.DigitalZoomMove(7);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(8)" onClick="AxMC.DigitalZoomMove(8);">	</td>
+    <td align="center" valign="middle">
+	  <input type="button" name="Submit" value="DZoomMove(9)" onClick="AxMC.DigitalZoomMove(9);">	</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" valign="middle">
+	  <input type="file" value="Playback" onChange="Playback(this.value);">	</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" valign="middle">
+	<form name="rec_form">
+	<table width="100%" border="1" style="table-layout:auto">
+  <tr>
+    <td>Record</td>
+    <td><input type="button" name="recStart" value="Start" onClick="RecordStart();"></td>
+    <td><input type="button" name="recStop" value="Stop" onClick="RecordStop();"></td>
+  </tr>
+  <tr>
+    <td>Path</td>
+    <td colspan="2"><input type="text" name="recPath" value="C:\"></td>
+    </tr>
+  <tr>
+    <td>Name</td>
+    <td colspan="2"><input type="text" name="recName" value=""></td>
+    </tr>
+  <tr>
+    <td>Suffix</td>
+    <td colspan="2"><input name="recSuffix" type="radio" value="0">
+      None</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><input name="recSuffix" type="radio" value="1" checked="checked">
+Date/Time</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><input name="recSuffix" type="radio" value="2">
+      Sequence</td>
+    </tr>
+  <tr>
+    <td>Video Format</td>
+    <td colspan="2">
+	<input name="recFormat" type="radio" value="0">
+      H264	</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">
+	<input name="recFormat" type="radio" value="1" checked="checked">
+      MPEG4</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">
+	<input name="recFormat" type="radio" value="2">
+      MJPEG</td>
+    </tr>
+  <tr>
+    <td>Method</td>
+    <td><input type="checkbox" name="recVideo" value="8" checked="checked">Video</td>
+    <td><input type="checkbox" name="recAudio" value="1" checked="checked">Audio</td>
+  </tr>
+</table>
+	</form>	</td>
+  </tr>
+</table>
+
+</body>
+</html>

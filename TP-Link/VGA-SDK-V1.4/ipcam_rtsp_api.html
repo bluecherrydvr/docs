@@ -1,0 +1,1643 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="ipcam_rtsp_api.files/filelist.xml">
+<link rel=Edit-Time-Data href="ipcam_rtsp_api.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>IP Camera Developer Pages</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chmetcnv" downloadurl=""/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="chsdate" downloadurl=""/>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>150</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-alt:PMingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:MingLiU;
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-alt:MingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:MingLiU;
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:PMingLiU;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:PMingLiU;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:PMingLiU;}
+tt
+	{font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:PMingLiU;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+p.title, li.title, div.title
+	{mso-style-name:title;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:PMingLiU;}
+span.toc-index
+	{mso-style-name:toc-index;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:261188983;
+	mso-list-template-ids:1635839098;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:613639682;
+	mso-list-template-ids:971170510;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:1055347290;
+	mso-list-template-ids:169235682;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1273587735;
+	mso-list-template-ids:844773502;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:1412314476;
+	mso-list-template-ids:1774995036;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1595548100;
+	mso-list-template-ids:956068902;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1950239590;
+	mso-list-template-ids:2076869512;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l6:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:\8868\683C\5167\6587;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:\8868\683C\683C\7DDA;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<meta http-equiv=Content-Language content=en>
+<meta name=KeyWords
+content="network camera, network cameras, IP, IP camera, IP cameras, netcam, web camera, webcamera, web cameras, webcam, webcams, video server, print server, video servers, print servers, network, server, video, print, document, document server, scan, wireless, developer, linux, asic, chip, camera server, bluetooth, 802.11, communications, thinserver, lan, video solutions, video products, surveillance, document server, oem, remote camera, download, remote monitoring, web promotion">
+<meta name=Description content="Professional network video solutions">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=ZH-TW link=blue vlink=blue style='tab-interval:24.0pt'
+leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<div class=Section1>
+
+<div>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=622
+ style='width:466.5pt;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=622 valign=top style='width:466.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=title><span lang=EN-US>API, HTTP - Interface Specification</span></p>
+  <p><span lang=EN-US>Revision: 1.0<br>
+  Date: 2007-November-16</span></p>
+  <div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  <h2><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>TABLE
+  OF CONTENTS<o:p></o:p></span></h2>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="#doc_history">DOCUMENT HISTORY</a> </span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="#overview">1 OVERVIEW</a> </span></li>
+   <ul type=circle>
+    <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+        auto;mso-list:l2 level2 lfo3;tab-stops:list 72.0pt'><span lang=EN-US><a
+        href="#overview_versions">1.1 Product and firmware versions</a></span></li>
+   </ul>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="#references">2 REFERENCES</a> </span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="#_3._SAMPLE_RTSP_STREAM GET FLOW">3 SAMPLE RTSP STREAM GET FLOW</a></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="#RTSP_API">4 RTSP API</a> </span></li>
+   <ul type=circle>
+    <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+        auto;mso-list:l2 level2 lfo3;tab-stops:list 72.0pt'><span lang=EN-US><a
+        href="#RTSP_URL">4.1 RTSP URL</a> </span></li>
+    <ul type=square>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#_3.1.1_Computer_View">4.1.1
+         Computer View</a></span><span class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#_3.1.2_Mobile_View">4.1.2 Mobile
+         View</a></span><span class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+    </ul>
+    <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+        auto;mso-list:l2 level2 lfo3;tab-stops:list 72.0pt'><span lang=EN-US><a
+        href="#RTSP_Command">4.2 RTSP Command</a></span></li>
+    <ul type=square>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_DESCRIBE">4.2.1 RTSP DESCRIBE </a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_OPTIONS">4.2.2 RTSP OPTIONS </a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_SETUP">4.2.3 RTSP SETUP </a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_PLAY">4.2.4 RTSP PLAY</a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_PAUSE">4.2.5 RTSP PAUSE</a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#RTSP_TEARDOWN">4.2.6 RTSP TEARDOWN</a></span><span
+         class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+     <li class=MsoNormal style='color:blue;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+         auto;mso-list:l2 level3 lfo3;tab-stops:list 108.0pt'><span lang=EN-US
+         style='color:windowtext'><a href="#_3.2.7_RTSP_over_HTTP">4.2.7 RTSP
+         Over HTTP</a></span><span class=MsoHyperlink><span lang=EN-US><o:p></o:p></span></span></li>
+    </ul>
+   </ul>
+  </ul>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  <p><span lang=EN-US>&nbsp;</span></p>
+  <h2><a name="doc_history"><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'>DOCUMENT HISTORY</span></a><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width="18%" valign=top style='width:18.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US>Version</span></b></p>
+    </td>
+    <td width="18%" valign=top style='width:18.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US>Date</span></b></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US>Comment</span></b></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US>1.0</span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US>2007-Nov-16</span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US>Initial version</span></p>
+    </td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;</span></p>
+  <h2><a name=overview><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>1
+  OVERVIEW</span></a><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+  <p><span lang=EN-US>This document specifies the external RTSP-based
+  application programming interface of IP cameras and video servers with
+  firmware version <st1:chsdate IsROCDate="False" IsLunarDate="False" Day="30"
+  Month="12" Year="1899" w:st="on"><span style='color:red'>1.6.16</span> a</st1:chsdate>nd
+  above.</span></p>
+  <h3><a name="overview_versions"><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'>1.1 Product and firmware versions</span></a><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The support for the RTSP API is product and firmware
+  dependent. Please refer to the Release Notes for the actual product for
+  compliance information.</span></p>
+  <p><span lang=EN-US>&nbsp;</span></p>
+  <h2><a name=references><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>2
+  REFERENCES</span></a><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+  <p><b><span lang=EN-US>RTSP protocol</span></b><span lang=EN-US> </span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="http://rfc.sunsite.dk/rfc/rfc2326.html">Real Time Streaming Protocol
+       – RFC 2326</a> </span></li>
+  </ul>
+  <p><b><span lang=EN-US>SDP protocol</span></b><span lang=EN-US> </span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="http://www.faqs.org/rfcs/rfc2327.html">Session Description
+       Protocol – RFC 2327</a><b><o:p></o:p></b></span></li>
+  </ul>
+  <p><b><span lang=EN-US>RTP protocol</span></b><span lang=EN-US> </span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="http://www.faqs.org/rfcs/rfc3640.html">Real-time Transport
+       Protocol – RFC 3640</a><b><o:p></o:p></b></span></li>
+  </ul>
+  <p><b><span lang=EN-US>HTTP protocol</span></b><span lang=EN-US> </span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt'><span lang=EN-US><a
+       href="http://www.w3.org/Protocols/HTTP/1.0/spec">Hypertext Transfer
+       Protocol -- HTTP/1.0</a></span></li>
+  </ul>
+  <p><b><span lang=EN-US style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman"'>&nbsp;</span></b><b><span
+  lang=EN-US style='font-size:18.0pt'><o:p></o:p></span></b></p>
+  <h2><a name="_3._SAMPLE_RTSP_STREAM GET FLOW"></a><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'>3. SAMPLE RTSP STREAM GET
+  FLOW<o:p></o:p></span></h2>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>A. Decide device IP address and HTTP port number<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Remote
+  device IP address or host name.<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Ex:
+  “192.168.<st1:chmetcnv UnitName="”" SourceValue="1.99" HasSpace="False"
+  Negative="False" NumberType="1" TCSC="0" w:st="on">1.99”</st1:chmetcnv> or
+  “example.dyndns.org”<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-spacerun:yes'>      </span>http port: 80<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>B. Decide video streaming format<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Check RTSP
+  Enabled by sending <span class=SpellE>cgi</span>:<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>&quot;/cgi-bin/view/param?action=list&amp;group=General.Network.RTSP.Enabled&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Return:<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><span class=SpellE><i style='mso-bidi-font-style:normal'><span
+  lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>General.Network.RTSP.Enabled</span></i></span><i
+  style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:10.0pt;
+  font-family:Arial;mso-font-kerning:1.0pt'>=1<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>(1: RTSP enable,
+  0: RTSP disable)<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>C. Video Connections check<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the
+  server allowed maximum video connections by <br>
+  &quot;/<span class=SpellE>cgi-bin/view/param?action</span>=<span
+  class=SpellE>list&amp;group</span>=<span class=SpellE>Image.MaxViewers</span>&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>For
+  example, the return message is &quot;<span class=SpellE>Image.MaxViewer</span>=5&quot;
+  means the host maximum support video connections is 5.<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get how
+  many video connections right now by <br>
+  &quot;/<span class=SpellE>cgi-bin/view/param?action</span>=<span
+  class=SpellE>list&amp;group</span>=connection&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>For
+  example, the return message is &quot;connection=5&quot; means the host
+  already have 5 video connections.<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>p.s. the
+  video connections don’t count &quot;Multicast&quot; in. <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>D. Get Video Frame Resolution<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the
+  RTSP resolution<br>
+  &quot;/<span class=SpellE>cgi-bin/view/param?action</span>=<span
+  class=SpellE>list&amp;group</span>=Image.I0.MPEG4.Resolution&quot; <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-spacerun:yes'> </span>(the RTSP VIDEO compress type is MPEG4)</span></i><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>E. Get viewer port corresponding to video format<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the RTSP
+  port<br>
+  &quot;/cgi-bin/view/param?action=list&amp;group=General.Network.RTSP.R#.Port&quot;
+  <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>(R# could
+  be R0 or R1, R0 is Computer View, R1 is <st1:place w:st="on">Mobile</st1:place>
+  View)<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>if the host
+  is behind the NAT, <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Send the
+  CGI to check the port forward activated or not <br>
+  &quot;/cgi-bin/view/param?action=list&amp;group=General.Network.UPnP.NATTraversal.Enabled&quot;
+  <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Then get
+  the Computer View RTSP forward port by sending the CGI<br>
+  &quot;/cgi-bin/view/param?action=list&amp;group=General.Network.UPnP.NATTraversal.HTTPViewerPort3&quot;
+  <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>And get the
+  <st1:place w:st="on">Mobile</st1:place> View RTSP forward port by sending<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>&quot;/cgi-bin/view/param?action=list&amp;group=General.Network.UPnP.NATTraversal.HTTPViewerPort4&quot;
+  <o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='margin-left:30.0pt;text-indent:-24.0pt;mso-pagination:
+  none;tab-stops:list 30.0pt'><![if !supportLists]><span lang=EN-US
+  style='font-family:Arial;mso-fareast-font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-family:Arial;
+  mso-font-kerning:1.0pt'>F. Start RTSP connection<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>In Computer
+  View<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the <span
+  class=SpellE>unicast</span> RTSP stream by sending the RTSP Describe COMMAND
+  with URL: <br>
+  rtsp://host_IP:rtsp_Port/video.mp4&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><span
+  style='mso-spacerun:yes'>  </span><o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the
+  multicast RTSP stream by sending the RTSP Describe COMMAND with URL: <br>
+  &quot;rtsp://host_IP:rtsp_Port/multiast.mp4&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>In <st1:place
+  w:st="on">Mobile</st1:place> view<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the <span
+  class=SpellE>unicast</span> RTSP stream by sending the RTSP Describe COMMAND
+  with URL: <br>
+  &quot;rtsp://host_IP:rtsp_Port/video.3gp&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:42.0pt;mso-para-margin-left:3.5gd;
+  mso-pagination:none'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:10.0pt;font-family:Arial;mso-font-kerning:1.0pt'>Get the
+  multicast RTSP stream by sending the RTSP Describe COMMAND with URL: <br>
+  &quot;rtsp://host_IP:rtsp_Port/multiast.3gp&quot;<o:p></o:p></span></i></p>
+  <p class=MsoNormal style='margin-left:30.0pt;mso-pagination:none'><i
+  style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:10.0pt;
+  font-family:Arial;mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></i></p>
+  <h2><a name="RTSP_API"></a><a name="sw_requirements"><span style='mso-bookmark:
+  RTSP_API'><span lang=EN-US>4</span></span></a><span style='mso-bookmark:sw_requirements'><span
+  style='mso-bookmark:RTSP_API'><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'>. </span></span></span><span style='mso-bookmark:RTSP_API'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>RTSP API</span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+  <h3><a name="RTSP_URL"></a><a name="sw_requirements_responses"><span
+  style='mso-bookmark:RTSP_URL'><span lang=EN-US>4</span></span></a><span
+  style='mso-bookmark:sw_requirements_responses'><span style='mso-bookmark:
+  RTSP_URL'><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>.1
+  </span></span></span><span style='mso-bookmark:RTSP_URL'><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'>RTSP URL</span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <h3><a name="Computer_view"></a><a name="sw_requirements_responses_status"></a><a
+  name="_3.1.1_Computer_View"></a><span style='mso-bookmark:Computer_view'><span
+  style='mso-bookmark:sw_requirements_responses_status'><span lang=EN-US
+  style='font-size:13.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></span></span></h3>
+  <h3><span style='mso-bookmark:Computer_view'><span style='mso-bookmark:sw_requirements_responses_status'><st1:chsdate
+  Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   lang=EN-US style='font-size:13.0pt'>4</span><span lang=EN-US
+   style='font-size:13.0pt;mso-fareast-font-family:"Times New Roman"'>.1.1</span></st1:chsdate><span
+  lang=EN-US style='font-size:13.0pt;mso-fareast-font-family:"Times New Roman"'>
+  </span></span></span><span style='mso-bookmark:Computer_view'><span
+  lang=EN-US style='font-size:13.0pt;mso-fareast-font-family:"Times New Roman"'>Computer
+  View</span></span><span lang=EN-US style='font-size:13.0pt;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><st1:chsdate Year="1899" Month="12" Day="30" IsLunarDate="False"
+  IsROCDate="False" w:st="on"><span lang=EN-US style='font-size:12.0pt'>4</span><span
+   lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1.1</span></st1:chsdate><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1
+  <span class=SpellE>Unicast</span> request<o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Syntax</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    class=SpellE><i style='mso-bidi-font-style:normal'><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>rtsp</span></i></span><i style='mso-bidi-font-style:normal'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>://&lt;<span class=SpellE><span style='mso-bidi-font-style:italic'>servername</span></span>&gt;:&lt;<span
+    class=SpellE>rtsp</span> port&gt;/video.mp4<o:p></o:p></span></i></p>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Example</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+   style='background:#EEEEEE;border-collapse:collapse;mso-yfti-tbllook:480;
+   mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+    height:21.75pt'>
+    <td width=598 style='width:448.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:
+    21.75pt'>
+    <h3 style='text-align:justify;text-justify:inter-ideograph'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";font-weight:
+    normal;mso-bidi-font-weight:bold'>rtsp://myserver:554/video.mp4<o:p></o:p></span></h3>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><st1:chsdate Year="1899" Month="12" Day="30" IsLunarDate="False"
+  IsROCDate="False" w:st="on"><span lang=EN-US style='font-size:12.0pt'>4</span><span
+   lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1.1</span></st1:chsdate><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.2.
+  Multicast request<o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Syntax</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    class=SpellE><i style='mso-bidi-font-style:normal'><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>rtsp</span></i></span><i style='mso-bidi-font-style:normal'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>://&lt;<span class=SpellE><span style='mso-bidi-font-style:italic'>servername</span></span>&gt;:&lt;<span
+    class=SpellE>rtsp</span> port&gt;/multicast.mp4<o:p></o:p></span></i></p>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Example</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+   style='background:#EEEEEE;border-collapse:collapse;mso-yfti-tbllook:480;
+   mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+    height:21.75pt'>
+    <td width=598 style='width:448.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:
+    21.75pt'>
+    <h3 style='text-align:justify;text-justify:inter-ideograph'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";font-weight:
+    normal;mso-bidi-font-weight:bold'>rtsp://myserver:554/multicast.mp4<o:p></o:p></span></h3>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><a name="Mobile_view"></a><a name="_3.1.2_Mobile_View"></a><st1:chsdate
+  Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   style='mso-bookmark:Mobile_view'><span lang=EN-US style='font-size:13.0pt'>4</span></span><span
+   style='mso-bookmark:Mobile_view'><span lang=EN-US style='font-size:13.0pt;
+   mso-fareast-font-family:"Times New Roman"'>.1.2</span></span></st1:chsdate><span
+  style='mso-bookmark:Mobile_view'><span lang=EN-US style='font-size:13.0pt;
+  mso-fareast-font-family:"Times New Roman"'> Mobile View</span></span><span
+  lang=EN-US style='font-size:13.0pt;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><st1:chsdate Year="1899" Month="12" Day="30" IsLunarDate="False"
+  IsROCDate="False" w:st="on"><span lang=EN-US style='font-size:12.0pt'>4</span><span
+   lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1.2</span></st1:chsdate><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1
+  <span class=SpellE>Unicast</span> request<o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Syntax</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    class=SpellE><i style='mso-bidi-font-style:normal'><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>rtsp</span></i></span><i style='mso-bidi-font-style:normal'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>://&lt;<span class=SpellE><span style='mso-bidi-font-style:italic'>servername</span></span>&gt;:&lt;<span
+    class=SpellE>rtsp</span> port&gt;/video.3gp<o:p></o:p></span></i></p>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Example</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+   style='background:#EEEEEE;border-collapse:collapse;mso-yfti-tbllook:480;
+   mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+    height:21.75pt'>
+    <td width=598 style='width:448.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:
+    21.75pt'>
+    <h3 style='text-align:justify;text-justify:inter-ideograph'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";font-weight:
+    normal;mso-bidi-font-weight:bold'>rtsp://myserver:5454/video.3gp<o:p></o:p></span></h3>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><st1:chsdate Year="1899" Month="12" Day="30" IsLunarDate="False"
+  IsROCDate="False" w:st="on"><span lang=EN-US style='font-size:12.0pt'>4</span><span
+   lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.1.2</span></st1:chsdate><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>.2.
+  Multicast request<o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></h3>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    class=SpellE><i style='mso-bidi-font-style:normal'><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>rtsp</span></i></span><i style='mso-bidi-font-style:normal'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>://&lt;<span class=SpellE><span style='mso-bidi-font-style:italic'>servername</span></span>&gt;:&lt;<span
+    class=SpellE>rtsp</span> port&gt;/multicast.3gp<o:p></o:p></span></i></p>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman"'>Example</span><span
+  lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'>:<o:p></o:p></span></h3>
+  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+   style='background:#EEEEEE;border-collapse:collapse;mso-yfti-tbllook:480;
+   mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+    height:21.75pt'>
+    <td width=598 style='width:448.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:
+    21.75pt'>
+    <h3 style='text-align:justify;text-justify:inter-ideograph'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";font-weight:
+    normal;mso-bidi-font-weight:bold'>rtsp://myserver:5454/multicast.3gp<o:p></o:p></span></h3>
+    </td>
+   </tr>
+  </table>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></h3>
+  <h3><a name="RTSP_Command"><span lang=EN-US>4</span></a><span
+  style='mso-bookmark:RTSP_Command'><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'>.2 RTSP Command</span></span><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <h3><span lang=EN-US style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman";
+  font-weight:normal;mso-bidi-font-weight:bold'>The Supported RTSP commands are
+  DESCRIBE, SETUP, OPTIONS, PLAY, PAUSE and TEARDOWN methods. The RTSP protocol
+  is described in RFC 2326.<o:p></o:p></span></h3>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  lang=EN-US>Request syntax:</span></b><span lang=EN-US> </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><i><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>COMMAND URI</span></i><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New";mso-fareast-font-family:MingLiU'>
+    RTSP/1.0&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><i><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>Headerfield1</span></i><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New";mso-fareast-font-family:MingLiU'>:
+    val1&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><i><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>Headerfield2</span></i><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New";mso-fareast-font-family:MingLiU'>:
+    val2&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>...<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>&lt;CRLF&gt;</span><span lang=EN-US style='font-family:MingLiU;
+    mso-bidi-font-family:MingLiU'><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  lang=EN-US>Response:</span></b><span lang=EN-US> </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>RTSP/1.0 <span class=SpellE><i>ResultCode</i></span><i> <span
+    class=SpellE>ResultString</span></i>&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><i><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>Headerfield3</span></i><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New";mso-fareast-font-family:MingLiU'>:
+    val3&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><i><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>Headerfield4</span></i><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New";mso-fareast-font-family:MingLiU'>:
+    val4&lt;CRLF&gt;<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>...<o:p></o:p></span></p>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+    lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+    MingLiU'>&lt;CRLF&gt;</span><span lang=EN-US style='font-family:MingLiU;
+    mso-bidi-font-family:MingLiU'><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  lang=EN-US>The following header fields are accepted by all commands. Other
+  header fields are silently ignored (unless stated otherwise in the sections
+  below).</span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>&nbsp;<b>Field</b><o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Description</span></b><span lang=EN-US style='font-size:
+    10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Authorization <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Authorization information from the client.<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:
+    10.0pt;font-family:"Courier New"'>CSeq</span></span><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New"'> <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Request sequence number.<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Session <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Session identifier (returned by server in SETUP response).<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Content-Length <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Length of content.<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  lang=EN-US style='font-family:PMingLiU;mso-bidi-font-family:PMingLiU'><br>
+  </span><span lang=EN-US>The following header fields can be generated for all responses
+  by the RTSP server:&nbsp; </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Field</span></b><span lang=EN-US style='font-size:10.0pt;
+    font-family:"Courier New"'><o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><b><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Description</span></b><span lang=EN-US style='font-size:
+    10.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:
+    10.0pt;font-family:"Courier New"'>CSeq</span></span><span lang=EN-US
+    style='font-size:10.0pt;font-family:"Courier New"'> <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Response sequence number (matches the sequence number of the
+    request).<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Session <o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Session identifier.<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <h3><a name="RTSP_DESCRIBE"><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'>&nbsp;</span></a><a name="api_blocks_describe"></a><st1:chsdate
+  Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   style='mso-bookmark:RTSP_DESCRIBE'><span style='mso-bookmark:api_blocks_describe'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:RTSP_DESCRIBE'><span
+   style='mso-bookmark:api_blocks_describe'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.1</span></span></span></st1:chsdate><span
+  style='mso-bookmark:RTSP_DESCRIBE'><span style='mso-bookmark:api_blocks_describe'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP DESCRIBE</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The DESCRIBE command returns the SDP (RFC 2327) description
+  for the URI. The DESCRIBE command accepts the following additional header
+  field:&nbsp; </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Accept<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>List of content types that client supports (application/<span
+    class=SpellE>sdp</span> is the only supported type).<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>The DESCRIBE command generates the following additional header
+  fields:&nbsp; </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Content-Type<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Type of content (application/<span class=SpellE>sdp</span>).<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Content-Length<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Length of SDP description.<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Content-Base<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>If relative URLs are used in the SDP description, then this
+    is the base URL.<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<br>
+  <b>Example:</b> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=PT-BR
+    style='mso-ansi-language:PT-BR'>DESCRIBE rtsp://<st1:chsdate Year="1899"
+    Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on">10.0.0</st1:chsdate>.23/video.mp4 RTSP/1.0<o:p></o:p></span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 1</span></pre><pre><span
+    lang=EN-US>Accept: application/<span class=SpellE>sdp</span></span></pre><pre><span
+    lang=EN-US>Authorization: Basic YWRtaW46YWRtaW4=</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 1</span></pre><pre><span
+    lang=EN-US>Content-base: rtsp://<st1:chsdate Year="1899" Month="12" Day="30"
+    IsLunarDate="False" IsROCDate="False" w:st="on">10.0.0</st1:chsdate>.23/video.mp4/</span></pre><pre><span
+    lang=EN-US>Content-Type: application/<span class=SpellE>sdp</span></span></pre><pre><span
+    lang=EN-US>Content-Length: 309</span></pre><pre><span lang=EN-US><o:p>&nbsp;</o:p></span></pre><pre><span
+    lang=EN-US>v=0</span></pre><pre><span lang=EN-US>o=RTSP 1101513929 <st1:chmetcnv
+    UnitName="in" SourceValue="0" HasSpace="True" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">0 IN</st1:chmetcnv> IP4 <st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23</span></pre><pre><span lang=EN-US>s=RTSP Server</span></pre><pre><span
+    lang=EN-US>c=IN IP4 <st1:chsdate Year="1899" Month="12" Day="30"
+    IsLunarDate="False" IsROCDate="False" w:st="on">0.0.0</st1:chsdate>.0</span></pre><pre><span
+    lang=EN-US>t=0 0</span></pre><pre><span lang=EN-US>a=<span class=SpellE>range:npt</span>=0-</span></pre><pre><span
+    lang=EN-US>a=control:*</span></pre><pre><span lang=EN-US>m=video 0 RTP/AVP 96</span></pre><pre><span
+    lang=EN-US>b=AS:2048</span></pre><pre><span lang=EN-US>a=rtpmap:96 MP4V-ES/90000</span></pre><pre><span
+    lang=EN-US>a=fmtp:96 config=000001b001000001b58913000001000000012000c48d<st1:chmetcnv
+    UnitName="F" SourceValue="8800" HasSpace="False" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">8800f</st1:chmetcnv><st1:chmetcnv
+    UnitName="C" SourceValue="516043" HasSpace="False" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">516043c</st1:chmetcnv>1463</span></pre><pre><span
+    lang=EN-US>a=<span class=SpellE>control:streamid</span>=0</span></pre><pre><span
+    lang=EN-US>m=audio 0 RTP/AVP 0</span></pre><pre><span lang=EN-US>a=<span
+    class=SpellE>control:streamid</span>=1</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_OPTIONS"></a><a name="api_blocks_options"></a><st1:chsdate
+  Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   style='mso-bookmark:api_blocks_options'><span style='mso-bookmark:RTSP_OPTIONS'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:api_blocks_options'><span
+   style='mso-bookmark:RTSP_OPTIONS'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.2</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_options'><span style='mso-bookmark:RTSP_OPTIONS'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP OPTIONS</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The OPTIONS command returns a list of supported RTSP
+  commands. </span></p>
+  <p><b><span lang=EN-US>Example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>OPTIONS * RTSP/1.0</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 2</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 2</span></pre><pre><span
+    lang=EN-US>Public: DESCRIBE, PAUSE, PLAY, SETUP, TEARDOWN</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_SETUP"></a><a name="api_blocks_setup"></a><st1:chsdate Year="1899"
+  Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   style='mso-bookmark:api_blocks_setup'><span style='mso-bookmark:RTSP_SETUP'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:api_blocks_setup'><span
+   style='mso-bookmark:RTSP_SETUP'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.3</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_setup'><span style='mso-bookmark:RTSP_SETUP'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP SETUP</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The SETUP command configures the delivery method for the
+  data. The SETUP command requires and generates the following additional
+  header field:&nbsp; </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Transport<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Specifies how the data stream is transported. Supported
+    variants:<br>
+    RTP/<span class=SpellE>AVP;unicast;client_port</span>=port1-port2<br>
+    RTP/<span class=SpellE>AVP;multicast;client_port</span>=port1-port2<br>
+    RTP/AVP/<span class=SpellE>TCP;unicast</span><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>The response returns a session identifier that should be
+  used with stream control commands to the server (PLAY, PAUSE, <span
+  class=GramE>TEARDOWN</span>). The RTSP server does not support reconfiguring
+  of the transport parameters.</span></p>
+  <p><b><span lang=EN-US>Example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>SETUP rtsp://<st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23/video.mp4/streamid=0 RTSP/1.0</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 3</span></pre><pre><span
+    lang=EN-US>Transport: RTP/<span class=SpellE>AVP;unicast;client_port</span>=6970-6971</span></pre><pre><span
+    lang=EN-US>Authorization: Basic YWRtaW46YWRtaW4=</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 3</span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre><pre><span
+    lang=EN-US>Reconnect: true</span></pre><pre><span lang=EN-US>Transport: RTP/<span
+    class=SpellE>AVP;unicast;client_port</span>=6970-6971;server_port=5008-5009</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_PLAY"></a><a name="api_blocks_play"></a><st1:chsdate Year="1899"
+  Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+   style='mso-bookmark:api_blocks_play'><span style='mso-bookmark:RTSP_PLAY'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:api_blocks_play'><span
+   style='mso-bookmark:RTSP_PLAY'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.4</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_play'><span style='mso-bookmark:RTSP_PLAY'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP PLAY</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The PLAY command starts (or restarts if paused) the data
+  delivery to the client. The PLAY command generates the following additional
+  header fields:&nbsp; </span></p>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Range<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Specifies the range of time being played. Since only live
+    streams are used, the specified time will always begin now and have no stop
+    time.<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width="25%" valign=top style='width:25.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>RTP-Info<o:p></o:p></span></p>
+    </td>
+    <td valign=top style='padding:5.25pt 5.25pt 5.25pt 5.25pt'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:
+    "Courier New"'>Information about the RTP stream. More specifically, it
+    includes the next RTP sequence number that will be used.<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>PLAY rtsp://<st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23/video.mp4 RTSP/1.0</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 4</span></pre><pre><span
+    lang=EN-US>Range: <span class=SpellE>npt</span>=0.000000-</span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre><pre><span
+    lang=EN-US>Authorization: Basic YWRtaW46YWRtaW4=</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 4</span></pre><pre><span
+    lang=EN-US>Date: Fri Nov 16 19:34:05 2007 GMT</span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre><pre><span
+    lang=EN-US>RTP-Info: <span class=SpellE>url</span>=rtsp://<st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23/video.mp4/streamid=0;seq=0;rtptime=0</span></pre><pre><span
+    lang=EN-US>Range: <span class=SpellE>npt</span>=now-</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_PAUSE"></a><a name="api_blocks_pause"></a><a
+  name="_3.2.5_RTSP_PAUSE"></a><st1:chsdate Year="1899" Month="12" Day="30"
+  IsLunarDate="False" IsROCDate="False" w:st="on"><span style='mso-bookmark:
+   api_blocks_pause'><span style='mso-bookmark:RTSP_PAUSE'><span lang=EN-US>4</span></span></span><span
+   style='mso-bookmark:api_blocks_pause'><span style='mso-bookmark:RTSP_PAUSE'><span
+   lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>.2.5</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_pause'><span style='mso-bookmark:RTSP_PAUSE'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP PAUSE</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The PAUSE command <span class=GramE>pauses</span> the
+  data delivery from the server.</span></p>
+  <p><b><span lang=EN-US>Example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>PAUSE rtsp://<st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23/video.mp4 RTSP/1.0</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 5</span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre><pre><span
+    lang=EN-US>Authorization: Basic YWRtaW46YWRtaW4=</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK </span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 5 </span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_TEARDOWN"></a><a name="api_blocks_teardown"></a><a
+  name="_3.2.6_RTSP_TEARDOWN"></a><st1:chsdate Year="1899" Month="12" Day="30"
+  IsLunarDate="False" IsROCDate="False" w:st="on"><span style='mso-bookmark:
+   api_blocks_teardown'><span style='mso-bookmark:RTSP_TEARDOWN'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:api_blocks_teardown'><span
+   style='mso-bookmark:RTSP_TEARDOWN'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.6</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_teardown'><span style='mso-bookmark:RTSP_TEARDOWN'><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> RTSP TEARDOWN</span></span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>The TEARDOWN command terminates the data delivery from
+  the server.</span></p>
+  <p><b><span lang=EN-US>Example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>TEARDOWN rtsp://<st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23/video.mp4 RTSP/1.0</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 6</span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre><pre><span
+    lang=EN-US>Authorization: Basic YWRtaW46YWRtaW4=</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK </span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 6 </span></pre><pre><span
+    lang=EN-US>Session: 6b<st1:chmetcnv UnitName="a" SourceValue="68079"
+    HasSpace="False" Negative="False" NumberType="1" TCSC="0" w:st="on">68079a</st1:chmetcnv>4e6afb66</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>&nbsp;<o:p></o:p></span></p>
+  <h3><!-- *********************************************************************** --><a
+  name="RTSP_Over_HTTP"></a><a name="api_blocks_rtsp_over_http"></a><a
+  name="_3.2.7_RTSP_over_HTTP"></a><st1:chsdate Year="1899" Month="12" Day="30"
+  IsLunarDate="False" IsROCDate="False" w:st="on"><span style='mso-bookmark:
+   api_blocks_rtsp_over_http'><span style='mso-bookmark:RTSP_Over_HTTP'><span
+   lang=EN-US>4</span></span></span><span style='mso-bookmark:api_blocks_rtsp_over_http'><span
+   style='mso-bookmark:RTSP_Over_HTTP'><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>.2.7</span></span></span></st1:chsdate><span
+  style='mso-bookmark:api_blocks_rtsp_over_http'><span style='mso-bookmark:
+  RTSP_Over_HTTP'><span lang=EN-US style='mso-fareast-font-family:"Times New Roman"'>
+  RTSP over HTTP</span></span></span><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></h3>
+  <p><span lang=EN-US>It is possible to tunnel RTSP through HTTP to get through
+  firewalls etc. This is achieved by setting up two sessions, one GET (for
+  command replies and stream data) and one POST (for commands). RTSP commands
+  sent on the POST connection are base64 encoded, but replies on the GET
+  connection are plain text. To bind the two sessions together the server needs
+  a unique ID (conveyed in the x-<span class=SpellE>sessioncookie</span>
+  header). The GET and POST request are accepted both on the HTTP port (default
+  80).</span></p>
+  <p><span lang=EN-US>The RTSP/HTTP URL is: http://&lt;server
+  name&gt;/video.mp4 for computer view and http://&lt;server name&gt;/video.3gp
+  for mobile view. Supported methods are GET and POST.</span></p>
+  <p><b><span lang=EN-US>GET example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>GET /video.mp4 HTTP/1.0</span></pre><pre><span
+    lang=EN-US>x-<span class=SpellE>sessioncookie</span>: dgJEfRF6AAA1EhYAIoAAAA</span></pre><pre><span
+    lang=EN-US>Accept: application/x-<span class=SpellE>rtsp-tunnelled</span></span></pre><pre><span
+    class=SpellE><span lang=EN-US>Pragma</span></span><span lang=EN-US>: no-cache</span></pre><pre><span
+    lang=EN-US>Cache-Control: no-cache</span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Response example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>HTTP/1.0 200 OK</span></pre><pre><span
+    lang=EN-US>Content-Type: application/x-<span class=SpellE>rtsp-tunnelled</span></span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>Note that the returned Content-Length is an arbitrary
+  number and does not indicate the size of any data.</span></p>
+  <p><b><span lang=EN-US>POST example:</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>POST /video.mp4 HTTP/1.0</span></pre><pre><span
+    lang=EN-US>x-<span class=SpellE>sessioncookie</span>: dgJEfRF6AAA1EhYAIoAAAA</span></pre><pre><span
+    lang=EN-US>Content-Type: application/x-<span class=SpellE>rtsp-tunnelled</span></span></pre><pre><span
+    lang=PT-BR style='mso-ansi-language:PT-BR'>Pragma: no-cache<o:p></o:p></span></pre><pre><span
+    lang=PT-BR style='mso-ansi-language:PT-BR'>Cache-Control: no-cache<o:p></o:p></span></pre><pre><span
+    lang=EN-US>Content-Length: 32767</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>Note that the x-<span class=SpellE>sessioncookie</span>
+  present in the POST content is the same as the x-<span class=SpellE>sessioncookie</span>
+  in the corresponding GET request. Also note that the POST request must be
+  sent on a separate connection to the server (i.e. it cannot be sent on the
+  same connection as the GET request). No response is sent for the POST
+  request.</span></p>
+  <p><b><span lang=EN-US>Command example (base 64 encoded DESCRIBE on the POST
+  connection):</span></b><span lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>REVTQ1JJQkUgcnRzcDovLzEwLjAuMC4yMy92aWRlby5tcDQgUlRTUC8xLjANCkNTZXE6IDENCkFj</span></pre><pre><span
+    lang=EN-US>Y2VwdDogYXBwbGljYXRpb24vc2Rw</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US>Which corresponds to this command:&nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=PT-BR
+    style='mso-ansi-language:PT-BR'>DESCRIBE rtsp://<st1:chsdate Year="1899"
+    Month="12" Day="30" IsLunarDate="False" IsROCDate="False" w:st="on">10.0.0</st1:chsdate>.23/video.mp4 RTSP/1.0<o:p></o:p></span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 1</span></pre><pre><span
+    lang=EN-US>Accept: application/<span class=SpellE>sdp</span></span></pre></td>
+   </tr>
+  </table>
+  <p><b><span lang=EN-US>Command response (plain-text on the GET connection):</span></b><span
+  lang=EN-US> &nbsp; </span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;background:#EEEEEE;mso-padding-alt:
+   5.25pt 5.25pt 5.25pt 5.25pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:5.25pt 5.25pt 5.25pt 5.25pt'><pre><span lang=EN-US>RTSP/1.0 200 OK</span></pre><pre><span
+    class=SpellE><span lang=EN-US>CSeq</span></span><span lang=EN-US>: 1</span></pre><pre><span
+    lang=EN-US>Content-base: rtsp://<st1:chsdate Year="1899" Month="12" Day="30"
+    IsLunarDate="False" IsROCDate="False" w:st="on">10.0.0</st1:chsdate>.23/video.mp4/</span></pre><pre><span
+    lang=EN-US>Content-Type: application/<span class=SpellE>sdp</span></span></pre><pre><span
+    lang=EN-US>Content-Length: 309</span></pre><pre><span lang=EN-US><o:p>&nbsp;</o:p></span></pre><pre><span
+    lang=EN-US>v=0</span></pre><pre><span lang=EN-US>o=RTSP 1125898167 <st1:chmetcnv
+    UnitName="in" SourceValue="0" HasSpace="True" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">0 IN</st1:chmetcnv> IP4 <st1:chsdate
+    Year="1899" Month="12" Day="30" IsLunarDate="False" IsROCDate="False"
+    w:st="on">10.0.0</st1:chsdate>.23</span></pre><pre><span lang=EN-US>s=RTSP Server</span></pre><pre><span
+    lang=EN-US>c=IN IP4 <st1:chsdate Year="1899" Month="12" Day="30"
+    IsLunarDate="False" IsROCDate="False" w:st="on">0.0.0</st1:chsdate>.0</span></pre><pre><span
+    lang=EN-US>t=0 0</span></pre><pre><span lang=EN-US>a=<span class=SpellE>range:npt</span>=0-</span></pre><pre><span
+    lang=EN-US>a=control:*</span></pre><pre><span lang=EN-US>m=video 0 RTP/AVP 96</span></pre><pre><span
+    lang=EN-US>b=AS:2048</span></pre><pre><span lang=EN-US>a=rtpmap:96 MP4V-ES/90000</span></pre><pre><span
+    lang=EN-US>a=fmtp:96 config=000001b001000001b58913000001000000012000c48d<st1:chmetcnv
+    UnitName="F" SourceValue="8800" HasSpace="False" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">8800f</st1:chmetcnv><st1:chmetcnv
+    UnitName="C" SourceValue="516043" HasSpace="False" Negative="False"
+    NumberType="1" TCSC="0" w:st="on">516043c</st1:chmetcnv>1463</span></pre><pre><span
+    lang=EN-US>a=<span class=SpellE>control:streamid</span>=0</span></pre><pre><span
+    lang=EN-US>m=audio 0 RTP/AVP 0</span></pre><pre><span lang=EN-US>a=<span
+    class=SpellE>control:streamid</span>=1</span></pre></td>
+   </tr>
+  </table>
+  <p><span lang=EN-US><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</div>
+
+<div>
+
+<div>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
