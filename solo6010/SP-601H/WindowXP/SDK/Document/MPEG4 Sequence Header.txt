@@ -1,0 +1,71 @@
+VOL Header (Sequence Header)
+0000 0000 : 00
+0000 0000 : 00
+0000 0001 : 01
+0000 0000 : 00 -> video obj start code (32)
+0000 0000 : 00
+0000 0000 : 00
+0000 0001 : 01
+0010 0000 : 20 -> video obj layer start code (32)
+0              -> random_accessible_vol (1)
+ 000 0010 : 02
+0              -> video_object_type_indication (Main Object Type) (8)
+ 1             -> is_object_layer_identifier (1)
+  00 10        -> video_object_layer_verid (4)
+       00 : 48
+0              -> video_object_layer_priority (3)
+ 000 1         -> aspect_ratio_info (4)
+      1        -> vol_control_parameters (1)
+       01 : 0d -> chroma_format (2)
+1              -> low_delay (1)
+ 1             -> vbv_parameters (1)
+  00 0000 : c0
+0000 0000 : 00
+0              -> first_half_bit_rate (15)
+ 1             -> marker_bit (1)
+  00 0000 : 40
+0000 0000 : 00
+0              -> latter_half_bit_rate (15)
+ 1             -> marker_bit (1)
+  00 0000 : 40
+0000 0000 : 00
+0              -> first_half_vbv_buffer_size (15)
+ 1             -> marker_bit (1)
+  00 0         -> latter_half_vbv_buffer_size (3)
+      000 : 40
+0000 0000 : 00 -> first_half_vbv_occupancy (11)
+1              -> marker_bit (1)
+ 000 0000 : 80
+0000 0000 : 00 -> latter_half_vbv_occupancy (15)
+1              -> marker_bit (1)
+ 00            -> video_object_layer_shape (rectangular = 00) (2)
+   1           -> marker_bit (1)
+     0111 : 97
+0101 0011 : 53
+0000           -> vop_time_increment_resolution = 30000 (16)
+     1         -> marker_bit (1)
+      0        -> fixed_vop_rate (1)
+       1       -> marker_bit (1)
+        0 : 0a
+0010 1100 : 2c
+0000           -> video_object_layer_width (13)
+     1         -> marker_bit (1)
+      000 : 08
+0011 1100 : 3c
+00             -> video_object_layer_height (13)
+  1            -> marker_bit (1)
+   0           -> interlaced (1)
+     1         -> obmc_disable (1)
+      00       -> sprite_enable (2)
+        0 : 28 -> not_8_bit (1)
+1              -> quant_type (1)
+ 0             -> load_intra_quant_mat (1)
+  0            -> load_nonintra_quant_mat (1)
+   0           -> quarter_sample (1)
+     1         -> complexity_estimation_disable (1)
+      1        -> resync_marker_disable (1)
+       0       -> data_partitioned (1)
+        0 : 8c -> newpred_enable (1)
+0              -> reduced_resolution_vop_enable (1)
+ 0             -> scalability (1)
+  01 1111 : 1f -> next_start_code() (byte aligned)

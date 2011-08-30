@@ -1,0 +1,66 @@
+E-xx : Even Field of xth Frame
+O-xx : Odd Field of xth Frame
+F-xx : xth Frame
+
+
+704x240 (720x240), 352x240 (360x240)
+Skip Mode
+0: Special Mode
+E-00 O-00 E-01 O-01 E-02 O-02 E-03 O-03 E-04 O-04...
+
+1: Skip No Field (30 FPS)
+E-00 E-01 E-02 E-03 E-04 E-05 E-06 E-07 E-08 E-09...
+
+2: Skip 1 Field (15 FPS)
+E-00 E-02 E-04 E-06 E-08 E-10 E-12 E-14 E-16 E-18 ...
+
+3: Skip 2 Field (10 FPS)
+E-00 E-03 E-06 E-09 E-12 E-15 E-18 E-21 E-24 E-27...
+
+4: Skip 3 Field (7.5 FPS)
+E-00 E-04 E-08 E-12 E-16 E-20 E-24 E-28 E-32 E-36 ...
+
+Drop Mode
+0: Special Mode
+E-00 O-00 E-01 O-01 E-02 O-02 E-03 O-03 E-04 O-04...
+
+1: Drop No Field (30 FPS)
+E-00 E-01 E-02 E-03 E-04 E-05 E-06 E-07 E-08 E-09...
+
+2: Drop Every 1th Field (15 FPS)
+E-00 E-02 E-04 E-06 E-08 E-10 E-12 E-14 E-16 E-18 ...
+
+3: Drop Every 2nd Field (20 FPS)
+E-00 E-01 E-03 E-04 E-06 E-07 E-09 E-10 E-12 E-13 ...
+
+4: Drop Every 3rd Field (22.5 FPS)
+E-00 E-01 E-02 E-04 E-05 E-06 E-08 E-09 E-10 E-12 ...
+
+
+704x480 (720x480)
+Skip Mode
+0: Skip No Field (30 FPS)
+F-00 F-01 F-02 F-03 F-04 F-05 F-06 F-07 F-08 F-09...
+
+1: Skip 1 Field (15 FPS)
+F-00 F-02 F-04 F-06 F-08 E-10 E-12 E-14 E-16 E-18 ...
+
+2: Skip 2 Field (10 FPS)
+F-00 F-03 F-06 F-09 E-12 E-15 E-18 E-21 E-24 E-27...
+
+3: Skip 3 Field (7.5 FPS)
+F-00 F-04 F-08 E-12 E-16 E-20 E-24 E-28 E-32 E-36 ...
+
+Drop Mode
+0: Drop No Field (30 FPS)
+F-00 F-01 F-02 F-03 F-04 F-05 F-06 F-07 F-08 F-09...
+
+1: Drop Every 1th Field (15 FPS)
+F-00 F-02 F-04 F-06 F-08 E-10 E-12 E-14 E-16 E-18 ...
+
+2: Drop Every 2nd Field (20 FPS)
+F-00 F-01 F-03 F-04 F-06 F-07 F-09 E-10 E-12 E-13 ...
+
+3: Drop Every 3rd Field (22.5 FPS)
+F-00 F-01 F-02 F-04 F-05 F-06 F-08 F-09 E-10 E-12 ...
+

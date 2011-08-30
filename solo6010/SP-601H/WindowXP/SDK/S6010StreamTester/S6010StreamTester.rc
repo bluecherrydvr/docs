@@ -1,0 +1,544 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\S6010StreamTester.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\S6010StreamTester.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_G723_PLAY_CTRL DIALOG DISCARDABLE  0, 0, 409, 74
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP
+FONT 8, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "QUIT",IDOK,362,34,36,13
+    GROUPBOX        "Channel",IDC_STATIC,7,25,137,42
+    CTEXT           "G.723 File Path",IDC_STATIC,7,7,56,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    EDITTEXT        IDC_ED_G723_FILE_PATH,66,7,321,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "..",IDC_BUT_OPEN_G723_FILE,387,7,15,13
+    CONTROL         "1",IDC_CH_CHANNEL_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,12,34,15,13
+    CONTROL         "2",IDC_CH_CHANNEL_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,28,34,15,13
+    CONTROL         "3",IDC_CH_CHANNEL_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,44,34,15,13
+    CONTROL         "4",IDC_CH_CHANNEL_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,60,34,15,13
+    CONTROL         "5",IDC_CH_CHANNEL_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,76,34,15,13
+    CONTROL         "6",IDC_CH_CHANNEL_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,92,34,15,13
+    CONTROL         "7",IDC_CH_CHANNEL_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,108,34,15,13
+    CONTROL         "8",IDC_CH_CHANNEL_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,124,34,15,13
+    CONTROL         "9",IDC_CH_CHANNEL_9,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,12,48,15,13
+    CONTROL         "10",IDC_CH_CHANNEL_10,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,28,48,15,13
+    CONTROL         "11",IDC_CH_CHANNEL_11,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,44,48,15,13
+    CONTROL         "12",IDC_CH_CHANNEL_12,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,60,48,15,13
+    CONTROL         "13",IDC_CH_CHANNEL_13,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,76,48,15,13
+    CONTROL         "14",IDC_CH_CHANNEL_14,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,92,48,15,13
+    CONTROL         "15",IDC_CH_CHANNEL_15,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,108,48,15,13
+    CONTROL         "16",IDC_CH_CHANNEL_16,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,124,48,15,13
+    GROUPBOX        "Player",IDC_STATIC,148,25,205,42
+    PUSHBUTTON      "Play",IDC_BUT_PLAY,152,34,36,13
+    PUSHBUTTON      "Pause",IDC_BUT_PAUSE,190,34,36,13
+    PUSHBUTTON      "Stop",IDC_BUT_STOP,228,34,36,13
+    GROUPBOX        "General",IDC_STATIC,358,25,44,42
+    CONTROL         "Slider1",IDC_SLI_PLAYER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,150,48,198,13
+    PUSHBUTTON      "Raw Save",IDC_BUT_RAW_SAVE,300,34,46,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_G723_PLAY_CTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_WND_PLAYER DIALOGEX 0, 0, 128, 99
+STYLE WS_POPUP | WS_VISIBLE | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "Arial", 0, 0, 0x1
+BEGIN
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About S6010StreamTester"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "S6010StreamTester Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DLG_MAIN_CONTROL DIALOG DISCARDABLE  0, 0, 660, 129
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP
+FONT 8, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "QUIT",IDOK,612,104,36,13
+    GROUPBOX        "Player",IDC_STATIC,7,34,368,42
+    PUSHBUTTON      "PLAY",IDC_BUT_PLAY,47,44,26,13
+    PUSHBUTTON      "<<",IDC_BUT_BACK_GOP,74,44,15,13
+    PUSHBUTTON      "PAUSE",IDC_BUT_PAUSE,90,44,26,13
+    PUSHBUTTON      ">",IDC_BUT_FW_ONE_FRM,117,44,15,13
+    PUSHBUTTON      ">>",IDC_BUT_FW_GOP,133,44,15,13
+    PUSHBUTTON      "STOP",IDC_BUT_STOP,149,44,26,13
+    PUSHBUTTON      "PLAY",IDC_BUT_PLAY_ALL,47,58,26,13
+    PUSHBUTTON      "<<",IDC_BUT_BACK_GOP_ALL,74,58,15,13
+    PUSHBUTTON      "PAUSE",IDC_BUT_PAUSE_ALL,90,58,26,13
+    PUSHBUTTON      ">",IDC_BUT_FW_ONE_FRM_ALL,117,58,15,13
+    PUSHBUTTON      ">>",IDC_BUT_FW_GOP_ALL,133,58,15,13
+    PUSHBUTTON      "STOP",IDC_BUT_STOP_ALL,149,58,26,13
+    GROUPBOX        "Real Channel",IDC_STATIC,378,34,136,42
+    GROUPBOX        "Display Mode",IDC_STATIC,7,79,89,42
+    PUSHBUTTON      "1",IDC_BUT_DISP_1,12,89,15,13
+    PUSHBUTTON      "4",IDC_BUT_DISP_4,28,89,15,13
+    PUSHBUTTON      "9",IDC_BUT_DISP_9,44,89,15,13
+    PUSHBUTTON      "16",IDC_BUT_DISP_16,60,89,15,13
+    CONTROL         "1",IDC_CH_CHANNEL_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,382,44,15,13
+    CONTROL         "2",IDC_CH_CHANNEL_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,398,44,15,13
+    CONTROL         "3",IDC_CH_CHANNEL_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,414,44,15,13
+    CONTROL         "4",IDC_CH_CHANNEL_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,430,44,15,13
+    CONTROL         "5",IDC_CH_CHANNEL_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,446,44,15,13
+    CONTROL         "6",IDC_CH_CHANNEL_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,462,44,15,13
+    CONTROL         "7",IDC_CH_CHANNEL_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,478,44,15,13
+    CONTROL         "8",IDC_CH_CHANNEL_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,494,44,15,13
+    CONTROL         "9",IDC_CH_CHANNEL_9,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,382,58,15,13
+    CONTROL         "10",IDC_CH_CHANNEL_10,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,398,58,15,13
+    CONTROL         "11",IDC_CH_CHANNEL_11,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,414,58,15,13
+    CONTROL         "12",IDC_CH_CHANNEL_12,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,430,58,15,13
+    CONTROL         "13",IDC_CH_CHANNEL_13,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,446,58,15,13
+    CONTROL         "14",IDC_CH_CHANNEL_14,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,462,58,15,13
+    CONTROL         "15",IDC_CH_CHANNEL_15,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,478,58,15,13
+    CONTROL         "16",IDC_CH_CHANNEL_16,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,494,58,15,13
+    PUSHBUTTON      "Setting",IDC_BUT_SETTING_GENERAL,612,90,36,13
+    CONTROL         "Channel",IDC_CH_CHANNEL_INFO,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,359,90,40,13
+    CONTROL         "Deint.",IDC_CH_DEINTERLACE,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,400,90,40,13
+    CONTROL         "Deblock.",IDC_CH_DEBLOCKING,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,441,90,40,13
+    CONTROL         "Dering.",IDC_CH_DERINGING,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,482,90,40,13
+    CONTROL         "Motion",IDC_CH_MOTION_INFO,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,359,103,40,13
+    CONTROL         "Watermark",IDC_CH_WATERMARK_INFO,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,400,103,40,13
+    GROUPBOX        "Misc",IDC_STATIC,355,79,212,42
+    GROUPBOX        "General",IDC_STATIC,570,79,83,42
+    CTEXT           "Selected",IDC_STATIC,11,44,33,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "All",IDC_STATIC,11,58,33,13,SS_CENTERIMAGE | SS_SUNKEN
+    GROUPBOX        "Player",IDC_STATIC,7,7,646,27
+    EDITTEXT        IDC_ED_STREAM_FILE_PATH,11,16,620,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "..",IDC_BUT_OPEN_STREAM_FILE,632,16,16,13
+    PUSHBUTTON      "Snapshot",IDC_BUT_SNAPSHOT,482,103,40,13
+    PUSHBUTTON      "AVI Save",IDC_BUT_AVI_SAVE,441,103,40,13
+    GROUPBOX        "Zoom",IDC_STATIC,100,79,99,42
+    CTEXT           "Hor",IDC_STATIC,104,89,19,13,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Ver",IDC_STATIC,104,104,19,13,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CONTROL         "x1",IDC_CH_ZOOM_H_X1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,127,89,15,13
+    CONTROL         "x2",IDC_CH_ZOOM_H_X2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,144,89,15,13
+    CONTROL         "x3",IDC_CH_ZOOM_H_X3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,161,89,15,13
+    CONTROL         "Fit",IDC_CH_ZOOM_H_FIT,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,178,89,15,13
+    CONTROL         "x1",IDC_CH_ZOOM_V_X1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,127,104,15,13
+    CONTROL         "x2",IDC_CH_ZOOM_V_X2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,144,104,15,13
+    CONTROL         "x3",IDC_CH_ZOOM_V_X3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,161,104,15,13
+    CONTROL         "Fit",IDC_CH_ZOOM_V_FIT,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,178,104,15,13
+    GROUPBOX        "Display Size",IDC_STATIC,203,79,78,27
+    PUSHBUTTON      "Minimize",IDC_BUT_MINIMIZE,574,90,36,13
+    PUSHBUTTON      "x1",IDC_BUT_SZ_DISP_X1,209,89,15,13
+    PUSHBUTTON      "x2",IDC_BUT_SZ_DISP_X2,227,89,15,13
+    PUSHBUTTON      "x3",IDC_BUT_SZ_DISP_X3,243,89,15,13
+    PUSHBUTTON      "Full",IDC_BUT_SZ_DISP_FULL,261,89,15,13
+    GROUPBOX        "Virtual Channel",IDC_STATIC,517,34,136,42
+    CONTROL         "1",IDC_CH_CHANNEL_17,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,521,44,15,13
+    CONTROL         "2",IDC_CH_CHANNEL_18,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,537,44,15,13
+    CONTROL         "3",IDC_CH_CHANNEL_19,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,553,44,15,13
+    CONTROL         "4",IDC_CH_CHANNEL_20,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,569,44,15,13
+    CONTROL         "5",IDC_CH_CHANNEL_21,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,585,44,15,13
+    CONTROL         "6",IDC_CH_CHANNEL_22,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,601,44,15,13
+    CONTROL         "7",IDC_CH_CHANNEL_23,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,617,44,15,13
+    CONTROL         "8",IDC_CH_CHANNEL_24,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,633,44,15,13
+    CONTROL         "9",IDC_CH_CHANNEL_25,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,521,58,15,13
+    CONTROL         "10",IDC_CH_CHANNEL_26,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,537,58,15,13
+    CONTROL         "11",IDC_CH_CHANNEL_27,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,553,58,15,13
+    CONTROL         "12",IDC_CH_CHANNEL_28,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,569,58,15,13
+    CONTROL         "13",IDC_CH_CHANNEL_29,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,585,58,15,13
+    CONTROL         "14",IDC_CH_CHANNEL_30,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,601,58,15,13
+    CONTROL         "15",IDC_CH_CHANNEL_31,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,617,58,15,13
+    CONTROL         "16",IDC_CH_CHANNEL_32,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,633,58,15,13
+    PUSHBUTTON      "32",IDC_BUT_DISP_32,76,89,15,13
+    PUSHBUTTON      "1V",IDC_BUT_DISP_1V,12,103,15,13
+    PUSHBUTTON      "4V",IDC_BUT_DISP_4V,28,103,15,13
+    PUSHBUTTON      "9V",IDC_BUT_DISP_9V,44,103,15,13
+    PUSHBUTTON      "16V",IDC_BUT_DISP_16V,60,103,15,13
+    PUSHBUTTON      "36",IDC_BUT_DISP_36,76,103,15,13
+    CONTROL         "Slider1",IDC_SLI_PLAYER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,178,44,193,13
+    CONTROL         "Slider1",IDC_SLI_PLAYER_ALL,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,178,58,193,13
+    CONTROL         "Intra Pred",IDC_CH_I_BASED_PRED,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,523,90,40,13
+END
+
+IDD_DLG_AVI_SAVE DIALOG DISCARDABLE  0, 0, 244, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AVI Save"
+FONT 8, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "Quit",IDOK,187,146,50,14
+    GROUPBOX        "Channel Select",IDC_STATIC,7,7,230,100
+    GROUPBOX        "Real Channel",IDC_STATIC,14,19,216,39
+    CONTROL         "1",IDC_RAD_CH_R_0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,21,30,20,10
+    CONTROL         "2",IDC_RAD_CH_R_1,"Button",BS_AUTORADIOBUTTON,43,30,20,
+                    10
+    CONTROL         "3",IDC_RAD_CH_R_2,"Button",BS_AUTORADIOBUTTON,69,30,20,
+                    10
+    CONTROL         "4",IDC_RAD_CH_R_3,"Button",BS_AUTORADIOBUTTON,95,30,20,
+                    10
+    CONTROL         "5",IDC_RAD_CH_R_4,"Button",BS_AUTORADIOBUTTON,121,30,20,
+                    10
+    CONTROL         "6",IDC_RAD_CH_R_5,"Button",BS_AUTORADIOBUTTON,147,30,20,
+                    10
+    CONTROL         "7",IDC_RAD_CH_R_6,"Button",BS_AUTORADIOBUTTON,173,30,20,
+                    10
+    CONTROL         "8",IDC_RAD_CH_R_7,"Button",BS_AUTORADIOBUTTON,199,30,20,
+                    10
+    CONTROL         "9",IDC_RAD_CH_R_8,"Button",BS_AUTORADIOBUTTON,21,43,20,
+                    10
+    CONTROL         "10",IDC_RAD_CH_R_9,"Button",BS_AUTORADIOBUTTON,43,43,24,
+                    10
+    CONTROL         "11",IDC_RAD_CH_R_10,"Button",BS_AUTORADIOBUTTON,69,43,
+                    24,10
+    CONTROL         "12",IDC_RAD_CH_R_11,"Button",BS_AUTORADIOBUTTON,95,43,
+                    24,10
+    CONTROL         "13",IDC_RAD_CH_R_12,"Button",BS_AUTORADIOBUTTON,121,43,
+                    24,10
+    CONTROL         "14",IDC_RAD_CH_R_13,"Button",BS_AUTORADIOBUTTON,147,43,
+                    24,10
+    CONTROL         "15",IDC_RAD_CH_R_14,"Button",BS_AUTORADIOBUTTON,173,43,
+                    24,10
+    CONTROL         "16",IDC_RAD_CH_R_15,"Button",BS_AUTORADIOBUTTON,199,43,
+                    24,10
+    GROUPBOX        "Virtual Channel",IDC_STATIC,14,61,216,39
+    CONTROL         "1",IDC_RAD_CH_V_0,"Button",BS_AUTORADIOBUTTON,22,73,20,
+                    10
+    CONTROL         "2",IDC_RAD_CH_V_1,"Button",BS_AUTORADIOBUTTON,44,73,20,
+                    10
+    CONTROL         "3",IDC_RAD_CH_V_2,"Button",BS_AUTORADIOBUTTON,70,73,20,
+                    10
+    CONTROL         "4",IDC_RAD_CH_V_3,"Button",BS_AUTORADIOBUTTON,96,73,20,
+                    10
+    CONTROL         "5",IDC_RAD_CH_V_4,"Button",BS_AUTORADIOBUTTON,122,73,20,
+                    10
+    CONTROL         "6",IDC_RAD_CH_V_5,"Button",BS_AUTORADIOBUTTON,148,73,20,
+                    10
+    CONTROL         "7",IDC_RAD_CH_V_6,"Button",BS_AUTORADIOBUTTON,174,73,20,
+                    10
+    CONTROL         "8",IDC_RAD_CH_V_7,"Button",BS_AUTORADIOBUTTON,200,73,20,
+                    10
+    CONTROL         "9",IDC_RAD_CH_V_8,"Button",BS_AUTORADIOBUTTON,22,85,20,
+                    10
+    CONTROL         "10",IDC_RAD_CH_V_9,"Button",BS_AUTORADIOBUTTON,44,85,24,
+                    10
+    CONTROL         "11",IDC_RAD_CH_V_10,"Button",BS_AUTORADIOBUTTON,70,85,
+                    24,10
+    CONTROL         "12",IDC_RAD_CH_V_11,"Button",BS_AUTORADIOBUTTON,96,85,
+                    24,10
+    CONTROL         "13",IDC_RAD_CH_V_12,"Button",BS_AUTORADIOBUTTON,122,85,
+                    24,10
+    CONTROL         "14",IDC_RAD_CH_V_13,"Button",BS_AUTORADIOBUTTON,148,85,
+                    24,10
+    CONTROL         "15",IDC_RAD_CH_V_14,"Button",BS_AUTORADIOBUTTON,174,85,
+                    24,10
+    CONTROL         "16",IDC_RAD_CH_V_15,"Button",BS_AUTORADIOBUTTON,200,85,
+                    24,10
+    GROUPBOX        "Output Format",IDC_STATIC,7,112,168,48
+    CONTROL         "RAW MPEG4 Stream (VOP Header +Data)",IDC_RAD_OUT_RAW,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,14,123,150,10
+    CONTROL         "MPEG4 Stream (VOL Header +RAW Stream)",IDC_RAD_OUT_MP4,
+                    "Button",BS_AUTORADIOBUTTON,14,135,158,10
+    PUSHBUTTON      "Make",IDC_BUT_MAKE,187,127,50,14
+    CONTROL         "AVI",IDC_RAD_OUT_AVI,"Button",BS_AUTORADIOBUTTON,14,147,
+                    28,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_WND_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DLG_MAIN_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 653
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_DLG_AVI_SAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "S6010StreamTester MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "S6010StreamTester\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "S6010StreamTester.EXE\0"
+            VALUE "ProductName", "S6010StreamTester Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About S6010StreamTester..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\S6010StreamTester.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

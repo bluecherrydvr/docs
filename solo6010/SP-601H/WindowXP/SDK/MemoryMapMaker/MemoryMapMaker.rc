@@ -1,0 +1,293 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MemoryMapMaker.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MemoryMapMaker.ico"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About MemoryMapMaker"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MemoryMapMaker Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_MEMORYMAPMAKER_DIALOG DIALOGEX 0, 0, 675, 500
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SOLO6010 Memory Map Maker"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "QUIT",IDOK,7,473,38,20
+    GROUPBOX        "Video OSG",IDC_STATIC,7,7,216,30
+    GROUPBOX        "Encoder OSD",IDC_STATIC,7,45,216,49
+    GROUPBOX        "Video Motion",IDC_STATIC,7,103,216,30
+    GROUPBOX        "G.723 Encoding",IDC_STATIC,7,143,216,30
+    GROUPBOX        "MPEG4 Encoding",IDC_STATIC,7,183,216,105
+    GROUPBOX        "JPEG Encoding",IDC_STATIC,7,297,216,64
+    GROUPBOX        "MPEG4 Decoding",IDC_STATIC,7,369,216,85
+    CONTROL         "Use Video OSG",IDC_CH_USE_VIDEO_OSG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,20,67,10
+    CONTROL         "Use Encoder OSD",IDC_CH_USE_ENCODER_OSD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,58,74,10
+    CONTROL         "Use Video Motion",IDC_CH_USE_VIDEO_MOTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,115,73,10
+    CTEXT           "The number of channels",IDC_STATIC,12,74,88,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_ENC_OSD_NUM_CH,101,74,36,378,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use G.723 Encoding",IDC_CH_USE_G723_ENCODING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,156,80,10
+    CONTROL         "Use CIF or Half D1 resolution",IDC_CH_USE_CIF_HD1_IMAGE,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,12,
+                    195,109,10
+    CONTROL         "Use Full D1 resolution",IDC_CH_USE_FULL_D1_IMAGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,211,87,10
+    CTEXT           "The number of channels",IDC_STATIC,12,228,88,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_MPEG4_ENC_NUM_CH,101,228,36,378,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use Virtual Channel",IDC_CH_MPEG4_USE_VIRTUAL_CH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,141,228,77,12
+    CONTROL         "Use Virtual Channel",IDC_CH_ENC_OSD_USE_VIRTUAL_CH,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,141,74,77,12
+    CTEXT           "Code Buffer Size",IDC_STATIC,12,248,207,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    RTEXT           "0 KB (0 MB) ",IDC_STA_MPEG4_ENC_SZ_CODE_BUF,98,264,120,
+                    14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "64 KB",IDC_STATIC,12,264,23,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "X",IDC_STATIC,37,264,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_MPEG4_ENC_CODE_BUF_MUL,51,264,31,378,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "=",IDC_STATIC,84,264,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Code Buffer Size",IDC_STATIC,12,325,207,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    RTEXT           "0 KB (0 MB) ",IDC_STA_JPEG_ENC_SZ_CODE_BUF,98,341,120,
+                    14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "64 KB",IDC_STATIC,12,341,23,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "X",IDC_STATIC,37,341,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_JPEG_ENC_CODE_BUF_MUL,51,341,31,378,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "=",IDC_STATIC,84,341,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "The number of channels",IDC_STATIC,12,397,88,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_MPEG4_DEC_NUM_CH,101,397,36,378,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Code Buffer Size",IDC_STATIC,12,418,207,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    RTEXT           "0 KB (0 MB) ",IDC_STA_MPEG4_DEC_SZ_CODE_BUF,99,434,120,
+                    14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "64 KB",IDC_STATIC,12,434,23,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "X",IDC_STATIC,37,434,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    COMBOBOX        IDC_COM_MPEG4_DEC_CODE_BUF_MUL,51,434,31,378,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "=",IDC_STATIC,84,434,12,14,SS_CENTERIMAGE | SS_SUNKEN
+    EDITTEXT        IDC_ED_MEMORY_MAP,231,18,430,445,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
+    GROUPBOX        "Memory Map",IDC_STATIC,227,7,441,486
+    CTEXT           "Total SDRAM Size",IDC_STATIC,232,470,72,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    RTEXT           "0 KB (0 MB) ",IDC_STA_TOTAL_SDRAM_SIZE,307,470,120,14,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    CONTROL         "Use JPEG Encoding",IDC_CH_USE_JPEG_ENCODING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,310,79,10
+    CONTROL         "Use MPEG4 Decoding",IDC_CH_USE_MPEG4_DECODING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,382,86,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MemoryMapMaker MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MemoryMapMaker\0"
+            VALUE "LegalCopyright", "Copyright (C) 2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MemoryMapMaker.EXE\0"
+            VALUE "ProductName", "MemoryMapMaker Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MEMORYMAPMAKER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 668
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 493
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About MemoryMapMaker..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MemoryMapMaker.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

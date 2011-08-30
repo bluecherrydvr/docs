@@ -1,0 +1,23 @@
+Initial size of virtual buffer is half of maximum buffer size.
+
+QP change depends on current size of virtual buffer.
+40~60% -> QP Not Change
+30~40%, 60~70% -> Slow Change (+- 1)
+20~30%, 70~80% -> Medium Change (+- 2)
+10~20%, 80~90% -> Fast Change (+- 3)
+0~10%, 90~100% -> Fastest Change (+- 4)
+
+Average frame size of I frame is...
+QP is less than 5             : BPS /FPS
+QP is equal or greater than 5 : BPS *GOP *2 /FPS /(GOP +1)
+
+Average frame size of P frame is...
+QP is less than 5             : BPS /FPS
+QP is equal or greater than 5 : BPS *GOP /FPS /(GOP +1)
+
+(BPS : Bit Per Sec)
+(GOP : Size of Group of Picture)
+(FPS : Frames per Second)
+
+If size of current frame is equal or greater than 4 times of average frame size, regardless of virtual buffer status, add 1 to QP.
+If size of current frame is equal or less than quarter times of average frame size, regardless of virtual buffer status, subtract 1 from QP.

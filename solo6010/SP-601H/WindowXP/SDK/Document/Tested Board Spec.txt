@@ -1,0 +1,51 @@
+Tested Board Spec
+
+1. 
+CPU : Intel Pentium 4 CPU 3.00GHz 2x
+MainBoard : ASUS P4P800SE (Intel 865PE chipset)
+RAM : 1G
+Video Card :
+ 1. NVIDIA GeForce FX5700 LE AGP8X 128MB
+ 2. ATI RADEON 9550 AGP8X 256MB DDR2
+
+2.
+CPU : Intel Pentium D CPU 3.00GHz
+MainBoard : Intel D945PSN
+RAM : 2G DDR2-SDRAM
+Video Card :
+ 1. NVIDIA GeForce 6600 PCI-Express 256MB
+ 2. ATI RADEON HD 2600 XT 256MB
+
+3.
+CPU : Intel Pentium 4 CPU 2.80GHz
+MainBoard : GIGABYTE GA-8IG1000MK (Intel 865G chipset)
+RAM : 1G DDR-SDRAM
+Video Card :
+1. Intel 82865G Graphic Controller (Onboard VGA)
+
+4.
+CPU : Intel Core2 CPU 6400 2.13GHz
+MainBoard : Intel DQ965GF
+RAM : 1G DDR2-SDRAM
+Video Card :
+1. Intel GMA3000 Graphic Controller (Onboard VGA) (You MUST use "Live Display Mode 5 or 6".)
+2. NVIDIA GeForce 6600 PCI-Express 256MB
+
+5.
+CPU : Intel Celeron D CPU 3.06GHz
+MainBoard : ASUS P5GC-MX
+RAM : 512M DDR2-SDRAM
+Video Card :
+1. Intel 82945G Express Chipset Family (Onboard VGA)
+
+6. Aging Test OK (86 hours)
+CPU : Intel Pentium 4 CPU 3.00GHz
+MainBoard : ASUS P5LD2
+RAM : 512M DDR2-SDRAM
+Video Card :
+1. ATI RADEON X300/X600/X900 Series
+
+
+
+
+

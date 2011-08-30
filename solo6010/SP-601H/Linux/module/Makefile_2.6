@@ -1,0 +1,15 @@
+KERNELDIR	= /usr/src/linux-headers-2.6.18-5-686
+
+PWD		= $(shell pwd)
+
+CFLAGS		+= -I$(M)/include
+CFLAGS		+= -Wall
+
+solo6010-objs	:= main.o device.o sl_thread.o sl_queue.o p2m.o vin.o disp.o fb_common.o fb_2.6.o enc.o dec.o g723.o uart_2.6.o i2c.o saa7128.o tw2815.o
+obj-m		:= solo6010.o
+
+all:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+
+clean:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean

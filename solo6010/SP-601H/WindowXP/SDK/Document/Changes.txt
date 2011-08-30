@@ -1,0 +1,133 @@
+2008-08-12
+- The HW decoding bug in 9 split mode is fixed.
+  (KE_MP4_DEC_FILL_BUF_THREAD () function in "Driver.c" and "Solo6010_Global.h")
+- The "MemoryMapMaker.exe" application is modified for D1 x4 channel setting bug.
+- The "S6010_SetInfoMP4JPEGRec ()" function in "Solo6010_MP4Enc.c" is modified.
+
+2008-06-12
+- Multi channel P2M operation mode is now re-supported.
+  You can choose whether single channel P2M or multi channel P2M by "__USE_ONLY_1_P2M_CHANNEL__" definition in "Solo6010_Global.h"
+- JPEG recording bug when VMEM_JPEG_CODE_SIZE = 0 is fixed.
+  ("StartDevice ()" function in "Driver.c" is modified.)
+- The "REC_MP4_RealChChangePropOnRec ()" function in CSOLO6010 class is added.
+  You can change encoder settings while encoding by this function.
+- TW2815 initialization code is modified.
+  (S6010_SetupTW2815 () function in "Solo6010_TW2815.c" is modified.)
+- The number of TW2815 selection is added.
+  See the "//#define __USE_x_TW2815__" statement in "Solo6010_Global.h". This definition is used for G.723 audio cascade settings.
+
+- All driver compile option is now in "Solo6010_DrvGlobal.h" file.
+  VERY IMPORTANT NOTICE:
+  The __USE_MORE_THAN_1_SOLO_CHIPS__ and NUM_SOLO_CHIPS definitions are very important settings. You should set this value properly according to your board.
+  If these settings are not correct, your PC will freeze.
+
+- The Register I/O function is modified.
+  This function works on only when 2 or more SOLO6010 is installed. Use above driver compile option to use this function. (This function is more stable than old function.)
+- The area color setting mismatch bug in "CDlgSettingMosaicVMotion" is fixed.
+- The UART port-0 (RS485 in SoftLogic Evaluation Board) is now available.
+- The size of audio file mismatch bug in single channel file mode is fixed.
+- The advanced motion detection function is added.
+- The SDRAM checking function is added.
+- I2C I/O function is added.
+- Single page live display option is added. (In "Solo6010_DrvGlobal.h")
+  If you have trouble in live display, try to use this option.
+- The new live display mode is added. This mode uses only 1 field for preview.
+
+2008-03-07
+- Add comment for horizontal image size.
+  Try to find "// Change this variable to the new horizontal image size" comment.
+- The bug in "DispatchClose ()" function in "Dispatch.c" file is fixed.
+- The HW decoder freeze bug is fixed.
+  INFO_MP4_DEC_QUEUE_ITEM structure and "KE_MP4_DEC_FILL_BUF_THREAD ()", "KE_MP4_DEC_EXEC_DEC_THREAD ()" functions in "Driver.c" file are modified.
+- The "SetFramePos_MP4 ()" member function in CHWDecManager class is modified for eliminating update interval.
+- The HW decoder display size mismatch bug is fixed.
+  The new member function "IsWndStreamCIF ()" is added to CHWDecManager class.
+  The "OnIndexButtonClick()", "OnHWPlayerCtrlButDn ()" member functions in CDlgCtrlLive class are modified.
+- The HW decoder audio playback fail bug is fixed.
+  The "ExecG723Buffering ()" function in CHWDecManager clsss is modified.
+- The retry and reset functions on PCI error or P2M timeout are added.
+  New structure "STAT_P2M" in "Solo6010_DrvGlobal.h" is added.
+  Most of the P2M related functions are changed. ("Solo6010_P2M.c")
+- The 1st P2M is now only DMA channel. Other channels (1, 2, 3) are now not used.
+  Most of the P2M related functions are changed. (All parts that use P2M including KE_VID_ENC_XXX(), KE_G723_ENC_XXX() functions.)
+- The JPEG recording bug in large file recording was fixed.
+  The "CloseJPEGFile ()" function in RecManager class is modified.
+- MPEG4, JPEG, G723 code overflow, SDRAM overflow, P2M error is now notified.
+  All "CbFn_XXX ()" fucntions in CRecManager class are modified.
+  "ThFn_MP4DataGet ()", "ThFn_JPEGDataGet ()" and "ThFn_G723DataGet ()" functions are modified.
+- TW2815 audio out channel is changed to decoding channel. This is temporary change.
+
+2008-02-04
+- Incorrect "P2M Init. Fail" exit bug is fixed.
+- HW MPEG4 Player is updated.
+- HW player is now support G.723 audio playback and video & audio synchronous playback.
+- The "SOLO6010 Application Note" document is added.
+- Useless delay in driver code is eliminated.
+
+2008-01-21
+- UART function is added.
+- Audio recording bug (poor audio quaility bug) is fixed.
+- The P2M burst size (DMA) is changed to 128 byte.
+- The recording function is updated. (For enhancing recoding stability)
+- Large file recording (greater than 2GB) is now supported.
+  (Record file format is changed. Old recorded file cannot be played in SW player.)
+- Encoder motion function is dropped.
+- The "About SOLO6010.ppt" document is updated.
+- CBR function is optimized.
+- QCIF recording function is added.
+- MPEG4 single channel file mode recording bug is fixed.
+- G.723 single channel file recording function is added.(See "General Settings" dialog.)
+- The SOLO6010 SDRAM map construction helper application is added.
+- GPIO Interrupt Alarm function is added.
+- Video Motion function is updated. (Now, you can get Video Motion Map.)
+
+2007-11-22
+- Application freezing bug on Windows2000 is fixed.
+- HW decoder on PAL mode is updated.
+
+2007-11-21
+- New document "About SOLO6010.ppt" is added.
+- Live display mode bug is fixed.
+- GPIO data writing bug is fixed.
+- Register map is updated.
+- Encoder OSD function is added.(See "General Settings" dialog.)
+- Multimedia timer resolution initialization bug is fixed.
+- MPEG4 post filter function is added.(by using XViD deblocking, deringing filter)
+
+2007-10-24-2
+- Recorded MPEG4 stream corruption bug is fixed.
+
+2007-10-24
+- Invalid interval setting bug in MPEG4 encoding is fixed.
+- Register read/write function is added.
+- Video loss check function is added.
+- Channel mismatch bug in color setting is fixed.
+
+2007-10-21
+- SOLO6010 register read/write operation is updated.
+- SDRAM memory map is modified.
+
+2007-10-18
+- SW player unstable buffering control bug is fixed.
+- Live split mode 13 is changed.(Now, large window is placed in center.)
+- MPEG4 external memory boundary bug is fixed by GOP reset and CBR control.
+- MPEG4/JPEG recording is updated.(for MPEG4 boundary bug and preventing frame drop)
+- Single channel file mode (MPEG4 Recording method) bug is fixed.
+- PCI freeze bug is fixed by reading PCI configuration register after SOLO6010 register read/write.
+
+2007-10-01
+- Mosaic strength is added. (Can be set by Mosaic setting dialog)
+- Now, video motion event is processed by DPC.
+- SOLO6010 ext. memory map is updated. (And examples added)
+- System crash bug on Intel Q965 Chipset onboard VGA (GMA3000) is fixed (by new live display mode).
+- New live display mode is added.
+- System clock is changed to 102MHz.
+
+2007-08-14
+- The player initialization bug is fixed.
+  This bug cause application crash on some graphic card.
+- JPEG quality is now fixed to Low. (High, Very High is dropped.)
+
+2007-08-09 (Alpha version)
+- This is an alpha version of SOLO6010 PCI RDK.
+

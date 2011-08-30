@@ -1,0 +1,107 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SOLO6010App - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Release/SOLO6010App.res" /d "NDEBUG" /d "_AFXDLL" "E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\SOLO6010App.rc"" 
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BB.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /FR"Release/" /Fp"Release/SOLO6010App.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlGPIO.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlI2C.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlLive.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlPlayer.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlRegister.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgCtrlUART.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgSettingGeneral.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgSettingMosaicVMotion.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgSettingRecord.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\DlgTest.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\Common\G723\G723Coder.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\HWDecManager.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\IndexButton.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\PlayerManager.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\PlayerManager_G723.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\PlayerManager_JPEG.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\PlayerManager_MP4.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\RecManager.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\SOLO6010App.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\SOLO6010AppDlg.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\StdAfx.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\WndLiveDisp.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\WndPlayer.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\SOLO6010App\Xdefine.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\Common\SOLO6010.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BB.tmp" 
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BC.tmp" with contents
+[
+ddraw.lib dxguid.lib Winmm.lib ijl15.lib slmp4core.dll.a /nologo /subsystem:windows /incremental:no /pdb:"Release/SOLO6010App.pdb" /machine:I386 /out:"../bin/SOLO6010App.exe" /libpath:"..\common\MPEG4" /libpath:"..\common\JPEG" 
+".\Release\DlgCtrlGPIO.obj"
+".\Release\DlgCtrlI2C.obj"
+".\Release\DlgCtrlLive.obj"
+".\Release\DlgCtrlPlayer.obj"
+".\Release\DlgCtrlRegister.obj"
+".\Release\DlgCtrlUART.obj"
+".\Release\DlgSettingGeneral.obj"
+".\Release\DlgSettingMosaicVMotion.obj"
+".\Release\DlgSettingRecord.obj"
+".\Release\DlgTest.obj"
+".\Release\G723Coder.obj"
+".\Release\HWDecManager.obj"
+".\Release\IndexButton.obj"
+".\Release\PlayerManager.obj"
+".\Release\PlayerManager_G723.obj"
+".\Release\PlayerManager_JPEG.obj"
+".\Release\PlayerManager_MP4.obj"
+".\Release\RecManager.obj"
+".\Release\SOLO6010App.obj"
+".\Release\SOLO6010AppDlg.obj"
+".\Release\StdAfx.obj"
+".\Release\WndLiveDisp.obj"
+".\Release\WndPlayer.obj"
+".\Release\Xdefine.obj"
+".\Release\SOLO6010.obj"
+".\Release\SOLO6010App.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BC.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+DlgCtrlGPIO.cpp
+DlgCtrlI2C.cpp
+DlgCtrlLive.cpp
+DlgCtrlPlayer.cpp
+DlgCtrlRegister.cpp
+DlgCtrlUART.cpp
+DlgSettingGeneral.cpp
+DlgSettingMosaicVMotion.cpp
+DlgSettingRecord.cpp
+DlgTest.cpp
+G723Coder.cpp
+HWDecManager.cpp
+IndexButton.cpp
+PlayerManager.cpp
+PlayerManager_G723.cpp
+PlayerManager_JPEG.cpp
+PlayerManager_MP4.cpp
+RecManager.cpp
+SOLO6010App.cpp
+SOLO6010AppDlg.cpp
+StdAfx.cpp
+WndLiveDisp.cpp
+WndPlayer.cpp
+Xdefine.cpp
+SOLO6010.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+SOLO6010App.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

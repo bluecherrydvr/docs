@@ -1,0 +1,134 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: S6010StreamTester - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BE.bat" with contents
+[
+@echo off
+nasm -f win32 -DPREFIX -I".\Colorspace"\ -o .\Release\colorspace_yuyv_mmx.obj .\Colorspace\colorspace_yuyv_mmx.asm
+]
+Creating command line "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BE.bat"
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BF.bat" with contents
+[
+@echo off
+nasm -f win32 -DPREFIX -I".\Colorspace"\ -o .\Release\colorspace_yuv_mmx.obj .\Colorspace\colorspace_yuv_mmx.asm
+]
+Creating command line "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1BF.bat"
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C0.bat" with contents
+[
+@echo off
+nasm -f win32 -DPREFIX -I".\Colorspace"\ -o .\Release\colorspace_rgb_mmx.obj .\Colorspace\colorspace_rgb_mmx.asm
+]
+Creating command line "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C0.bat"
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C1.bat" with contents
+[
+@echo off
+nasm -f win32 -DPREFIX -I".\Colorspace"\ -o .\Release\colorspace_mmx.obj .\Colorspace\colorspace_mmx.inc
+]
+Creating command line "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C1.bat"
+Creating command line "rc.exe /l 0x412 /fo"Release/S6010StreamTester.res" /d "NDEBUG" /d "_AFXDLL" "E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\S6010StreamTester.rc"" 
+Performing Custom Build Step on .\Colorspace\colorspace_yuyv_mmx.asm
+Performing Custom Build Step on .\Colorspace\colorspace_yuv_mmx.asm
+Performing Custom Build Step on .\Colorspace\colorspace_rgb_mmx.asm
+Performing Custom Build Step on .\Colorspace\colorspace_mmx.inc
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C2.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "colorspace" /I "..\SOLO6010App" /I "G723Sound" /I "..\common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /FR"Release/" /Fp"Release/S6010StreamTester.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\Buffer.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgAVISave.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgG723PlayCtrl.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgMainControl.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\Common\LibMPEG4ToAVI\DooMPEG4ToAVI.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\errorprint.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\G723Coder.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\IndexButton.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\InfoS6010StreamIdx.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\S6010StreamTester.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\SnapshotManager.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\SoundBase.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\SoundIn.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\G723Sound\SoundOut.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\StdAfx.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\WndS6010Disp.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\Xdefine.cpp"
+"E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\Colorspace\colorspace.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C2.tmp" 
+Creating temporary file "C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C3.tmp" with contents
+[
+ddraw.lib dxguid.lib slmp4core.dll.a Winmm.lib LibDeIntFilter.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/S6010StreamTester.pdb" /machine:I386 /out:"../bin/S6010StreamTester.exe" /libpath:"..\common\MPEG4" 
+".\Release\Buffer.obj"
+".\Release\DlgAVISave.obj"
+".\Release\DlgG723PlayCtrl.obj"
+".\Release\DlgMainControl.obj"
+".\Release\DlgPlayerBase.obj"
+".\Release\DooMPEG4ToAVI.obj"
+".\Release\errorprint.obj"
+".\Release\G723Coder.obj"
+".\Release\IndexButton.obj"
+".\Release\InfoS6010StreamIdx.obj"
+".\Release\S6010StreamTester.obj"
+".\Release\SnapshotManager.obj"
+".\Release\SoundBase.obj"
+".\Release\SoundIn.obj"
+".\Release\SoundOut.obj"
+".\Release\StdAfx.obj"
+".\Release\WndS6010Disp.obj"
+".\Release\Xdefine.obj"
+".\Release\colorspace.obj"
+".\Release\S6010StreamTester.res"
+".\Release\colorspace_mmx.obj"
+".\Release\colorspace_rgb_mmx.obj"
+".\Release\colorspace_yuv_mmx.obj"
+".\Release\colorspace_yuyv_mmx.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\Doo\LOCALS~1\Temp\RSP1C3.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+Buffer.cpp
+DlgAVISave.cpp
+DlgG723PlayCtrl.cpp
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgG723PlayCtrl.cpp(181) : warning C4018: '==' : signed/unsigned mismatch
+DlgMainControl.cpp
+DlgPlayerBase.cpp
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(63) : note C6311: ..\common\Solo6010_Global.h(240) : see previous definition of 'GET_SCALE'
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(65) : note C6311: ..\common\Solo6010_Global.h(239) : see previous definition of 'IS_KEY_FRM'
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(336) : warning C4018: '>=' : signed/unsigned mismatch
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(344) : warning C4018: '>=' : signed/unsigned mismatch
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(626) : warning C4018: '>=' : signed/unsigned mismatch
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(1808) : warning C4018: '<' : signed/unsigned mismatch
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(1819) : warning C4244: 'argument' : conversion from '__int64' to 'long', possible loss of data
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\DlgPlayerBase.cpp(1821) : warning C4018: '<' : signed/unsigned mismatch
+DooMPEG4ToAVI.cpp
+errorprint.cpp
+G723Coder.cpp
+IndexButton.cpp
+InfoS6010StreamIdx.cpp
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\InfoS6010StreamIdx.cpp(278) : warning C4018: '>' : signed/unsigned mismatch
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\InfoS6010StreamIdx.cpp(419) : warning C4244: 'argument' : conversion from '__int64' to 'long', possible loss of data
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\InfoS6010StreamIdx.cpp(434) : warning C4244: 'argument' : conversion from '__int64' to 'long', possible loss of data
+E:\SoftLogic\SOLO6010 RDK\SOLO6010RDK_2008_08_12\S6010StreamTester\InfoS6010StreamIdx.cpp(451) : warning C4244: '=' : conversion from '__int64' to 'unsigned long', possible loss of data
+S6010StreamTester.cpp
+SnapshotManager.cpp
+SoundBase.cpp
+SoundIn.cpp
+SoundOut.cpp
+StdAfx.cpp
+WndS6010Disp.cpp
+Xdefine.cpp
+colorspace.c
+Linking...
+
+
+
+<h3>Results</h3>
+S6010StreamTester.exe - 0 error(s), 11 warning(s)
+</pre>
+</body>
+</html>

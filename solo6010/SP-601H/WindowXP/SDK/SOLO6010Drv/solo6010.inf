@@ -1,0 +1,112 @@
+;===========================================================
+; File    : solo6010.inf
+;
+; Abstract: Windows 98/2000 INF for SOLO6010.
+;
+;
+;===========================================================
+
+
+[Version]
+Signature   = $CHICAGO$
+Provider    = %Provider_inc%
+Class       = Media
+ClassGUID   = {4d36e96c-e325-11ce-bfc1-08002be10318}
+DriverVer   = 03/14/2007, 1.00.0.0000
+
+
+
+;-----------------------------------------------------------
+; Driver information
+;-----------------------------------------------------------
+
+[Manufacturer]
+"SoftLogic, Inc." = solo6010.Mfg
+
+[solo6010.Mfg]
+"SOLO6010" = DDInstall_solo6010, PCI\VEN_9413&DEV_6010
+
+;-----------------------------------------------------------
+; General installation section
+;-----------------------------------------------------------
+
+[CopyFiles_solo6010]
+solo6010.sys,,,2
+
+
+
+
+;-----------------------------------------------------------
+; Windows 2000 installation section
+;-----------------------------------------------------------
+
+[DDInstall_solo6010.NT]
+AddReg    = AddRegistry_NT_solo6010
+CopyFiles = CopyFiles_solo6010
+
+
+[DDInstall_solo6010.NT.Services]
+AddService = solo6010, 0x00000002, Service_Inst_solo6010, EventLog_Inst_solo6010
+
+[AddRegistry_NT_solo6010]
+
+
+[Service_Inst_solo6010]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %10%\System32\Drivers\solo6010.sys
+
+
+;-----------------------------------------------------------
+; Windows 98 installation section
+;-----------------------------------------------------------
+
+[DDInstall_solo6010]
+AddReg    = AddRegistry_solo6010
+CopyFiles = CopyFiles_solo6010
+
+
+[AddRegistry_solo6010]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,solo6010.sys
+HKR,,ErrorLogLevel,0x00010003,2
+
+
+
+;-----------------------------------------------------------
+; Event log registry entries
+;-----------------------------------------------------------
+
+[EventLog_Inst_solo6010]
+AddReg = EventLog_AddReg_solo6010
+
+[EventLog_AddReg_solo6010]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\Drivers\solo6010.sys"
+HKR,,TypesSupported,0x00010001,7
+
+
+;-----------------------------------------------------------
+; Source file information
+;-----------------------------------------------------------
+
+[SourceDisksNames.x86]
+1 = %InstallDisk%,"",1
+
+[SourceDisksFiles]
+solo6010.sys = 1
+
+
+[DestinationDirs]
+DefaultDestDir = 10, System32\Drivers      ;10 = %Windir%
+
+
+
+
+;-----------------------------------------------------------
+; String information
+;-----------------------------------------------------------
+
+[Strings]
+InstallDisk = "SOLO6010 Windows Driver Installation Disk"
+Provider_inc= "Softlogic, Inc."
