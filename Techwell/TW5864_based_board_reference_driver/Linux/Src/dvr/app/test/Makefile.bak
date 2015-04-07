@@ -1,0 +1,61 @@
+CFLAGS +=  -I$(ISILSDKPATH)include  \
+	 -I$(EVENTCOREINCPATH) \
+	 -I$(MEDIASDKINCPATH) \
+	 -I$(ISILSDKINCPATH) \
+	 -I$(LIBEVENTINCPATH) 
+           
+	       
+
+
+EXECFILENAME = test1	   
+	   
+#CFLAGS += -static	
+
+	   
+
+MAKE_DIR=$(PWD)
+
+
+LIBPATH = -L$(ISILSDKLIBPATH) \
+	  -L$(LIBEVLIBPATH) \
+	  -L$(LIBEVENTLIBPATH) 
+	  
+
+
+DVRLIB = -lnetevcore \
+                -lfilesdk \
+		-lnetmsg \
+         	-lisilsdk \
+         	-lisilmediasdk \
+    	   	-levcore \
+         	-lpthread \
+	 	-lrt \
+         	-levent \
+         	-lev \
+         	-lm
+
+
+SRCS :=$(wildcard *.c)
+SRC_FILES:=$(notdir $(SRCS))
+OBJ_FILES :=$(patsubst %c,%o,$(SRC_FILES))
+
+
+
+
+
+ 
+all: $(OBJ_FILES)
+	@echo -e "lib $(DVRDIR)"
+	$(CC) $(CFLAGS) -o $(EXECFILENAME) $(OBJ_FILES) $(LIBPATH) $(DVRLIB) #-L$(DVMFFMPEGLIB) $(FFMPEGLIBS)
+	
+    
+#	$(AR) cr $(LIBNAME) $(OBJ_FILES)
+#	@mv $(LIBNAME) $(TOPLPATH)
+#-rm -f *.o
+	
+.PHONY:clean
+clean:
+	-rm -f *.o
+	
+	
+	

@@ -1,0 +1,5 @@
+tw5864_path=./../../tw5864
+ctags -R $tw5864_path
+find $tw5864_path -name "*.c" -o -name "*.h" >filelist
+cscope -b -q -i filelist
+

@@ -1,0 +1,13 @@
+#
+# DVMicro h264 codec configuration
+#
+
+menu "DVMicro h264 codec"
+
+config DVMICRO
+	tristate "DVMicro h264"
+	default y
+
+endmenu
+
+

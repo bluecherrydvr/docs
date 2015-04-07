@@ -1,0 +1,1407 @@
+make -w -C isilsdk
+make[1]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk'
+make -w -C src
+make[2]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src'
+make -C eventcore
+make[3]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/eventcore'
+powerpc-linux-ar cr libevcore.a isil_event_mgt.o isil_ev_task.o isil_frame.o isil_io_utils.o isil_msg.o isil_msg_mgt.o isil_notify.o isil_sdk_center_mgt.o isil_sdk_main.o isil_thread_pool.o
+make[3]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/eventcore'
+make -C mediasdk
+make[3]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/mediasdk'
+powerpc-linux-ar cr libisilmediasdk.a bar_ctl.o isil_ai.o isil_ao.o isil_codec_chip_ctl.o isil_decoder.o isil_dev_file_mgt.o isil_dev_file_st.o isil_encoder.o isil_media_config.o isil_private_func.o isil_sys_config.o isil_vdec_audio.o isil_vdec_h264.o isil_vdec_mjpg.o isil_venc_audio.o isil_venc_h264.o isil_venc_mjpg.o isil_vi.o isil_vo.o
+make[3]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/mediasdk'
+make -C isilsdk
+make[3]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/isilsdk'
+powerpc-linux-ar cr libisilsdk.a	    isil_ap_mediasdk.o isil_data_stream.o isil_drv_to_sdk_data.o isil_enc_sdk.o isil_ev_thr_mgt.o isil_media_sdk_ev.o isil_venc_param.o
+make[3]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src/isilsdk'
+make[2]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk/src'
+make[1]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/isilsdk'
+make -w -C filesdk
+make[1]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/filesdk'
+make -w -C src
+make[2]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/filesdk/src'
+powerpc-linux-ar cr libfilesdk.a isil_fm_fdisk.o isil_fm_file_allocate.o isil_fm_log.o isil_fm_log_string.o isil_fm_rec.o isil_fm_utils.o
+make[2]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/filesdk/src'
+make[1]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/filesdk'
+make -w -C netsdk
+make[1]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/netsdk'
+make -w -C src
+make[2]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/netsdk/src'
+powerpc-linux-ar cr libnetevcore.a io_utils.o isil_data_thread_mgt.o isil_net_data_header.o isil_net_nty.o isil_net_sdk.o isil_thread_pool.o net_api.o net_event_mgt.o net_parse_reg.o net_task.o
+make[2]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/netsdk/src'
+make[1]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/netsdk'
+make -w -C app
+make[1]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/app'
+make -C netmsg
+make[2]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/app/netmsg'
+powerpc-linux-ar cr libnetmsg.a isil_alarm_manage.o isil_cfg_file_manage.o isil_channel_map_cfg.o isil_common.o isil_dev_manage.o isil_encode_manage.o isil_endian_trans.o isil_net_manage.o isil_netsdk_activecfg.o isil_netsdk_cfgfile.o isil_netsdk_netmsg.o isil_parsemessage.o isil_ptz_manage.o isil_searchdev.o isil_stream_manage.o isil_update.o isil_usr_manage.o isil_video_manage.o
+make[2]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/app/netmsg'
+make -C src
+make[2]: 正在进入目录 `/mnt/share_code/svn110616/wjb/dvr/app/src'
+powerpc-linux-gcc -lpthread -static -Wall  -W  -I/mnt/share_code/svn110616/wjb/dvr/app/include -I/mnt/share_code/svn110616/wjb/dvr/app/netmsg/ -I/mnt/share_code/svn110616/wjb/dvr/isilsdk/include -I/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/eventcore -I/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk -I/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk -I/mnt/share_code/svn110616/wjb/dvr/netsdk/include -I/mnt/share_code/svn110616/wjb/dvr/filesdk/include -I/mnt/share_code/svn110616/wjb/dvr/netsdk/libev/include -I/mnt/share_code/svn110616/wjb/dvr/isilsdk/libevent/include    -c -o isil_handle_win_msg.o isil_handle_win_msg.c
+In file included from isil_handle_win_msg.c:5:
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_handle_win_msg.h: 在函数‘ISIL_ParseLocalNetMessages’中:
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_handle_win_msg.h:14: 错误： 为形参‘ISIL_ParseDataMsg’指定了存储类
+In file included from isil_handle_win_msg.c:6:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:28: 错误： 为形参‘U32’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:29: 错误： 为形参‘U16’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:30: 错误： 为形参‘U08’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:31: 错误： 为形参‘S32’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:32: 错误： 为形参‘S16’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:33: 错误： 为形参‘S08’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:34: 错误： 为形参‘U64’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_type.h:35: 错误： 为形参‘S64’指定了存储类
+In file included from isil_handle_win_msg.c:7:
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_debug.h:30: 错误： expected declaration specifiers before ‘S32’
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:26,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:71: 错误： 为形参‘ffs’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:85: 错误： 为形参‘strcasecmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:89: 错误： 为形参‘strncasecmp’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:27,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:40: 错误： 为形参‘memcpy’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:44: 错误： 为形参‘memmove’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:53: 错误： 为形参‘memccpy’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:59: 错误： 为形参‘memset’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:63: 错误： 为形参‘memcmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:67: 错误： 为形参‘memchr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:85: 错误： 为形参‘strcpy’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:89: 错误： 为形参‘strncpy’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:93: 错误： 为形参‘strcat’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:96: 错误： 为形参‘strncat’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:100: 错误： 为形参‘strcmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:103: 错误： 为形参‘strncmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:107: 错误： 为形参‘strcoll’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:111: 错误： 为形参‘strxfrm’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:131: 错误： 为形参‘strdup’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:168: 错误： 为形参‘strchr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:171: 错误： 为形参‘strrchr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:185: 错误： 为形参‘strcspn’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:189: 错误： 为形参‘strspn’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:192: 错误： 为形参‘strpbrk’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:195: 错误： 为形参‘strstr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:200: 错误： 为形参‘strtok’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:214: 错误： 为形参‘strtok_r’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:247: 错误： 为形参‘strlen’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:260: 错误： 为形参‘strerror’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:286: 错误： 为形参‘__glibc_strerror_r’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:288: 错误： 为形参‘strerror_r’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:339: 错误： 为形参‘ffs’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:339: 错误： 形参‘ffs’重定义
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:71: 错误： ‘ffs’的上一个定义在此
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:353: 错误： 为形参‘strcasecmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:352: 错误： 形参‘strcasecmp’重定义
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:84: 错误： ‘strcasecmp’的上一个定义在此
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:357: 错误： 为形参‘strncasecmp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:356: 错误： 形参‘strncasecmp’重定义
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/strings.h:88: 错误： ‘strncasecmp’的上一个定义在此
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:377: 错误： 为形参‘strsep’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:430: 错误： 为形参‘strlcat’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/string.h:432: 错误： 为形参‘strlcpy’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:29,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:256: 错误： 为形参‘access’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:299: 错误： 为形参‘lseek’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:318: 错误： 为形参‘close’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:325: 错误： 为形参‘read’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:331: 错误： 为形参‘write’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:382: 错误： 为形参‘pipe’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:391: 错误： 为形参‘alarm’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:403: 错误： 为形参‘sleep’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:411: 错误： 为形参‘ualarm’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:418: 错误： 为形参‘usleep’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:427: 错误： 为形参‘pause’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:432: 错误： 为形参‘chown’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:436: 错误： 为形参‘fchown’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:442: 错误： 为形参‘lchown’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:455: 错误： 为形参‘chdir’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:459: 错误： 为形参‘fchdir’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:469: 错误： 为形参‘getcwd’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:488: 错误： 为形参‘dup’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:491: 错误： 为形参‘dup2’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:494: 错误： 为形参‘__environ’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:503: 错误： 为形参‘execve’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:515: 错误： 为形参‘execv’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:520: 错误： 为形参‘execle’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:525: 错误： 为形参‘execl’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:530: 错误： 为形参‘execvp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:536: 错误： 为形参‘execlp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:541: 错误： 为形参‘nice’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:546: 错误： 为形参‘_exit’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:29,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:556: 错误： 为形参‘pathconf’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:559: 错误： 为形参‘fpathconf’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:562: 错误： 为形参‘sysconf’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:566: 错误： 为形参‘confstr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:571: 错误： 为形参‘getpid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:574: 错误： 为形参‘getppid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:579: 错误： 为形参‘getpgrp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:589: 错误： 为形参‘__getpgid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:598: 错误： 为形参‘setpgid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:615: 错误： 为形参‘setpgrp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:632: 错误： 为形参‘setsid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:640: 错误： 为形参‘getuid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:643: 错误： 为形参‘geteuid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:646: 错误： 为形参‘getgid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:649: 错误： 为形参‘getegid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:654: 错误： 为形参‘getgroups’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:665: 错误： 为形参‘setuid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:670: 错误： 为形参‘setreuid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:675: 错误： 为形参‘seteuid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:682: 错误： 为形参‘setgid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:687: 错误： 为形参‘setregid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:692: 错误： 为形参‘setegid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:724: 错误： 为形参‘fork’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:732: 错误： 为形参‘vfork’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:738: 错误： 为形参‘ttyname’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:743: 错误： 为形参‘ttyname_r’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:747: 错误： 为形参‘isatty’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:759: 错误： 为形参‘link’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:772: 错误： 为形参‘symlink’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:779: 错误： 为形参‘readlink’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:794: 错误： 为形参‘unlink’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:803: 错误： 为形参‘rmdir’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:807: 错误： 为形参‘tcgetpgrp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:810: 错误： 为形参‘tcsetpgrp’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:817: 错误： 为形参‘getlogin’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:825: 错误： 为形参‘getlogin_r’指定了存储类
+In file included from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:840,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:29,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/getopt.h:61: 错误： 为形参‘optarg’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/getopt.h:75: 错误： 为形参‘optind’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/getopt.h:80: 错误： 为形参‘opterr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/getopt.h:84: 错误： 为形参‘optopt’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/getopt.h:155: 错误： 为形参‘getopt’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:29,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:848: 错误： 为形参‘gethostname’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:856: 错误： 为形参‘sethostname’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:860: 错误： 为形参‘sethostid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:867: 错误： 为形参‘getdomainname’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:869: 错误： 为形参‘setdomainname’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:875: 错误： 为形参‘vhangup’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:896: 错误： 为形参‘acct’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:900: 错误： 为形参‘getusershell’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:901: 错误： 为形参‘endusershell’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:902: 错误： 为形参‘setusershell’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:909: 错误： 为形参‘daemon’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:917: 错误： 为形参‘chroot’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:921: 错误： 为形参‘getpass’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:930: 错误： 为形参‘fsync’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:937: 错误： 为形参‘gethostid’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:940: 错误： 为形参‘sync’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:945: 错误： 为形参‘getpagesize’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:950: 错误： 为形参‘getdtablesize’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:956: 错误： 为形参‘truncate’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:977: 错误： 为形参‘ftruncate’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:997: 错误： 为形参‘brk’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:1003: 错误： 为形参‘sbrk’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:1018: 错误： 为形参‘syscall’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:1041: 错误： 为形参‘lockf’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/unistd.h:1073: 错误： 为形参‘fdatasync’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:6,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_common.h:67: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘crc32’
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:30,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/fcntl.h:74: 错误： 为形参‘fcntl’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/fcntl.h:93: 错误： 为形参‘open’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/fcntl.h:138: 错误： 为形参‘creat’指定了存储类
+In file included from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:40,
+                 from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/ioctl-types.h:5,
+                 from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/ioctl.h:30,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:33,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/termios.h:23: 错误： 为形参‘cc_t’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/termios.h:24: 错误： 为形参‘speed_t’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/termios.h:25: 错误： 为形参‘tcflag_t’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/termios.h:35: 错误： expected specifier-qualifier-list before ‘tcflag_t’
+In file included from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/bits/ioctl-types.h:5,
+                 from /home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/ioctl.h:30,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:33,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:49: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘cfgetospeed’
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:52: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘cfgetispeed’
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:55: 错误： expected declaration specifiers or ‘...’ before ‘speed_t’
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:55: 错误： 为形参‘cfsetospeed’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:58: 错误： expected declaration specifiers or ‘...’ before ‘speed_t’
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:58: 错误： 为形参‘cfsetispeed’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:62: 错误： expected declaration specifiers or ‘...’ before ‘speed_t’
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:62: 错误： 为形参‘cfsetspeed’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:67: 错误： 为形参‘tcgetattr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:72: 错误： 为形参‘tcsetattr’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:77: 错误： 为形参‘cfmakeraw’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:81: 错误： 为形参‘tcsendbreak’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:87: 错误： 为形参‘tcdrain’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:91: 错误： 为形参‘tcflush’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/termios.h:95: 错误： 为形参‘tcflow’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:33,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/ioctl.h:42: 错误： 为形参‘ioctl’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:34,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:59: 错误： 为形参‘mmap’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:77: 错误： 为形参‘munmap’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:82: 错误： 为形参‘mprotect’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:92: 错误： 为形参‘msync’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:104: 错误： 为形参‘madvise’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:116: 错误： 为形参‘mlock’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:119: 错误： 为形参‘munlock’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:124: 错误： 为形参‘mlockall’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:128: 错误： 为形参‘munlockall’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:148: 错误： 为形参‘mincore’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:168: 错误： 为形参‘shm_open’指定了存储类
+/home/zcx/tool/buildroot/build_powerpc/staging_dir/usr/include/sys/mman.h:171: 错误： 为形参‘shm_unlink’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:35,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:31: 错误： 为形参‘CODEC_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:42: 错误： 为形参‘STREAM_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:50: 错误： 为形参‘IO_BLK_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:57: 错误： 为形参‘CODEC_TV_FORMAT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:65: 错误： 为形参‘CODEC_YUV_MOD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:71: 错误： expected specifier-qualifier-list before ‘CODEC_TYPE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:75: 错误： 为形参‘CODEC_CHANNEL’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:83: 错误： 为形参‘DATA_ACCESS_MODE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:91: 错误： 为形参‘CODEC_STREAM_DATA’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:98: 错误： 为形参‘AUDIO_BIT_WIDTH’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:108: 错误： 为形参‘AUDIO_SAMPLE_RATE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_common.h:111: 警告： empty declaration
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:36,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_errcode.h:18: 错误： 为形参‘CODEC_ERR_CODE’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:37,
+                 from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:243: 错误： 为形参‘ISIL_SERVICE_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:247: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:257: 错误： expected specifier-qualifier-list before ‘ISIL_SERVICE_TYPE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:255: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:564: 错误： 为形参‘ISIL_STREAM_TYPE_E’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:569: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:575: 错误： 为形参‘isil_common_stream_header_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:581: 错误： 为形参‘isil_transparent_msg_header_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:607: 错误： 为形参‘ISIL_MSG_TYPE_E’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:611: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:620: 错误： 为形参‘isil_frame_msg_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:637: 错误： 为形参‘ISIL_H264_FRAME_TYPE_E’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:645: 错误： 为形参‘isil_h264_encode_msg_frame_type_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:666: 错误： 为形参‘isil_h264_decode_bit_info_msg_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:684: 错误： 为形参‘isil_jpeg_param_msg_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:694: 错误： 为形参‘isil_audio_param_msg_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:702: 错误： 为形参‘crc16_table’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:702: 错误： 形参‘crc16_table’已初始化
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:704: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:705: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:706: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:707: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:708: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:709: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:710: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:711: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:712: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:713: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:714: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:715: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:716: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:717: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:718: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:719: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:720: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:721: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:722: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:723: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:724: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:725: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:726: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:727: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:728: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:729: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:730: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:731: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:732: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:733: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:734: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： 标量初始值设定项中有多余元素
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:735: 警告： (在‘crc16_table’的初始化附近)
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:739: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_interface.h:750: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+In file included from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:7,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:69: 错误： 为形参‘VENC_H264_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:90: 错误： 为形参‘VENC_H264_FEATURE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:100: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:106: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:116: 错误： 为形参‘VENC_H264_RC’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:121: 错误： 为形参‘VENC_H264_RC_PARAM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:128: 错误： 为形参‘VENC_H264_CHAN_MAP_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:132: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:162: 错误： 为形参‘VENC_MJPG_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:190: 错误： 为形参‘VENC_AUD_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:205: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:219: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:235: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:250: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:264: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:280: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:294: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:311: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:325: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:341: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:355: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:371: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:385: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:400: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:432: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:464: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:488: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_encoder.h:504: 错误： expected ‘)’ before ‘*’ token
+In file included from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:8,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:44: 错误： 为形参‘VI_CH_CROPPER’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:57: 错误： 为形参‘VI_CH_SCALER’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:77: 错误： 为形参‘VI_CH_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:81: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:98: 错误： 为形参‘VI_CH_VIDEOTYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:105: 错误： 为形参‘VI_CH_NR’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:114: 错误： 为形参‘VI_CH_PORT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:125: 错误： 为形参‘VI_CHIP_MSG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:149: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_CROPPER’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:149: 错误： 为形参‘ISIL_VI_SetCropping’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:171: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_VIDEOTYPE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:171: 错误： 为形参‘ISIL_VI_SetVideoType’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:192: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_SCALER’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:192: 错误： 为形参‘ISIL_VI_SetScaler’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:214: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_NR’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:214: 错误： 为形参‘ISIL_VI_SetNR’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:235: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_PORT’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:235: 错误： 为形参‘ISIL_VI_SelectChPort’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:257: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:257: 错误： 为形参‘ISIL_VI_SetCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:279: 错误： expected declaration specifiers or ‘...’ before ‘VI_CH_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:279: 错误： 为形参‘ISIL_VI_GetCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:299: 错误： 为形参‘ISIL_VI_SendData’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:319: 错误： 为形参‘ISIL_VI_GetData’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:340: 错误： 为形参‘ISIL_VI_GetChHandle’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:363: 错误： 为形参‘ISIL_VI_CTL_OpenChip’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:382: 错误： 为形参‘ISIL_VI_CTL_CloseChip’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:401: 错误： 为形参‘ISIL_VI_CTL_GetChipHandle’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:422: 错误： expected declaration specifiers or ‘...’ before ‘VI_CHIP_MSG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_vi.h:422: 错误： 为形参‘ISIL_VI_CTL_SendMsg’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:9,
+                 from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:23: 错误： 为形参‘CODEC_CHIP_MSG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:30: 错误： 为形参‘CODEC_CHIP_VERSION’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:33: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:44: 错误： 为形参‘CODEC_CHIP_VIDEO_STD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:48: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:63: 错误： 为形参‘ENC_CTL_VD_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:73: 错误： 为形参‘LOGIC_MAP_TABLE_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:78: 错误： 为形参‘CHAN_MAP_T’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:82: 错误： expected specifier-qualifier-list before ‘LOGIC_MAP_TABLE_TYPE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:84: 错误： 为形参‘CODEC_CHIP_CHLOGIC2PHY_MAP’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:90: 错误： 为形参‘ENC_VI_MAXCH’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:96: 错误： 为形参‘ENC_AI_MAXCH’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:98: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:115: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:125: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:129: 错误： 为形参‘VD_CONFIG_PARAM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:130: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘VP_CONFIG_PARAM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:139: 错误： 为形参‘VD_CONFIG_REALTIME’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:141: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘VP_CONFIG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:144: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:152: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:162: 错误： 为形参‘DEC_AV_SYNC’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:168: 错误： 为形参‘BIND_DEC2VO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:173: 错误： 为形参‘BIND_VI2VO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:192: 错误： 为形参‘ISIL_CODEC_CTL_OpenChip’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:209: 错误： 为形参‘ISIL_CODEC_CTL_CloseChip’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:227: 错误： 为形参‘ISIL_CODEC_CTL_GetChipHandle’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:244: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_MSG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:244: 错误： 为形参‘ISIL_CODEC_CTL_SendMsg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:262: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_VERSION’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:262: 错误： 为形参‘ISIL_CODEC_CTL_GetChipVersion’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:280: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_VIDEO_STD’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:280: 错误： 为形参‘ISIL_CODEC_CTL_SetVideoSTD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:298: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_VIDEO_STD’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:298: 错误： 为形参‘ISIL_CODEC_CTL_GetVideoSTD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:316: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_CHLOGIC2PHY_MAP’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:316: 错误： 为形参‘ISIL_CODEC_CTL_SetChLogic2PhyMap’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:333: 错误： expected declaration specifiers or ‘...’ before ‘CODEC_CHIP_CHLOGIC2PHY_MAP’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:333: 错误： 为形参‘ISIL_CODEC_CTL_GetChLogic2PhyMap’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:351: 错误： expected declaration specifiers or ‘...’ before ‘VD_CONFIG_PARAM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:351: 错误： 为形参‘ISIL_CODEC_CTL_SetVdConfigParam’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:368: 错误： expected declaration specifiers or ‘...’ before ‘VD_CONFIG_PARAM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:368: 错误： 为形参‘ISIL_CODEC_CTL_GetVdConfigParam’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:386: 错误： expected declaration specifiers or ‘...’ before ‘VP_CONFIG_PARAM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:386: 错误： 为形参‘ISIL_CODEC_CTL_SetVpConfigParam’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:403: 错误： expected declaration specifiers or ‘...’ before ‘VP_CONFIG_PARAM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:403: 错误： 为形参‘ISIL_CODEC_CTL_GetVpConfigParam’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:406: 错误： expected declaration specifiers or ‘...’ before ‘VD_CONFIG_REALTIME’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:406: 错误： 为形参‘ISIL_CODEC_CTL_CalcSetVd’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:409: 错误： expected declaration specifiers or ‘...’ before ‘VP_CONFIG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:409: 错误： 为形参‘ISIL_CODEC_CTL_CalcSetVp’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:430: 错误： expected declaration specifiers or ‘...’ before ‘ENC_CTL_VD_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:430: 错误： 为形参‘ISIL_ENC_CTL_SetVDCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:447: 错误： expected declaration specifiers or ‘...’ before ‘ENC_CTL_VD_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:447: 错误： 为形参‘ISIL_ENC_CTL_GetVDCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:449: 错误： 为形参‘ISIL_ENC_CTL_TrySetVDCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:450: 错误： 为形参‘ISIL_ENC_CTL_TryGetVDCfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:470: 错误： expected declaration specifiers or ‘...’ before ‘DEC_AV_SYNC’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:470: 错误： 为形参‘ISIL_DEC_CTL_StartAVSync’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:488: 错误： expected declaration specifiers or ‘...’ before ‘DEC_AV_SYNC’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:488: 错误： 为形参‘ISIL_DEC_CTL_StopAVSync’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:506: 错误： expected declaration specifiers or ‘...’ before ‘ENC_VI_MAXCH’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:506: 错误： 为形参‘ISIL_ENC_CTL_GetViChipMaxCh’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:524: 错误： expected declaration specifiers or ‘...’ before ‘ENC_AI_MAXCH’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:524: 错误： 为形参‘ISIL_ENC_CTL_GetAiChipMaxCh’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:527: 错误： expected declaration specifiers or ‘...’ before ‘BIND_DEC2VO’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:527: 错误： 为形参‘ISIL_DEC_CTL_BindDec2VO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:528: 错误： expected declaration specifiers or ‘...’ before ‘BIND_DEC2VO’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:528: 错误： 为形参‘ISIL_DEC_CTL_UnbindDec2VO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:530: 错误： expected declaration specifiers or ‘...’ before ‘BIND_VI2VO’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:530: 错误： 为形参‘ISIL_DEC_CTL_BindVI2VO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:531: 错误： expected declaration specifiers or ‘...’ before ‘BIND_VI2VO’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_codec_chip_ctl.h:531: 错误： 为形参‘ISIL_DEC_CTL_UnbindVI2VO’指定了存储类
+In file included from isil_handle_win_msg.c:8:
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:258: 错误： expected specifier-qualifier-list before ‘U16’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:264: 错误： 为形参‘ISIL_MSG_HERADE_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:269: 错误： expected specifier-qualifier-list before ‘U16’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:272: 错误： 为形参‘ISIL_NET_IE_ASK_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:277: 错误： expected specifier-qualifier-list before ‘U16’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:281: 错误： 为形参‘ISIL_NET_IE_ACK_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:286: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:290: 错误： 为形参‘ISIL_ACK_DATA_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:293: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:303: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:313: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:322: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:333: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:377: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:387: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:401: 错误： 为形参‘ISIL_MEDIASDK_AUDIO_W_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:409: 错误： 为形参‘ISIL_STREAM_BITRATE_TYPE_W’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:416: 错误： 为形参‘ISIL_STREAM_BITRATE_MODE_W’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:460: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:468: 错误： 为形参‘ISIL_COM_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:474: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:479: 错误： 为形参‘ISIL_COMM_CTRL_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:484: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:487: 错误： 为形参‘ISIL_PTZ_PROTOCOL_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:492: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:497: 错误： 为形参‘ISIL_PTZ_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:502: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:506: 错误： 为形参‘ISIL_PTZPRESET_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:511: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:516: 错误： 为形参‘ISIL_PTZ_CTRL_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:528: 错误： 为形参‘ISIL_TIME’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:533: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:537: 错误： 为形参‘ISIL_SCHEDTIME_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:541: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:546: 错误： 为形参‘ISIL_VIDEO_MOTION_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:549: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:554: 错误： 为形参‘ISIL_VIDEO_SHELTER_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:560: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:564: 错误： 为形参‘ISIL_VIDEO_MASK_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:569: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:573: 错误： 为形参‘ISIL_VIDEO_LOST_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:577: 错误： expected specifier-qualifier-list before ‘S08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:583: 错误： 为形参‘ISIL_ALARMIN_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:588: 错误： expected specifier-qualifier-list before ‘ISIL_COM_CFG_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:597: 错误： 为形参‘ISIL_OUTCTRL_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:608: 错误： 为形参‘ISIL_OUTCTRL_CTRL’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:613: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:621: 错误： 为形参‘ISIL_LINKAGE_PTZ_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:625: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:629: 错误： 为形参‘ISIL_LINKAGE_RECORD_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:633: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:638: 错误： 为形参‘ISIL_LINKAGE_SHOOT_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:646: 错误： 为形参‘ISIL_LINKAGE_OUTCTRL_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:651: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:654: 错误： 为形参‘ISIL_LINKAGE_PC_EVENT_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:658: 错误： expected specifier-qualifier-list before ‘U32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:688: 错误： 为形参‘ISIL_RET_SEARCH_DEVICE_INFO_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:692: 错误： expected specifier-qualifier-list before ‘S08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:697: 错误： 为形参‘ISIL_ALARM_STATUS_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:701: 错误： expected specifier-qualifier-list before ‘ISIL_ALARM_STATUS_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:703: 错误： 为形参‘ISIL_ALARM_STATUS_TO_PC_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:708: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:715: 错误： 为形参‘ISIL_ALARM_LINKAGE_STATUS_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:719: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:723: 错误： 为形参‘ISIL_VIDEO_SIGNAL_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:727: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:734: 错误： 为形参‘ISIL_VIDEO_SIGNAL_CFG_EX’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:763: 错误： 为形参‘ISIL_ENCODE_INFO_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:790: 错误： 为形参‘ISIL_ENCODE_INFO_EX’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:795: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:801: 错误： 为形参‘ISIL_MJPEG_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:807: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:812: 错误： 为形参‘ISIL_ENCODE_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:816: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:821: 错误： 为形参‘ISIL_ENCODE_CFG_EX’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:826: 错误： expected specifier-qualifier-list before ‘S08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:845: 错误： 为形参‘ISIL_OVERLAY_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:850: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:854: 错误： 为形参‘ISIL_SCHRECORD_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:881: 错误： 为形参‘ISIL_DEVRECORD_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:887: 错误： expected specifier-qualifier-list before ‘U32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:894: 错误： 为形参‘ISIL_RECORD_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:899: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:926: 错误： 为形参‘ISIL_STREAM_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:933: 错误： expected specifier-qualifier-list before ‘U32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:941: 错误： 为形参‘ISIL_NET_INFO_DATA_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:945: 错误： expected specifier-qualifier-list before ‘S08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:956: 错误： 为形参‘ISIL_NET_REALPLAY_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:961: 错误： expected specifier-qualifier-list before ‘U16’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:964: 错误： 为形参‘ISIL_ASK_NETINFO_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:973: 错误： 为形参‘ISIL_REC_TIME’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:985: 错误： expected specifier-qualifier-list before ‘ISIL_REC_TIME’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:989: 错误： 为形参‘ISIL_LOG_DEVICE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1000: 错误： 为形参‘ISIL_NETFILE_OPEN’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1010: 错误： 为形参‘ISIL_FILE_BASE_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1033: 错误： 为形参‘NET_FILE_COMMAND’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1037: 错误： expected specifier-qualifier-list before ‘ISIL_NET_IE_ASK_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1040: 错误： 为形参‘IE_FILE_COMMAND’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1050: 错误： 为形参‘ISIL_SEARCH_CLASS’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1062: 错误： expected specifier-qualifier-list before ‘ISIL_TIME’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1066: 错误： 为形参‘ISIL_SEARCH_EVNET’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1075: 错误： 为形参‘ISIL_NODE_PATH’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1082: 错误： expected specifier-qualifier-list before ‘U16’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1089: 错误： 为形参‘ISIL_TIME_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1094: 错误： expected specifier-qualifier-list before ‘U32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1123: 错误： 为形参‘ISIL_NET_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1131: 错误： expected specifier-qualifier-list before ‘S08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1187: 错误： 为形参‘ISIL_DEV_BASE_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1197: 错误： expected specifier-qualifier-list before ‘U08’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1204: 错误： 为形参‘ISIL_DEV_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1212: 错误： expected specifier-qualifier-list before ‘VENC_H264_CFG’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1215: 错误： 为形参‘VENC_H264_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1225: 错误： expected specifier-qualifier-list before ‘VENC_MJPG_CFG’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1226: 错误： 为形参‘VENC_MJPG_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1232: 错误： expected specifier-qualifier-list before ‘VENC_AUD_CFG’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1233: 错误： 为形参‘VENC_AUDIO_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1239: 错误： expected specifier-qualifier-list before ‘ENC_CTL_VD_CFG’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1241: 错误： 为形参‘ENC_CTL_VD_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1246: 错误： expected specifier-qualifier-list before ‘VI_CH_CFG’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1248: 错误： 为形参‘VI_ANALOG_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1255: 错误： 为形参‘LOC_GUI_RECORD_CTL’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1263: 错误： 为形参‘LOC_GUI_CHN_MAP’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1272: 错误： 为形参‘ISIL_LOCCALGUI_RECT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1278: 错误： expected specifier-qualifier-list before ‘ISIL_LOCCALGUI_RECT’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1279: 错误： 为形参‘ISIL_SUB_WINDOWS’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1287: 错误： expected specifier-qualifier-list before ‘ISIL_SUB_WINDOWS’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1288: 错误： 为形参‘ISIL_SUB_WINDOWS_BIND’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1299: 错误： 为形参‘ISIL_VDEC_CH_MODE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1302: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1310: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1321: 错误： 为形参‘ISIL_DIAPLAY_PORT_MODE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1330: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1378: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1380: 错误： 为形参‘G_VIDEO_MOTION_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1384: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1386: 错误： 为形参‘G_VIDEO_SHELTER_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1392: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1394: 错误： 为形参‘G_VIDEO_MASK_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1399: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1401: 错误： 为形参‘G_VIDEO_LOST_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1405: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1407: 错误： 为形参‘G_ALARMIN_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1411: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1413: 错误： 为形参‘G_OUTCTRL_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1417: 错误： expected specifier-qualifier-list before ‘ISIL_LINKAGE_PTZ_CFG_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1418: 错误： 为形参‘G_LINKAGE_PTZ_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1422: 错误： expected specifier-qualifier-list before ‘ISIL_LINKAGE_RECORD_CFG_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1423: 错误： 为形参‘G_LINKAGE_RECORD_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1427: 错误： expected specifier-qualifier-list before ‘ISIL_LINKAGE_SHOOT_CFG_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1428: 错误： 为形参‘G_LINKAGE_SHOOT_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1432: 错误： expected specifier-qualifier-list before ‘ISIL_LINKAGE_PC_EVENT_CFG_S’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1433: 错误： 为形参‘G_LINKAGE_PC_EVENT_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1438: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1441: 错误： 为形参‘G_VIDEO_SIGNAL_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1445: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1448: 错误： 为形参‘G_LOCAL_VI_ANALOG_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1452: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1455: 错误： 为形参‘G_ENCODE_INFO_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1460: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1463: 错误： 为形参‘G_ENCODE_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1467: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1470: 错误： 为形参‘G_LOCAL_ENCODE_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1474: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1477: 错误： 为形参‘G_LOCAL_MJPEG_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1481: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1484: 错误： 为形参‘G_LOCAL_AUDIO_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1488: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1491: 错误： 为形参‘G_LOCAL_VD_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1497: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1499: 错误： 为形参‘G_OVERLAY_CFG_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1503: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1505: 错误： 为形参‘G_STREAM_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1509: 错误： expected specifier-qualifier-list before ‘ISIL_NETFILE_OPEN’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1512: 错误： 为形参‘ISIL_FILE_OPT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1517: 错误： 为形参‘ISIL_NET_CLOSE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1521: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1523: 错误： 为形参‘G_MJPEG_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1527: 错误： expected specifier-qualifier-list before ‘S32’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1529: 错误： 为形参‘G_PC_H264_FEATURE_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1534: 错误： expected specifier-qualifier-list before ‘ISIL_VDEC_CH_MODE’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1535: 错误： 为形参‘G_ISIL_PLAY_MOD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1540: 错误： 为形参‘G_FILE_AV_SYNC’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1548: 错误： 为形参‘ISIL_DRV_STREAM_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1559: 错误： 为形参‘ISIL_VIDEO_SIZE_TYPE_W’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1567: 错误： 为形参‘ISIL_VIDEO_RC_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1577: 错误： 为形参‘ISIL_VIDEO_QUALITY_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_messagestruct.h:1699: 警告： empty declaration
+In file included from isil_handle_win_msg.c:9:
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:34: 错误： 为形参‘ISIL_FRAME_HEADER_S’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:37: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_RecvMsgFromOther’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:38: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SendAlarmToPC’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:39: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SendMsgToOther’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:41: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SetAlarmActive’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:43: 错误： expected ‘)’ before ‘iConnectfd’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:45: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SetStreamCfg’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:47: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_HandleRecLinkage’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:49: 错误： expected ‘)’ before ‘lLinkageType’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:51: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SetLinkageActive’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:53: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_HandleShootLinkage’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:54: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_SendAckData’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:55: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:57: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_HandleSearchEvnt’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:59: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_GetEncodeParmByType’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:61: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_InitCfgFile’
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:63: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/app/netmsg/isil_parsemessage.h:65: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_ClientReqCfg’
+In file included from isil_handle_win_msg.c:10:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/ISIL_SDKError_Def.h:93: 错误： 为形参‘ISILERR_CODE’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:9,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:3,
+                 from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:25: 错误： 为形参‘ECHNMODE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:27: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:32: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:37: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:46: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:55: 错误： 为形参‘S_MEDIA_CHIPS_MGT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:57: 错误： 为形参‘S_SINGLE_CHIP_MGT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:58: 错误： 为形参‘S_ISIL_CHAN_MGT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:59: 错误： 为形参‘S_ISIL_SINGLE_CHAN_MGT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:70: 错误： 为形参‘CHIP_NODE_CFG’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:79: 错误： expected specifier-qualifier-list before ‘CODEC_CHANNEL’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:72: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:90: 错误： expected specifier-qualifier-list before ‘S_SINGLE_CHIP_MGT’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:85: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:113: 错误： expected specifier-qualifier-list before ‘CHIP_NODE_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:101: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:141: 错误： expected specifier-qualifier-list before ‘S_SINGLE_CHIP_MGT’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:130: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:166: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:171: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:177: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:184: 错误： 为形参‘init_glb_media_chips_mgt’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:186: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:188: 错误： 为形参‘isil_get_chips_count’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:190: 错误： 为形参‘get_total_enc_count’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:192: 错误： 为形参‘release_chips_mgt_tree’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:194: 错误： 为形参‘create_chips_inf_tree_from_config’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:196: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:198: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:201: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:203: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:207: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:209: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:211: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:215: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:217: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:219: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:223: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:225: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:227: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:229: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:231: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:233: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:235: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:237: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:239: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:248: 错误： 为形参‘init_chip_vdconfig’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:255: 错误： 为形参‘set_single_video_vdconfig’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:257: 错误： 为形参‘get_media_max_chan_number’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:275: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:298: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:300: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:302: 错误： 为形参‘alloc_glb_chip_node_cfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:304: 错误： 为形参‘free_glb_chip_node_cfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:306: 错误： 为形参‘init_glb_chip_node_cfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:308: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:310: 错误： 为形参‘debug_glb_chip_node_cfg’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:316: 错误： 为形参‘write_chips_inf_config_file’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:318: 错误： 为形参‘read_chips_inf_config_file’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:324: 错误： 为形参‘debug_chips_tree’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:326: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:328: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:330: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:332: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:334: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:336: 错误： 为形参‘debug_chips_lgc_enc_list’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:338: 错误： expected ‘)’ before ‘*’ token
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_mgt.h:4,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:345,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:9,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:3,
+                 from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:28: 错误： 为形参‘E_ISIL_DEV_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:30: 错误： 为形参‘file_list’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:37: 错误： expected specifier-qualifier-list before ‘file_list’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:32: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:48: 错误： expected specifier-qualifier-list before ‘file_list’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:45: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:52: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:54: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:56: 错误： 为形参‘init_root_file_list’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:58: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:60: 错误： 为形参‘get_glb_dev_list_t’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:62: 错误： expected declaration specifiers or ‘...’ before ‘file_list’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:62: 错误： 为形参‘add_dev_file_to_list’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:64: 错误： 为形参‘release_sys_root_file_tree’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:66: 错误： 为形参‘print_dev_file_list’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:68: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:70: 错误： 为形参‘add_dev_chip_num’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:72: 错误： 为形参‘get_dev_chip_num’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_st.h:74: 错误： 为形参‘release_dev_list_t’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:345,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:9,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:3,
+                 from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_mgt.h:22: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_dev_file_mgt.h:24: 错误： 为形参‘init_sys_dev_inf_tree’指定了存储类
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:9,
+                 from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:3,
+                 from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:348: 错误： 为形参‘create_device_nod_point’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:350: 错误： 为形参‘by_sys_create_chips_inf_tree’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk/include/mediasdk/isil_media_config.h:354: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+In file included from /mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:3,
+                 from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:20: 错误： 为形参‘EVENCPARAMTYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:28: 错误： expected specifier-qualifier-list before ‘VENC_H264_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:31: 错误： 为形参‘VENC_H264_INFO_A’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:36: 错误： expected specifier-qualifier-list before ‘VENC_H264_INFO_A’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:38: 错误： 为形参‘VENC_H264_PARAM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:44: 错误： expected specifier-qualifier-list before ‘VENC_H264_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:45: 错误： 为形参‘VENC_H264_CFG_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:51: 错误： expected specifier-qualifier-list before ‘VENC_H264_FEATURE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:52: 错误： 为形参‘VENC_H264_FEATURE_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:58: 错误： expected specifier-qualifier-list before ‘VENC_H264_RC’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:60: 错误： 为形参‘VENC_H264_RC_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:65: 错误： expected specifier-qualifier-list before ‘CODEC_CHIP_VIDEO_STD’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:66: 错误： 为形参‘VENC_H264_VIDEO_STANDARD_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:73: 错误： expected specifier-qualifier-list before ‘VI_CH_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:74: 错误： 为形参‘VENC_H264_VI_CFG_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:80: 错误： expected specifier-qualifier-list before ‘VENC_AUD_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:81: 错误： 为形参‘VENC_AUDIO_CFG_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:87: 错误： expected specifier-qualifier-list before ‘VENC_MJPG_CFG’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:88: 错误： 为形参‘VENC_MJPEG_CFG_PARM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:93: 错误： expected specifier-qualifier-list before ‘VD_CONFIG_REALTIME’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:94: 错误： 为形参‘VENC_VD_CONFIG_REALTIME’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:98: 错误： 为形参‘isil_set_single_venc_param_cb’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:100: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:102: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:104: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:106: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:108: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:110: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:112: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:114: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:116: 错误： expected ‘)’ before ‘*’ token
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_venc_param.h:118: 错误： expected ‘)’ before ‘*’ token
+In file included from isil_handle_win_msg.c:11:
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:15: 错误： 为形参‘ISIL_STREAM_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:28: 错误： 为形参‘ISIL_VIDEO_STANDARD’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:41: 错误： 为形参‘ISIL_VIDEO_SIZE_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:61: 错误： 为形参‘ISIL_MEDIASDK_AUDIO_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:75: 错误： 为形参‘ISIL_STREAM_BITRATE_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:93: 错误： 为形参‘ISIL_BITRATE_VALUE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:106: 错误： 为形参‘ISIL_STREAM_BITRATE_MODE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:108: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:141: 错误： 为形参‘ISIL_PREVIEW_DATA’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:150: 错误： 为形参‘ISIL_MJPEG_DATA_TYPE’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:161: 错误： 为形参‘ISIL_MJPEG_DATA’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:170: 错误： 为形参‘ISIL_MVFLAG_DATA’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:182: 错误： 为形参‘ISIL_MV_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:185: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:213: 错误： 为形参‘ISIL_ENCODE_DATA’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:221: 错误： 为形参‘ISIL_ACCESS_GPIO_ITEM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:226: 错误： expected specifier-qualifier-list before ‘ISIL_ACCESS_GPIO_ITEM’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:228: 错误： 为形参‘ISIL_ACCESS_GPIO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:231: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:239: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:249: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:269: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:276: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:311: 错误： 为形参‘ISIL_CARD_LOCATION_INFO’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:314: 错误： 为形参‘COLORREF’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:317: 错误： 为形参‘ISIL_MediaSDK_PREVIEW_PARAM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:322: 错误： 为形参‘ISIL_MediaSDK_ENCODE_PARAM’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:331: 错误： 为形参‘ISIL_MediaSDK_RECT’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:347: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:349: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:352: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:377: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:379: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:382: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:384: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:386: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:393: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:396: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:399: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:401: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:405: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:408: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:411: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:413: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:417: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:420: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:432: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:434: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:436: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:439: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:442: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:445: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:447: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:449: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:453: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:456: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:459: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:461: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:464: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:467: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:470: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:479: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:482: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:485: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:489: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:492: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:496: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:499: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:502: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:505: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:515: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:521: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:524: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:527: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:529: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:532: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:535: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:538: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:541: 错误： expected declaration specifiers before ‘ISILERR_CODE’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:554: 错误： 为形参‘CHIP_CHN_PHY_ID’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:556: 错误： expected declaration specifiers or ‘...’ before ‘CHIP_CHN_PHY_ID’
+/mnt/share_code/svn110616/wjb/dvr/isilsdk//src/isilsdk/isil_ap_mediasdk.h:557: 错误： expected declaration specifiers or ‘...’ before ‘CHIP_CHN_PHY_ID’
+In file included from /mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_reg.h:9,
+                 from isil_handle_win_msg.c:12:
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_mgt_cent.h:19: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_mgt_cent.h:25: 警告： empty declaration
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_mgt_cent.h:41: 错误： 为形参‘init_enc_data_reg_array’指定了存储类
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_mgt_cent.h:45: 错误： 为形参‘get_enc_data_reg_by_inf’指定了存储类
+In file included from isil_handle_win_msg.c:12:
+/mnt/share_code/svn110616/wjb/dvr/app/include/isil_enc_data_reg.h:22: 错误： 为形参‘net_task_reg_enc’指定了存储类
+isil_handle_win_msg.c:16: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+isil_handle_win_msg.c:118: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘ISIL_ParseRealPlay’
+isil_handle_win_msg.c:256: 错误： expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+isil_handle_win_msg.c:298: 错误： 原型函数定义中使用了旧式参数声明
+isil_handle_win_msg.c:298: 错误： expected ‘{’ at end of input
+make[2]: *** [isil_handle_win_msg.o] 错误 1
+make[2]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/app/src'
+make[1]: *** [src] 错误 2
+make[1]:正在离开目录 `/mnt/share_code/svn110616/wjb/dvr/app'
+make: *** [app] 错误 2

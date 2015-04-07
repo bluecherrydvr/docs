@@ -1,0 +1,529 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	WorkingDir="."
+	BuildSystem="vsbuild">
+	<Config
+		Name="Debug"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bddvr.exe"
+		CompilerConfigName="Default Compiler">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc %xup -g -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<Includes>
+		</Includes>
+	</Config>
+	<Config
+		Name="Release"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bddvr.exe"
+		CompilerConfigName="Default Compiler">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc %xup -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<Includes>
+		</Includes>
+	</Config>
+	<Files>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d">
+			<F N="isilsdk/test/audio_test/audio_file_store.c"/>
+			<F N="isilsdk/test/audio_test/audio_get_frame.c"/>
+			<F N="isilsdk/src/mediasdk/bar_ctl.c"/>
+			<F N="app/pbapp/frame_parse_to_drv_msg.c"/>
+			<F N="isilsdk/test/h264_main_test/h264_main_file_store.c"/>
+			<F N="isilsdk/test/h264_main_test/h264_main_get_frame.c"/>
+			<F N="isilsdk/test/h264_sub_test/h264_sub_file_store.c"/>
+			<F N="isilsdk/test/h264_sub_test/h264_sub_get_frame.c"/>
+			<F N="netsdk/src/io_utils.c"/>
+			<F N="isilsdk/src/mediasdk/isil_ai.c"/>
+			<F N="app/netmsg/isil_alarm_manage.c"/>
+			<F N="app/src/isil_alarm_session.c"/>
+			<F N="isilsdk/src/mediasdk/isil_ao.c"/>
+			<F N="isilsdk/src/isilsdk/isil_ap_mediasdk.c"/>
+			<F N="app/pbapp/isil_av_packet_ex.c"/>
+			<F N="app/netmsg/isil_cfg_file_manage.c"/>
+			<F N="app/netmsg/isil_chan_chip_map.c"/>
+			<F N="app/netmsg/isil_channel_map.c"/>
+			<F N="app/netmsg/isil_channel_map_cfg.c"/>
+			<F N="isilsdk/src/mediasdk/isil_codec_chip_ctl.c"/>
+			<F N="app/netmsg/isil_common.c"/>
+			<F N="isilsdk/src/isilsdk/isil_data_stream.c"/>
+			<F N="netsdk/src/isil_data_thread_mgt.c"/>
+			<F N="app/pbapp/isil_dec_sdk.c"/>
+			<F N="isilsdk/src/isilsdk/isil_dec_sdk_cb.c"/>
+			<F N="app/pbapp/isil_decode_api.c"/>
+			<F N="app/pbapp/isil_decode_file_process.c"/>
+			<F N="app/pbapp/isil_decode_init.c"/>
+			<F N="isilsdk/src/mediasdk/isil_decoder.c"/>
+			<F N="isilsdk/src/mediasdk/isil_dev_file_mgt.c"/>
+			<F N="isilsdk/src/mediasdk/isil_dev_file_st.c"/>
+			<F N="app/netmsg/isil_dev_manage.c"/>
+			<F N="isilsdk/src/isilsdk/isil_drv_to_sdk_data.c"/>
+			<F N="app/src/isil_enc_data_mgt_cent.c"/>
+			<F N="app/src/isil_enc_data_reg.c"/>
+			<F N="isilsdk/src/isilsdk/isil_enc_sdk.c"/>
+			<F N="app/pbapp/isil_enc_to_dec_loopback.c"/>
+			<F N="app/netmsg/isil_encode_manage.c"/>
+			<F N="isilsdk/src/mediasdk/isil_encoder.c"/>
+			<F N="app/netmsg/isil_endian_trans.c"/>
+			<F N="isilsdk/src/eventcore/isil_ev_task.c"/>
+			<F N="isilsdk/src/isilsdk/isil_ev_thr_mgt.c"/>
+			<F N="isilsdk/src/eventcore/isil_event_mgt.c"/>
+			<F N="app/src/isil_file_rec_ctl.c"/>
+			<F N="app/src/isil_file_rec_mgt.c"/>
+			<F N="app/src/isil_file_record_session.c"/>
+			<F N="filesdk/src/isil_fm_fdisk.c"/>
+			<F N="filesdk/src/isil_fm_file_allocate.c"/>
+			<F N="filesdk/src/isil_fm_log.c"/>
+			<F N="filesdk/src/isil_fm_log_string.c"/>
+			<F N="filesdk/src/isil_fm_play.c"/>
+			<F N="filesdk/src/isil_fm_rec.c"/>
+			<F N="filesdk/src/isil_fm_utils.c"/>
+			<F N="isilsdk/src/eventcore/isil_frame.c"/>
+			<F N="app/src/isil_handle_win_msg.c"/>
+			<F N="app/pbapp/isil_hndl_track_mode.c"/>
+			<F N="isilsdk/src/eventcore/isil_io_utils.c"/>
+			<F N="isilsdk/src/mediasdk/isil_media_config.c"/>
+			<F N="isilsdk/src/isilsdk/isil_media_sdk_ev.c"/>
+			<F N="isilsdk/src/eventcore/isil_msg.c"/>
+			<F N="isilsdk/src/eventcore/isil_msg_mgt.c"/>
+			<F N="app/netmsg/isil_msg_reg_cb.c"/>
+			<F N="netsdk/src/isil_net_data_header.c"/>
+			<F N="app/netmsg/isil_net_manage.c"/>
+			<F N="netsdk/src/isil_net_nty.c"/>
+			<F N="netsdk/src/isil_net_sdk.c"/>
+			<F N="app/src/isil_net_send_session.c"/>
+			<F N="app/netmsg/isil_netsdk_activecfg.c"/>
+			<F N="app/netmsg/isil_netsdk_cfgfile.c"/>
+			<F N="app/netmsg/isil_netsdk_netmsg.c"/>
+			<F N="isilsdk/src/eventcore/isil_notify.c"/>
+			<F N="app/netmsg/isil_parsemessage.c"/>
+			<F N="app/pbapp/isil_pb_mgt.c"/>
+			<F N="app/pbapp/isil_pb_process.c"/>
+			<F N="app/pbapp/isil_preview_session.c"/>
+			<F N="isilsdk/src/mediasdk/isil_private_func.c"/>
+			<F N="app/netmsg/isil_ptz_manage.c"/>
+			<F N="app/src/isil_recapp.c"/>
+			<F N="app/src/isil_reg_func_cent.c"/>
+			<F N="isilsdk/src/eventcore/isil_sdk_center_mgt.c"/>
+			<F N="isilsdk/src/eventcore/isil_sdk_main.c"/>
+			<F N="isilsdk/test/isil_sdk_test1.c"/>
+			<F N="app/netmsg/isil_searchdev.c"/>
+			<F N="app/netmsg/isil_stream_manage.c"/>
+			<F N="isilsdk/src/mediasdk/isil_sys_config.c"/>
+			<F N="isilsdk/src/isilsdk/isil_test_sdk.c"/>
+			<F N="isilsdk/src/eventcore/isil_thread_pool.c"/>
+			<F N="netsdk/src/isil_udp.c"/>
+			<F N="app/netmsg/isil_update.c"/>
+			<F N="app/netmsg/isil_usr_manage.c"/>
+			<F N="isilsdk/src/mediasdk/isil_vdec_audio.c"/>
+			<F N="isilsdk/src/mediasdk/isil_vdec_h264.c"/>
+			<F N="isilsdk/src/mediasdk/isil_vdec_mjpg.c"/>
+			<F N="isilsdk/src/mediasdk/isil_venc_audio.c"/>
+			<F N="isilsdk/src/mediasdk/isil_venc_h264.c"/>
+			<F N="isilsdk/src/mediasdk/isil_venc_mjpg.c"/>
+			<F N="isilsdk/src/isilsdk/isil_venc_param.c"/>
+			<F N="isilsdk/src/mediasdk/isil_vi.c"/>
+			<F N="app/netmsg/isil_video_manage.c"/>
+			<F N="isilsdk/src/mediasdk/isil_vo.c"/>
+			<F N="app/src/isil_win_net_data_handle.c"/>
+			<F N="app/src/main.c"/>
+			<F N="isilsdk/test/mjpeg_test/mjpeg_file_store.c"/>
+			<F N="isilsdk/test/mjpeg_test/mjpeg_get_frame.c"/>
+			<F N="netsdk/src/net_api.c"/>
+			<F N="netsdk/src/net_event_mgt.c"/>
+			<F N="netsdk/src/net_parse_reg.c"/>
+			<F N="netsdk/src/net_task.c"/>
+			<F N="netsdk/src/net_thread_pool.c"/>
+			<F N="netsdk/test/netsdktest.c"/>
+			<F N="app/test/test_chip_chan_map.c"/>
+			<F N="app/test/test_enc_1.c"/>
+		</Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+			<F N="isilsdk/include/mediasdk/bar_ctl.h"/>
+			<F N="isilsdk/include/mediasdk/config.h"/>
+			<F N="app/netmsg/default_cfg_value.h"/>
+			<F N="isilsdk/include/mediasdk/default_cfg_value.h"/>
+			<F N="netsdk/libev/ppc/include/ev++.h"/>
+			<F N="netsdk/libev/x86/include/ev++.h"/>
+			<F N="netsdk/libev/ppc/include/ev.h"/>
+			<F N="netsdk/libev/x86/include/ev.h"/>
+			<F N="isilsdk/libevent/ppc/include/evdns.h"/>
+			<F N="isilsdk/libevent/x86/include/evdns.h"/>
+			<F N="isilsdk/libevent/ppc/include/event-config.h"/>
+			<F N="isilsdk/libevent/x86/include/event-config.h"/>
+			<F N="isilsdk/libevent/ppc/include/event.h"/>
+			<F N="isilsdk/libevent/x86/include/event.h"/>
+			<F N="netsdk/libev/ppc/include/event.h"/>
+			<F N="netsdk/libev/x86/include/event.h"/>
+			<F N="isilsdk/libevent/ppc/include/evhttp.h"/>
+			<F N="isilsdk/libevent/x86/include/evhttp.h"/>
+			<F N="isilsdk/libevent/ppc/include/evrpc.h"/>
+			<F N="isilsdk/libevent/x86/include/evrpc.h"/>
+			<F N="isilsdk/libevent/ppc/include/evutil.h"/>
+			<F N="isilsdk/libevent/x86/include/evutil.h"/>
+			<F N="app/pbapp/frame_parse_to_drv_msg.h"/>
+			<F N="netsdk/include/io_utils.h"/>
+			<F N="isilsdk/include/mediasdk/isil_ai.h"/>
+			<F N="app/netmsg/isil_alarm_manage.h"/>
+			<F N="app/src/isil_alarm_session.h"/>
+			<F N="isilsdk/include/mediasdk/isil_ao.h"/>
+			<F N="isilsdk/src/isilsdk/isil_ap_mediasdk.h"/>
+			<F N="app/pbapp/isil_av_packet_ex.h"/>
+			<F N="app/netmsg/isil_cfg_file_manage.h"/>
+			<F N="app/include/isil_chan_chip_map.h"/>
+			<F N="app/include/isil_channel_map.h"/>
+			<F N="app/netmsg/isil_channel_map_cfg.h"/>
+			<F N="isilsdk/include/mediasdk/isil_codec_chip_ctl.h"/>
+			<F N="isilsdk/include/mediasdk/isil_codec_common.h"/>
+			<F N="isilsdk/include/mediasdk/isil_codec_debug.h"/>
+			<F N="isilsdk/include/mediasdk/isil_codec_errcode.h"/>
+			<F N="isilsdk/include/mediasdk/isil_common.h"/>
+			<F N="isilsdk/src/isilsdk/isil_data_stream.h"/>
+			<F N="netsdk/include/isil_data_thread_mgt.h"/>
+			<F N="app/netmsg/isil_debug.h"/>
+			<F N="isilsdk/include/eventcore/isil_debug.h"/>
+			<F N="app/pbapp/isil_dec_sdk.h"/>
+			<F N="isilsdk/src/isilsdk/isil_dec_sdk_cb.h"/>
+			<F N="app/pbapp/isil_decode_api.h"/>
+			<F N="app/pbapp/isil_decode_file_process.h"/>
+			<F N="app/pbapp/isil_decode_init.h"/>
+			<F N="isilsdk/include/mediasdk/isil_decoder.h"/>
+			<F N="isilsdk/include/mediasdk/isil_dev_file_mgt.h"/>
+			<F N="isilsdk/include/mediasdk/isil_dev_file_st.h"/>
+			<F N="app/netmsg/isil_dev_manage.h"/>
+			<F N="isilsdk/src/isilsdk/isil_drv_to_sdk_data.h"/>
+			<F N="app/include/isil_enc_data_mgt_cent.h"/>
+			<F N="app/include/isil_enc_data_reg.h"/>
+			<F N="isilsdk/src/isilsdk/isil_enc_sdk.h"/>
+			<F N="app/pbapp/isil_enc_to_dec_loopback.h"/>
+			<F N="app/netmsg/isil_encode_manage.h"/>
+			<F N="isilsdk/include/mediasdk/isil_encoder.h"/>
+			<F N="app/netmsg/isil_endian_trans.h"/>
+			<F N="isilsdk/include/eventcore/isil_ev_task.h"/>
+			<F N="isilsdk/src/isilsdk/isil_ev_thr_mgt.h"/>
+			<F N="isilsdk/include/eventcore/isil_event_mgt.h"/>
+			<F N="app/include/isil_file_rec_ctl.h"/>
+			<F N="app/include/isil_file_rec_mgt.h"/>
+			<F N="app/src/isil_file_record_session.h"/>
+			<F N="filesdk/include/isil_fm_fdisk.h"/>
+			<F N="filesdk/include/isil_fm_file_allocate.h"/>
+			<F N="filesdk/include/isil_fm_h264.h"/>
+			<F N="filesdk/include/isil_fm_log.h"/>
+			<F N="filesdk/include/isil_fm_log_string.h"/>
+			<F N="filesdk/include/isil_fm_play.h"/>
+			<F N="filesdk/include/isil_fm_play_error.h"/>
+			<F N="filesdk/include/isil_fm_rec.h"/>
+			<F N="filesdk/include/isil_fm_utils.h"/>
+			<F N="isilsdk/include/eventcore/isil_frame.h"/>
+			<F N="app/include/isil_handle_win_msg.h"/>
+			<F N="app/pbapp/isil_hndl_track_mode.h"/>
+			<F N="isilsdk/include/mediasdk/isil_interface.h"/>
+			<F N="isilsdk/include/eventcore/isil_io_utils.h"/>
+			<F N="isilsdk/include/mediasdk/isil_media_config.h"/>
+			<F N="isilsdk/src/isilsdk/isil_media_sdk_ev.h"/>
+			<F N="app/netmsg/isil_messagestruct.h"/>
+			<F N="app/pbapp/isil_messagestruct.h"/>
+			<F N="isilsdk/include/eventcore/isil_msg.h"/>
+			<F N="isilsdk/include/eventcore/isil_msg_mgt.h"/>
+			<F N="app/netmsg/isil_msg_reg_cb.h"/>
+			<F N="netsdk/include/isil_net_config.h"/>
+			<F N="netsdk/include/isil_net_data_header.h"/>
+			<F N="app/netmsg/isil_net_manage.h"/>
+			<F N="netsdk/include/isil_net_nty.h"/>
+			<F N="netsdk/include/isil_net_sdk.h"/>
+			<F N="app/include/isil_net_send_session.h"/>
+			<F N="app/netmsg/isil_netsdk_activecfg.h"/>
+			<F N="app/netmsg/isil_netsdk_cfgfile.h"/>
+			<F N="app/netmsg/isil_netsdk_netmsg.h"/>
+			<F N="isilsdk/include/eventcore/isil_notify.h"/>
+			<F N="isilsdk/src/isilsdk/isil_old_drv_header.h"/>
+			<F N="app/netmsg/isil_parsemessage.h"/>
+			<F N="app/pbapp/isil_pb_mgt.h"/>
+			<F N="app/pbapp/isil_pb_process.h"/>
+			<F N="app/pbapp/isil_preview_session.h"/>
+			<F N="isilsdk/include/mediasdk/isil_private_func.h"/>
+			<F N="app/netmsg/isil_ptz_manage.h"/>
+			<F N="app/src/isil_recapp.h"/>
+			<F N="app/src/isil_reg_func_cent.h"/>
+			<F N="isilsdk/include/eventcore/isil_sdk_center_mgt.h"/>
+			<F N="isilsdk/include/eventcore/isil_sdk_config.h"/>
+			<F N="isilsdk/include/eventcore/isil_sdk_main.h"/>
+			<F N="isilsdk/src/isilsdk/ISIL_SDKError_Def.h"/>
+			<F N="app/netmsg/isil_searchdev.h"/>
+			<F N="app/netmsg/isil_stream_manage.h"/>
+			<F N="isilsdk/include/mediasdk/isil_sys_config.h"/>
+			<F N="isilsdk/src/isilsdk/isil_test_sdk.h"/>
+			<F N="isilsdk/include/eventcore/isil_thread_pool.h"/>
+			<F N="isilsdk/include/mediasdk/isil_type.h"/>
+			<F N="netsdk/include/isil_udp.h"/>
+			<F N="app/netmsg/isil_update.h"/>
+			<F N="app/netmsg/isil_usr_manage.h"/>
+			<F N="isilsdk/include/mediasdk/isil_vdec_audio.h"/>
+			<F N="isilsdk/include/mediasdk/isil_vdec_h264.h"/>
+			<F N="isilsdk/include/mediasdk/isil_vdec_mjpg.h"/>
+			<F N="isilsdk/include/mediasdk/isil_venc_audio.h"/>
+			<F N="isilsdk/include/mediasdk/isil_venc_h264.h"/>
+			<F N="isilsdk/include/mediasdk/isil_venc_mjpg.h"/>
+			<F N="isilsdk/src/isilsdk/isil_venc_param.h"/>
+			<F N="isilsdk/include/mediasdk/isil_vi.h"/>
+			<F N="app/netmsg/isil_video_manage.h"/>
+			<F N="isilsdk/include/mediasdk/isil_vo.h"/>
+			<F N="app/include/isil_win_net_header.h"/>
+			<F N="isilsdk/include/linux_list.h"/>
+			<F N="netsdk/include/linux_list.h"/>
+			<F N="netsdk/include/net_api.h"/>
+			<F N="app/netmsg/net_config.h"/>
+			<F N="netsdk/include/net_debug.h"/>
+			<F N="netsdk/include/net_event_mgt.h"/>
+			<F N="netsdk/include/net_parse_reg.h"/>
+			<F N="netsdk/include/net_task.h"/>
+			<F N="netsdk/include/net_thread_pool.h"/>
+		</Folder>
+		<Folder
+			Name="Resource Files"
+			Filters="*.ico;*.cur;*.dlg"/>
+		<Folder
+			Name="Bitmaps"
+			Filters="*.bmp"/>
+		<Folder
+			Name="Other Files"
+			Filters="">
+			<F
+				N="Makefile"
+				Type="Makefile"/>
+			<F
+				N="app/Makefile"
+				Type="Makefile"/>
+			<F
+				N="app/netmsg/Makefile"
+				Type="Makefile"/>
+			<F
+				N="app/pbapp/Makefile"
+				Type="Makefile"/>
+			<F
+				N="app/src/Makefile"
+				Type="Makefile"/>
+			<F
+				N="app/test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="filesdk/Makefile"
+				Type="Makefile"/>
+			<F
+				N="filesdk/src/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/lib/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/src/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/src/eventcore/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/src/isilsdk/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/src/mediasdk/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/test/audio_test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/test/h264_main_test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/test/h264_sub_test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="isilsdk/test/mjpeg_test/Makefile"
+				Type="Makefile"/>
+			<F
+				N="netsdk/Makefile"
+				Type="Makefile"/>
+			<F
+				N="netsdk/src/Makefile"
+				Type="Makefile"/>
+			<F N="rules.make"/>
+			<F N="filesdk/rules.make"/>
+			<F N="isilsdk/rules.make"/>
+			<F N="netsdk/rules.make"/>
+		</Folder>
+	</Files>
+</Project>
